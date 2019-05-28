@@ -1,0 +1,55 @@
+{
+  "name": "rsmdc-storybook",
+  "private": true,
+  "scripts": {
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "license": "MIT",
+  "author": "rsmdc",
+  "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "@storybook/html": "^5.0.11",
+    "autoprefixer": "^9.5.1",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.6",
+    "eslint": "^5.16.0",
+    "node-sass": "^4.11.0",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^7.1.0",
+    "style-resources-loader": "^1.2.1"
+  },
+  "dependencies": {
+    "@pickra/copy-code-block": "^1.1.4",
+    "@rsmdc/rsmdc": "^1.0.8",
+    "@storybook/addon-info": "^5.0.11",
+    "@storybook/addon-knobs": "^5.0.11",
+    "@storybook/addon-links": "^5.0.11",
+    "@storybook/addon-notes": "^5.0.11",
+    "add": "^2.0.6",
+    "cross-env": "^5.2.0",
+    "highlight.js": "^9.15.6",
+    "storybook": "^1.0.0",
+    "yarn": "^1.16.0"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "eslint:recommended"
+    ],
+    "rules": {
+      "no-cnosole": "off"
+    },
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  }
+}
