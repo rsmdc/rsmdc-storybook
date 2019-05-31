@@ -22,13 +22,13 @@ storiesOf('Components|Button', module)
       <p>Buttonタイプ分ける基準</p>
       <ul>
         <li>1. テキストボタン <br> テキストボタンは...。 <br> 
-          <a class="link" href="#" data-sb-kind="Components|Button/カスタマイズ/スタイル" data-sb-story="Flat">参照はこちら</a>
+          <a class="link" href="#" data-sb-kind="Components|Button/スタイルのカスタマイズ/ボタンタイプを変える" data-sb-story="Flat">参照はこちら</a>
         </li>
         <li>2. 枠線付きボタン <br> 枠線付きボタンは...。 <br> 
-          <a class="link" href="#" data-sb-kind="Components|Button/カスタマイズ/スタイル" data-sb-story="Outlined">参照はこちら</a>
+          <a class="link" href="#" data-sb-kind="Components|Button/スタイルのカスタマイズ/ボタンタイプを変える" data-sb-story="Outlined">参照はこちら</a>
         </li>
         <li>3. 囲まれたボタン <br> 囲まれたボタンは...。 <br> 
-          <a class="link" href="#" data-sb-kind="Components|Button/カスタマイズ/スタイル" data-sb-story="Raised">参照はこちら</a>
+          <a class="link" href="#" data-sb-kind="Components|Button/スタイルのカスタマイズ/ボタンタイプを変える" data-sb-story="Raised">参照はこちら</a>
         </li>
       </ul>
       <p>FABの説明</p>
@@ -52,11 +52,7 @@ storiesOf('Components|Button', module)
         '}',
         { lang: 'scss' }
       )}
-    `
-  })
-  .add('要素', () => {
-    return `
-      <h4>要素</h4>
+      <h4>HTML要素</h4>
       <p></p>
       <table>
         <tr>
@@ -70,11 +66,7 @@ storiesOf('Components|Button', module)
           <td>テキスト</td>
         </tr>
       </table>
-    `
-  })
-  .add('属性', () => {
-    return `
-      <h4>属性</h4>
+      <h4>HTML属性</h4>
       <table>
         <tr>
           <th>属性</th>
@@ -95,8 +87,8 @@ storiesOf('Components|Button', module)
     `
   })
 
-storiesOf('Components|Button/カスタマイズ/スタイル', module)
-  .add('Flat', () => {
+storiesOf('Components|Button/スタイルのカスタマイズ/ボタンタイプを変える', module)
+  .add('Flat (default)', () => {
     return `
       <h4>Flat</h4>
       <p>画面の表面と同一平面上にあるテキストボタン。</p>
@@ -224,7 +216,7 @@ storiesOf('Components|Button/カスタマイズ/スタイル', module)
       )}
     `
   })
-  .add('Icon button', () => {
+  .add('Icon', () => {
     return `
       <h4>Icon button</h4>
       <p>ボタンのアイコンを含む要素であることを示す。</p>
@@ -317,35 +309,38 @@ storiesOf('Components|Button/カスタマイズ/スタイル', module)
     `
   })
 
-storiesOf('Components|Button/カスタマイズ', module)
-  .add('Leading icon', () => {
+storiesOf('Components|Button/スタイルのカスタマイズ', module)
+  .add('テキストの色を変える', () => {
     return `
-      <p><x-button class="button -leading-icon">submit</x-button></p>
+      <p>テキストの色が設定した色に変わります</p>
+      <p><x-button class="button -text-color">button</x-button></p>
+      <h4>使用するmixin</h4>
+      ${copyCodeBlock(
+        '@include rs-button-ink-color($color);',
+        { lang: 'scss' }
+      )}
       <h4>使い方</h4>
       ${copyCodeBlock(
-        '<x-button class="button -leading-icon">submit</x-button>\n',
+        '<x-button class="button -text-color">button</x-button>',
         { lang: 'html' }
       )}
       ${copyCodeBlock(
         '@import \'@rsmdc/button/rs-button.scss\';\n\n' +
         '.button {\n' +
-        '  @include rs-button-type(flat);\n\n' +
-        '  &.-leading-icon {\n' +
-        '    @include rs-button-icon-image($url, $position, $size, $repeat);\n' +
+        '  &.-text-color {\n' +
+        '     @include rs-button-ink-color(brown);\n' +
+        '     @include rs-button-states-color(brown);\n' +
         '  }\n' +
         '}',
         { lang: 'scss' }
       )}
-      <p>オプション</p>
+      <p>Options:</p>
       <ul>
-        <li>$url: アイコン URL <br> 例）url('https://cdn3.iconfinder.com/data/icons/pyconic-icons-1-2/512/heart-outline-512.png')</li>
-        <li>$position: アイコンの位置, デフォルトは left</li>
-        <li>$size: アイコンサイズ, デフォルトは 18px</li>
-        <li>$repeat: 背景のrepeat, デフォルトは no-repeat</li>
+        <li>$color: インクの色コード <br> 例） #ee00ce</li>
       </ul>
     `
   })
-  .add('Customized background', () => {
+  .add('背景色を変える', () => {
     return `
       <p>与えた色にコンテナの塗りの色を設定する。</p>
       <p><x-button class="button -background-color">button</x-button></p>
@@ -369,80 +364,16 @@ storiesOf('Components|Button/カスタマイズ', module)
       </ul>
     `
   })
-  .add('Customized text color', () => {
-    return `
-      <p>与えた色にインクの色を設定する。</p>
-      <p><x-button class="button -text-color">button</x-button></p>
-      <h4>使い方</h4>
-      ${copyCodeBlock(
-        '<x-button class="button -text-color">button</x-button>',
-        { lang: 'html' }
-      )}
-      ${copyCodeBlock(
-        '@import \'@rsmdc/button/rs-button.scss\';\n\n' +
-        '.button {\n' +
-        '  &.-text-color {\n' +
-        '    @include rs-button-ink-color($color);\n' +
-        '  }\n' +
-        '}',
-        { lang: 'scss' }
-      )}
-      <p>Options:</p>
-      <ul>
-        <li>$color: インクの色コード <br> 例） #ee00ce</li>
-      </ul>
+  .add('リップルの色を変える', () =>
+  `
+    @include rs-button-states-color($color);
+  `
+  )
+  .add('背景色からテキストとリップルの色を変える', () => 
     `
-  })
-  .add('Customized shape', () => {
-    return `
-      <p>与えられた半径の大きさの丸い形状にボタンを設定する。</p>
-      <p><x-button class="button -shape-radius">button</x-button></p>
-      <h4>使い方</h4>
-      ${copyCodeBlock(
-        '<x-button class="button -shape-radius">button</x-button>',
-        { lang: 'html' }
-      )}
-      ${copyCodeBlock(
-        '@import \'@rsmdc/css/rs-button.scss\';\n\n' +
-        '.button {\n' +
-        '  &.-shape-radius {\n' +
-        '    @include rs-button-shape-radius($radius, $rtl-reflexive);\n' +
-        '  }\n' +
-        '}',
-        { lang: 'scss' }
-      )}
-      <p>オプション</p>
-      <ul>
-        <li>$radius: shape radius <br> example: 15px</li>
-        <li>$rtl-reflexive を true にする（デフォルトは false）と RTL コンテキスト において半径の値を反転する。</li>
-      </ul>
+      @include rs-button-filled-accessible($color);
     `
-  })
-  .add('Customized horizontal padding', () => {
-    return `
-      <p>与えた大きさに水平方向のパディングを設定する。</p>
-      <p><x-button class="button -horizontal-padding">button</x-button></p>
-      <h4>使い方</h4>
-      ${copyCodeBlock(
-        '<x-button class="button -horizontal-padding">button</x-button>',
-        { lang: 'html' }
-      )}
-      ${copyCodeBlock(
-        '@import \'@rsmdc/css/rs-button.scss\';\n\n' +
-        '.button {\n' +
-        '  &.-horizontal-padding {\n' +
-        '    @include rs-button-horizontal-padding($padding);\n' +
-        '  }\n' +
-        '}',
-        { lang: 'scss' }
-      )}
-      <p>オプション</p>
-      <ul>
-        <li>$padding: 水平方向の大きさ</li>
-      </ul>
-    `
-  })
-  .add('Customized outlined color', () => {
+  )  .add('線の色を変える', () => {
     return `
       <p>与えた色に境界の色を設定する。</p>
       <p><x-button class="outlined -outline-color">button</x-button></p>
@@ -467,7 +398,56 @@ storiesOf('Components|Button/カスタマイズ', module)
       </ul>
     `
   })
-  .add('Customized outlined width', () => {
+  .add('ボタンの角の丸みを変える', () => {
+    return `
+      <p>与えられた半径の大きさの丸い形状にボタンを設定する。</p>
+      <p><x-button class="button -shape-radius">button</x-button></p>
+      <h4>使い方</h4>
+      ${copyCodeBlock(
+        '<x-button class="button -shape-radius">button</x-button>',
+        { lang: 'html' }
+      )}
+      ${copyCodeBlock(
+        '@import \'@rsmdc/css/rs-button.scss\';\n\n' +
+        '.button {\n' +
+        '  &.-shape-radius {\n' +
+        '    @include rs-button-shape-radius($radius, $rtl-reflexive);\n' +
+        '  }\n' +
+        '}',
+        { lang: 'scss' }
+      )}
+      <p>オプション</p>
+      <ul>
+        <li>$radius: shape radius <br> example: 15px</li>
+        <li>$rtl-reflexive を true にする（デフォルトは false）と RTL コンテキスト において半径の値を反転する。</li>
+      </ul>
+    `
+  })
+  .add('ボタン内の横幅の余白を変える', () => {
+    return `
+      <p>与えた大きさに水平方向のパディングを設定する。</p>
+      <p><x-button class="button -horizontal-padding">button</x-button></p>
+      <h4>使い方</h4>
+      ${copyCodeBlock(
+        '<x-button class="button -horizontal-padding">button</x-button>',
+        { lang: 'html' }
+      )}
+      ${copyCodeBlock(
+        '@import \'@rsmdc/css/rs-button.scss\';\n\n' +
+        '.button {\n' +
+        '  &.-horizontal-padding {\n' +
+        '    @include rs-button-horizontal-padding($padding);\n' +
+        '  }\n' +
+        '}',
+        { lang: 'scss' }
+      )}
+      <p>オプション</p>
+      <ul>
+        <li>$padding: 水平方向の大きさ</li>
+      </ul>
+    `
+  })
+  .add('線の太さを変える', () => {
     return `
       <p>与えた大きさに境界線の太さを設定する。</p>
       <p><x-button class="outlined -outline-width">button</x-button></p>
@@ -493,6 +473,38 @@ storiesOf('Components|Button/カスタマイズ', module)
       </ul>
     `
   })
+  .add('アイコンをつける (廃止予定)', () =>
+    `
+      <p><x-button class="button -leading-icon">submit</x-button></p>
+      <h4>使い方</h4>
+      ${copyCodeBlock(
+        '<x-button class="button -leading-icon">submit</x-button>\n',
+        { lang: 'html' }
+      )}
+      ${copyCodeBlock(
+        '@import \'@rsmdc/button/rs-button.scss\';\n\n' +
+        '.button {\n' +
+        '  @include rs-button-type(flat);\n\n' +
+        '  &.-leading-icon {\n' +
+        '    @include rs-button-icon-image($url, $position, $size, $repeat);\n' +
+        '  }\n' +
+        '}',
+        { lang: 'scss' }
+      )}
+      <p>オプション</p>
+      <ul>
+        <li>$url: アイコン URL <br> 例）url('https://cdn3.iconfinder.com/data/icons/pyconic-icons-1-2/512/heart-outline-512.png')</li>
+        <li>$position: アイコンの位置, デフォルトは left</li>
+        <li>$size: アイコンサイズ, デフォルトは 18px</li>
+        <li>$repeat: 背景のrepeat, デフォルトは no-repeat</li>
+      </ul>
+    `
+  )
+  .add('アイコンの位置を変える', () => 
+    `
+      @include rs-button-icon-position($position);
+    `
+  )
 
 storiesOf('Components|Button', module)
   .addDecorator(withKnobs)
