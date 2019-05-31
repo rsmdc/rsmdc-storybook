@@ -1,16 +1,18 @@
 import { storiesOf } from '@storybook/html'
 import copyCodeBlock from "@pickra/copy-code-block"
 
-storiesOf('Common|はじめに', module)
-  .add('rsmdc概要', () => {
+storiesOf('Getting Started', module)
+  .add('イントロダクション', () => {
     return `
-      <h4>rsmdc概要</h4>
-      <p>マテリアルデザイン採用している事、カスタムエレメンツである事を書く</p>
+      <h4>イントロダクション</h4>
+      <p>内容：マテリアルデザイン採用、custom elements採用、sassのmixinでスタイル変更</p>
     `
   })
-  .add('インストール', () => {
+  .add('インストール方法', () => {
     return `
-      <h4>インストール</h4>
+      <h4>インストール方法</h4>
+      <p>yarn → define → html → scss</p>
+      <p>nuxtでのセットアップ方法も</p>
       ${copyCodeBlock(
         '$ yarn add @rsmdc/rsmdc',
         { lang: 'shell' }
@@ -22,11 +24,5 @@ storiesOf('Common|はじめに', module)
         'window.customElements.define(\'x-button\', Button)',
         { lang: 'js' }
       )}
-    `
-  })
-  .add('スタイル適用方法', () => {
-    return `
-      <h4>スタイル適用方法</h4>
-      <p>sassのmixinでスタイルを変える説明</p>
     `
   })
