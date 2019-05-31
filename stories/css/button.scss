@@ -20,6 +20,7 @@
   }
   &.-text-color {
     @include rs-button-ink-color(brown);
+    @include rs-button-states-color(brown);
   }
   &.-shape-radius {
     @include rs-button-shape-radius(13px);
