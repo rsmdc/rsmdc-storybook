@@ -96,3 +96,48 @@ storiesOf('Components|App bar', module)
     <h4>HTML属性</h4>
     <p>なし</p>
   `)
+
+storiesOf('Components|App bar/スタイルのカスタマイズ/アップバーのタイプを変える', module)
+  .add('normal (default)', () => `
+    mixinは不要 <br>
+    denseの時だけ　@include rs-top-app-bar-type($type); dense
+  `)
+  .add('short', () => `
+    @include rs-top-app-bar-type($type);<br>
+    short
+  `)
+  .add('prominent', () => `
+    @include rs-top-app-bar-type($type);<br>
+    prominent<br>
+    denseも同時に指定できる
+  `)
+  .add('fixed', () => `
+    @include rs-top-app-bar-type($type);<br>
+    fixed<br>
+  `)
+  .add('collapsed', () => `
+    @include rs-top-app-bar-type($type);<br>
+    collapsed<br>
+    shortも同時に指定できる
+  `)
+
+storiesOf('Components|App bar/スタイルのカスタマイズ', module)
+  .add('タイトルの色を変える', () => `
+    @include rs-top-app-bar-ink-color($color);
+  `)
+  .add('背景色を変える', () => `
+    @include rs-top-app-bar-fill-color($color);
+  `)
+  .add('背景色とタイトルの色を変える', () => `
+    @include rs-top-app-bar-fill-color-accessible($containerColor);<br>
+    タイトルの色は自動調整される
+  `)
+  .add('アップバーの角の丸みを変える', () => `
+    @include rs-top-app-bar-short-shape-radius($radius);<br>
+    タイプがshortの時のみ
+  `)
+
+
+
+
+
