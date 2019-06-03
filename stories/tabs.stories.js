@@ -96,7 +96,7 @@ storiesOf('Components|Tabs/スタイルのカスタマイズ', module)
   .add('アイコンをつける', () => `
     @include rs-tab-icon-image($url);
   `)
-  .add('テキストとアイコンの位置を変える', () => `
+  .add('アイコンの位置を変える', () => `
     @include rs-tab-icon-position($position);<br>
     defaultはleft、rightとcenterがある。アイコンのみの時は不要。
   `)

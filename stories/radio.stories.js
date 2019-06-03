@@ -75,3 +75,20 @@ storiesOf('Components|Radio', module)
     </table>
   `)
 
+storiesOf('Components|Radio/スタイルのカスタマイズ', module)
+  .add('チェックマークの色を変える', () => `
+    @include rs-radio-ink-color($color);
+  `)
+  .add('リップルの色を変える', () => `
+    @include rs-radio-states-color($color);
+  `)
+  .add('選択状態の線の色を変える', () => `
+    @include rs-radio-checked-stroke-color($color);
+  `)
+  .add('未選択状態の線の色を変える', () => `
+    @include rs-radio-unchecked-stroke-color($color);
+  `)
+  .add('ラベルの位置を変える', () => `
+    @include rs-radio-label-position($position);<br>
+    defaultはright。leftがある   
+  `)

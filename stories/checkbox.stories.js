@@ -87,7 +87,7 @@ storiesOf('Components|Checkbox/スタイルのカスタマイズ', module)
   .add('未選択状態のチェックボックスの枠線と内部の色を変える(修正予定)', () => `
     @include rs-checkbox-unchecked-container-color($borderColor, $containerColor);
   `)
-  .add('チェックボックスのラベルの位置を設定する', () => `
+  .add('ラベルの位置を変える', () => `
     @include rs-chechbox-label-position($position);<br>
     default位置はright
   `)
