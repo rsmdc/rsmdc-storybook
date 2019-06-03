@@ -3,14 +3,12 @@
 
 .button {
   margin-right: 10px;
-  @include rs-button-type(flat);
 
   &.-dense {
-    @include rs-button-type(flat, dense);
+    @include rs-button-type(dense);
   }
-  &.-leading-icon {
-    @include rs-button-padding-left(30px);
-    @include rs-button-icon-image(url('https://cdn3.iconfinder.com/data/icons/pyconic-icons-1-2/512/heart-outline-512.png'), 10%);
+  &.-icon {
+    @include rs-button-icon-image(url('https://cdn3.iconfinder.com/data/icons/pyconic-icons-1-2/512/heart-outline-512.png'));
   }
   &.-background-color {
     @include rs-button-type(unelevated);
@@ -37,9 +35,8 @@
   &.-dense {
     @include rs-button-type(raised, dense);
   }
-  &.-leading-icon {
-    @include rs-button-padding-left(30px);
-    @include rs-button-icon-image(url('https://cdn3.iconfinder.com/data/icons/pyconic-icons-1-2/512/heart-outline-512.png'), 10%);
+  &.-icon {
+    @include rs-button-icon-image(url('https://cdn3.iconfinder.com/data/icons/pyconic-icons-1-2/512/heart-outline-512.png'));
   }
   &.-text-color {
     @include rs-button-ink-color(#E4E212);
@@ -53,9 +50,8 @@
   &.-dense {
     @include rs-button-type(unelevated, dense);
   }
-  &.-leading-icon {
-    @include rs-button-padding-left(30px);
-    @include rs-button-icon-image(url('https://cdn3.iconfinder.com/data/icons/pyconic-icons-1-2/512/heart-outline-512.png'), 10%);
+  &.-icon {
+    @include rs-button-icon-image(url('https://cdn3.iconfinder.com/data/icons/pyconic-icons-1-2/512/heart-outline-512.png'));
   }
   &.-text-color {
     @include rs-button-ink-color(#E4E212);
@@ -71,31 +67,36 @@
   }
   &.-outline-color {
     @include rs-button-outline-color(#0ba6e4);
+    @include rs-button-ink-color(#0ba6e4);
+    @include rs-button-states-color(#92cfe7);
   }
   &.-outline-width {
-    @include rs-button-outline-width(4px);
+    @include rs-button-outline-width(3px);
   }
-  &.-leading-icon {
+  &.-icon {
     @include rs-button-padding-left(30px);
-    @include rs-button-icon-image(url('https://cdn3.iconfinder.com/data/icons/pyconic-icons-1-2/512/heart-outline-512.png'), 10%);
+    @include rs-button-icon-image(url('https://cdn3.iconfinder.com/data/icons/pyconic-icons-1-2/512/heart-outline-512.png'));
   }
   &.-text-color {
     @include rs-button-ink-color(#F53438);
   }
+  &.-horizontal-padding.-outline-width  {
+    @include rs-button-horizontal-padding(30px);
+    @include rs-button-outline-width(1px, 30px);
+  }
 }
 
 .icon {
-  @include rs-button-type(icon);
   margin: 0 10px 0 0;
 
   &:not(.-toggle) {
-    @include rs-button-icon-image(url('http://icons.iconarchive.com/icons/iconsmind/outline/512/Mail-icon.png'), center);
+    @include rs-button-icon-image(url('http://icons.iconarchive.com/icons/iconsmind/outline/512/Mail-icon.png'));
   }
   &.-toggle {
-    @include rs-button-icon-image(url('https://cdn0.iconfinder.com/data/icons/thin-voting-awards/57/thin-231_star_favorite-512.png'), center);
+    @include rs-button-icon-image(url('https://cdn0.iconfinder.com/data/icons/thin-voting-awards/57/thin-231_star_favorite-512.png'));
   }
   &.-on {
-    @include rs-button-icon-image(url('https://cdn0.iconfinder.com/data/icons/thin-voting-awards/57/thin-231_star_favorite-512.png'), center);
+    @include rs-button-icon-image(url('https://cdn0.iconfinder.com/data/icons/thin-voting-awards/57/thin-231_star_favorite-512.png'));
   }
 }
 
@@ -104,17 +105,17 @@
   margin: 0 5px;
 
   &.-normal {
-    @include rs-button-icon-image(url('http://icons.iconarchive.com/icons/iconsmind/outline/512/Mail-icon.png'), center);
+    @include rs-button-icon-image(url('http://icons.iconarchive.com/icons/iconsmind/outline/512/Mail-icon.png'));
 
     &.-fixed {
-      @include rs-button-icon-image(url('https://cdn0.iconfinder.com/data/icons/thin-voting-awards/57/thin-231_star_favorite-512.png'), center);
+      @include rs-button-icon-image(url('https://cdn0.iconfinder.com/data/icons/thin-voting-awards/57/thin-231_star_favorite-512.png'));
       @include rs-button-fab-fixed-bottom;
     }
   }
 
   &.-mini {
     @include rs-button-type(fab, mini);
-    @include rs-button-icon-image(url('http://icons.iconarchive.com/icons/iconsmind/outline/512/Mail-icon.png'), center, 16px);
+    @include rs-button-icon-image(url('http://icons.iconarchive.com/icons/iconsmind/outline/512/Mail-icon.png'));
   }
 
   &.-extended {
@@ -123,8 +124,6 @@
 
   &.-extended.-icon {
     @include rs-button-type(fab, extended);
-    @include rs-button-icon-image(url('http://icons.iconarchive.com/icons/iconsmind/outline/512/Mail-icon.png'), 20% 50%);
-    @include rs-button-padding-right(30px);
-    @include rs-button-padding-left(55px);
+    @include rs-button-icon-image(url('http://icons.iconarchive.com/icons/iconsmind/outline/512/Mail-icon.png'));
   }
 }
