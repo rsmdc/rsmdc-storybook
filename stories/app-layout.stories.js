@@ -9,7 +9,7 @@ import './css/style.scss'
 window.customElements.define('app-layout-content', AppLayoutContent)
 window.customElements.define('x-app-layout', AppLayout)
 
-storiesOf('Components|App-layout', module)
+storiesOf('Components|App layout', module)
   .addDecorator(withLinks)
   .add('概要', () => `
 
@@ -77,7 +77,7 @@ storiesOf('Components|App-layout', module)
     <p>なし</p>
   `)
   
-storiesOf('Components|App-layout/スタイルのカスタマイズ', module)
+storiesOf('Components|App layout/スタイルのカスタマイズ', module)
   .add('ドロワーが常に開かれている際のレイアウトを整える (廃止予定)', () => `
     @include rs-app-layout-type($drawerType);<br>
     @include rs-top-app-bar-with-drawer($drawerType);<br>
