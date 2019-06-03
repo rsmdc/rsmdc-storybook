@@ -203,3 +203,75 @@ storiesOf('Components|List', module)
       </tr>
     </table>
   `)
+
+storiesOf('Components|List/スタイルのカスタマイズ/リストのタイプを変える', module)
+  .add('normal (default)', () => `
+    mixinは不要。dense使う時だけ。<br>
+    @include rs-list-type($type);でdense
+  `)
+  .add('twoline', () => `
+    @include rs-list-type($types...); twoline <br>
+    denseとavatar-listも一緒に使える
+  `)
+  .add('avatar-list', () => `
+    @include rs-list-type($types...); avatar-list <br>
+    denseとtwo-lineも一緒に使える
+  `)
+
+storiesOf('Components|List/スタイルのカスタマイズ/仕切り線のタイプを変える', module)
+  .add('normal (default)', () => `
+    mixinは不要。
+  `)
+  .add('inset', () => `
+    @include rs-list-divider-type($types...); inset <br>
+    paddedも一緒に使える
+  `)
+  .add('padded', () => `
+    @include rs-list-divider-type($types...); padded <br>
+    insetも一緒に使える
+  `)
+
+
+storiesOf('Components|List/スタイルのカスタマイズ/画像の形を変える (修正予定)', module)
+  .add('normal (default)', () => `
+    mixinは不要。
+  `)  
+  .add('circle', () => `
+    @include rs-list-graphic-type($type); circle
+  `)
+  .add('rectangle', () => `
+    @include rs-list-graphic-type($type); rectangle
+  `)
+  .add('square', () => `
+    @include rs-list-graphic-type($type); square
+  `)
+
+storiesOf('Components|List/スタイルのカスタマイズ', module)
+  .add('テキスト(1行目)の色を変える', () => `
+    @include rs-list-item-primary-text-ink-color($color);
+  `)  
+  .add('テキスト(2行目)の色を変える', () => `
+    @include rs-list-item-secondary-text-ink-color($color);
+  `)
+  .add('メタ情報のテキストの色を変える', () => `
+    @include rs-list-item-meta-ink-color($color);
+  `)
+  .add('画像部分の背景色を変える', () => `
+    @include rs-list-item-graphic-ink-color($color);
+  `)
+  .add('仕切り線の色を変える', () => `
+    @include rs-list-divider-color($color);
+  `)
+  .add('サブヘッダーの色を変える', () => `
+    @include rs-list-group-subheader-ink-color($color);
+  `)
+  .add('画像を設定する (修正予定)', () => `
+    @include rs-list-graphic-image($url);
+  `)
+  .add('画像のサイズを変える (修正予定)', () => `
+    @include s-list-graphic-size($size);
+  `)
+  .add('リストの角の丸みを変える', () => `
+    @include rs-list-item-shape-radius($radius);
+  `)
+  
