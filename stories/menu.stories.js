@@ -9,7 +9,7 @@ import './css/style.scss'
 window.customElements.define('x-menu', Menu)
 
 
-storiesOf('Components|menu', module)
+storiesOf('Components|Menu', module)
   .addDecorator(withLinks)
   .add('概要', () => `
 
@@ -59,5 +59,17 @@ storiesOf('Components|menu', module)
       </tr>
     </table>
   `)
-  
 
+storiesOf('Components|Menu/スタイルのカスタマイズ', module)
+  .add('テキストの色を変える', () => `
+    @include rs-menu-surface-ink-color($color);
+  `)
+  .add('背景色を変える', () => `
+    @include rs-menu-surface-fill-color($color);
+  `)
+  .add('メニューの幅を変える', () => `
+    @include rs-menu-width($width);
+  `)
+  .add('メニューの角の丸みを変える', () => `
+    @include rs-menu-surface-shape-radius($radius); 
+  `)
