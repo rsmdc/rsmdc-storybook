@@ -65,3 +65,38 @@ storiesOf('Components|Tabs', module)
       </tr>
     </table>
   `)
+
+storiesOf('Components|Tabs/スタイルのカスタマイズ', module)
+  .add('テキストの色を変える', () => `
+    @include rs-tab-ink-color($color);
+  `)
+  .add('リップルの色を変える', () => `
+    @include rs-tab-states-color($color);
+  `)
+  .add('タブの下線の色を変える', () => `
+    @include rs-tab-indicator-color($color);
+  `)
+  .add('タブの下線の太さを変える', () => `
+    @include rs-tab-indicator-height($height);
+  `)
+  .add('タブの下線幅をテキスト幅に合わせる', () => `
+    @include rs-tab-indicator-width-fixed-contents;
+  `)
+  .add('タブバーの幅を変える', () => `
+    @include rs-tab-bar-width($width);
+  `)
+  .add('タブ幅を変える', () => `
+    @include rs-tab-fixed-width($width);<br>
+    タブ幅が全て固定になる
+  `)
+  .add('タブ全体の位置を変える', () => `
+    @include rs-tab-bar-position($position);<br>
+    defaultはalign-start。align-endとalign-centerがある
+  `)
+  .add('アイコンをつける', () => `
+    @include rs-tab-icon-image($url);
+  `)
+  .add('テキストとアイコンの位置を変える', () => `
+    @include rs-tab-icon-position($position);<br>
+    defaultはleft、rightとcenterがある。アイコンのみの時は不要。
+  `)
