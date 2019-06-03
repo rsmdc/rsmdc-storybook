@@ -1,13 +1,11 @@
 import { storiesOf } from '@storybook/html'
-import { Drawer, TopAppBar, AppLayoutContent, AppLayout } from '@rsmdc/rsmdc'
+import { AppLayoutContent, AppLayout } from '@rsmdc/rsmdc'
 import { withKnobs, text, boolean, select } from '@storybook/addon-knobs'
 import { withLinks } from '@storybook/addon-links'
 import copyCodeBlock from '@pickra/copy-code-block'
 
 import './css/style.scss'
 
-window.customElements.define('x-drawer', Drawer)
-window.customElements.define('x-app-bar', TopAppBar)
 window.customElements.define('app-layout-content', AppLayoutContent)
 window.customElements.define('x-app-layout', AppLayout)
 
