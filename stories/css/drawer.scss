@@ -1,0 +1,7 @@
+@import '../../node_modules/@rsmdc/drawer/rs-drawer';
+
+.app-layout {
+  > .drawer {
+    @include rs-drawer-type(dismissible);
+  }
+}
