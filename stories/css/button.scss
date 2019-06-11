@@ -16,22 +16,12 @@
     @include rs-button-container-fill-color(beige);
     @include rs-states(brown);
   }
-  &.-filled-accessible {
-    @include rs-button-filled-accessible(black);
-  }
-  &.-states-color {
-    @include rs-button-states-color(black);
-  }
-  &.-icon-position {
-    @include rs-button-icon-image(url('https://cdn3.iconfinder.com/data/icons/pyconic-icons-1-2/512/heart-outline-512.png'));
-    @include rs-button-icon-position(right);
-  }
   &.-text-color {
     @include rs-button-ink-color(brown);
     @include rs-button-states-color(brown);
   }
   &.-shape-radius {
-    @include rs-button-shape-radius(30px);
+    @include rs-button-shape-radius(13px);
   }
   &.-horizontal-padding {
     @include rs-button-horizontal-padding(30px);
@@ -41,7 +31,7 @@
 .raised {
   @include rs-button-type(raised);
   margin: 0 10px 0 0;
-  
+
   &.-dense {
     @include rs-button-type(raised, dense);
   }
@@ -97,7 +87,7 @@
 }
 
 .icon {
-  // margin: 0 10px 0 0;
+  margin: 0 10px 0 0;
 
   &:not(.-toggle) {
     @include rs-button-icon-image(url('http://icons.iconarchive.com/icons/iconsmind/outline/512/Mail-icon.png'));
