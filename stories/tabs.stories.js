@@ -101,7 +101,7 @@ storiesOf('Components|Tabs/スタイルのカスタマイズ', module)
           <tab-item class="tab">tab3</tab-item>
         </x-tab-bar>
       </p>
-      <h4>使用するmixin</h4>
+      <h4>使用するmixi</h4>
       ${copyCodeBlock(
         '@include rs-tab-ink-color($color);',
         { lang: 'scss' }
