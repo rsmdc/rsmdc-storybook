@@ -101,7 +101,7 @@ storiesOf('Components|Tabs/スタイルのカスタマイズ', module)
           <tab-item class="tab">tab3</tab-item>
         </x-tab-bar>
       </p>
-      <h4>使用するmixi</h4>
+      <h4>使用するmixin</h4>
       ${copyCodeBlock(
         '@include rs-tab-ink-color($color);',
         { lang: 'scss' }
@@ -266,7 +266,7 @@ storiesOf('Components|Tabs/スタイルのカスタマイズ', module)
       ${copyCodeBlock(
         '@import \'@rsmdc/tabs/rs-tabs.scss\';\n\n' +
         '.tab-bar {\n' +
-        '   &.-indicator-height {\n' +
+        '   &.-indicator-width-fixed-contents {\n' +
         '      @include rs-tab-indicator-width-fixed-contents;\n' +
         '   }\n' +
         '}',
@@ -345,7 +345,7 @@ storiesOf('Components|Tabs/スタイルのカスタマイズ', module)
         '@import \'@rsmdc/tabs/rs-tabs.scss\';\n\n' +
         '.tab-bar {\n' +
         '   &.-fixed-width {\n' +
-        '     @include rs-tab-bar-width(400px);\n' +
+        '     @include rs-tab-ficxed-width(100px);\n' +
         '   }\n' +
         '}',
         { lang: 'scss' }
@@ -362,7 +362,6 @@ storiesOf('Components|Tabs/スタイルのカスタマイズ', module)
           <tab-item class="tab">tab3</tab-item>
         </x-tab-bar>
       </p>
-
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
         '@include rs-tab-bar-position($position);',
@@ -381,7 +380,8 @@ storiesOf('Components|Tabs/スタイルのカスタマイズ', module)
         '@import \'@rsmdc/tabs/rs-tabs.scss\';\n\n' +
         '.tab-bar {\n' +
         '   &.-bar-position {\n' +
-        '      @include rs-tab-bar-position(align-center);\n' +
+        '      @include rs-tab-fixed-width(90px);\n' +
+        '      @include rs-tab-bar-position(align-end);\n' +
         '   }\n' +
         '}',
         { lang: 'scss' }

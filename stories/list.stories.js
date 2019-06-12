@@ -37,15 +37,40 @@ storiesOf('Components|List', module)
     </p>
     <p>リストのタイプ</p>
     <ul>
-      <li>normal(デフォルト）</li>
-      <li>twoline: 2行表示</li>
-      <li>avatar-list: アバター表示</li>
+      <li>normal(デフォルト） <br> <a class="link" href="#" data-sb-kind="Components|List/スタイルのカスタマイズ/リストのタイプを変える" data-sb-story="normal(default)">参照はこちら</a></li>
+      <li>
+        twoline <br> 
+        2行表示にする <br>
+        <a class="link" href="#" data-sb-kind="Components|List/スタイルのカスタマイズ/リストのタイプを変える" data-sb-story="twoline">参照はこちら</a>
+      </li>
+      <li>
+        avatar-list <br>
+        アバターを表示<br>
+        <a class="link" href="#" data-sb-kind="Components|List/スタイルのカスタマイズ/リストのタイプを変える" data-sb-story="avatar-list">参照はこちら</a>
+      </li>
     </ul>
     <p>仕切り線のタイプ</p>
     <ul>
-      <li>normal(デフォルト）</li>
-      <li>inset</li>
-      <li>padded</li>
+      <li>normal(デフォルト） <br> <a class="link" href="#" data-sb-kind="Components|List/スタイルのカスタマイズ/仕切り線のタイプを変える" data-sb-story="normal(default)">参照はこちら</a></li>
+      <li>inset <br> <a class="link" href="#" data-sb-kind="Components|List/スタイルのカスタマイズ/仕切り線のタイプを変える" data-sb-story="inset">参照はこちら</a></li>
+      <li>padded <br> <a class="link" href="#" data-sb-kind="Components|List/スタイルのカスタマイズ/仕切り線のタイプを変える" data-sb-story="padded">参照はこちら</a></li>
+    </ul>
+    <p>画像タイプ</p>
+    <ul>
+      <li>normal（デフォルト） <br> <a class="link" href="#" data-sb-kind="Components|List/スタイルのカスタマイズ/画像の形を変える(修正予定)" data-sb-story="normal(default)">参照はこちら</a></li>
+      <li>
+        circle <br>
+        丸く表示 <br>
+        <a class="link" href="#" data-sb-kind="Components|List/スタイルのカスタマイズ/画像の形を変える(修正予定)" data-sb-story="circle">参照はこちら</a>
+      </li>
+      <li>requtangle <br>
+        長方形に表示 <br>
+        <a class="link" href="#" data-sb-kind="Components|List/スタイルのカスタマイズ/画像の形を変える(修正予定)" data-sb-story="requtangle">参照はこちら</a>
+      </li>
+      <li>square <br>
+        四角に表示 <br>
+        <a class="link" href="#" data-sb-kind="Components|List/スタイルのカスタマイズ/画像の形を変える(修正予定)" data-sb-story="square">参照はこちら</a>
+      </li>
     </ul>
   `
   })
@@ -1226,7 +1251,7 @@ storiesOf('Components|List/スタイルのカスタマイズ/画像の形を変�
       ${copyCodeBlock(
         '@import \'@rsmdc/list/rs-list.scss\';\n\n' +
         '.graphic {\n' +
-        '   @include rs-list-graphic-type(circle, url(\'http://icons.iconarchive.com/icons/iconsmind/outline/512/Mail-icon.png\'));\n' +
+        '   @include rs-list-graphic-type(circle, url(\'https://i.pinimg.com/originals/cd/52/73/cd5273a48825885a17c63a28c15e4e25.jpg\'));\n' +
         '}',
         { lang: 'scss' }
       )}
@@ -1345,7 +1370,7 @@ storiesOf('Components|List/スタイルのカスタマイズ/画像の形を変�
       ${copyCodeBlock(
         '@import \'@rsmdc/list/rs-list.scss\';\n\n' +
         '.graphic {\n' +
-        '   @include rs-list-graphic-type(rectangle, url(\'http://icons.iconarchive.com/icons/iconsmind/outline/512/Mail-icon.png\'));\n' +
+        '   @include rs-list-graphic-type(rectangle, url(\'https://ddnavi.com/wp-content/uploads/2015/11/hokkyokuimg01.jpg\'));\n' +
         '}',
         { lang: 'scss' }
       )}
@@ -1464,7 +1489,7 @@ storiesOf('Components|List/スタイルのカスタマイズ/画像の形を変�
     ${copyCodeBlock(
       '@import \'@rsmdc/list/rs-list.scss\';\n\n' +
       '.graphic {\n' +
-      '   @include rs-list-graphic-type(square, url(\'http://icons.iconarchive.com/icons/iconsmind/outline/512/Mail-icon.png\'));\n' +
+      '   @include rs-list-graphic-type(square, url(\'https://ddnavi.com/wp-content/uploads/2015/11/hokkyokuimg01.jpg\'));\n' +
       '}',
       { lang: 'scss' }
     )}
@@ -1490,14 +1515,14 @@ storiesOf('Components|List/スタイルのカスタマイズ', module)
           <list-subheader class="subheader">リストタイトル</list-subheader>
           <list-divider></list-divider>
           <list-item class="item">
-            <list-graphic class="graphic -square"></list-graphic>
+            <list-graphic class="graphic"></list-graphic>
             <list-text class="text">
               <list-primary class="primary">1行目</list-primary>
               <list-secondary class="secondary">2行目</list-secondary>
             </list-text>
           </list-item>
           <list-item class="item">
-            <list-graphic class="graphic -square"></list-graphic>
+            <list-graphic class="graphic"></list-graphic>
             <list-text class="text">
               <list-primary class="primary">1行目</list-primary>
               <list-secondary class="secondary">2行目</list-secondary>
@@ -1508,14 +1533,14 @@ storiesOf('Components|List/スタイルのカスタマイズ', module)
           <list-subheader class="subheader">リストタイトル</list-subheader>
           <list-divider></list-divider>
           <list-item class="item">
-            <list-graphic class="graphic -square"></list-graphic>
+            <list-graphic class="graphic"></list-graphic>
             <list-text class="text">
               <list-primary class="primary">1行目</list-primary>
               <list-secondary class="secondary">2行目</list-secondary>
             </list-text>
           </list-item>
           <list-item class="item">
-            <list-graphic class="graphic -square"></list-graphic>
+            <list-graphic class="graphic"></list-graphic>
             <list-text class="text">
               <list-primary class="primary">1行目</list-primary>
               <list-secondary class="secondary">2行目</list-secondary>
@@ -1617,14 +1642,14 @@ storiesOf('Components|List/スタイルのカスタマイズ', module)
           <list-subheader class="subheader">リストタイトル</list-subheader>
           <list-divider></list-divider>
           <list-item class="item">
-            <list-graphic class="graphic -square"></list-graphic>
+            <list-graphic class="graphic"></list-graphic>
             <list-text class="text">
               <list-primary class="primary">1行目</list-primary>
               <list-secondary class="secondary">2行目</list-secondary>
             </list-text>
           </list-item>
           <list-item class="item">
-            <list-graphic class="graphic -square"></list-graphic>
+            <list-graphic class="graphic"></list-graphic>
             <list-text class="text">
               <list-primary class="primary">1行目</list-primary>
               <list-secondary class="secondary">2行目</list-secondary>
@@ -1635,14 +1660,14 @@ storiesOf('Components|List/スタイルのカスタマイズ', module)
           <list-subheader class="subheader">リストタイトル</list-subheader>
           <list-divider></list-divider>
           <list-item class="item">
-            <list-graphic class="graphic -square"></list-graphic>
+            <list-graphic class="graphic"></list-graphic>
             <list-text class="text">
               <list-primary class="primary">1行目</list-primary>
               <list-secondary class="secondary">2行目</list-secondary>
             </list-text>
           </list-item>
           <list-item class="item">
-            <list-graphic class="graphic -square"></list-graphic>
+            <list-graphic class="graphic"></list-graphic>
             <list-text class="text">
               <list-primary class="primary">1行目</list-primary>
               <list-secondary class="secondary">2行目</list-secondary>
@@ -1738,14 +1763,14 @@ storiesOf('Components|List/スタイルのカスタマイズ', module)
           <list-subheader class="subheader">リストタイトル</list-subheader>
           <list-divider></list-divider>
           <list-item class="item">
-            <list-graphic class="graphic -square"></list-graphic>
+            <list-graphic class="graphic"></list-graphic>
             <list-text class="text">
               <list-primary class="primary">1行目</list-primary>
               <list-secondary class="secondary">2行目</list-secondary>
             </list-text>
           </list-item>
           <list-item class="item">
-            <list-graphic class="graphic -square"></list-graphic>
+            <list-graphic class="graphic"></list-graphic>
             <list-text class="text">
               <list-primary class="primary">1行目</list-primary>
               <list-secondary class="secondary">2行目</list-secondary>
@@ -1756,14 +1781,14 @@ storiesOf('Components|List/スタイルのカスタマイズ', module)
           <list-subheader class="subheader">リストタイトル</list-subheader>
           <list-divider></list-divider>
           <list-item class="item">
-            <list-graphic class="graphic -square"></list-graphic>
+            <list-graphic class="graphic"></list-graphic>
             <list-text class="text">
               <list-primary class="primary">1行目</list-primary>
               <list-secondary class="secondary">2行目</list-secondary>
             </list-text>
           </list-item>
           <list-item class="item">
-            <list-graphic class="graphic -square"></list-graphic>
+            <list-graphic class="graphic"></list-graphic>
             <list-text class="text">
               <list-primary class="primary">1行目</list-primary>
               <list-secondary class="secondary">2行目</list-secondary>
@@ -1859,14 +1884,14 @@ storiesOf('Components|List/スタイルのカスタマイズ', module)
           <list-subheader class="subheader">リストタイトル</list-subheader>
           <list-divider></list-divider>
           <list-item class="item">
-            <list-graphic class="graphic">aiueo</list-graphic>
+            <list-graphic class="graphic">sample</list-graphic>
             <list-text class="text">
               <list-primary class="primary">1行目</list-primary>
               <list-secondary class="secondary">2行目</list-secondary>
             </list-text>
           </list-item>
           <list-item class="item">
-            <list-graphic class="graphic">wa</list-graphic>
+            <list-graphic class="graphic">sample</list-graphic>
             <list-text class="text">
               <list-primary class="primary">1行目</list-primary>
               <list-secondary class="secondary">2行目</list-secondary>
@@ -1955,7 +1980,7 @@ storiesOf('Components|List/スタイルのカスタマイズ', module)
         '@import \'@rsmdc/list/rs-list.scss\';\n\n' +
         '.group-list {\n' +
         '  &.-secondary-text-ink-color {\n' +
-        '   @include rs-list-item-graphic-ink-color(orange);\n' +
+        '   @include rs-list-item-graphic-ink-color(gray);\n' +
         '  }\n' +
         '}',
         { lang: 'scss' }
@@ -2256,6 +2281,72 @@ storiesOf('Components|List/スタイルのカスタマイズ', module)
           </list-item>
         </x-list>
       </x-list-group>
+      <h4>使用するmixin</h4>
+      ${copyCodeBlock(
+        '@include rs-list-graphic-image($url);\n',
+        { lang: 'scss' }
+      )}
+      <h4>使用方法</h4>
+      ${copyCodeBlock(
+        '<x-list class="list">\n' +
+        '   <list-item class="item">\n' +
+        '      <list-text class="text">テキスト</list-text>\n' +
+        '      <list-meta class="meta">メタ情報</list-meta>\n' +
+        '   </list-item>\n' +
+        '   <list-item class="item">\n' +
+        '      <list-text class="text">テキスト</list-text>\n' +
+        '      <list-meta class="meta">メタ情報</list-meta>\n' +
+        '   </list-item>\n' +
+        '</x-list>\n' +
+        '<x-list-group class="group-list -subheader-ink-color">\n' +
+        '   <x-list class="list">\n' +
+        '      <list-subheader class="subheader">リストタイトル</list-subheader>\n' +
+        '      <list-divider></list-divider>\n' +
+        '      <list-item class="item">\n' +
+        '         <list-graphic class="graphic"></list-graphic>\n' +
+        '         <list-text class="text">\n' +
+        '             <list-primary class="primary">1行目</list-primary>\n' +
+        '             <list-secondary class="secondary">2行目</list-secondary>\n' +
+        '          </list-text>\n' +
+        '      </list-item>\n' +
+        '      <list-item class="item">\n' +
+        '        <list-graphic class="graphic"></list-graphic>\n' +
+        '        <list-text class="text">\n' +
+        '          <list-primary class="primary">1行目</list-primary>\n' +
+        '          <list-secondary class="secondary">2行目</list-secondary>\n' +
+        '        </list-text>\n' +
+        '      </list-item>\n' +
+        '   </x-list>\n' +
+        '   <x-list class="list">\n' +
+        '      <list-subheader class="subheader">リストタイトル</list-subheader>\n' +
+        '      <list-divider></list-divider>\n' +
+        '      <list-item class="item">\n' +
+        '         <list-graphic class="graphic"></list-graphic>\n' +
+        '         <list-text class="text">\n' +
+        '            <list-primary class="primary">1行目</list-primary>\n' +
+        '            <list-secondary class="secondary">2行目</list-secondary>\n' +
+        '         </list-text>\n' +
+        '      </list-item>\n' +
+        '      <list-item class="item">\n' +
+        '         <list-graphic class="graphic"></list-graphic>\n' +
+        '         <list-text class="text">\n' +
+        '            <list-primary class="primary">1行目</list-primary>\n' +
+        '            <list-secondary class="secondary">2行目</list-secondary>\n' +
+        '         </list-text>\n' +
+        '         <list-meta class="meta">メタ情報</list-meta>\n' +
+        '      </list-item>\n' +
+        '   </x-list>\n' +
+        '</x-list-group>\n' ,
+        { lang: 'html' }
+      )}
+      ${copyCodeBlock(
+        '@import \'@rsmdc/list/rs-list.scss\';\n\n' +
+        '.graphic {\n' +
+        '   @include rs-list-graphic-image(url(\'https://ddnavi.com/wp-content/uploads/2015/11/hokkyokuimg01.jpg\'));\n' +
+        '}',
+        { lang: 'scss' }
+      )}
+
     `
   })
   .add('画像のサイズを変える (修正予定)', () => {
@@ -2276,14 +2367,14 @@ storiesOf('Components|List/スタイルのカスタマイズ', module)
           <list-subheader class="subheader">リストタイトル</list-subheader>
           <list-divider></list-divider>
           <list-item class="item">
-            <list-graphic class="graphic -size"></list-graphic>
+            <list-graphic class="graphic -rectangle -size"></list-graphic>
             <list-text class="text">
               <list-primary class="primary">1行目</list-primary>
               <list-secondary class="secondary">2行目</list-secondary>
             </list-text>
           </list-item>
           <list-item class="item">
-            <list-graphic class="graphic -size"></list-graphic>
+            <list-graphic class="graphic -rectangle -size"></list-graphic>
             <list-text class="text">
               <list-primary class="primary">1行目</list-primary>
               <list-secondary class="secondary">2行目</list-secondary>
@@ -2294,14 +2385,14 @@ storiesOf('Components|List/スタイルのカスタマイズ', module)
           <list-subheader class="subheader">リストタイトル</list-subheader>
           <list-divider></list-divider>
           <list-item class="item">
-            <list-graphic class="graphic -size"></list-graphic>
+            <list-graphic class="graphic -rectangle -size"></list-graphic>
             <list-text class="text">
               <list-primary class="primary">1行目</list-primary>
               <list-secondary class="secondary">2行目</list-secondary>
             </list-text>
           </list-item>
           <list-item class="item">
-            <list-graphic class="graphic -size"></list-graphic>
+            <list-graphic class="graphic -rectangle -size"></list-graphic>
             <list-text class="text">
               <list-primary class="primary">1行目</list-primary>
               <list-secondary class="secondary">2行目</list-secondary>

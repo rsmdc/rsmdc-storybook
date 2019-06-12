@@ -27,23 +27,26 @@
     @include rs-list-divider-color(brown);
   }
   &.-graphic-ink-color {
-    @include rs-list-item-graphic-ink-color(orange);
+    @include rs-list-item-graphic-ink-color(gray);
   }
 }
 
 .graphic {
-  @include rs-list-graphic-type(circle, url('http://icons.iconarchive.com/icons/iconsmind/outline/512/Mail-icon.png'));
-  
+  @include rs-list-graphic-type(circle, url('https://i.pinimg.com/originals/cd/52/73/cd5273a48825885a17c63a28c15e4e25.jpg'));
   &.-size {
     @include rs-list-graphic-size_(50px);
   }
   &.-rectangle {
-    @include rs-list-graphic-type(rectangle, url('http://icons.iconarchive.com/icons/iconsmind/outline/512/Mail-icon.png'));
+    @include rs-list-graphic-type(rectangle, url('https://ddnavi.com/wp-content/uploads/2015/11/hokkyokuimg01.jpg'));
+    @include rs-list-graphic-size_(80px);
   }
   &.-square {
-    @include rs-list-graphic-type(square, url('http://icons.iconarchive.com/icons/iconsmind/outline/512/Mail-icon.png'));
+    @include rs-list-graphic-type(square, url('https://ddnavi.com/wp-content/uploads/2015/11/hokkyokuimg01.jpg'));
+    --rs-list-item-graphic--border-radius: 3px;
   }
 }
+
+
 
 .-shape-radius {
   @include rs-list-item-shape-radius(10px);
@@ -52,3 +55,6 @@
   @include rs-list-item-meta-ink-color(brown);
 }
 
+th {
+  font-size: 14px;
+}

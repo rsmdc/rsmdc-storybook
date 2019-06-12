@@ -27,6 +27,33 @@ storiesOf('Components|App bar', module)
         https://material.io/design/components/app-bars-top.html
       </a>
     </p>
+    <p>タイプ</p>
+    <ul>
+      <li>
+        normal(default) <br>
+        <a class="link" href="#" data-sb-kind="Components|app-bar/スタイルのカスタマイズ/アップバーのタイプを変える" data-sb-story="normal(default)">参照はこちら</a>
+      </li>
+      <li>
+        short <br>
+        アイコンのみの表示 <br>
+        <a class="link" href="#" data-sb-kind="Components|app-bar/スタイルのカスタマイズ/アップバーのタイプを変える" data-sb-story="short">参照はこちら</a>
+      </li>
+      <li>
+        prominent <br>
+        高さが広めのもの <br>
+        <a class="link" href="#" data-sb-kind="Components|app-bar/スタイルのカスタマイズ/アップバーのタイプを変える" data-sb-story="prominent">参照はこちら</a>
+      </li>
+      <li>
+        fixed <br>
+        スクロールすると固定される <br>
+        <a class="link" href="#" data-sb-kind="Components|app-bar/スタイルのカスタマイズ/アップバーのタイプを変える" data-sb-story="fixed">参照はこちら</a>
+      </li>
+      <li>
+        collapsed <br>
+        角丸にする <br>
+        <a class="link" href="#" data-sb-kind="Components|app-bar/スタイルのカスタマイズ/アップバーのタイプを変える" data-sb-story="collapsed">参照はこちら</a>
+      </li>
+    </ul>
     `
   })
   .add('使用方法', () => `
@@ -43,11 +70,11 @@ storiesOf('Components|App bar', module)
     </p>
     ${copyCodeBlock(
       '<x-app-bar class="app-bar">\n' +
-      '   <app-bar-nav class="nav" />\n' +
+      '   <app-bar-nav class="nav"></app-bar-nav>\n' +
       '   <app-bar-title class="title">タイトル</app-bar-title>\n' +
       '   <app-bar-actions class="actions">\n' +
-      '      <app-bar-item class="item -cut"/>\n' +
-      '      <app-bar-item class="item -copy"/>\n' +
+      '      <app-bar-item class="item -cut"></app-bar-item>\n' +
+      '      <app-bar-item class="item -copy"></app-bar-item>\n' +
       '   </app-bar-actions>\n' +
       '</x-app-bar>\n',
       { lang: 'html' }
@@ -134,8 +161,7 @@ storiesOf('Components|App bar/スタイルのカスタマイズ/アップバー�
       <h4>normal（デフォルト）</h4>
       <p>
         normalを使用する場合mixinは不要。<br>
-        denseを使用する場合はmixinが必要（後述）。<br>
-        （ 表示されているのはdense ）
+        denseを使用する場合はmixinが必要（後述）。
       </p>
       <h4>使用方法</h4>
       ${copyCodeBlock(
@@ -191,7 +217,6 @@ storiesOf('Components|App bar/スタイルのカスタマイズ/アップバー�
         </x-app-bar>
       </p>
       <h4>short</h4>
-      <p>app barの横幅を短くする。</p>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
         '@include rs-top-app-bar-type($type);',
@@ -275,7 +300,6 @@ storiesOf('Components|App bar/スタイルのカスタマイズ/アップバー�
         </x-app-bar>
       </p>
       <h4>fixed</h4>
-      App barを固定する。
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
         '@include rs-top-app-bar-type($type);',
@@ -480,6 +504,10 @@ storiesOf('Components|App bar/スタイルのカスタマイズ', module)
         '}',
         { lang: 'scss' }
       )}
+      <p>オプション</p>
+      <ul>
+        <li>$containerColor: 背景色を指定した色に変える。</li>
+      </ul>
     `
   })
   .add('アップバーの角の丸みを変える', () => {

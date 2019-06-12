@@ -15,11 +15,28 @@ storiesOf('Getting Started', module)
         custom elementsは、開発者が独自にHTMLタグを定義し、サイト上で利用できるようにする。<br>
         繰り返し利用されるコンポーネントを単純化し、再利用できるので手間を大幅に削減できる。
       </p>
+      <p style="font-size: 13px;">（ボタンの場合の例）</p>
+      ${copyCodeBlock(
+        '<x-button></x-button>',
+        { lang: 'html' }
+      )}
       <h5>mixin</h5>
       <p>
         mixinは、別で定義したスタイルを@includeで何度も呼び出せる。<br>
         関数的な使い方ができるためコードがすっきりし、メンテナンス性も高まる。
       </p>
+      <p style="font-size: 13px;">（ボタンの場合の例）</p>
+      ${copyCodeBlock(
+        '@mixin rs-button-ink-color($color) {\n' +
+        '   --rs-button_not_disabled--color: #{$color};\n' +
+        '}',
+        { lang: 'scss'}
+      )}
+      
+      ${copyCodeBlock(
+        '@include rs-button-ink-color($color);',
+        { lang: 'scss' }
+      )}
     `
   })
   .add('インストール方法', () => {

@@ -21,7 +21,12 @@
     @include rs-tab-bar-width(600px);
   }
   &.-fixed-width {
-    @include rs-tab-bar-width(400px);
+    @include rs-tab-fixed-width(100px);
+  }
+
+  &.-bar-position {
+    @include rs-tab-fixed-width(90px);
+    @include rs-tab-bar-position(align-end);
   }
   
   &.-icon-image {
@@ -33,7 +38,3 @@
   }
 }
 
-.-bar-position {
-
-  @include rs-tab-bar-position(align-end);
-}

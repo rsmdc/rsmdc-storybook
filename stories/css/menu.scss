@@ -5,7 +5,7 @@
 
 .my-menu {
   &.-ink-color {
-    @include rs-menu-surface-ink-color(orange);
+    @include rs-menu-surface-ink-color(brown);
   }
   &.-fill-color {
     @include rs-menu-surface-fill-color(gray);
