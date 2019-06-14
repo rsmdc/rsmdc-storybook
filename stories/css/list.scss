@@ -30,7 +30,6 @@
     @include rs-list-item-graphic-ink-color(gray);
   }
 }
-
 .graphic {
   @include rs-list-graphic-type(circle, url('https://i.pinimg.com/originals/cd/52/73/cd5273a48825885a17c63a28c15e4e25.jpg'));
   &.-size {

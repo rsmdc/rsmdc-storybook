@@ -37,10 +37,12 @@ storiesOf('Components|List', module)
     </p>
     <p>リストのタイプ</p>
     <ul>
-      <li>normal(デフォルト） <br> <a class="link" href="#" data-sb-kind="Components|List/スタイルのカスタマイズ/リストのタイプを変える" data-sb-story="normal(default)">参照はこちら</a></li>
+      <li>normal(デフォルト） <br>
+        1行表示 <br>
+        <a class="link" href="#" data-sb-kind="Components|List/スタイルのカスタマイズ/リストのタイプを変える" data-sb-story="normal(default)">参照はこちら</a></li>
       <li>
         twoline <br> 
-        2行表示にする <br>
+        2行表示 <br>
         <a class="link" href="#" data-sb-kind="Components|List/スタイルのカスタマイズ/リストのタイプを変える" data-sb-story="twoline">参照はこちら</a>
       </li>
       <li>
@@ -158,14 +160,13 @@ storiesOf('Components|List', module)
       '   </x-list>\n' +
       '   <x-list class="list">\n' +
       '      <list-subheader class="subheader">リストタイトル</list-subheader>\n' +
-      '      <list-divider />\n' +
+      '      <list-divider></list-divider>\n' +
       '      <list-item class="item">\n' +
       '         <list-graphic class="graphic"></list-graphic>\n' +
       '         <list-text class="text">\n' +
       '             <list-primary class="primary">1行目</list-text>\n' +
       '             <list-secondary class="secondary">2行目</list-text>\n' +
       '         </list-text>\n' +
-      '      </list-item>\n' +
       '      </list-item>\n' +
       '      <list-item class="item">\n' +
       '         <list-graphic class="graphic"></list-graphic>\n' +
@@ -323,46 +324,8 @@ storiesOf('Components|List/スタイルのカスタマイズ/リストのタイ�
           <list-text class="text">テキスト</list-text>
           <list-meta class="meta">メタ情報</list-meta>
         </list-item>
-      </x-list>
-      <x-list-group class="group-list">
-        <x-list class="list">
-          <list-subheader class="subheader">リストタイトル</list-subheader>
-          <list-divider></list-divider>
-          <list-item class="item">
-            <list-graphic class="graphic"></list-graphic>
-            <list-text class="text">
-              <list-primary class="primary">1行目</list-primary>
-              <list-secondary class="secondary">2行目</list-secondary>
-            </list-text>
-          </list-item>
-          <list-item class="item">
-            <list-graphic class="graphic"></list-graphic>
-            <list-text class="text">
-              <list-primary class="primary">1行目</list-primary>
-              <list-secondary class="secondary">2行目</list-secondary>
-            </list-text>
-          </list-item>
-        </x-list>
-        <x-list class="list">
-          <list-subheader class="subheader">リストタイトル</list-subheader>
-          <list-divider></list-divider>
-          <list-item class="item">
-            <list-graphic class="graphic"></list-graphic>
-            <list-text class="text">
-              <list-primary class="primary">1行目</list-primary>
-              <list-secondary class="secondary">2行目</list-secondary>
-            </list-text>
-          </list-item>
-          <list-item class="item">
-            <list-graphic class="graphic"></list-graphic>
-              <list-text class="text">
-                <list-primary class="primary">1行目</list-primary>
-                <list-secondary class="secondary">2行目</list-secondary>
-              </list-text>
-              <list-meta class="meta">メタ情報</list-meta>
-          </list-item>
-        </x-list>
       </x-list-group>
+      
       <h4>使用方法</h4>
       ${copyCodeBlock(
         '<x-list class="list">\n' +

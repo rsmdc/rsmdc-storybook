@@ -257,6 +257,7 @@ storiesOf('Components|App bar/スタイルのカスタマイズ/アップバー�
           </app-bar-actions>
         </x-app-bar>
       </p>
+
       <h4>prominent</h4>
       <p>denseも同時に指定できる</p>
       <h4>使用するmixin</h4>

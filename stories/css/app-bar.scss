@@ -1,5 +1,8 @@
 @import '../../node_modules/@rsmdc/top-app-bar/rs-top-app-bar';
 
+:host {
+   -webkit-overflow-scrolling: touch;
+ }
 .app-bar {
    > .nav {
       @include rs-top-app-bar-nav-image(url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgAQMAAADYVuV7AAAABlBMVEUAAAAzMzPI8eYgAAAAAXRSTlMAQObYZgAAABxJREFUeAFjIBOMAv7/UPCBlhzywWgYjIbBKAAANijXKaI5RRgAAAAASUVORK5CYII='));
@@ -21,7 +24,11 @@
    }
    &.-prominent {
       @include rs-top-app-bar-type(prominent);
+      --rs-top-app-bar-row--overflow-scrolling:touch;
+      --rs-top-app-bar-row--overflow-y:auto;
+      --rs-top-app-bar-row--overflow-x:hidden;
    }
+   
    &.-fixed {
       @include rs-top-app-bar-type(fixed);
    }

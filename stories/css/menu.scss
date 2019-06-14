@@ -1,7 +1,6 @@
 @import '../../node_modules/@rsmdc/menu/rs-menu';
-@import '../../node_modules/@rsmdc/shape/rs-functions';
 @import '../../node_modules/@rsmdc/list/rs-list';
-
+@import '../../node_modules/@rsmdc/shape/rs-functions';
 
 .my-menu {
   &.-ink-color {
@@ -16,9 +15,8 @@
   &.-shape-radius {
     @include rs-menu-surface-shape-radius(10px);
   }
-  --rs-list-item--height: 20px;
-  --rs-menu-list-item--padding-left: 0;
 }
-list-item {
-  --rs-menu-list-item--cursor: auto;
+
+.menu-area {
+  padding-bottom: 80px;
 }

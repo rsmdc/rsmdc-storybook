@@ -28,16 +28,21 @@ storiesOf('Components|Menu', module)
   .add('使用方法', () => {
     return `
       <h4>使用方法</h4>
-      <x-menu class="my-menu" opened>
-        <x-list class="list">
-          aiueo
-        </x-list>
-      </x-menu>
-      <br><br><br>
+      <div class="menu-area">
+        <x-menu class="my-menu" opened>
+          <x-list class="list">
+            <list-item>
+              <list-text>aiueo</list-text>
+            </list-item>
+          </x-list>
+        </x-menu>
+      </div>
       ${copyCodeBlock(      
         '<x-menu class="my-menu" opened>\n' +
         '   <x-list class="list">\n' +
-        '       ...\n' +
+        '      <list-item>\n' +
+        '         <list-text>...</list-text>\n' +
+        '      </list-item>\n' +
         '   </x-list>\n' +
         '</x-menu>\n',
         { lang: 'html' }
@@ -82,14 +87,15 @@ storiesOf('Components|Menu/スタイルのカスタマイズ', module)
   .add('テキストの色を変える', () => {
     return `
       <p>テキストの色を指定した色に変える。</p>
-      <x-menu class="my-menu -ink-color"" opened>
-        <x-list>
-          <list-item disabled>
-            <list-text>aiueo</list-text>
-          </list-item>
-        </x-list>
-      </x-menu>
-      <br><br>
+      <div class="menu-area">
+        <x-menu class="my-menu -ink-color"" opened>
+          <x-list>
+            <list-item>
+              <list-text>aiueo</list-text>
+            </list-item>
+          </x-list>
+        </x-menu>
+      </div>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(  
         '@include rs-menu-surface-ink-color($color);',
@@ -99,8 +105,8 @@ storiesOf('Components|Menu/スタイルのカスタマイズ', module)
       ${copyCodeBlock(  
         '<x-menu class="my-menu -ink-color" opened>\n' +
         '   <x-list class="list">\n' +
-        '      <list-item disabled>\n' +
-        '          <list-text>テキスト</list-text>\n' +
+        '      <list-item>\n' +
+        '          <list-text>aiueo</list-text>\n' +
         '      </list-item>\n' +
         '   </x-list>\n' +
         '</x-menu>',
@@ -118,8 +124,7 @@ storiesOf('Components|Menu/スタイルのカスタマイズ', module)
       <p>オプション</p>
       <ul>
         <li>
-          $color: インクの色コード <br> 例）#ee00ce <br>
-          ※テキストの色を変える際は、x-listの中にさらに子要素を用意する必要がある。
+          $color: インクの色コード <br> 例）#ee00ce
         </li>
       </ul>
     `
@@ -127,22 +132,27 @@ storiesOf('Components|Menu/スタイルのカスタマイズ', module)
   .add('背景色を変える', () => {
     return `
       <p>背景色を指定した色に変える。</p>
-      <x-menu class="my-menu -fill-color" opened>
-        <x-list class="list">
-          aiueo
-        </x-listt>
-      </x-menu>
-      <br><br>
+      <div class="menu-area">
+        <x-menu class="my-menu -fill-color" opened>
+          <x-list class="list">
+            <list-item>
+              <list-text>aiueo</list-text>
+            </list-item>
+          </x-listt>
+        </x-menu>
+      </div>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(  
         '@include rs-menu-surface-fill-color($color);',
         { lang: 'scss' }
       )}
       <h4>使用方法</h4>
-      ${copyCodeBlock(  
+      ${copyCodeBlock(
         '<x-menu class="my-menu -fill-color" opened>\n' +
         '   <x-list class="list">\n' +
-        '      aiueo\n' +
+        '      <list-item>\n' +
+        '         <list-text>aiueo</list-text>\n' +
+        '      </list-item>\n' +
         '   </x-list>\n' +
         '</x-menu>',
         { lang: 'html' }
@@ -165,22 +175,27 @@ storiesOf('Components|Menu/スタイルのカスタマイズ', module)
   .add('メニューの幅を変える', () => {
     return `
       <p>メニューの幅を指定したサイズに変更する。</p>
+      <div class="menu-area">
       <x-menu class="my-menu -width" opened>
         <x-list class="list">
-          aiueo
+          <list-item>
+            <list-text>aiueo</list-text>
+          </list-item>
         </x-list>
       </x-menu>
-      <br><br>
+      </div>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(  
         '@include rs-menu-width($width);',
         { lang: 'scss' }
       )}
       <h4>使用方法</h4>
-      ${copyCodeBlock(  
+      ${copyCodeBlock(
         '<x-menu class="my-menu -width" opened>\n' +
         '   <x-list class="list">\n' +
-        '      aiueo\n' +
+        '      <list-item>\n' +
+        '         <list-text>aiueo</list-text>\n' +
+        '      </list-item>\n' +
         '   </x-list>\n' +
         '</x-menu>',
         { lang: 'html' }
@@ -203,22 +218,27 @@ storiesOf('Components|Menu/スタイルのカスタマイズ', module)
   .add('メニューの角の丸みを変える', () => {
     return `
       <p>メニューの角の丸みを指定したサイズに変える。</p>
-      <x-menu class="my-menu -shape-radius" opened>
-        <x-list class="list">
-          aiueo
-        </x-list>
-      </x-menu>
-      <br><br>
+      <div class="menu-area">
+        <x-menu class="my-menu -shape-radius" opened>
+          <x-list class="list">
+            <list-item>
+              <list-text>aiueo</list-text>
+            </list-item>
+          </x-list>
+        </x-menu>
+      </div>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(  
         '@include rs-menu-surface-shape-radius($radius);',
         { lang: 'scss' }
       )}
       <h4>使用方法</h4>
-      ${copyCodeBlock(  
+      ${copyCodeBlock(
         '<x-menu class="my-menu -shape-radius" opened>\n' +
         '   <x-list class="list">\n' +
-        '      aiueo\n' +
+        '      <list-item>\n' +
+        '         <list-text>aiueo</list-text>\n' +
+        '      </list-item>\n' +
         '   </x-list>\n' +
         '</x-menu>',
         { lang: 'html' }

@@ -1,7 +1,45 @@
+@import '../../node_modules/@rsmdc/shape/rs-functions';
 @import '../../node_modules/@rsmdc/drawer/rs-drawer';
+@import '../../node_modules/@rsmdc/top-app-bar/rs-top-app-bar';
 
+.nav {
+  @include rs-top-app-bar-nav-image(url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgAQMAAADYVuV7AAAABlBMVEUAAAAzMzPI8eYgAAAAAXRSTlMAQObYZgAAABxJREFUeAFjIBOMAv7/UPCBlhzywWgYjIbBKAAANijXKaI5RRgAAAAASUVORK5CYII='));
+}
 .app-layout {
   > .drawer {
     @include rs-drawer-type(dismissible);
+    &.-permanent {
+      @include rs-drawer-type(permanent);
+    }
+    &.-modal {
+      @include rs-drawer-type(modal);
+    }
+    &.-title-ink-color {
+      @include rs-drawer-title-ink-color(brown);
+    }
+    &.-subtitle-ink-color {
+      @include rs-drawer-subtitle-ink-color(brown);
+    }
+    &.-surface-fill-color {
+      @include rs-drawer-surface-fill-color(beige);
+    }
+    &.-scrim-fill-color {
+      @include rs-drawer-scrim-fill-color(beige);
+    }
+    &.-fill-color-accessible {
+      @include rs-drawer-fill-color-accessible(orange);
+    }
+    &.-border-color {
+      @include rs-drawer-border-color(brown);
+    }
+    &.-divider-color {
+      @include rs-drawer-divider-color(brown);
+    }
+    &.-width {
+      @include rs-drawer-width(300px);
+    }
+    &.-shape-radius {
+      @include rs-drawer-shape-radius(10px);
+    }
   }
 }
