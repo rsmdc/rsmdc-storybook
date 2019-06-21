@@ -55,13 +55,13 @@ storiesOf('Components|App bar', module)
     ${copyCodeBlock(
       '.app-bar {\n' +
       '   > .nav {\n' +
-      '      @include rs-top-app-bar-nav-image(url(\'nav.png\'));\n' +
+      '      @include rs-top-app-bar-nav-icon-image(url(\'nav.png\'));\n' +
       '   }\n' +
       '   > .actions. > .item.-cut {\n' +
-      '      @include rs-top-app-bar-action-image(url(\'cut.png\'));\n' +
+      '      @include rs-top-app-bar-action-icon-image(url(\'cut.png\'));\n' +
       '   }\n' +
       '   > .actions. > .item.-copy {\n' +
-      '      @include rs-top-app-bar-action-image(url(\'copy.png\'));\n' +
+      '      @include rs-top-app-bar-action-icon-image(url(\'copy.png\'));\n' +
       '   }\n' +
       '}',
       { lang: 'scss' }
@@ -364,7 +364,7 @@ storiesOf('Components|App bar/スタイルのカスタマイズ', module)
       <p>タイトルの色を指定した色に変える。</p>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
-        '@include rs-top-app-bar-ink-color($color);',
+        '@includers-top-app-bar-title-ink-color($color);',
         { lang: 'scss' }
       )}
       <h4>使用方法</h4>
@@ -383,7 +383,7 @@ storiesOf('Components|App bar/スタイルのカスタマイズ', module)
         '@import \'@rsmdc/top-app-bar/rs-top-app-bar.scss\';\n\n' +
         '.app-bar {\n' +
         '   &.-ink-color {\n' +
-        '      @include rs-top-app-bar-ink-color(yellow);\n' +
+        '      @includers-top-app-bar-title-ink-color(yellow);\n' +
         '   }\n' +
         '}',
         { lang: 'scss' }
@@ -392,6 +392,50 @@ storiesOf('Components|App bar/スタイルのカスタマイズ', module)
       <ul>
         <li>$color: インクの色コード <br> 例）#ee00ce</li>
       </ul>
+    `
+  })
+  .add('アイコンの色を変える', () => {
+    return `
+      <p>
+        <x-app-bar class="app-bar -fill-color-accessible">
+          <app-bar-nav class="nav"></app-bar-nav>
+          <app-bar-title class="title">タイトル</app-bar-title>
+          <app-bar-actions class="actions">
+            <app-bar-item class="item -cut"></app-bar-item>
+            <app-bar-item class="item -copy"></app-bar-item>
+          </app-bar-actions>
+        </x-app-bar>
+      </p>
+      <p>
+        背景色とタイトルの色を変える。<br>
+        指定した背景色の色を元に、タイトルの色は自動調整される。
+      </p>
+      <h4>使用するmixin</h4>
+      ${copyCodeBlock(
+        '@include rs-top-app-bar-icon-ink-color($containerColor);',
+        { lang: 'scss' }
+      )}
+      <h4>使用方法</h4>
+      ${copyCodeBlock(
+        '<x-app-bar class="app-bar -fill-color-accessible">\n' +
+        '   <app-bar-nav class="nav"></app-bar-nav>\n' +
+        '   <app-bar-title class="title">タイトル</app-bar-title>\n' +
+        '   <app-bar-actions class="actions">\n' +
+        '       <app-bar-item class="item -cut"></app-bar-item>\n' +
+        '       <app-bar-item class="item -copy"></app-bar-item>\n' +
+        '   </app-bar-actions>\n' +
+        '</x-app-bar>\n',
+        { lang: 'html' }
+      )}
+      ${copyCodeBlock(
+        '@import \'@rsmdc/top-app-bar/rs-top-app-bar.scss\';\n\n' +
+        '.app-bar {\n' +
+        '   &.-fill-color-accessible {\n' +
+        '      @include rs-top-app-bar-fill-color-accessible(beige);\n' +
+        '   }\n' +
+        '}',
+        { lang: 'scss' }
+      )}
     `
   })
   .add('背景色を変える', () => {
@@ -436,6 +480,50 @@ storiesOf('Components|App bar/スタイルのカスタマイズ', module)
       <ul>
         <li>$color: コンテナの色の塗りコード <br> 例）#ee00ce</li>
       </ul>
+    `
+  })
+  .add('リップルの色を変える', () => {
+    return `
+      <p>
+        <x-app-bar class="app-bar -fill-color-accessible">
+          <app-bar-nav class="nav"></app-bar-nav>
+          <app-bar-title class="title">タイトル</app-bar-title>
+          <app-bar-actions class="actions">
+            <app-bar-item class="item -cut"></app-bar-item>
+            <app-bar-item class="item -copy"></app-bar-item>
+          </app-bar-actions>
+        </x-app-bar>
+      </p>
+      <p>
+        背景色とタイトルの色を変える。<br>
+        指定した背景色の色を元に、タイトルの色は自動調整される。
+      </p>
+      <h4>使用するmixin</h4>
+      ${copyCodeBlock(
+        '@include rs-top-app-bar-icon-states-color($containerColor);',
+        { lang: 'scss' }
+      )}
+      <h4>使用方法</h4>
+      ${copyCodeBlock(
+        '<x-app-bar class="app-bar -fill-color-accessible">\n' +
+        '   <app-bar-nav class="nav"></app-bar-nav>\n' +
+        '   <app-bar-title class="title">タイトル</app-bar-title>\n' +
+        '   <app-bar-actions class="actions">\n' +
+        '       <app-bar-item class="item -cut"></app-bar-item>\n' +
+        '       <app-bar-item class="item -copy"></app-bar-item>\n' +
+        '   </app-bar-actions>\n' +
+        '</x-app-bar>\n',
+        { lang: 'html' }
+      )}
+      ${copyCodeBlock(
+        '@import \'@rsmdc/top-app-bar/rs-top-app-bar.scss\';\n\n' +
+        '.app-bar {\n' +
+        '   &.-fill-color-accessible {\n' +
+        '      @include rs-top-app-bar-fill-color-accessible(beige);\n' +
+        '   }\n' +
+        '}',
+        { lang: 'scss' }
+      )}
     `
   })
   .add('背景色とタイトルの色を変える', () => {
@@ -530,6 +618,103 @@ storiesOf('Components|App bar/スタイルのカスタマイズ', module)
       </ul>
     `
   })
+  .add('ナビゲーションのアイコンを設定する', () => {
+    return `
+      <p>
+        <x-app-bar class="app-bar -short -shape-radiu">
+          <app-bar-nav class="nav"></app-bar-nav>
+          <app-bar-title class="title">タイトル</app-bar-title>
+          <app-bar-actions class="actions">
+            <app-bar-item class="item -cut"></app-bar-item>
+            <app-bar-item class="item -copy"></app-bar-item>
+          </app-bar-actions>
+        </x-app-bar>
+      </p>
+      <p>
+        アップバーの角の丸みを指定したサイズに変える。<br>
+        タイプがshortの時のみ。
+      </p>
+      <h4>使用するmixin</h4>
+      ${copyCodeBlock(
+        '@include rs-top-app-bar-nav-icon-image($radius);',
+        { lang: 'scss' }
+      )}
+      <h4>使用方法</h4>
+      ${copyCodeBlock(
+        '<x-app-bar class="app-bar -short -shape-radius">\n' +
+        '   <app-bar-nav class="nav"></app-bar-nav>\n' +
+        '   <app-bar-title class="title">タイトル</app-bar-title>\n' +
+        '   <app-bar-actions class="actions">\n' +
+        '       <app-bar-item class="item -cut"></app-bar-item>\n' +
+        '       <app-bar-item class="item -copy"></app-bar-item>\n' +
+        '   </app-bar-actions>\n' +
+        '</x-app-bar>\n',
+        { lang: 'html' }
+      )}
+      ${copyCodeBlock(
+        '@import \'@rsmdc/top-app-bar/rs-top-app-bar.scss\';\n\n' +
+        '.app-bar {\n' +
+        '   &.-shape-radiu {\n' +
+        '      @include rs-top-app-bar-short-shape-radius(20px);\n' +
+        '   }\n' +
+        '}',
+        { lang: 'scss' }
+      )}
+      <p>オプション</p>
+      <ul>
+        <li>$radius: 角の丸みのサイズを指定</li>
+      </ul>
+    `
+  })
+  .add('アクションのアイコンを設定する', () => {
+    return `
+      <p>
+        <x-app-bar class="app-bar -short -shape-radiu">
+          <app-bar-nav class="nav"></app-bar-nav>
+          <app-bar-title class="title">タイトル</app-bar-title>
+          <app-bar-actions class="actions">
+            <app-bar-item class="item -cut"></app-bar-item>
+            <app-bar-item class="item -copy"></app-bar-item>
+          </app-bar-actions>
+        </x-app-bar>
+      </p>
+      <p>
+        アップバーの角の丸みを指定したサイズに変える。<br>
+        タイプがshortの時のみ。
+      </p>
+      <h4>使用するmixin</h4>
+      ${copyCodeBlock(
+        '@include rs-top-app-bar-action-icon-image($radius);',
+        { lang: 'scss' }
+      )}
+      <h4>使用方法</h4>
+      ${copyCodeBlock(
+        '<x-app-bar class="app-bar -short -shape-radius">\n' +
+        '   <app-bar-nav class="nav"></app-bar-nav>\n' +
+        '   <app-bar-title class="title">タイトル</app-bar-title>\n' +
+        '   <app-bar-actions class="actions">\n' +
+        '       <app-bar-item class="item -cut"></app-bar-item>\n' +
+        '       <app-bar-item class="item -copy"></app-bar-item>\n' +
+        '   </app-bar-actions>\n' +
+        '</x-app-bar>\n',
+        { lang: 'html' }
+      )}
+      ${copyCodeBlock(
+        '@import \'@rsmdc/top-app-bar/rs-top-app-bar.scss\';\n\n' +
+        '.app-bar {\n' +
+        '   &.-shape-radiu {\n' +
+        '      @include rs-top-app-bar-short-shape-radius(20px);\n' +
+        '   }\n' +
+        '}',
+        { lang: 'scss' }
+      )}
+      <p>オプション</p>
+      <ul>
+        <li>$radius: 角の丸みのサイズを指定</li>
+      </ul>
+    `
+  })
+
 
 
 
