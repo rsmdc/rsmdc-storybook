@@ -11,6 +11,6 @@
     @include rs-checkbox-container-colors(red, red);
   }
   &.-label-position {
-    @include rs-chechbox-label-position(left);
+    @include rs-checkbox-label-position(left);
   }
 }
