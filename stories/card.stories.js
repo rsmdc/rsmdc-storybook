@@ -206,7 +206,7 @@ storiesOf('Components|Card/スタイルのカスタマイズ', module)
       </p>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
-        '@include rs-card-title-ink-color($color);',
+        '@include rs-card-fill-color($color);',
         { lang: 'scss' }
       )}
       <h4>使用方法</h4>
@@ -265,12 +265,7 @@ storiesOf('Components|Card/スタイルのカスタマイズ', module)
       </p>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
-        '@import \'@rsmdc/card/rs-card.scss\';\n\n' +
-        '.my-card {\n' +
-        '   &.-title-link-color {\n' +
-        '     @include rs-card-title-ink-color(brown);\n' +
-        '   }\n' +
-        '}',
+        '@include rs-card-title-ink-color($color);',
         { lang: 'scss' }
       )}
       <h4>使用方法</h4>
@@ -294,7 +289,7 @@ storiesOf('Components|Card/スタイルのカスタマイズ', module)
         '@import \'@rsmdc/card/rs-card.scss\';\n\n' +
         '.my-card {\n' +
         '   &.-title-ink-color {\n' +
-        '     @include rs-card-subtitle-ink-color(brown);\n' +
+        '     @include rs-card-title-ink-color(brown);\n' +
         '   }\n' +
         '}',
         { lang: 'scss' }
@@ -360,7 +355,7 @@ storiesOf('Components|Card/スタイルのカスタマイズ', module)
       )}
     `
   })
-  .add('説明部分の色を変える', () => {
+  .add('説明文の色を変える', () => {
     return `
     <p>説明部分の色を指定した色に変える。</p>
     <p>
@@ -433,7 +428,60 @@ storiesOf('Components|Card/スタイルのカスタマイズ', module)
       </p>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
-        ' @include rs-card-description-ink-color($color);',
+        ' @include rs-card-media-content-ink-color($color);',
+        { lang: 'scss' }
+      )}
+      <h4>使用方法</h4>
+      ${copyCodeBlock(
+        '<x-card class="my-card -description-ink-color">\n' +
+        '   <card-contents class="contents">\n' +
+        '      <card-media class="media" />\n' +
+        '      <card-header class="header">\n' +
+        '         <card-title>タイトル</card-title>\n' +
+        '         <card-subtitle>サブタイトル</card-subtitle>\n' +
+        '      </card-header>\n' +
+        '      <card-description class="description">説明</card-description>\n' +
+        '   </card-contents>\n' +
+        '   <card-actions class="actions">\n' +
+        '       <x-button>ボタン</x-button>\n' +
+        '       <x-button class="icon" />\n' +
+        '   </card-actions>\n' +
+        '</x-card>\n',
+        { lang: 'html' }
+      )}
+      ${copyCodeBlock(
+        '@import \'@rsmdc/card/rs-card.scss\';\n\n' +
+        '.my-card {\n' +
+        '   &.-description-ink-color {\n' +
+        '      @include rs-card-media-content-ink-color(white);\n' +
+        '   }\n' +
+        '}',
+        { lang: 'scss' }
+      )}
+    `
+  })
+  .add('リップルの色を変える', () => {
+    return `
+      <p>画像タイトルの色を指定した色に変える。</p>
+      <p>
+        <x-card class="my-card">
+          <card-contents class="contents">
+          <card-media class="media -media-content-ink-color">画像タイトル</card-media>
+            <card-header class="header">
+              <card-title>タイトル</card-title>
+              <card-subtitle>サブタイトル</card-subtitle>
+            </card-header>
+            <card-description class="description">説明</card-description>
+          </card-contents>
+          <card-actions class="actions">
+            <x-button>ボタン</x-button>
+            <x-button class="icon"></x-button>
+          </card-actions>
+        </x-card>
+      </p>
+      <h4>使用するmixin</h4>
+      ${copyCodeBlock(
+        ' @include rs-card-states-color($color);',
         { lang: 'scss' }
       )}
       <h4>使用方法</h4>
@@ -608,6 +656,7 @@ storiesOf('Components|Card/スタイルのカスタマイズ', module)
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
         '@include rs-card-media-type($type);\n' +
+        'or' +
         '@include rs-card-media-aspect-ratio($X, $y);',
         { lang: 'scss' }
       )}
@@ -624,7 +673,6 @@ storiesOf('Components|Card/スタイルのカスタマイズ', module)
         '   </card-contents>\n' +
         '   <card-actions class="actions">\n' +
         '       <x-button>ボタン</x-button>\n' +
-        '       <x-button class="icon" />\n' +
         '   </card-actions>\n' +
         '</x-card>\n',
         { lang: 'html' }
@@ -744,7 +792,6 @@ storiesOf('Components|Card/スタイルのカスタマイズ', module)
       '   </card-contents>\n' +
       '   <card-actions class="actions">\n' +
       '       <x-button>ボタン</x-button>\n' +
-      '       <x-button class="icon" />\n' +
       '   </card-actions>\n' +
       '</x-card>\n',
       { lang: 'html' }
@@ -752,7 +799,7 @@ storiesOf('Components|Card/スタイルのカスタマイズ', module)
     ${copyCodeBlock(
       '@import \'@rsmdc/card/rs-card.scss\';\n\n' +
       '.my-card {\n' +
-      '   &.-media-image {\n' +
+      '   > .actions {\n' +
       '      @include rs-card-type(full-bleed);\n' +
       '   }\n' +
       '}',
