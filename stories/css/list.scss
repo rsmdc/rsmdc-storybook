@@ -32,16 +32,21 @@
 }
 
 .graphic {
-  @include rs-list-graphic-type(circle, url('http://icons.iconarchive.com/icons/iconsmind/outline/512/Mail-icon.png'));
+  @include rs-list-graphic-type(circle);
+  @include rs-list-graphic-image(url('http://icons.iconarchive.com/icons/iconsmind/outline/512/Mail-icon.png'));
+
   
   &.-size {
-    @include rs-list-graphic-size_(50px);
+    @include rs-list-graphic-size(50px);
   }
   &.-rectangle {
-    @include rs-list-graphic-type(rectangle, url('http://icons.iconarchive.com/icons/iconsmind/outline/512/Mail-icon.png'));
+    @include rs-list-graphic-type(rectangle);
+    @include rs-list-graphic-image(url('http://icons.iconarchive.com/icons/iconsmind/outline/512/Mail-icon.png'));
   }
   &.-square {
-    @include rs-list-graphic-type(square, url('http://icons.iconarchive.com/icons/iconsmind/outline/512/Mail-icon.png'));
+    @include rs-list-graphic-type(square);
+    @include rs-list-graphic-image(url('http://icons.iconarchive.com/icons/iconsmind/outline/512/Mail-icon.png'));
+
   }
 }
 

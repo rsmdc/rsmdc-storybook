@@ -51,7 +51,7 @@ storiesOf('Components|List', module)
   })
   .add('使用方法', () => `
     <h4>使用方法</h4>
-    <x-list class="list">
+    <x-list class="my-list">
       <list-item class="item">
         <list-text class="text">テキスト</list-text>
         <list-meta class="meta">メタ情報</list-meta>
@@ -62,7 +62,7 @@ storiesOf('Components|List', module)
       </list-item>
     </x-list>
     <x-list-group class="group-list -avatarlist">
-      <x-list class="list">
+      <x-list class="my-list">
         <list-subheader class="subheader">リストタイトル</list-subheader>
         <list-divider></list-divider>
         <list-item class="item">
@@ -80,7 +80,7 @@ storiesOf('Components|List', module)
           </list-text>
         </list-item>
       </x-list>
-      <x-list class="list">
+      <x-list class="my-list">
         <list-subheader class="subheader">リストタイトル</list-subheader>
         <list-divider></list-divider>
         <list-item class="item">
@@ -102,7 +102,7 @@ storiesOf('Components|List', module)
     </x-list-group>
 
     ${copyCodeBlock(
-      '<x-list class="list">\n' +
+      '<x-list class="my-list">\n' +
       '   <list-item class="item">\n' +
       '      <list-text class="text">テキスト</list-text>\n' +
       '      <list-meta class="meta">メタ情報</list-meta>\n' +
@@ -113,7 +113,7 @@ storiesOf('Components|List', module)
       '   </list-item>\n' +
       '</x-list>\n\n' +
       '<x-list-group class="group-list">\n' +
-      '   <x-list class="list">\n' +
+      '   <x-list class="ist">\n' +
       '      <list-subheader class="subheader">リストタイトル</list-subheader>\n' +
       '      <list-divider></list-dividar>\n' +
       '      <list-item class="item">\n' +
@@ -155,7 +155,7 @@ storiesOf('Components|List', module)
       { lang: 'html' }
     )}
     ${copyCodeBlock(
-      '.list-group {\n' +
+      '.group-list {\n' +
       '   > .list {\n' +
       '      @include rs-list-type(twoline, avatar-list);\n' +
       '   }\n' +
@@ -289,7 +289,7 @@ storiesOf('Components|List/スタイルのカスタマイズ/リストのタイ�
         normalの場合mixinは不要。 <br>
         denseを使用する場合はmixinが必要（後述）。
       </p>
-      <x-list class="list">
+      <x-list class="my-list">
         <list-item class="item">
           <list-text class="text">テキスト</list-text>
           <list-meta class="meta">メタ情報</list-meta>
@@ -340,7 +340,7 @@ storiesOf('Components|List/スタイルのカスタマイズ/リストのタイ�
       </x-list-group>
       <h4>使用方法</h4>
       ${copyCodeBlock(
-        '<x-list class="list">\n' +
+        '<x-list class="my-list">\n' +
         '   <list-item class="item">\n' +
         '      <list-text class="text">テキスト</list-text>\n' +
         '      <list-meta class="meta">メタ情報</list-meta>\n' +
@@ -411,7 +411,7 @@ storiesOf('Components|List/スタイルのカスタマイズ/リストのタイ�
     return `
       <h4>twoline</h4>
       <p>denseとavatar-listも一緒に使用できる。</p>
-      <x-list class="list">
+      <x-list class="my-list">
         <list-item class="item">
           <list-text class="text">テキスト</list-text>
           <list-meta class="meta">メタ情報</list-meta>
@@ -467,7 +467,7 @@ storiesOf('Components|List/スタイルのカスタマイズ/リストのタイ�
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
-        '<x-list class="list">\n' +
+        '<x-list class="my-list">\n' +
         '   <list-item class="item">\n' +
         '      <list-text class="text">テキスト</list-text>\n' +
         '      <list-meta class="meta">メタ情報</list-meta>\n' +
@@ -496,7 +496,7 @@ storiesOf('Components|List/スタイルのカスタマイズ/リストのタイ�
         '        </list-text>\n' +
         '      </list-item>\n' +
         '   </x-list>\n' +
-        '   <x-list class="list -twoline">\n' +
+        '   <x-list class="list -twoline -dense">\n' +
         '      <list-subheader class="subheader">リストタイトル</list-subheader>\n' +
         '      <list-divider></list-divider>\n' +
         '      <list-item class="item">\n' +
@@ -520,9 +520,12 @@ storiesOf('Components|List/スタイルのカスタマイズ/リストのタイ�
       )}
       ${copyCodeBlock(
         '@import \'@rsmdc/list/rs-list.scss\';\n\n' +
-        '.list {\n' +
+        '.my-list {\n' +
         '  &.-twoline {\n' +
-        '   @include rs-list-type(dense);\n' +
+        '   @include rs-list-type(two-line);\n' +
+        '  }\n' +
+        '  &.-twoline.-dense {\n' +
+        '   @include rs-list-type(two-line, dense);\n' +
         '  }\n' +
         '}',
         { lang: 'scss' }
@@ -536,7 +539,7 @@ storiesOf('Components|List/スタイルのカスタマイズ/リストのタイ�
         リストにアバターを表示させる。 <br>
         denseとtwo-lineも一緒に使用できる。
       </p>
-      <x-list class="list">
+      <x-list class="list -avatarlist">
         <list-item class="item">
           <list-text class="text">テキスト</list-text>
           <list-meta class="meta">メタ情報</list-meta>
@@ -546,8 +549,8 @@ storiesOf('Components|List/スタイルのカスタマイズ/リストのタイ�
           <list-meta class="meta">メタ情報</list-meta>
         </list-item>
       </x-list>
-      <x-list-group class="group-list -avatarlist">
-        <x-list class="list">
+      <x-list-group class="group-list">
+        <x-list class="list -avatarlist -twoline">
           <list-subheader class="subheader">リストタイトル</list-subheader>
           <list-divider></list-divider>
           <list-item class="item">
@@ -565,7 +568,7 @@ storiesOf('Components|List/スタイルのカスタマイズ/リストのタイ�
             </list-text>
           </list-item>
         </x-list>
-        <x-list class="list">
+        <x-list class="list -avatarlist -dense">
           <list-subheader class="subheader">リストタイトル</list-subheader>
           <list-divider></list-divider>
           <list-item class="item">
@@ -592,7 +595,7 @@ storiesOf('Components|List/スタイルのカスタマイズ/リストのタイ�
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
-        '<x-list class="list">\n' +
+        '<x-list class="list -avatarlist">\n' +
         '   <list-item class="item">\n' +
         '      <list-text class="text">テキスト</list-text>\n' +
         '      <list-meta class="meta">メタ情報</list-meta>\n' +
@@ -603,7 +606,7 @@ storiesOf('Components|List/スタイルのカスタマイズ/リストのタイ�
         '   </list-item>\n' +
         '</x-list>\n' +
         '<x-list-group class="group-list">\n' +
-        '   <x-list class="list">\n' +
+        '   <x-list class="list -avatarlist -dense">\n' +
         '      <list-subheader class="subheader">リストタイトル</list-subheader>\n' +
         '      <list-divider></list-divider>\n' +
         '      <list-item class="item">\n' +
@@ -621,7 +624,7 @@ storiesOf('Components|List/スタイルのカスタマイズ/リストのタイ�
         '        </list-text>\n' +
         '      </list-item>\n' +
         '   </x-list>\n' +
-        '   <x-list class="list">\n' +
+        '   <x-list class="list -avatarlist -twoline">\n' +
         '      <list-subheader class="subheader">リストタイトル</list-subheader>\n' +
         '      <list-divider></list-divider>\n' +
         '      <list-item class="item">\n' +
@@ -645,9 +648,15 @@ storiesOf('Components|List/スタイルのカスタマイズ/リストのタイ�
       )}
       ${copyCodeBlock(
         '@import \'@rsmdc/list/rs-list.scss\';\n\n' +
-        '.group-list {\n' +
+        '.my-list {\n' +
         '  &.-avatarlist {\n' +
         '   @include rs-list-type(avatar-list);\n' +
+        '  }\n' +
+        '  &.-avatarlist.-dense {\n' +
+        '   @include rs-list-type(avatar-list, dense);\n' +
+        '  }\n' +
+        '  &.-avatarlist.-twoline {\n' +
+        '   @include rs-list-type(avatar-list, twoline);\n' +
         '  }\n' +
         '}',
         { lang: 'scss' }
@@ -660,106 +669,26 @@ storiesOf('Components|List/スタイルのカスタマイズ/仕切り線のタ�
     return `
       <h4>normal（デフォルト）</h4>
       <p>mixinは不要。</p>   
-      <x-list class="list">
+      <x-list class="my-list">
         <list-item class="item">
-          <list-text class="text">テキスト</list-text>
-          <list-meta class="meta">メタ情報</list-meta>
+          <list-text class="text">text</list-text>
         </list-item>
+        <list-divider class="divider"></list-divider>
         <list-item class="item">
-          <list-text class="text">テキスト</list-text>
-          <list-meta class="meta">メタ情報</list-meta>
+          <list-text class="text">text</list-text>
         </list-item>
       </x-list>
-      <x-list-group class="group-list -avatarlist">
-        <x-list class="list">
-          <list-subheader class="subheader">リストタイトル</list-subheader>
-          <list-divider></list-divider>
-          <list-item class="item">
-            <list-graphic class="graphic"></list-graphic>
-            <list-text class="text">
-              <list-primary class="primary">1行目</list-primary>
-              <list-secondary class="secondary">2行目</list-secondary>
-            </list-text>
-          </list-item>
-          <list-item class="item">
-            <list-graphic class="graphic"></list-graphic>
-            <list-text class="text">
-              <list-primary class="primary">1行目</list-primary>
-              <list-secondary class="secondary">2行目</list-secondary>
-            </list-text>
-          </list-item>
-        </x-list>
-        <x-list class="list">
-          <list-subheader class="subheader">リストタイトル</list-subheader>
-          <list-divider></list-divider>
-          <list-item class="item">
-            <list-graphic class="graphic"></list-graphic>
-            <list-text class="text">
-              <list-primary class="primary">1行目</list-primary>
-              <list-secondary class="secondary">2行目</list-secondary>
-            </list-text>
-          </list-item>
-          <list-item class="item">
-            <list-graphic class="graphic"></list-graphic>
-              <list-text class="text">
-                <list-primary class="primary">1行目</list-primary>
-                <list-secondary class="secondary">2行目</list-secondary>
-              </list-text>
-              <list-meta class="meta">メタ情報</list-meta>
-          </list-item>
-        </x-list>
-      </x-list-group>
       <h4>使用方法</h4>
       ${copyCodeBlock(
-        '<x-list class="list">\n' +
+        '<x-list class="my-list">\n' +
         '   <list-item class="item">\n' +
         '      <list-text class="text">テキスト</list-text>\n' +
-        '      <list-meta class="meta">メタ情報</list-meta>\n' +
         '   </list-item>\n' +
+        '   <list-divider class="divider"/>\n' +
         '   <list-item class="item">\n' +
         '      <list-text class="text">テキスト</list-text>\n' +
-        '      <list-meta class="meta">メタ情報</list-meta>\n' +
         '   </list-item>\n' +
-        '</x-list>\n' +
-        '<x-list-group class="group-list">\n' +
-        '   <x-list class="list">\n' +
-        '      <list-subheader class="subheader">リストタイトル</list-subheader>\n' +
-        '      <list-divider></list-divider>\n' +
-        '      <list-item class="item">\n' +
-        '         <list-graphic class="graphic"></list-graphic>\n' +
-        '         <list-text class="text">\n' +
-        '             <list-primary class="primary">1行目</list-primary>\n' +
-        '             <list-secondary class="secondary">2行目</list-secondary>\n' +
-        '          </list-text>\n' +
-        '      </list-item>\n' +
-        '      <list-item class="item">\n' +
-        '        <list-graphic class="graphic"></list-graphic>\n' +
-        '        <list-text class="text">\n' +
-        '          <list-primary class="primary">1行目</list-primary>\n' +
-        '          <list-secondary class="secondary">2行目</list-secondary>\n' +
-        '        </list-text>\n' +
-        '      </list-item>\n' +
-        '   </x-list>\n' +
-        '   <x-list class="list">\n' +
-        '      <list-subheader class="subheader">リストタイトル</list-subheader>\n' +
-        '      <list-divider></list-divider>\n' +
-        '      <list-item class="item">\n' +
-        '         <list-graphic class="graphic"></list-graphic>\n' +
-        '         <list-text class="text">\n' +
-        '            <list-primary class="primary">1行目</list-primary>\n' +
-        '            <list-secondary class="secondary">2行目</list-secondary>\n' +
-        '         </list-text>\n' +
-        '      </list-item>\n' +
-        '      <list-item class="item">\n' +
-        '         <list-graphic class="graphic"></list-graphic>\n' +
-        '         <list-text class="text">\n' +
-        '            <list-primary class="primary">1行目</list-primary>\n' +
-        '            <list-secondary class="secondary">2行目</list-secondary>\n' +
-        '         </list-text>\n' +
-        '         <list-meta class="meta">メタ情報</list-meta>\n' +
-        '      </list-item>\n' +
-        '   </x-list>\n' +
-        '</x-list-group>\n' ,
+        '</x-list>\n',
         { lang: 'html' }
       )}
     `
@@ -768,55 +697,24 @@ storiesOf('Components|List/スタイルのカスタマイズ/仕切り線のタ�
     return `
       <h4>inset</h4>
       <p>paddedも一緒に使用できる。</p>
-      <x-list class="list">
+      <x-list class="my-list">
         <list-item class="item">
-          <list-text class="text">テキスト</list-text>
-          <list-meta class="meta">メタ情報</list-meta>
+          <list-text class="text">text</list-text>
         </list-item>
+        <list-divider class="divider -inset"></list-divider>
         <list-item class="item">
-          <list-text class="text">テキスト</list-text>
-          <list-meta class="meta">メタ情報</list-meta>
+          <list-text class="text">text</list-text>
         </list-item>
       </x-list>
-      <x-list-group class="group-list -avatarlist -inset">
-        <x-list class="list">
-          <list-subheader class="subheader">リストタイトル</list-subheader>
-          <list-divider></list-divider>
-          <list-item class="item">
-            <list-graphic class="graphic"></list-graphic>
-            <list-text class="text">
-              <list-primary class="primary">1行目</list-primary>
-              <list-secondary class="secondary">2行目</list-secondary>
-            </list-text>
-          </list-item>
-          <list-item class="item">
-            <list-graphic class="graphic"></list-graphic>
-            <list-text class="text">
-              <list-primary class="primary">1行目</list-primary>
-              <list-secondary class="secondary">2行目</list-secondary>
-            </list-text>
-          </list-item>
-        </x-list>
-        <x-list class="list">
-          <list-subheader class="subheader">リストタイトル</list-subheader>
-          <list-divider></list-divider>
-          <list-item class="item">
-            <list-graphic class="graphic"></list-graphic>
-            <list-text class="text">
-              <list-primary class="primary">1行目</list-primary>
-              <list-secondary class="secondary">2行目</list-secondary>
-            </list-text>
-          </list-item>
-          <list-item class="item">
-            <list-graphic class="graphic"></list-graphic>
-              <list-text class="text">
-                <list-primary class="primary">1行目</list-primary>
-                <list-secondary class="secondary">2行目</list-secondary>
-              </list-text>
-              <list-meta class="meta">メタ情報</list-meta>
-          </list-item>
-        </x-list>
-      </x-list-group>
+      <x-list class="my-list">
+        <list-item class="item">
+          <list-text class="text">text</list-text>
+        </list-item>
+        <list-divider class="divider -inset -padded"></list-divider>
+        <list-item class="item">
+          <list-text class="text">text</list-text>
+        </list-item>
+      </x-list>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
         '@include rs-list-divider-type($types...);',
@@ -824,61 +722,35 @@ storiesOf('Components|List/スタイルのカスタマイズ/仕切り線のタ�
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
-        '<x-list class="list">\n' +
+        '<x-list class="my-list">\n' +
         '   <list-item class="item">\n' +
         '      <list-text class="text">テキスト</list-text>\n' +
-        '      <list-meta class="meta">メタ情報</list-meta>\n' +
         '   </list-item>\n' +
+        '   <list-divider class="divider -inset"/>\n' +
         '   <list-item class="item">\n' +
         '      <list-text class="text">テキスト</list-text>\n' +
-        '      <list-meta class="meta">メタ情報</list-meta>\n' +
         '   </list-item>\n' +
         '</x-list>\n' +
-        '<x-list-group class="group-list">\n' +
-        '   <x-list class="list">\n' +
-        '      <list-subheader class="subheader">リストタイトル</list-subheader>\n' +
-        '      <list-divider class="divider"></list-divider>\n' +
-        '      <list-item class="item">\n' +
-        '         <list-graphic class="graphic"></list-graphic>\n' +
-        '         <list-text class="text">\n' +
-        '             <list-primary class="primary">1行目</list-primary>\n' +
-        '             <list-secondary class="secondary">2行目</list-secondary>\n' +
-        '          </list-text>\n' +
-        '      </list-item>\n' +
-        '      <list-item class="item">\n' +
-        '        <list-graphic class="graphic"></list-graphic>\n' +
-        '        <list-text class="text">\n' +
-        '          <list-primary class="primary">1行目</list-primary>\n' +
-        '          <list-secondary class="secondary">2行目</list-secondary>\n' +
-        '        </list-text>\n' +
-        '      </list-item>\n' +
-        '   </x-list>\n' +
-        '   <x-list class="list">\n' +
-        '      <list-subheader class="subheader">リストタイトル</list-subheader>\n' +
-        '      <list-divider class="divider"></list-divider>\n' +
-        '      <list-item class="item">\n' +
-        '         <list-graphic class="graphic"></list-graphic>\n' +
-        '         <list-text class="text">\n' +
-        '            <list-primary class="primary">1行目</list-primary>\n' +
-        '            <list-secondary class="secondary">2行目</list-secondary>\n' +
-        '         </list-text>\n' +
-        '      </list-item>\n' +
-        '      <list-item class="item">\n' +
-        '         <list-graphic class="graphic"></list-graphic>\n' +
-        '         <list-text class="text">\n' +
-        '            <list-primary class="primary">1行目</list-primary>\n' +
-        '            <list-secondary class="secondary">2行目</list-secondary>\n' +
-        '         </list-text>\n' +
-        '         <list-meta class="meta">メタ情報</list-meta>\n' +
-        '      </list-item>\n' +
-        '   </x-list>\n' +
-        '</x-list-group>\n' ,
+        '<x-list class="my-list">\n' +
+        '   <list-item class="item">\n' +
+        '      <list-text class="text">テキスト</list-text>\n' +
+        '   </list-item>\n' +
+        '   <list-divider class="divider -inset -padded"/>\n' +
+        '   <list-item class="item">\n' +
+        '      <list-text class="text">テキスト</list-text>\n' +
+        '   </list-item>\n' +
+        '</x-list>\n',
         { lang: 'html' }
       )}
       ${copyCodeBlock(
         '@import \'@rsmdc/list/rs-list.scss\';\n\n' +
-        '.group-list {\n' +
-        '   @include rs-list-divider-type(inset);\n' +
+        '.my-list {\n' +
+        '   > .divider.-inset {\n' +
+        '     @include rs-list-divider-type(inset);\n' +
+        '   }\n' +
+        '   > .divider.-inset.-padded {\n' +
+        '     @include rs-list-divider-type(inset, padded);\n' +
+        '   }\n' +
         '}',
         { lang: 'scss' }
       )}
@@ -888,55 +760,24 @@ storiesOf('Components|List/スタイルのカスタマイズ/仕切り線のタ�
     return `
       <h4>padded</h4>
       insetも一緒に使える
-      <x-list class="list">
+      <x-list class="my-list">
         <list-item class="item">
-          <list-text class="text">テキスト</list-text>
-          <list-meta class="meta">メタ情報</list-meta>
+          <list-text class="text">text</list-text>
         </list-item>
+        <list-divider class="divider -padded"></list-divider>
         <list-item class="item">
-          <list-text class="text">テキスト</list-text>
-          <list-meta class="meta">メタ情報</list-meta>
+          <list-text class="text">text</list-text>
         </list-item>
       </x-list>
-      <x-list-group class="group-list -avatarlist -padded">
-        <x-list class="list">
-          <list-subheader class="subheader">リストタイトル</list-subheader>
-          <list-divider></list-divider>
-          <list-item class="item">
-            <list-graphic class="graphic"></list-graphic>
-            <list-text class="text">
-              <list-primary class="primary">1行目</list-primary>
-              <list-secondary class="secondary">2行目</list-secondary>
-            </list-text>
-          </list-item>
-          <list-item class="item">
-            <list-graphic class="graphic"></list-graphic>
-            <list-text class="text">
-              <list-primary class="primary">1行目</list-primary>
-              <list-secondary class="secondary">2行目</list-secondary>
-            </list-text>
-          </list-item>
-        </x-list>
-        <x-list class="list">
-          <list-subheader class="subheader">リストタイトル</list-subheader>
-          <list-divider></list-divider>
-          <list-item class="item">
-            <list-graphic class="graphic"></list-graphic>
-            <list-text class="text">
-              <list-primary class="primary">1行目</list-primary>
-              <list-secondary class="secondary">2行目</list-secondary>
-            </list-text>
-          </list-item>
-          <list-item class="item">
-            <list-graphic class="graphic"></list-graphic>
-              <list-text class="text">
-                <list-primary class="primary">1行目</list-primary>
-                <list-secondary class="secondary">2行目</list-secondary>
-              </list-text>
-              <list-meta class="meta">メタ情報</list-meta>
-          </list-item>
-        </x-list>
-      </x-list-group>
+      <x-list class="my-list">
+        <list-item class="item">
+          <list-text class="text">text</list-text>
+        </list-item>
+        <list-divider class="divider -inset -padded"></list-divider>
+        <list-item class="item">
+          <list-text class="text">text</list-text>
+        </list-item>
+      </x-list>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
         '@include rs-list-divider-type($types...);',
@@ -944,61 +785,35 @@ storiesOf('Components|List/スタイルのカスタマイズ/仕切り線のタ�
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
-        '<x-list class="list">\n' +
+        '<x-list class="my-list">\n' +
         '   <list-item class="item">\n' +
         '      <list-text class="text">テキスト</list-text>\n' +
-        '      <list-meta class="meta">メタ情報</list-meta>\n' +
         '   </list-item>\n' +
+        '   <list-divider class="divider -padded"/>\n' +
         '   <list-item class="item">\n' +
         '      <list-text class="text">テキスト</list-text>\n' +
-        '      <list-meta class="meta">メタ情報</list-meta>\n' +
         '   </list-item>\n' +
         '</x-list>\n' +
-        '<x-list-group class="group-list">\n' +
-        '   <x-list class="list">\n' +
-        '      <list-subheader class="subheader">リストタイトル</list-subheader>\n' +
-        '      <list-divider></list-divider>\n' +
-        '      <list-item class="item">\n' +
-        '         <list-graphic class="graphic"></list-graphic>\n' +
-        '         <list-text class="text">\n' +
-        '             <list-primary class="primary">1行目</list-primary>\n' +
-        '             <list-secondary class="secondary">2行目</list-secondary>\n' +
-        '          </list-text>\n' +
-        '      </list-item>\n' +
-        '      <list-item class="item">\n' +
-        '        <list-graphic class="graphic"></list-graphic>\n' +
-        '        <list-text class="text">\n' +
-        '          <list-primary class="primary">1行目</list-primary>\n' +
-        '          <list-secondary class="secondary">2行目</list-secondary>\n' +
-        '        </list-text>\n' +
-        '      </list-item>\n' +
-        '   </x-list>\n' +
-        '   <x-list class="list">\n' +
-        '      <list-subheader class="subheader">リストタイトル</list-subheader>\n' +
-        '      <list-divider></list-divider>\n' +
-        '      <list-item class="item">\n' +
-        '         <list-graphic class="graphic"></list-graphic>\n' +
-        '         <list-text class="text">\n' +
-        '            <list-primary class="primary">1行目</list-primary>\n' +
-        '            <list-secondary class="secondary">2行目</list-secondary>\n' +
-        '         </list-text>\n' +
-        '      </list-item>\n' +
-        '      <list-item class="item">\n' +
-        '         <list-graphic class="graphic"></list-graphic>\n' +
-        '         <list-text class="text">\n' +
-        '            <list-primary class="primary">1行目</list-primary>\n' +
-        '            <list-secondary class="secondary">2行目</list-secondary>\n' +
-        '         </list-text>\n' +
-        '         <list-meta class="meta">メタ情報</list-meta>\n' +
-        '      </list-item>\n' +
-        '   </x-list>\n' +
-        '</x-list-group>\n' ,
+        '<x-list class="my-list">\n' +
+        '   <list-item class="item">\n' +
+        '      <list-text class="text">テキスト</list-text>\n' +
+        '   </list-item>\n' +
+        '   <list-divider class="divider -inset -padded"/>\n' +
+        '   <list-item class="item">\n' +
+        '      <list-text class="text">テキスト</list-text>\n' +
+        '   </list-item>\n' +
+        '</x-list>\n',
         { lang: 'html' }
       )}
       ${copyCodeBlock(
         '@import \'@rsmdc/list/rs-list.scss\';\n\n' +
-        '.group-list {\n' +
-        '   @include rs-list-divider-type(padded);\n' +
+        '.my-list {\n' +
+        '   > .divider.-padded {\n' +
+        '     @include rs-list-divider-type(padded);\n' +
+        '   }\n' +
+        '   > .divider.-inset.-padded {\n' +
+        '     @include rs-list-divider-type(inset, padded);\n' +
+        '   }\n' +
         '}',
         { lang: 'scss' }
       )}
@@ -1009,106 +824,28 @@ storiesOf('Components|List/スタイルのカスタマイズ/画像の形を変�
     return `
       <h4>normal（デフォルト）</h4>
       <p>mixinは不要。</p>
-      <x-list class="list">
+      <x-list class="list -avatarlist">
         <list-item class="item">
+          <list-graphic class="graphic"></list-graphic>
           <list-text class="text">テキスト</list-text>
-          <list-meta class="meta">メタ情報</list-meta>
         </list-item>
         <list-item class="item">
+          <list-graphic class="graphic"></list-graphic>
           <list-text class="text">テキスト</list-text>
-          <list-meta class="meta">メタ情報</list-meta>
         </list-item>
       </x-list>
-      <x-list-group class="group-list -avatarlist">
-        <x-list class="list">
-          <list-subheader class="subheader">リストタイトル</list-subheader>
-          <list-divider></list-divider>
-          <list-item class="item">
-            <list-graphic class="graphic"></list-graphic>
-            <list-text class="text">
-              <list-primary class="primary">1行目</list-primary>
-              <list-secondary class="secondary">2行目</list-secondary>
-            </list-text>
-          </list-item>
-          <list-item class="item">
-            <list-graphic class="graphic"></list-graphic>
-            <list-text class="text">
-              <list-primary class="primary">1行目</list-primary>
-              <list-secondary class="secondary">2行目</list-secondary>
-            </list-text>
-          </list-item>
-        </x-list>
-        <x-list class="list">
-          <list-subheader class="subheader">リストタイトル</list-subheader>
-          <list-divider></list-divider>
-          <list-item class="item">
-            <list-graphic class="graphic"></list-graphic>
-            <list-text class="text">
-              <list-primary class="primary">1行目</list-primary>
-              <list-secondary class="secondary">2行目</list-secondary>
-            </list-text>
-          </list-item>
-          <list-item class="item">
-            <list-graphic class="graphic"></list-graphic>
-              <list-text class="text">
-                <list-primary class="primary">1行目</list-primary>
-                <list-secondary class="secondary">2行目</list-secondary>
-              </list-text>
-              <list-meta class="meta">メタ情報</list-meta>
-          </list-item>
-        </x-list>
-      </x-list-group>
       <h4>使用方法</h4>
       ${copyCodeBlock(
-        '<x-list class="list">\n' +
+        '<x-list class="list -avatarlist">\n' +
         '   <list-item class="item">\n' +
+        '      <list-graphic class="graphic" />\n' +
         '      <list-text class="text">テキスト</list-text>\n' +
-        '      <list-meta class="meta">メタ情報</list-meta>\n' +
         '   </list-item>\n' +
         '   <list-item class="item">\n' +
+        '      <list-graphic class="graphic" />\n' +
         '      <list-text class="text">テキスト</list-text>\n' +
-        '      <list-meta class="meta">メタ情報</list-meta>\n' +
         '   </list-item>\n' +
-        '</x-list>\n' +
-        '<x-list-group class="group-list">\n' +
-        '   <x-list class="list">\n' +
-        '      <list-subheader class="subheader">リストタイトル</list-subheader>\n' +
-        '      <list-divider></list-divider>\n' +
-        '      <list-item class="item">\n' +
-        '         <list-graphic class="graphic"></list-graphic>\n' +
-        '         <list-text class="text">\n' +
-        '             <list-primary class="primary">1行目</list-primary>\n' +
-        '             <list-secondary class="secondary">2行目</list-secondary>\n' +
-        '          </list-text>\n' +
-        '      </list-item>\n' +
-        '      <list-item class="item">\n' +
-        '        <list-graphic class="graphic"></list-graphic>\n' +
-        '        <list-text class="text">\n' +
-        '          <list-primary class="primary">1行目</list-primary>\n' +
-        '          <list-secondary class="secondary">2行目</list-secondary>\n' +
-        '        </list-text>\n' +
-        '      </list-item>\n' +
-        '   </x-list>\n' +
-        '   <x-list class="list">\n' +
-        '      <list-subheader class="subheader">リストタイトル</list-subheader>\n' +
-        '      <list-divider></list-divider>\n' +
-        '      <list-item class="item">\n' +
-        '         <list-graphic class="graphic"></list-graphic>\n' +
-        '         <list-text class="text">\n' +
-        '            <list-primary class="primary">1行目</list-primary>\n' +
-        '            <list-secondary class="secondary">2行目</list-secondary>\n' +
-        '         </list-text>\n' +
-        '      </list-item>\n' +
-        '      <list-item class="item">\n' +
-        '         <list-graphic class="graphic"></list-graphic>\n' +
-        '         <list-text class="text">\n' +
-        '            <list-primary class="primary">1行目</list-primary>\n' +
-        '            <list-secondary class="secondary">2行目</list-secondary>\n' +
-        '         </list-text>\n' +
-        '         <list-meta class="meta">メタ情報</list-meta>\n' +
-        '      </list-item>\n' +
-        '   </x-list>\n' +
-        '</x-list-group>\n' ,
+        '</x-list>\n',
         { lang: 'html' }
       )}
     `
@@ -1116,55 +853,16 @@ storiesOf('Components|List/スタイルのカスタマイズ/画像の形を変�
   .add('circle', () => {
     return `
       <h4>circle</h4>
-      <x-list class="list">
+      <x-list class="list -avatarlist">
         <list-item class="item">
+          <list-graphic class="graphic -circle"></list-graphic>
           <list-text class="text">テキスト</list-text>
-          <list-meta class="meta">メタ情報</list-meta>
         </list-item>
         <list-item class="item">
+          <list-graphic class="graphic -circle"></list-graphic>
           <list-text class="text">テキスト</list-text>
-          <list-meta class="meta">メタ情報</list-meta>
         </list-item>
       </x-list>
-      <x-list-group class="group-list -avatarlist">
-        <x-list class="list">
-          <list-subheader class="subheader">リストタイトル</list-subheader>
-          <list-divider></list-divider>
-          <list-item class="item">
-            <list-graphic class="graphic -circle"></list-graphic>
-            <list-text class="text">
-              <list-primary class="primary">1行目</list-primary>
-              <list-secondary class="secondary">2行目</list-secondary>
-            </list-text>
-          </list-item>
-          <list-item class="item">
-            <list-graphic class="graphic -circle"></list-graphic>
-            <list-text class="text">
-              <list-primary class="primary">1行目</list-primary>
-              <list-secondary class="secondary">2行目</list-secondary>
-            </list-text>
-          </list-item>
-        </x-list>
-        <x-list class="list">
-          <list-subheader class="subheader">リストタイトル</list-subheader>
-          <list-divider></list-divider>
-          <list-item class="item">
-            <list-graphic class="graphic -circle"></list-graphic>
-            <list-text class="text">
-              <list-primary class="primary">1行目</list-primary>
-              <list-secondary class="secondary">2行目</list-secondary>
-            </list-text>
-          </list-item>
-          <list-item class="item">
-            <list-graphic class="graphic -circle"></list-graphic>
-            <list-text class="text">
-              <list-primary class="primary">1行目</list-primary>
-              <list-secondary class="secondary">2行目</list-secondary>
-            </list-text>
-            <list-meta class="meta">メタ情報</list-meta>
-          </list-item>
-        </x-list>
-      </x-list-group>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
         '@include rs-list-graphic-type($type);',
@@ -1172,62 +870,26 @@ storiesOf('Components|List/スタイルのカスタマイズ/画像の形を変�
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
-        '<x-list class="list">\n' +
+        '<x-list class="list -avatarlist">\n' +
         '   <list-item class="item">\n' +
+        '      <list-graphic class="graphic -circle" />\n' +
         '      <list-text class="text">テキスト</list-text>\n' +
-        '      <list-meta class="meta">メタ情報</list-meta>\n' +
         '   </list-item>\n' +
         '   <list-item class="item">\n' +
+        '      <list-graphic class="graphic -circle" />\n' +
         '      <list-text class="text">テキスト</list-text>\n' +
-        '      <list-meta class="meta">メタ情報</list-meta>\n' +
         '   </list-item>\n' +
-        '</x-list>\n' +
-        '<x-list-group class="group-list">\n' +
-        '   <x-list class="list">\n' +
-        '      <list-subheader class="subheader">リストタイトル</list-subheader>\n' +
-        '      <list-divider></list-divider>\n' +
-        '      <list-item class="item">\n' +
-        '         <list-graphic class="graphic"></list-graphic>\n' +
-        '         <list-text class="text">\n' +
-        '             <list-primary class="primary">1行目</list-primary>\n' +
-        '             <list-secondary class="secondary">2行目</list-secondary>\n' +
-        '          </list-text>\n' +
-        '      </list-item>\n' +
-        '      <list-item class="item">\n' +
-        '        <list-graphic class="graphic"></list-graphic>\n' +
-        '        <list-text class="text">\n' +
-        '          <list-primary class="primary">1行目</list-primary>\n' +
-        '          <list-secondary class="secondary">2行目</list-secondary>\n' +
-        '        </list-text>\n' +
-        '      </list-item>\n' +
-        '   </x-list>\n' +
-        '   <x-list class="list">\n' +
-        '      <list-subheader class="subheader">リストタイトル</list-subheader>\n' +
-        '      <list-divider></list-divider>\n' +
-        '      <list-item class="item">\n' +
-        '         <list-graphic class="graphic"></list-graphic>\n' +
-        '         <list-text class="text">\n' +
-        '            <list-primary class="primary">1行目</list-primary>\n' +
-        '            <list-secondary class="secondary">2行目</list-secondary>\n' +
-        '         </list-text>\n' +
-        '      </list-item>\n' +
-        '      <list-item class="item">\n' +
-        '         <list-graphic class="graphic"></list-graphic>\n' +
-        '         <list-text class="text">\n' +
-        '            <list-primary class="primary">1行目</list-primary>\n' +
-        '            <list-secondary class="secondary">2行目</list-secondary>\n' +
-        '         </list-text>\n' +
-        '         <list-meta class="meta">メタ情報</list-meta>\n' +
-        '      </list-item>\n' +
-        '   </x-list>\n' +
-        '</x-list-group>\n' ,
+        '</x-list>\n',
         { lang: 'html' }
       )}
       ${copyCodeBlock(
         '@import \'@rsmdc/list/rs-list.scss\';\n\n' +
-        '.graphic {\n' +
-        '   @include rs-list-graphic-type(circle, url(\'http://icons.iconarchive.com/icons/iconsmind/outline/512/Mail-icon.png\'));\n' +
-        '}',
+        '.my-list {\n' +
+        '   > .graphic.-circle {' +
+        '     @include rs-list-graphic-type(circle);\n' +
+        '     @include rs-list-graphic-image(url(\'http://icons.iconarchive.com/icons/iconsmind/outline/512/Mail-icon.png\'));\n' +
+        '   }' +
+        '}\n',
         { lang: 'scss' }
       )}
     `
@@ -1235,55 +897,16 @@ storiesOf('Components|List/スタイルのカスタマイズ/画像の形を変�
   .add('rectangle', () => {
     return `
       <h4>rectangle</h4>
-      <x-list class="list">
+      <x-list class="list -avatarlist">
         <list-item class="item">
+          <list-graphic class="graphic -rectangle"></list-graphic>
           <list-text class="text">テキスト</list-text>
-          <list-meta class="meta">メタ情報</list-meta>
         </list-item>
         <list-item class="item">
+          <list-graphic class="graphic -rectangle"></list-graphic>
           <list-text class="text">テキスト</list-text>
-          <list-meta class="meta">メタ情報</list-meta>
         </list-item>
       </x-list>
-      <x-list-group class="group-list -avatarlist">
-        <x-list class="list">
-          <list-subheader class="subheader">リストタイトル</list-subheader>
-          <list-divider></list-divider>
-          <list-item class="item">
-            <list-graphic class="graphic -rectangle"></list-graphic>
-            <list-text class="text">
-              <list-primary class="primary">1行目</list-primary>
-              <list-secondary class="secondary">2行目</list-secondary>
-            </list-text>
-          </list-item>
-          <list-item class="item">
-            <list-graphic class="graphic -rectangle"></list-graphic>
-            <list-text class="text">
-              <list-primary class="primary">1行目</list-primary>
-              <list-secondary class="secondary">2行目</list-secondary>
-            </list-text>
-          </list-item>
-        </x-list>
-        <x-list class="list">
-          <list-subheader class="subheader">リストタイトル</list-subheader>
-          <list-divider></list-divider>
-          <list-item class="item">
-            <list-graphic class="graphic -rectangle"></list-graphic>
-            <list-text class="text">
-              <list-primary class="primary">1行目</list-primary>
-              <list-secondary class="secondary">2行目</list-secondary>
-            </list-text>
-          </list-item>
-          <list-item class="item">
-            <list-graphic class="graphic -rectangle"></list-graphic>
-            <list-text class="text">
-              <list-primary class="primary">1行目</list-primary>
-              <list-secondary class="secondary">2行目</list-secondary>
-            </list-text>
-            <list-meta class="meta">メタ情報</list-meta>
-          </list-item>
-        </x-list>
-      </x-list-group>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
         '@include rs-list-graphic-type($type);',
@@ -1291,62 +914,26 @@ storiesOf('Components|List/スタイルのカスタマイズ/画像の形を変�
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
-        '<x-list class="list">\n' +
+        '<x-list class="list -avatarlist">\n' +
         '   <list-item class="item">\n' +
+        '      <list-graphic class="graphic -rectangle" />\n' +
         '      <list-text class="text">テキスト</list-text>\n' +
-        '      <list-meta class="meta">メタ情報</list-meta>\n' +
         '   </list-item>\n' +
         '   <list-item class="item">\n' +
+        '      <list-graphic class="graphic -rectangle" />\n' +
         '      <list-text class="text">テキスト</list-text>\n' +
-        '      <list-meta class="meta">メタ情報</list-meta>\n' +
         '   </list-item>\n' +
-        '</x-list>\n' +
-        '<x-list-group class="group-list">\n' +
-        '   <x-list class="list">\n' +
-        '      <list-subheader class="subheader">リストタイトル</list-subheader>\n' +
-        '      <list-divider></list-divider>\n' +
-        '      <list-item class="item">\n' +
-        '         <list-graphic class="graphic"></list-graphic>\n' +
-        '         <list-text class="text">\n' +
-        '             <list-primary class="primary">1行目</list-primary>\n' +
-        '             <list-secondary class="secondary">2行目</list-secondary>\n' +
-        '          </list-text>\n' +
-        '      </list-item>\n' +
-        '      <list-item class="item">\n' +
-        '        <list-graphic class="graphic"></list-graphic>\n' +
-        '        <list-text class="text">\n' +
-        '          <list-primary class="primary">1行目</list-primary>\n' +
-        '          <list-secondary class="secondary">2行目</list-secondary>\n' +
-        '        </list-text>\n' +
-        '      </list-item>\n' +
-        '   </x-list>\n' +
-        '   <x-list class="list">\n' +
-        '      <list-subheader class="subheader">リストタイトル</list-subheader>\n' +
-        '      <list-divider></list-divider>\n' +
-        '      <list-item class="item">\n' +
-        '         <list-graphic class="graphic"></list-graphic>\n' +
-        '         <list-text class="text">\n' +
-        '            <list-primary class="primary">1行目</list-primary>\n' +
-        '            <list-secondary class="secondary">2行目</list-secondary>\n' +
-        '         </list-text>\n' +
-        '      </list-item>\n' +
-        '      <list-item class="item">\n' +
-        '         <list-graphic class="graphic"></list-graphic>\n' +
-        '         <list-text class="text">\n' +
-        '            <list-primary class="primary">1行目</list-primary>\n' +
-        '            <list-secondary class="secondary">2行目</list-secondary>\n' +
-        '         </list-text>\n' +
-        '         <list-meta class="meta">メタ情報</list-meta>\n' +
-        '      </list-item>\n' +
-        '   </x-list>\n' +
-        '</x-list-group>\n' ,
+        '</x-list>\n',
         { lang: 'html' }
       )}
       ${copyCodeBlock(
         '@import \'@rsmdc/list/rs-list.scss\';\n\n' +
-        '.graphic {\n' +
-        '   @include rs-list-graphic-type(rectangle, url(\'http://icons.iconarchive.com/icons/iconsmind/outline/512/Mail-icon.png\'));\n' +
-        '}',
+        '.my-list {\n' +
+        '   > .graphic.-rectangle {' +
+        '     @include rs-list-graphic-type(rectangle);\n' +
+        '     @include rs-list-graphic-image(url(\'http://icons.iconarchive.com/icons/iconsmind/outline/512/Mail-icon.png\'));\n' +
+        '   }' +
+        '}\n',
         { lang: 'scss' }
       )}
     `
@@ -1354,55 +941,16 @@ storiesOf('Components|List/スタイルのカスタマイズ/画像の形を変�
   .add('square', () => {
     return `
       <h4>square</h4>
-      <x-list class="list">
+      <x-list class="list -avatarlist">
         <list-item class="item">
+          <list-graphic class="graphic -square"></list-graphic>
           <list-text class="text">テキスト</list-text>
-          <list-meta class="meta">メタ情報</list-meta>
         </list-item>
         <list-item class="item">
+          <list-graphic class="graphic -square"></list-graphic>
           <list-text class="text">テキスト</list-text>
-          <list-meta class="meta">メタ情報</list-meta>
         </list-item>
       </x-list>
-      <x-list-group class="group-list -avatarlist">
-        <x-list class="list">
-          <list-subheader class="subheader">リストタイトル</list-subheader>
-          <list-divider></list-divider>
-          <list-item class="item">
-            <list-graphic class="graphic -square"></list-graphic>
-            <list-text class="text">
-              <list-primary class="primary">1行目</list-primary>
-              <list-secondary class="secondary">2行目</list-secondary>
-            </list-text>
-          </list-item>
-          <list-item class="item">
-            <list-graphic class="graphic -square"></list-graphic>
-            <list-text class="text">
-              <list-primary class="primary">1行目</list-primary>
-              <list-secondary class="secondary">2行目</list-secondary>
-            </list-text>
-          </list-item>
-        </x-list>
-        <x-list class="list">
-          <list-subheader class="subheader">リストタイトル</list-subheader>
-          <list-divider></list-divider>
-          <list-item class="item">
-            <list-graphic class="graphic -square"></list-graphic>
-            <list-text class="text">
-              <list-primary class="primary">1行目</list-primary>
-              <list-secondary class="secondary">2行目</list-secondary>
-            </list-text>
-          </list-item>
-          <list-item class="item">
-            <list-graphic class="graphic -square"></list-graphic>
-            <list-text class="text">
-              <list-primary class="primary">1行目</list-primary>
-              <list-secondary class="secondary">2行目</list-secondary>
-            </list-text>
-            <list-meta class="meta">メタ情報</list-meta>
-          </list-item>
-        </x-list>
-      </x-list-group>
       <h4>使用するmixin</h4>
     ${copyCodeBlock(
       '@include rs-list-graphic-type($type);',
@@ -1410,63 +958,27 @@ storiesOf('Components|List/スタイルのカスタマイズ/画像の形を変�
     )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
-      '<x-list class="list">\n' +
+      '<x-list class="list -avatarlist">\n' +
       '   <list-item class="item">\n' +
+      '      <list-graphic class="graphic -square" />\n' +
       '      <list-text class="text">テキスト</list-text>\n' +
-      '      <list-meta class="meta">メタ情報</list-meta>\n' +
       '   </list-item>\n' +
       '   <list-item class="item">\n' +
+      '      <list-graphic class="graphic -square" />\n' +
       '      <list-text class="text">テキスト</list-text>\n' +
-      '      <list-meta class="meta">メタ情報</list-meta>\n' +
       '   </list-item>\n' +
-      '</x-list>\n' +
-      '<x-list-group class="group-list">\n' +
-      '   <x-list class="list">\n' +
-      '      <list-subheader class="subheader">リストタイトル</list-subheader>\n' +
-      '      <list-divider></list-divider>\n' +
-      '      <list-item class="item">\n' +
-      '         <list-graphic class="graphic -square"></list-graphic>\n' +
-      '         <list-text class="text">\n' +
-      '             <list-primary class="primary">1行目</list-primary>\n' +
-      '             <list-secondary class="secondary">2行目</list-secondary>\n' +
-      '          </list-text>\n' +
-      '      </list-item>\n' +
-      '      <list-item class="item">\n' +
-      '        <list-graphic class="graphic -square"></list-graphic>\n' +
-      '        <list-text class="text">\n' +
-      '          <list-primary class="primary">1行目</list-primary>\n' +
-      '          <list-secondary class="secondary">2行目</list-secondary>\n' +
-      '        </list-text>\n' +
-      '      </list-item>\n' +
-      '   </x-list>\n' +
-      '   <x-list class="list">\n' +
-      '      <list-subheader class="subheader">リストタイトル</list-subheader>\n' +
-      '      <list-divider></list-divider>\n' +
-      '      <list-item class="item">\n' +
-      '         <list-graphic class="graphic -square"></list-graphic>\n' +
-      '         <list-text class="text">\n' +
-      '            <list-primary class="primary">1行目</list-primary>\n' +
-      '            <list-secondary class="secondary">2行目</list-secondary>\n' +
-      '         </list-text>\n' +
-      '      </list-item>\n' +
-      '      <list-item class="item">\n' +
-      '         <list-graphic class="graphic -square"></list-graphic>\n' +
-      '         <list-text class="text">\n' +
-      '            <list-primary class="primary">1行目</list-primary>\n' +
-      '            <list-secondary class="secondary">2行目</list-secondary>\n' +
-      '         </list-text>\n' +
-      '         <list-meta class="meta">メタ情報</list-meta>\n' +
-      '      </list-item>\n' +
-      '   </x-list>\n' +
-      '</x-list-group>\n' ,
-      { lang: 'html' }
+      '</x-list>\n',
+    { lang: 'html' }
     )}
     ${copyCodeBlock(
       '@import \'@rsmdc/list/rs-list.scss\';\n\n' +
-      '.graphic {\n' +
-      '   @include rs-list-graphic-type(square, url(\'http://icons.iconarchive.com/icons/iconsmind/outline/512/Mail-icon.png\'));\n' +
-      '}',
-      { lang: 'scss' }
+      '.my-list {\n' +
+      '   > .graphic.-square {' +
+      '     @include rs-list-graphic-type(square);\n' +
+      '     @include rs-list-graphic-image(url(\'http://icons.iconarchive.com/icons/iconsmind/outline/512/Mail-icon.png\'));\n' +
+      '   }' +
+      '}\n',
+    { lang: 'scss' }
     )}
     `
   })
@@ -1475,55 +987,28 @@ storiesOf('Components|List/スタイルのカスタマイズ', module)
   .add('テキスト(1行目)の色を変える', () => {
     return `
       <p>テキスト（1行目）の色を指定した色に変える。</p>
-      <x-list class="list">
+      <x-list class="my-list">
         <list-item class="item">
           <list-text class="text">テキスト</list-text>
-          <list-meta class="meta">メタ情報</list-meta>
         </list-item>
         <list-item class="item">
-          <list-text class="text">テキスト</list-text>
-          <list-meta class="meta">メタ情報</list-meta>
+          <list-text class="text -brown">テキスト</list-text>
         </list-item>
       </x-list>
-      <x-list-group class="group-list -avatarlist -primary-text-ink-color">
-        <x-list class="list">
-          <list-subheader class="subheader">リストタイトル</list-subheader>
-          <list-divider></list-divider>
-          <list-item class="item">
-            <list-graphic class="graphic -square"></list-graphic>
-            <list-text class="text">
-              <list-primary class="primary">1行目</list-primary>
-              <list-secondary class="secondary">2行目</list-secondary>
-            </list-text>
-          </list-item>
-          <list-item class="item">
-            <list-graphic class="graphic -square"></list-graphic>
-            <list-text class="text">
-              <list-primary class="primary">1行目</list-primary>
-              <list-secondary class="secondary">2行目</list-secondary>
-            </list-text>
-          </list-item>
-        </x-list>
-        <x-list class="list">
-          <list-subheader class="subheader">リストタイトル</list-subheader>
-          <list-divider></list-divider>
-          <list-item class="item">
-            <list-graphic class="graphic -square"></list-graphic>
-            <list-text class="text">
-              <list-primary class="primary">1行目</list-primary>
-              <list-secondary class="secondary">2行目</list-secondary>
-            </list-text>
-          </list-item>
-          <list-item class="item">
-            <list-graphic class="graphic -square"></list-graphic>
-            <list-text class="text">
-              <list-primary class="primary">1行目</list-primary>
-              <list-secondary class="secondary">2行目</list-secondary>
-            </list-text>
-            <list-meta class="meta">メタ情報</list-meta>
-          </list-item>
-        </x-list>
-      </x-list-group>
+      <x-list class="my-list">
+        <list-item class="item">
+          <list-text class="text">
+            <list-primary class="primary -brown">1行目</list-primary>
+            <list-secondary class="secondary">2行目</list-secondary>
+          </list-text>
+        </list-item>
+        <list-item class="item">
+          <list-text class="text">
+            <list-primary class="primary">1行目</list-primary>
+            <list-secondary class="secondary">2行目</list-secondary>
+          </list-text>
+        </list-item>
+      </x-list>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
         '@include rs-list-item-primary-text-ink-color($color);',
@@ -1531,62 +1016,36 @@ storiesOf('Components|List/スタイルのカスタマイズ', module)
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
-        '<x-list class="list">\n' +
+        '<x-list class="my-list">\n' +
         '   <list-item class="item">\n' +
-        '      <list-text class="text">テキスト</list-text>\n' +
-        '      <list-meta class="meta">メタ情報</list-meta>\n' +
+        '      <list-text class="text -brown">テキスト</list-text>\n' +
         '   </list-item>\n' +
         '   <list-item class="item">\n' +
         '      <list-text class="text">テキスト</list-text>\n' +
-        '      <list-meta class="meta">メタ情報</list-meta>\n' +
         '   </list-item>\n' +
         '</x-list>\n' +
-        '<x-list-group class="group-list -primary-text-ink-color">\n' +
-        '   <x-list class="list">\n' +
-        '      <list-subheader class="subheader">リストタイトル</list-subheader>\n' +
-        '      <list-divider></list-divider>\n' +
-        '      <list-item class="item">\n' +
-        '         <list-graphic class="graphic"></list-graphic>\n' +
-        '         <list-text class="text">\n' +
-        '             <list-primary class="primary">1行目</list-primary>\n' +
-        '             <list-secondary class="secondary">2行目</list-secondary>\n' +
-        '          </list-text>\n' +
-        '      </list-item>\n' +
-        '      <list-item class="item">\n' +
-        '        <list-graphic class="graphic"></list-graphic>\n' +
-        '        <list-text class="text">\n' +
+        '<x-list class="my-list">\n' +
+        '    <list-item class="item">\n' +
+        '       <list-text class="text">\n' +
+        '          <list-primary class="primary -brown">1行目</list-primary>\n' +
+        '          <list-secondary class="secondary">2行目</list-secondary>\n' +
+        '       </list-text>\n' +
+        '    </list-item>\n' +
+        '    <list-item class="item">\n' +
+        '       <list-text class="text">\n' +
         '          <list-primary class="primary">1行目</list-primary>\n' +
         '          <list-secondary class="secondary">2行目</list-secondary>\n' +
-        '        </list-text>\n' +
-        '      </list-item>\n' +
-        '   </x-list>\n' +
-        '   <x-list class="list">\n' +
-        '      <list-subheader class="subheader">リストタイトル</list-subheader>\n' +
-        '      <list-divider></list-divider>\n' +
-        '      <list-item class="item">\n' +
-        '         <list-graphic class="graphic"></list-graphic>\n' +
-        '         <list-text class="text">\n' +
-        '            <list-primary class="primary">1行目</list-primary>\n' +
-        '            <list-secondary class="secondary">2行目</list-secondary>\n' +
-        '         </list-text>\n' +
-        '      </list-item>\n' +
-        '      <list-item class="item">\n' +
-        '         <list-graphic class="graphic"></list-graphic>\n' +
-        '         <list-text class="text">\n' +
-        '            <list-primary class="primary">1行目</list-primary>\n' +
-        '            <list-secondary class="secondary">2行目</list-secondary>\n' +
-        '         </list-text>\n' +
-        '         <list-meta class="meta">メタ情報</list-meta>\n' +
-        '      </list-item>\n' +
-        '   </x-list>\n' +
-        '</x-list-group>\n' ,
+        '       </list-text>\n' +
+        '    </list-item>\n' +
+        '</x-list>\n',
         { lang: 'html' }
       )}
       ${copyCodeBlock(
         '@import \'@rsmdc/list/rs-list.scss\';\n\n' +
-        '.group-list {\n' +
-        '  &.-secondary-text-ink-color {\n' +
-        '   @include rs-list-item-secondary-text-ink-color(brown);\n' +
+        '.my-list {\n' +
+        '  > .item > .text.-brown, \n' +
+        '  > .item > .text > .primary.-brown, {\n' +
+        '   @include rs-list-item-primary-text-ink-color(brown);\n' +
         '  }\n' +
         '}',
         { lang: 'scss' }
@@ -1602,55 +1061,20 @@ storiesOf('Components|List/スタイルのカスタマイズ', module)
   .add('テキスト(2行目)の色を変える', () => {
     return `
       <p>テキスト（2行目）の色を指定した色に変える。</p>
-      <x-list class="list">
+      <x-list class="my-list">
         <list-item class="item">
-          <list-text class="text">テキスト</list-text>
-          <list-meta class="meta">メタ情報</list-meta>
+          <list-text class="text">
+            <list-primary class="primary">1行目</list-primary>
+            <list-secondary class="secondary -brown">2行目</list-secondary>
+          </list-text>
         </list-item>
         <list-item class="item">
-          <list-text class="text">テキスト</list-text>
-          <list-meta class="meta">メタ情報</list-meta>
+          <list-text class="text">
+            <list-primary class="primary">1行目</list-primary>
+            <list-secondary class="secondary">2行目</list-secondary>
+          </list-text>
         </list-item>
       </x-list>
-      <x-list-group class="group-list -avatarlist -secondary-text-ink-color">
-        <x-list class="list">
-          <list-subheader class="subheader">リストタイトル</list-subheader>
-          <list-divider></list-divider>
-          <list-item class="item">
-            <list-graphic class="graphic -square"></list-graphic>
-            <list-text class="text">
-              <list-primary class="primary">1行目</list-primary>
-              <list-secondary class="secondary">2行目</list-secondary>
-            </list-text>
-          </list-item>
-          <list-item class="item">
-            <list-graphic class="graphic -square"></list-graphic>
-            <list-text class="text">
-              <list-primary class="primary">1行目</list-primary>
-              <list-secondary class="secondary">2行目</list-secondary>
-            </list-text>
-          </list-item>
-        </x-list>
-        <x-list class="list">
-          <list-subheader class="subheader">リストタイトル</list-subheader>
-          <list-divider></list-divider>
-          <list-item class="item">
-            <list-graphic class="graphic -square"></list-graphic>
-            <list-text class="text">
-              <list-primary class="primary">1行目</list-primary>
-              <list-secondary class="secondary">2行目</list-secondary>
-            </list-text>
-          </list-item>
-          <list-item class="item">
-            <list-graphic class="graphic -square"></list-graphic>
-            <list-text class="text">
-              <list-primary class="primary">1行目</list-primary>
-              <list-secondary class="secondary">2行目</list-secondary>
-            </list-text>
-            <list-meta class="meta">メタ情報</list-meta>
-          </list-item>
-        </x-list>
-      </x-list-group>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
         '@include rs-list-item-secondary-text-ink-color($color);',
@@ -1658,61 +1082,26 @@ storiesOf('Components|List/スタイルのカスタマイズ', module)
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
-        '<x-list class="list">\n' +
-        '   <list-item class="item">\n' +
-        '      <list-text class="text">テキスト</list-text>\n' +
-        '      <list-meta class="meta">メタ情報</list-meta>\n' +
-        '   </list-item>\n' +
-        '   <list-item class="item">\n' +
-        '      <list-text class="text">テキスト</list-text>\n' +
-        '      <list-meta class="meta">メタ情報</list-meta>\n' +
-        '   </list-item>\n' +
-        '</x-list>\n' +
-        '<x-list-group class="group-list -secondary-text-ink-color">\n' +
-        '   <x-list class="list">\n' +
-        '      <list-subheader class="subheader">リストタイトル</list-subheader>\n' +
-        '      <list-divider></list-divider>\n' +
-        '      <list-item class="item">\n' +
-        '         <list-graphic class="graphic"></list-graphic>\n' +
-        '         <list-text class="text">\n' +
-        '             <list-primary class="primary">1行目</list-primary>\n' +
-        '             <list-secondary class="secondary">2行目</list-secondary>\n' +
-        '          </list-text>\n' +
-        '      </list-item>\n' +
-        '      <list-item class="item">\n' +
-        '        <list-graphic class="graphic"></list-graphic>\n' +
-        '        <list-text class="text">\n' +
+        '<x-list class="my-list">\n' +
+        '    <list-item class="item">\n' +
+        '       <list-text class="text">\n' +
+        '          <list-primary class="primary">1行目</list-primary>\n' +
+        '          <list-secondary class="secondary -brown">2行目</list-secondary>\n' +
+        '       </list-text>\n' +
+        '    </list-item>\n' +
+        '    <list-item class="item">\n' +
+        '       <list-text class="text">\n' +
         '          <list-primary class="primary">1行目</list-primary>\n' +
         '          <list-secondary class="secondary">2行目</list-secondary>\n' +
-        '        </list-text>\n' +
-        '      </list-item>\n' +
-        '   </x-list>\n' +
-        '   <x-list class="list">\n' +
-        '      <list-subheader class="subheader">リストタイトル</list-subheader>\n' +
-        '      <list-divider></list-divider>\n' +
-        '      <list-item class="item">\n' +
-        '         <list-graphic class="graphic"></list-graphic>\n' +
-        '         <list-text class="text">\n' +
-        '            <list-primary class="primary">1行目</list-primary>\n' +
-        '            <list-secondary class="secondary">2行目</list-secondary>\n' +
-        '         </list-text>\n' +
-        '      </list-item>\n' +
-        '      <list-item class="item">\n' +
-        '         <list-graphic class="graphic"></list-graphic>\n' +
-        '         <list-text class="text">\n' +
-        '            <list-primary class="primary">1行目</list-primary>\n' +
-        '            <list-secondary class="secondary">2行目</list-secondary>\n' +
-        '         </list-text>\n' +
-        '         <list-meta class="meta">メタ情報</list-meta>\n' +
-        '      </list-item>\n' +
-        '   </x-list>\n' +
-        '</x-list-group>\n' ,
+        '       </list-text>\n' +
+        '    </list-item>\n' +
+        '</x-list>\n',
         { lang: 'html' }
       )}
       ${copyCodeBlock(
         '@import \'@rsmdc/list/rs-list.scss\';\n\n' +
-        '.group-list {\n' +
-        '  &.-secondary-text-ink-color {\n' +
+        '.my-list {\n' +
+        '  > .item > .text > .secondary.-brown, {\n' +
         '   @include rs-list-item-secondary-text-ink-color(brown);\n' +
         '  }\n' +
         '}',
@@ -1723,7 +1112,7 @@ storiesOf('Components|List/スタイルのカスタマイズ', module)
   .add('メタ情報のテキストの色を変える', () => {
     return `
       <p>メタ情報のテキストの色を指定した色に変える。</p>
-      <x-list class="list -meta-ink-color">
+      <x-list class="list -pink">
         <list-item class="item">
           <list-text class="text">テキスト</list-text>
           <list-meta class="meta">メタ情報</list-meta>
@@ -1733,166 +1122,49 @@ storiesOf('Components|List/スタイルのカスタマイズ', module)
           <list-meta class="meta">メタ情報</list-meta>
         </list-item>
       </x-list>
-      <x-list-group class="group-list -avatarlist">
-        <x-list class="list -meta-ink-color">
-          <list-subheader class="subheader">リストタイトル</list-subheader>
-          <list-divider></list-divider>
-          <list-item class="item">
-            <list-graphic class="graphic -square"></list-graphic>
-            <list-text class="text">
-              <list-primary class="primary">1行目</list-primary>
-              <list-secondary class="secondary">2行目</list-secondary>
-            </list-text>
-          </list-item>
-          <list-item class="item">
-            <list-graphic class="graphic -square"></list-graphic>
-            <list-text class="text">
-              <list-primary class="primary">1行目</list-primary>
-              <list-secondary class="secondary">2行目</list-secondary>
-            </list-text>
-          </list-item>
-        </x-list>
-        <x-list class="list -meta-ink-color">
-          <list-subheader class="subheader">リストタイトル</list-subheader>
-          <list-divider></list-divider>
-          <list-item class="item">
-            <list-graphic class="graphic -square"></list-graphic>
-            <list-text class="text">
-              <list-primary class="primary">1行目</list-primary>
-              <list-secondary class="secondary">2行目</list-secondary>
-            </list-text>
-          </list-item>
-          <list-item class="item">
-            <list-graphic class="graphic -square"></list-graphic>
-            <list-text class="text">
-              <list-primary class="primary">1行目</list-primary>
-              <list-secondary class="secondary">2行目</list-secondary>
-            </list-text>
-            <list-meta class="meta">メタ情報</list-meta>
-          </list-item>
-        </x-list>
-      </x-list-group>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
-        '@include rs-list-list-meta-ink-color($color);',
+        '@include rs-list-item-meta-ink-color($color);',
         { lang: 'scss' }
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
-        '<x-list class="list">\n' +
+        '<x-list class="my-list">\n' +
         '   <list-item class="item">\n' +
         '      <list-text class="text">テキスト</list-text>\n' +
-        '      <list-meta class="meta">メタ情報</list-meta>\n' +
+        '      <list-meta class="meta -brown">メタ情報</list-meta>\n' +
         '   </list-item>\n' +
         '   <list-item class="item">\n' +
         '      <list-text class="text">テキスト</list-text>\n' +
         '      <list-meta class="meta">メタ情報</list-meta>\n' +
         '   </list-item>\n' +
-        '</x-list>\n' +
-        '<x-list-group class="group-list -meta-ink-color">\n' +
-        '   <x-list class="list">\n' +
-        '      <list-subheader class="subheader">リストタイトル</list-subheader>\n' +
-        '      <list-divider></list-divider>\n' +
-        '      <list-item class="item">\n' +
-        '         <list-graphic class="graphic"></list-graphic>\n' +
-        '         <list-text class="text">\n' +
-        '             <list-primary class="primary">1行目</list-primary>\n' +
-        '             <list-secondary class="secondary">2行目</list-secondary>\n' +
-        '          </list-text>\n' +
-        '      </list-item>\n' +
-        '      <list-item class="item">\n' +
-        '        <list-graphic class="graphic"></list-graphic>\n' +
-        '        <list-text class="text">\n' +
-        '          <list-primary class="primary">1行目</list-primary>\n' +
-        '          <list-secondary class="secondary">2行目</list-secondary>\n' +
-        '        </list-text>\n' +
-        '      </list-item>\n' +
-        '   </x-list>\n' +
-        '   <x-list class="list">\n' +
-        '      <list-subheader class="subheader">リストタイトル</list-subheader>\n' +
-        '      <list-divider></list-divider>\n' +
-        '      <list-item class="item">\n' +
-        '         <list-graphic class="graphic"></list-graphic>\n' +
-        '         <list-text class="text">\n' +
-        '            <list-primary class="primary">1行目</list-primary>\n' +
-        '            <list-secondary class="secondary">2行目</list-secondary>\n' +
-        '         </list-text>\n' +
-        '      </list-item>\n' +
-        '      <list-item class="item">\n' +
-        '         <list-graphic class="graphic"></list-graphic>\n' +
-        '         <list-text class="text">\n' +
-        '            <list-primary class="primary">1行目</list-primary>\n' +
-        '            <list-secondary class="secondary">2行目</list-secondary>\n' +
-        '         </list-text>\n' +
-        '         <list-meta class="meta">メタ情報</list-meta>\n' +
-        '      </list-item>\n' +
-        '   </x-list>\n' +
-        '</x-list-group>\n' ,
+        '</x-list>\n',
         { lang: 'html' }
       )}
       ${copyCodeBlock(
         '@import \'@rsmdc/list/rs-list.scss\';\n\n' +
-        '.group-list {\n' +
-        '  &.-secondary-text-ink-color {\n' +
-        '   @include rs-list-list-meta-ink-color(brown);\n' +
+        '.my-list {\n' +
+        '  > .item > .text > .meta.-brown, {\n' +
+        '   @include rs-list-item-meta-ink-color(brown);\n' +
         '  }\n' +
         '}',
         { lang: 'scss' }
       )}
     `
   })
-  .add('画像部分の背景色を変える', () => {
+  .add('アイコンの色を変える', () => {
     return `
-      <p>画像部分の背景色を指定した色に変える。</p>
-      <x-list class="list">
+      <p>アイコンの色を指定した色に変える。</p>
+      <x-list class="list -avatarlist">
         <list-item class="item">
+          <list-graphic class="graphic -blue"></list-graphic>
           <list-text class="text">テキスト</list-text>
-          <list-meta class="meta">メタ情報</list-meta>
         </list-item>
         <list-item class="item">
+          <list-graphic class="graphic"></list-graphic>
           <list-text class="text">テキスト</list-text>
-          <list-meta class="meta">メタ情報</list-meta>
         </list-item>
       </x-list>
-      <x-list-group class="group-list -avatarlist -graphic-ink-color">
-        <x-list class="list">
-          <list-subheader class="subheader">リストタイトル</list-subheader>
-          <list-divider></list-divider>
-          <list-item class="item">
-            <list-graphic class="graphic">aiueo</list-graphic>
-            <list-text class="text">
-              <list-primary class="primary">1行目</list-primary>
-              <list-secondary class="secondary">2行目</list-secondary>
-            </list-text>
-          </list-item>
-          <list-item class="item">
-            <list-graphic class="graphic">wa</list-graphic>
-            <list-text class="text">
-              <list-primary class="primary">1行目</list-primary>
-              <list-secondary class="secondary">2行目</list-secondary>
-            </list-text>
-          </list-item>
-        </x-list>
-        <x-list class="list">
-          <list-subheader class="subheader">リストタイトル</list-subheader>
-          <list-divider></list-divider>
-          <list-item class="item">
-            <list-graphic class="graphic"></list-graphic>
-            <list-text class="text">
-              <list-primary class="primary">1行目</list-primary>
-              <list-secondary class="secondary">2行目</list-secondary>
-            </list-text>
-          </list-item>
-          <list-item class="item">
-            <list-graphic class="graphic"></list-graphic>
-            <list-text class="text">
-              <list-primary class="primary">1行目</list-primary>
-              <list-secondary class="secondary">2行目</list-secondary>
-            </list-text>
-            <list-meta class="meta">メタ情報</list-meta>
-          </list-item>
-        </x-list>
-      </x-list-group>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
         '@include rs-list-item-graphic-ink-color($color);',
@@ -1900,62 +1172,72 @@ storiesOf('Components|List/スタイルのカスタマイズ', module)
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
-        '<x-list class="list">\n' +
+        '<x-list class="my-list">\n' +
         '   <list-item class="item">\n' +
+        '      <list-graphic class="graphic -blue"></list-graphic>\n' +
         '      <list-text class="text">テキスト</list-text>\n' +
-        '      <list-meta class="meta">メタ情報</list-meta>\n' +
         '   </list-item>\n' +
         '   <list-item class="item">\n' +
+        '      <list-graphic class="graphic"></list-graphic>\n' +
         '      <list-text class="text">テキスト</list-text>\n' +
-        '      <list-meta class="meta">メタ情報</list-meta>\n' +
         '   </list-item>\n' +
         '</x-list>\n' +
-        '<x-list-group class="group-list -graphic-ink-color">\n' +
-        '   <x-list class="list">\n' +
-        '      <list-subheader class="subheader">リストタイトル</list-subheader>\n' +
-        '      <list-divider></list-divider>\n' +
-        '      <list-item class="item">\n' +
-        '         <list-graphic class="graphic"></list-graphic>\n' +
-        '         <list-text class="text">\n' +
-        '             <list-primary class="primary">1行目</list-primary>\n' +
-        '             <list-secondary class="secondary">2行目</list-secondary>\n' +
-        '          </list-text>\n' +
-        '      </list-item>\n' +
-        '      <list-item class="item">\n' +
-        '        <list-graphic class="graphic"></list-graphic>\n' +
-        '        <list-text class="text">\n' +
-        '          <list-primary class="primary">1行目</list-primary>\n' +
-        '          <list-secondary class="secondary">2行目</list-secondary>\n' +
-        '        </list-text>\n' +
-        '      </list-item>\n' +
-        '   </x-list>\n' +
-        '   <x-list class="list">\n' +
-        '      <list-subheader class="subheader">リストタイトル</list-subheader>\n' +
-        '      <list-divider></list-divider>\n' +
-        '      <list-item class="item">\n' +
-        '         <list-graphic class="graphic"></list-graphic>\n' +
-        '         <list-text class="text">\n' +
-        '            <list-primary class="primary">1行目</list-primary>\n' +
-        '            <list-secondary class="secondary">2行目</list-secondary>\n' +
-        '         </list-text>\n' +
-        '      </list-item>\n' +
-        '      <list-item class="item">\n' +
-        '         <list-graphic class="graphic"></list-graphic>\n' +
-        '         <list-text class="text">\n' +
-        '            <list-primary class="primary">1行目</list-primary>\n' +
-        '            <list-secondary class="secondary">2行目</list-secondary>\n' +
-        '         </list-text>\n' +
-        '         <list-meta class="meta">メタ情報</list-meta>\n' +
-        '      </list-item>\n' +
-        '   </x-list>\n' +
-        '</x-list-group>\n' ,
         { lang: 'html' }
       )}
       ${copyCodeBlock(
         '@import \'@rsmdc/list/rs-list.scss\';\n\n' +
-        '.group-list {\n' +
-        '  &.-secondary-text-ink-color {\n' +
-        '   @include rs-list-item-graphic-ink-color(orange);\n' +
+        '$material-icons-font-path: \'~material-icons/iconfont/\';\n\n' +
+        '@import \'~material-icons/iconfont/material-icons\';\n\n' +
+        '.my-list {\n' +
+        '  > .item > .graphic.-blue {\n' +
+        '   @include rs-list-item-graphic-image(Material Icons, map-get($material-icons-codepoints, face));\n' +
+        '   @include rs-list-item-graphic-ink-color(rgb(106, 118, 223);\n' +
+        '  }\n' +
+        '}',
+        { lang: 'scss' }
+      )}
+    `
+  })
+  .add('画像の背景色を変える', () => {
+    return `
+      <p>画像の背景色を指定した色に変える。</p>
+      <x-list class="list -avatarlist">
+        <list-item class="item">
+          <list-graphic class="graphic -container-blue"></list-graphic>
+          <list-text class="text">テキスト</list-text>
+        </list-item>
+        <list-item class="item">
+          <list-graphic class="graphic"></list-graphic>
+          <list-text class="text">テキスト</list-text>
+        </list-item>
+      </x-list>
+      <h4>使用するmixin</h4>
+      ${copyCodeBlock(
+        '@include rs-list-item-graphic-fill-color($color);',
+        { lang: 'scss' }
+      )}
+      <h4>使用方法</h4>
+      ${copyCodeBlock(
+        '<x-list class="my-list">\n' +
+        '   <list-item class="item">\n' +
+        '      <list-graphic class="graphic -container-blue"></list-graphic>\n' +
+        '      <list-text class="text">テキスト</list-text>\n' +
+        '   </list-item>\n' +
+        '   <list-item class="item">\n' +
+        '      <list-graphic class="graphic"></list-graphic>\n' +
+        '      <list-text class="text">テキスト</list-text>\n' +
+        '   </list-item>\n' +
+        '</x-list>\n' +
+        { lang: 'html' }
+      )}
+      ${copyCodeBlock(
+        '@import \'@rsmdc/list/rs-list.scss\';\n\n' +
+        '$material-icons-font-path: \'~material-icons/iconfont/\';\n\n' +
+        '@import \'~material-icons/iconfont/material-icons\';\n\n' +
+        '.my-list {\n' +
+        '  > .item > .graphic.-container-blue {\n' +
+        '   @include rs-list-item-graphic-image(Material Icons, map-get($material-icons-codepoints, face));\n' +
+        '   @include rs-list-item-graphic-fill-color(rgb(106, 196, 223));\n' +
         '  }\n' +
         '}',
         { lang: 'scss' }
@@ -1965,55 +1247,15 @@ storiesOf('Components|List/スタイルのカスタマイズ', module)
   .add('仕切り線の色を変える', () => {
     return `
       <p>仕切り線の色を指定した色に変える。</p>
-      <x-list class="list">
+      <x-list class="my-list">
         <list-item class="item">
           <list-text class="text">テキスト</list-text>
-          <list-meta class="meta">メタ情報</list-meta>
         </list-item>
+        <list-divider></list-divider>
         <list-item class="item">
           <list-text class="text">テキスト</list-text>
-          <list-meta class="meta">メタ情報</list-meta>
         </list-item>
       </x-list>
-      <x-list-group class="group-list -avatarlist -divider-color">
-        <x-list class="list">
-          <list-subheader class="subheader">リストタイトル</list-subheader>
-          <list-divider></list-divider>
-          <list-item class="item">
-            <list-graphic class="graphic"></list-graphic>
-            <list-text class="text">
-              <list-primary class="primary">1行目</list-primary>
-              <list-secondary class="secondary">2行目</list-secondary>
-            </list-text>
-          </list-item>
-          <list-item class="item">
-            <list-graphic class="graphic"></list-graphic>
-            <list-text class="text">
-              <list-primary class="primary">1行目</list-primary>
-              <list-secondary class="secondary">2行目</list-secondary>
-            </list-text>
-          </list-item>
-        </x-list>
-        <x-list class="list">
-          <list-subheader class="subheader">リストタイトル</list-subheader>
-          <list-divider></list-divider>
-          <list-item class="item">
-            <list-graphic class="graphic"></list-graphic>
-            <list-text class="text">
-              <list-primary class="primary">1行目</list-primary>
-              <list-secondary class="secondary">2行目</list-secondary>
-            </list-text>
-          </list-item>
-          <list-item class="item">
-            <list-graphic class="graphic"></list-graphic>
-            <list-text class="text">
-              <list-primary class="primary">1行目</list-primary>
-              <list-secondary class="secondary">2行目</list-secondary>
-            </list-text>
-            <list-meta class="meta">メタ情報</list-meta>
-          </list-item>
-        </x-list>
-      </x-list-group>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
         '@include rs-list-divider-color($color);',
@@ -2021,62 +1263,22 @@ storiesOf('Components|List/スタイルのカスタマイズ', module)
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
-        '<x-list class="list">\n' +
+        '<x-list class="my-list">\n' +
         '   <list-item class="item">\n' +
         '      <list-text class="text">テキスト</list-text>\n' +
-        '      <list-meta class="meta">メタ情報</list-meta>\n' +
         '   </list-item>\n' +
+        '   <list-divider class="divider -blue" />\n' +
         '   <list-item class="item">\n' +
         '      <list-text class="text">テキスト</list-text>\n' +
-        '      <list-meta class="meta">メタ情報</list-meta>\n' +
         '   </list-item>\n' +
-        '</x-list>\n' +
-        '<x-list-group class="group-list -divider-color">\n' +
-        '   <x-list class="list">\n' +
-        '      <list-subheader class="subheader">リストタイトル</list-subheader>\n' +
-        '      <list-divider></list-divider>\n' +
-        '      <list-item class="item">\n' +
-        '         <list-graphic class="graphic"></list-graphic>\n' +
-        '         <list-text class="text">\n' +
-        '             <list-primary class="primary">1行目</list-primary>\n' +
-        '             <list-secondary class="secondary">2行目</list-secondary>\n' +
-        '          </list-text>\n' +
-        '      </list-item>\n' +
-        '      <list-item class="item">\n' +
-        '        <list-graphic class="graphic"></list-graphic>\n' +
-        '        <list-text class="text">\n' +
-        '          <list-primary class="primary">1行目</list-primary>\n' +
-        '          <list-secondary class="secondary">2行目</list-secondary>\n' +
-        '        </list-text>\n' +
-        '      </list-item>\n' +
-        '   </x-list>\n' +
-        '   <x-list class="list">\n' +
-        '      <list-subheader class="subheader">リストタイトル</list-subheader>\n' +
-        '      <list-divider></list-divider>\n' +
-        '      <list-item class="item">\n' +
-        '         <list-graphic class="graphic"></list-graphic>\n' +
-        '         <list-text class="text">\n' +
-        '            <list-primary class="primary">1行目</list-primary>\n' +
-        '            <list-secondary class="secondary">2行目</list-secondary>\n' +
-        '         </list-text>\n' +
-        '      </list-item>\n' +
-        '      <list-item class="item">\n' +
-        '         <list-graphic class="graphic"></list-graphic>\n' +
-        '         <list-text class="text">\n' +
-        '            <list-primary class="primary">1行目</list-primary>\n' +
-        '            <list-secondary class="secondary">2行目</list-secondary>\n' +
-        '         </list-text>\n' +
-        '         <list-meta class="meta">メタ情報</list-meta>\n' +
-        '      </list-item>\n' +
-        '   </x-list>\n' +
-        '</x-list-group>\n' ,
+        '</x-list>\n', 
         { lang: 'html' }
       )}
       ${copyCodeBlock(
         '@import \'@rsmdc/list/rs-list.scss\';\n\n' +
-        '.group-list {\n' +
-        '  &.-divider-color {\n' +
-        '   @include rs-list-divider-color(brown);\n' +
+        '.my-list {\n' +
+        '  > .divider.-blue {\n' +
+        '   @include rs-list-divider-color(rgb(106, 118, 223);\n' +
         '  }\n' +
         '}',
         { lang: 'scss' }
@@ -2086,52 +1288,23 @@ storiesOf('Components|List/スタイルのカスタマイズ', module)
   .add('サブヘッダーの色を変える', () => {
     return `
       <p>サブヘッダーの色を指定した色に変える。</p>
-      <x-list class="list">
-        <list-item class="item">
-          <list-text class="text">テキスト</list-text>
-          <list-meta class="meta">メタ情報</list-meta>
-        </list-item>
-        <list-item class="item">
-          <list-text class="text">テキスト</list-text>
-          <list-meta class="meta">メタ情報</list-meta>
-        </list-item>
-      </x-list>
-      <x-list-group class="group-list -avatarlist -subheader-ink-color">
+      <x-list-group class="group-list">
         <x-list class="list">
-          <list-subheader class="subheader">リストタイトル</list-subheader>
-          <list-divider></list-divider>
+          <list-subheader class="subheader -brown">リストタイトル</list-subheader>
           <list-item class="item">
-            <list-graphic class="graphic"></list-graphic>
-            <list-text class="text">
-              <list-primary class="primary">1行目</list-primary>
-              <list-secondary class="secondary">2行目</list-secondary>
-            </list-text>
+            <list-text class="text">テキスト</list-text>
           </list-item>
           <list-item class="item">
-            <list-graphic class="graphic"></list-graphic>
-            <list-text class="text">
-              <list-primary class="primary">1行目</list-primary>
-              <list-secondary class="secondary">2行目</list-secondary>
-            </list-text>
+            <list-text class="text">テキスト</list-text>
           </list-item>
         </x-list>
         <x-list class="list">
           <list-subheader class="subheader">リストタイトル</list-subheader>
-          <list-divider></list-divider>
           <list-item class="item">
-            <list-graphic class="graphic"></list-graphic>
-            <list-text class="text">
-              <list-primary class="primary">1行目</list-primary>
-              <list-secondary class="secondary">2行目</list-secondary>
-            </list-text>
+            <list-text class="text">テキスト</list-text>
           </list-item>
           <list-item class="item">
-            <list-graphic class="graphic"></list-graphic>
-            <list-text class="text">
-              <list-primary class="primary">1行目</list-primary>
-              <list-secondary class="secondary">2行目</list-secondary>
-            </list-text>
-            <list-meta class="meta">メタ情報</list-meta>
+            <list-text class="text">テキスト</list-text>
           </list-item>
         </x-list>
       </x-list-group>
@@ -2142,52 +1315,23 @@ storiesOf('Components|List/スタイルのカスタマイズ', module)
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
-        '<x-list class="list">\n' +
-        '   <list-item class="item">\n' +
-        '      <list-text class="text">テキスト</list-text>\n' +
-        '      <list-meta class="meta">メタ情報</list-meta>\n' +
-        '   </list-item>\n' +
-        '   <list-item class="item">\n' +
-        '      <list-text class="text">テキスト</list-text>\n' +
-        '      <list-meta class="meta">メタ情報</list-meta>\n' +
-        '   </list-item>\n' +
-        '</x-list>\n' +
-        '<x-list-group class="group-list -subheader-ink-color">\n' +
+        '<x-list-group class="group-list>\n' +
         '   <x-list class="list">\n' +
-        '      <list-subheader class="subheader">リストタイトル</list-subheader>\n' +
-        '      <list-divider></list-divider>\n' +
+        '      <list-subheader class="subheader -brown">リストタイトル</list-subheader>\n' +
         '      <list-item class="item">\n' +
-        '         <list-graphic class="graphic"></list-graphic>\n' +
-        '         <list-text class="text">\n' +
-        '             <list-primary class="primary">1行目</list-primary>\n' +
-        '             <list-secondary class="secondary">2行目</list-secondary>\n' +
-        '          </list-text>\n' +
+        '         <list-text class="text">テキスト</list-text>\n' +
         '      </list-item>\n' +
         '      <list-item class="item">\n' +
-        '        <list-graphic class="graphic"></list-graphic>\n' +
-        '        <list-text class="text">\n' +
-        '          <list-primary class="primary">1行目</list-primary>\n' +
-        '          <list-secondary class="secondary">2行目</list-secondary>\n' +
-        '        </list-text>\n' +
+        '         <list-text class="text">テキスト</list-text>\n' +
         '      </list-item>\n' +
         '   </x-list>\n' +
         '   <x-list class="list">\n' +
         '      <list-subheader class="subheader">リストタイトル</list-subheader>\n' +
-        '      <list-divider></list-divider>\n' +
         '      <list-item class="item">\n' +
-        '         <list-graphic class="graphic"></list-graphic>\n' +
-        '         <list-text class="text">\n' +
-        '            <list-primary class="primary">1行目</list-primary>\n' +
-        '            <list-secondary class="secondary">2行目</list-secondary>\n' +
-        '         </list-text>\n' +
+        '         <list-text class="text">テキスト</list-text>\n' +
         '      </list-item>\n' +
         '      <list-item class="item">\n' +
-        '         <list-graphic class="graphic"></list-graphic>\n' +
-        '         <list-text class="text">\n' +
-        '            <list-primary class="primary">1行目</list-primary>\n' +
-        '            <list-secondary class="secondary">2行目</list-secondary>\n' +
-        '         </list-text>\n' +
-        '         <list-meta class="meta">メタ情報</list-meta>\n' +
+        '         <list-text class="text">テキスト</list-text>\n' +
         '      </list-item>\n' +
         '   </x-list>\n' +
         '</x-list-group>\n' ,
@@ -2196,7 +1340,7 @@ storiesOf('Components|List/スタイルのカスタマイズ', module)
       ${copyCodeBlock(
         '@import \'@rsmdc/list/rs-list.scss\';\n\n' +
         '.group-list {\n' +
-        '  &.-subheader-ink-color {\n' +
+        '  > .list > .subheader.-brown {\n' +
         '   @include rs-list-group-subheader-ink-color(brown);\n' +
         '  }\n' +
         '}',
@@ -2204,171 +1348,143 @@ storiesOf('Components|List/スタイルのカスタマイズ', module)
       )}
     `
   })
-  .add('画像を設定する (修正予定)', () => {
+  .add('リップルの色を変える', () => {
     return `
-      <p>指定した画像を表示する。</p>
-      <x-list class="list">
-        <list-item class="item">
-          <list-text class="text">テキスト</list-text>
-          <list-meta class="meta">メタ情報</list-meta>
-        </list-item>
-        <list-item class="item">
-          <list-text class="text">テキスト</list-text>
-          <list-meta class="meta">メタ情報</list-meta>
-        </list-item>
-      </x-list>
-      <x-list-group class="group-list -avatarlist">
-        <x-list class="list">
-          <list-subheader class="subheader">リストタイトル</list-subheader>
-          <list-divider></list-divider>
+      <p>リップルの色を指定した色に変える。</p>
+        <x-list class="my-list">
           <list-item class="item">
-            <list-graphic class="graphic"></list-graphic>
-            <list-text class="text">
-              <list-primary class="primary">1行目</list-primary>
-              <list-secondary class="secondary">2行目</list-secondary>
-            </list-text>
+            <list-text class="text">テキスト</list-text>
           </list-item>
           <list-item class="item">
-            <list-graphic class="graphic"></list-graphic>
-            <list-text class="text">
-              <list-primary class="primary">1行目</list-primary>
-              <list-secondary class="secondary">2行目</list-secondary>
-            </list-text>
+            <list-text class="text">テキスト</list-text>
           </list-item>
         </x-list>
-        <x-list class="list">
-          <list-subheader class="subheader">リストタイトル</list-subheader>
-          <list-divider></list-divider>
-          <list-item class="item">
-            <list-graphic class="graphic"></list-graphic>
-            <list-text class="text">
-              <list-primary class="primary">1行目</list-primary>
-              <list-secondary class="secondary">2行目</list-secondary>
-            </list-text>
-          </list-item>
-          <list-item class="item">
-            <list-graphic class="graphic"></list-graphic>
-            <list-text class="text">
-              <list-primary class="primary">1行目</list-primary>
-              <list-secondary class="secondary">2行目</list-secondary>
-            </list-text>
-            <list-meta class="meta">メタ情報</list-meta>
-          </list-item>
-        </x-list>
-      </x-list-group>
-    `
-  })
-  .add('画像のサイズを変える (修正予定)', () => {
-    return `
-      <p>画像のサイズを指定した大きさに変える。</p>
-      <x-list class="list">
-        <list-item class="item">
-          <list-text class="text">テキスト</list-text>
-          <list-meta class="meta">メタ情報</list-meta>
-        </list-item>
-        <list-item class="item">
-          <list-text class="text">テキスト</list-text>
-          <list-meta class="meta">メタ情報</list-meta>
-        </list-item>
-      </x-list>
-      <x-list-group class="group-list -avatarlist">
-        <x-list class="list">
-          <list-subheader class="subheader">リストタイトル</list-subheader>
-          <list-divider></list-divider>
-          <list-item class="item">
-            <list-graphic class="graphic -size"></list-graphic>
-            <list-text class="text">
-              <list-primary class="primary">1行目</list-primary>
-              <list-secondary class="secondary">2行目</list-secondary>
-            </list-text>
-          </list-item>
-          <list-item class="item">
-            <list-graphic class="graphic -size"></list-graphic>
-            <list-text class="text">
-              <list-primary class="primary">1行目</list-primary>
-              <list-secondary class="secondary">2行目</list-secondary>
-            </list-text>
-          </list-item>
-        </x-list>
-        <x-list class="list">
-          <list-subheader class="subheader">リストタイトル</list-subheader>
-          <list-divider></list-divider>
-          <list-item class="item">
-            <list-graphic class="graphic -size"></list-graphic>
-            <list-text class="text">
-              <list-primary class="primary">1行目</list-primary>
-              <list-secondary class="secondary">2行目</list-secondary>
-            </list-text>
-          </list-item>
-          <list-item class="item">
-            <list-graphic class="graphic -size"></list-graphic>
-            <list-text class="text">
-              <list-primary class="primary">1行目</list-primary>
-              <list-secondary class="secondary">2行目</list-secondary>
-            </list-text>
-            <list-meta class="meta">メタ情報</list-meta>
-          </list-item>
-        </x-list>
-      </x-list-group>
+      <h4>使用するmixin</h4>
+      ${copyCodeBlock(
+        '@include rs-list-item-states-color($color);',
+        { lang: 'scss' }
+      )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
-        '<x-list class="list">\n' +
-        '   <list-item class="item">\n' +
-        '      <list-text class="text">テキスト</list-text>\n' +
-        '      <list-meta class="meta">メタ情報</list-meta>\n' +
+        '<x-list class="my-list">\n' +
+        '   <list-item class="item -blue">\n' +
+        '       <list-text class="text">テキスト</list-text>\n' +
         '   </list-item>\n' +
         '   <list-item class="item">\n' +
-        '      <list-text class="text">テキスト</list-text>\n' +
-        '      <list-meta class="meta">メタ情報</list-meta>\n' +
+        '       <list-text class="text">テキスト</list-text>\n' +
         '   </list-item>\n' +
-        '</x-list>\n' +
-        '<x-list-group class="group-list">\n' +
-        '   <x-list class="list">\n' +
-        '      <list-subheader class="subheader">リストタイトル</list-subheader>\n' +
-        '      <list-divider></list-divider>\n' +
-        '      <list-item class="item">\n' +
-        '         <list-graphic class="graphic -size"></list-graphic>\n' +
-        '         <list-text class="text">\n' +
-        '             <list-primary class="primary">1行目</list-primary>\n' +
-        '             <list-secondary class="secondary">2行目</list-secondary>\n' +
-        '          </list-text>\n' +
-        '      </list-item>\n' +
-        '      <list-item class="item">\n' +
-        '        <list-graphic class="graphic -size"></list-graphic>\n' +
-        '        <list-text class="text">\n' +
-        '          <list-primary class="primary">1行目</list-primary>\n' +
-        '          <list-secondary class="secondary">2行目</list-secondary>\n' +
-        '        </list-text>\n' +
-        '      </list-item>\n' +
-        '   </x-list>\n' +
-        '   <x-list class="list">\n' +
-        '      <list-subheader class="subheader">リストタイトル</list-subheader>\n' +
-        '      <list-divider></list-divider>\n' +
-        '      <list-item class="item">\n' +
-        '         <list-graphic class="graphic -size"></list-graphic>\n' +
-        '         <list-text class="text">\n' +
-        '            <list-primary class="primary">1行目</list-primary>\n' +
-        '            <list-secondary class="secondary">2行目</list-secondary>\n' +
-        '         </list-text>\n' +
-        '      </list-item>\n' +
-        '      <list-item class="item">\n' +
-        '         <list-graphic class="graphic -size"></list-graphic>\n' +
-        '         <list-text class="text">\n' +
-        '            <list-primary class="primary">1行目</list-primary>\n' +
-        '            <list-secondary class="secondary">2行目</list-secondary>\n' +
-        '         </list-text>\n' +
-        '         <list-meta class="meta">メタ情報</list-meta>\n' +
-        '      </list-item>\n' +
-        '   </x-list>\n' +
-        '</x-list-group>\n' ,
+        '</x-list>\n' ,
         { lang: 'html' }
       )}
       ${copyCodeBlock(
         '@import \'@rsmdc/list/rs-list.scss\';\n\n' +
-        '.graphic {\n' +
-        '   &.-size {\n' +
-        '      @include rs-list-graphic-size_(50px);\n' +
-        '   }\n' +
+        '.my-list {\n' +
+        '  > .item {\n' +
+        '   @include rs-list-item-states-color(rgb(106, 118, 223));\n' +
+        '  }\n' +
+        '}',
+        { lang: 'scss' }
+      )}
+    `
+  })
+  .add('テキスト、背景色、リップルの色を一括で変える', () => {
+    return `
+      <p>リップルの色を指定した色に変える。</p>
+        <x-list class="my-list">
+          <list-item class="item -green">
+            <list-text class="text">テキスト</list-text>
+          </list-item>
+          <list-item class="item">
+            <list-text class="text">テキスト</list-text>
+          </list-item>
+        </x-list>
+      <h4>使用するmixin</h4>
+      ${copyCodeBlock(
+        '@include rs-list-fill-color-accessible($color);',
+        { lang: 'scss' }
+      )}
+      <h4>使用方法</h4>
+      ${copyCodeBlock(
+        '<x-list class="my-list">\n' +
+        '   <list-item class="item -green">\n' +
+        '       <list-text class="text">テキスト</list-text>\n' +
+        '   </list-item>\n' +
+        '   <list-item class="item">\n' +
+        '       <list-text class="text">テキスト</list-text>\n' +
+        '   </list-item>\n' +
+        '</x-list>\n' ,
+        { lang: 'html' }
+      )}
+      ${copyCodeBlock(
+        '@import \'@rsmdc/list/rs-list.scss\';\n\n' +
+        '.my-list {\n' +
+        '  > .item {\n' +
+        '   @include rs-list-fill-color-accessible(green);\n' +
+        '  }\n' +
+        '}',
+        { lang: 'scss' }
+      )}
+    `
+  })
+  .add('画像・アイコンを設定する', () => {
+    return `
+    <p>指定した画像・アイコンを表示する。</p>
+      <x-list class="list -avatarlist">
+        <list-item class="item">
+          <list-graphic class="graphic"></list-graphic>
+          <list-text class="text">テキスト</list-text>
+        </list-item>
+        <list-item class="item">
+          <list-graphic class="graphic"></list-graphic>
+          <list-text class="text">テキスト</list-text>
+        </list-item>
+      </x-list>
+      <h4>使用するmixin</h4>
+      ${copyCodeBlock(
+        '@include rs-list-graphic-image($icon, $icon-name: \'\');',
+        { lang: 'scss' }
+      )}
+    `
+  })
+  .add('画像のサイズを変える', () => {
+    return `
+      <p>画像のサイズを指定した大きさに変える。</p>
+      <x-list class="list -avatarlist">
+        <list-item class="item">
+          <list-graphic class="graphic -size"></list-graphic>
+          <list-text class="text">テキスト</list-text>
+        </list-item>
+        <list-item class="item">
+        <list-item class="item">
+          <list-graphic class="graphic"></list-graphic>
+          <list-text class="text">テキスト</list-text>
+        </list-item>
+      </x-list>
+      <h4>使用するmixin</h4>
+      ${copyCodeBlock(
+        '@include rs-list-graphic-size($size);',
+        { lang: 'scss' }
+      )}
+      <h4>使用方法</h4>
+      ${copyCodeBlock(
+        '<x-list class="list -avatarlist">\n' +
+        '   <list-item class="item">\n' +
+        '      <list-graphic class="graphic -size" />\n' +
+        '      <list-text class="text">テキスト</list-text>\n' +
+        '   </list-item>\n' +
+        '   <list-item class="item">\n' +
+        '      <list-graphic class="graphic" />\n' +
+        '      <list-text class="text">テキスト</list-text>\n' +
+        '   </list-item>\n' +
+        '</x-list>\n'、
+        { lang: 'html' }
+      )}
+      ${copyCodeBlock(
+        '@import \'@rsmdc/list/rs-list.scss\';\n\n' +
+        '.my-list {\n' +
+        '  > .item > .graphic.-brown {\n' +
+        '   @include rs-list-graphic-size(40px);\n' +
+        '  }\n' +
         '}',
         { lang: 'scss' }
       )}
@@ -2378,117 +1494,40 @@ storiesOf('Components|List/スタイルのカスタマイズ', module)
       </ul>
     `
   })
-  .add('リストの角の丸みを変える', () => {
+  .add('アイテム角の丸みを変える', () => {
     return `
-      <p>リストの角の丸みを指定したサイズに変える。</p>
-      <x-list class="list -shape-radius">
+      <p>アイテムの角の丸みを指定したサイズに変える。</p>
+      <x-list class="list -shape">
         <list-item class="item">
           <list-text class="text">テキスト</list-text>
-          <list-meta class="meta">メタ情報</list-meta>
         </list-item>
         <list-item class="item">
           <list-text class="text">テキスト</list-text>
-          <list-meta class="meta">メタ情報</list-meta>
         </list-item>
       </x-list>
-      <x-list-group class="group-list -avatarlist -shape-radius">
-        <x-list class="list">
-          <list-subheader class="subheader">リストタイトル</list-subheader>
-          <list-divider></list-divider>
-          <list-item class="item">
-            <list-graphic class="graphic"></list-graphic>
-            <list-text class="text">
-              <list-primary class="primary">1行目</list-primary>
-              <list-secondary class="secondary">2行目</list-secondary>
-            </list-text>
-          </list-item>
-          <list-item class="item">
-            <list-graphic class="graphic"></list-graphic>
-            <list-text class="text">
-              <list-primary class="primary">1行目</list-primary>
-              <list-secondary class="secondary">2行目</list-secondary>
-            </list-text>
-          </list-item>
-        </x-list>
-        <x-list class="list">
-          <list-subheader class="subheader">リストタイトル</list-subheader>
-          <list-divider></list-divider>
-          <list-item class="item">
-            <list-graphic class="graphic"></list-graphic>
-            <list-text class="text">
-              <list-primary class="primary">1行目</list-primary>
-              <list-secondary class="secondary">2行目</list-secondary>
-            </list-text>
-          </list-item>
-          <list-item class="item">
-            <list-graphic class="graphic"></list-graphic>
-            <list-text class="text">
-              <list-primary class="primary">1行目</list-primary>
-              <list-secondary class="secondary">2行目</list-secondary>
-            </list-text>
-            <list-meta class="meta">メタ情報</list-meta>
-          </list-item>
-        </x-list>
-      </x-list-group>
+      <h4>使用するmixin</h4>
+      ${copyCodeBlock(
+        '@include rs-list-item-shape-radius($radius);',
+        { lang: 'scss' }
+      )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
-        '<x-list class="list">\n' +
-        '   <list-item class="item">\n' +
+        '<x-list class="my-list">\n' +
+        '   <list-item class="item -shape">\n' +
         '      <list-text class="text">テキスト</list-text>\n' +
-        '      <list-meta class="meta">メタ情報</list-meta>\n' +
         '   </list-item>\n' +
         '   <list-item class="item">\n' +
         '      <list-text class="text">テキスト</list-text>\n' +
-        '      <list-meta class="meta">メタ情報</list-meta>\n' +
         '   </list-item>\n' +
-        '</x-list>\n' +
-        '<x-list-group class="group-list -shape-radius">\n' +
-        '   <x-list class="list">\n' +
-        '      <list-subheader class="subheader">リストタイトル</list-subheader>\n' +
-        '      <list-divider></list-divider>\n' +
-        '      <list-item class="item">\n' +
-        '         <list-graphic class="graphic"></list-graphic>\n' +
-        '         <list-text class="text">\n' +
-        '             <list-primary class="primary">1行目</list-primary>\n' +
-        '             <list-secondary class="secondary">2行目</list-secondary>\n' +
-        '          </list-text>\n' +
-        '      </list-item>\n' +
-        '      <list-item class="item">\n' +
-        '        <list-graphic class="graphic"></list-graphic>\n' +
-        '        <list-text class="text">\n' +
-        '          <list-primary class="primary">1行目</list-primary>\n' +
-        '          <list-secondary class="secondary">2行目</list-secondary>\n' +
-        '        </list-text>\n' +
-        '      </list-item>\n' +
-        '   </x-list>\n' +
-        '   <x-list class="list">\n' +
-        '      <list-subheader class="subheader">リストタイトル</list-subheader>\n' +
-        '      <list-divider></list-divider>\n' +
-        '      <list-item class="item">\n' +
-        '         <list-graphic class="graphic"></list-graphic>\n' +
-        '         <list-text class="text">\n' +
-        '            <list-primary class="primary">1行目</list-primary>\n' +
-        '            <list-secondary class="secondary">2行目</list-secondary>\n' +
-        '         </list-text>\n' +
-        '      </list-item>\n' +
-        '      <list-item class="item">\n' +
-        '         <list-graphic class="graphic"></list-graphic>\n' +
-        '         <list-text class="text">\n' +
-        '            <list-primary class="primary">1行目</list-primary>\n' +
-        '            <list-secondary class="secondary">2行目</list-secondary>\n' +
-        '         </list-text>\n' +
-        '         <list-meta class="meta">メタ情報</list-meta>\n' +
-        '      </list-item>\n' +
-        '   </x-list>\n' +
-        '</x-list-group>\n' ,
+        '</x-list>\n',
         { lang: 'html' }
       )}
       ${copyCodeBlock(
         '@import \'@rsmdc/list/rs-list.scss\';\n\n' +
-        '.group-list {\n' +
-        '   &.-shape-radius {\n' +
-        '      @include rs-list-item-shape-radius(10px);\n' +
-        '   }\n' +
+        '.my-list {\n' +
+        '  > .item.-shape {\n' +
+        '   @include rs-list-item-shape-radius(10px);\n' +
+        '  }\n' +
         '}',
         { lang: 'scss' }
       )}
