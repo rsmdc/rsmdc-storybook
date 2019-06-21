@@ -76,13 +76,3 @@ storiesOf('Components|App layout', module)
     <h4>HTML属性</h4>
     <p>なし</p>
   `)
-  
-storiesOf('Components|App layout/スタイルのカスタマイズ', module)
-  .add('ドロワーが常に開かれている際のレイアウトを整える (廃止予定)', () => `
-    @include rs-app-layout-type($drawerType);<br>
-    @include rs-top-app-bar-with-drawer($drawerType);<br>
-    ドロワータイプがpermanentの時のみ
-  `)
-
-  
-
