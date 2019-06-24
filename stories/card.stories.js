@@ -71,20 +71,20 @@ storiesOf('Components|Card', module)
       </p>
   
       ${copyCodeBlock(
-        '<x-card class="my-card">\n' +
-        '   <card-contents class="contents">\n' +
-        '      <card-media class="media"></card-media>\n' +
-        '      <card-header class="header">\n' +
-        '         <card-title>タイトル</card-title>\n' +
-        '         <card-subtitle>サブタイトル</card-subtitle>\n' +
-        '      </card-header>\n' +
-        '      <card-description class="description">説明</card-description>\n' +
-        '   </card-contents>\n' +
-        '   <card-actions class="actions">\n' +
+        '<rs-card class="my-card">\n' +
+        '   <rs-card-primary-action class="contents">\n' +
+        '      <rs-card-media class="media"></rs-card-media>\n' +
+        '      <rs-card-header class="header">\n' +
+        '         <rs-card-title>タイトル</rs-card-title>\n' +
+        '         <rs-card-subtitle>サブタイトル</rs-card-subtitle>\n' +
+        '      </rs-card-header>\n' +
+        '      <rs-card-description class="description">説明</rs-card-description>\n' +
+        '   </rs-card-primary-action>\n' +
+        '   <rs-card-actions class="actions">\n' +
         '       <x-button>ボタン</x-button>\n' +
         '       <x-button class="icon"></x-button>\n' +
-        '   </card-actions>\n' +
-        '</x-card>\n',
+        '   </rs-card-actions>\n' +
+        '</rs-card>\n',
         { lang: 'html' }
       )}
       ${copyCodeBlock(
