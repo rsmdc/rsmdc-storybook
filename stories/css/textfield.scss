@@ -1,0 +1,6 @@
+@import '../../node_modules/@rsmdc/form-field/rs-form-field.scss';
+@import '../../node_modules/@rsmdc/textfield/rs-text-field.scss';
+
+.outlined {
+  @include rs-text-field-type(outlined);
+}
