@@ -1476,7 +1476,7 @@ storiesOf('Components|List/スタイルのカスタマイズ', module)
         '      <list-graphic class="graphic" />\n' +
         '      <list-text class="text">テキスト</list-text>\n' +
         '   </list-item>\n' +
-        '</x-list>\n'、
+        '</x-list>\n',
         { lang: 'html' }
       )}
       ${copyCodeBlock(
