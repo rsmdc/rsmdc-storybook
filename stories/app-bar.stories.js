@@ -9,11 +9,11 @@ import './css/app-bar.scss'
 import 'highlight.js'
 import 'highlight.js/styles/a11y-light.css'
 
-window.customElements.define('app-bar-title', TopAppBarTitle)
-window.customElements.define('app-bar-item', TopAppBarActionItem)
-window.customElements.define('app-bar-actions', TopAppBarActions)
-window.customElements.define('app-bar-nav', TopAppBarNav)
-window.customElements.define('x-app-bar', TopAppBar)
+window.customElements.define('rs-app-bar-title', TopAppBarTitle)
+window.customElements.define('rs-app-bar-item', TopAppBarActionItem)
+window.customElements.define('rs-app-bar-actions', TopAppBarActions)
+window.customElements.define('rs-app-bar-nav', TopAppBarNav)
+window.customElements.define('rs-app-bar', TopAppBar)
 
 storiesOf('Components|App bar', module)
   .addDecorator(withLinks)
@@ -31,37 +31,32 @@ storiesOf('Components|App bar', module)
   })
   .add('使用方法', () => `
     <p>
-      <x-app-bar class="app-bar">
-        <app-bar-nav class="nav"></app-bar-nav>
-        <app-bar-title class="title">タイトル</app-bar-title>
-        <app-bar-actions class="actions">
-          <app-bar-item class="item -cut"></app-bar-item>
-          <app-bar-item class="item -copy"></app-bar-item>
+      <rs-app-bar class="app-bar">
+        <rs-app-bar-nav class="nav"></rs-app-bar-nav>
+        <rs-app-bar-title class="title">タイトル</rs-app-bar-title>
+        <rs-app-bar-actions class="actions">
+          <rs-app-bar-item class="item -search"></rs-app-bar-item>
           <h4>使用方法</h4>
-        </app-bar-actions>
-      </x-app-bar>
+        </rs-app-bar-actions>
+      </rs-app-bar>
     </p>
     ${copyCodeBlock(
-      '<x-app-bar class="app-bar">\n' +
-      '   <app-bar-nav class="nav" />\n' +
-      '   <app-bar-title class="title">タイトル</app-bar-title>\n' +
-      '   <app-bar-actions class="actions">\n' +
-      '      <app-bar-item class="item -cut"/>\n' +
-      '      <app-bar-item class="item -copy"/>\n' +
-      '   </app-bar-actions>\n' +
-      '</x-app-bar>\n',
+      '<rs-app-bar class="app-bar">\n' +
+      '   <rs-app-bar-nav class="nav" />\n' +
+      '   <rs-app-bar-title class="title">タイトル</rs-app-bar-title>\n' +
+      '   <rs-app-bar-actions class="actions">\n' +
+      '      <rs-app-bar-item class="item -search"/>\n' +
+      '   </rs-app-bar-actions>\n' +
+      '</rs-app-bar>\n',
       { lang: 'html' }
     )}
     ${copyCodeBlock(
       '.app-bar {\n' +
       '   > .nav {\n' +
-      '      @include rs-top-app-bar-nav-icon-image(url(\'nav.png\'));\n' +
+      '      @include rs-top-rs-app-bar-nav-icon-image(url(\'nav.png\'));\n' +
       '   }\n' +
-      '   > .actions. > .item.-cut {\n' +
-      '      @include rs-top-app-bar-action-icon-image(url(\'cut.png\'));\n' +
-      '   }\n' +
-      '   > .actions. > .item.-copy {\n' +
-      '      @include rs-top-app-bar-action-icon-image(url(\'copy.png\'));\n' +
+      '   > .actions. > .item.-search {\n' +
+      '      @include rs-top-app-bar-action-icon-image(url(\'search.png\'));\n' +
       '   }\n' +
       '}',
       { lang: 'scss' }
@@ -78,37 +73,37 @@ storiesOf('Components|App bar', module)
         <th>備考</th>
       </tr>
       <tr>
-        <td>x-app-bar</td>
+        <td>rs-app-bar</td>
         <td>アップバー本体を表示します</td>
         <td>
           <ul>
-            <li><code>app-bar-nav</code></li>
-            <li><code>app-bar-title</code></li>
-            <li><code>app-bar-actions</code></li>
+            <li><code>rs-app-bar-nav</code></li>
+            <li><code>rs-app-bar-title</code></li>
+            <li><code>rs-app-bar-actions</code></li>
           </ul>
         </td>
         <td>-</td>
       </tr>
       <tr>
-        <td>app-bar-nav</td>
+        <td>rs-app-bar-nav</td>
         <td>ナビゲーションを表示します</td>
         <td>-</td>
         <td>-</td>
       </tr>
       <tr>
-        <td>app-bar-title</td>
+        <td>rs-app-bar-title</td>
         <td>タイトルを表示します</td>
         <td>テキスト</td>
         <td>-</td>
       </tr>
       <tr>
-        <td>app-bar-actions</td>
+        <td>rs-app-bar-actions</td>
         <td>アクションエリアを表示します</td>
-        <td><code>app-bar-item</code></td>
+        <td><code>rs-app-bar-item</code></td>
         <td>-</td>
       </tr>
       <tr>
-        <td>app-bar-item</td>
+        <td>rs-app-bar-item</td>
         <td>アクションボタンを表示します</td>
         <td>-</td>
         <td>-</td>
@@ -122,14 +117,14 @@ storiesOf('Components|App bar/スタイルのカスタマイズ/アップバー�
   .add('normal (default)', () => {
     return `
       <p>
-        <x-app-bar class="app-bar -dense">
-          <app-bar-nav class="nav"></app-bar-nav>
-          <app-bar-title class="title">タイトル</app-bar-title>
-          <app-bar-actions class="actions">
-            <app-bar-item class="item -cut"></app-bar-item>
-            <app-bar-item class="item -copy"></app-bar-item>
-          </app-bar-actions>
-        </x-app-bar>
+        <rs-app-bar class="app-bar -dense">
+          <rs-app-bar-nav class="nav"></rs-app-bar-nav>
+          <rs-app-bar-title class="title">タイトル</rs-app-bar-title>
+          <rs-app-bar-actions class="actions">
+            <rs-app-bar-item class="item -cut"></rs-app-bar-item>
+            <rs-app-bar-item class="item -copy"></rs-app-bar-item>
+          </rs-app-bar-actions>
+        </rs-app-bar>
       </p>
       <h4>normal（デフォルト）</h4>
       <p>
@@ -139,14 +134,14 @@ storiesOf('Components|App bar/スタイルのカスタマイズ/アップバー�
       </p>
       <h4>使用方法</h4>
       ${copyCodeBlock(
-        '<x-app-bar class="app-bar">\n' +
-        '   <app-bar-nav class="nav"></app-bar-nav>\n' +
-        '   <app-bar-title class="title">タイトル</app-bar-title>\n' +
-        '   <app-bar-actions class="actions">\n' +
-        '       <app-bar-item class="item -cut"></app-bar-item>\n' +
-        '       <app-bar-item class="item -copy"></app-bar-item>\n' +
-        '   </app-bar-actions>\n' +
-        '</x-app-bar>\n',
+        '<rs-app-bar class="app-bar">\n' +
+        '   <rs-app-bar-nav class="nav"></rs-app-bar-nav>\n' +
+        '   <rs-app-bar-title class="title">タイトル</rs-app-bar-title>\n' +
+        '   <rs-app-bar-actions class="actions">\n' +
+        '       <rs-app-bar-item class="item -cut"></rs-app-bar-item>\n' +
+        '       <rs-app-bar-item class="item -copy"></rs-app-bar-item>\n' +
+        '   </rs-app-bar-actions>\n' +
+        '</rs-app-bar>\n',
         { lang: 'html' }
       )}
       <p>denseを使用する場合</p>
@@ -157,14 +152,14 @@ storiesOf('Components|App bar/スタイルのカスタマイズ/アップバー�
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
-        '<x-app-bar class="app-bar -dense">\n' +
-        '   <app-bar-nav class="nav"></app-bar-nav>\n' +
-        '   <app-bar-title class="title">タイトル</app-bar-title>\n' +
-        '   <app-bar-actions class="actions">\n' +
-        '       <app-bar-item class="item -cut"></app-bar-item>\n' +
-        '       <app-bar-item class="item -copy"></app-bar-item>\n' +
-        '   </app-bar-actions>\n' +
-        '</x-app-bar>\n',
+        '<rs-app-bar class="app-bar -dense">\n' +
+        '   <rs-app-bar-nav class="nav"></rs-app-bar-nav>\n' +
+        '   <rs-app-bar-title class="title">タイトル</rs-app-bar-title>\n' +
+        '   <rs-app-bar-actions class="actions">\n' +
+        '       <rs-app-bar-item class="item -cut"></rs-app-bar-item>\n' +
+        '       <rs-app-bar-item class="item -copy"></rs-app-bar-item>\n' +
+        '   </rs-app-bar-actions>\n' +
+        '</rs-app-bar>\n',
         { lang: 'html' }
       )}
       ${copyCodeBlock(
@@ -181,14 +176,14 @@ storiesOf('Components|App bar/スタイルのカスタマイズ/アップバー�
   .add('short', () => {
     return `
       <p>
-        <x-app-bar class="app-bar -short">
-          <app-bar-nav class="nav"></app-bar-nav>
-          <app-bar-title class="title">タイトル</app-bar-title>
-          <app-bar-actions class="actions">
-            <app-bar-item class="item -cut"></app-bar-item>
-            <app-bar-item class="item -copy"></app-bar-item>
-          </app-bar-actions>
-        </x-app-bar>
+        <rs-app-bar class="app-bar -short">
+          <rs-app-bar-nav class="nav"></rs-app-bar-nav>
+          <rs-app-bar-title class="title">タイトル</rs-app-bar-title>
+          <rs-app-bar-actions class="actions">
+            <rs-app-bar-item class="item -cut"></rs-app-bar-item>
+            <rs-app-bar-item class="item -copy"></rs-app-bar-item>
+          </rs-app-bar-actions>
+        </rs-app-bar>
       </p>
       <h4>short</h4>
       <p>app barの横幅を短くする。</p>
@@ -199,14 +194,14 @@ storiesOf('Components|App bar/スタイルのカスタマイズ/アップバー�
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
-        '<x-app-bar class="app-bar -short">\n' +
-        '   <app-bar-nav class="nav"></app-bar-nav>\n' +
-        '   <app-bar-title class="title">タイトル</app-bar-title>\n' +
-        '   <app-bar-actions class="actions">\n' +
-        '       <app-bar-item class="item -cut"></app-bar-item>\n' +
-        '       <app-bar-item class="item -copy"></app-bar-item>\n' +
-        '   </app-bar-actions>\n' +
-        '</x-app-bar>\n',
+        '<rs-app-bar class="app-bar -short">\n' +
+        '   <rs-app-bar-nav class="nav"></rs-app-bar-nav>\n' +
+        '   <rs-app-bar-title class="title">タイトル</rs-app-bar-title>\n' +
+        '   <rs-app-bar-actions class="actions">\n' +
+        '       <rs-app-bar-item class="item -cut"></rs-app-bar-item>\n' +
+        '       <rs-app-bar-item class="item -copy"></rs-app-bar-item>\n' +
+        '   </rs-app-bar-actions>\n' +
+        '</rs-app-bar>\n',
         { lang: 'html' }
       )}
       ${copyCodeBlock(
@@ -223,14 +218,14 @@ storiesOf('Components|App bar/スタイルのカスタマイズ/アップバー�
   .add('prominent', () => {
     return `
       <p>
-        <x-app-bar class="app-bar -prominent">
-          <app-bar-nav class="nav"></app-bar-nav>
-          <app-bar-title class="title">タイトル</app-bar-title>
-          <app-bar-actions class="actions">
-            <app-bar-item class="item -cut"></app-bar-item>
-            <app-bar-item class="item -copy"></app-bar-item>
-          </app-bar-actions>
-        </x-app-bar>
+        <rs-app-bar class="app-bar -prominent">
+          <rs-app-bar-nav class="nav"></rs-app-bar-nav>
+          <rs-app-bar-title class="title">タイトル</rs-app-bar-title>
+          <rs-app-bar-actions class="actions">
+            <rs-app-bar-item class="item -cut"></rs-app-bar-item>
+            <rs-app-bar-item class="item -copy"></rs-app-bar-item>
+          </rs-app-bar-actions>
+        </rs-app-bar>
       </p>
       <h4>prominent</h4>
       <p>denseも同時に指定できる</p>
@@ -241,14 +236,14 @@ storiesOf('Components|App bar/スタイルのカスタマイズ/アップバー�
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
-        '<x-app-bar class="app-bar -prominent">\n' +
-        '   <app-bar-nav class="nav"></app-bar-nav>\n' +
-        '   <app-bar-title class="title">タイトル</app-bar-title>\n' +
-        '   <app-bar-actions class="actions">\n' +
-        '       <app-bar-item class="item -cut"></app-bar-item>\n' +
-        '       <app-bar-item class="item -copy"></app-bar-item>\n' +
-        '   </app-bar-actions>\n' +
-        '</x-app-bar>\n',
+        '<rs-app-bar class="app-bar -prominent">\n' +
+        '   <rs-app-bar-nav class="nav"></rs-app-bar-nav>\n' +
+        '   <rs-app-bar-title class="title">タイトル</rs-app-bar-title>\n' +
+        '   <rs-app-bar-actions class="actions">\n' +
+        '       <rs-app-bar-item class="item -cut"></rs-app-bar-item>\n' +
+        '       <rs-app-bar-item class="item -copy"></rs-app-bar-item>\n' +
+        '   </rs-app-bar-actions>\n' +
+        '</rs-app-bar>\n',
         { lang: 'html' }
       )}
       ${copyCodeBlock(
@@ -265,14 +260,14 @@ storiesOf('Components|App bar/スタイルのカスタマイズ/アップバー�
   .add('fixed', () => {
     return `
       <p>
-        <x-app-bar class="app-bar -fixed">
-          <app-bar-nav class="nav"></app-bar-nav>
-          <app-bar-title class="title">タイトル</app-bar-title>
-          <app-bar-actions class="actions">
-            <app-bar-item class="item -cut"></app-bar-item>
-            <app-bar-item class="item -copy"></app-bar-item>
-          </app-bar-actions>
-        </x-app-bar>
+        <rs-app-bar class="app-bar -fixed">
+          <rs-app-bar-nav class="nav"></rs-app-bar-nav>
+          <rs-app-bar-title class="title">タイトル</rs-app-bar-title>
+          <rs-app-bar-actions class="actions">
+            <rs-app-bar-item class="item -cut"></rs-app-bar-item>
+            <rs-app-bar-item class="item -copy"></rs-app-bar-item>
+          </rs-app-bar-actions>
+        </rs-app-bar>
       </p>
       <h4>fixed</h4>
       App barを固定する。
@@ -283,14 +278,14 @@ storiesOf('Components|App bar/スタイルのカスタマイズ/アップバー�
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
-        '<x-app-bar class="app-bar -fixed">\n' +
-        '   <app-bar-nav class="nav"></app-bar-nav>\n' +
-        '   <app-bar-title class="title">タイトル</app-bar-title>\n' +
-        '   <app-bar-actions class="actions">\n' +
-        '       <app-bar-item class="item -cut"></app-bar-item>\n' +
-        '       <app-bar-item class="item -copy"></app-bar-item>\n' +
-        '   </app-bar-actions>\n' +
-        '</x-app-bar>\n',
+        '<rs-app-bar class="app-bar -fixed">\n' +
+        '   <rs-app-bar-nav class="nav"></rs-app-bar-nav>\n' +
+        '   <rs-app-bar-title class="title">タイトル</rs-app-bar-title>\n' +
+        '   <rs-app-bar-actions class="actions">\n' +
+        '       <rs-app-bar-item class="item -cut"></rs-app-bar-item>\n' +
+        '       <rs-app-bar-item class="item -copy"></rs-app-bar-item>\n' +
+        '   </rs-app-bar-actions>\n' +
+        '</rs-app-bar>\n',
         { lang: 'html' }
       )}
       ${copyCodeBlock(
@@ -307,14 +302,14 @@ storiesOf('Components|App bar/スタイルのカスタマイズ/アップバー�
   .add('collapsed', () => {
   return `
     <p>
-      <x-app-bar class="app-bar -collapsed">
-        <app-bar-nav class="nav"></app-bar-nav>
-        <app-bar-title class="title">タイトル</app-bar-title>
-        <app-bar-actions class="actions">
-          <app-bar-item class="item -cut"></app-bar-item>
-          <app-bar-item class="item -copy"></app-bar-item>
-        </app-bar-actions>
-      </x-app-bar>
+      <rs-app-bar class="app-bar -collapsed">
+        <rs-app-bar-nav class="nav"></rs-app-bar-nav>
+        <rs-app-bar-title class="title">タイトル</rs-app-bar-title>
+        <rs-app-bar-actions class="actions">
+          <rs-app-bar-item class="item -cut"></rs-app-bar-item>
+          <rs-app-bar-item class="item -copy"></rs-app-bar-item>
+        </rs-app-bar-actions>
+      </rs-app-bar>
     </p>
     <h4>collapsed</h4>
     <p>shortも同時に指定できる。</p>
@@ -325,14 +320,14 @@ storiesOf('Components|App bar/スタイルのカスタマイズ/アップバー�
     )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
-      '<x-app-bar class="app-bar -collapsed">\n' +
-      '   <app-bar-nav class="nav"></app-bar-nav>\n' +
-      '   <app-bar-title class="title">タイトル</app-bar-title>\n' +
-      '   <app-bar-actions class="actions">\n' +
-      '       <app-bar-item class="item -cut"></app-bar-item>\n' +
-      '       <app-bar-item class="item -copy"></app-bar-item>\n' +
-      '   </app-bar-actions>\n' +
-      '</x-app-bar>\n',
+      '<rs-app-bar class="app-bar -collapsed">\n' +
+      '   <rs-app-bar-nav class="nav"></rs-app-bar-nav>\n' +
+      '   <rs-app-bar-title class="title">タイトル</rs-app-bar-title>\n' +
+      '   <rs-app-bar-actions class="actions">\n' +
+      '       <rs-app-bar-item class="item -cut"></rs-app-bar-item>\n' +
+      '       <rs-app-bar-item class="item -copy"></rs-app-bar-item>\n' +
+      '   </rs-app-bar-actions>\n' +
+      '</rs-app-bar>\n',
       { lang: 'html' }
     )}
     ${copyCodeBlock(
@@ -352,38 +347,38 @@ storiesOf('Components|App bar/スタイルのカスタマイズ', module)
   .add('タイトルの色を変える', () => {
     return `
       <p>
-        <x-app-bar class="app-bar -ink-color">
-          <app-bar-nav class="nav"></app-bar-nav>
-          <app-bar-title class="title">タイトル</app-bar-title>
-          <app-bar-actions class="actions">
-            <app-bar-item class="item -cut"></app-bar-item>
-            <app-bar-item class="item -copy"></app-bar-item>
-          </app-bar-actions>
-        </x-app-bar>
+        <rs-app-bar class="app-bar -ink-color">
+          <rs-app-bar-nav class="nav"></rs-app-bar-nav>
+          <rs-app-bar-title class="title">タイトル</rs-app-bar-title>
+          <rs-app-bar-actions class="actions">
+            <rs-app-bar-item class="item -cut"></rs-app-bar-item>
+            <rs-app-bar-item class="item -copy"></rs-app-bar-item>
+          </rs-app-bar-actions>
+        </rs-app-bar>
       </p>
       <p>タイトルの色を指定した色に変える。</p>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
-        '@includers-top-app-bar-title-ink-color($color);',
+        '@includers-top-rs-app-bar-title-ink-color($color);',
         { lang: 'scss' }
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
-        '<x-app-bar class="app-bar -ink-color">\n' +
-        '   <app-bar-nav class="nav"></app-bar-nav>\n' +
-        '   <app-bar-title class="title">タイトル</app-bar-title>\n' +
-        '   <app-bar-actions class="actions">\n' +
-        '       <app-bar-item class="item -cut"></app-bar-item>\n' +
-        '       <app-bar-item class="item -copy"></app-bar-item>\n' +
-        '   </app-bar-actions>\n' +
-        '</x-app-bar>\n',
+        '<rs-app-bar class="app-bar -ink-color">\n' +
+        '   <rs-app-bar-nav class="nav"></rs-app-bar-nav>\n' +
+        '   <rs-app-bar-title class="title">タイトル</rs-app-bar-title>\n' +
+        '   <rs-app-bar-actions class="actions">\n' +
+        '       <rs-app-bar-item class="item -cut"></rs-app-bar-item>\n' +
+        '       <rs-app-bar-item class="item -copy"></rs-app-bar-item>\n' +
+        '   </rs-app-bar-actions>\n' +
+        '</rs-app-bar>\n',
         { lang: 'html' }
       )}
       ${copyCodeBlock(
         '@import \'@rsmdc/top-app-bar/rs-top-app-bar.scss\';\n\n' +
         '.app-bar {\n' +
         '   &.-ink-color {\n' +
-        '      @includers-top-app-bar-title-ink-color(yellow);\n' +
+        '      @includers-top-rs-app-bar-title-ink-color(yellow);\n' +
         '   }\n' +
         '}',
         { lang: 'scss' }
@@ -397,14 +392,14 @@ storiesOf('Components|App bar/スタイルのカスタマイズ', module)
   .add('アイコンの色を変える', () => {
     return `
       <p>
-        <x-app-bar class="app-bar -fill-color-accessible">
-          <app-bar-nav class="nav"></app-bar-nav>
-          <app-bar-title class="title">タイトル</app-bar-title>
-          <app-bar-actions class="actions">
-            <app-bar-item class="item -cut"></app-bar-item>
-            <app-bar-item class="item -copy"></app-bar-item>
-          </app-bar-actions>
-        </x-app-bar>
+        <rs-app-bar class="app-bar -fill-color-accessible">
+          <rs-app-bar-nav class="nav"></rs-app-bar-nav>
+          <rs-app-bar-title class="title">タイトル</rs-app-bar-title>
+          <rs-app-bar-actions class="actions">
+            <rs-app-bar-item class="item -cut"></rs-app-bar-item>
+            <rs-app-bar-item class="item -copy"></rs-app-bar-item>
+          </rs-app-bar-actions>
+        </rs-app-bar>
       </p>
       <p>
         背景色とタイトルの色を変える。<br>
@@ -417,14 +412,14 @@ storiesOf('Components|App bar/スタイルのカスタマイズ', module)
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
-        '<x-app-bar class="app-bar -fill-color-accessible">\n' +
-        '   <app-bar-nav class="nav"></app-bar-nav>\n' +
-        '   <app-bar-title class="title">タイトル</app-bar-title>\n' +
-        '   <app-bar-actions class="actions">\n' +
-        '       <app-bar-item class="item -cut"></app-bar-item>\n' +
-        '       <app-bar-item class="item -copy"></app-bar-item>\n' +
-        '   </app-bar-actions>\n' +
-        '</x-app-bar>\n',
+        '<rs-app-bar class="app-bar -fill-color-accessible">\n' +
+        '   <rs-app-bar-nav class="nav"></rs-app-bar-nav>\n' +
+        '   <rs-app-bar-title class="title">タイトル</rs-app-bar-title>\n' +
+        '   <rs-app-bar-actions class="actions">\n' +
+        '       <rs-app-bar-item class="item -cut"></rs-app-bar-item>\n' +
+        '       <rs-app-bar-item class="item -copy"></rs-app-bar-item>\n' +
+        '   </rs-app-bar-actions>\n' +
+        '</rs-app-bar>\n',
         { lang: 'html' }
       )}
       ${copyCodeBlock(
@@ -441,14 +436,14 @@ storiesOf('Components|App bar/スタイルのカスタマイズ', module)
   .add('背景色を変える', () => {
     return `
       <p>
-        <x-app-bar class="app-bar -fill-color">
-          <app-bar-nav class="nav"></app-bar-nav>
-          <app-bar-title class="title">タイトル</app-bar-title>
-          <app-bar-actions class="actions">
-            <app-bar-item class="item -cut"></app-bar-item>
-            <app-bar-item class="item -copy"></app-bar-item>
-          </app-bar-actions>
-        </x-app-bar>
+        <rs-app-bar class="app-bar -fill-color">
+          <rs-app-bar-nav class="nav"></rs-app-bar-nav>
+          <rs-app-bar-title class="title">タイトル</rs-app-bar-title>
+          <rs-app-bar-actions class="actions">
+            <rs-app-bar-item class="item -cut"></rs-app-bar-item>
+            <rs-app-bar-item class="item -copy"></rs-app-bar-item>
+          </rs-app-bar-actions>
+        </rs-app-bar>
       </p>
       <p>背景色を指定した色に変える。</p>
       <h4>使用するmixin</h4>
@@ -457,14 +452,14 @@ storiesOf('Components|App bar/スタイルのカスタマイズ', module)
         { lang: 'scss' }
       )}
       ${copyCodeBlock(
-        '<x-app-bar class="app-bar -fill-color">\n' +
-        '   <app-bar-nav class="nav"></app-bar-nav>\n' +
-        '   <app-bar-title class="title">タイトル</app-bar-title>\n' +
-        '   <app-bar-actions class="actions">\n' +
-        '       <app-bar-item class="item -cut"></app-bar-item>\n' +
-        '       <app-bar-item class="item -copy"></app-bar-item>\n' +
-        '   </app-bar-actions>\n' +
-        '</x-app-bar>\n',
+        '<rs-app-bar class="app-bar -fill-color">\n' +
+        '   <rs-app-bar-nav class="nav"></rs-app-bar-nav>\n' +
+        '   <rs-app-bar-title class="title">タイトル</rs-app-bar-title>\n' +
+        '   <rs-app-bar-actions class="actions">\n' +
+        '       <rs-app-bar-item class="item -cut"></rs-app-bar-item>\n' +
+        '       <rs-app-bar-item class="item -copy"></rs-app-bar-item>\n' +
+        '   </rs-app-bar-actions>\n' +
+        '</rs-app-bar>\n',
         { lang: 'html' }
       )}
       ${copyCodeBlock(
@@ -485,14 +480,14 @@ storiesOf('Components|App bar/スタイルのカスタマイズ', module)
   .add('リップルの色を変える', () => {
     return `
       <p>
-        <x-app-bar class="app-bar -fill-color-accessible">
-          <app-bar-nav class="nav"></app-bar-nav>
-          <app-bar-title class="title">タイトル</app-bar-title>
-          <app-bar-actions class="actions">
-            <app-bar-item class="item -cut"></app-bar-item>
-            <app-bar-item class="item -copy"></app-bar-item>
-          </app-bar-actions>
-        </x-app-bar>
+        <rs-app-bar class="app-bar -fill-color-accessible">
+          <rs-app-bar-nav class="nav"></rs-app-bar-nav>
+          <rs-app-bar-title class="title">タイトル</rs-app-bar-title>
+          <rs-app-bar-actions class="actions">
+            <rs-app-bar-item class="item -cut"></rs-app-bar-item>
+            <rs-app-bar-item class="item -copy"></rs-app-bar-item>
+          </rs-app-bar-actions>
+        </rs-app-bar>
       </p>
       <p>
         背景色とタイトルの色を変える。<br>
@@ -505,14 +500,14 @@ storiesOf('Components|App bar/スタイルのカスタマイズ', module)
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
-        '<x-app-bar class="app-bar -fill-color-accessible">\n' +
-        '   <app-bar-nav class="nav"></app-bar-nav>\n' +
-        '   <app-bar-title class="title">タイトル</app-bar-title>\n' +
-        '   <app-bar-actions class="actions">\n' +
-        '       <app-bar-item class="item -cut"></app-bar-item>\n' +
-        '       <app-bar-item class="item -copy"></app-bar-item>\n' +
-        '   </app-bar-actions>\n' +
-        '</x-app-bar>\n',
+        '<rs-app-bar class="app-bar -fill-color-accessible">\n' +
+        '   <rs-app-bar-nav class="nav"></rs-app-bar-nav>\n' +
+        '   <rs-app-bar-title class="title">タイトル</rs-app-bar-title>\n' +
+        '   <rs-app-bar-actions class="actions">\n' +
+        '       <rs-app-bar-item class="item -cut"></rs-app-bar-item>\n' +
+        '       <rs-app-bar-item class="item -copy"></rs-app-bar-item>\n' +
+        '   </rs-app-bar-actions>\n' +
+        '</rs-app-bar>\n',
         { lang: 'html' }
       )}
       ${copyCodeBlock(
@@ -529,14 +524,14 @@ storiesOf('Components|App bar/スタイルのカスタマイズ', module)
   .add('背景色とタイトルの色を変える', () => {
     return `
       <p>
-        <x-app-bar class="app-bar -fill-color-accessible">
-          <app-bar-nav class="nav"></app-bar-nav>
-          <app-bar-title class="title">タイトル</app-bar-title>
-          <app-bar-actions class="actions">
-            <app-bar-item class="item -cut"></app-bar-item>
-            <app-bar-item class="item -copy"></app-bar-item>
-          </app-bar-actions>
-        </x-app-bar>
+        <rs-app-bar class="app-bar -fill-color-accessible">
+          <rs-app-bar-nav class="nav"></rs-app-bar-nav>
+          <rs-app-bar-title class="title">タイトル</rs-app-bar-title>
+          <rs-app-bar-actions class="actions">
+            <rs-app-bar-item class="item -cut"></rs-app-bar-item>
+            <rs-app-bar-item class="item -copy"></rs-app-bar-item>
+          </rs-app-bar-actions>
+        </rs-app-bar>
       </p>
       <p>
         背景色とタイトルの色を変える。<br>
@@ -549,14 +544,14 @@ storiesOf('Components|App bar/スタイルのカスタマイズ', module)
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
-        '<x-app-bar class="app-bar -fill-color-accessible">\n' +
-        '   <app-bar-nav class="nav"></app-bar-nav>\n' +
-        '   <app-bar-title class="title">タイトル</app-bar-title>\n' +
-        '   <app-bar-actions class="actions">\n' +
-        '       <app-bar-item class="item -cut"></app-bar-item>\n' +
-        '       <app-bar-item class="item -copy"></app-bar-item>\n' +
-        '   </app-bar-actions>\n' +
-        '</x-app-bar>\n',
+        '<rs-app-bar class="app-bar -fill-color-accessible">\n' +
+        '   <rs-app-bar-nav class="nav"></rs-app-bar-nav>\n' +
+        '   <rs-app-bar-title class="title">タイトル</rs-app-bar-title>\n' +
+        '   <rs-app-bar-actions class="actions">\n' +
+        '       <rs-app-bar-item class="item -cut"></rs-app-bar-item>\n' +
+        '       <rs-app-bar-item class="item -copy"></rs-app-bar-item>\n' +
+        '   </rs-app-bar-actions>\n' +
+        '</rs-app-bar>\n',
         { lang: 'html' }
       )}
       ${copyCodeBlock(
@@ -573,14 +568,14 @@ storiesOf('Components|App bar/スタイルのカスタマイズ', module)
   .add('アップバーの角の丸みを変える', () => {
     return `
       <p>
-        <x-app-bar class="app-bar -short -shape-radiu">
-          <app-bar-nav class="nav"></app-bar-nav>
-          <app-bar-title class="title">タイトル</app-bar-title>
-          <app-bar-actions class="actions">
-            <app-bar-item class="item -cut"></app-bar-item>
-            <app-bar-item class="item -copy"></app-bar-item>
-          </app-bar-actions>
-        </x-app-bar>
+        <rs-app-bar class="app-bar -short -shape-radiu">
+          <rs-app-bar-nav class="nav"></rs-app-bar-nav>
+          <rs-app-bar-title class="title">タイトル</rs-app-bar-title>
+          <rs-app-bar-actions class="actions">
+            <rs-app-bar-item class="item -cut"></rs-app-bar-item>
+            <rs-app-bar-item class="item -copy"></rs-app-bar-item>
+          </rs-app-bar-actions>
+        </rs-app-bar>
       </p>
       <p>
         アップバーの角の丸みを指定したサイズに変える。<br>
@@ -593,14 +588,14 @@ storiesOf('Components|App bar/スタイルのカスタマイズ', module)
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
-        '<x-app-bar class="app-bar -short -shape-radius">\n' +
-        '   <app-bar-nav class="nav"></app-bar-nav>\n' +
-        '   <app-bar-title class="title">タイトル</app-bar-title>\n' +
-        '   <app-bar-actions class="actions">\n' +
-        '       <app-bar-item class="item -cut"></app-bar-item>\n' +
-        '       <app-bar-item class="item -copy"></app-bar-item>\n' +
-        '   </app-bar-actions>\n' +
-        '</x-app-bar>\n',
+        '<rs-app-bar class="app-bar -short -shape-radius">\n' +
+        '   <rs-app-bar-nav class="nav"></rs-app-bar-nav>\n' +
+        '   <rs-app-bar-title class="title">タイトル</rs-app-bar-title>\n' +
+        '   <rs-app-bar-actions class="actions">\n' +
+        '       <rs-app-bar-item class="item -cut"></rs-app-bar-item>\n' +
+        '       <rs-app-bar-item class="item -copy"></rs-app-bar-item>\n' +
+        '   </rs-app-bar-actions>\n' +
+        '</rs-app-bar>\n',
         { lang: 'html' }
       )}
       ${copyCodeBlock(
@@ -621,14 +616,14 @@ storiesOf('Components|App bar/スタイルのカスタマイズ', module)
   .add('ナビゲーションのアイコンを設定する', () => {
     return `
       <p>
-        <x-app-bar class="app-bar -short -shape-radiu">
-          <app-bar-nav class="nav"></app-bar-nav>
-          <app-bar-title class="title">タイトル</app-bar-title>
-          <app-bar-actions class="actions">
-            <app-bar-item class="item -cut"></app-bar-item>
-            <app-bar-item class="item -copy"></app-bar-item>
-          </app-bar-actions>
-        </x-app-bar>
+        <rs-app-bar class="app-bar -short -shape-radiu">
+          <rs-app-bar-nav class="nav"></rs-app-bar-nav>
+          <rs-app-bar-title class="title">タイトル</rs-app-bar-title>
+          <rs-app-bar-actions class="actions">
+            <rs-app-bar-item class="item -cut"></rs-app-bar-item>
+            <rs-app-bar-item class="item -copy"></rs-app-bar-item>
+          </rs-app-bar-actions>
+        </rs-app-bar>
       </p>
       <p>
         アップバーの角の丸みを指定したサイズに変える。<br>
@@ -636,19 +631,19 @@ storiesOf('Components|App bar/スタイルのカスタマイズ', module)
       </p>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
-        '@include rs-top-app-bar-nav-icon-image($radius);',
+        '@include rs-top-rs-app-bar-nav-icon-image($radius);',
         { lang: 'scss' }
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
-        '<x-app-bar class="app-bar -short -shape-radius">\n' +
-        '   <app-bar-nav class="nav"></app-bar-nav>\n' +
-        '   <app-bar-title class="title">タイトル</app-bar-title>\n' +
-        '   <app-bar-actions class="actions">\n' +
-        '       <app-bar-item class="item -cut"></app-bar-item>\n' +
-        '       <app-bar-item class="item -copy"></app-bar-item>\n' +
-        '   </app-bar-actions>\n' +
-        '</x-app-bar>\n',
+        '<rs-app-bar class="app-bar -short -shape-radius">\n' +
+        '   <rs-app-bar-nav class="nav"></rs-app-bar-nav>\n' +
+        '   <rs-app-bar-title class="title">タイトル</rs-app-bar-title>\n' +
+        '   <rs-app-bar-actions class="actions">\n' +
+        '       <rs-app-bar-item class="item -cut"></rs-app-bar-item>\n' +
+        '       <rs-app-bar-item class="item -copy"></rs-app-bar-item>\n' +
+        '   </rs-app-bar-actions>\n' +
+        '</rs-app-bar>\n',
         { lang: 'html' }
       )}
       ${copyCodeBlock(
@@ -669,14 +664,14 @@ storiesOf('Components|App bar/スタイルのカスタマイズ', module)
   .add('アクションのアイコンを設定する', () => {
     return `
       <p>
-        <x-app-bar class="app-bar -short -shape-radiu">
-          <app-bar-nav class="nav"></app-bar-nav>
-          <app-bar-title class="title">タイトル</app-bar-title>
-          <app-bar-actions class="actions">
-            <app-bar-item class="item -cut"></app-bar-item>
-            <app-bar-item class="item -copy"></app-bar-item>
-          </app-bar-actions>
-        </x-app-bar>
+        <rs-app-bar class="app-bar -short -shape-radiu">
+          <rs-app-bar-nav class="nav"></rs-app-bar-nav>
+          <rs-app-bar-title class="title">タイトル</rs-app-bar-title>
+          <rs-app-bar-actions class="actions">
+            <rs-app-bar-item class="item -cut"></rs-app-bar-item>
+            <rs-app-bar-item class="item -copy"></rs-app-bar-item>
+          </rs-app-bar-actions>
+        </rs-app-bar>
       </p>
       <p>
         アップバーの角の丸みを指定したサイズに変える。<br>
@@ -689,14 +684,14 @@ storiesOf('Components|App bar/スタイルのカスタマイズ', module)
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
-        '<x-app-bar class="app-bar -short -shape-radius">\n' +
-        '   <app-bar-nav class="nav"></app-bar-nav>\n' +
-        '   <app-bar-title class="title">タイトル</app-bar-title>\n' +
-        '   <app-bar-actions class="actions">\n' +
-        '       <app-bar-item class="item -cut"></app-bar-item>\n' +
-        '       <app-bar-item class="item -copy"></app-bar-item>\n' +
-        '   </app-bar-actions>\n' +
-        '</x-app-bar>\n',
+        '<rs-app-bar class="app-bar -short -shape-radius">\n' +
+        '   <rs-app-bar-nav class="nav"></rs-app-bar-nav>\n' +
+        '   <rs-app-bar-title class="title">タイトル</rs-app-bar-title>\n' +
+        '   <rs-app-bar-actions class="actions">\n' +
+        '       <rs-app-bar-item class="item -cut"></rs-app-bar-item>\n' +
+        '       <rs-app-bar-item class="item -copy"></rs-app-bar-item>\n' +
+        '   </rs-app-bar-actions>\n' +
+        '</rs-app-bar>\n',
         { lang: 'html' }
       )}
       ${copyCodeBlock(
