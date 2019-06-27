@@ -16,7 +16,6 @@ storiesOf('Components|Select', module)
   .add('概要', () => ``)
   .add('使用方法', () => `
     <rs-select class="food-select" label="Pick a Food Group">
-      <option value=""></option>
       <option value="grains"> 
         Bread, Cereal, Rice, and Pasta
       </option>
@@ -30,7 +29,6 @@ storiesOf('Components|Select', module)
     <h4>使用方法</h4>
     ${copyCodeBlock(
 ` <rs-select class="food-select" label="Pick a Food Group">
-    <option value=""></option>
     <option value="grains">Bread, Cereal, Rice, and Pasta</option>
     <option value="vegetables" disabled>Vegetables</option>
     <option value="fruit">Fruits</option> 
