@@ -103,7 +103,7 @@ storiesOf('Components|Select/スタイルのカスタマイズ/セレクトの�
     <h4>outlined</h4>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
-      `@include rs-select-type($type)`, { lang: 'scss' }
+      `@include rs-select-type($type);`, { lang: 'scss' }
     )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
@@ -121,7 +121,7 @@ storiesOf('Components|Select/スタイルのカスタマイズ', module)
     <h4>選択したテキストの色を変える</h4>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
-      `@include rs-select-ink-color($color)`, { lang: 'scss' }
+      `@include rs-select-ink-color($color);`, { lang: 'scss' }
     )}
     ${copyCodeBlock(
 `@import "@rsmdc/select/rs-select.scss";
@@ -136,7 +136,7 @@ rs-select {
     <h4>背景色を変える</h4>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
-      `@include rs-select-container-fill-color($color)`, { lang: 'scss' }
+      `@include rs-select-container-fill-color($color);`, { lang: 'scss' }
     )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
@@ -152,7 +152,7 @@ rs-select {
     <h4>ラベルの色を変える</h4>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
-      `@include rs-select-label-color($color)`, { lang: 'scss' }
+      `@include rs-select-label-color($color);`, { lang: 'scss' }
     )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
@@ -168,7 +168,7 @@ rs-select {
     <h4>フォーカス時のラベルの色を変える</h4>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
-      `@include rs-select-focused-label-color($color)`, { lang: 'scss' }
+      `@include rs-select-focused-label-color($color);`, { lang: 'scss' }
     )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
@@ -185,7 +185,7 @@ rs-select {
     <p>タイプがdefaultの時に使用</p>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
-      `@include rs-select-bottom-line-color($color)`, { lang: 'scss' }
+      `@include rs-select-bottom-line-color($color);`, { lang: 'scss' }
     )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
@@ -202,7 +202,7 @@ rs-select {
     <p>タイプがdefaultの時に使用</p>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
-      `@include rs-select-hover-bottom-line-color($color)`, { lang: 'scss' }
+      `@include rs-select-hover-bottom-line-color($color);`, { lang: 'scss' }
     )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
@@ -219,7 +219,7 @@ rs-select {
     <p>タイプがdefaultの時に使用</p>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
-      `@include rs-select-focused-bottom-line-color($color)`, { lang: 'scss' }
+      `@include rs-select-focused-bottom-line-color($color);`, { lang: 'scss' }
     )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
@@ -236,7 +236,7 @@ rs-select {
     <p>タイプがoutlinedの時に使用</p>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
-      `@include rs-select-outline-color($color)`, { lang: 'scss' }
+      `@include rs-select-outline-color($color);`, { lang: 'scss' }
     )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
@@ -253,7 +253,7 @@ rs-select {
     <p>タイプがoutlinedの時に使用</p>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
-      `@include rs-select-hover-outline-color($color)`, { lang: 'scss' }
+      `@include rs-select-hover-outline-color($color);`, { lang: 'scss' }
     )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
@@ -270,7 +270,7 @@ rs-select {
     <p>タイプがoutlinedの時に使用</p>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
-      `@include rs-select-focused-outline-color($color)`, { lang: 'scss' }
+      `@include rs-select-focused-outline-color($color);`, { lang: 'scss' }
     )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
