@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/html'
 import copyCodeBlock from "@pickra/copy-code-block"
 
-storiesOf('Getting Started', module)
+storiesOf('overview|Getting Started', module)
   .add('イントロダクション', () => {
     return `
       <h4>イントロダクション</h4>
@@ -25,6 +25,7 @@ storiesOf('Getting Started', module)
   .add('インストール方法', () => {
     return `
       <h4>インストール方法</h4>
+      
       <p>yarn → define → html → scss</p>
       <p>nuxtでのセットアップ方法も</p>
       ${copyCodeBlock(
