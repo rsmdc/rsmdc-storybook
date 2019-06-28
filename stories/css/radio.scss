@@ -1,22 +1,19 @@
 @import '../../node_modules/@rsmdc/radio/rs-radio';
 
-.my-radio {
+.radio {
   &.-ink-color {
     @include rs-radio-ink-color(brown);
   }
   &.-states-color {
-    @include rs-radio-states-color(pink);
+    @include rs-radio-states-color(brown);
   }
   &.-checked-stroke-color {
-    @include rs-radio-checked-stroke-color(orange)
+    @include rs-radio-checked-stroke-color(brown)
   }
   &.-unchecked-stroke-color {
-    @include rs-radio-unchecked-stroke-color(orange);
+    @include rs-radio-unchecked-stroke-color(brown);
   }
-  &.-fill-color-accessible {
-    @include rs-radio-fill-color-accessible(pink);
+  &.-label-position {
+    @include rs-radio-label-position(left);
   }
-}
-.left-group {
-  @include rs-radio-label-position(left);
 }

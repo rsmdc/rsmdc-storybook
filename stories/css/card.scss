@@ -42,7 +42,4 @@
   &.-shape-radius {
     @include rs-card-shape-radius(15px);
   }
-  &.-states-color {
-    @include rs-card-states-color(orange);
-  }
 }

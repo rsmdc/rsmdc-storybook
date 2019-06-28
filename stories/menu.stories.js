@@ -9,7 +9,7 @@ import './css/menu.scss'
 import 'highlight.js'
 import 'highlight.js/styles/a11y-light.css'
 
-window.customElements.define('rs-menu', Menu)
+window.customElements.define('x-menu', Menu)
 
 storiesOf('Components|Menu', module)
   .addDecorator(withLinks)
@@ -28,7 +28,6 @@ storiesOf('Components|Menu', module)
   .add('使用方法', () => {
     return `
       <h4>使用方法</h4>
-<<<<<<< Updated upstream
       <div class="menu-area">
         <x-menu class="my-menu" opened>
           <x-list class="list">
@@ -46,35 +45,10 @@ storiesOf('Components|Menu', module)
         '      </list-item>\n' +
         '   </x-list>\n' +
         '</x-menu>\n',
-=======
-      <div class="result">
-        <rs-menu class="my-menu" opened>
-          <rs-list class="list">
-            <list-item>
-              <list-text>テキスト</list-text>
-            </list-item>
-            <list-item>
-              <list-text>テキスト</list-text>
-            </list-item>
-          </rs-list>
-        </rs-menu>
-      </div>
-      ${copyCodeBlock(      
-        '<rs-menu class="my-menu" opened>\n' +
-        '   <rs-list class="list">\n' +
-        '       <list-item>\n' +
-        '           <list-text>テキスト<list-text>\n' +
-        '       </list-item>\n' +
-        '       <list-item>\n' +
-        '           <list-text>テキスト<list-text>\n' +
-        '       </list-item>\n' +
-        '   </rs-list>\n' +
-        '</rs-menu>\n',
->>>>>>> Stashed changes
         { lang: 'html' }
       )}
       <h4>HTML要素</h4>
-      <p>custom elementsを<code>rs</code>のプレフィックスをつけて定義した前提です。<br>
+      <p>custom elementsを<code>x</code>のプレフィックスをつけて定義した前提です。<br>
         下記HTML要素を使うことで、custom elementsが表示されます。
       </p>
       <table>
@@ -85,9 +59,9 @@ storiesOf('Components|Menu', module)
           <th>備考</th>
         </tr>
         <tr>
-          <td>rs-menu</td>
+          <td>x-menu</td>
           <td>メニュー本体を表示します</td>
-          <td><code>rs-list</code></td>
+          <td><code>x-list</code></td>
           <td>-</td>
         </tr>
       </table>
@@ -113,7 +87,6 @@ storiesOf('Components|Menu/スタイルのカスタマイズ', module)
   .add('テキストの色を変える', () => {
     return `
       <p>テキストの色を指定した色に変える。</p>
-<<<<<<< Updated upstream
       <div class="menu-area">
         <x-menu class="my-menu -ink-color"" opened>
           <x-list>
@@ -122,19 +95,6 @@ storiesOf('Components|Menu/スタイルのカスタマイズ', module)
             </list-item>
           </x-list>
         </x-menu>
-=======
-      <div class="result">
-        <rs-menu class="my-menu -ink-color"" opened>
-          <rs-list>
-            <list-item>
-              <list-text>テキスト</list-text>
-            </list-item>
-            <list-item>
-              <list-text>テキスト</list-text>
-            </list-item>
-          </rs-list>
-        </rs-menu>
->>>>>>> Stashed changes
       </div>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(  
@@ -143,13 +103,13 @@ storiesOf('Components|Menu/スタイルのカスタマイズ', module)
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(  
-        '<rs-menu class="my-menu -ink-color" opened>\n' +
-        '   <rs-list class="list">\n' +
+        '<x-menu class="my-menu -ink-color" opened>\n' +
+        '   <x-list class="list">\n' +
         '      <list-item>\n' +
         '          <list-text>aiueo</list-text>\n' +
         '      </list-item>\n' +
-        '   </rs-list>\n' +
-        '</rs-menu>',
+        '   </x-list>\n' +
+        '</x-menu>',
         { lang: 'html' }
       )}
       ${copyCodeBlock(  
@@ -172,7 +132,6 @@ storiesOf('Components|Menu/スタイルのカスタマイズ', module)
   .add('背景色を変える', () => {
     return `
       <p>背景色を指定した色に変える。</p>
-<<<<<<< Updated upstream
       <div class="menu-area">
         <x-menu class="my-menu -fill-color" opened>
           <x-list class="list">
@@ -181,19 +140,6 @@ storiesOf('Components|Menu/スタイルのカスタマイズ', module)
             </list-item>
           </x-listt>
         </x-menu>
-=======
-      <div class="result">
-        <rs-menu class="my-menu -fill-color" opened>
-          <rs-list>
-            <list-item>
-              <list-text>テキスト</list-text>
-            </list-item>
-            <list-item>
-              <list-text>テキスト</list-text>
-            </list-item>
-          </rs-list>
-        </rs-menu>
->>>>>>> Stashed changes
       </div>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(  
@@ -201,20 +147,14 @@ storiesOf('Components|Menu/スタイルのカスタマイズ', module)
         { lang: 'scss' }
       )}
       <h4>使用方法</h4>
-<<<<<<< Updated upstream
       ${copyCodeBlock(
         '<x-menu class="my-menu -fill-color" opened>\n' +
         '   <x-list class="list">\n' +
-=======
-      ${copyCodeBlock(  
-        '<rs-menu class="my-menu -fill-color" opened>\n' +
-        '   <rs-list class="list">\n' +
->>>>>>> Stashed changes
         '      <list-item>\n' +
         '         <list-text>aiueo</list-text>\n' +
         '      </list-item>\n' +
-        '   </rs-list>\n' +
-        '</rs-menu>',
+        '   </x-list>\n' +
+        '</x-menu>',
         { lang: 'html' }
       )}
       ${copyCodeBlock(  
@@ -235,7 +175,6 @@ storiesOf('Components|Menu/スタイルのカスタマイズ', module)
   .add('メニューの幅を変える', () => {
     return `
       <p>メニューの幅を指定したサイズに変更する。</p>
-<<<<<<< Updated upstream
       <div class="menu-area">
       <x-menu class="my-menu -width" opened>
         <x-list class="list">
@@ -244,19 +183,6 @@ storiesOf('Components|Menu/スタイルのカスタマイズ', module)
           </list-item>
         </x-list>
       </x-menu>
-=======
-      <div class="result">
-        <rs-menu class="my-menu -width" opened>
-          <rs-list>
-            <list-item>
-              <list-text>テキスト</list-text>
-            </list-item>
-            <list-item>
-              <list-text>テキスト</list-text>
-            </list-item>
-          </rs-list>
-        </rs-menu>
->>>>>>> Stashed changes
       </div>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(  
@@ -264,20 +190,14 @@ storiesOf('Components|Menu/スタイルのカスタマイズ', module)
         { lang: 'scss' }
       )}
       <h4>使用方法</h4>
-<<<<<<< Updated upstream
       ${copyCodeBlock(
         '<x-menu class="my-menu -width" opened>\n' +
         '   <x-list class="list">\n' +
-=======
-      ${copyCodeBlock(  
-        '<rs-menu class="my-menu -width" opened>\n' +
-        '   <rs-list class="list">\n' +
->>>>>>> Stashed changes
         '      <list-item>\n' +
         '         <list-text>aiueo</list-text>\n' +
         '      </list-item>\n' +
-        '   </rs-list>\n' +
-        '</rs-menu>',
+        '   </x-list>\n' +
+        '</x-menu>',
         { lang: 'html' }
       )}
       ${copyCodeBlock(  
@@ -298,7 +218,6 @@ storiesOf('Components|Menu/スタイルのカスタマイズ', module)
   .add('メニューの角の丸みを変える', () => {
     return `
       <p>メニューの角の丸みを指定したサイズに変える。</p>
-<<<<<<< Updated upstream
       <div class="menu-area">
         <x-menu class="my-menu -shape-radius" opened>
           <x-list class="list">
@@ -309,39 +228,19 @@ storiesOf('Components|Menu/スタイルのカスタマイズ', module)
         </x-menu>
       </div>
       <h4>使用するmixin</h4>
-=======
-      <div class="result">
-        <rs-menu class="my-menu -shape-radius" opened>
-          <rs-list>
-            <list-item>
-              <list-text>テキスト</list-text>
-            </list-item>
-            <list-item>
-              <list-text>テキスト</list-text>
-            </list-item>
-          </rs-list>
-        </rs-menu>
-      </div>
->>>>>>> Stashed changes
       ${copyCodeBlock(  
         '@include rs-menu-surface-shape-radius($radius);',
         { lang: 'scss' }
       )}
       <h4>使用方法</h4>
-<<<<<<< Updated upstream
       ${copyCodeBlock(
         '<x-menu class="my-menu -shape-radius" opened>\n' +
         '   <x-list class="list">\n' +
-=======
-      ${copyCodeBlock(  
-        '<rs-menu class="my-menu -shape-radius" opened>\n' +
-        '   <rs-list class="list">\n' +
->>>>>>> Stashed changes
         '      <list-item>\n' +
         '         <list-text>aiueo</list-text>\n' +
         '      </list-item>\n' +
-        '   </rs-list>\n' +
-        '</rs-menu>',
+        '   </x-list>\n' +
+        '</x-menu>',
         { lang: 'html' }
       )}
       ${copyCodeBlock(  
