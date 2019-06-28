@@ -1,0 +1,36 @@
+@import '../../node_modules/@rsmdc/select/rs-select';
+.food-select {
+  &.-select-type {
+    @include rs-select-type(outlined);
+  }
+  &.-ink-color {
+    @include rs-select-ink-color(red);
+  }
+  &.-container-fill-color {
+    @include rs-select-container-fill-color(orange);
+  }
+  &.-label-color {
+    @include rs-select-label-color(orange);
+  }
+  &.-focused-label-color {
+    @include rs-select-focused-label-color(orange);
+  }
+  &.-bottom-line-color {
+    @include rs-select-bottom-line-color(orange);
+  }
+  &.-hover-bottom-line-color {
+    @include rs-select-hover-bottom-line-color(orange);
+  }
+  &.-focused-bottom-line-color {
+    @include rs-select-focused-bottom-line-color(orange);
+  }
+  &.-outline-color {
+    @include rs-select-outline-color(orange);
+  }
+  &.-hover-outline-color {
+    @include rs-select-hover-outline-color(orange);
+  }
+  &.-focused-outline-color {
+    @include rs-select-focused-outline-color(orange);
+  }
+}
