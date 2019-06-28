@@ -14,7 +14,7 @@ window.customElements.define('drawer-title', DrawerTitle)
 window.customElements.define('drawer-subtitle', DrawerSubtitle)
 window.customElements.define('drawer-header', DrawerHeader)
 window.customElements.define('drawer-content', DrawerContent)
-window.customElements.define('x-drawer', Drawer)
+window.customElements.define('rs-drawer', Drawer)
 
 storiesOf('Components|Drawer', module)
   .addDecorator(withLinks)
@@ -52,15 +52,16 @@ storiesOf('Components|Drawer', module)
   })
   .add('使用方法', () => {
     return `
-      <x-app-layout class="app-layout">
-        <x-drawer class="drawer" opened>
+      <rs-app-layout class="app-layout">
+        <rs-drawer class="drawer" opened>
           <drawer-header class="header">
             <drawer-title class="title">タイトル</drawer-title>
             <drawer-subtitle class="subtitle">サブタイトル</drawer-subtitle>
           </drawer-header>
           <drawer-content class="contents"></drawer-content>
-        </x-drawer>
+        </rs-drawer>
         <app-layout-content class="contents">
+<<<<<<< Updated upstream
           <x-app-bar class="appbar">
             <app-bar-nav class="nav"></app-bar-nav>
             <app-bar-title>title</app-bar-title>
@@ -71,6 +72,21 @@ storiesOf('Components|Drawer', module)
       ${copyCodeBlock(
         '<x-app-layout class="app-layout">\n' +
         '   <x-drawer class="drawer" opened>\n' +
+=======
+          <rs-app-bar class="appbar">
+            <app-bar-nav></app-bar-nav>
+            <app-bar-title>title</app-bar-title>
+          </rs-app-bar>
+          <div>
+            <h4>使用方法</h4>
+          </div>
+        </app-layout-content>
+      </rs-app-layout>
+    
+      ${copyCodeBlock(
+        '<rs-app-layout class="app-layout">\n' +
+        '   <rs-drawer class="drawer">\n' +
+>>>>>>> Stashed changes
         '      <drawer-header class="header">\n' +
         '         <drawer-title class="title">タイトル</drawer-title>\n' +
         '         <drawer-subtitle class="subtitle">サブタイトル</drawer-subtitle>\n' +
@@ -80,15 +96,21 @@ storiesOf('Components|Drawer', module)
         '               ...\n' +
         '         </x-list>\n' +
         '      </drawer-content>\n' +
-        '   </x-drawer>\n' +
+        '   </rs-drawer>\n' +
         '   <app-layout-content class="contents">\n' +
+<<<<<<< Updated upstream
         '       <x-app-bar class="appbar">\n' +
         '          <app-bar-nav></app-bar-nav>\n' +
         '          <app-bar-title>title</app-bar-title>\n' +
         '       </x-app-bar>\n' +
+=======
+        '       <rs-app-bar class="appbar">\n' +
+        '             ...\n' +
+        '       </rs-app-bar>\n' +
+>>>>>>> Stashed changes
         '         ...\n' +
         '   </app-layout-content>\n' +
-        '</x-app-layout>\n',
+        '</rs-app-layout>\n',
         { lang: 'html' }
       )}
       ${copyCodeBlock(
@@ -100,7 +122,7 @@ storiesOf('Components|Drawer', module)
         { lang: 'scss' }
       )}
       <h4>HTML要素</h4>
-      <p>custom elementsを<code>x</code>と<code>drawer</code>のプレフィックスをつけて定義した前提です。<br>
+      <p>custom elementsを<code>rs</code>と<code>drawer</code>のプレフィックスをつけて定義した前提です。<br>
         下記HTML要素を使うことで、custom elementsが表示されます。
       </p>
       <table>
@@ -111,7 +133,7 @@ storiesOf('Components|Drawer', module)
           <th>備考</th>
         </tr>
         <tr>
-          <td>x-drawer</td>
+          <td>rs-drawer</td>
           <td>ドロワー本体を表示します</td>
           <td>
             <ul>

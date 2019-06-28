@@ -17,8 +17,8 @@ window.customElements.define('list-meta', ListMeta)
 window.customElements.define('list-item', ListItem)
 window.customElements.define('list-divider', ListDivider)
 window.customElements.define('list-subheader', ListSubheader)
-window.customElements.define('x-list-group', ListGroup)
-window.customElements.define('x-list', List)
+window.customElements.define('rs-list-group', ListGroup)
+window.customElements.define('rs-list', List)
 
 storiesOf('Components|List', module)
   .addDecorator(withLinks)
@@ -78,7 +78,11 @@ storiesOf('Components|List', module)
   })
   .add('使用方法', () => `
     <h4>使用方法</h4>
+<<<<<<< Updated upstream
     <x-list class="list">
+=======
+    rs-list class="my-list">
+>>>>>>> Stashed changes
       <list-item class="item">
         <list-text class="text">テキスト</list-text>
         <list-meta class="meta">メタ情報</list-meta>
@@ -87,9 +91,15 @@ storiesOf('Components|List', module)
         <list-text class="text">テキスト</list-text>
         <list-meta class="meta">メタ情報</list-meta>
       </list-item>
+<<<<<<< Updated upstream
     </x-list>
     <x-list-group class="group-list -avatarlist">
       <x-list class="list">
+=======
+    </rs-list>
+    <rs-list-group class="group-list -avatarlist">
+      <rs-list class="my-list">
+>>>>>>> Stashed changes
         <list-subheader class="subheader">リストタイトル</list-subheader>
         <list-divider></list-divider>
         <list-item class="item">
@@ -106,8 +116,13 @@ storiesOf('Components|List', module)
             <list-secondary class="secondary">2行目</list-secondary>
           </list-text>
         </list-item>
+<<<<<<< Updated upstream
       </x-list>
       <x-list class="list">
+=======
+      </rs-list>
+      <rs-list class="my-list">
+>>>>>>> Stashed changes
         <list-subheader class="subheader">リストタイトル</list-subheader>
         <list-divider></list-divider>
         <list-item class="item">
@@ -125,11 +140,15 @@ storiesOf('Components|List', module)
             </list-text>
             <list-meta class="meta">メタ情報</list-meta>
         </list-item>
-      </x-list>
-    </x-list-group>
+      </rs-list>
+    </rs-list-group>
 
     ${copyCodeBlock(
+<<<<<<< Updated upstream
       '<x-list class="list">\n' +
+=======
+      '<rs-list class="my-list">\n' +
+>>>>>>> Stashed changes
       '   <list-item class="item">\n' +
       '      <list-text class="text">テキスト</list-text>\n' +
       '      <list-meta class="meta">メタ情報</list-meta>\n' +
@@ -138,9 +157,15 @@ storiesOf('Components|List', module)
       '      <list-text class="text">テキスト</list-text>\n' +
       '      <list-meta class="meta">メタ情報</list-meta>\n' +
       '   </list-item>\n' +
+<<<<<<< Updated upstream
       '</x-list>\n\n' +
       '<x-list-group class="group-list">\n' +
       '   <x-list class="list">\n' +
+=======
+      '</rs-list>\n\n' +
+      '<rs-list-group class="group-list">\n' +
+      '   <rs-list class="ist">\n' +
+>>>>>>> Stashed changes
       '      <list-subheader class="subheader">リストタイトル</list-subheader>\n' +
       '      <list-divider></list-dividar>\n' +
       '      <list-item class="item">\n' +
@@ -157,8 +182,8 @@ storiesOf('Components|List', module)
       '             <list-secondary class="secondary">2行目</list-text>\n' +
       '         </list-text>\n' +
       '       </list-item>\n' +
-      '   </x-list>\n' +
-      '   <x-list class="list">\n' +
+      '   </rs-list>\n' +
+      '   <rs-list class="list">\n' +
       '      <list-subheader class="subheader">リストタイトル</list-subheader>\n' +
       '      <list-divider></list-divider>\n' +
       '      <list-item class="item">\n' +
@@ -176,8 +201,8 @@ storiesOf('Components|List', module)
       '         </list-text>\n' +
       '         <list-meta class="meta">メタ情報</list-meta>\n' +
       '       </list-item>\n' +
-      '   </x-list>\n' +
-      '</x-list-group>\n',
+      '   </rs-list>\n' +
+      '</rs-list-group>\n',
       { lang: 'html' }
     )}
     ${copyCodeBlock(
@@ -189,7 +214,7 @@ storiesOf('Components|List', module)
       { lang: 'scss' }
     )}
     <h4>HTML要素</h4>
-    <p>custom elementsを<code>x</code>と<code>card</code>のプレフィックスをつけて定義した前提です。<br>
+    <p>custom elementsを<code>rs</code>と<code>card</code>のプレフィックスをつけて定義した前提です。<br>
       下記HTML要素を使うことで、custom elementsが表示されます。
     </p>
     <table>
@@ -200,13 +225,13 @@ storiesOf('Components|List', module)
         <th>備考</th>
       </tr>
       <tr>
-        <td>x-list-group</td>
+        <td>rs-list-group</td>
         <td>複数のリストをグルーピングします</td>
         <td><code>x-list</code></td>
         <td>-</td>
       </tr>
       <tr>
-        <td>x-list</td>
+        <td>rs-list</td>
         <td>リスト本体を表示します</td>
         <td>
           <ul>
@@ -315,7 +340,11 @@ storiesOf('Components|List/スタイルのカスタマイズ/リストのタイ�
         normalの場合mixinは不要。 <br>
         denseを使用する場合はmixinが必要（後述）。
       </p>
+<<<<<<< Updated upstream
       <x-list class="list">
+=======
+      <rs-list class="my-list">
+>>>>>>> Stashed changes
         <list-item class="item">
           <list-text class="text">テキスト</list-text>
           <list-meta class="meta">メタ情報</list-meta>
@@ -324,11 +353,57 @@ storiesOf('Components|List/スタイルのカスタマイズ/リストのタイ�
           <list-text class="text">テキスト</list-text>
           <list-meta class="meta">メタ情報</list-meta>
         </list-item>
+<<<<<<< Updated upstream
       </x-list-group>
       
       <h4>使用方法</h4>
       ${copyCodeBlock(
         '<x-list class="list">\n' +
+=======
+      </rs-list>
+      <rs-list-group class="group-list">
+        <rs-list class="list">
+          <list-subheader class="subheader">リストタイトル</list-subheader>
+          <list-divider></list-divider>
+          <list-item class="item">
+            <list-graphic class="graphic"></list-graphic>
+            <list-text class="text">
+              <list-primary class="primary">1行目</list-primary>
+              <list-secondary class="secondary">2行目</list-secondary>
+            </list-text>
+          </list-item>
+          <list-item class="item">
+            <list-graphic class="graphic"></list-graphic>
+            <list-text class="text">
+              <list-primary class="primary">1行目</list-primary>
+              <list-secondary class="secondary">2行目</list-secondary>
+            </list-text>
+          </list-item>
+        </rs-list>
+        <rs-list class="list">
+          <list-subheader class="subheader">リストタイトル</list-subheader>
+          <list-divider></list-divider>
+          <list-item class="item">
+            <list-graphic class="graphic"></list-graphic>
+            <list-text class="text">
+              <list-primary class="primary">1行目</list-primary>
+              <list-secondary class="secondary">2行目</list-secondary>
+            </list-text>
+          </list-item>
+          <list-item class="item">
+            <list-graphic class="graphic"></list-graphic>
+              <list-text class="text">
+                <list-primary class="primary">1行目</list-primary>
+                <list-secondary class="secondary">2行目</list-secondary>
+              </list-text>
+              <list-meta class="meta">メタ情報</list-meta>
+          </list-item>
+        </rs-list>
+      </rs-list-group>
+      <h4>使用方法</h4>
+      ${copyCodeBlock(
+        '<rs-list class="my-list">\n' +
+>>>>>>> Stashed changes
         '   <list-item class="item">\n' +
         '      <list-text class="text">テキスト</list-text>\n' +
         '      <list-meta class="meta">メタ情報</list-meta>\n' +
@@ -337,9 +412,9 @@ storiesOf('Components|List/スタイルのカスタマイズ/リストのタイ�
         '      <list-text class="text">テキスト</list-text>\n' +
         '      <list-meta class="meta">メタ情報</list-meta>\n' +
         '   </list-item>\n' +
-        '</x-list>\n' +
-        '<x-list-group class="group-list">\n' +
-        '   <x-list class="list">\n' +
+        '</rs-list>\n' +
+        '<rs-list-group class="group-list">\n' +
+        '   <rs-list class="list">\n' +
         '      <list-subheader class="subheader">リストタイトル</list-subheader>\n' +
         '      <list-divider></list-divider>\n' +
         '      <list-item class="item">\n' +
@@ -356,8 +431,8 @@ storiesOf('Components|List/スタイルのカスタマイズ/リストのタイ�
         '          <list-secondary class="secondary">2行目</list-secondary>\n' +
         '        </list-text>\n' +
         '      </list-item>\n' +
-        '   </x-list>\n' +
-        '   <x-list class="list">\n' +
+        '   </rs-list>\n' +
+        '   <rs-list class="list">\n' +
         '      <list-subheader class="subheader">リストタイトル</list-subheader>\n' +
         '      <list-divider></list-divider>\n' +
         '      <list-item class="item">\n' +
@@ -375,8 +450,8 @@ storiesOf('Components|List/スタイルのカスタマイズ/リストのタイ�
         '         </list-text>\n' +
         '         <list-meta class="meta">メタ情報</list-meta>\n' +
         '      </list-item>\n' +
-        '   </x-list>\n' +
-        '</x-list-group>\n' ,
+        '   </rs-list>\n' +
+        '</rs-list-group>\n' ,
         { lang: 'html' }
       )}
       <p>denseを使用する場合</p>
@@ -399,7 +474,11 @@ storiesOf('Components|List/スタイルのカスタマイズ/リストのタイ�
     return `
       <h4>twoline</h4>
       <p>denseとavatar-listも一緒に使用できる。</p>
+<<<<<<< Updated upstream
       <x-list class="list">
+=======
+      <rs-list class="my-list">
+>>>>>>> Stashed changes
         <list-item class="item">
           <list-text class="text">テキスト</list-text>
           <list-meta class="meta">メタ情報</list-meta>
@@ -408,9 +487,9 @@ storiesOf('Components|List/スタイルのカスタマイズ/リストのタイ�
           <list-text class="text">テキスト</list-text>
           <list-meta class="meta">メタ情報</list-meta>
         </list-item>
-      </x-list>
-      <x-list-group class="group-list -twoline">
-        <x-list class="list">
+      </rs-list>
+      <rs-list-group class="group-list -twoline">
+        <rs-list class="list">
           <list-subheader class="subheader">リストタイトル</list-subheader>
           <list-divider></list-divider>
           <list-item class="item">
@@ -427,8 +506,8 @@ storiesOf('Components|List/スタイルのカスタマイズ/リストのタイ�
               <list-secondary class="secondary">2行目</list-secondary>
             </list-text>
           </list-item>
-        </x-list>
-        <x-list class="list">
+        </rs-list>
+        <rs-list class="list">
           <list-subheader class="subheader">リストタイトル</list-subheader>
           <list-divider></list-divider>
           <list-item class="item">
@@ -446,8 +525,8 @@ storiesOf('Components|List/スタイルのカスタマイズ/リストのタイ�
               </list-text>
               <list-meta class="meta">メタ情報</list-meta>
           </list-item>
-        </x-list>
-      </x-list-group>
+        </rs-list>
+      </rs-list-group>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
         '@include rs-list-type($types...);',
@@ -455,7 +534,11 @@ storiesOf('Components|List/スタイルのカスタマイズ/リストのタイ�
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
+<<<<<<< Updated upstream
         '<x-list class="list">\n' +
+=======
+        '<rs-list class="my-list">\n' +
+>>>>>>> Stashed changes
         '   <list-item class="item">\n' +
         '      <list-text class="text">テキスト</list-text>\n' +
         '      <list-meta class="meta">メタ情報</list-meta>\n' +
@@ -464,9 +547,9 @@ storiesOf('Components|List/スタイルのカスタマイズ/リストのタイ�
         '      <list-text class="text">テキスト</list-text>\n' +
         '      <list-meta class="meta">メタ情報</list-meta>\n' +
         '   </list-item>\n' +
-        '</x-list>\n' +
-        '<x-list-group class="group-list">\n' +
-        '   <x-list class="list -twoline">\n' +
+        '</rs-list>\n' +
+        '<rs-list-group class="group-list">\n' +
+        '   <rs-list class="list -twoline">\n' +
         '      <list-subheader class="subheader">リストタイトル</list-subheader>\n' +
         '      <list-divider></list-divider>\n' +
         '      <list-item class="item">\n' +
@@ -483,8 +566,13 @@ storiesOf('Components|List/スタイルのカスタマイズ/リストのタイ�
         '          <list-secondary class="secondary">2行目</list-secondary>\n' +
         '        </list-text>\n' +
         '      </list-item>\n' +
+<<<<<<< Updated upstream
         '   </x-list>\n' +
         '   <x-list class="list -twoline">\n' +
+=======
+        '   </rs-list>\n' +
+        '   <rs-list class="list -twoline -dense">\n' +
+>>>>>>> Stashed changes
         '      <list-subheader class="subheader">リストタイトル</list-subheader>\n' +
         '      <list-divider></list-divider>\n' +
         '      <list-item class="item">\n' +
@@ -502,8 +590,8 @@ storiesOf('Components|List/スタイルのカスタマイズ/リストのタイ�
         '         </list-text>\n' +
         '         <list-meta class="meta">メタ情報</list-meta>\n' +
         '      </list-item>\n' +
-        '   </x-list>\n' +
-        '</x-list-group>\n' ,
+        '   </rs-list>\n' +
+        '</rs-list-group>\n' ,
         { lang: 'html' }
       )}
       ${copyCodeBlock(
@@ -524,7 +612,11 @@ storiesOf('Components|List/スタイルのカスタマイズ/リストのタイ�
         リストにアバターを表示させる。 <br>
         denseとtwo-lineも一緒に使用できる。
       </p>
+<<<<<<< Updated upstream
       <x-list class="list">
+=======
+      <rs-list class="list -avatarlist">
+>>>>>>> Stashed changes
         <list-item class="item">
           <list-text class="text">テキスト</list-text>
           <list-meta class="meta">メタ情報</list-meta>
@@ -533,9 +625,15 @@ storiesOf('Components|List/スタイルのカスタマイズ/リストのタイ�
           <list-text class="text">テキスト</list-text>
           <list-meta class="meta">メタ情報</list-meta>
         </list-item>
+<<<<<<< Updated upstream
       </x-list>
       <x-list-group class="group-list -avatarlist">
         <x-list class="list">
+=======
+      </rs-list>
+      <rs-list-group class="group-list">
+        <rs-list class="list -avatarlist -twoline">
+>>>>>>> Stashed changes
           <list-subheader class="subheader">リストタイトル</list-subheader>
           <list-divider></list-divider>
           <list-item class="item">
@@ -552,8 +650,13 @@ storiesOf('Components|List/スタイルのカスタマイズ/リストのタイ�
               <list-secondary class="secondary">2行目</list-secondary>
             </list-text>
           </list-item>
+<<<<<<< Updated upstream
         </x-list>
         <x-list class="list">
+=======
+        </rs-list>
+        <rs-list class="list -avatarlist -dense">
+>>>>>>> Stashed changes
           <list-subheader class="subheader">リストタイトル</list-subheader>
           <list-divider></list-divider>
           <list-item class="item">
@@ -571,8 +674,8 @@ storiesOf('Components|List/スタイルのカスタマイズ/リストのタイ�
               </list-text>
               <list-meta class="meta">メタ情報</list-meta>
             </list-item>
-        </x-list>
-      </x-list-group>
+        </rs-list>
+      </rs-list-group>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
         '@include rs-list-type($types...);',
@@ -580,7 +683,11 @@ storiesOf('Components|List/スタイルのカスタマイズ/リストのタイ�
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
+<<<<<<< Updated upstream
         '<x-list class="list">\n' +
+=======
+        '<rs-list class="list -avatarlist">\n' +
+>>>>>>> Stashed changes
         '   <list-item class="item">\n' +
         '      <list-text class="text">テキスト</list-text>\n' +
         '      <list-meta class="meta">メタ情報</list-meta>\n' +
@@ -589,9 +696,15 @@ storiesOf('Components|List/スタイルのカスタマイズ/リストのタイ�
         '      <list-text class="text">テキスト</list-text>\n' +
         '      <list-meta class="meta">メタ情報</list-meta>\n' +
         '   </list-item>\n' +
+<<<<<<< Updated upstream
         '</x-list>\n' +
         '<x-list-group class="group-list">\n' +
         '   <x-list class="list">\n' +
+=======
+        '</rs-list>\n' +
+        '<rs-list-group class="group-list">\n' +
+        '   <rs-list class="list -avatarlist -dense">\n' +
+>>>>>>> Stashed changes
         '      <list-subheader class="subheader">リストタイトル</list-subheader>\n' +
         '      <list-divider></list-divider>\n' +
         '      <list-item class="item">\n' +
@@ -608,8 +721,13 @@ storiesOf('Components|List/スタイルのカスタマイズ/リストのタイ�
         '          <list-secondary class="secondary">2行目</list-secondary>\n' +
         '        </list-text>\n' +
         '      </list-item>\n' +
+<<<<<<< Updated upstream
         '   </x-list>\n' +
         '   <x-list class="list">\n' +
+=======
+        '   </rs-list>\n' +
+        '   <rs-list class="list -avatarlist -twoline">\n' +
+>>>>>>> Stashed changes
         '      <list-subheader class="subheader">リストタイトル</list-subheader>\n' +
         '      <list-divider></list-divider>\n' +
         '      <list-item class="item">\n' +
@@ -627,8 +745,8 @@ storiesOf('Components|List/スタイルのカスタマイズ/リストのタイ�
         '         </list-text>\n' +
         '         <list-meta class="meta">メタ情報</list-meta>\n' +
         '      </list-item>\n' +
-        '   </x-list>\n' +
-        '</x-list-group>\n' ,
+        '   </rs-list>\n' +
+        '</rs-list-group>\n' ,
         { lang: 'html' }
       )}
       ${copyCodeBlock(
@@ -648,7 +766,11 @@ storiesOf('Components|List/スタイルのカスタマイズ/仕切り線のタ�
     return `
       <h4>normal（デフォルト）</h4>
       <p>mixinは不要。</p>   
+<<<<<<< Updated upstream
       <x-list class="list">
+=======
+      <rs-list class="my-list">
+>>>>>>> Stashed changes
         <list-item class="item">
           <list-text class="text">テキスト</list-text>
           <list-meta class="meta">メタ情報</list-meta>
@@ -657,6 +779,7 @@ storiesOf('Components|List/スタイルのカスタマイズ/仕切り線のタ�
           <list-text class="text">テキスト</list-text>
           <list-meta class="meta">メタ情報</list-meta>
         </list-item>
+<<<<<<< Updated upstream
       </x-list>
       <x-list-group class="group-list -avatarlist">
         <x-list class="list">
@@ -700,6 +823,12 @@ storiesOf('Components|List/スタイルのカスタマイズ/仕切り線のタ�
       <h4>使用方法</h4>
       ${copyCodeBlock(
         '<x-list class="list">\n' +
+=======
+      </rs-list>
+      <h4>使用方法</h4>
+      ${copyCodeBlock(
+        '<rs-list class="my-list">\n' +
+>>>>>>> Stashed changes
         '   <list-item class="item">\n' +
         '      <list-text class="text">テキスト</list-text>\n' +
         '      <list-meta class="meta">メタ情報</list-meta>\n' +
@@ -708,6 +837,7 @@ storiesOf('Components|List/スタイルのカスタマイズ/仕切り線のタ�
         '      <list-text class="text">テキスト</list-text>\n' +
         '      <list-meta class="meta">メタ情報</list-meta>\n' +
         '   </list-item>\n' +
+<<<<<<< Updated upstream
         '</x-list>\n' +
         '<x-list-group class="group-list">\n' +
         '   <x-list class="list">\n' +
@@ -748,6 +878,9 @@ storiesOf('Components|List/スタイルのカスタマイズ/仕切り線のタ�
         '      </list-item>\n' +
         '   </x-list>\n' +
         '</x-list-group>\n' ,
+=======
+        '</rs-list>\n',
+>>>>>>> Stashed changes
         { lang: 'html' }
       )}
     `
@@ -756,7 +889,20 @@ storiesOf('Components|List/スタイルのカスタマイズ/仕切り線のタ�
     return `
       <h4>inset</h4>
       <p>paddedも一緒に使用できる。</p>
+<<<<<<< Updated upstream
       <x-list class="list">
+=======
+      <rs-list class="my-list">
+        <list-item class="item">
+          <list-text class="text">text</list-text>
+        </list-item>
+        <list-divider class="divider -inset"></list-divider>
+        <list-item class="item">
+          <list-text class="text">text</list-text>
+        </list-item>
+      </rs-list>
+      <rs-list class="my-list">
+>>>>>>> Stashed changes
         <list-item class="item">
           <list-text class="text">テキスト</list-text>
           <list-meta class="meta">メタ情報</list-meta>
@@ -765,6 +911,7 @@ storiesOf('Components|List/スタイルのカスタマイズ/仕切り線のタ�
           <list-text class="text">テキスト</list-text>
           <list-meta class="meta">メタ情報</list-meta>
         </list-item>
+<<<<<<< Updated upstream
       </x-list>
       <x-list-group class="group-list -avatarlist -inset">
         <x-list class="list">
@@ -805,6 +952,9 @@ storiesOf('Components|List/スタイルのカスタマイズ/仕切り線のタ�
           </list-item>
         </x-list>
       </x-list-group>
+=======
+      </rs-list>
+>>>>>>> Stashed changes
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
         '@include rs-list-divider-type($types...);',
@@ -812,7 +962,11 @@ storiesOf('Components|List/スタイルのカスタマイズ/仕切り線のタ�
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
+<<<<<<< Updated upstream
         '<x-list class="list">\n' +
+=======
+        '<rs-list class="my-list">\n' +
+>>>>>>> Stashed changes
         '   <list-item class="item">\n' +
         '      <list-text class="text">テキスト</list-text>\n' +
         '      <list-meta class="meta">メタ情報</list-meta>\n' +
@@ -821,6 +975,7 @@ storiesOf('Components|List/スタイルのカスタマイズ/仕切り線のタ�
         '      <list-text class="text">テキスト</list-text>\n' +
         '      <list-meta class="meta">メタ情報</list-meta>\n' +
         '   </list-item>\n' +
+<<<<<<< Updated upstream
         '</x-list>\n' +
         '<x-list-group class="group-list">\n' +
         '   <x-list class="list">\n' +
@@ -861,6 +1016,18 @@ storiesOf('Components|List/スタイルのカスタマイズ/仕切り線のタ�
         '      </list-item>\n' +
         '   </x-list>\n' +
         '</x-list-group>\n' ,
+=======
+        '</rs-list>\n' +
+        '<rs-list class="my-list">\n' +
+        '   <list-item class="item">\n' +
+        '      <list-text class="text">テキスト</list-text>\n' +
+        '   </list-item>\n' +
+        '   <list-divider class="divider -inset -padded"/>\n' +
+        '   <list-item class="item">\n' +
+        '      <list-text class="text">テキスト</list-text>\n' +
+        '   </list-item>\n' +
+        '</rs-list>\n',
+>>>>>>> Stashed changes
         { lang: 'html' }
       )}
       ${copyCodeBlock(
@@ -876,15 +1043,31 @@ storiesOf('Components|List/スタイルのカスタマイズ/仕切り線のタ�
     return `
       <h4>padded</h4>
       insetも一緒に使える
+<<<<<<< Updated upstream
       <x-list class="list">
         <list-item class="item">
           <list-text class="text">テキスト</list-text>
           <list-meta class="meta">メタ情報</list-meta>
+=======
+      <rs-list class="my-list">
+        <list-item class="item">
+          <list-text class="text">text</list-text>
+        </list-item>
+        <list-divider class="divider -padded"></list-divider>
+        <list-item class="item">
+          <list-text class="text">text</list-text>
+        </list-item>
+      </rs-list>
+      <rs-list class="my-list">
+        <list-item class="item">
+          <list-text class="text">text</list-text>
+>>>>>>> Stashed changes
         </list-item>
         <list-item class="item">
           <list-text class="text">テキスト</list-text>
           <list-meta class="meta">メタ情報</list-meta>
         </list-item>
+<<<<<<< Updated upstream
       </x-list>
       <x-list-group class="group-list -avatarlist -padded">
         <x-list class="list">
@@ -925,6 +1108,9 @@ storiesOf('Components|List/スタイルのカスタマイズ/仕切り線のタ�
           </list-item>
         </x-list>
       </x-list-group>
+=======
+      </rs-list>
+>>>>>>> Stashed changes
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
         '@include rs-list-divider-type($types...);',
@@ -932,7 +1118,20 @@ storiesOf('Components|List/スタイルのカスタマイズ/仕切り線のタ�
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
+<<<<<<< Updated upstream
         '<x-list class="list">\n' +
+=======
+        '<rs-list class="my-list">\n' +
+        '   <list-item class="item">\n' +
+        '      <list-text class="text">テキスト</list-text>\n' +
+        '   </list-item>\n' +
+        '   <list-divider class="divider -padded"/>\n' +
+        '   <list-item class="item">\n' +
+        '      <list-text class="text">テキスト</list-text>\n' +
+        '   </list-item>\n' +
+        '</rs-list>\n' +
+        '<rs-list class="my-list">\n' +
+>>>>>>> Stashed changes
         '   <list-item class="item">\n' +
         '      <list-text class="text">テキスト</list-text>\n' +
         '      <list-meta class="meta">メタ情報</list-meta>\n' +
@@ -941,6 +1140,7 @@ storiesOf('Components|List/スタイルのカスタマイズ/仕切り線のタ�
         '      <list-text class="text">テキスト</list-text>\n' +
         '      <list-meta class="meta">メタ情報</list-meta>\n' +
         '   </list-item>\n' +
+<<<<<<< Updated upstream
         '</x-list>\n' +
         '<x-list-group class="group-list">\n' +
         '   <x-list class="list">\n' +
@@ -981,6 +1181,9 @@ storiesOf('Components|List/スタイルのカスタマイズ/仕切り線のタ�
         '      </list-item>\n' +
         '   </x-list>\n' +
         '</x-list-group>\n' ,
+=======
+        '</rs-list>\n',
+>>>>>>> Stashed changes
         { lang: 'html' }
       )}
       ${copyCodeBlock(
@@ -997,7 +1200,11 @@ storiesOf('Components|List/スタイルのカスタマイズ/画像の形を変�
     return `
       <h4>normal（デフォルト）</h4>
       <p>mixinは不要。</p>
+<<<<<<< Updated upstream
       <x-list class="list">
+=======
+      <rs-list class="list -avatarlist">
+>>>>>>> Stashed changes
         <list-item class="item">
           <list-text class="text">テキスト</list-text>
           <list-meta class="meta">メタ情報</list-meta>
@@ -1006,6 +1213,7 @@ storiesOf('Components|List/スタイルのカスタマイズ/画像の形を変�
           <list-text class="text">テキスト</list-text>
           <list-meta class="meta">メタ情報</list-meta>
         </list-item>
+<<<<<<< Updated upstream
       </x-list>
       <x-list-group class="group-list -avatarlist">
         <x-list class="list">
@@ -1049,6 +1257,12 @@ storiesOf('Components|List/スタイルのカスタマイズ/画像の形を変�
       <h4>使用方法</h4>
       ${copyCodeBlock(
         '<x-list class="list">\n' +
+=======
+      </rs-list>
+      <h4>使用方法</h4>
+      ${copyCodeBlock(
+        '<rs-list class="list -avatarlist">\n' +
+>>>>>>> Stashed changes
         '   <list-item class="item">\n' +
         '      <list-text class="text">テキスト</list-text>\n' +
         '      <list-meta class="meta">メタ情報</list-meta>\n' +
@@ -1057,6 +1271,7 @@ storiesOf('Components|List/スタイルのカスタマイズ/画像の形を変�
         '      <list-text class="text">テキスト</list-text>\n' +
         '      <list-meta class="meta">メタ情報</list-meta>\n' +
         '   </list-item>\n' +
+<<<<<<< Updated upstream
         '</x-list>\n' +
         '<x-list-group class="group-list">\n' +
         '   <x-list class="list">\n' +
@@ -1097,6 +1312,9 @@ storiesOf('Components|List/スタイルのカスタマイズ/画像の形を変�
         '      </list-item>\n' +
         '   </x-list>\n' +
         '</x-list-group>\n' ,
+=======
+        '</rs-list>\n',
+>>>>>>> Stashed changes
         { lang: 'html' }
       )}
     `
@@ -1104,7 +1322,11 @@ storiesOf('Components|List/スタイルのカスタマイズ/画像の形を変�
   .add('circle', () => {
     return `
       <h4>circle</h4>
+<<<<<<< Updated upstream
       <x-list class="list">
+=======
+      <rs-list class="list -avatarlist">
+>>>>>>> Stashed changes
         <list-item class="item">
           <list-text class="text">テキスト</list-text>
           <list-meta class="meta">メタ情報</list-meta>
@@ -1113,6 +1335,7 @@ storiesOf('Components|List/スタイルのカスタマイズ/画像の形を変�
           <list-text class="text">テキスト</list-text>
           <list-meta class="meta">メタ情報</list-meta>
         </list-item>
+<<<<<<< Updated upstream
       </x-list>
       <x-list-group class="group-list -avatarlist">
         <x-list class="list">
@@ -1153,6 +1376,9 @@ storiesOf('Components|List/スタイルのカスタマイズ/画像の形を変�
           </list-item>
         </x-list>
       </x-list-group>
+=======
+      </rs-list>
+>>>>>>> Stashed changes
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
         '@include rs-list-graphic-type($type);',
@@ -1160,7 +1386,11 @@ storiesOf('Components|List/スタイルのカスタマイズ/画像の形を変�
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
+<<<<<<< Updated upstream
         '<x-list class="list">\n' +
+=======
+        '<rs-list class="list -avatarlist">\n' +
+>>>>>>> Stashed changes
         '   <list-item class="item">\n' +
         '      <list-text class="text">テキスト</list-text>\n' +
         '      <list-meta class="meta">メタ情報</list-meta>\n' +
@@ -1169,6 +1399,7 @@ storiesOf('Components|List/スタイルのカスタマイズ/画像の形を変�
         '      <list-text class="text">テキスト</list-text>\n' +
         '      <list-meta class="meta">メタ情報</list-meta>\n' +
         '   </list-item>\n' +
+<<<<<<< Updated upstream
         '</x-list>\n' +
         '<x-list-group class="group-list">\n' +
         '   <x-list class="list">\n' +
@@ -1209,6 +1440,9 @@ storiesOf('Components|List/スタイルのカスタマイズ/画像の形を変�
         '      </list-item>\n' +
         '   </x-list>\n' +
         '</x-list-group>\n' ,
+=======
+        '</rs-list>\n',
+>>>>>>> Stashed changes
         { lang: 'html' }
       )}
       ${copyCodeBlock(
@@ -1223,7 +1457,11 @@ storiesOf('Components|List/スタイルのカスタマイズ/画像の形を変�
   .add('rectangle', () => {
     return `
       <h4>rectangle</h4>
+<<<<<<< Updated upstream
       <x-list class="list">
+=======
+      <rs-list class="list -avatarlist">
+>>>>>>> Stashed changes
         <list-item class="item">
           <list-text class="text">テキスト</list-text>
           <list-meta class="meta">メタ情報</list-meta>
@@ -1232,6 +1470,7 @@ storiesOf('Components|List/スタイルのカスタマイズ/画像の形を変�
           <list-text class="text">テキスト</list-text>
           <list-meta class="meta">メタ情報</list-meta>
         </list-item>
+<<<<<<< Updated upstream
       </x-list>
       <x-list-group class="group-list -avatarlist">
         <x-list class="list">
@@ -1272,6 +1511,9 @@ storiesOf('Components|List/スタイルのカスタマイズ/画像の形を変�
           </list-item>
         </x-list>
       </x-list-group>
+=======
+      </rs-list>
+>>>>>>> Stashed changes
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
         '@include rs-list-graphic-type($type);',
@@ -1279,7 +1521,11 @@ storiesOf('Components|List/スタイルのカスタマイズ/画像の形を変�
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
+<<<<<<< Updated upstream
         '<x-list class="list">\n' +
+=======
+        '<rs-list class="list -avatarlist">\n' +
+>>>>>>> Stashed changes
         '   <list-item class="item">\n' +
         '      <list-text class="text">テキスト</list-text>\n' +
         '      <list-meta class="meta">メタ情報</list-meta>\n' +
@@ -1288,6 +1534,7 @@ storiesOf('Components|List/スタイルのカスタマイズ/画像の形を変�
         '      <list-text class="text">テキスト</list-text>\n' +
         '      <list-meta class="meta">メタ情報</list-meta>\n' +
         '   </list-item>\n' +
+<<<<<<< Updated upstream
         '</x-list>\n' +
         '<x-list-group class="group-list">\n' +
         '   <x-list class="list">\n' +
@@ -1328,6 +1575,9 @@ storiesOf('Components|List/スタイルのカスタマイズ/画像の形を変�
         '      </list-item>\n' +
         '   </x-list>\n' +
         '</x-list-group>\n' ,
+=======
+        '</rs-list>\n',
+>>>>>>> Stashed changes
         { lang: 'html' }
       )}
       ${copyCodeBlock(
@@ -1342,7 +1592,11 @@ storiesOf('Components|List/スタイルのカスタマイズ/画像の形を変�
   .add('square', () => {
     return `
       <h4>square</h4>
+<<<<<<< Updated upstream
       <x-list class="list">
+=======
+      <rs-list class="list -avatarlist">
+>>>>>>> Stashed changes
         <list-item class="item">
           <list-text class="text">テキスト</list-text>
           <list-meta class="meta">メタ情報</list-meta>
@@ -1351,6 +1605,7 @@ storiesOf('Components|List/スタイルのカスタマイズ/画像の形を変�
           <list-text class="text">テキスト</list-text>
           <list-meta class="meta">メタ情報</list-meta>
         </list-item>
+<<<<<<< Updated upstream
       </x-list>
       <x-list-group class="group-list -avatarlist">
         <x-list class="list">
@@ -1391,6 +1646,9 @@ storiesOf('Components|List/スタイルのカスタマイズ/画像の形を変�
           </list-item>
         </x-list>
       </x-list-group>
+=======
+      </rs-list>
+>>>>>>> Stashed changes
       <h4>使用するmixin</h4>
     ${copyCodeBlock(
       '@include rs-list-graphic-type($type);',
@@ -1398,7 +1656,11 @@ storiesOf('Components|List/スタイルのカスタマイズ/画像の形を変�
     )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
+<<<<<<< Updated upstream
       '<x-list class="list">\n' +
+=======
+      '<rs-list class="list -avatarlist">\n' +
+>>>>>>> Stashed changes
       '   <list-item class="item">\n' +
       '      <list-text class="text">テキスト</list-text>\n' +
       '      <list-meta class="meta">メタ情報</list-meta>\n' +
@@ -1407,6 +1669,7 @@ storiesOf('Components|List/スタイルのカスタマイズ/画像の形を変�
       '      <list-text class="text">テキスト</list-text>\n' +
       '      <list-meta class="meta">メタ情報</list-meta>\n' +
       '   </list-item>\n' +
+<<<<<<< Updated upstream
       '</x-list>\n' +
       '<x-list-group class="group-list">\n' +
       '   <x-list class="list">\n' +
@@ -1448,6 +1711,10 @@ storiesOf('Components|List/スタイルのカスタマイズ/画像の形を変�
       '   </x-list>\n' +
       '</x-list-group>\n' ,
       { lang: 'html' }
+=======
+      '</rs-list>\n',
+    { lang: 'html' }
+>>>>>>> Stashed changes
     )}
     ${copyCodeBlock(
       '@import \'@rsmdc/list/rs-list.scss\';\n\n' +
@@ -1463,12 +1730,17 @@ storiesOf('Components|List/スタイルのカスタマイズ', module)
   .add('テキスト(1行目)の色を変える', () => {
     return `
       <p>テキスト（1行目）の色を指定した色に変える。</p>
+<<<<<<< Updated upstream
       <x-list class="list">
+=======
+      <rs-list class="my-list">
+>>>>>>> Stashed changes
         <list-item class="item">
           <list-text class="text">テキスト</list-text>
           <list-meta class="meta">メタ情報</list-meta>
         </list-item>
         <list-item class="item">
+<<<<<<< Updated upstream
           <list-text class="text">テキスト</list-text>
           <list-meta class="meta">メタ情報</list-meta>
         </list-item>
@@ -1512,6 +1784,25 @@ storiesOf('Components|List/スタイルのカスタマイズ', module)
           </list-item>
         </x-list>
       </x-list-group>
+=======
+          <list-text class="text -brown">テキスト</list-text>
+        </list-item>
+      </rs-list>
+      <rs-list class="my-list">
+        <list-item class="item">
+          <list-text class="text">
+            <list-primary class="primary -brown">1行目</list-primary>
+            <list-secondary class="secondary">2行目</list-secondary>
+          </list-text>
+        </list-item>
+        <list-item class="item">
+          <list-text class="text">
+            <list-primary class="primary">1行目</list-primary>
+            <list-secondary class="secondary">2行目</list-secondary>
+          </list-text>
+        </list-item>
+      </rs-list>
+>>>>>>> Stashed changes
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
         '@include rs-list-item-primary-text-ink-color($color);',
@@ -1519,7 +1810,11 @@ storiesOf('Components|List/スタイルのカスタマイズ', module)
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
+<<<<<<< Updated upstream
         '<x-list class="list">\n' +
+=======
+        '<rs-list class="my-list">\n' +
+>>>>>>> Stashed changes
         '   <list-item class="item">\n' +
         '      <list-text class="text">テキスト</list-text>\n' +
         '      <list-meta class="meta">メタ情報</list-meta>\n' +
@@ -1528,6 +1823,7 @@ storiesOf('Components|List/スタイルのカスタマイズ', module)
         '      <list-text class="text">テキスト</list-text>\n' +
         '      <list-meta class="meta">メタ情報</list-meta>\n' +
         '   </list-item>\n' +
+<<<<<<< Updated upstream
         '</x-list>\n' +
         '<x-list-group class="group-list -primary-text-ink-color">\n' +
         '   <x-list class="list">\n' +
@@ -1568,6 +1864,23 @@ storiesOf('Components|List/スタイルのカスタマイズ', module)
         '      </list-item>\n' +
         '   </x-list>\n' +
         '</x-list-group>\n' ,
+=======
+        '</rs-list>\n' +
+        '<rs-list class="my-list">\n' +
+        '    <list-item class="item">\n' +
+        '       <list-text class="text">\n' +
+        '          <list-primary class="primary -brown">1行目</list-primary>\n' +
+        '          <list-secondary class="secondary">2行目</list-secondary>\n' +
+        '       </list-text>\n' +
+        '    </list-item>\n' +
+        '    <list-item class="item">\n' +
+        '       <list-text class="text">\n' +
+        '          <list-primary class="primary">1行目</list-primary>\n' +
+        '          <list-secondary class="secondary">2行目</list-secondary>\n' +
+        '       </list-text>\n' +
+        '    </list-item>\n' +
+        '</rs-list>\n',
+>>>>>>> Stashed changes
         { lang: 'html' }
       )}
       ${copyCodeBlock(
@@ -1590,7 +1903,11 @@ storiesOf('Components|List/スタイルのカスタマイズ', module)
   .add('テキスト(2行目)の色を変える', () => {
     return `
       <p>テキスト（2行目）の色を指定した色に変える。</p>
+<<<<<<< Updated upstream
       <x-list class="list">
+=======
+      <rs-list class="my-list">
+>>>>>>> Stashed changes
         <list-item class="item">
           <list-text class="text">テキスト</list-text>
           <list-meta class="meta">メタ情報</list-meta>
@@ -1599,6 +1916,7 @@ storiesOf('Components|List/スタイルのカスタマイズ', module)
           <list-text class="text">テキスト</list-text>
           <list-meta class="meta">メタ情報</list-meta>
         </list-item>
+<<<<<<< Updated upstream
       </x-list>
       <x-list-group class="group-list -avatarlist -secondary-text-ink-color">
         <x-list class="list">
@@ -1639,6 +1957,9 @@ storiesOf('Components|List/スタイルのカスタマイズ', module)
           </list-item>
         </x-list>
       </x-list-group>
+=======
+      </rs-list>
+>>>>>>> Stashed changes
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
         '@include rs-list-item-secondary-text-ink-color($color);',
@@ -1646,6 +1967,7 @@ storiesOf('Components|List/スタイルのカスタマイズ', module)
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
+<<<<<<< Updated upstream
         '<x-list class="list">\n' +
         '   <list-item class="item">\n' +
         '      <list-text class="text">テキスト</list-text>\n' +
@@ -1695,6 +2017,22 @@ storiesOf('Components|List/スタイルのカスタマイズ', module)
         '      </list-item>\n' +
         '   </x-list>\n' +
         '</x-list-group>\n' ,
+=======
+        '<rs-list class="my-list">\n' +
+        '    <list-item class="item">\n' +
+        '       <list-text class="text">\n' +
+        '          <list-primary class="primary">1行目</list-primary>\n' +
+        '          <list-secondary class="secondary -brown">2行目</list-secondary>\n' +
+        '       </list-text>\n' +
+        '    </list-item>\n' +
+        '    <list-item class="item">\n' +
+        '       <list-text class="text">\n' +
+        '          <list-primary class="primary">1行目</list-primary>\n' +
+        '          <list-secondary class="secondary">2行目</list-secondary>\n' +
+        '       </list-text>\n' +
+        '    </list-item>\n' +
+        '</rs-list>\n',
+>>>>>>> Stashed changes
         { lang: 'html' }
       )}
       ${copyCodeBlock(
@@ -1711,7 +2049,11 @@ storiesOf('Components|List/スタイルのカスタマイズ', module)
   .add('メタ情報のテキストの色を変える', () => {
     return `
       <p>メタ情報のテキストの色を指定した色に変える。</p>
+<<<<<<< Updated upstream
       <x-list class="list -meta-ink-color">
+=======
+      <rs-list class="list -pink">
+>>>>>>> Stashed changes
         <list-item class="item">
           <list-text class="text">テキスト</list-text>
           <list-meta class="meta">メタ情報</list-meta>
@@ -1720,6 +2062,7 @@ storiesOf('Components|List/スタイルのカスタマイズ', module)
           <list-text class="text">テキスト</list-text>
           <list-meta class="meta">メタ情報</list-meta>
         </list-item>
+<<<<<<< Updated upstream
       </x-list>
       <x-list-group class="group-list -avatarlist">
         <x-list class="list -meta-ink-color">
@@ -1760,6 +2103,9 @@ storiesOf('Components|List/スタイルのカスタマイズ', module)
           </list-item>
         </x-list>
       </x-list-group>
+=======
+      </rs-list>
+>>>>>>> Stashed changes
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
         '@include rs-list-list-meta-ink-color($color);',
@@ -1767,7 +2113,11 @@ storiesOf('Components|List/スタイルのカスタマイズ', module)
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
+<<<<<<< Updated upstream
         '<x-list class="list">\n' +
+=======
+        '<rs-list class="my-list">\n' +
+>>>>>>> Stashed changes
         '   <list-item class="item">\n' +
         '      <list-text class="text">テキスト</list-text>\n' +
         '      <list-meta class="meta">メタ情報</list-meta>\n' +
@@ -1776,6 +2126,7 @@ storiesOf('Components|List/スタイルのカスタマイズ', module)
         '      <list-text class="text">テキスト</list-text>\n' +
         '      <list-meta class="meta">メタ情報</list-meta>\n' +
         '   </list-item>\n' +
+<<<<<<< Updated upstream
         '</x-list>\n' +
         '<x-list-group class="group-list -meta-ink-color">\n' +
         '   <x-list class="list">\n' +
@@ -1816,6 +2167,9 @@ storiesOf('Components|List/スタイルのカスタマイズ', module)
         '      </list-item>\n' +
         '   </x-list>\n' +
         '</x-list-group>\n' ,
+=======
+        '</rs-list>\n',
+>>>>>>> Stashed changes
         { lang: 'html' }
       )}
       ${copyCodeBlock(
@@ -1831,8 +2185,13 @@ storiesOf('Components|List/スタイルのカスタマイズ', module)
   })
   .add('画像部分の背景色を変える', () => {
     return `
+<<<<<<< Updated upstream
       <p>画像部分の背景色を指定した色に変える。</p>
       <x-list class="list">
+=======
+      <p>アイコンの色を指定した色に変える。</p>
+      <rs-list class="list -avatarlist">
+>>>>>>> Stashed changes
         <list-item class="item">
           <list-text class="text">テキスト</list-text>
           <list-meta class="meta">メタ情報</list-meta>
@@ -1841,6 +2200,7 @@ storiesOf('Components|List/スタイルのカスタマイズ', module)
           <list-text class="text">テキスト</list-text>
           <list-meta class="meta">メタ情報</list-meta>
         </list-item>
+<<<<<<< Updated upstream
       </x-list>
       <x-list-group class="group-list -avatarlist -graphic-ink-color">
         <x-list class="list">
@@ -1881,6 +2241,9 @@ storiesOf('Components|List/スタイルのカスタマイズ', module)
           </list-item>
         </x-list>
       </x-list-group>
+=======
+      </rs-list>
+>>>>>>> Stashed changes
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
         '@include rs-list-item-graphic-ink-color($color);',
@@ -1888,7 +2251,11 @@ storiesOf('Components|List/スタイルのカスタマイズ', module)
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
+<<<<<<< Updated upstream
         '<x-list class="list">\n' +
+=======
+        '<rs-list class="my-list">\n' +
+>>>>>>> Stashed changes
         '   <list-item class="item">\n' +
         '      <list-text class="text">テキスト</list-text>\n' +
         '      <list-meta class="meta">メタ情報</list-meta>\n' +
@@ -1897,6 +2264,7 @@ storiesOf('Components|List/スタイルのカスタマイズ', module)
         '      <list-text class="text">テキスト</list-text>\n' +
         '      <list-meta class="meta">メタ情報</list-meta>\n' +
         '   </list-item>\n' +
+<<<<<<< Updated upstream
         '</x-list>\n' +
         '<x-list-group class="group-list -graphic-ink-color">\n' +
         '   <x-list class="list">\n' +
@@ -1937,6 +2305,9 @@ storiesOf('Components|List/スタイルのカスタマイズ', module)
         '      </list-item>\n' +
         '   </x-list>\n' +
         '</x-list-group>\n' ,
+=======
+        '</rs-list>\n' +
+>>>>>>> Stashed changes
         { lang: 'html' }
       )}
       ${copyCodeBlock(
@@ -1952,8 +2323,13 @@ storiesOf('Components|List/スタイルのカスタマイズ', module)
   })
   .add('仕切り線の色を変える', () => {
     return `
+<<<<<<< Updated upstream
       <p>仕切り線の色を指定した色に変える。</p>
       <x-list class="list">
+=======
+      <p>画像の背景色を指定した色に変える。</p>
+      <rs-list class="list -avatarlist">
+>>>>>>> Stashed changes
         <list-item class="item">
           <list-text class="text">テキスト</list-text>
           <list-meta class="meta">メタ情報</list-meta>
@@ -1962,6 +2338,7 @@ storiesOf('Components|List/スタイルのカスタマイズ', module)
           <list-text class="text">テキスト</list-text>
           <list-meta class="meta">メタ情報</list-meta>
         </list-item>
+<<<<<<< Updated upstream
       </x-list>
       <x-list-group class="group-list -avatarlist -divider-color">
         <x-list class="list">
@@ -2002,6 +2379,9 @@ storiesOf('Components|List/スタイルのカスタマイズ', module)
           </list-item>
         </x-list>
       </x-list-group>
+=======
+      </rs-list>
+>>>>>>> Stashed changes
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
         '@include rs-list-divider-color($color);',
@@ -2009,7 +2389,11 @@ storiesOf('Components|List/スタイルのカスタマイズ', module)
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
+<<<<<<< Updated upstream
         '<x-list class="list">\n' +
+=======
+        '<rs-list class="my-list">\n' +
+>>>>>>> Stashed changes
         '   <list-item class="item">\n' +
         '      <list-text class="text">テキスト</list-text>\n' +
         '      <list-meta class="meta">メタ情報</list-meta>\n' +
@@ -2018,6 +2402,7 @@ storiesOf('Components|List/スタイルのカスタマイズ', module)
         '      <list-text class="text">テキスト</list-text>\n' +
         '      <list-meta class="meta">メタ情報</list-meta>\n' +
         '   </list-item>\n' +
+<<<<<<< Updated upstream
         '</x-list>\n' +
         '<x-list-group class="group-list -divider-color">\n' +
         '   <x-list class="list">\n' +
@@ -2058,6 +2443,9 @@ storiesOf('Components|List/スタイルのカスタマイズ', module)
         '      </list-item>\n' +
         '   </x-list>\n' +
         '</x-list-group>\n' ,
+=======
+        '</rs-list>\n' +
+>>>>>>> Stashed changes
         { lang: 'html' }
       )}
       ${copyCodeBlock(
@@ -2073,8 +2461,13 @@ storiesOf('Components|List/スタイルのカスタマイズ', module)
   })
   .add('サブヘッダーの色を変える', () => {
     return `
+<<<<<<< Updated upstream
       <p>サブヘッダーの色を指定した色に変える。</p>
       <x-list class="list">
+=======
+      <p>仕切り線の色を指定した色に変える。</p>
+      <rs-list class="my-list">
+>>>>>>> Stashed changes
         <list-item class="item">
           <list-text class="text">テキスト</list-text>
           <list-meta class="meta">メタ情報</list-meta>
@@ -2083,11 +2476,50 @@ storiesOf('Components|List/スタイルのカスタマイズ', module)
           <list-text class="text">テキスト</list-text>
           <list-meta class="meta">メタ情報</list-meta>
         </list-item>
+<<<<<<< Updated upstream
       </x-list>
       <x-list-group class="group-list -avatarlist -subheader-ink-color">
         <x-list class="list">
           <list-subheader class="subheader">リストタイトル</list-subheader>
           <list-divider></list-divider>
+=======
+      </rs-list>
+      <h4>使用するmixin</h4>
+      ${copyCodeBlock(
+        '@include rs-list-divider-color($color);',
+        { lang: 'scss' }
+      )}
+      <h4>使用方法</h4>
+      ${copyCodeBlock(
+        '<rs-list class="my-list">\n' +
+        '   <list-item class="item">\n' +
+        '      <list-text class="text">テキスト</list-text>\n' +
+        '   </list-item>\n' +
+        '   <list-divider class="divider -blue" />\n' +
+        '   <list-item class="item">\n' +
+        '      <list-text class="text">テキスト</list-text>\n' +
+        '   </list-item>\n' +
+        '</rs-list>\n', 
+        { lang: 'html' }
+      )}
+      ${copyCodeBlock(
+        '@import \'@rsmdc/list/rs-list.scss\';\n\n' +
+        '.my-list {\n' +
+        '  > .divider.-blue {\n' +
+        '   @include rs-list-divider-color(rgb(106, 118, 223);\n' +
+        '  }\n' +
+        '}',
+        { lang: 'scss' }
+      )}
+    `
+  })
+  .add('サブヘッダーの色を変える', () => {
+    return `
+      <p>サブヘッダーの色を指定した色に変える。</p>
+      <rs-list-group class="group-list">
+        <rs-list class="list">
+          <list-subheader class="subheader -brown">リストタイトル</list-subheader>
+>>>>>>> Stashed changes
           <list-item class="item">
             <list-graphic class="graphic"></list-graphic>
             <list-text class="text">
@@ -2102,8 +2534,8 @@ storiesOf('Components|List/スタイルのカスタマイズ', module)
               <list-secondary class="secondary">2行目</list-secondary>
             </list-text>
           </list-item>
-        </x-list>
-        <x-list class="list">
+        </rs-list>
+        <rs-list class="list">
           <list-subheader class="subheader">リストタイトル</list-subheader>
           <list-divider></list-divider>
           <list-item class="item">
@@ -2121,8 +2553,8 @@ storiesOf('Components|List/スタイルのカスタマイズ', module)
             </list-text>
             <list-meta class="meta">メタ情報</list-meta>
           </list-item>
-        </x-list>
-      </x-list-group>
+        </rs-list>
+      </rs-list-group>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
         '@include rs-list-group-subheader-ink-color($color);',
@@ -2130,6 +2562,7 @@ storiesOf('Components|List/スタイルのカスタマイズ', module)
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
+<<<<<<< Updated upstream
         '<x-list class="list">\n' +
         '   <list-item class="item">\n' +
         '      <list-text class="text">テキスト</list-text>\n' +
@@ -2144,6 +2577,11 @@ storiesOf('Components|List/スタイルのカスタマイズ', module)
         '   <x-list class="list">\n' +
         '      <list-subheader class="subheader">リストタイトル</list-subheader>\n' +
         '      <list-divider></list-divider>\n' +
+=======
+        '<rs-list-group class="group-list>\n' +
+        '   <rs-list class="list">\n' +
+        '      <list-subheader class="subheader -brown">リストタイトル</list-subheader>\n' +
+>>>>>>> Stashed changes
         '      <list-item class="item">\n' +
         '         <list-graphic class="graphic"></list-graphic>\n' +
         '         <list-text class="text">\n' +
@@ -2158,8 +2596,8 @@ storiesOf('Components|List/スタイルのカスタマイズ', module)
         '          <list-secondary class="secondary">2行目</list-secondary>\n' +
         '        </list-text>\n' +
         '      </list-item>\n' +
-        '   </x-list>\n' +
-        '   <x-list class="list">\n' +
+        '   </rs-list>\n' +
+        '   <rs-list class="list">\n' +
         '      <list-subheader class="subheader">リストタイトル</list-subheader>\n' +
         '      <list-divider></list-divider>\n' +
         '      <list-item class="item">\n' +
@@ -2177,8 +2615,8 @@ storiesOf('Components|List/スタイルのカスタマイズ', module)
         '         </list-text>\n' +
         '         <list-meta class="meta">メタ情報</list-meta>\n' +
         '      </list-item>\n' +
-        '   </x-list>\n' +
-        '</x-list-group>\n' ,
+        '   </rs-list>\n' +
+        '</rs-list-group>\n' ,
         { lang: 'html' }
       )}
       ${copyCodeBlock(
@@ -2194,6 +2632,7 @@ storiesOf('Components|List/スタイルのカスタマイズ', module)
   })
   .add('画像を設定する (修正予定)', () => {
     return `
+<<<<<<< Updated upstream
       <p>指定した画像を表示する。</p>
       <x-list class="list">
         <list-item class="item">
@@ -2244,6 +2683,56 @@ storiesOf('Components|List/スタイルのカスタマイズ', module)
           </list-item>
         </x-list>
       </x-list-group>
+=======
+      <p>リップルの色を指定した色に変える。</p>
+      <rs-list class="my-list">
+        <list-item class="item">
+          <list-text class="text">テキスト</list-text>
+        </list-item>
+        <list-item class="item">
+          <list-text class="text">テキスト</list-text>
+        </list-item>
+      </rs-list>
+      <h4>使用するmixin</h4>
+      ${copyCodeBlock(
+        '@include rs-list-item-states-color($color);',
+        { lang: 'scss' }
+      )}
+      <h4>使用方法</h4>
+      ${copyCodeBlock(
+        '<-list class="my-list">\n' +
+        '   <list-item class="item -blue">\n' +
+        '       <list-text class="text">テキスト</list-text>\n' +
+        '   </list-item>\n' +
+        '   <list-item class="item">\n' +
+        '       <list-text class="text">テキスト</list-text>\n' +
+        '   </list-item>\n' +
+        '</-list>\n' ,
+        { lang: 'html' }
+      )}
+      ${copyCodeBlock(
+        '@import \'@rsmdc/list/rs-list.scss\';\n\n' +
+        '.my-list {\n' +
+        '  > .item {\n' +
+        '   @include rs-list-item-states-color(rgb(106, 118, 223));\n' +
+        '  }\n' +
+        '}',
+        { lang: 'scss' }
+      )}
+    `
+  })
+  .add('テキスト、背景色、リップルの色を一括で変える', () => {
+    return `
+      <p>リップルの色を指定した色に変える。</p>
+      <rs-list class="my-list">
+        <list-item class="item -green">
+          <list-text class="text">テキスト</list-text>
+        </list-item>
+        <list-item class="item">
+          <list-text class="text">テキスト</list-text>
+        </list-item>
+      </rs-list>
+>>>>>>> Stashed changes
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
         '@include rs-list-graphic-image($url);\n',
@@ -2312,10 +2801,37 @@ storiesOf('Components|List/スタイルのカスタマイズ', module)
 
     `
   })
+<<<<<<< Updated upstream
   .add('画像のサイズを変える (修正予定)', () => {
     return `
       <p>画像のサイズを指定した大きさに変える。</p>
       <x-list class="list">
+=======
+  .add('画像・アイコンを設定する', () => {
+    return `
+      <p>指定した画像・アイコンを表示する。</p>
+      <rs-list class="list -avatarlist">
+        <list-item class="item">
+          <list-graphic class="graphic"></list-graphic>
+          <list-text class="text">テキスト</list-text>
+        </list-item>
+        <list-item class="item">
+          <list-graphic class="graphic"></list-graphic>
+          <list-text class="text">テキスト</list-text>
+        </list-item>
+      </rs-list>
+      <h4>使用するmixin</h4>
+      ${copyCodeBlock(
+        '@include rs-list-graphic-image($icon, $icon-name: \'\');',
+        { lang: 'scss' }
+      )}
+    `
+  })
+  .add('画像のサイズを変える', () => {
+    return `
+      <p>画像のサイズを指定した大きさに変える。</p>
+      <rs-list class="list -avatarlist">
+>>>>>>> Stashed changes
         <list-item class="item">
           <list-text class="text">テキスト</list-text>
           <list-meta class="meta">メタ情報</list-meta>
@@ -2324,6 +2840,7 @@ storiesOf('Components|List/スタイルのカスタマイズ', module)
           <list-text class="text">テキスト</list-text>
           <list-meta class="meta">メタ情報</list-meta>
         </list-item>
+<<<<<<< Updated upstream
       </x-list>
       <x-list-group class="group-list -avatarlist">
         <x-list class="list">
@@ -2367,6 +2884,17 @@ storiesOf('Components|List/スタイルのカスタマイズ', module)
       <h4>使用方法</h4>
       ${copyCodeBlock(
         '<x-list class="list">\n' +
+=======
+      </rs-list>
+      <h4>使用するmixin</h4>
+      ${copyCodeBlock(
+        '@include rs-list-graphic-size($size);',
+        { lang: 'scss' }
+      )}
+      <h4>使用方法</h4>
+      ${copyCodeBlock(
+        '<rs-list class="list -avatarlist">\n' +
+>>>>>>> Stashed changes
         '   <list-item class="item">\n' +
         '      <list-text class="text">テキスト</list-text>\n' +
         '      <list-meta class="meta">メタ情報</list-meta>\n' +
@@ -2375,6 +2903,7 @@ storiesOf('Components|List/スタイルのカスタマイズ', module)
         '      <list-text class="text">テキスト</list-text>\n' +
         '      <list-meta class="meta">メタ情報</list-meta>\n' +
         '   </list-item>\n' +
+<<<<<<< Updated upstream
         '</x-list>\n' +
         '<x-list-group class="group-list">\n' +
         '   <x-list class="list">\n' +
@@ -2415,6 +2944,9 @@ storiesOf('Components|List/スタイルのカスタマイズ', module)
         '      </list-item>\n' +
         '   </x-list>\n' +
         '</x-list-group>\n' ,
+=======
+        '</rs-list>\n',
+>>>>>>> Stashed changes
         { lang: 'html' }
       )}
       ${copyCodeBlock(
@@ -2434,8 +2966,13 @@ storiesOf('Components|List/スタイルのカスタマイズ', module)
   })
   .add('リストの角の丸みを変える', () => {
     return `
+<<<<<<< Updated upstream
       <p>リストの角の丸みを指定したサイズに変える。</p>
       <x-list class="list -shape-radius">
+=======
+      <p>アイテムの角の丸みを指定したサイズに変える。</p>
+      <rs-list class="list -shape">
+>>>>>>> Stashed changes
         <list-item class="item">
           <list-text class="text">テキスト</list-text>
           <list-meta class="meta">メタ情報</list-meta>
@@ -2444,6 +2981,7 @@ storiesOf('Components|List/スタイルのカスタマイズ', module)
           <list-text class="text">テキスト</list-text>
           <list-meta class="meta">メタ情報</list-meta>
         </list-item>
+<<<<<<< Updated upstream
       </x-list>
       <x-list-group class="group-list -avatarlist -shape-radius">
         <x-list class="list">
@@ -2488,6 +3026,18 @@ storiesOf('Components|List/スタイルのカスタマイズ', module)
       ${copyCodeBlock(
         '<x-list class="list">\n' +
         '   <list-item class="item">\n' +
+=======
+      </rs-list>
+      <h4>使用するmixin</h4>
+      ${copyCodeBlock(
+        '@include rs-list-item-shape-radius($radius);',
+        { lang: 'scss' }
+      )}
+      <h4>使用方法</h4>
+      ${copyCodeBlock(
+        '<rs-list class="my-list">\n' +
+        '   <list-item class="item -shape">\n' +
+>>>>>>> Stashed changes
         '      <list-text class="text">テキスト</list-text>\n' +
         '      <list-meta class="meta">メタ情報</list-meta>\n' +
         '   </list-item>\n' +
@@ -2495,6 +3045,7 @@ storiesOf('Components|List/スタイルのカスタマイズ', module)
         '      <list-text class="text">テキスト</list-text>\n' +
         '      <list-meta class="meta">メタ情報</list-meta>\n' +
         '   </list-item>\n' +
+<<<<<<< Updated upstream
         '</x-list>\n' +
         '<x-list-group class="group-list -shape-radius">\n' +
         '   <x-list class="list">\n' +
@@ -2535,6 +3086,9 @@ storiesOf('Components|List/スタイルのカスタマイズ', module)
         '      </list-item>\n' +
         '   </x-list>\n' +
         '</x-list-group>\n' ,
+=======
+        '</rs-list>\n',
+>>>>>>> Stashed changes
         { lang: 'html' }
       )}
       ${copyCodeBlock(

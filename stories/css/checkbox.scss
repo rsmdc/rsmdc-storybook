@@ -10,7 +10,13 @@
   &.-container-colors {
     @include rs-checkbox-container-colors(red, red);
   }
+  &.-fill-color-accessible {
+    @include rs-checkbox-fill-color-accessible(red);
+  }
   &.-label-position {
     @include rs-chechbox-label-position(left);
+  }
+  &.-unchecked-container-color {
+    @include rs-checkbox-unchecked-stroke-color(red);
   }
 }

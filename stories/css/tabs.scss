@@ -3,18 +3,22 @@
 
 .tab-bar {
   &.-ink-color {
-    @include rs-tab-ink-color(brown);
+    @include rs-tab-ink-color(aqua);
+  }
+  &.-activated-ink-color {
+    @include rs-tab-activated-ink-color(aqua);
   }
   &.-states-color {
-    @include rs-tab-states-color(gray);
+    @include rs-tab-states-color(aqua);
   }
   &.-indicator-color {
-    @include rs-tab-indicator-color(olive);
+    @include rs-tab-indicator-color(aqua);
+    @include rs-tab-activated-ink-color(aqua);
   }
   &.-indicator-height {
     @include rs-tab-indicator-height(4px);
   }
-  &.-indicator-width-fixed-contents {
+  &.-width-fixed-contents {
     @include rs-tab-indicator-width-fixed-contents;
   }
   &.-bar-width {
@@ -23,12 +27,16 @@
   &.-fixed-width {
     @include rs-tab-fixed-width(100px);
   }
+<<<<<<< Updated upstream
 
   &.-bar-position {
     @include rs-tab-fixed-width(90px);
+=======
+  &.-bar-position {
+    @include rs-tab-fixed-width(100px);
+>>>>>>> Stashed changes
     @include rs-tab-bar-position(align-end);
   }
-  
   &.-icon-image {
     @include rs-tab-icon-image(url('http://icons.iconarchive.com/icons/iconsmind/outline/512/Mail-icon.png'));
   }
@@ -36,5 +44,23 @@
     @include rs-tab-icon-image(url('http://icons.iconarchive.com/icons/iconsmind/outline/512/Mail-icon.png'));
     @include rs-tab-icon-position(right);
   }
+
+  // > .tab.-cut {
+  //   @include rs-tab-icon-image(url('http://icons.iconarchive.com/icons/iconsmind/outline/512/Mail-icon.png'));
+  // }
+  // > .tab.-copy {
+  //   @include rs-tab-icon-image(url('http://icons.iconarchive.com/icons/iconsmind/outline/512/Mail-icon.png'));
+  // }
+  // > .tab.-star {
+  //   @include rs-tab-icon-image(Material Icons, map-get($material-icons-codepoints, stars));
+  // }
 }
 
+<<<<<<< Updated upstream
+=======
+
+
+.result {
+  padding-bottom: 20px;
+}
+>>>>>>> Stashed changes
