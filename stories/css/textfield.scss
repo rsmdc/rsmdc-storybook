@@ -1,0 +1,64 @@
+@import '../../node_modules/@rsmdc/form-field/rs-form-field.scss';
+@import '../../node_modules/@rsmdc/textfield/rs-text-field.scss';
+
+.outlined {
+  @include rs-text-field-type(outlined);
+}
+.text-field {
+  padding-bottom: 10px;
+  &.-ink-color {
+    @include rs-text-field-ink-color(red);
+    @include rs-textarea-ink-color(red);
+  }
+  &.-caret-color {
+    @include rs-text-field-caret-color(red);
+    @include rs-textarea-caret-color(red);
+  }
+  &.-fill-color {
+    @include rs-text-field-fill-color(lavender);
+    @include rs-textarea-fill-color(lavender);
+  }
+  &.-bottom-line-color {
+    @include rs-text-field-bottom-line-color(red);
+  }
+  &.-hover-bottom-line-color {
+    @include rs-text-field-hover-bottom-line-color(skyblue);
+  }
+  &.-line-ripple-color {
+    @include rs-text-field-line-ripple-color(skyblue);
+  }
+  &.-stroke-color {
+    @include rs-text-field-stroke-color(skyblue);
+    @include rs-textarea-stroke-color(skyblue);
+  }
+  &.-hover-outline-color {
+    @include rs-text-field-hover-outline-color(skyblue);
+    @include rs-textarea-hover-outline-color(skyblue);
+  }
+  &.-focused-outline-color {
+    @include rs-text-field-focused-outline-color(skyblue);
+    @include rs-textarea-focused-outline-color(skyblue);
+  }
+  &.-focused-color-accessible {
+    @include rs-text-field-focused-color-accessible(skyblue);
+  }
+  &.-counter-ink-color {
+    @include rs-text-field-character-counter-ink-color(orange);
+  }
+  &.-counter-position {
+    @include rs-text-field-character-counter-position(0, 60px);
+  }
+  &.-line-height {
+    @include rs-textarea-line-height(60px);
+  }
+  &.-shape-radius {
+    @include rs-text-field-shape-radius(30px);
+    @include rs-textarea-shape-radius(30px);
+  }
+  &.-icon-image {
+    @include rs-text-field-icon-image(url('http://icons.iconarchive.com/icons/iconsmind/outline/512/Mail-icon.png'));
+  }
+  &.-action-icon-image {
+    @include rs-text-field-action-icon-image(url('http://icons.iconarchive.com/icons/iconsmind/outline/512/Mail-icon.png'));
+  }
+}
