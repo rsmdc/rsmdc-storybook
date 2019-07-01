@@ -1,48 +1,49 @@
 @import '../../node_modules/@rsmdc/form-field/rs-form-field.scss';
 @import '../../node_modules/@rsmdc/textfield/rs-text-field.scss';
 
-.outlined {
-  @include rs-text-field-type(outlined);
-}
+
 .text-field {
   padding-bottom: 10px;
-  &.-ink-color {
-    @include rs-text-field-ink-color(red);
-    @include rs-textarea-ink-color(red);
+  > .outlined {
+    @include rs-text-field-type(outlined);
   }
-  &.-caret-color {
-    @include rs-text-field-caret-color(red);
-    @include rs-textarea-caret-color(red);
+  &.-ink-orange {
+    @include rs-text-field-ink-color(orange);
+    @include rs-textarea-ink-color(orange);
   }
-  &.-fill-color {
+  &.-caret-orange {
+    @include rs-text-field-caret-color(orange);
+    @include rs-textarea-caret-color(orange);
+  }
+  &.-fill-lavender {
     @include rs-text-field-fill-color(lavender);
     @include rs-textarea-fill-color(lavender);
   }
-  &.-bottom-line-color {
-    @include rs-text-field-bottom-line-color(red);
+  &.-line-blue {
+    @include rs-text-field-bottom-line-color(blue);
   }
-  &.-hover-bottom-line-color {
-    @include rs-text-field-hover-bottom-line-color(skyblue);
+  &.-hover.-line-color {
+    @include rs-text-field-hover-bottom-line-color(blue);
   }
-  &.-line-ripple-color {
-    @include rs-text-field-line-ripple-color(skyblue);
+  &.-ripple.-line-color {
+    @include rs-text-field-line-ripple-color(blue);
   }
-  &.-stroke-color {
-    @include rs-text-field-stroke-color(skyblue);
-    @include rs-textarea-stroke-color(skyblue);
+  &.-stroke-blue {
+    @include rs-text-field-stroke-color(blue);
+    @include rs-textarea-stroke-color(blue);
   }
-  &.-hover-outline-color {
-    @include rs-text-field-hover-outline-color(skyblue);
-    @include rs-textarea-hover-outline-color(skyblue);
+  &.-hover.-line-orange {
+    @include rs-text-field-hover-outline-color(orange);
+    @include rs-textarea-hover-outline-color(orange);
   }
-  &.-focused-outline-color {
-    @include rs-text-field-focused-outline-color(skyblue);
-    @include rs-textarea-focused-outline-color(skyblue);
+  &.-focused.-line-orange {
+    @include rs-text-field-focused-outline-color(orange);
+    @include rs-textarea-focused-outline-color(orange);
   }
-  &.-focused-color-accessible {
-    @include rs-text-field-focused-color-accessible(skyblue);
+  &.-focused.-blue-accessible {
+    @include rs-text-field-focused-color-accessible(blue);
   }
-  &.-counter-ink-color {
+  &.-counter-orange {
     @include rs-text-field-character-counter-ink-color(orange);
   }
   &.-counter-position {
@@ -51,14 +52,14 @@
   &.-line-height {
     @include rs-textarea-line-height(60px);
   }
-  &.-shape-radius {
-    @include rs-text-field-shape-radius(30px);
-    @include rs-textarea-shape-radius(30px);
+  &.-roundness {
+    @include rs-text-field-shape-radius(10px);
+    @include rs-textarea-shape-radius(10px);
   }
-  &.-icon-image {
+  &.-icon {
     @include rs-text-field-icon-image(url('http://icons.iconarchive.com/icons/iconsmind/outline/512/Mail-icon.png'));
   }
-  &.-action-icon-image {
+  &.-action-icon {
     @include rs-text-field-action-icon-image(url('http://icons.iconarchive.com/icons/iconsmind/outline/512/Mail-icon.png'));
   }
 }

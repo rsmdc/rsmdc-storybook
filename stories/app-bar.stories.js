@@ -427,8 +427,7 @@ storiesOf('Components|App bar/スタイルのカスタマイズ', module)
       <rs-app-bar-title class="title">タイトル</rs-app-bar-title>
     </rs-app-bar>
     <p>
-      背景色とタイトルの色を変える。<br>
-      指定した背景色の色を元に、タイトルの色は自動調整される。
+      アイコンの色を指定した色に変える。
     </p>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
@@ -505,8 +504,7 @@ storiesOf('Components|App bar/スタイルのカスタマイズ', module)
       <rs-app-bar-title class="title">タイトル</rs-app-bar-title>
     </rs-app-bar>
     <p>
-      背景色とタイトルの色を変える。<br>
-      指定した背景色の色を元に、タイトルの色は自動調整される。
+      リップルの色を指定した色に変える。
     </p>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(

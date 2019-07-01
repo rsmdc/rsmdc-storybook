@@ -1,36 +1,36 @@
 @import '../../node_modules/@rsmdc/select/rs-select';
 .food-select {
-  &.-select-type {
+  &.-outlined {
     @include rs-select-type(outlined);
   }
-  &.-ink-color {
-    @include rs-select-ink-color(red);
+  &.-ink-orange {
+    @include rs-select-ink-color(orange);
   }
-  &.-container-fill-color {
-    @include rs-select-container-fill-color(orange);
+  &.-fill-beige {
+    @include rs-select-container-fill-color(beige);
   }
-  &.-label-color {
-    @include rs-select-label-color(orange);
+  &.-label-blue {
+    @include rs-select-label-color(blue);
   }
-  &.-focused-label-color {
+  &.-focused.-label-orange {
     @include rs-select-focused-label-color(orange);
   }
-  &.-bottom-line-color {
-    @include rs-select-bottom-line-color(orange);
+  &.-line-green {
+    @include rs-select-bottom-line-color(green);
   }
-  &.-hover-bottom-line-color {
-    @include rs-select-hover-bottom-line-color(orange);
+  &.-hover.-line-blue {
+    @include rs-select-hover-bottom-line-color(blue);
   }
-  &.-focused-bottom-line-color {
-    @include rs-select-focused-bottom-line-color(orange);
+  &.-focused.-line-pink {
+    @include rs-select-focused-bottom-line-color(pink);
   }
-  &.-outline-color {
-    @include rs-select-outline-color(orange);
+  &.-blue {
+    @include rs-select-outline-color(blue);
   }
-  &.-hover-outline-color {
+  &.-hover.-line-orange {
     @include rs-select-hover-outline-color(orange);
   }
-  &.-focused-outline-color {
-    @include rs-select-focused-outline-color(orange);
+  &.-focused.-line-pink {
+    @include rs-select-focused-outline-color(pink);
   }
 }

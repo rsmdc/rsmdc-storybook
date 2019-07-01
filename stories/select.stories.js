@@ -120,7 +120,7 @@ storiesOf('Components|Select/スタイルのカスタマイズ/セレクトの�
   `)
   .add('outlined', () => `
     <h4>outlined</h4>
-    <rs-select class="food-select -select-type" label="Pick a Food Group">
+    <rs-select class="food-select -outlined" label="Pick a Food Group">
       <option value="grains">Bread, Cereal, Rice, and Pasta</option>
       <option value="vegetables" disabled>Vegetables</option>
       <option value="fruit">Fruits</option> 
@@ -131,7 +131,7 @@ storiesOf('Components|Select/スタイルのカスタマイズ/セレクトの�
     )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
-      '<rs-select class="food-select -select-type" label="Pick a Food Group">\n' +
+      '<rs-select class="food-select -outlined" label="Pick a Food Group">\n' +
       '   <option value="grains">Bread, Cereal, Rice, and Pasta</option>\n' +
       '   <option value="vegetables" disabled>Vegetables</option>\n' +
       '   <option value="fruit">Fruits</option>\n' + 
@@ -142,7 +142,7 @@ storiesOf('Components|Select/スタイルのカスタマイズ/セレクトの�
 `@import "@rsmdc/select/rs-select.scss";
 
 .food-select {
-  &.-select-type {
+  &.-outlined {
     @include rs-select-type(outlined);
   }
 }`, 
@@ -153,7 +153,7 @@ storiesOf('Components|Select/スタイルのカスタマイズ/セレクトの�
 storiesOf('Components|Select/スタイルのカスタマイズ', module)
   .add('選択したテキストの色を変える', () => `
     <h4>選択したテキストの色を変える</h4>
-    <rs-select class="food-select -ink-color" label="Pick a Food Group">
+    <rs-select class="food-select -ink-orange" label="Pick a Food Group">
       <option value="grains">Bread, Cereal, Rice, and Pasta</option>
       <option value="vegetables" disabled>Vegetables</option>
       <option value="fruit">Fruits</option> 
@@ -165,7 +165,7 @@ storiesOf('Components|Select/スタイルのカスタマイズ', module)
     )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
-      '<rs-select class="food-select -ink-color" label="Pick a Food Group">\n' +
+      '<rs-select class="food-select -ink-orange" label="Pick a Food Group">\n' +
       '   <option value="grains">Bread, Cereal, Rice, and Pasta</option>\n' +
       '   <option value="vegetables" disabled>Vegetables</option>\n' +
       '   <option value="fruit">Fruits</option>\n' + 
@@ -176,8 +176,8 @@ storiesOf('Components|Select/スタイルのカスタマイズ', module)
 `@import "@rsmdc/select/rs-select.scss";
 
 .food-select {
-  &.-ink-color {
-    @include rs-select-ink-color(red);
+  &.-ink-orange {
+    @include rs-select-ink-color(orange);
   }
 }`, 
       { lang: 'scss' }
@@ -185,7 +185,7 @@ storiesOf('Components|Select/スタイルのカスタマイズ', module)
   `)
   .add('背景色を変える', () => `
     <h4>背景色を変える</h4>
-    <rs-select class="food-select -container-fill-color" label="Pick a Food Group">
+    <rs-select class="food-select -fill-beige" label="Pick a Food Group">
       <option value="grains">Bread, Cereal, Rice, and Pasta</option>
       <option value="vegetables" disabled>Vegetables</option>
       <option value="fruit">Fruits</option> 
@@ -196,7 +196,7 @@ storiesOf('Components|Select/スタイルのカスタマイズ', module)
     )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
-      '<rs-select class="food-select -container-fill-color" label="Pick a Food Group">\n' +
+      '<rs-select class="food-select -fill-beige" label="Pick a Food Group">\n' +
       '   <option value="grains">Bread, Cereal, Rice, and Pasta</option>\n' +
       '   <option value="vegetables" disabled>Vegetables</option>\n' +
       '   <option value="fruit">Fruits</option>\n' + 
@@ -207,8 +207,8 @@ storiesOf('Components|Select/スタイルのカスタマイズ', module)
 `@import "@rsmdc/select/rs-select.scss";
 
 .food-select {
-  &.-container-fill-color {
-    @include rs-select-container-fill-color(orange);
+  &.-fill-beige {
+    @include rs-select-container-fill-color(beige);
   }
 }`, 
         { lang: 'scss' }
@@ -216,7 +216,7 @@ storiesOf('Components|Select/スタイルのカスタマイズ', module)
   `)
   .add('ラベルの色を変える', () => `
     <h4>ラベルの色を変える</h4>
-    <rs-select class="food-select -label-color" label="Pick a Food Group">
+    <rs-select class="food-select -label-blue" label="Pick a Food Group">
       <option value="grains">Bread, Cereal, Rice, and Pasta</option>
       <option value="vegetables" disabled>Vegetables</option>
       <option value="fruit">Fruits</option> 
@@ -228,7 +228,7 @@ storiesOf('Components|Select/スタイルのカスタマイズ', module)
     )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
-      '<rs-select class="food-select -label-color" label="Pick a Food Group">\n' +
+      '<rs-select class="food-select -label-blue" label="Pick a Food Group">\n' +
       '   <option value="grains">Bread, Cereal, Rice, and Pasta</option>\n' +
       '   <option value="vegetables" disabled>Vegetables</option>\n' +
       '   <option value="fruit">Fruits</option>\n' + 
@@ -238,8 +238,8 @@ storiesOf('Components|Select/スタイルのカスタマイズ', module)
     ${copyCodeBlock(
       '@import "@rsmdc/select/rs-select.scss";\n' +
       '.food-select {\n' +
-      '   &.-label-color {\n' +
-      '      @include rs-select-label-color(orange);\n' +
+      '   &.-label-blue {\n' +
+      '      @include rs-select-label-color(blue);\n' +
       '   }\n' +
       '}', 
       { lang: 'scss' }
@@ -247,7 +247,7 @@ storiesOf('Components|Select/スタイルのカスタマイズ', module)
   `)
   .add('フォーカス時のラベルの色を変える', () => `
     <h4>フォーカス時のラベルの色を変える</h4>
-    <rs-select class="food-select -focused-label-color" label="Pick a Food Group">
+    <rs-select class="food-select -focused -label-orange" label="Pick a Food Group">
       <option value="grains">Bread, Cereal, Rice, and Pasta</option>
       <option value="vegetables" disabled>Vegetables</option>
       <option value="fruit">Fruits</option> 
@@ -259,7 +259,7 @@ storiesOf('Components|Select/スタイルのカスタマイズ', module)
     )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
-      '<rs-select class="food-select -focused-label-color" label="Pick a Food Group">\n' +
+      '<rs-select class="food-select -focused -label-orange" label="Pick a Food Group">\n' +
       '   <option value="grains">Bread, Cereal, Rice, and Pasta</option>\n' +
       '   <option value="vegetables" disabled>Vegetables</option>\n' +
       '   <option value="fruit">Fruits</option>\n' + 
@@ -269,7 +269,7 @@ storiesOf('Components|Select/スタイルのカスタマイズ', module)
     ${copyCodeBlock(
       '@import "@rsmdc/select/rs-select.scss";\n' +
       '.food-select {\n' +
-      '   &.-focused-label-color {\n' +
+      '   &.-focused.-label-orange {\n' +
       '      @include rs-select-focused-label-color(orange);\n' +
       '   }\n' +
       '}', 
@@ -279,7 +279,7 @@ storiesOf('Components|Select/スタイルのカスタマイズ', module)
   .add('線の色を変える', () => `
     <h4>線の色を変える</h4>
     <p>タイプがdefaultの時に使用</p>
-    <rs-select class="food-select -bottom-line-color" label="Pick a Food Group">
+    <rs-select class="food-select -line-green" label="Pick a Food Group">
       <option value="grains">Bread, Cereal, Rice, and Pasta</option>
       <option value="vegetables" disabled>Vegetables</option>
       <option value="fruit">Fruits</option> 
@@ -291,7 +291,7 @@ storiesOf('Components|Select/スタイルのカスタマイズ', module)
     )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
-      '<rs-select class="food-select -bottom-line-color" label="Pick a Food Group">\n' +
+      '<rs-select class="food-select -line-green" label="Pick a Food Group">\n' +
       '   <option value="grains">Bread, Cereal, Rice, and Pasta</option>\n' +
       '   <option value="vegetables" disabled>Vegetables</option>\n' +
       '   <option value="fruit">Fruits</option>\n' + 
@@ -301,8 +301,8 @@ storiesOf('Components|Select/スタイルのカスタマイズ', module)
     ${copyCodeBlock(
       '@import "@rsmdc/select/rs-select.scss";\n' +
       '.food-select {\n' +
-      '   &.-bottom-line-color {\n' +
-      '      @include rs-select-bottom-line-color(orange);\n' +
+      '   &.-line-green {\n' +
+      '      @include rs-select-bottom-line-color(green);\n' +
       '   }\n' +
       '}', 
       { lang: 'scss' }
@@ -311,7 +311,7 @@ storiesOf('Components|Select/スタイルのカスタマイズ', module)
   .add('ホバー時の下線の色を変える', () => `
     <h4>ホバー時の下線の色を変える</h4>
     <p>タイプがdefaultの時に使用</p>
-    <rs-select class="food-select -hover-bottom-line-color" label="Pick a Food Group">
+    <rs-select class="food-select -hover -line-blue" label="Pick a Food Group">
       <option value="grains">Bread, Cereal, Rice, and Pasta</option>
       <option value="vegetables" disabled>Vegetables</option>
       <option value="fruit">Fruits</option> 
@@ -323,7 +323,7 @@ storiesOf('Components|Select/スタイルのカスタマイズ', module)
     )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
-      '<rs-select class="food-select -hover-bottom-line-color" label="Pick a Food Group">\n' +
+      '<rs-select class="food-select -hover -line-blue" label="Pick a Food Group">\n' +
       '   <option value="grains">Bread, Cereal, Rice, and Pasta</option>\n' +
       '   <option value="vegetables" disabled>Vegetables</option>\n' +
       '   <option value="fruit">Fruits</option>\n' + 
@@ -333,8 +333,8 @@ storiesOf('Components|Select/スタイルのカスタマイズ', module)
     ${copyCodeBlock(
       '@import "@rsmdc/select/rs-select.scss";\n' +
       '.food-select {\n' +
-      '   &.-hover-bottom-line-color {\n' +
-      '      @include rs-select-hover-bottom-line-color(orange);\n' +
+      '   &.-hover.-line-blue {\n' +
+      '      @include rs-select-hover-bottom-line-color(blue);\n' +
       '   }\n' +
       '}', 
       { lang: 'scss' }
@@ -343,7 +343,7 @@ storiesOf('Components|Select/スタイルのカスタマイズ', module)
   .add('フォーカス時の下線の色を変える', () => `
     <h4>フォーカス時の下線の色を変える</h4>
     <p>タイプがdefaultの時に使用</p>
-    <rs-select class="food-select -focused-bottom-line-color" label="Pick a Food Group">
+    <rs-select class="food-select -focused -line-pink" label="Pick a Food Group">
       <option value="grains">Bread, Cereal, Rice, and Pasta</option>
       <option value="vegetables" disabled>Vegetables</option>
       <option value="fruit">Fruits</option> 
@@ -354,7 +354,7 @@ storiesOf('Components|Select/スタイルのカスタマイズ', module)
     )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
-      '<rs-select class="food-select -focused-bottom-line-color" label="Pick a Food Group">\n' +
+      '<rs-select class="food-select -focused -line-pink" label="Pick a Food Group">\n' +
       '   <option value="grains">Bread, Cereal, Rice, and Pasta</option>\n' +
       '   <option value="vegetables" disabled>Vegetables</option>\n' +
       '   <option value="fruit">Fruits</option>\n' + 
@@ -364,8 +364,8 @@ storiesOf('Components|Select/スタイルのカスタマイズ', module)
     ${copyCodeBlock(
       '@import "@rsmdc/select/rs-select.scss";\n' +
       '.food-select {\n' +
-      '   &.-focused-bottom-line-color {\n' +
-      '      @include rs-select-hover-bottom-line-color(orange);\n' +
+      '   &.-focused.-line-pink{\n' +
+      '      @include rs-select-hover-bottom-line-color(pink);\n' +
       '   }\n' +
       '}', 
       { lang: 'scss' }
@@ -374,7 +374,7 @@ storiesOf('Components|Select/スタイルのカスタマイズ', module)
   .add('枠線の色を変える', () => `
     <h4>枠線の色を変える</h4>
     <p>タイプがoutlinedの時に使用</p>
-    <rs-select class="food-select -select-type -outline-color" label="Pick a Food Group">
+    <rs-select class="food-select -outlined -blue" label="Pick a Food Group">
       <option value="grains">Bread, Cereal, Rice, and Pasta</option>
       <option value="vegetables" disabled>Vegetables</option>
       <option value="fruit">Fruits</option> 
@@ -385,7 +385,7 @@ storiesOf('Components|Select/スタイルのカスタマイズ', module)
     )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
-      '<rs-select class="food-select -select-type -outline-color" label="Pick a Food Group">\n' +
+      '<rs-select class="food-select -outlined -blue" label="Pick a Food Group">\n' +
       '   <option value="grains">Bread, Cereal, Rice, and Pasta</option>\n' +
       '   <option value="vegetables" disabled>Vegetables</option>\n' +
       '   <option value="fruit">Fruits</option>\n' + 
@@ -395,11 +395,11 @@ storiesOf('Components|Select/スタイルのカスタマイズ', module)
     ${copyCodeBlock(
       '@import "@rsmdc/select/rs-select.scss";\n' +
       '.food-select {\n' +
-      '   &.-select-type {\n' +
+      '   &.-outlined {\n' +
       '      @include rs-select-type(outlined);\n' +
       '   }\n' +
-      '   &.-outline-color {\n' +
-      '      @include rs-select-outline-color(orange);\n' +
+      '   &.-blue {\n' +
+      '      @include rs-select-outline-color(blue);\n' +
       '   }\n' +
       '}', 
       { lang: 'scss' }
@@ -408,7 +408,7 @@ storiesOf('Components|Select/スタイルのカスタマイズ', module)
   .add('ホバー時の枠線の色を変える', () => `
     <h4>ホバー時の枠線の色を変える</h4>
     <p>タイプがoutlinedの時に使用</p>
-    <rs-select class="food-select -select-type -hover-outline-color" label="Pick a Food Group">
+    <rs-select class="food-select -outlined -hover -line-orange" label="Pick a Food Group">
       <option value="grains">Bread, Cereal, Rice, and Pasta</option>
       <option value="vegetables" disabled>Vegetables</option>
       <option value="fruit">Fruits</option> 
@@ -420,7 +420,7 @@ storiesOf('Components|Select/スタイルのカスタマイズ', module)
     )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
-      '<rs-select class="food-select -select-type -hover-outline-color" label="Pick a Food Group">\n' +
+      '<rs-select class="food-select -outlined -hover -line-orange" label="Pick a Food Group">\n' +
       '   <option value="grains">Bread, Cereal, Rice, and Pasta</option>\n' +
       '   <option value="vegetables" disabled>Vegetables</option>\n' +
       '   <option value="fruit">Fruits</option>\n' + 
@@ -430,10 +430,10 @@ storiesOf('Components|Select/スタイルのカスタマイズ', module)
     ${copyCodeBlock(
       '@import "@rsmdc/select/rs-select.scss";\n' +
       '.food-select {\n' +
-      '   &.-select-type {\n' +
+      '   &.-outlined {\n' +
       '      @include rs-select-type(outlined);\n' +
       '   }\n' +
-      '   &.-hover-outline-color {\n' +
+      '   &.-hover.-line-orange {\n' +
       '      @include rs-select-hover-outline-color(orange);\n' +
       '   }\n' +
       '}', 
@@ -443,7 +443,7 @@ storiesOf('Components|Select/スタイルのカスタマイズ', module)
   .add('フォーカス時の枠線の色を変える', () => `
     <h4>フォーカス時の枠線の色を変える</h4>
     <p>タイプがoutlinedの時に使用</p>
-    <rs-select class="food-select -select-type -focused-outline-color" label="Pick a Food Group">
+    <rs-select class="food-select -outlined -focused -line-pink" label="Pick a Food Group">
       <option value="grains">Bread, Cereal, Rice, and Pasta</option>
       <option value="vegetables" disabled>Vegetables</option>
       <option value="fruit">Fruits</option> 
@@ -454,7 +454,7 @@ storiesOf('Components|Select/スタイルのカスタマイズ', module)
     )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
-      '<rs-select class="food-select -select-type -focused-outline-color" label="Pick a Food Group">\n' +
+      '<rs-select class="food-select -select-type -focused -line-pink" label="Pick a Food Group">\n' +
       '   <option value="grains">Bread, Cereal, Rice, and Pasta</option>\n' +
       '   <option value="vegetables" disabled>Vegetables</option>\n' +
       '   <option value="fruit">Fruits</option>\n' + 
@@ -464,11 +464,11 @@ storiesOf('Components|Select/スタイルのカスタマイズ', module)
     ${copyCodeBlock(
       '@import "@rsmdc/select/rs-select.scss";\n' +
       '.food-select {\n' +
-      '   &.-select-type {\n' +
+      '   &.-outlined {\n' +
       '      @include rs-select-type(outlined);\n' +
       '   }\n' +
-      '   &.-focused-outline-color {\n' +
-      '      @include rs-select-focused-outline-color(orange);\n' +
+      '   &.-focused.-line-pink {\n' +
+      '      @include rs-select-focused-outline-color(pink);\n' +
       '   }\n' +
       '}', 
       { lang: 'scss' }
