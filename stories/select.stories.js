@@ -139,11 +139,13 @@ storiesOf('Components|Select/スタイルのカスタマイズ/セレクトの�
       { lang: 'html' }
     )}
     ${copyCodeBlock(
-      `@import "@rsmdc/select/rs-select.scss";
-      
-      rs-select {
-        @include rs-select-type(outlined);
-      }`, 
+`@import "@rsmdc/select/rs-select.scss";
+
+.food-select {
+  &.-select-type {
+    @include rs-select-type(outlined);
+  }
+}`, 
         { lang: 'scss' }
     )}
   `)
@@ -173,8 +175,10 @@ storiesOf('Components|Select/スタイルのカスタマイズ', module)
     ${copyCodeBlock(
 `@import "@rsmdc/select/rs-select.scss";
 
-rs-select {
-  @include rs-select-ink-color(pink);
+.food-select {
+  &.-ink-color {
+    @include rs-select-ink-color(red);
+  }
 }`, 
       { lang: 'scss' }
     )}
@@ -200,11 +204,13 @@ rs-select {
       { lang: 'html' }
     )}
     ${copyCodeBlock(
-      `@import "@rsmdc/select/rs-select.scss";
+`@import "@rsmdc/select/rs-select.scss";
 
-      rs-select {
-        @include rs-select-container-fill-color(beige);
-      }`, 
+.food-select {
+  &.-container-fill-color {
+    @include rs-select-container-fill-color(orange);
+  }
+}`, 
         { lang: 'scss' }
     )}
   `)
@@ -270,8 +276,8 @@ rs-select {
       { lang: 'scss' }
     )}
   `)  
-  .add('下線の色を変える', () => `
-    <h4>下線の色を変える</h4>
+  .add('線の色を変える', () => `
+    <h4>線の色を変える</h4>
     <p>タイプがdefaultの時に使用</p>
     <rs-select class="food-select -bottom-line-color" label="Pick a Food Group">
       <option value="grains">Bread, Cereal, Rice, and Pasta</option>
