@@ -120,9 +120,9 @@ storiesOf('Components|Checkbox/スタイルのカスタマイズ', module)
       </ul>
     `
   })
-  .add('チェックボックスのリップルの色を指定した色に変える', () => {
+  .add('リップルの色を指定した色に変える', () => {
     return `
-      <p>チェックボックスのリップルの色を変える。</p>
+      <p>リップルの色を変える。</p>
       <p><x-checkbox class="checkbox -focus-indicator-color">check1</p>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
@@ -145,13 +145,13 @@ storiesOf('Components|Checkbox/スタイルのカスタマイズ', module)
       )}
     `
   })
-  .add('選択状態のチェックボックスの枠線と内部の色を変える(修正予定)', () => {
+  .add('選択状態の枠線と内部の色を変える', () => {
     return `
-    <p>選択状態のチェックボックスの枠線と内部の色を、指定した色に変える。</p>
+    <p>選択状態の枠線と内部の色を、指定した色に変える。</p>
     <p><x-checkbox class="checkbox -container-colors">check1</p>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
-      '@include rs-checkbox-checked-container-colors($borderColor, $containerColor);',
+      '@include rs-checkbox-checked-container-colors($color);',
       { lang: 'scss' }
     )}
     <h4>使用方法</h4>
@@ -163,7 +163,7 @@ storiesOf('Components|Checkbox/スタイルのカスタマイズ', module)
       '@import \'@rsmdc/checkbox/rs-checkbox.scss\';\n\n' +
       '.checkbox {\n' +
       '   &.-checked-container-color {\n' +
-      '     @include rs-checkbox-checked-container-color(red, red);\n' +
+      '     @include rs-checkbox-checked-container-color(red);\n' +
       '   }\n' +
       '}',
       { lang: 'scss' }
@@ -175,13 +175,43 @@ storiesOf('Components|Checkbox/スタイルのカスタマイズ', module)
     </ul>
   `
   })
-  .add('未選択状態のチェックボックスの枠線と内部の色を変える(修正予定)', () => {
+  .add('選択状態の枠線・内部・リップルの色を変える', () => {
     return `
-    <p>未選択状態のチェックボックスの枠線と内部の色を、指定した色に変える。</p>
+    <p>選択状態の枠線・内部・リップルの色を、指定した色に変える。</p>
+    <p><x-checkbox class="checkbox -container-colors">check1</p>
+    <h4>使用するmixin</h4>
+    ${copyCodeBlock(
+      '@include rs-checkbox-fill-color-accessible($color);',
+      { lang: 'scss' }
+    )}
+    <h4>使用方法</h4>
+    ${copyCodeBlock(
+      '<x-checkbox class="checkbox -container-color">check1',
+      { lang: 'html' }
+    )}
+    ${copyCodeBlock(
+      '@import \'@rsmdc/checkbox/rs-checkbox.scss\';\n\n' +
+      '.checkbox {\n' +
+      '   &.-checked-container-color {\n' +
+      '     @include rs-checkbox-fill-color-accessible(red);\n' +
+      '   }\n' +
+      '}',
+      { lang: 'scss' }
+    )}
+    <p>オプション</p>
+    <ul>
+      <li>$borderColor: 枠線の色を指定</li>
+      <li>$containerColor: 内部の色を指定</li>
+    </ul>
+  `
+  })
+  .add('未選択状態の枠線と内部の色を変える', () => {
+    return `
+    <p>未選択状態の枠線と内部の色を、指定した色に変える。</p>
     <p><x-checkbox class="checkbox -unchecked-container-color">check1</p>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
-      '@include rs-checkbox-unchecked-container-color($borderColor, $containerColor);',
+      '@include rs-checkbox-unchecked-stroke-color($color);',
       { lang: 'scss' }
     )}
     <h4>使用方法</h4>
@@ -193,7 +223,7 @@ storiesOf('Components|Checkbox/スタイルのカスタマイズ', module)
       '@import \'@rsmdc/checkbox/rs-checkbox.scss\';\n\n' +
       '.checkbox {\n' +
       '   &.-unchecked-container-color {\n' +
-      '       @include rs-checkbox-unchecked-container-color($borderColor, $containerColor);\n' +
+      '       @include rs-checkbox-unchecked-stroke-color($color);\n' +
       '   }\n' +
       '}',
       { lang: 'scss' }
@@ -211,7 +241,7 @@ storiesOf('Components|Checkbox/スタイルのカスタマイズ', module)
       <p><x-checkbox class="checkbox -label-position">check1</p>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
-        '@include rs-chechbox-label-position($position);',
+        '@include rs-checkbox-label-position($position);',
         { lang: 'scss' }
       )}
       <h4>使用方法</h4>
@@ -223,7 +253,7 @@ storiesOf('Components|Checkbox/スタイルのカスタマイズ', module)
         '@import \'@rsmdc/checkbox/rs-checkbox.scss\';\n\n' +
         '.checkbox {\n' +
         '   &.-label-position {\n' +
-        '       @include rs-chechbox-label-position(left);\n' +
+        '       @include rs-checkbox-label-position(left);\n' +
         '   }\n' +
         '}',
         { lang: 'scss' }

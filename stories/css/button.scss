@@ -84,7 +84,6 @@
     @include rs-button-outline-width(3px);
   }
   &.-icon {
-    @include rs-button-padding-left(30px);
     @include rs-button-icon-image(url('https://cdn3.iconfinder.com/data/icons/pyconic-icons-1-2/512/heart-outline-512.png'));
   }
   &.-text-color {

@@ -18,8 +18,6 @@ window.customElements.define('rs-form-field', FormField)
 
 storiesOf('Components|Textfield', module)
   .addDecorator(withLinks)
-
-  .add('概要', () => ``)
   .add('概要', () => `
     <h4>Textfield</h4>
     <p>テキストフィールドを使用すると、ユーザーはテキストを入力したり編集できる。</p>

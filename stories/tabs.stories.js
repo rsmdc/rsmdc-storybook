@@ -94,13 +94,11 @@ storiesOf('Components|Tabs/スタイルのカスタマイズ', module)
   .add('テキストの色を変える', () => {
     return `
       <p>テキストの色を指定した色に変える。</p>
-      <p>
-        <x-tab-bar class="tab-bar -ink-color">
-          <tab-item class="tab" activated>tab1</tab-item>
-          <tab-item class="tab">tab2</tab-item>
-          <tab-item class="tab">tab3</tab-item>
-        </x-tab-bar>
-      </p>
+      <x-tab-bar class="tab-bar -text-aqua">
+        <tab-item class="tab" activated>tab1</tab-item>
+        <tab-item class="tab">tab2</tab-item>
+        <tab-item class="tab">tab3</tab-item>
+      </x-tab-bar>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
         '@include rs-tab-ink-color($color);',
@@ -108,18 +106,18 @@ storiesOf('Components|Tabs/スタイルのカスタマイズ', module)
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
-        '<x-tab-bar class="tab-bar -ink-color">\n' +
-        '   <tab-item class="tab" activated>tab1<tab-item>\n' +
-        '   <tab-item class="tab">tab2<tab-item>\n' +
-        '   <tab-item class="tab">tab3<tab-item>\n' +
+        '<x-tab-bar class="tab-bar -text-aqua">\n' +
+        '    <tab-item class="tab" activated>tab1<tab-item>\n' +
+        '    <tab-item class="tab">tab2<tab-item>\n' +
+        '    <tab-item class="tab">tab3<tab-item>\n' +
         '</x-tab-bar>',
         { lang: 'html' }
       )}
       ${copyCodeBlock(
         '@import \'@rsmdc/tabs/rs-tabs.scss\';\n\n' +
         '.tab-bar {\n' +
-        '   &.-ink-color {\n' +
-        '       @include rs-tab-ink-color(brown);\n' +
+        '   &.-text-aqua {\n' +
+        '       @include rs-tab-ink-color(aqua);\n' +
         '   }\n' +
         '}',
         { lang: 'scss' }
@@ -130,24 +128,22 @@ storiesOf('Components|Tabs/スタイルのカスタマイズ', module)
       </ul>
     `
   })
-  .add('リップルの色を変える', () => {
+  .add('選択状態のテキストの色を変える', () => {
     return `
-      <p>リップルの色を指定した色に変える。</p>
-      <p>
-        <x-tab-bar class="tab-bar -states-color">
-          <tab-item class="tab" activated>tab1</tab-item>
-          <tab-item class="tab">tab2</tab-item>
-          <tab-item class="tab">tab3</tab-item>
-        </x-tab-bar>
-      </p>
+      <p>選択状態のテキストの色を指定した色に変える。</p>
+      <x-tab-bar class="tab-bar -activated-aqua">
+        <tab-item class="tab" activated>tab1</tab-item>
+        <tab-item class="tab">tab2</tab-item>
+        <tab-item class="tab">tab3</tab-item>
+      </x-tab-bar>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
-        '@include rs-tab-states-color($color);',
+        '@include rs-tab-activated-color($color);',
         { lang: 'scss' }
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
-        '<x-tab-bar class="tab-bar -ink-color">\n' +
+        '<x-tab-bar class="tab-bar -activated-aqua">\n' +
         '   <tab-item class="tab" activated>tab1<tab-item>\n' +
         '   <tab-item class="tab">tab2<tab-item>\n' +
         '   <tab-item class="tab">tab3<tab-item>\n' +
@@ -157,8 +153,42 @@ storiesOf('Components|Tabs/スタイルのカスタマイズ', module)
       ${copyCodeBlock(
         '@import \'@rsmdc/tabs/rs-tabs.scss\';\n\n' +
         '.tab-bar {\n' +
-        '   &.ink-color {\n' +
-        '       @include rs-tab-states-color(gray);\n' +
+        '   &.-activated-aqua {\n' +
+        '       @include rs-tab-activated-ink-color(aqua);\n' +
+        '       @include rs-tab-indicator-color(aqua);\n' +
+        '   }\n' +
+        '}',
+        { lang: 'scss' }
+      )}
+    `
+  })
+  .add('リップルの色を変える', () => {
+    return `
+      <p>リップルの色を指定した色に変える。</p>
+      <x-tab-bar class="tab-bar -ripple-aqua">
+        <tab-item class="tab" activated>tab1</tab-item>
+        <tab-item class="tab">tab2</tab-item>
+        <tab-item class="tab">tab3</tab-item>
+      </x-tab-bar>
+      <h4>使用するmixin</h4>
+      ${copyCodeBlock(
+        '@include rs-tab-states-color($color);',
+        { lang: 'scss' }
+      )}
+      <h4>使用方法</h4>
+      ${copyCodeBlock(
+        '<x-tab-bar class="tab-bar -ripple-aqua">\n' +
+        '   <tab-item class="tab" activated>tab1<tab-item>\n' +
+        '   <tab-item class="tab">tab2<tab-item>\n' +
+        '   <tab-item class="tab">tab3<tab-item>\n' +
+        '</x-tab-bar>',
+        { lang: 'html' }
+      )}
+      ${copyCodeBlock(
+        '@import \'@rsmdc/tabs/rs-tabs.scss\';\n\n' +
+        '.tab-group {\n' +
+        '   &.-ripple-aqua {\n' +
+        '       @include rs-tab-states-color(aqua);\n' +
         '   }\n' +
         '}',
         { lang: 'scss' }
@@ -168,13 +198,11 @@ storiesOf('Components|Tabs/スタイルのカスタマイズ', module)
   .add('タブの下線の色を変える', () => {
     return `
       <p>タブの下線の色を指定した色に変える。</p>
-      <p>
-        <x-tab-bar class="tab-bar -indicator-color">
-          <tab-item class="tab" activated>tab1</tab-item>
-          <tab-item class="tab">tab2</tab-item>
-          <tab-item class="tab">tab3</tab-item>
-        </x-tab-bar>
-      </p>
+      <x-tab-bar class="tab-bar -indicator-aqua">
+        <tab-item class="tab" activated>tab1</tab-item>
+        <tab-item class="tab">tab2</tab-item>
+        <tab-item class="tab">tab3</tab-item>
+      </x-tab-bar>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
         '@include rs-tab-indicator-color($color);',
@@ -182,7 +210,7 @@ storiesOf('Components|Tabs/スタイルのカスタマイズ', module)
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
-        '<x-tab-bar class="tab-bar -indicator-color">\n' +
+        '<x-tab-bar class="tab-bar -indicator-aqua">\n' +
         '   <tab-item class="tab" activated>tab1<tab-item>\n' +
         '   <tab-item class="tab">tab2<tab-item>\n' +
         '   <tab-item class="tab">tab3<tab-item>\n' +
@@ -192,8 +220,9 @@ storiesOf('Components|Tabs/スタイルのカスタマイズ', module)
       ${copyCodeBlock(
         '@import \'@rsmdc/tabs/rs-tabs.scss\';\n\n' +
         '.tab-bar {\n' +
-        '   &.-indicator-color {\n' +
-        '     @include rs-tab-indicator-color(olive);\n' +
+        '   &.-indicator-aqua {\n' +
+        '       @include rs-tab-indicator-color(aqua);\n' +
+        '       @include rs-tab-activated-ink-color(aqua);\n' +
         '   }\n' +
         '}',
         { lang: 'scss' }
@@ -203,13 +232,11 @@ storiesOf('Components|Tabs/スタイルのカスタマイズ', module)
   .add('タブの下線の太さを変える', () => {
     return `
       <p>タブの下線の太さを指定した太さに変える。</p>
-      <p>
-        <x-tab-bar class="tab-bar -indicator-height">
-          <tab-item class="tab" activated>tab1</tab-item>
-          <tab-item class="tab">tab2</tab-item>
-          <tab-item class="tab">tab3</tab-item>
-        </x-tab-bar>
-      </p>
+      <x-tab-bar class="tab-bar -thick">
+        <tab-item class="tab" activated>tab1</tab-item>
+        <tab-item class="tab">tab2</tab-item>
+        <tab-item class="tab">tab3</tab-item>
+      </x-tab-bar>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
         '@include rs-tab-indicator-height($height);',
@@ -217,18 +244,18 @@ storiesOf('Components|Tabs/スタイルのカスタマイズ', module)
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
-        '<x-tab-bar class="tab-bar -indicator-height">\n' +
+        '<x-tab-bar class="tab-bar -thick">\n' +
         '   <tab-item class="tab" activated>tab1<tab-item>\n' +
         '   <tab-item class="tab">tab2<tab-item>\n' +
         '   <tab-item class="tab">tab3<tab-item>\n' +
-        '</x-tab-bar>',
+        '</x-tab-bar>', 
         { lang: 'html' }
       )}
       ${copyCodeBlock(
         '@import \'@rsmdc/tabs/rs-tabs.scss\';\n\n' +
         '.tab-bar {\n' +
-        '   &.-indicator-height {\n' +
-        '      @include rs-tab-indicator-height(4px);\n' +
+        '   &.-thick {\n' +
+        '       @include rs-tab-indicator-height(4px);\n' +
         '   }\n' +
         '}',
         { lang: 'scss' }
@@ -242,13 +269,11 @@ storiesOf('Components|Tabs/スタイルのカスタマイズ', module)
   .add('タブの下線幅をテキスト幅に合わせる', () => {
     return `
       <p>タブの下線幅をテキストの幅に合わせる。</p>
-      <p>
-        <x-tab-bar class="tab-bar -indicator-width-fixed-contents">
-          <tab-item class="tab" activated>tab1</tab-item>
-          <tab-item class="tab">tab2</tab-item>
-          <tab-item class="tab">tab3</tab-item>
-        </x-tab-bar>
-      </p>
+      <x-tab-bar class="tab-bar -text-width">
+        <tab-item class="tab" activated>tab1</tab-item>
+        <tab-item class="tab">tab2</tab-item>
+        <tab-item class="tab">tab3</tab-item>
+      </x-tab-bar>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
         '@include rs-tab-indicator-width-fixed-contents;',
@@ -256,7 +281,7 @@ storiesOf('Components|Tabs/スタイルのカスタマイズ', module)
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
-        '<x-tab-bar class="tab-bar -indicator-width-fixed-contents">\n' +
+        '<x-tab-bar class="tab-bar -text-width">\n' +
         '   <tab-item class="tab" activated>tab1<tab-item>\n' +
         '   <tab-item class="tab">tab2<tab-item>\n' +
         '   <tab-item class="tab">tab3<tab-item>\n' +
@@ -266,8 +291,8 @@ storiesOf('Components|Tabs/スタイルのカスタマイズ', module)
       ${copyCodeBlock(
         '@import \'@rsmdc/tabs/rs-tabs.scss\';\n\n' +
         '.tab-bar {\n' +
-        '   &.-indicator-width-fixed-contents {\n' +
-        '      @include rs-tab-indicator-width-fixed-contents;\n' +
+        '   &.-text-width {\n' +
+        '       @include rs-tab-indicator-width-fixed-contents;\n' +
         '   }\n' +
         '}',
         { lang: 'scss' }
@@ -277,12 +302,11 @@ storiesOf('Components|Tabs/スタイルのカスタマイズ', module)
   .add('タブバーの幅を変える', () => {
     return `
     <p>タブバーの幅を指定した幅に変える。</p>
-    <p>
-      <x-tab-bar class="tab-bar -bar-width">
-        <tab-item class="tab" activated>tab1</tab-item>
-        <tab-item class="tab">tab2</tab-item>
-        <tab-item class="tab">tab3</tab-item>
-      </x-tab-bar>
+    <x-tab-bar class="tab-bar -short-bar">
+      <tab-item class="tab" activated>tab1</tab-item>
+      <tab-item class="tab">tab2</tab-item>
+      <tab-item class="tab">tab3</tab-item>
+    </x-tab-bar>
     </p>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
@@ -291,19 +315,18 @@ storiesOf('Components|Tabs/スタイルのカスタマイズ', module)
     )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
-      '<x-tab-bar class="tab-bar -bar-width">\n' +
+      '<x-tab-bar class="tab-bar -short-bar">\n' +
       '   <tab-item class="tab" activated>tab1<tab-item>\n' +
       '   <tab-item class="tab">tab2<tab-item>\n' +
       '   <tab-item class="tab">tab3<tab-item>\n' +
       '</x-tab-bar>',
-      { lang: 'html' }
-      
+    { lang: 'html' }
     )}
     ${copyCodeBlock(
       '@import \'@rsmdc/tabs/rs-tabs.scss\';\n\n' +
       '.tab-bar {\n' +
-      '   &.-bar-width {\n' +
-      '      @include rs-tab-bar-width(600px);\n' +
+      '   &.-short-bar {\n' +
+      '      @include rs-tab-bar-width(200px);\n' +
       '   }\n' +
       '}',
       { lang: 'scss' }
@@ -320,13 +343,11 @@ storiesOf('Components|Tabs/スタイルのカスタマイズ', module)
         タブバーの幅を指定した幅に変える。 <br>
         （タブ幅が全て固定になる）
       </p>
-      <p>
-        <x-tab-bar class="tab-bar -fixed-width">
-          <tab-item class="tab" activated>tab1</tab-item>
-          <tab-item class="tab">tab2</tab-item>
-          <tab-item class="tab">tab3</tab-item>
-        </x-tab-bar>
-      </p>
+      <x-tab-bar class="tab-bar -fixed">
+        <tab-item class="tab" activated>tab1</tab-item>
+        <tab-item class="tab">tab2</tab-item>
+        <tab-item class="tab">tab3</tab-item>
+      </x-tab-bar>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
         '@include rs-tab-fixed-width($width);',
@@ -334,7 +355,7 @@ storiesOf('Components|Tabs/スタイルのカスタマイズ', module)
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
-        '<x-tab-bar class="tab-bar -fixed-width">\n' +
+        '<x-tab-bar class="tab-bar -fixed">\n' +
         '   <tab-item class="tab" activated>tab1<tab-item>\n' +
         '   <tab-item class="tab">tab2<tab-item>\n' +
         '   <tab-item class="tab">tab3<tab-item>\n' +
@@ -344,8 +365,8 @@ storiesOf('Components|Tabs/スタイルのカスタマイズ', module)
       ${copyCodeBlock(
         '@import \'@rsmdc/tabs/rs-tabs.scss\';\n\n' +
         '.tab-bar {\n' +
-        '   &.-fixed-width {\n' +
-        '     @include rs-tab-ficxed-width(100px);\n' +
+        '   &.-fixed {\n' +
+        '     @include rs-tab-bar-width(100px);\n' +
         '   }\n' +
         '}',
         { lang: 'scss' }
@@ -354,9 +375,9 @@ storiesOf('Components|Tabs/スタイルのカスタマイズ', module)
   })
   .add('タブ全体の位置を変える', () => {
     return `
-      <p>タブ全体の位置を指定した位置に変える。</p>
+      <p>タブ全体の位置を指定した位置に変える。(タブ幅を変更した時有効)</p>
       <p>
-        <x-tab-bar class="tab-bar -bar-position">
+        <x-tab-bar class="tab-bar -center">
           <tab-item class="tab" activated>tab1</tab-item>
           <tab-item class="tab">tab2</tab-item>
           <tab-item class="tab">tab3</tab-item>
@@ -369,7 +390,7 @@ storiesOf('Components|Tabs/スタイルのカスタマイズ', module)
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
-        '<x-tab-bar class="tab-bar -bar-position">\n' +
+        '<x-tab-bar class="tab-bar -center">\n' +
         '   <tab-item class="tab" activated>tab1<tab-item>\n' +
         '   <tab-item class="tab">tab2<tab-item>\n' +
         '   <tab-item class="tab">tab3<tab-item>\n' +
@@ -379,9 +400,9 @@ storiesOf('Components|Tabs/スタイルのカスタマイズ', module)
       ${copyCodeBlock(
         '@import \'@rsmdc/tabs/rs-tabs.scss\';\n\n' +
         '.tab-bar {\n' +
-        '   &.-bar-position {\n' +
-        '      @include rs-tab-fixed-width(90px);\n' +
-        '      @include rs-tab-bar-position(align-end);\n' +
+        '   &.-center {\n' +
+        '      @include rs-tab-bar-width(200px);\n' +
+        '      @include rs-tab-bar-position(align-center);\n' +
         '   }\n' +
         '}',
         { lang: 'scss' }
@@ -400,31 +421,37 @@ storiesOf('Components|Tabs/スタイルのカスタマイズ', module)
     return `
       <p>タブの横に指定したアイコンを表示させる。</p>
       <p>
-        <x-tab-bar class="tab-bar -icon-image">
-          <tab-item class="tab" activated>tab1</tab-item>
-          <tab-item class="tab">tab2</tab-item>
-          <tab-item class="tab">tab3</tab-item>
+        <x-tab-bar class="tab-bar">
+          <tab-item class="tab -cut" activated>tab1</tab-item>
+          <tab-item class="tab -copy">tab2</tab-item>
+          <tab-item class="tab -star">tab3</tab-item>
         </x-tab-bar>
       </p>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
-        '@include rs-tab-icon-image($url);',
+        '@include rs-tab-icon-image($icon, $codepoint: \'\');',
         { lang: 'scss' }
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
-        '<x-tab-bar class="tab-bar -icon-image">\n' +
-        '   <tab-item class="tab" activated>tab1<tab-item>\n' +
-        '   <tab-item class="tab">tab2<tab-item>\n' +
-        '   <tab-item class="tab">tab3<tab-item>\n' +
+        '<x-tab-bar class="tab-bar">\n' +
+        '   <tab-item class="tab -cut" activated>tab1<tab-item>\n' +
+        '   <tab-item class="tab -copy">tab2<tab-item>\n' +
+        '   <tab-item class="tab -star">tab3<tab-item>\n' +
         '</x-tab-bar>',
         { lang: 'html' }
       )}
       ${copyCodeBlock(
         '@import \'@rsmdc/tabs/rs-tabs.scss\';\n\n' +
         '.tab-bar {\n' +
-        '   &.-icon-image {\n' +
+        '   > .tab.-cut {\n' +
         '      @include rs-tab-icon-image(url(\'http://icons.iconarchive.com/icons/iconsmind/outline/512/Mail-icon.png\'));\n' +
+        '   }\n' +
+        '   > .tab.-copy {\n' +
+        '      @include rs-tab-icon-image(url(\'http://icons.iconarchive.com/icons/iconsmind/outline/512/Mail-icon.png\'));\n' +
+        '   }\n' +
+        '   > .tab.-star {\n' +
+        '      @include rs-tab-icon-image(Material Icons, map-get($material-icons-codepoints, stars));\n' +
         '   }\n' +
         '}',
         { lang: 'scss' }
@@ -432,8 +459,15 @@ storiesOf('Components|Tabs/スタイルのカスタマイズ', module)
       <p>オプション</p>
       <ul>
         <li>
-          $url: アイコン画像の指定<br>
-          例）url('http://icons.iconarchive.com/icons/iconsmind/outline/512/Mail-icon.png')
+          $icon: アイコン画像の指定、もしくはfont-familyの指定<br>
+          例)<br>
+          ・url('http://icons.iconarchive.com/icons/iconsmind/outline/512/Mail-icon.png')<br>
+          ・Material Icons
+        </li>
+        <li>
+          $codepoint: icon-fontのコードポイント(icon-fontを使用する際必須)<br> 
+          例)<br>
+          ・e84d
         </li>
       </ul>
     `
@@ -455,7 +489,7 @@ storiesOf('Components|Tabs/スタイルのカスタマイズ', module)
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
-        '<x-tab-bar class="tab-bar -icon-position">\n' +
+        '<x-tab-bar class="tab-bar -right -star">\n' +
         '   <tab-item class="tab" activated>tab1<tab-item>\n' +
         '   <tab-item class="tab">tab2<tab-item>\n' +
         '   <tab-item class="tab">tab3<tab-item>\n' +
@@ -465,8 +499,8 @@ storiesOf('Components|Tabs/スタイルのカスタマイズ', module)
       ${copyCodeBlock(
         '@import \'@rsmdc/tabs/rs-tabs.scss\';\n\n' +
         '.tab-bar {\n' +
-        '   &.-icon-position {\n' +
-        '      @include rs-tab-icon-image(url(\'http://icons.iconarchive.com/icons/iconsmind/outline/512/Mail-icon.png\'));\n' +
+        '   &.-right.-star {\n' +
+        '      @include rs-tab-icon-image(Material Icons, map-get($material-icons-codepoints, stars));\n' +
         '      @include rs-tab-icon-position(right);\n' +
         '   }\n' +
         '}',

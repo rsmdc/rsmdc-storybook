@@ -8,9 +8,9 @@
     @include rs-checkbox-focus-indicator-color(brown);
   }
   &.-container-colors {
-    @include rs-checkbox-container-colors(red, red);
+    @include rs-checkbox-checked-container-colors(red);
   }
   &.-label-position {
-    @include rs-chechbox-label-position(left);
+    @include rs-checkbox-label-position(left);
   }
 }

@@ -558,7 +558,7 @@ storiesOf('Components|Button/スタイルのカスタマイズ', module)
       <x-button class="outlined -outline-width -horizontal-padding">button</x-button>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
-        '@include rs-button-horizontal-padding($width, $padding);',
+        '@include rs-button-outline-width($width);',
         { lang: 'scss' }
       )}
       <h4>使用方法</h4>

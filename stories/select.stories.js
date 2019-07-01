@@ -27,20 +27,18 @@ storiesOf('Components|Select', module)
     </ul>
   `)
   .add('使用方法', () => `
-    <h4>使用方法</h4>
-    <div class="result">
     <rs-select class="food-select" label="Pick a Food Group">
-      <option value="grains">Bread, Cereal, Rice, and Pasta</option>
+      <option value="grains"> Bread, Cereal, Rice, and Pasta</option>
       <option value="vegetables" disabled>Vegetables</option>
       <option value="fruit">Fruit</option> 
     </rs-select>
-    </div>
+    <h4>使用方法</h4>
     ${copyCodeBlock(
-      '<rs-select class="food-select" label="Pick a Food Group">\n' +
-      '   <option value="grains">Bread, Cereal, Rice, and Pasta</option>\n' +
-      '   <option value="vegetables" disabled>Vegetables</option>\n' +
-      '   <option value="fruit">Fruits</option>\n' + 
-      '</rs-select>',
+` <rs-select class="food-select" label="Pick a Food Group">
+    <option value="grains">Bread, Cereal, Rice, and Pasta</option>
+    <option value="vegetables" disabled>Vegetables</option>
+    <option value="fruit">Fruits</option> 
+  </rs-select>`,
       { lang: 'html' }
     )}
     <h4>HTML要素</h4>
@@ -129,8 +127,7 @@ storiesOf('Components|Select/スタイルのカスタマイズ/セレクトの�
     </rs-select>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
-      `@include rs-select-type($type);`, 
-      { lang: 'scss' }
+      `@include rs-select-type($type);`, { lang: 'scss' }
     )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
@@ -142,15 +139,14 @@ storiesOf('Components|Select/スタイルのカスタマイズ/セレクトの�
       { lang: 'html' }
     )}
     ${copyCodeBlock(
-      '@import "@rsmdc/select/rs-select.scss";\n' +
-      '.food-select {\n' +
-      '   &.-select-type {\n' +
-      '      @include rs-select-type(outlined);\n' +
-      '   }\n' +
-      '}', 
-      { lang: 'scss' }
+      `@import "@rsmdc/select/rs-select.scss";
+      
+      rs-select {
+        @include rs-select-type(outlined);
+      }`, 
+        { lang: 'scss' }
     )}
-`)
+  `)
 
 storiesOf('Components|Select/スタイルのカスタマイズ', module)
   .add('選択したテキストの色を変える', () => `
@@ -175,12 +171,11 @@ storiesOf('Components|Select/スタイルのカスタマイズ', module)
       { lang: 'html' }
     )}
     ${copyCodeBlock(
-      '@import "@rsmdc/select/rs-select.scss";\n' +
-      '.food-select {\n' +
-      '   &.-ink-color {\n' +
-      '      @include rs-select-ink-color(red);\n' +
-      '   }\n' +
-      '}', 
+`@import "@rsmdc/select/rs-select.scss";
+
+rs-select {
+  @include rs-select-ink-color(pink);
+}`, 
       { lang: 'scss' }
     )}
   `)
@@ -205,13 +200,12 @@ storiesOf('Components|Select/スタイルのカスタマイズ', module)
       { lang: 'html' }
     )}
     ${copyCodeBlock(
-      '@import "@rsmdc/select/rs-select.scss";\n' +
-      '.food-select {\n' +
-      '   &.-container-fill-color {\n' +
-      '      @include rs-select-container-fill-color(orange);\n' +
-      '   }\n' +
-      '}', 
-      { lang: 'scss' }
+      `@import "@rsmdc/select/rs-select.scss";
+
+      rs-select {
+        @include rs-select-container-fill-color(beige);
+      }`, 
+        { lang: 'scss' }
     )}
   `)
   .add('ラベルの色を変える', () => `
