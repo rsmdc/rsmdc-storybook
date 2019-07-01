@@ -13,4 +13,10 @@
   &.-label-position {
     @include rs-checkbox-label-position(left);
   }
+  &.-fill-color-accessible {
+    @include rs-checkbox-fill-color-accessible(orange);
+  }
+  &.-unchecked-stroke-color {
+    @include rs-checkbox-unchecked-stroke-color(orange);
+  }
 }

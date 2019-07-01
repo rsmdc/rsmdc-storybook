@@ -14,7 +14,7 @@ window.customElements.define('drawer-title', DrawerTitle)
 window.customElements.define('drawer-subtitle', DrawerSubtitle)
 window.customElements.define('drawer-header', DrawerHeader)
 window.customElements.define('drawer-content', DrawerContent)
-window.customElements.define('x-drawer', Drawer)
+window.customElements.define('rs-drawer', Drawer)
 
 storiesOf('Components|Drawer', module)
   .addDecorator(withLinks)
@@ -52,43 +52,44 @@ storiesOf('Components|Drawer', module)
   })
   .add('使用方法', () => {
     return `
-      <x-app-layout class="app-layout">
-        <x-drawer class="drawer" opened>
+      <rs-app-layout class="app-layout">
+        <rs-drawer class="drawer" opened>
           <drawer-header class="header">
             <drawer-title class="title">タイトル</drawer-title>
             <drawer-subtitle class="subtitle">サブタイトル</drawer-subtitle>
           </drawer-header>
-          <drawer-content class="contents"></drawer-content>
-        </x-drawer>
+          <drawer-content class="contents">
+          </drawer-content>
+        </rs-drawer>
         <app-layout-content class="contents">
-          <x-app-bar class="appbar">
+          <rs-app-bar class="appbar">
             <app-bar-nav class="nav"></app-bar-nav>
             <app-bar-title>title</app-bar-title>
-          </x-app-bar>
+          </rs-app-bar>
           <h4>使用方法</h4>
         </app-layout-content>
-      </x-app-layout>
+      </rs-app-layout>
       ${copyCodeBlock(
-        '<x-app-layout class="app-layout">\n' +
-        '   <x-drawer class="drawer" opened>\n' +
-        '      <drawer-header class="header">\n' +
-        '         <drawer-title class="title">タイトル</drawer-title>\n' +
-        '         <drawer-subtitle class="subtitle">サブタイトル</drawer-subtitle>\n' +
-        '      </drawer-header>\n' +
-        '      <drawer-content class="contents">\n' +
-        '         <x-list class="list">\n' +
-        '               ...\n' +
-        '         </x-list>\n' +
-        '      </drawer-content>\n' +
-        '   </x-drawer>\n' +
-        '   <app-layout-content class="contents">\n' +
-        '       <x-app-bar class="appbar">\n' +
-        '          <app-bar-nav></app-bar-nav>\n' +
-        '          <app-bar-title>title</app-bar-title>\n' +
-        '       </x-app-bar>\n' +
-        '         ...\n' +
-        '   </app-layout-content>\n' +
-        '</x-app-layout>\n',
+`<rs-app-layout class="app-layout">
+    <rs-drawer class="drawer" opened>
+        <drawer-header class="header">
+          <drawer-title class="title">タイトル</drawer-title>
+          <drawer-subtitle class="subtitle">サブタイトル</drawer-subtitle>
+        </drawer-header>
+        <drawer-content class="contents">
+          <rs-list class="list">
+            ...
+          </rs-list>
+        </drawer-content>
+    </rs-drawer>
+    <app-layout-content class="contents">
+        <rs-app-bar class="appbar">
+          <app-bar-nav></app-bar-nav>
+          <app-bar-title>title</app-bar-title>
+        </rs-app-bar>
+          ...
+    </app-layout-content>
+</rs-app-layout>`,
         { lang: 'html' }
       )}
       ${copyCodeBlock(
@@ -100,7 +101,7 @@ storiesOf('Components|Drawer', module)
         { lang: 'scss' }
       )}
       <h4>HTML要素</h4>
-      <p>custom elementsを<code>x</code>と<code>drawer</code>のプレフィックスをつけて定義した前提です。<br>
+      <p>custom elementsを<code>rs</code>と<code>drawer</code>のプレフィックスをつけて定義した前提です。<br>
         下記HTML要素を使うことで、custom elementsが表示されます。
       </p>
       <table>
@@ -111,7 +112,7 @@ storiesOf('Components|Drawer', module)
           <th>備考</th>
         </tr>
         <tr>
-          <td>x-drawer</td>
+          <td>rs-drawer</td>
           <td>ドロワー本体を表示します</td>
           <td>
             <ul>
@@ -149,7 +150,7 @@ storiesOf('Components|Drawer', module)
           <td>ドロワーのコンテンツ部分を表示します</td>
           <td>
             <ul>
-              <li><code>x-list</code></li>
+              <li><code>rs-list</code></li>
               <li>テキストなど全て可</li>
             </ul>
           </td>
@@ -178,44 +179,44 @@ storiesOf('Components|Drawer', module)
 storiesOf('Components|Drawer/スタイルのカスタマイズ/ドロワーのタイプを変える', module)
   .add('permanent (default)', () => {
     return `
-      <x-app-layout class="app-layout">
-        <x-drawer class="drawer -permanent" opened>
+      <rs-app-layout class="app-layout">
+        <rs-drawer class="drawer -permanent" opened>
           <drawer-header class="header">
             <drawer-title class="title">タイトル</drawer-title>
             <drawer-subtitle class="subtitle">サブタイトル</drawer-subtitle>
           </drawer-header>
           <drawer-content class="contents"></drawer-content>
-        </x-drawer>
+        </rs-drawer>
         <app-layout-content class="contents">
-          <x-app-bar class="appbar">
+          <rs-app-bar class="appbar">
             <app-bar-title>title</app-bar-title>
-          </x-app-bar>
+          </rs-app-bar>
           <h4>permanent（デフォルト）</h4>
         </app-layout-content>
-      </x-app-layout>
+      </rs-app-layout>
       <p>ドロワーが左側に常に開きっぱなしの状態</p>
       <h4>使用方法</h4>
       ${copyCodeBlock(
-        '<x-app-layout class="app-layout">\n' +
-        '   <x-drawer class="drawer" opened>\n' +
-        '      <drawer-header class="header">\n' +
-        '         <drawer-title class="title">タイトル</drawer-title>\n' +
-        '         <drawer-subtitle class="subtitle">サブタイトル</drawer-subtitle>\n' +
-        '      </drawer-header>\n' +
-        '      <drawer-content class="contents">\n' +
-        '         <x-list class="list">\n' +
-        '               ...\n' +
-        '         </x-list>\n' +
-        '      </drawer-content>\n' +
-        '   </x-drawer>\n' +
-        '   <app-layout-content class="contents">\n' +
-        '       <x-app-bar class="appbar">\n' +
-        '          <app-bar-nav></app-bar-nav>\n' +
-        '          <app-bar-title>title</app-bar-title>\n' +
-        '       </x-app-bar>\n' +
-        '         ...\n' +
-        '   </app-layout-content>\n' +
-        '</x-app-layout>\n',
+`<rs-app-layout class="app-layout">
+    <rs-drawer class="drawer" opened>
+        <drawer-header class="header">
+          <drawer-title class="title">タイトル</drawer-title>
+          <drawer-subtitle class="subtitle">サブタイトル</drawer-subtitle>
+        </drawer-header>
+        <drawer-content class="contents">
+          <rs-list class="list">
+            ...
+          </rs-list>
+        </drawer-content>
+    </rs-drawer>
+    <app-layout-content class="contents">
+        <rs-app-bar class="appbar">
+          <app-bar-nav></app-bar-nav>
+          <app-bar-title>title</app-bar-title>
+        </rs-app-bar>
+          ...
+    </app-layout-content>
+</rs-app-layout>`,
         { lang: 'html' }
       )}
       ${copyCodeBlock(
@@ -230,22 +231,22 @@ storiesOf('Components|Drawer/スタイルのカスタマイズ/ドロワーの�
   })
   .add('dismissible', () => {
     return `
-      <x-app-layout class="app-layout">
-        <x-drawer class="drawer" opened>
+      <rs-app-layout class="app-layout">
+        <rs-drawer class="drawer" opened>
           <drawer-header class="header">
             <drawer-title class="title">タイトル</drawer-title>
             <drawer-subtitle class="subtitle">サブタイトル</drawer-subtitle>
           </drawer-header>
           <drawer-content class="contents"></drawer-content>
-        </x-drawer>
+        </rs-drawer>
         <app-layout-content class="contents">
-          <x-app-bar class="appbar">
+          <rs-app-bar class="appbar">
             <app-bar-nav class="nav"></app-bar-nav>
             <app-bar-title>title</app-bar-title>
-          </x-app-bar>
+          </rs-app-bar>
           <h4>dismissible</h4>
         </app-layout-content>
-      </x-app-layout>
+      </rs-app-layout>
       <p>
         ドロワーが左側に表示される。 <br>
         opened属性の有無によって表示・非表示が切り替わる。
@@ -257,26 +258,26 @@ storiesOf('Components|Drawer/スタイルのカスタマイズ/ドロワーの�
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
-        '<x-app-layout class="app-layout">\n' +
-        '   <x-drawer class="drawer" opened>\n' +
-        '      <drawer-header class="header">\n' +
-        '         <drawer-title class="title">タイトル</drawer-title>\n' +
-        '         <drawer-subtitle class="subtitle">サブタイトル</drawer-subtitle>\n' +
-        '      </drawer-header>\n' +
-        '      <drawer-content class="contents">\n' +
-        '         <x-list class="list">\n' +
-        '               ...\n' +
-        '         </x-list>\n' +
-        '      </drawer-content>\n' +
-        '   </x-drawer>\n' +
-        '   <app-layout-content class="contents">\n' +
-        '       <x-app-bar class="appbar">\n' +
-        '          <app-bar-nav class="nav"></app-bar-nav>\n' +
-        '          <app-bar-title>title</app-bar-title>\n' +
-        '       </x-app-bar>\n' +
-        '         ...\n' +
-        '   </app-layout-content>\n' +
-        '</x-app-layout>\n',
+`<rs-app-layout class="app-layout">
+    <rs-drawer class="drawer" opened>
+        <drawer-header class="header">
+          <drawer-title class="title">タイトル</drawer-title>
+          <drawer-subtitle class="subtitle">サブタイトル</drawer-subtitle>
+        </drawer-header>
+        <drawer-content class="contents">
+          <rs-list class="list">
+            ...
+          </rs-list>
+        </drawer-content>
+    </rs-drawer>
+    <app-layout-content class="contents">
+        <rs-app-bar class="appbar">
+          <app-bar-nav></app-bar-nav>
+          <app-bar-title>title</app-bar-title>
+        </rs-app-bar>
+          ...
+    </app-layout-content>
+</rs-app-layout>`,
         { lang: 'html' }
       )}
       ${copyCodeBlock(
@@ -291,21 +292,21 @@ storiesOf('Components|Drawer/スタイルのカスタマイズ/ドロワーの�
   })
   .add('modal', () => {
     return `
-    <x-app-layout class="app-layout">
-        <x-drawer class="drawer -modal" opened>
+    <rs-app-layout class="app-layout">
+        <rs-drawer class="drawer -modal" opened>
           <drawer-header class="header">
             <drawer-title class="title">タイトル</drawer-title>
             <drawer-subtitle class="subtitle">サブタイトル</drawer-subtitle>
           </drawer-header>
           <drawer-content class="contents"></drawer-content>
-        </x-drawer>
+        </rs-drawer>
         <app-layout-content class="contents">
-          <x-app-bar class="appbar">
+          <rs-app-bar class="appbar">
             <app-bar-nav class="nav"></app-bar-nav>
             <app-bar-title>title</app-bar-title>
-          </x-app-bar>
+          </rs-app-bar>
         </app-layout-content>
-      </x-app-lauout>
+      </rs-app-lauout>
       <h4>modal</h4>
       <p>
         ドロワーがモーダル状で表示される。 <br>
@@ -318,26 +319,26 @@ storiesOf('Components|Drawer/スタイルのカスタマイズ/ドロワーの�
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
-        '<x-app-layout class="app-layout">\n' +
-        '   <x-drawer class="drawer" opened>\n' +
-        '      <drawer-header class="header">\n' +
-        '         <drawer-title class="title">タイトル</drawer-title>\n' +
-        '         <drawer-subtitle class="subtitle">サブタイトル</drawer-subtitle>\n' +
-        '      </drawer-header>\n' +
-        '      <drawer-content class="contents">\n' +
-        '         <x-list class="list">\n' +
-        '               ...\n' +
-        '         </x-list>\n' +
-        '      </drawer-content>\n' +
-        '   </x-drawer>\n' +
-        '   <app-layout-content class="contents">\n' +
-        '       <x-app-bar class="appbar">\n' +
-        '          <app-bar-nav class="nav"></app-bar-nav>\n' +
-        '          <app-bar-title>title</app-bar-title>\n' +
-        '       </x-app-bar>\n' +
-        '         ...\n' +
-        '   </app-layout-content>\n' +
-        '</x-app-layout>\n',
+`<rs-app-layout class="app-layout">
+    <rs-drawer class="drawer" opened>
+        <drawer-header class="header">
+          <drawer-title class="title">タイトル</drawer-title>
+          <drawer-subtitle class="subtitle">サブタイトル</drawer-subtitle>
+        </drawer-header>
+        <drawer-content class="contents">
+          <rs-list class="list">
+            ...
+          </rs-list>
+        </drawer-content>
+    </rs-drawer>
+    <app-layout-content class="contents">
+        <rs-app-bar class="appbar">
+          <app-bar-nav></app-bar-nav>
+          <app-bar-title>title</app-bar-title>
+        </rs-app-bar>
+          ...
+    </app-layout-content>
+</rs-app-layout>`,
         { lang: 'html' }
       )}
       ${copyCodeBlock(
@@ -353,21 +354,21 @@ storiesOf('Components|Drawer/スタイルのカスタマイズ/ドロワーの�
 storiesOf('Components|Drawer/スタイルのカスタマイズ', module)
   .add('タイトルの色を変える', () => {
     return `
-      <x-app-layout class="app-layout">
-        <x-drawer class="drawer -title-ink-color" opened>
+      <rs-app-layout class="app-layout">
+        <rs-drawer class="drawer -title-ink-color" opened>
           <drawer-header class="header">
             <drawer-title class="title">タイトル</drawer-title>
             <drawer-subtitle class="subtitle">サブタイトル</drawer-subtitle>
           </drawer-header>
           <drawer-content class="contents"></drawer-content>
-        </x-drawer>
+        </rs-drawer>
         <app-layout-content class="contents">
-          <x-app-bar class="appbar">
+          <rs-app-bar class="appbar">
             <app-bar-nav class="nav"></app-bar-nav>
             <app-bar-title>title</app-bar-title>
-          </x-app-bar>
+          </rs-app-bar>
         </app-layout-content>
-      </x-app-layout>
+      </rs-app-layout>
       <p>タイトルの色を指定した色に変える。</p>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
@@ -376,26 +377,26 @@ storiesOf('Components|Drawer/スタイルのカスタマイズ', module)
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
-        '<x-app-layout class="app-layout">\n' +
-        '   <x-drawer class="drawer -title-ink-color" opened>\n' +
-        '      <drawer-header class="header">\n' +
-        '         <drawer-title class="title">タイトル</drawer-title>\n' +
-        '         <drawer-subtitle class="subtitle">サブタイトル</drawer-subtitle>\n' +
-        '      </drawer-header>\n' +
-        '      <drawer-content class="contents">\n' +
-        '         <x-list class="list">\n' +
-        '               ...\n' +
-        '         </x-list>\n' +
-        '      </drawer-content>\n' +
-        '   </x-drawer>\n' +
-        '   <app-layout-content class="contents">\n' +
-        '       <x-app-bar class="appbar">\n' +
-        '          <app-bar-nav class="nav"></app-bar-nav>\n' +
-        '          <app-bar-title>title</app-bar-title>\n' +
-        '       </x-app-bar>\n' +
-        '         ...\n' +
-        '   </app-layout-content>\n' +
-        '</x-app-layout>\n',
+`<rs-app-layout class="app-layout">
+    <rs-drawer class="drawer -title-ink-color" opened>
+        <drawer-header class="header">
+          <drawer-title class="title">タイトル</drawer-title>
+          <drawer-subtitle class="subtitle">サブタイトル</drawer-subtitle>
+        </drawer-header>
+        <drawer-content class="contents">
+          <rs-list class="list">
+            ...
+          </rs-list>
+        </drawer-content>
+    </rs-drawer>
+    <app-layout-content class="contents">
+        <rs-app-bar class="appbar">
+          <app-bar-nav></app-bar-nav>
+          <app-bar-title>title</app-bar-title>
+        </rs-app-bar>
+          ...
+    </app-layout-content>
+</rs-app-layout>`,
         { lang: 'html' }
       )}
       ${copyCodeBlock(
@@ -416,21 +417,21 @@ storiesOf('Components|Drawer/スタイルのカスタマイズ', module)
   })
   .add('サブタイトルの色を変える', () => {
     return `
-      <x-app-layout class="app-layout">
-        <x-drawer class="drawer -subtitle-ink-color" opened>
+      <rs-app-layout class="app-layout">
+        <rs-drawer class="drawer -subtitle-ink-color" opened>
           <drawer-header class="header">
             <drawer-title class="title">タイトル</drawer-title>
             <drawer-subtitle class="subtitle">サブタイトル</drawer-subtitle>
           </drawer-header>
           <drawer-content class="contents"></drawer-content>
-        </x-drawer>
+        </rs-drawer>
         <app-layout-content class="contents">
-          <x-app-bar class="appbar">
+          <rs-app-bar class="appbar">
             <app-bar-nav class="nav"></app-bar-nav>
             <app-bar-title>title</app-bar-title>
-          </x-app-bar>
+          </rs-app-bar>
         </app-layout-content>
-      </x-app-layout>
+      </rs-app-layout>
       <p>サブタイトルの色を指定した色に変える。</p>
       ${copyCodeBlock(
         '@include rs-drawer-subtitle-ink-color($color);',
@@ -438,26 +439,26 @@ storiesOf('Components|Drawer/スタイルのカスタマイズ', module)
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
-        '<x-app-layout class="app-layout">\n' +
-        '   <x-drawer class="drawer -subtitle-ink-color" opened>\n' +
-        '      <drawer-header class="header">\n' +
-        '         <drawer-title class="title">タイトル</drawer-title>\n' +
-        '         <drawer-subtitle class="subtitle">サブタイトル</drawer-subtitle>\n' +
-        '      </drawer-header>\n' +
-        '      <drawer-content class="contents">\n' +
-        '         <x-list class="list">\n' +
-        '               ...\n' +
-        '         </x-list>\n' +
-        '      </drawer-content>\n' +
-        '   </x-drawer>\n' +
-        '   <app-layout-content class="contents">\n' +
-        '       <x-app-bar class="appbar">\n' +
-        '          <app-bar-nav class="nav"></app-bar-nav>\n' +
-        '          <app-bar-title>title</app-bar-title>\n' +
-        '       </x-app-bar>\n' +
-        '         ...\n' +
-        '   </app-layout-content>\n' +
-        '</x-app-layout>\n',
+`<rs-app-layout class="app-layout">
+    <rs-drawer class="drawer -subtitle-ink-color" opened>
+        <drawer-header class="header">
+          <drawer-title class="title">タイトル</drawer-title>
+          <drawer-subtitle class="subtitle">サブタイトル</drawer-subtitle>
+        </drawer-header>
+        <drawer-content class="contents">
+          <rs-list class="list">
+            ...
+          </rs-list>
+        </drawer-content>
+    </rs-drawer>
+    <app-layout-content class="contents">
+        <rs-app-bar class="appbar">
+          <app-bar-nav></app-bar-nav>
+          <app-bar-title>title</app-bar-title>
+        </rs-app-bar>
+          ...
+    </app-layout-content>
+</rs-app-layout>`,
         { lang: 'html' }
       )}
       ${copyCodeBlock(
@@ -474,21 +475,21 @@ storiesOf('Components|Drawer/スタイルのカスタマイズ', module)
   })
   .add('背景色を変える', () => {
     return `
-      <x-app-layout class="app-layout">
-        <x-drawer class="drawer -surface-fill-color" opened>
+      <rs-app-layout class="app-layout">
+        <rs-drawer class="drawer -surface-fill-color" opened>
           <drawer-header class="header">
             <drawer-title class="title">タイトル</drawer-title>
             <drawer-subtitle class="subtitle">サブタイトル</drawer-subtitle>
           </drawer-header>
           <drawer-content class="contents"></drawer-content>
-        </x-drawer>
+        </rs-drawer>
         <app-layout-content class="contents">
-          <x-app-bar class="appbar">
+          <rs-app-bar class="appbar">
             <app-bar-nav class="nav"></app-bar-nav>
             <app-bar-title>title</app-bar-title>
-          </x-app-bar>
+          </rs-app-bar>
         </app-layout-content>
-      </x-app-layout>
+      </rs-app-layout>
       <p>背景色を指定した色に変える。</p>
       ${copyCodeBlock(
         '@include rs-drawer-surface-fill-color($color);',
@@ -496,26 +497,26 @@ storiesOf('Components|Drawer/スタイルのカスタマイズ', module)
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
-        '<x-app-layout class="app-layout">\n' +
-        '   <x-drawer class="drawer -surface-fill-color" opened>\n' +
-        '      <drawer-header class="header">\n' +
-        '         <drawer-title class="title">タイトル</drawer-title>\n' +
-        '         <drawer-subtitle class="subtitle">サブタイトル</drawer-subtitle>\n' +
-        '      </drawer-header>\n' +
-        '      <drawer-content class="contents">\n' +
-        '         <x-list class="list">\n' +
-        '               ...\n' +
-        '         </x-list>\n' +
-        '      </drawer-content>\n' +
-        '   </x-drawer>\n' +
-        '   <app-layout-content class="contents">\n' +
-        '       <x-app-bar class="appbar">\n' +
-        '          <app-bar-nav class="nav"></app-bar-nav>\n' +
-        '          <app-bar-title>title</app-bar-title>\n' +
-        '       </x-app-bar>\n' +
-        '         ...\n' +
-        '   </app-layout-content>\n' +
-        '</x-app-layout>\n',
+`<rs-app-layout class="app-layout">
+    <rs-drawer class="drawer -surface-fill-color" opened>
+        <drawer-header class="header">
+          <drawer-title class="title">タイトル</drawer-title>
+          <drawer-subtitle class="subtitle">サブタイトル</drawer-subtitle>
+        </drawer-header>
+        <drawer-content class="contents">
+          <rs-list class="list">
+            ...
+          </rs-list>
+        </drawer-content>
+    </rs-drawer>
+    <app-layout-content class="contents">
+        <rs-app-bar class="appbar">
+          <app-bar-nav></app-bar-nav>
+          <app-bar-title>title</app-bar-title>
+        </rs-app-bar>
+          ...
+    </app-layout-content>
+</rs-app-layout>`,
         { lang: 'html' }
       )}
       ${copyCodeBlock(
@@ -532,21 +533,21 @@ storiesOf('Components|Drawer/スタイルのカスタマイズ', module)
   })
   .add('モーダルの色を変える', () => {
     return `
-      <x-app-layout class="app-layout">
-        <x-drawer class="drawer -modal -scrim-fill-color" opened>
+      <rs-app-layout class="app-layout">
+        <rs-drawer class="drawer -modal -scrim-fill-color" opened>
           <drawer-header class="header">
             <drawer-title class="title">タイトル</drawer-title>
             <drawer-subtitle class="subtitle">サブタイトル</drawer-subtitle>
           </drawer-header>
           <drawer-content class="contents"></drawer-content>
-        </x-drawer>
+        </rs-drawer>
         <app-layout-content class="contents">
-          <x-app-bar class="appbar">
+          <rs-app-bar class="appbar">
             <app-bar-nav class="nav"></app-bar-nav>
             <app-bar-title>title</app-bar-title>
-          </x-app-bar>
+          </rs-app-bar>
         </app-layout-content>
-      </x-app-layout>
+      </rs-app-layout>
       <p>モーダルの色を指定した色に変える。</p>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
@@ -555,32 +556,33 @@ storiesOf('Components|Drawer/スタイルのカスタマイズ', module)
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
-        '<x-app-layout class="app-layout">\n' +
-        '   <x-drawer class="drawer -scrim-fill-color" opened>\n' +
-        '      <drawer-header class="header">\n' +
-        '         <drawer-title class="title">タイトル</drawer-title>\n' +
-        '         <drawer-subtitle class="subtitle">サブタイトル</drawer-subtitle>\n' +
-        '      </drawer-header>\n' +
-        '      <drawer-content class="contents">\n' +
-        '         <x-list class="list">\n' +
-        '               ...\n' +
-        '         </x-list>\n' +
-        '      </drawer-content>\n' +
-        '   </x-drawer>\n' +
-        '   <app-layout-content class="contents">\n' +
-        '       <x-app-bar class="appbar">\n' +
-        '          <app-bar-nav class="nav"></app-bar-nav>\n' +
-        '          <app-bar-title>title</app-bar-title>\n' +
-        '       </x-app-bar>\n' +
-        '         ...\n' +
-        '   </app-layout-content>\n' +
-        '</x-app-layout>\n',
+`<rs-app-layout class="app-layout">
+    <rs-drawer class="drawer -modal -scrim-fill-color" opened>
+        <drawer-header class="header">
+          <drawer-title class="title">タイトル</drawer-title>
+          <drawer-subtitle class="subtitle">サブタイトル</drawer-subtitle>
+        </drawer-header>
+        <drawer-content class="contents">
+          <rs-list class="list">
+            ...
+          </rs-list>
+        </drawer-content>
+    </rs-drawer>
+    <app-layout-content class="contents">
+        <rs-app-bar class="appbar">
+          <app-bar-nav></app-bar-nav>
+          <app-bar-title>title</app-bar-title>
+        </rs-app-bar>
+          ...
+    </app-layout-content>
+</rs-app-layout>`,
         { lang: 'html' }
       )}
       ${copyCodeBlock(
         '.app-layout {\n' +
         '   > .drawer {\n' +
         '      &.-scrim-fill-color {\n' +
+        '        @include rs-drawer-type(modal);\n' +
         '        @include rs-drawer-scrim-fill-color(beige);\n' +
         '      }\n' +
         '   }\n' +
@@ -591,21 +593,21 @@ storiesOf('Components|Drawer/スタイルのカスタマイズ', module)
   })
   .add('背景色とテキストの色を変える', () => {
     return `
-      <x-app-layout class="app-layout">
-        <x-drawer class="drawer -fill-color-accessible" opened>
+      <rs-app-layout class="app-layout">
+        <rs-drawer class="drawer -fill-color-accessible" opened>
           <drawer-header class="header">
             <drawer-title class="title">タイトル</drawer-title>
             <drawer-subtitle class="subtitle">サブタイトル</drawer-subtitle>
           </drawer-header>
           <drawer-content class="contents"></drawer-content>
-        </x-drawer>
+        </rs-drawer>
         <app-layout-content class="contents">
-          <x-app-bar class="appbar">
+          <rs-app-bar class="appbar">
             <app-bar-nav class="nav"></app-bar-nav>
             <app-bar-title>title</app-bar-title>
-          </x-app-bar>
+          </rs-app-bar>
         </app-layout-content>
-      </x-app-layout>
+      </rs-app-layout>
       <p>
         背景色とテキストの色を変える。 <br>
         指定した背景色の色を元にテキストの色は自動で調整される。
@@ -617,26 +619,26 @@ storiesOf('Components|Drawer/スタイルのカスタマイズ', module)
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
-        '<x-app-layout class="app-layout">\n' +
-        '   <x-drawer class="drawer -fill-color-accessible" opened>\n' +
-        '      <drawer-header class="header">\n' +
-        '         <drawer-title class="title">タイトル</drawer-title>\n' +
-        '         <drawer-subtitle class="subtitle">サブタイトル</drawer-subtitle>\n' +
-        '      </drawer-header>\n' +
-        '      <drawer-content class="contents">\n' +
-        '         <x-list class="list">\n' +
-        '               ...\n' +
-        '         </x-list>\n' +
-        '      </drawer-content>\n' +
-        '   </x-drawer>\n' +
-        '   <app-layout-content class="contents">\n' +
-        '       <x-app-bar class="appbar">\n' +
-        '          <app-bar-nav class="nav"></app-bar-nav>\n' +
-        '          <app-bar-title>title</app-bar-title>\n' +
-        '       </x-app-bar>\n' +
-        '         ...\n' +
-        '   </app-layout-content>\n' +
-        '</x-app-layout>\n',
+`<rs-app-layout class="app-layout">
+    <rs-drawer class="drawer -fill-color-accessible" opened>
+        <drawer-header class="header">
+          <drawer-title class="title">タイトル</drawer-title>
+          <drawer-subtitle class="subtitle">サブタイトル</drawer-subtitle>
+        </drawer-header>
+        <drawer-content class="contents">
+          <rs-list class="list">
+            ...
+          </rs-list>
+        </drawer-content>
+    </rs-drawer>
+    <app-layout-content class="contents">
+        <rs-app-bar class="appbar">
+          <app-bar-nav></app-bar-nav>
+          <app-bar-title>title</app-bar-title>
+        </rs-app-bar>
+          ...
+    </app-layout-content>
+</rs-app-layout>`,
         { lang: 'html' }
       )}
       ${copyCodeBlock(
@@ -657,21 +659,21 @@ storiesOf('Components|Drawer/スタイルのカスタマイズ', module)
   })
   .add('線の色を変える', () => {
     return `
-      <x-app-layout class="app-layout">
-        <x-drawer class="drawer -border-color" opened>
+      <rs-app-layout class="app-layout">
+        <rs-drawer class="drawer -border-color" opened>
           <drawer-header class="header">
             <drawer-title class="title">タイトル</drawer-title>
             <drawer-subtitle class="subtitle">サブタイトル</drawer-subtitle>
           </drawer-header>
           <drawer-content class="contents"></drawer-content>
-        </x-drawer>
+        </rs-drawer>
         <app-layout-content class="contents">
-          <x-app-bar class="appbar">
+          <rs-app-bar class="appbar">
             <app-bar-nav class="nav"></app-bar-nav>
             <app-bar-title>title</app-bar-title>
-          </x-app-bar>
+          </rs-app-bar>
         </app-layout-content>
-      </x-app-layout>
+      </rs-app-layout>
       <p>線の色を指定した色に変える。</p>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
@@ -680,26 +682,26 @@ storiesOf('Components|Drawer/スタイルのカスタマイズ', module)
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
-        '<x-app-layout class="app-layout">\n' +
-        '   <x-drawer class="drawer -border-color" opened>\n' +
-        '      <drawer-header class="header">\n' +
-        '         <drawer-title class="title">タイトル</drawer-title>\n' +
-        '         <drawer-subtitle class="subtitle">サブタイトル</drawer-subtitle>\n' +
-        '      </drawer-header>\n' +
-        '      <drawer-content class="contents">\n' +
-        '         <x-list class="list">\n' +
-        '               ...\n' +
-        '         </x-list>\n' +
-        '      </drawer-content>\n' +
-        '   </x-drawer>\n' +
-        '   <app-layout-content class="contents">\n' +
-        '       <x-app-bar class="appbar">\n' +
-        '          <app-bar-nav class="nav"></app-bar-nav>\n' +
-        '          <app-bar-title>title</app-bar-title>\n' +
-        '       </x-app-bar>\n' +
-        '         ...\n' +
-        '   </app-layout-content>\n' +
-        '</x-app-layout>\n',
+`<rs-app-layout class="app-layout">
+    <rs-drawer class="drawer -border-color" opened>
+        <drawer-header class="header">
+          <drawer-title class="title">タイトル</drawer-title>
+          <drawer-subtitle class="subtitle">サブタイトル</drawer-subtitle>
+        </drawer-header>
+        <drawer-content class="contents">
+          <rs-list class="list">
+            ...
+          </rs-list>
+        </drawer-content>
+    </rs-drawer>
+    <app-layout-content class="contents">
+        <rs-app-bar class="appbar">
+          <app-bar-nav></app-bar-nav>
+          <app-bar-title>title</app-bar-title>
+        </rs-app-bar>
+          ...
+    </app-layout-content>
+</rs-app-layout>`,
         { lang: 'html' }
       )}
       ${copyCodeBlock(
@@ -716,27 +718,27 @@ storiesOf('Components|Drawer/スタイルのカスタマイズ', module)
   })
   .add('ドロワー内の仕切り線の色を変える', () => {
     return `
-      <x-app-layout class="app-layout">
-        <x-drawer class="drawer -divider-color" opened>
+      <rs-app-layout class="app-layout">
+        <rs-drawer class="drawer -divider-color" opened>
           <drawer-header class="header">
             <drawer-title class="title">タイトル</drawer-title>
             <drawer-subtitle class="subtitle">サブタイトル</drawer-subtitle>
-            <x-list>
+            <rs-list>
               <list-item>
                 <list-text class="text">テキスト</list-text>
               </list-item>
-            </x-list>
+            </rs-list>
           <list-divider></list-divider>
           </drawer-header>
           <drawer-content class="contents"></drawer-content>
-        </x-drawer>
+        </rs-drawer>
         <app-layout-content class="contents">
-          <x-app-bar class="appbar">
+          <rs-app-bar class="appbar">
             <app-bar-nav class="nav"></app-bar-nav>
             <app-bar-title>title</app-bar-title>
-          </x-app-bar>
+          </rs-app-bar>
         </app-layout-content>
-      </x-app-layout>
+      </rs-app-layout>
       <p>ドロワー内の仕切り線の色を指定した色に変える。</p>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
@@ -745,32 +747,26 @@ storiesOf('Components|Drawer/スタイルのカスタマイズ', module)
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
-        '<x-app-layout class="app-layout">\n' +
-        '   <x-drawer class="drawer -border-color" opened>\n' +
-        '      <drawer-header class="header">\n' +
-        '         <drawer-title class="title">タイトル</drawer-title>\n' +
-        '         <drawer-subtitle class="subtitle">サブタイトル</drawer-subtitle>\n' +
-        '         <x-list>\n' +
-        '            <list-item>\n' +
-        '              <list-text class="text">テキスト</list-text>\n' +
-        '            </list-item>\n' +
-        '         </x-list>\n' +
-        '         <list-divider></list-divider>\n' +
-        '      </drawer-header>\n' +
-        '      <drawer-content class="contents">\n' +
-        '         <x-list class="list">\n' +
-        '               ...\n' +
-        '         </x-list>\n' +
-        '      </drawer-content>\n' +
-        '   </x-drawer>\n' +
-        '   <app-layout-content class="contents">\n' +
-        '       <x-app-bar class="appbar">\n' +
-        '          <app-bar-nav class="nav"></app-bar-nav>\n' +
-        '          <app-bar-title>title</app-bar-title>\n' +
-        '       </x-app-bar>\n' +
-        '         ...\n' +
-        '   </app-layout-content>\n' +
-        '</x-app-layout>\n',
+`<rs-app-layout class="app-layout">
+    <rs-drawer class="drawer -divider-color" opened>
+        <drawer-header class="header">
+          <drawer-title class="title">タイトル</drawer-title>
+          <drawer-subtitle class="subtitle">サブタイトル</drawer-subtitle>
+        </drawer-header>
+        <drawer-content class="contents">
+          <rs-list class="list">
+            ...
+          </rs-list>
+        </drawer-content>
+    </rs-drawer>
+    <app-layout-content class="contents">
+        <rs-app-bar class="appbar">
+          <app-bar-nav></app-bar-nav>
+          <app-bar-title>title</app-bar-title>
+        </rs-app-bar>
+          ...
+    </app-layout-content>
+</rs-app-layout>`,
         { lang: 'html' }
       )}
       ${copyCodeBlock(
@@ -787,21 +783,21 @@ storiesOf('Components|Drawer/スタイルのカスタマイズ', module)
   })
   .add('ドロワーの幅を変える', () => {
     return `
-      <x-app-layout class="app-layout">
-        <x-drawer class="drawer -width" opened>
+      <rs-app-layout class="app-layout">
+        <rs-drawer class="drawer -width" opened>
           <drawer-header class="header">
             <drawer-title class="title">タイトル</drawer-title>
             <drawer-subtitle class="subtitle">サブタイトル</drawer-subtitle>
           </drawer-header>
           <drawer-content class="contents"></drawer-content>
-        </x-drawer>
+        </rs-drawer>
         <app-layout-content class="contents">
-          <x-app-bar class="appbar">
+          <rs-app-bar class="appbar">
             <app-bar-nav class="nav"></app-bar-nav>
             <app-bar-title>title</app-bar-title>
-          </x-app-bar>
+          </rs-app-bar>
         </app-layout-content>
-      </x-app-layout>
+      </rs-app-layout>
       <p>ドロワーの幅を指定したサイズに変える。</p>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
@@ -810,30 +806,26 @@ storiesOf('Components|Drawer/スタイルのカスタマイズ', module)
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
-        '<x-app-layout class="app-layout">\n' +
-        '   <x-drawer class="drawer -width" opened>\n' +
-        '      <drawer-header class="header">\n' +
-        '         <drawer-title class="title">タイトル</drawer-title>\n' +
-        '         <drawer-subtitle class="subtitle">サブタイトル</drawer-subtitle>\n' +
-        '         <list-item>\n' +
-        '            <list-text class="text">テキスト</list-text>\n' +
-        '         </list-item>\n' +
-        '         <list-divider></list-divider>\n' +
-        '      </drawer-header>\n' +
-        '      <drawer-content class="contents">\n' +
-        '         <x-list class="list">\n' +
-        '               ...\n' +
-        '         </x-list>\n' +
-        '      </drawer-content>\n' +
-        '   </x-drawer>\n' +
-        '   <app-layout-content class="contents">\n' +
-        '       <x-app-bar class="appbar">\n' +
-        '          <app-bar-nav class="nav"></app-bar-nav>\n' +
-        '          <app-bar-title>title</app-bar-title>\n' +
-        '       </x-app-bar>\n' +
-        '         ...\n' +
-        '   </app-layout-content>\n' +
-        '</x-app-layout>\n',
+  `<rs-app-layout class="app-layout">
+      <rs-drawer class="drawer -width" opened>
+          <drawer-header class="header">
+            <drawer-title class="title">タイトル</drawer-title>
+            <drawer-subtitle class="subtitle">サブタイトル</drawer-subtitle>
+          </drawer-header>
+          <drawer-content class="contents">
+            <rs-list class="list">
+              ...
+            </rs-list>
+          </drawer-content>
+      </rs-drawer>
+      <app-layout-content class="contents">
+          <rs-app-bar class="appbar">
+            <app-bar-nav></app-bar-nav>
+            <app-bar-title>title</app-bar-title>
+          </rs-app-bar>
+            ...
+      </app-layout-content>
+  </rs-app-layout>`,
         { lang: 'html' }
       )}
       ${copyCodeBlock(
@@ -854,21 +846,21 @@ storiesOf('Components|Drawer/スタイルのカスタマイズ', module)
   })
   .add('ドロワーの角の丸みを変える', () => {
     return `
-      <x-app-layout class="app-layout">
-        <x-drawer class="drawer -shape-radius" opened>
+      <rs-app-layout class="app-layout">
+        <rs-drawer class="drawer -shape-radius" opened>
           <drawer-header class="header">
             <drawer-title class="title">タイトル</drawer-title>
             <drawer-subtitle class="subtitle">サブタイトル</drawer-subtitle>
           </drawer-header>
           <drawer-content class="contents"></drawer-content>
-        </x-drawer>
+        </rs-drawer>
         <app-layout-content class="contents">
-          <x-app-bar class="appbar">
+          <rs-app-bar class="appbar">
             <app-bar-nav class="nav"></app-bar-nav>
             <app-bar-title>title</app-bar-title>
-          </x-app-bar>
+          </rs-app-bar>
         </app-layout-content>
-      </x-app-layout>
+      </rs-app-layout>
       <p>ドロワーの角の丸みを指定したサイズに変える。</p>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
@@ -877,32 +869,28 @@ storiesOf('Components|Drawer/スタイルのカスタマイズ', module)
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
-        '<x-app-layout class="app-layout">\n' +
-        '   <x-drawer class="drawer -shape-radius" opened>\n' +
-        '      <drawer-header class="header">\n' +
-        '         <drawer-title class="title">タイトル</drawer-title>\n' +
-        '         <drawer-subtitle class="subtitle">サブタイトル</drawer-subtitle>\n' +
-        '         <list-item>\n' +
-        '            <list-text class="text">テキスト</list-text>\n' +
-        '         </list-item>\n' +
-        '         <list-divider></list-divider>\n' +
-        '      </drawer-header>\n' +
-        '      <drawer-content class="contents">\n' +
-        '         <x-list class="list">\n' +
-        '               ...\n' +
-        '         </x-list>\n' +
-        '      </drawer-content>\n' +
-        '   </x-drawer>\n' +
-        '   <app-layout-content class="contents">\n' +
-        '       <x-app-bar class="appbar">\n' +
-        '          <app-bar-nav class="nav"></app-bar-nav>\n' +
-        '          <app-bar-title>title</app-bar-title>\n' +
-        '       </x-app-bar>\n' +
-        '         ...\n' +
-        '   </app-layout-content>\n' +
-        '</x-app-layout>\n',
-        { lang: 'html' }
-      )}
+`<rs-app-layout class="app-layout">
+    <rs-drawer class="drawer -shape-radius" opened>
+        <drawer-header class="header">
+          <drawer-title class="title">タイトル</drawer-title>
+          <drawer-subtitle class="subtitle">サブタイトル</drawer-subtitle>
+        </drawer-header>
+        <drawer-content class="contents">
+          <rs-list class="list">
+            ...
+          </rs-list>
+        </drawer-content>
+    </rs-drawer>
+    <app-layout-content class="contents">
+        <rs-app-bar class="appbar">
+          <app-bar-nav></app-bar-nav>
+          <app-bar-title>title</app-bar-title>
+        </rs-app-bar>
+          ...
+    </app-layout-content>
+</rs-app-layout>`,
+      { lang: 'html' }
+    )}
       ${copyCodeBlock(
         '.app-layout {\n' +
         '   > .drawer {\n' +

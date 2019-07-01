@@ -1,6 +1,6 @@
 @import '../../node_modules/@rsmdc/radio/rs-radio';
 
-.radio {
+.my-radio {
   &.-ink-color {
     @include rs-radio-ink-color(brown);
   }
@@ -13,7 +13,13 @@
   &.-unchecked-stroke-color {
     @include rs-radio-unchecked-stroke-color(brown);
   }
+  &.-fill-color-accessible {
+    @include rs-radio-fill-color-accessible(brown);
+  }
   &.-label-position {
     @include rs-radio-label-position(left);
   }
+}
+.left-group {
+  @include rs-radio-label-position(left);
 }

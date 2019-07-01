@@ -1,40 +1,81 @@
 @import '../../node_modules/@rsmdc/list/rs-list';
 @import '../../node_modules/@rsmdc/shape/rs-functions';
 
-.group-list {
+$material-icons-font-path: '~material-icons/iconfont/';
+@import '~material-icons/iconfont/material-icons';
+
+.my-list {
+  &.-dense {
+    @include rs-list-type(dense);
+  }
   &.-twoline {
     @include rs-list-type(two-line);
   }
-  &.-avatarlist {
-    @include rs-list-type(avatar-list, two-line);
-  } 
-  &.-inset {
+  > .divider.-inset {
     @include rs-list-divider-type(inset);
   }
-  &.-padded {
-    @include rs-list-divider-type(padded); 
+  > .divider.-inset.-padded {
+    @include rs-list-divider-type(inset, padded);
   }
-  &.-primary-text-ink-color {
-    @include rs-list-item-primary-text-ink-color(brown);
+  > .divider.-padded {
+    @include rs-list-divider-type(padded);
   }
-  &.-secondary-text-ink-color {
+  &.-avatarlist:not(.-graphic) {
+    @include rs-list-type(avatar-list, two-line);
+  }
+  &.-avatarlist.-graphic {
+    @include rs-list-type(avatar-list);
+  }
+
+  > .item > .text.-brown, 
+  > .item > .text > .primary.-brown {
+   @include rs-list-item-primary-text-ink-color(brown);
+  }
+  > .item > .text > .secondary.-brown {
     @include rs-list-item-secondary-text-ink-color(brown);
   }
-  &.-subheader-ink-color {
-    @include rs-list-group-subheader-ink-color(brown);
+  > .item > .meta.-brown {
+    @include rs-list-item-meta-ink-color(brown);
+  } 
+  > .item > .graphic.-blue {
+    // @include rs-list-item-graphic-image(Material Icons, map-get($material-icons-codepoints, face));
+    @include rs-list-item-graphic-ink-color(rgb(106, 118, 223));
+   }
+  > .item > .graphic.-container-blue {
+    // @include rs-list-item-graphic-image(Material Icons, map-get($material-icons-codepoints, face));
+    @include rs-list-item-graphic-fill-color(rgb(106, 196, 223));
+   }
+  > .divider.-blue {
+    @include rs-list-divider-color(rgb(106, 118, 223));
   }
-  &.-divider-color {
-    @include rs-list-divider-color(brown);
+  > .item{
+    @include rs-list-item-states-color(rgb(106, 118, 223));
   }
-  &.-graphic-ink-color {
-    @include rs-list-item-graphic-ink-color(gray);
+  > .item.-green {
+    @include rs-list-fill-color-accessible(green);
+  }
+  > .item > .graphic.-image {
+    @include rs-list-graphic-image(url('https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AAr4y0F.img?h=1080&w=1920&m=6&q=60&o=f&l=f'));
+  }
+  > .item > .graphic.-size {
+    @include rs-list-graphic-size(40px);
+   }
+  > .item.-shape {
+    @include rs-list-item-shape-radius(10px);
   }
 }
-.graphic {
-  @include rs-list-graphic-type(circle);
-  @include rs-list-graphic-image(url('http://icons.iconarchive.com/icons/iconsmind/outline/512/Mail-icon.png'));
 
-  
+.group-list {
+  > .list > .subheader.-brown {
+    @include rs-list-group-subheader-ink-color(brown);
+   }
+}
+
+.graphic {
+  @include rs-list-graphic-image(url('http://icons.iconarchive.com/icons/iconsmind/outline/512/Mail-icon.png'));
+  &.-circle {
+    @include rs-list-graphic-type(circle);
+  }
   &.-size {
     @include rs-list-graphic-size(50px);
   }
@@ -45,19 +86,13 @@
   &.-square {
     @include rs-list-graphic-type(square);
     @include rs-list-graphic-image(url('http://icons.iconarchive.com/icons/iconsmind/outline/512/Mail-icon.png'));
-
   }
-}
-
-
-
-.-shape-radius {
-  @include rs-list-item-shape-radius(10px);
-}
-.-meta-ink-color {
-  @include rs-list-item-meta-ink-color(brown);
 }
 
 th {
   font-size: 14px;
+}
+
+.result {
+  padding-bottom: 120px;
 }

@@ -1,15 +1,21 @@
 @import '../../node_modules/@rsmdc/tabs/rs-tabs';
 @import '../../node_modules/@rsmdc/shape/rs-functions';
-
+$material-icons-font-path: '~material-icons/iconfont/';
+@import '~material-icons/iconfont/material-icons';
 .tab-bar {
   &.-ink-color {
-    @include rs-tab-ink-color(brown);
+    @include rs-tab-ink-color(aqua);
+  }
+  &.-activated-color {
+    @include rs-tab-activated-ink-color(aqua);
+    @include rs-tab-indicator-color(aqua);
   }
   &.-states-color {
     @include rs-tab-states-color(gray);
   }
   &.-indicator-color {
-    @include rs-tab-indicator-color(olive);
+    @include rs-tab-indicator-color(aqua);
+    @include rs-tab-activated-ink-color(aqua);
   }
   &.-indicator-height {
     @include rs-tab-indicator-height(4px);
@@ -28,13 +34,21 @@
     @include rs-tab-fixed-width(90px);
     @include rs-tab-bar-position(align-end);
   }
-  
-  &.-icon-image {
+ > .tab.-cut {
     @include rs-tab-icon-image(url('http://icons.iconarchive.com/icons/iconsmind/outline/512/Mail-icon.png'));
-  }
-  &.-icon-position {
+ }
+ > .tab.-copy {
     @include rs-tab-icon-image(url('http://icons.iconarchive.com/icons/iconsmind/outline/512/Mail-icon.png'));
-    @include rs-tab-icon-position(right);
-  }
+ }
+ > .tab.-star {
+    @include rs-tab-icon-image(Material Icons, map-get($material-icons-codepoints, stars));
+ }
+ &.-icon-position {
+  @include rs-tab-icon-image(Material Icons, map-get($material-icons-codepoints, stars));
+  @include rs-tab-icon-position(right);
 }
 
+}
+.result {
+  padding-bottom: 20px;
+}
