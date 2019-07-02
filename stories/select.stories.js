@@ -131,11 +131,11 @@ storiesOf('Components|Select/スタイルのカスタマイズ/セレクトの�
     )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
-      '<rs-select class="food-select -outlined" label="Pick a Food Group">\n' +
-      '   <option value="grains">Bread, Cereal, Rice, and Pasta</option>\n' +
-      '   <option value="vegetables" disabled>Vegetables</option>\n' +
-      '   <option value="fruit">Fruits</option>\n' + 
-      '</rs-select>',
+`<rs-select class="food-select -outlined" label="Pick a Food Group">
+    <option value="grains">Bread, Cereal, Rice, and Pasta</option>
+    <option value="vegetables" disabled>Vegetables</option>
+    <option value="fruit">Fruits</option> 
+</rs-select>`,
       { lang: 'html' }
     )}
     ${copyCodeBlock(
@@ -165,11 +165,11 @@ storiesOf('Components|Select/スタイルのカスタマイズ', module)
     )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
-      '<rs-select class="food-select -ink-orange" label="Pick a Food Group">\n' +
-      '   <option value="grains">Bread, Cereal, Rice, and Pasta</option>\n' +
-      '   <option value="vegetables" disabled>Vegetables</option>\n' +
-      '   <option value="fruit">Fruits</option>\n' + 
-      '</rs-select>',
+`<rs-select class="food-select -ink-orange" label="Pick a Food Group">
+    <option value="grains">Bread, Cereal, Rice, and Pasta</option>
+    <option value="vegetables" disabled>Vegetables</option>
+    <option value="fruit">Fruits</option> 
+</rs-select>`,
       { lang: 'html' }
     )}
     ${copyCodeBlock(
@@ -196,11 +196,11 @@ storiesOf('Components|Select/スタイルのカスタマイズ', module)
     )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
-      '<rs-select class="food-select -fill-beige" label="Pick a Food Group">\n' +
-      '   <option value="grains">Bread, Cereal, Rice, and Pasta</option>\n' +
-      '   <option value="vegetables" disabled>Vegetables</option>\n' +
-      '   <option value="fruit">Fruits</option>\n' + 
-      '</rs-select>',
+`<rs-select class="food-select -fill-beige" label="Pick a Food Group">
+    <option value="grains">Bread, Cereal, Rice, and Pasta</option>
+    <option value="vegetables" disabled>Vegetables</option>
+    <option value="fruit">Fruits</option> 
+</rs-select>`,
       { lang: 'html' }
     )}
     ${copyCodeBlock(
@@ -228,11 +228,11 @@ storiesOf('Components|Select/スタイルのカスタマイズ', module)
     )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
-      '<rs-select class="food-select -label-blue" label="Pick a Food Group">\n' +
-      '   <option value="grains">Bread, Cereal, Rice, and Pasta</option>\n' +
-      '   <option value="vegetables" disabled>Vegetables</option>\n' +
-      '   <option value="fruit">Fruits</option>\n' + 
-      '</rs-select>',
+`<rs-select class="food-select -label-blue" label="Pick a Food Group">
+    <option value="grains">Bread, Cereal, Rice, and Pasta</option>
+    <option value="vegetables" disabled>Vegetables</option>
+    <option value="fruit">Fruits</option> 
+</rs-select>`,
       { lang: 'html' }
     )}
     ${copyCodeBlock(
@@ -259,11 +259,11 @@ storiesOf('Components|Select/スタイルのカスタマイズ', module)
     )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
-      '<rs-select class="food-select -focused -label-orange" label="Pick a Food Group">\n' +
-      '   <option value="grains">Bread, Cereal, Rice, and Pasta</option>\n' +
-      '   <option value="vegetables" disabled>Vegetables</option>\n' +
-      '   <option value="fruit">Fruits</option>\n' + 
-      '</rs-select>',
+`<rs-select class="food-select -focused -label-orange" label="Pick a Food Group">
+    <option value="grains">Bread, Cereal, Rice, and Pasta</option>
+    <option value="vegetables" disabled>Vegetables</option>
+    <option value="fruit">Fruits</option> 
+</rs-select>`,
       { lang: 'html' }
     )}
     ${copyCodeBlock(
@@ -291,11 +291,11 @@ storiesOf('Components|Select/スタイルのカスタマイズ', module)
     )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
-      '<rs-select class="food-select -line-green" label="Pick a Food Group">\n' +
-      '   <option value="grains">Bread, Cereal, Rice, and Pasta</option>\n' +
-      '   <option value="vegetables" disabled>Vegetables</option>\n' +
-      '   <option value="fruit">Fruits</option>\n' + 
-      '</rs-select>',
+`<rs-select class="food-select -line-green" label="Pick a Food Group">
+    <option value="grains">Bread, Cereal, Rice, and Pasta</option>
+    <option value="vegetables" disabled>Vegetables</option>
+    <option value="fruit">Fruits</option> 
+</rs-select>`,
       { lang: 'html' }
     )}
     ${copyCodeBlock(
@@ -323,11 +323,11 @@ storiesOf('Components|Select/スタイルのカスタマイズ', module)
     )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
-      '<rs-select class="food-select -hover -line-blue" label="Pick a Food Group">\n' +
-      '   <option value="grains">Bread, Cereal, Rice, and Pasta</option>\n' +
-      '   <option value="vegetables" disabled>Vegetables</option>\n' +
-      '   <option value="fruit">Fruits</option>\n' + 
-      '</rs-select>',
+`<rs-select class="food-select -hover -line-blue" label="Pick a Food Group">
+    <option value="grains">Bread, Cereal, Rice, and Pasta</option>
+    <option value="vegetables" disabled>Vegetables</option>
+    <option value="fruit">Fruits</option> 
+</rs-select>`,
       { lang: 'html' }
     )}
     ${copyCodeBlock(
@@ -354,11 +354,11 @@ storiesOf('Components|Select/スタイルのカスタマイズ', module)
     )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
-      '<rs-select class="food-select -focused -line-pink" label="Pick a Food Group">\n' +
-      '   <option value="grains">Bread, Cereal, Rice, and Pasta</option>\n' +
-      '   <option value="vegetables" disabled>Vegetables</option>\n' +
-      '   <option value="fruit">Fruits</option>\n' + 
-      '</rs-select>',
+`<rs-select class="food-select -focused -line-pink" label="Pick a Food Group">
+    <option value="grains">Bread, Cereal, Rice, and Pasta</option>
+    <option value="vegetables" disabled>Vegetables</option>
+    <option value="fruit">Fruits</option> 
+</rs-select>`,
       { lang: 'html' }
     )}
     ${copyCodeBlock(
@@ -385,11 +385,11 @@ storiesOf('Components|Select/スタイルのカスタマイズ', module)
     )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
-      '<rs-select class="food-select -outlined -blue" label="Pick a Food Group">\n' +
-      '   <option value="grains">Bread, Cereal, Rice, and Pasta</option>\n' +
-      '   <option value="vegetables" disabled>Vegetables</option>\n' +
-      '   <option value="fruit">Fruits</option>\n' + 
-      '</rs-select>',
+`<rs-select class="food-select -outlined -blue" label="Pick a Food Group">
+    <option value="grains">Bread, Cereal, Rice, and Pasta</option>
+    <option value="vegetables" disabled>Vegetables</option>
+    <option value="fruit">Fruits</option> 
+</rs-select>`,
       { lang: 'html' }
     )}
     ${copyCodeBlock(
@@ -420,11 +420,11 @@ storiesOf('Components|Select/スタイルのカスタマイズ', module)
     )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
-      '<rs-select class="food-select -outlined -hover -line-orange" label="Pick a Food Group">\n' +
-      '   <option value="grains">Bread, Cereal, Rice, and Pasta</option>\n' +
-      '   <option value="vegetables" disabled>Vegetables</option>\n' +
-      '   <option value="fruit">Fruits</option>\n' + 
-      '</rs-select>',
+`<rs-select class="food-select -outlined -hover -line-orange" label="Pick a Food Group">
+    <option value="grains">Bread, Cereal, Rice, and Pasta</option>
+    <option value="vegetables" disabled>Vegetables</option>
+    <option value="fruit">Fruits</option> 
+</rs-select>`,
       { lang: 'html' }
     )}
     ${copyCodeBlock(
@@ -454,11 +454,11 @@ storiesOf('Components|Select/スタイルのカスタマイズ', module)
     )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
-      '<rs-select class="food-select -select-type -focused -line-pink" label="Pick a Food Group">\n' +
-      '   <option value="grains">Bread, Cereal, Rice, and Pasta</option>\n' +
-      '   <option value="vegetables" disabled>Vegetables</option>\n' +
-      '   <option value="fruit">Fruits</option>\n' + 
-      '</rs-select>',
+`<rs-select class="food-select -outlined -focused -line-pink" label="Pick a Food Group">
+    <option value="grains">Bread, Cereal, Rice, and Pasta</option>
+    <option value="vegetables" disabled>Vegetables</option>
+    <option value="fruit">Fruits</option> 
+</rs-select>`,
       { lang: 'html' }
     )}
     ${copyCodeBlock(
