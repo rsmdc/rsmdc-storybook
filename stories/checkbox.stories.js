@@ -94,7 +94,7 @@ storiesOf('Components|Checkbox/スタイルのカスタマイズ', module)
   .add('チェックマークの色を変える', () => {
     return `
       <p>チェックマークの色を指定した色に変える。</p>
-      <rs-checkbox class="checkbox -checkmark-ink-color">check1</rs-checkbox>
+      <rs-checkbox class="checkbox -ink-yellow">check1</rs-checkbox>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
         '@include rs-checkbox-checkmark-ink-color($color);',
@@ -102,14 +102,14 @@ storiesOf('Components|Checkbox/スタイルのカスタマイズ', module)
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
-        '<rs-checkbox class="checkbox -focus-indicator-color">check1</rs-checkbox>',
+        '<rs-checkbox class="checkbox -ink-yellow">check1</rs-checkbox>',
         { lang: 'html' }
       )}
       ${copyCodeBlock(
         '@import \'@rsmdc/checkbox/rs-checkbox.scss\';\n\n' +
         '.checkbox {\n' +
-        '   &.-focus-indicator-color {\n' +
-        '     @include rs-checkbox-focus-indicator-color(yellow);\n' +
+        '   &.-ink-yellow {\n' +
+        '     @include rs-checkbox-checkmark-ink-color(yellow);;\n' +
         '   }\n' +
         '}',
         { lang: 'scss' }
@@ -123,7 +123,7 @@ storiesOf('Components|Checkbox/スタイルのカスタマイズ', module)
   .add('リップルの色を指定した色に変える', () => {
     return `
       <p>リップルの色を変える。</p>
-      <rs-checkbox class="checkbox -focus-indicator-color">check1</rs-checkbox>
+      <rs-checkbox class="checkbox -ripple-brown">check1</rs-checkbox>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
         '@include rs-checkbox-focus-indicator-color($color);',
@@ -131,13 +131,13 @@ storiesOf('Components|Checkbox/スタイルのカスタマイズ', module)
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
-        '<rs-checkbox class="checkbox -focus-indicator-color">check1</rs-checkbox>',
+        '<rs-checkbox class="checkbox -ripple-brown">check1</rs-checkbox>',
         { lang: 'html' }
       )}
       ${copyCodeBlock(
         '@import \'@rsmdc/checkbox/rs-checkbox.scss\';\n\n' +
         '.checkbox {\n' +
-        '   &.-focus-indicator-color {\n' +
+        '   &.-ripple-brown {\n' +
         '     @include rs-checkbox-focus-indicator-color(brown);\n' +
         '   }\n' +
         '}',
@@ -148,7 +148,7 @@ storiesOf('Components|Checkbox/スタイルのカスタマイズ', module)
   .add('選択状態の枠線と内部の色を変える', () => {
     return `
     <p>選択状態の枠線と内部の色を、指定した色に変える。</p>
-    <rs-checkbox class="checkbox -container-colors">check1</rs-checkbox>
+    <rs-checkbox class="checkbox -checked -container-red">check1</rs-checkbox>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
       '@include rs-checkbox-checked-container-colors($color);',
@@ -156,13 +156,13 @@ storiesOf('Components|Checkbox/スタイルのカスタマイズ', module)
     )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
-      '<rs-checkbox class="checkbox -container-color">check1</rs-checkbox>',
+      '<rs-checkbox class="checkbox -container -red">check1</rs-checkbox>',
       { lang: 'html' }
     )}
     ${copyCodeBlock(
       '@import \'@rsmdc/checkbox/rs-checkbox.scss\';\n\n' +
       '.checkbox {\n' +
-      '   &.-checked-container-color {\n' +
+      '   &.-checked.-container-red {\n' +
       '     @include rs-checkbox-checked-container-color(red);\n' +
       '   }\n' +
       '}',
@@ -178,7 +178,7 @@ storiesOf('Components|Checkbox/スタイルのカスタマイズ', module)
   .add('選択状態の枠線・内部・リップルの色を変える', () => {
     return `
     <p>選択状態の枠線・内部・リップルの色を、指定した色に変える。</p>
-    <rs-checkbox class="checkbox -fill-color-accessible">check1</rs-checkbox>
+    <rs-checkbox class="checkbox -checked -fill-orange">check1</rs-checkbox>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
       '@include rs-checkbox-fill-color-accessible($color);',
@@ -186,13 +186,13 @@ storiesOf('Components|Checkbox/スタイルのカスタマイズ', module)
     )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
-      '<rs-checkbox class="checkbox -container-color">check1</rs-checkbox>',
+      '<rs-checkbox class="checkbox -checked -fill-orange">check1</rs-checkbox>',
       { lang: 'html' }
     )}
     ${copyCodeBlock(
       '@import \'@rsmdc/checkbox/rs-checkbox.scss\';\n\n' +
       '.checkbox {\n' +
-      '   &.-fill-color-accessible {\n' +
+      '   &.-checked.-fill-orange {\n' +
       '     @include rs-checkbox-fill-color-accessible(orange);\n' +
       '   }\n' +
       '}',
@@ -208,7 +208,7 @@ storiesOf('Components|Checkbox/スタイルのカスタマイズ', module)
   .add('未選択状態の枠線と内部の色を変える', () => {
     return `
     <p>未選択状態の枠線と内部の色を、指定した色に変える。</p>
-    <rs-checkbox class="checkbox -unchecked-stroke-color">check1</rs-checkbox>
+    <rs-checkbox class="checkbox -unchecked -container-orange">check1</rs-checkbox>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
       '@include rs-checkbox-unchecked-stroke-color($color);',
@@ -216,13 +216,13 @@ storiesOf('Components|Checkbox/スタイルのカスタマイズ', module)
     )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
-      '<rs-checkbox class="checkbox -unchecked-container-color">check1</rs-checkbox>',
+      '<rs-checkbox class="checkbox -unchecked -container-orange">check1</rs-checkbox>',
       { lang: 'html' }
     )}
     ${copyCodeBlock(
       '@import \'@rsmdc/checkbox/rs-checkbox.scss\';\n\n' +
       '.checkbox {\n' +
-      '   &.-unchecked-container-color {\n' +
+      '   &.-unchecked.-container-orange {\n' +
       '       @include rs-checkbox-unchecked-stroke-color($color);\n' +
       '   }\n' +
       '}',
@@ -238,7 +238,7 @@ storiesOf('Components|Checkbox/スタイルのカスタマイズ', module)
   .add('ラベルの位置を変える', () => {
     return `
       <p>ラベルの位置を指定した位置に変える。</p>
-      <rs-checkbox class="checkbox -label-position">check1</rs-checkbox>
+      <rs-checkbox class="checkbox -label -position">check1</rs-checkbox>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
         '@include rs-checkbox-label-position($position);',
@@ -246,13 +246,13 @@ storiesOf('Components|Checkbox/スタイルのカスタマイズ', module)
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
-        '<rs-checkbox class="checkbox -label-position">check1</rs-checkbox>',
+        '<rs-checkbox class="checkbox -label -position">check1</rs-checkbox>',
         { lang: 'html' }
       )}
       ${copyCodeBlock(
         '@import \'@rsmdc/checkbox/rs-checkbox.scss\';\n\n' +
         '.checkbox {\n' +
-        '   &.-label-position {\n' +
+        '   &.-label.-position {\n' +
         '       @include rs-checkbox-label-position(left);\n' +
         '   }\n' +
         '}',

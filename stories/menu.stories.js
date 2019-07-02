@@ -28,7 +28,7 @@ storiesOf('Components|Menu', module)
   .add('使用方法', () => {
     return `
       <h4>使用方法</h4>
-      <div class="result">
+      <div class="menu-result">
         <rs-menu class="my-menu" opened>
           <rs-list class="list">
             <list-item>
@@ -93,8 +93,8 @@ storiesOf('Components|Menu/スタイルのカスタマイズ', module)
   .add('テキストの色を変える', () => {
     return `
       <p>テキストの色を指定した色に変える。</p>
-      <div class="result">
-        <rs-menu class="my-menu -ink-color" opened>
+      <div class="menu-result">
+        <rs-menu class="my-menu -ink-brown" opened>
           <rs-list>
             <list-item>
               <list-text>テキスト</list-text>
@@ -112,7 +112,7 @@ storiesOf('Components|Menu/スタイルのカスタマイズ', module)
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(      
-`<rs-menu class="my-menu -ink-color" opened>
+`<rs-menu class="my-menu -ink-brown" opened>
     <rs-list class="list">
       <list-item>
           <list-text>テキスト<list-text>
@@ -127,7 +127,7 @@ storiesOf('Components|Menu/スタイルのカスタマイズ', module)
       ${copyCodeBlock(  
         '@import \'@rsmdc/menu/rs-menu.scss\';\n\n' +
         '.my-menu {\n' +
-        '   &.-ink-color {\n' +
+        '   &.-ink-brown {\n' +
         '      @include rs-menu-surface-ink-color(brown);\n' +
         '   }\n' +
         '}',
@@ -144,8 +144,8 @@ storiesOf('Components|Menu/スタイルのカスタマイズ', module)
   .add('背景色を変える', () => {
     return `
       <p>背景色を指定した色に変える。</p>
-      <div class="result">
-        <rs-menu class="my-menu -fill-color" opened>
+      <div class="menu-result">
+        <rs-menu class="my-menu -fill-dark" opened>
           <rs-list>
             <list-item>
               <list-text>テキスト</list-text>
@@ -163,7 +163,7 @@ storiesOf('Components|Menu/スタイルのカスタマイズ', module)
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(      
-`<rs-menu class="my-menu -fill-color" opened>
+`<rs-menu class="my-menu -fill-dark" opened>
     <rs-list class="list">
       <list-item>
           <list-text>テキスト<list-text>
@@ -178,7 +178,7 @@ storiesOf('Components|Menu/スタイルのカスタマイズ', module)
       ${copyCodeBlock(  
         '@import \'@rsmdc/menu/rs-menu.scss\';\n\n' +
         '.my-menu {\n' +
-        '   &.-fill-color {\n' +
+        '   &.-fill-dark {\n' +
         '      @include rs-menu-surface-fill-color(gray);\n' +
         '   }\n' +
         '}',
@@ -193,7 +193,7 @@ storiesOf('Components|Menu/スタイルのカスタマイズ', module)
   .add('メニューの幅を変える', () => {
     return `
       <p>メニューの幅を指定したサイズに変更する。</p>
-      <div class="result">
+      <div class="menu-result">
         <rs-menu class="my-menu -width" opened>
           <rs-list>
             <list-item>
@@ -242,8 +242,8 @@ storiesOf('Components|Menu/スタイルのカスタマイズ', module)
   .add('メニューの角の丸みを変える', () => {
     return `
       <p>メニューの角の丸みを指定したサイズに変える。</p>
-      <div class="result">
-        <rs-menu class="my-menu -shape-radius" opened>
+      <div class="menu-result">
+        <rs-menu class="my-menu -roundness" opened>
           <rs-list>
             <list-item>
               <list-text>テキスト</list-text>
@@ -261,7 +261,7 @@ storiesOf('Components|Menu/スタイルのカスタマイズ', module)
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(      
-`<rs-menu class="my-menu -shape-radius" opened>
+`<rs-menu class="my-menu -roundness" opened>
     <rs-list class="list">
       <list-item>
           <list-text>テキスト<list-text>
@@ -276,7 +276,7 @@ storiesOf('Components|Menu/スタイルのカスタマイズ', module)
       ${copyCodeBlock(  
         '@import \'@rsmdc/menu/rs-menu.scss\';\n\n' +
         '.my-menu {\n' +
-        '   &.-shape-radius {\n' +
+        '   &.-roundness {\n' +
         '      @include rs-menu-surface-shape-radius(10px);\n' +
         '   }\n' +
         '}',

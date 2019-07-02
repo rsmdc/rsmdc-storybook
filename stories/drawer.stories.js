@@ -355,7 +355,7 @@ storiesOf('Components|Drawer/スタイルのカスタマイズ', module)
   .add('タイトルの色を変える', () => {
     return `
       <rs-app-layout class="app-layout">
-        <rs-drawer class="drawer -title-ink-color" opened>
+        <rs-drawer class="drawer -title -ink-brown" opened>
           <drawer-header class="header">
             <drawer-title class="title">タイトル</drawer-title>
             <drawer-subtitle class="subtitle">サブタイトル</drawer-subtitle>
@@ -378,7 +378,7 @@ storiesOf('Components|Drawer/スタイルのカスタマイズ', module)
       <h4>使用方法</h4>
       ${copyCodeBlock(
 `<rs-app-layout class="app-layout">
-    <rs-drawer class="drawer -title-ink-color" opened>
+    <rs-drawer class="drawer -title -ink-brown" opened>
         <drawer-header class="header">
           <drawer-title class="title">タイトル</drawer-title>
           <drawer-subtitle class="subtitle">サブタイトル</drawer-subtitle>
@@ -402,7 +402,7 @@ storiesOf('Components|Drawer/スタイルのカスタマイズ', module)
       ${copyCodeBlock(
         '.app-layout {\n' +
         '   > .drawer {\n' +
-        '      &.-title-ink-color {\n' +
+        '      &.-title.-ink-brown {\n' +
         '        @include rs-drawer-title-ink-color(brown);\n' +
         '      }\n' +
         '   }\n' +
@@ -418,7 +418,7 @@ storiesOf('Components|Drawer/スタイルのカスタマイズ', module)
   .add('サブタイトルの色を変える', () => {
     return `
       <rs-app-layout class="app-layout">
-        <rs-drawer class="drawer -subtitle-ink-color" opened>
+        <rs-drawer class="drawer -subtitle -ink-brown" opened>
           <drawer-header class="header">
             <drawer-title class="title">タイトル</drawer-title>
             <drawer-subtitle class="subtitle">サブタイトル</drawer-subtitle>
@@ -440,7 +440,7 @@ storiesOf('Components|Drawer/スタイルのカスタマイズ', module)
       <h4>使用方法</h4>
       ${copyCodeBlock(
 `<rs-app-layout class="app-layout">
-    <rs-drawer class="drawer -subtitle-ink-color" opened>
+    <rs-drawer class="drawer -subtitle -ink-brown" opened>
         <drawer-header class="header">
           <drawer-title class="title">タイトル</drawer-title>
           <drawer-subtitle class="subtitle">サブタイトル</drawer-subtitle>
@@ -464,7 +464,7 @@ storiesOf('Components|Drawer/スタイルのカスタマイズ', module)
       ${copyCodeBlock(
         '.app-layout {\n' +
         '   > .drawer {\n' +
-        '      &.-subtitle-ink-color {\n' +
+        '      &.-subtitle.-ink-brown {\n' +
         '        @include rs-drawer-subtitle-ink-color(brown);\n' +
         '      }\n' +
         '   }\n' +
@@ -475,8 +475,8 @@ storiesOf('Components|Drawer/スタイルのカスタマイズ', module)
   })
   .add('背景色を変える', () => {
     return `
-      <rs-app-layout class="app-layout">
-        <rs-drawer class="drawer -surface-fill-color" opened>
+    <rs-app-layout class="app-layout">
+        <rs-drawer class="drawer -fill-beige" opened>
           <drawer-header class="header">
             <drawer-title class="title">タイトル</drawer-title>
             <drawer-subtitle class="subtitle">サブタイトル</drawer-subtitle>
@@ -489,7 +489,7 @@ storiesOf('Components|Drawer/スタイルのカスタマイズ', module)
             <app-bar-title>title</app-bar-title>
           </rs-app-bar>
         </app-layout-content>
-      </rs-app-layout>
+    </rs-app-layout>
       <p>背景色を指定した色に変える。</p>
       ${copyCodeBlock(
         '@include rs-drawer-surface-fill-color($color);',
@@ -498,7 +498,7 @@ storiesOf('Components|Drawer/スタイルのカスタマイズ', module)
       <h4>使用方法</h4>
       ${copyCodeBlock(
 `<rs-app-layout class="app-layout">
-    <rs-drawer class="drawer -surface-fill-color" opened>
+    <rs-drawer class="drawer -fill-beige" opened>
         <drawer-header class="header">
           <drawer-title class="title">タイトル</drawer-title>
           <drawer-subtitle class="subtitle">サブタイトル</drawer-subtitle>
@@ -522,7 +522,7 @@ storiesOf('Components|Drawer/スタイルのカスタマイズ', module)
       ${copyCodeBlock(
         '.app-layout {\n' +
         '   > .drawer {\n' +
-        '      &.-surface-fill-color {\n' +
+        '      &.-fill-beige {\n' +
         '        @include rs-drawer-surface-fill-color(beige);\n' +
         '      }\n' +
         '   }\n' +
@@ -534,7 +534,7 @@ storiesOf('Components|Drawer/スタイルのカスタマイズ', module)
   .add('モーダルの色を変える', () => {
     return `
       <rs-app-layout class="app-layout">
-        <rs-drawer class="drawer -modal -scrim-fill-color" opened>
+        <rs-drawer class="drawer -modal -fill-beige" opened>
           <drawer-header class="header">
             <drawer-title class="title">タイトル</drawer-title>
             <drawer-subtitle class="subtitle">サブタイトル</drawer-subtitle>
@@ -547,7 +547,7 @@ storiesOf('Components|Drawer/スタイルのカスタマイズ', module)
             <app-bar-title>title</app-bar-title>
           </rs-app-bar>
         </app-layout-content>
-      </rs-app-layout>
+      </rs-app-lauout>
       <p>モーダルの色を指定した色に変える。</p>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
@@ -557,7 +557,7 @@ storiesOf('Components|Drawer/スタイルのカスタマイズ', module)
       <h4>使用方法</h4>
       ${copyCodeBlock(
 `<rs-app-layout class="app-layout">
-    <rs-drawer class="drawer -modal -scrim-fill-color" opened>
+    <rs-drawer class="drawer -modal -fill-beige" opened>
         <drawer-header class="header">
           <drawer-title class="title">タイトル</drawer-title>
           <drawer-subtitle class="subtitle">サブタイトル</drawer-subtitle>
@@ -581,7 +581,7 @@ storiesOf('Components|Drawer/スタイルのカスタマイズ', module)
       ${copyCodeBlock(
         '.app-layout {\n' +
         '   > .drawer {\n' +
-        '      &.-scrim-fill-color {\n' +
+        '      &.-modal.-fill-beige {\n' +
         '        @include rs-drawer-type(modal);\n' +
         '        @include rs-drawer-scrim-fill-color(beige);\n' +
         '      }\n' +
@@ -594,7 +594,7 @@ storiesOf('Components|Drawer/スタイルのカスタマイズ', module)
   .add('背景色とテキストの色を変える', () => {
     return `
       <rs-app-layout class="app-layout">
-        <rs-drawer class="drawer -fill-color-accessible" opened>
+        <rs-drawer class="drawer -container -orange" opened>
           <drawer-header class="header">
             <drawer-title class="title">タイトル</drawer-title>
             <drawer-subtitle class="subtitle">サブタイトル</drawer-subtitle>
@@ -620,7 +620,7 @@ storiesOf('Components|Drawer/スタイルのカスタマイズ', module)
       <h4>使用方法</h4>
       ${copyCodeBlock(
 `<rs-app-layout class="app-layout">
-    <rs-drawer class="drawer -fill-color-accessible" opened>
+    <rs-drawer class="drawer -container -orange" opened>
         <drawer-header class="header">
           <drawer-title class="title">タイトル</drawer-title>
           <drawer-subtitle class="subtitle">サブタイトル</drawer-subtitle>
@@ -644,7 +644,7 @@ storiesOf('Components|Drawer/スタイルのカスタマイズ', module)
       ${copyCodeBlock(
         '.app-layout {\n' +
         '   > .drawer {\n' +
-        '      &.-fill-color-accessible {\n' +
+        '      &.-container.-orange {\n' +
         '        @include rs-drawer-fill-color-accessible(orange);\n' +
         '      }\n' +
         '   }\n' +
@@ -660,7 +660,7 @@ storiesOf('Components|Drawer/スタイルのカスタマイズ', module)
   .add('線の色を変える', () => {
     return `
       <rs-app-layout class="app-layout">
-        <rs-drawer class="drawer -border-color" opened>
+        <rs-drawer class="drawer -line-brown" opened>
           <drawer-header class="header">
             <drawer-title class="title">タイトル</drawer-title>
             <drawer-subtitle class="subtitle">サブタイトル</drawer-subtitle>
@@ -683,7 +683,7 @@ storiesOf('Components|Drawer/スタイルのカスタマイズ', module)
       <h4>使用方法</h4>
       ${copyCodeBlock(
 `<rs-app-layout class="app-layout">
-    <rs-drawer class="drawer -border-color" opened>
+    <rs-drawer class="drawer -line-brown" opened>
         <drawer-header class="header">
           <drawer-title class="title">タイトル</drawer-title>
           <drawer-subtitle class="subtitle">サブタイトル</drawer-subtitle>
@@ -707,7 +707,7 @@ storiesOf('Components|Drawer/スタイルのカスタマイズ', module)
       ${copyCodeBlock(
         '.app-layout {\n' +
         '   > .drawer {\n' +
-        '      &.-border-color {\n' +
+        '      &.-line-brown {\n' +
         '        @include rs-drawer-border-color(brown);\n' +
         '      }\n' +
         '   }\n' +
@@ -719,7 +719,7 @@ storiesOf('Components|Drawer/スタイルのカスタマイズ', module)
   .add('ドロワー内の仕切り線の色を変える', () => {
     return `
       <rs-app-layout class="app-layout">
-        <rs-drawer class="drawer -divider-color" opened>
+        <rs-drawer class="drawer -divider-blue" opened>
           <drawer-header class="header">
             <drawer-title class="title">タイトル</drawer-title>
             <drawer-subtitle class="subtitle">サブタイトル</drawer-subtitle>
@@ -748,7 +748,7 @@ storiesOf('Components|Drawer/スタイルのカスタマイズ', module)
       <h4>使用方法</h4>
       ${copyCodeBlock(
 `<rs-app-layout class="app-layout">
-    <rs-drawer class="drawer -divider-color" opened>
+    <rs-drawer class="drawer -divider-blue" opened>
         <drawer-header class="header">
           <drawer-title class="title">タイトル</drawer-title>
           <drawer-subtitle class="subtitle">サブタイトル</drawer-subtitle>
@@ -772,8 +772,8 @@ storiesOf('Components|Drawer/スタイルのカスタマイズ', module)
       ${copyCodeBlock(
         '.app-layout {\n' +
         '   > .drawer {\n' +
-        '      &.-border-color {\n' +
-        '        @include rs-drawer-border-color(brown);\n' +
+        '      &.-divider-blue {\n' +
+        '        @include rs-drawer-border-color(blue);\n' +
         '      }\n' +
         '   }\n' +
         '}',
@@ -847,7 +847,7 @@ storiesOf('Components|Drawer/スタイルのカスタマイズ', module)
   .add('ドロワーの角の丸みを変える', () => {
     return `
       <rs-app-layout class="app-layout">
-        <rs-drawer class="drawer -shape-radius" opened>
+        <rs-drawer class="drawer -roundness" opened>
           <drawer-header class="header">
             <drawer-title class="title">タイトル</drawer-title>
             <drawer-subtitle class="subtitle">サブタイトル</drawer-subtitle>
@@ -870,7 +870,7 @@ storiesOf('Components|Drawer/スタイルのカスタマイズ', module)
       <h4>使用方法</h4>
       ${copyCodeBlock(
 `<rs-app-layout class="app-layout">
-    <rs-drawer class="drawer -shape-radius" opened>
+    <rs-drawer class="drawer -roundness" opened>
         <drawer-header class="header">
           <drawer-title class="title">タイトル</drawer-title>
           <drawer-subtitle class="subtitle">サブタイトル</drawer-subtitle>
@@ -894,7 +894,7 @@ storiesOf('Components|Drawer/スタイルのカスタマイズ', module)
       ${copyCodeBlock(
         '.app-layout {\n' +
         '   > .drawer {\n' +
-        '      &.-shape-radius {\n' +
+        '      &.-roundness {\n' +
         '        @include rs-drawer-shape-radius(10px);\n' +
         '      }\n' +
         '   }\n' +

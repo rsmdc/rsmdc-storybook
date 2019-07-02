@@ -8,42 +8,42 @@
     @include rs-card-media-type(16-9);
     @include rs-card-media-image(url('https://www.mybook.co.jp/column/photography-technique/img/landscape3.jpg'));
     
-    &.-media-image {
+    &.-image {
       @include rs-card-media-image(url('https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AAr4y0F.img?h=1080&w=1920&m=6&q=60&o=f&l=f'));
     }
-    &.-media-type {
+    &.-square {
       @include rs-card-media-type(square);
     }
-    &.-media-content-ink-color {
+    &.-title.-ink-white {
       @include rs-card-media-content-ink-color(white);
     }
   }
-  &.-fill-color {
+  &.-fill-gray {
     @include rs-card-fill-color(#f8f8f8);
   }
-  &.-title-ink-color {
+  &.-title.-ink-brown {
     @include rs-card-title-ink-color(brown);
   }
-  &.-subtitle-ink-color {
+  &.-subtitle.-ink-brown {
     @include rs-card-subtitle-ink-color(brown);
   }
-  &.-description-ink-color {
+  &.-description.-ink-brown {
     @include rs-card-description-ink-color(brown);
   }
-  &.-card-size {
+  &.-states-orange {
+    @include rs-card-states-color(orange);
+  }
+  &.-size {
     @include rs-card-size(300px);
   }
-  &.-card-type {
+  &.-outlined {
     @include rs-card-type(outlined);
   }
-  &.-actions-type {
+  &.-action-area {
     @include rs-card-actions-type(full-bleed);
   }
-  &.-shape-radius {
+  &.-roundness {
     @include rs-card-shape-radius(15px);
-  }
-  &.-states-color {
-    @include rs-card-states-color(orange);
   }
 }
 

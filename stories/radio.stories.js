@@ -107,7 +107,7 @@ storiesOf('Components|Radio/スタイルのカスタマイズ', module)
   .add('チェックマークの色を変える', () => {
     return `
       <p>チェックマークの色を、指定した色に変える。</p>
-      <rs-radio id="radio1" class="my-radio -ink-color" label="radio1" name="group"></rs-radio>
+      <rs-radio id="radio1" class="my-radio -ink-orange" label="radio1" name="group"></rs-radio>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
         '@include rs-radio-ink-color($color);',
@@ -115,13 +115,13 @@ storiesOf('Components|Radio/スタイルのカスタマイズ', module)
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
-        '<rs-radio id="radio1" class="my-radio -ink-color" label="radio1" name="group"></rs-radio>',
+        '<rs-radio id="radio1" class="my-radio -ink-orange" label="radio1" name="group"></rs-radio>',
         { lang: 'html' }
       )}
       ${copyCodeBlock(
         '@import \'@rsmdc/radio/rs-radio.scss\';\n\n' +
         '.my-radio {\n' +
-        '   &.-ink-color {\n' +
+        '   &.-ink-orange {\n' +
         '       @include rs-radio-ink-color(brown);\n' +
         '   }\n' +
         '}',
@@ -136,7 +136,7 @@ storiesOf('Components|Radio/スタイルのカスタマイズ', module)
   .add('リップルの色を変える', () => {
     return `
       <p>リップルの色を指定した色に変える。</p>
-      <rs-radio id="radio1" class="my-radio -states-color" label="radio1" name="group"></rs-radio>
+      <rs-radio id="radio1" class="my-radio -states-blue" label="radio1" name="group"></rs-radio>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
         '@include rs-radio-states-color($color);',
@@ -144,13 +144,13 @@ storiesOf('Components|Radio/スタイルのカスタマイズ', module)
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
-        '<rs-radio id="radio1" class="my-radio -states-color" label="radio1" name="group"></rs-radio>',
+        '<rs-radio id="radio1" class="my-radio -states-blue" label="radio1" name="group"></rs-radio>',
         { lang: 'html' }
       )}
       ${copyCodeBlock(
         '@import \'@rsmdc/radio/rs-radio.scss\';\n\n' +
         '.my-radio {\n' +
-        '   &.-states-color {\n' +
+        '   &.-states-blue {\n' +
         '       @include rs-radio-states-color(pink);\n' +
         '   }\n' +
         '}',
@@ -161,7 +161,7 @@ storiesOf('Components|Radio/スタイルのカスタマイズ', module)
   .add('選択状態の線の色を変える', () => {
     return `
       <p>選択状態の時の線の色を、選択した色に変える。</p>
-      <rs-radio id="radio1" class="my-radio -checked-stroke-color" label="radio1" name="group"></rs-radio>
+      <rs-radio id="radio1" class="my-radio -checked -line-brown" label="radio1" name="group"></rs-radio>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
         '@include rs-radio-checked-stroke-color($color);',
@@ -169,13 +169,13 @@ storiesOf('Components|Radio/スタイルのカスタマイズ', module)
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
-        '<rs-radio id="radio1" class="my-radio -checked-stroke-color" label="radio1" name="group"></rs-radio>',
+        '<rs-radio id="radio1" class="my-radio -checked -line-brown" label="radio1" name="group"></rs-radio>',
         { lang: 'html' }
       )}
       ${copyCodeBlock(
         '@import \'@rsmdc/radio/rs-radio.scss\';\n\n' +
         '.my-radio {\n' +
-        '   &.-checked-stroke-color {\n' +
+        '   &.-checked.-line-brown {\n' +
         '       @include rs-radio-checked-stroke-color(brown);\n' +
         '   }\n' +
         '}',
@@ -186,7 +186,7 @@ storiesOf('Components|Radio/スタイルのカスタマイズ', module)
   .add('未選択状態の線の色を変える', () => {
     return `
       <p>未選択状態の時の線の色を、選択した色に変える。</p>
-      <rs-radio id="radio1" class="my-radio -unchecked-stroke-color" label="radio1" name="group"></rs-radio>
+      <rs-radio id="radio1" class="my-radio -unchecked -line-brown" label="radio1" name="group"></rs-radio>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
         '@include rs-radio-unchecked-stroke-color($color);',
@@ -194,13 +194,13 @@ storiesOf('Components|Radio/スタイルのカスタマイズ', module)
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
-        '<rs-radio id="radio1" class="my-radio -brown" label="radio1" name="group"></rs-radio>',
+        '<rs-radio id="radio1" class="my-radio -unchecked -line-brown" label="radio1" name="group"></rs-radio>',
         { lang: 'html' }
       )}
       ${copyCodeBlock(
         '@import \'@rsmdc/radio/rs-radio.scss\';\n\n' +
         '.my-radio {\n' +
-        '   &.-unchecked-stroke-color {\n' +
+        '   &.-unchecked.-line-brown {\n' +
         '       @include rs-radio-unchecked-stroke-color(brown);\n' +
         '   }\n' +
         '}',
@@ -211,7 +211,7 @@ storiesOf('Components|Radio/スタイルのカスタマイズ', module)
   .add('選択状態・未選択状態の線、チェックマークの色を一括で変える', () => {
     return `
       <p>選択状態・未選択状態の時の線の色を、選択した色に変える。</p>
-      <rs-radio id="radio1" class="my-radio -fill-color-accessible" label="radio1" name="group"></rs-radio>
+      <rs-radio id="radio1" class="my-radio -container -blue" label="radio1" name="group"></rs-radio>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
         '@include rs-radio-fill-color-accessible($color);',
@@ -219,14 +219,14 @@ storiesOf('Components|Radio/スタイルのカスタマイズ', module)
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
-        '<rs-radio id="radio1" class="my-radio -fill-color-accessible" label="radio1" name="group"></rs-radio>',
+        '<rs-radio id="radio1" class="my-radio -container -blue" label="radio1" name="group"></rs-radio>',
         { lang: 'html' }
       )}
       ${copyCodeBlock(
         '@import \'@rsmdc/radio/rs-radio.scss\';\n\n' +
         '.my-radio {\n' +
-        '   &.-fill-color-accessible {\n' +
-        '       @include rs-radio-fill-color-accessible(brown);\n' +
+        '   &.-container.-blue{\n' +
+        '       @include rs-radio-fill-color-accessible(blue);\n' +
         '   }\n' +
         '}',
         { lang: 'scss' }
@@ -240,7 +240,7 @@ storiesOf('Components|Radio/スタイルのカスタマイズ', module)
         <rs-radio id="radio1" class="my-radio" label="radio1" name="group1"></rs-radio>
         <rs-radio id="radio2" class="my-radio" label="radio2" name="group1"></rs-radio>
       </div>
-      <div class="left-group -left">
+      <div class="label -position">
         <rs-radio id="radio3" class="my-radio" label="radio3" name="group2"></rs-radio>
         <rs-radio id="radio4" class="my-radio" label="radio4" name="group2"></rs-radio>
       </div>
@@ -255,7 +255,7 @@ storiesOf('Components|Radio/スタイルのカスタマイズ', module)
     <rs-radio id="radio1" class="radio" label="radio1" name="group1"></rs-radio>
     <rs-radio id="radio2" class="radio " label="radio2" name="group1"></rs-radio>
 </div>
-<div class="left-group">
+<div class="label -position">
     <rs-radio id="radio3" class="radio" label="radio3" name="group2"></rs-radio>
     <rs-radio id="radio4" class="radio " label="radio4" name="group2"></rs-radio>
 </div>`,
@@ -263,7 +263,7 @@ storiesOf('Components|Radio/スタイルのカスタマイズ', module)
       )}
       ${copyCodeBlock(
         '@import \'@rsmdc/radio/rs-radio.scss\';\n\n' +
-        '.left-group {\n' +
+        '.label -position {\n' +
         '   @include rs-radio-label-position(left);\n' +
         '}',
         { lang: 'scss' }

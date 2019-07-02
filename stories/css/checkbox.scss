@@ -1,22 +1,22 @@
 @import '../../node_modules/@rsmdc/checkbox/rs-checkbox';
 
 .checkbox {
-  &.-checkmark-ink-color {
+  &.-ink-yellow {
     @include rs-checkbox-checkmark-ink-color(yellow);
   }
-  &.-focus-indicator-color {
+  &.-ripple-brown {
     @include rs-checkbox-focus-indicator-color(brown);
   }
-  &.-container-colors {
+  &.-checked.-container-red {
     @include rs-checkbox-checked-container-colors(red);
   }
-  &.-label-position {
-    @include rs-checkbox-label-position(left);
-  }
-  &.-fill-color-accessible {
+  &.-checked.-fill-orange {
     @include rs-checkbox-fill-color-accessible(orange);
   }
-  &.-unchecked-stroke-color {
+  &.-unchecked.-container-orange {
     @include rs-checkbox-unchecked-stroke-color(orange);
+  }
+  &.-label.-position {
+    @include rs-checkbox-label-position(left);
   }
 }

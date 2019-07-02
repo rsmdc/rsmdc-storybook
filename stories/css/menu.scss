@@ -3,20 +3,20 @@
 @import '../../node_modules/@rsmdc/shape/rs-functions';
 
 .my-menu {
-  &.-ink-color {
+  &.-ink-brown {
     @include rs-menu-surface-ink-color(brown);
   }
-  &.-fill-color {
+  &.-fill-dark {
     @include rs-menu-surface-fill-color(gray);
   }
   &.-width {
     @include rs-menu-width(200px);
   }
-  &.-shape-radius {
+  &.-roundness {
     @include rs-menu-surface-shape-radius(10px);
   }
 }
 
-.menu-area {
-  padding-bottom: 80px;
+.menu-result {
+  padding-bottom: 130px;
 }

@@ -5,40 +5,44 @@
 .nav {
   @include rs-top-app-bar-nav-icon-image(url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgAQMAAADYVuV7AAAABlBMVEUAAAAzMzPI8eYgAAAAAXRSTlMAQObYZgAAABxJREFUeAFjIBOMAv7/UPCBlhzywWgYjIbBKAAANijXKaI5RRgAAAAASUVORK5CYII='));
 }
+
 .app-layout {
   > .drawer {
     @include rs-drawer-type(dismissible);
+    &.-title.-ink-brown {
+      @include rs-drawer-title-ink-color(brown);
+    }
     &.-permanent {
       @include rs-drawer-type(permanent);
     }
     &.-modal {
       @include rs-drawer-type(modal);
     }
-    &.-title-ink-color {
-      @include rs-drawer-title-ink-color(brown);
-    }
-    &.-subtitle-ink-color {
+    &.-subtitle.-ink-brown {
       @include rs-drawer-subtitle-ink-color(brown);
     }
-    &.-surface-fill-color {
+    &.-fill-beige {
+      @include rs-drawer-surface-fill-color(beige);
+    }
+    &.-modal.-fill-beige {
       @include rs-drawer-surface-fill-color(beige);
     }
     &.-scrim-fill-color {
       @include rs-drawer-scrim-fill-color(beige);
     }
-    &.-fill-color-accessible {
+    &.-container.-orange {
       @include rs-drawer-fill-color-accessible(orange);
     }
-    &.-border-color {
+    &.-line-brown {
       @include rs-drawer-border-color(brown);
     }
-    &.-divider-color {
-      @include rs-drawer-divider-color(brown);
+    &.-divider-blue {
+      @include rs-drawer-divider-color(blue);
     }
     &.-width {
       @include rs-drawer-width(300px);
     }
-    &.-shape-radius {
+    &.-roundness {
       @include rs-drawer-shape-radius(10px);
     }
   }

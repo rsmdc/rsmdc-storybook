@@ -335,7 +335,7 @@ storiesOf('Components|Button/スタイルのカスタマイズ', module)
   .add('テキストの色を変える', () => {
     return `
       <p>テキストの色を指定した色に変える。</p>
-      <rs-button class="button -text-color">button</rs-button>
+      <rs-button class="button -text-brown">button</rs-button>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
         '@include rs-button-ink-color($color);',
@@ -343,13 +343,13 @@ storiesOf('Components|Button/スタイルのカスタマイズ', module)
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
-        '<rs-button class="button -text-color">button</rs-button>',
+        '<rs-button class="button -text-brown">button</rs-button>',
         { lang: 'html' }
       )}
       ${copyCodeBlock(
         '@import \'@rsmdc/button/rs-button.scss\';\n\n' +
         '.button {\n' +
-        '  &.-text-color {\n' +
+        '  &.-text-brown {\n' +
         '     @include rs-button-ink-color(brown);\n' +
         '     @include rs-button-states-color(brown);\n' +
         '  }\n' +
@@ -365,7 +365,7 @@ storiesOf('Components|Button/スタイルのカスタマイズ', module)
   .add('背景色を変える', () => {
     return `
       <p>背景色を指定した色に変える。</p>
-      <rs-button class="button -background-color">button</rs-button>
+      <rs-button class="button -fill-beige">button</rs-button>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
         '@include rs-button-container-fill-color($color);',
@@ -373,13 +373,13 @@ storiesOf('Components|Button/スタイルのカスタマイズ', module)
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
-        '<rs-button class="button -background-color">button</rs-button>',
+        '<rs-button class="button -fill-beige">button</rs-button>',
         { lang: 'html' }
       )}
       ${copyCodeBlock(
         '@import \'@rsmdc/button/rs-button.scss\';\n\n' +
         '.button {\n' +
-        '  &.-background-color {\n' +
+        '  &.-fill-beige {\n' +
         '    @include rs-button-type(unelevated);\n' +
         '    @include rs-button-ink-color(brown);\n' +
         '    @include rs-button-container-fill-color(beige);\n' +
@@ -397,7 +397,7 @@ storiesOf('Components|Button/スタイルのカスタマイズ', module)
   .add('リップルの色を変える', () => {
     return `
       <p>リップルの色を指定した色に変える。</p>
-      <rs-button class="button -states-color">button</rs-button>
+      <rs-button class="button -states-dark">button</rs-button>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
         '@include rs-button-states-color($color);',
@@ -405,13 +405,13 @@ storiesOf('Components|Button/スタイルのカスタマイズ', module)
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock( 
-        '<rs-button class="button -states-color">button</rs-button>',
+        '<rs-button class="button -states-dark">button</rs-button>',
         { lang: 'html' }
       )}
       ${copyCodeBlock( 
         '@import \'@rsmdc/button/rs-button.scss\';\n\n' +
         '.button {\n' +
-        '   &.-states-color {\n' + 
+        '   &.-states-dark {\n' + 
         '     @include rs-button-states-color(black);\n' +
         '   }\n' +
         '}',
@@ -425,7 +425,7 @@ storiesOf('Components|Button/スタイルのカスタマイズ', module)
         背景色からテキストとリップルの色を変える。 <br>
         指定した背景色の色を元にテキストとリップルの色が自動調整される。
       </p>
-      <rs-button class="button -filled-accessible">button</rs-button>
+      <rs-button class="button -filled -accessible-dark">button</rs-button>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
         '@include rs-button-filled-accessible($color);',
@@ -433,13 +433,13 @@ storiesOf('Components|Button/スタイルのカスタマイズ', module)
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock( 
-        '<rs-button class="button -filled-accessible">button</rs-button>',
+        '<rs-button class="button -filled -acceddible-dark">button</rs-button>',
         { lang: 'html' }
       )}
       ${copyCodeBlock(
         '@import \'@rsmdc/button/rs-button.scss\';\n\n' +
         '.button {\n' +
-        '   &.-states-color {\n' + 
+        '   &.-filled.-acceddible-dark {\n' + 
         '     @include rs-button-filled-accessible(black);\n' +
         '   }\n' +
         '}',
@@ -450,7 +450,7 @@ storiesOf('Components|Button/スタイルのカスタマイズ', module)
   .add('線の色を変える', () => {
     return `
       <p>境界線の色を指定した色に変える。</p>
-      <rs-button class="outlined -outline-color">button</rs-button>
+      <rs-button class="outlined -line-blue">button</rs-button>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
         '@include rs-button-outline-color($color);',
@@ -458,14 +458,14 @@ storiesOf('Components|Button/スタイルのカスタマイズ', module)
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
-        '<rs-button class="outlined -outline-color">button</rs-button>',
+        '<rs-button class="outlined -line-blue">button</rs-button>',
         { lang: 'html' }
       )}
       ${copyCodeBlock(
         '@import \'@rsmdc/css/rs-button.scss\';\n\n' +
         '.outlined {\n' +
         '  @include rs-button-type(outlined);\n\n' +
-        '  &.-outline-color {\n' +
+        '  &.-line-blue {\n' +
         '     @include rs-button-outline-color(#0ba6e4);\n\n' +
         '     @include rs-button-ink-color(#0ba6e4);\n' +
         '     @include rs-button-states-color(#92cfe7);\n' +
@@ -482,7 +482,7 @@ storiesOf('Components|Button/スタイルのカスタマイズ', module)
   .add('ボタンの角の丸みを変える', () => {
     return `
       <p>与えられた半径の大きさの丸い形状にボタンを設定する。</p>
-      <rs-button class="button -shape-radius">button</rs-button>
+      <rs-button class="button -roundness">button</rs-button>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
         '@include rs-button-shape-radius($radius);',
@@ -490,13 +490,13 @@ storiesOf('Components|Button/スタイルのカスタマイズ', module)
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
-        '<rs-button class="button -shape-radius">button</rs-button>',
+        '<rs-button class="button -roundness">button</rs-button>',
         { lang: 'html' }
       )}
       ${copyCodeBlock(
         '@import \'@rsmdc/css/rs-button.scss\';\n\n' +
         '.button {\n' +
-        '  &.-shape-radius {\n' +
+        '  &.-roundness {\n' +
         '    @include rs-button-shape-radius(30px);\n' +
         '  }\n' +
         '}',
@@ -541,8 +541,8 @@ storiesOf('Components|Button/スタイルのカスタマイズ', module)
   .add('線の太さを変える', () => {
     return `
       <p>境界線の太さを指定したサイズに変える。</p>
-      <rs-button class="outlined -outline-width">button</rs-button>
-      <rs-button class="outlined -outline-width -horizontal-padding">button</rs-button>
+      <rs-button class="outlined -line-thin">button</rs-button>
+      <rs-button class="outlined -line-thin -horizontal-padding">button</rs-button>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
         '@include rs-button-outline-width($width);',
@@ -550,8 +550,8 @@ storiesOf('Components|Button/スタイルのカスタマイズ', module)
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
-        '<rs-button class="outlined -outline-width">button</rs-button>\n' +
-        '<rs-button class="outlined -outline-width -horizontal-padding">button</rs-button>',
+        '<rs-button class="outlined -outline-thin">button</rs-button>\n' +
+        '<rs-button class="outlined -outline-thin -horizontal-padding">button</rs-button>',
         { lang: 'html' }
       )}
       ${copyCodeBlock(
@@ -561,7 +561,7 @@ storiesOf('Components|Button/スタイルのカスタマイズ', module)
         '  &.-outline-width {\n' +
         '    @include rs-button-outline-width(3px);\n' +
         '  }\n' +
-        '  &.-horizontal-padding.-outline-width {\n' +
+        '  &.-horizontal-padding.-line-thin {\n' +
         '    @include rs-button-horizontal-padding(30px);\n' +
         '    @include rs-button-outline-width(1px, 30px);\n' +
         '  }\n' +
@@ -609,7 +609,7 @@ storiesOf('Components|Button/スタイルのカスタマイズ', module)
   .add('アイコンの位置を変える', () => {
       return `
       <p>表示したアイコンの位置を変える。</p>
-      <rs-button class="button -icon-position">submit</rs-button>
+      <rs-button class="button -icon -position">submit</rs-button>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
         '@include rs-button-icon-position(position);',
@@ -617,13 +617,13 @@ storiesOf('Components|Button/スタイルのカスタマイズ', module)
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
-        '<rs-button class="button -icon-position">submit</rs-button>',
+        '<rs-button class="button -icon -position">submit</rs-button>',
         { lang: 'html' }
       )}
       ${copyCodeBlock(
         '@import \'@rsmdc/button/rs-button.scss\';\n\n' +
         '.button {\n' +
-        '   &.-icon-position {\n' +
+        '   &.-icon.-position {\n' +
         '     @include rs-button-icon-image(url("https://cdn3.iconfinder.com/data/icons/pyconic-icons-1-2/512/heart-outline-512.png"));\n' +
         '     @include rs-button-icon-position(right); \n' +
         '   }\n' +
@@ -652,12 +652,12 @@ storiesOf('Components|Button', module)
     const options = {
       none: 'none',
       icon: '-icon',
-      customizedBg: '-background-color',
-      customizedTextColor: '-text-color',
-      customizedShape: '-shape-radius',
+      customizedBg: '-fill-beige',
+      customizedTextColor: '-text-brown',
+      customizedShape: '-roundness',
       customizedHorizontalPadding: '-horizontal-padding',
-      customizedOutlinedColor: '-outline-color',
-      customizedOutlinedWidth: '-outline-width'
+      customizedOutlinedColor: '-line-blue',
+      customizedOutlinedWidth: '-line-thin'
     }
 
     let variant = select('Variants', variantOptions, 'button')

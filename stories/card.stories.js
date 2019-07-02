@@ -187,7 +187,7 @@ storiesOf('Components|Card/スタイルのカスタマイズ', module)
   .add('カードの背景色を変える', () => {
     return `
       <p>カードの背景色を指定した色に変える。</p>
-      <rs-card class="my-card -fill-color">
+      <rs-card class="my-card -fill-gray">
         <card-contents class="contents">
         <card-media class="media"></card-media>
           <card-header class="header">
@@ -208,7 +208,7 @@ storiesOf('Components|Card/スタイルのカスタマイズ', module)
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
-`<rs-card class="my-card -fill-color">
+`<rs-card class="my-card -fill-gray">
     <card-contents class="contents">
     <card-media class="media"></card-media>
     <card-header class="header">
@@ -227,7 +227,7 @@ storiesOf('Components|Card/スタイルのカスタマイズ', module)
       ${copyCodeBlock(
         '@import \'@rsmdc/card/rs-card.scss\';\n\n' +
         '.my-card {\n' +
-        '   &.-fill-color {\n' +
+        '   &.-fill-gray {\n' +
         '     @include rs-card-fill-color(#f8f8f8);\n' +
         '   }\n' +
         '}',
@@ -245,7 +245,7 @@ storiesOf('Components|Card/スタイルのカスタマイズ', module)
   .add('タイトルの色を変える', () =>  {
     return `
       <p>タイトルの色を指定した色に変える。</p>
-      <rs-card class="my-card -title-ink-color">
+      <rs-card class="my-card -title -ink-brown">
         <card-contents class="contents">
         <card-media class="media"></card-media>
           <card-header class="header">
@@ -266,7 +266,7 @@ storiesOf('Components|Card/スタイルのカスタマイズ', module)
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
-`<rs-card class="my-card -title-ink-color">
+`<rs-card class="my-card -title -ink-brown">
     <card-contents class="contents">
     <card-media class="media"></card-media>
     <card-header class="header">
@@ -285,7 +285,7 @@ storiesOf('Components|Card/スタイルのカスタマイズ', module)
       ${copyCodeBlock(
         '@import \'@rsmdc/card/rs-card.scss\';\n\n' +
         '.my-card {\n' +
-        '   &.-title-ink-color {\n' +
+        '   &.-title.-ink-brown{\n' +
         '     @include rs-card-title-ink-color(brown);\n' +
         '   }\n' +
         '}',
@@ -303,7 +303,7 @@ storiesOf('Components|Card/スタイルのカスタマイズ', module)
   .add('サブタイトルの色を変える', () => {
     return `
       <p>サブタイトルの色を指定した色に変える。</p>
-      <rs-card class="my-card -subtitle-ink-color">
+      <rs-card class="my-card -subtitle -ink-brown">
         <card-contents class="contents">
         <card-media class="media"></card-media>
           <card-header class="header">
@@ -324,7 +324,7 @@ storiesOf('Components|Card/スタイルのカスタマイズ', module)
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
-`<rs-card class="my-card -subtitle-ink-color">
+`<rs-card class="my-card -subtitle -ink-brown">
     <card-contents class="contents">
     <card-media class="media"></card-media>
     <card-header class="header">
@@ -343,7 +343,7 @@ storiesOf('Components|Card/スタイルのカスタマイズ', module)
       ${copyCodeBlock(
         '@import \'@rsmdc/card/rs-card.scss\';\n\n' +
         '.my-card {\n' +
-        '   &.-subtitle-ink-color {\n' +
+        '   &.-subtitle.-ink-color {\n' +
         '     @include rs-card-subtitle-ink-color(brown);\n' +
         '   }\n' +
         '}',
@@ -354,7 +354,7 @@ storiesOf('Components|Card/スタイルのカスタマイズ', module)
   .add('説明文の色を変える', () => {
     return `
     <p>説明部分の色を指定した色に変える。</p>
-    <rs-card class="my-card -description-ink-color">
+    <rs-card class="my-card -description -ink-brown">
       <card-contents class="contents">
       <card-media class="media"></card-media>
         <card-header class="header">
@@ -375,7 +375,7 @@ storiesOf('Components|Card/スタイルのカスタマイズ', module)
     )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
-`<rs-card class="my-card -description-ink-color">
+`<rs-card class="my-card -description -ink-brown">
     <card-contents class="contents">
     <card-media class="media"></card-media>
     <card-header class="header">
@@ -394,7 +394,7 @@ storiesOf('Components|Card/スタイルのカスタマイズ', module)
     ${copyCodeBlock(
       '@import \'@rsmdc/card/rs-card.scss\';\n\n' +
       '.my-card {\n' +
-      '   &.-description-ink-color {\n' +
+      '   &.-description.-ink-brown {\n' +
       '       @include rs-card-description-ink-color(brown);\n' +
       '   }\n' +
       '}',
@@ -407,7 +407,7 @@ storiesOf('Components|Card/スタイルのカスタマイズ', module)
       <p>画像タイトルの色を指定した色に変える。</p>
       <rs-card class="my-card">
         <card-contents class="contents">
-        <card-media class="media -media-content-ink-color">画像タイトル</card-media>
+        <card-media class="media -title -ink-white">画像タイトル</card-media>
           <card-header class="header">
             <card-title>タイトル</card-title>
             <card-subtitle>サブタイトル</card-subtitle>
@@ -428,7 +428,7 @@ storiesOf('Components|Card/スタイルのカスタマイズ', module)
       ${copyCodeBlock(
 `<rs-card class="my-card">
     <card-contents class="contents">
-    <card-media class="media -media-content-ink-color"></card-media>
+    <card-media class="media -title -ink-white"></card-media>
     <card-header class="header">
         <card-title>タイトル</card-title>
         <card-subtitle>サブタイトル</card-subtitle>
@@ -446,7 +446,7 @@ storiesOf('Components|Card/スタイルのカスタマイズ', module)
         '@import \'@rsmdc/card/rs-card.scss\';\n\n' +
         '.my-card {\n' +
         '   .contents > .media {\n' +
-        '      &.-media-content-ink-color {\n' +
+        '      &.-title.-ink-white {\n' +
         '         @include rs-card-media-content-ink-color(white);\n' +
         '      }\n' +
         '   }\n' +
@@ -458,7 +458,7 @@ storiesOf('Components|Card/スタイルのカスタマイズ', module)
   .add('リップルの色を変える', () => {
     return `
       <p>画像タイトルの色を指定した色に変える。</p>
-      <rs-card class="my-card -states-color">
+      <rs-card class="my-card -states-orange">
         <card-contents class="contents">
         <card-media class="media"></card-media>
           <card-header class="header">
@@ -479,9 +479,9 @@ storiesOf('Components|Card/スタイルのカスタマイズ', module)
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
-  `<rs-card class="my-card -states-color">
+  `<rs-card class="my-card -states-orange">
       <card-contents class="contents">
-      <card-media class="media -media-content-ink-color"></card-media>
+      <card-media class="media"></card-media>
       <card-header class="header">
           <card-title>タイトル</card-title>
           <card-subtitle>サブタイトル</card-subtitle>
@@ -498,7 +498,7 @@ storiesOf('Components|Card/スタイルのカスタマイズ', module)
       ${copyCodeBlock(
         '@import \'@rsmdc/card/rs-card.scss\';\n\n' +
         '.my-card {\n' +
-        '   &.-states-color {\n' +
+        '   &.-states-orange {\n' +
         '      @include rs-card-states-color(orange);\n' +
         '   }\n' +
         '}',
@@ -509,7 +509,7 @@ storiesOf('Components|Card/スタイルのカスタマイズ', module)
   .add('カード全体のサイズを変える', () => {
     return `
     <p>カード全体のサイズを指定したサイズに変える。</p>
-    <rs-card class="my-card -card-size">
+    <rs-card class="my-card -size">
       <card-contents class="contents">
       <card-media class="media"></card-media>
         <card-header class="header">
@@ -531,9 +531,9 @@ storiesOf('Components|Card/スタイルのカスタマイズ', module)
     )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
-`<rs-card class="my-card -card-size">
+`<rs-card class="my-card -size">
     <card-contents class="contents">
-    <card-media class="media -media-content-ink-color"></card-media>
+    <card-media class="media"></card-media>
     <card-header class="header">
         <card-title>タイトル</card-title>
         <card-subtitle>サブタイトル</card-subtitle>
@@ -550,7 +550,7 @@ storiesOf('Components|Card/スタイルのカスタマイズ', module)
     ${copyCodeBlock(
       '@import \'@rsmdc/card/rs-card.scss\';\n\n' +
       '.my-card {\n' +
-      '   &.-card-size {\n' +
+      '   &.-size {\n' +
       '      @include rs-card-size(300px);\n' +
       '   }\n' +
       '}',
@@ -569,7 +569,7 @@ storiesOf('Components|Card/スタイルのカスタマイズ', module)
       <p>指定した画像を表示する。</p>
       <rs-card class="my-card">
         <card-contents class="contents">
-        <card-media class="media -media-image"></card-media>
+        <card-media class="media -image"></card-media>
           <card-header class="header">
             <card-title>タイトル</card-title>
             <card-subtitle>サブタイトル</card-subtitle>
@@ -590,7 +590,7 @@ storiesOf('Components|Card/スタイルのカスタマイズ', module)
       ${copyCodeBlock(
 `<rs-card class="my-card">
     <card-contents class="contents">
-    <card-media class="media -media-image"></card-media>
+    <card-media class="media -image"></card-media>
     <card-header class="header">
         <card-title>タイトル</card-title>
         <card-subtitle>サブタイトル</card-subtitle>
@@ -608,7 +608,7 @@ storiesOf('Components|Card/スタイルのカスタマイズ', module)
         '@import \'@rsmdc/card/rs-card.scss\';\n\n' +
         '.my-card {\n' +
         '   > .contents > .media {\n' +
-        '       &.-media-image {\n' +
+        '       &.-image {\n' +
         '          @include rs-card-media-image(url(\'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVlzip6xw4cKmSkb0hOs79KPvArM_QBHM77ynJ3VDY8gQ3sVxu\'));\n' +
         '       }\n' +
         '   }\n' +
@@ -629,7 +629,7 @@ storiesOf('Components|Card/スタイルのカスタマイズ', module)
       <p>画像のサイズを指定した大きさに変える。</p>
       <rs-card class="my-card">
         <card-contents class="contents">
-        <card-media class="media -media-type"></card-media>
+        <card-media class="media -square"></card-media>
           <card-header class="header">
             <card-title>タイトル</card-title>
             <card-subtitle>サブタイトル</card-subtitle>
@@ -652,7 +652,7 @@ storiesOf('Components|Card/スタイルのカスタマイズ', module)
       ${copyCodeBlock(
 `<rs-card class="my-card">
     <card-contents class="contents">
-    <card-media class="media -media-type"></card-media>
+    <card-media class="media -square"></card-media>
     <card-header class="header">
         <card-title>タイトル</card-title>
         <card-subtitle>サブタイトル</card-subtitle>
@@ -670,7 +670,7 @@ storiesOf('Components|Card/スタイルのカスタマイズ', module)
         '@import \'@rsmdc/card/rs-card.scss\';\n\n' +
         '.my-card {\n' +
         '   > .contents > .media {\n' +
-        '       &.-media-type {\n' +
+        '       &.-square {\n' +
         '          @include rs-card-media-type(square)\n' +
         '       }\n' +
         '   }\n' +
@@ -690,7 +690,7 @@ storiesOf('Components|Card/スタイルのカスタマイズ', module)
   .add('カードに枠線をつける', () => {
     return `
     <p>カードに枠線をつける。</p>
-    <rs-card class="my-card -card-type">
+    <rs-card class="my-card -outlined">
       <card-contents class="contents">
       <card-media class="media"></card-media>
         <card-header class="header">
@@ -711,7 +711,7 @@ storiesOf('Components|Card/スタイルのカスタマイズ', module)
     )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
-`<rs-card class="my-card -card-type">
+`<rs-card class="my-card -outlined">
     <card-contents class="contents">
     <card-media class="media"></card-media>
     <card-header class="header">
@@ -730,7 +730,7 @@ storiesOf('Components|Card/スタイルのカスタマイズ', module)
     ${copyCodeBlock(
       '@import \'@rsmdc/card/rs-card.scss\';\n\n' +
       '.my-card {\n' +
-      '   &.-card-type {\n' +
+      '   &.-outlined {\n' +
       '      @include rs-card-type(outlined);\n' +
       '   }\n' +
       '}',
@@ -747,7 +747,7 @@ storiesOf('Components|Card/スタイルのカスタマイズ', module)
   .add('ボタン幅をアクションエリア幅に合わせる', () => {
     return `
     <p>ボタンの幅をアクションエリアの幅に合わせる。</p>
-      <rs-card class="my-card -actions-type">
+      <rs-card class="my-card -action-area">
         <card-contents class="contents">
         <card-media class="media"></card-media>
           <card-header class="header">
@@ -768,7 +768,7 @@ storiesOf('Components|Card/スタイルのカスタマイズ', module)
     )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
-`<rs-card class="my-card -actions-type">
+`<rs-card class="my-card -action-area">
     <card-contents class="contents">
     <card-media class="media"></card-media>
     <card-header class="header">
@@ -787,7 +787,7 @@ storiesOf('Components|Card/スタイルのカスタマイズ', module)
     ${copyCodeBlock(
       '@import \'@rsmdc/card/rs-card.scss\';\n\n' +
       '.my-card {\n' +
-      '   > .-actions-type {\n' +
+      '   > .-action-area {\n' +
       '      @include rs-card-type(full-bleed);\n' +
       '   }\n' +
       '}',
@@ -804,7 +804,7 @@ storiesOf('Components|Card/スタイルのカスタマイズ', module)
   .add('カードの角の丸みを変える', () => {
     return `
       <p>カードの角の丸みを指定したサイズに変える。</p>
-      <rs-card class="my-card -shape-radius">
+      <rs-card class="my-card -roundness">
         <card-contents class="contents">
         <card-media class="media"></card-media>
           <card-header class="header">
@@ -825,7 +825,7 @@ storiesOf('Components|Card/スタイルのカスタマイズ', module)
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
-`<rs-card class="my-card -shape-radius">
+`<rs-card class="my-card -roundness">
     <card-contents class="contents">
     <card-media class="media"></card-media>
     <card-header class="header">
@@ -845,7 +845,7 @@ storiesOf('Components|Card/スタイルのカスタマイズ', module)
       ${copyCodeBlock(
         '@import \'@rsmdc/card/rs-card.scss\';\n\n' +
         '.my-card {\n' +
-        '   &.-shape-radius {\n' +
+        '   &.-roundness {\n' +
         '      @include rs-card-shape-radius(15px);\n' +
         '   }\n' +
         '}',
