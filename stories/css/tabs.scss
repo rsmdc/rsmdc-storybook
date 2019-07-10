@@ -3,51 +3,54 @@
 $material-icons-font-path: '~material-icons/iconfont/';
 @import '~material-icons/iconfont/material-icons';
 .tab-bar {
-  &.-ink-color {
+  &.-ink-aqua {
     @include rs-tab-ink-color(aqua);
   }
-  &.-activated-color {
+  &.-activated-aqua {
     @include rs-tab-activated-ink-color(aqua);
     @include rs-tab-indicator-color(aqua);
   }
-  &.-states-color {
+  &.-ripple-dark {
     @include rs-tab-states-color(gray);
   }
-  &.-indicator-color {
-    @include rs-tab-indicator-color(aqua);
-    @include rs-tab-activated-ink-color(aqua);
+  &.-indicator.-orange {
+    @include rs-tab-indicator-color(orange);
+    @include rs-tab-activated-ink-color(orange);
   }
-  &.-indicator-height {
+  &.-indicator.-thick {
     @include rs-tab-indicator-height(4px);
   }
-  &.-indicator-width-fixed-contents {
+  &.-indicator.-fixed-width {
     @include rs-tab-indicator-width-fixed-contents;
   }
-  &.-bar-width {
+  &.-bar.-width {
     @include rs-tab-bar-width(600px);
   }
-  &.-fixed-width {
+  &.-tab.-width {
     @include rs-tab-fixed-width(100px);
   }
 
-  &.-bar-position {
+  &.-bar.-position {
     @include rs-tab-fixed-width(90px);
     @include rs-tab-bar-position(align-end);
   }
- > .tab.-cut {
-    @include rs-tab-icon-image(url('http://icons.iconarchive.com/icons/iconsmind/outline/512/Mail-icon.png'));
- }
- > .tab.-copy {
-    @include rs-tab-icon-image(url('http://icons.iconarchive.com/icons/iconsmind/outline/512/Mail-icon.png'));
- }
- > .tab.-star {
+  // &.-icon.-position {
+  //   @include rs-tab-icon-image(Material Icons, map-get($material-icons-codepoints, stars));
+  //   @include rs-tab-icon-position(right);
+  // }
+  &.-position > .tab.-star {
     @include rs-tab-icon-image(Material Icons, map-get($material-icons-codepoints, stars));
- }
- &.-icon-position {
-  @include rs-tab-icon-image(Material Icons, map-get($material-icons-codepoints, stars));
-  @include rs-tab-icon-position(right);
-}
-
+    @include rs-tab-icon-position(right);
+  }
+  > .tab.-cut {
+      @include rs-tab-icon-image(url('http://icons.iconarchive.com/icons/iconsmind/outline/512/Mail-icon.png'));
+  }
+  > .tab.-copy {
+      @include rs-tab-icon-image(url('http://icons.iconarchive.com/icons/iconsmind/outline/512/Mail-icon.png'));
+  }
+  > .tab.-star {
+      @include rs-tab-icon-image(Material Icons, map-get($material-icons-codepoints, stars));
+    }
 }
 .result {
   padding-bottom: 20px;

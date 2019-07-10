@@ -18,7 +18,7 @@
       @include rs-card-media-content-ink-color(white);
     }
   }
-  &.-fill-gray {
+  &.-fill-dark {
     @include rs-card-fill-color(#f8f8f8);
   }
   &.-title.-ink-brown {
@@ -30,7 +30,7 @@
   &.-description.-ink-brown {
     @include rs-card-description-ink-color(brown);
   }
-  &.-states-orange {
+  &.-ripple-orange {
     @include rs-card-states-color(orange);
   }
   &.-size {

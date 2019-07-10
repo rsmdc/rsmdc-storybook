@@ -1,6 +1,5 @@
 @import '../../node_modules/@rsmdc/list/rs-list';
 @import '../../node_modules/@rsmdc/shape/rs-functions';
-
 $material-icons-font-path: '~material-icons/iconfont/';
 @import '~material-icons/iconfont/material-icons';
 
@@ -26,7 +25,6 @@ $material-icons-font-path: '~material-icons/iconfont/';
   &.-avatarlist.-graphic {
     @include rs-list-type(avatar-list);
   }
-
   > .item > .text.-brown, 
   > .item > .text > .primary.-brown {
    @include rs-list-item-primary-text-ink-color(brown);
@@ -38,11 +36,11 @@ $material-icons-font-path: '~material-icons/iconfont/';
     @include rs-list-item-meta-ink-color(brown);
   } 
   > .item > .graphic.-blue {
-    // @include rs-list-item-graphic-image(Material Icons, map-get($material-icons-codepoints, face));
+    @include rs-list-graphic-image(Material Icons, map-get($material-icons-codepoints, face));
     @include rs-list-item-graphic-ink-color(rgb(106, 118, 223));
    }
-  > .item > .graphic.-container-blue {
-    // @include rs-list-item-graphic-image(Material Icons, map-get($material-icons-codepoints, face));
+  > .item > .icon.-container-blue {
+    @include rs-list-graphic-image(Material Icons, map-get($material-icons-codepoints, face));
     @include rs-list-item-graphic-fill-color(rgb(106, 196, 223));
    }
   > .divider.-blue {
@@ -60,7 +58,7 @@ $material-icons-font-path: '~material-icons/iconfont/';
   > .item > .graphic.-size {
     @include rs-list-graphic-size(40px);
    }
-  > .item.-shape {
+  > .item.-roundness {
     @include rs-list-item-shape-radius(10px);
   }
 }
@@ -71,27 +69,25 @@ $material-icons-font-path: '~material-icons/iconfont/';
    }
 }
 
-.graphic {
+.graphic:not(.-blue) {
   @include rs-list-graphic-image(url('http://icons.iconarchive.com/icons/iconsmind/outline/512/Mail-icon.png'));
   &.-circle {
     @include rs-list-graphic-type(circle);
+    @include rs-list-graphic-image(url('https://cweb.canon.jp/showroom/personal/workshop/instaevent-2018/img/picture19.jpg'));
   }
   &.-size {
     @include rs-list-graphic-size(50px);
   }
   &.-rectangle {
     @include rs-list-graphic-type(rectangle);
-    @include rs-list-graphic-image(url('http://icons.iconarchive.com/icons/iconsmind/outline/512/Mail-icon.png'));
+    @include rs-list-graphic-image(url('https://cweb.canon.jp/showroom/personal/workshop/instaevent-2018/img/picture19.jpg'));
   }
   &.-square {
     @include rs-list-graphic-type(square);
-    @include rs-list-graphic-image(url('http://icons.iconarchive.com/icons/iconsmind/outline/512/Mail-icon.png'));
+    @include rs-list-graphic-image(url('https://cweb.canon.jp/showroom/personal/workshop/instaevent-2018/img/picture19.jpg'));
   }
 }
 
-th {
-  font-size: 14px;
-}
 
 .result {
   padding-bottom: 120px;

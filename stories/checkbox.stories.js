@@ -32,7 +32,7 @@ storiesOf('Components|Checkbox', module)
       <h4>使用方法</h4>
       <rs-checkbox class="checkbox">check1</rs-checkbox>
       ${copyCodeBlock(
-        '<rs-checkbox class="checkbox">check1<rs-checkbox>',
+        `<rs-checkbox class="checkbox">check1<rs-checkbox>`,
         { lang: 'html' }
       )}
       <h4>HTML要素</h4>
@@ -97,21 +97,22 @@ storiesOf('Components|Checkbox/スタイルのカスタマイズ', module)
       <rs-checkbox class="checkbox -ink-yellow">check1</rs-checkbox>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
-        '@include rs-checkbox-checkmark-ink-color($color);',
+        `@include rs-checkbox-checkmark-ink-color($color);`,
         { lang: 'scss' }
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
-        '<rs-checkbox class="checkbox -ink-yellow">check1</rs-checkbox>',
+        `<rs-checkbox class="checkbox -ink-yellow">check1</rs-checkbox>`,
         { lang: 'html' }
       )}
       ${copyCodeBlock(
-        '@import \'@rsmdc/checkbox/rs-checkbox.scss\';\n\n' +
-        '.checkbox {\n' +
-        '   &.-ink-yellow {\n' +
-        '     @include rs-checkbox-checkmark-ink-color(yellow);;\n' +
-        '   }\n' +
-        '}',
+`@import \'@rsmdc/checkbox/rs-checkbox.scss\';
+
+.checkbox {
+  &.-ink-yellow {
+    @include rs-checkbox-checkmark-ink-color(yellow);
+  }
+}`,
         { lang: 'scss' }
       )}
       <p>オプション</p>
@@ -131,16 +132,17 @@ storiesOf('Components|Checkbox/スタイルのカスタマイズ', module)
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
-        '<rs-checkbox class="checkbox -ripple-brown">check1</rs-checkbox>',
+        `<rs-checkbox class="checkbox -ripple-brown">check1</rs-checkbox>`,
         { lang: 'html' }
       )}
       ${copyCodeBlock(
-        '@import \'@rsmdc/checkbox/rs-checkbox.scss\';\n\n' +
-        '.checkbox {\n' +
-        '   &.-ripple-brown {\n' +
-        '     @include rs-checkbox-focus-indicator-color(brown);\n' +
-        '   }\n' +
-        '}',
+`@import \'@rsmdc/checkbox/rs-checkbox.scss\';
+
+.checkbox {
+  &.-ripple-brown {
+    @include rs-checkbox-focus-indicator-color(brown);
+  }
+}`,
         { lang: 'scss' }
       )}
     `
@@ -156,16 +158,17 @@ storiesOf('Components|Checkbox/スタイルのカスタマイズ', module)
     )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
-      '<rs-checkbox class="checkbox -container -red">check1</rs-checkbox>',
+      `<rs-checkbox class="checkbox -container -red">check1</rs-checkbox>`,
       { lang: 'html' }
     )}
     ${copyCodeBlock(
-      '@import \'@rsmdc/checkbox/rs-checkbox.scss\';\n\n' +
-      '.checkbox {\n' +
-      '   &.-checked.-container-red {\n' +
-      '     @include rs-checkbox-checked-container-color(red);\n' +
-      '   }\n' +
-      '}',
+`@import \'@rsmdc/checkbox/rs-checkbox.scss\';
+
+.checkbox {
+  &.-checked.-container-red {
+    @include rs-checkbox-checked-container-color(red);
+  }
+}`,
       { lang: 'scss' }
     )}
     <p>オプション</p>
@@ -181,21 +184,22 @@ storiesOf('Components|Checkbox/スタイルのカスタマイズ', module)
     <rs-checkbox class="checkbox -checked -fill-orange">check1</rs-checkbox>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
-      '@include rs-checkbox-fill-color-accessible($color);',
+      `@include rs-checkbox-fill-color-accessible($color);`,
       { lang: 'scss' }
     )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
-      '<rs-checkbox class="checkbox -checked -fill-orange">check1</rs-checkbox>',
+      `<rs-checkbox class="checkbox -checked -fill-orange">check1</rs-checkbox>`,
       { lang: 'html' }
     )}
     ${copyCodeBlock(
-      '@import \'@rsmdc/checkbox/rs-checkbox.scss\';\n\n' +
-      '.checkbox {\n' +
-      '   &.-checked.-fill-orange {\n' +
-      '     @include rs-checkbox-fill-color-accessible(orange);\n' +
-      '   }\n' +
-      '}',
+`@import \'@rsmdc/checkbox/rs-checkbox.scss\';
+
+.checkbox {
+  &.-checked.-fill-orange {
+    @include rs-checkbox-fill-color-accessible(orange);
+  }
+}`,
       { lang: 'scss' }
     )}
     <p>オプション</p>
@@ -211,21 +215,22 @@ storiesOf('Components|Checkbox/スタイルのカスタマイズ', module)
     <rs-checkbox class="checkbox -unchecked -container-orange">check1</rs-checkbox>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
-      '@include rs-checkbox-unchecked-stroke-color($color);',
+      `@include rs-checkbox-unchecked-stroke-color($color);`,
       { lang: 'scss' }
     )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
-      '<rs-checkbox class="checkbox -unchecked -container-orange">check1</rs-checkbox>',
+      `<rs-checkbox class="checkbox -unchecked -container-orange">check1</rs-checkbox>`,
       { lang: 'html' }
     )}
     ${copyCodeBlock(
-      '@import \'@rsmdc/checkbox/rs-checkbox.scss\';\n\n' +
-      '.checkbox {\n' +
-      '   &.-unchecked.-container-orange {\n' +
-      '       @include rs-checkbox-unchecked-stroke-color($color);\n' +
-      '   }\n' +
-      '}',
+`@import \'@rsmdc/checkbox/rs-checkbox.scss\';
+
+.checkbox {
+  &.-unchecked.-container-orange {
+    @include rs-checkbox-unchecked-stroke-color($color);
+  }
+}`,
       { lang: 'scss' }
     )}
     <p>オプション</p>
@@ -241,21 +246,22 @@ storiesOf('Components|Checkbox/スタイルのカスタマイズ', module)
       <rs-checkbox class="checkbox -label -position">check1</rs-checkbox>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
-        '@include rs-checkbox-label-position($position);',
+        `@include rs-checkbox-label-position($position);`,
         { lang: 'scss' }
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
-        '<rs-checkbox class="checkbox -label -position">check1</rs-checkbox>',
+        `<rs-checkbox class="checkbox -label -position">check1</rs-checkbox>`,
         { lang: 'html' }
       )}
       ${copyCodeBlock(
-        '@import \'@rsmdc/checkbox/rs-checkbox.scss\';\n\n' +
-        '.checkbox {\n' +
-        '   &.-label.-position {\n' +
-        '       @include rs-checkbox-label-position(left);\n' +
-        '   }\n' +
-        '}',
+`@import \'@rsmdc/checkbox/rs-checkbox.scss\';
+
+.checkbox {
+  &.-label.-position {
+    @include rs-checkbox-label-position(left);
+  }
+}`,
         { lang: 'scss' }
       )}
       <p>オプション</p>

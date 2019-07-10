@@ -37,7 +37,9 @@ storiesOf('Components|Card', module)
       <p>タイプ</p>
       <h5>card</h5>
       <ul>
-        <li>outlined: 枠線をつける</li>
+        <li>
+          outlined: 枠線をつける
+        </li>
       </ul>
       <h5>media</h5>
       <ul>
@@ -87,16 +89,16 @@ storiesOf('Components|Card', module)
         { lang: 'html' }
       )}
       ${copyCodeBlock(
-        '.my-card {\n' +
-        '   @include rs-card-size(350px);\n' +
-        '   > .contents > .media {\n' +
-        '      @include rs-card-media-type(16-9);\n' +
-        '      @include rs-card-media-image(url(\'example.png\'));\n' +
-        '   }\n' +
-        '   > .actions > .icon {\n' +
-        '      @include rs-button-icon-image(url(\'icon.png\'));\n' +
-        '   }\n' +
-        '}',
+`.my-card {
+  @include rs-card-size(350px);
+  > .contents > .media {
+    @include rs-card-media-type(16-9);
+    @include rs-card-media-image(url(\'example.png\'));
+  }
+  > .actions > .icon {
+    @include rs-button-icon-image(url(\'icon.png\'));
+  }
+}`,
         { lang: 'scss' }
       )}
       <h4>HTML要素</h4>
@@ -187,7 +189,7 @@ storiesOf('Components|Card/スタイルのカスタマイズ', module)
   .add('カードの背景色を変える', () => {
     return `
       <p>カードの背景色を指定した色に変える。</p>
-      <rs-card class="my-card -fill-gray">
+      <rs-card class="my-card -fill-dark">
         <card-contents class="contents">
         <card-media class="media"></card-media>
           <card-header class="header">
@@ -203,12 +205,12 @@ storiesOf('Components|Card/スタイルのカスタマイズ', module)
       </rs-card>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
-        '@include rs-card-fill-color($color);',
+        `@include rs-card-fill-color($color);`,
         { lang: 'scss' }
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
-`<rs-card class="my-card -fill-gray">
+`<rs-card class="my-card -fill-dark">
     <card-contents class="contents">
     <card-media class="media"></card-media>
     <card-header class="header">
@@ -225,12 +227,13 @@ storiesOf('Components|Card/スタイルのカスタマイズ', module)
         { lang: 'html' }
       )}
       ${copyCodeBlock(
-        '@import \'@rsmdc/card/rs-card.scss\';\n\n' +
-        '.my-card {\n' +
-        '   &.-fill-gray {\n' +
-        '     @include rs-card-fill-color(#f8f8f8);\n' +
-        '   }\n' +
-        '}',
+`@import \'@rsmdc/card/rs-card.scss\';
+
+.my-card {
+  &.-fill-dark {
+    @include rs-card-fill-color(#f8f8f8);
+  }
+}`,
         { lang: 'scss' }
       )}
       <p>オプション</p>
@@ -242,7 +245,7 @@ storiesOf('Components|Card/スタイルのカスタマイズ', module)
       </ul>
     `
   })
-  .add('タイトルの色を変える', () =>  {
+  .add('タイトルの色を変える', () => {
     return `
       <p>タイトルの色を指定した色に変える。</p>
       <rs-card class="my-card -title -ink-brown">
@@ -261,7 +264,7 @@ storiesOf('Components|Card/スタイルのカスタマイズ', module)
       </rs-card>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
-        '@include rs-card-title-ink-color($color);',
+        `@include rs-card-title-ink-color($color);`,
         { lang: 'scss' }
       )}
       <h4>使用方法</h4>
@@ -283,12 +286,13 @@ storiesOf('Components|Card/スタイルのカスタマイズ', module)
         { lang: 'html' }
       )}
       ${copyCodeBlock(
-        '@import \'@rsmdc/card/rs-card.scss\';\n\n' +
-        '.my-card {\n' +
-        '   &.-title.-ink-brown{\n' +
-        '     @include rs-card-title-ink-color(brown);\n' +
-        '   }\n' +
-        '}',
+`@import \'@rsmdc/card/rs-card.scss\';
+
+.my-card {
+  &.-title.-ink-brown{
+    @include rs-card-title-ink-color(brown);
+  }
+}`,
         { lang: 'scss' }
       )}
       <p>オプション</p>
@@ -319,7 +323,7 @@ storiesOf('Components|Card/スタイルのカスタマイズ', module)
       </rs-card>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
-        ' @include rs-card-subtitle-ink-color($color)；',
+        `@include rs-card-subtitle-ink-color($color);`,
         { lang: 'scss' }
       )}
       <h4>使用方法</h4>
@@ -341,12 +345,13 @@ storiesOf('Components|Card/スタイルのカスタマイズ', module)
         { lang: 'html' }
       )}
       ${copyCodeBlock(
-        '@import \'@rsmdc/card/rs-card.scss\';\n\n' +
-        '.my-card {\n' +
-        '   &.-subtitle.-ink-color {\n' +
-        '     @include rs-card-subtitle-ink-color(brown);\n' +
-        '   }\n' +
-        '}',
+`@import \'@rsmdc/card/rs-card.scss\';
+
+.my-card {
+  &.-subtitle.-ink-color {
+    @include rs-card-subtitle-ink-color(brown);
+  }
+}`,
         { lang: 'scss' }
       )}
     `
@@ -370,8 +375,8 @@ storiesOf('Components|Card/スタイルのカスタマイズ', module)
     </rs-card>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
-     ' @include rs-card-description-ink-color($color);',
-     { lang: 'scss' }
+      `@include rs-card-description-ink-color($color);`,
+      { lang: 'scss' }
     )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
@@ -392,14 +397,15 @@ storiesOf('Components|Card/スタイルのカスタマイズ', module)
       { lang: 'html' }
     )}
     ${copyCodeBlock(
-      '@import \'@rsmdc/card/rs-card.scss\';\n\n' +
-      '.my-card {\n' +
-      '   &.-description.-ink-brown {\n' +
-      '       @include rs-card-description-ink-color(brown);\n' +
-      '   }\n' +
-      '}',
+`@import \'@rsmdc/card/rs-card.scss\';
+
+.my-card {
+  &.-description.-ink-brown {
+      @include rs-card-description-ink-color(brown);
+  }
+}`,
       { lang: 'scss' }
-     )}
+    )}
     `
   })
   .add('画像タイトルの色を変える', () => {
@@ -421,7 +427,7 @@ storiesOf('Components|Card/スタイルのカスタマイズ', module)
       </rs-card>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
-        ' @include rs-card-media-content-ink-color($color);',
+        `@include rs-card-media-content-ink-color($color);`,
         { lang: 'scss' }
       )}
       <h4>使用方法</h4>
@@ -443,14 +449,15 @@ storiesOf('Components|Card/スタイルのカスタマイズ', module)
         { lang: 'html' }
       )}
       ${copyCodeBlock(
-        '@import \'@rsmdc/card/rs-card.scss\';\n\n' +
-        '.my-card {\n' +
-        '   .contents > .media {\n' +
-        '      &.-title.-ink-white {\n' +
-        '         @include rs-card-media-content-ink-color(white);\n' +
-        '      }\n' +
-        '   }\n' +
-        '}',
+`@import \'@rsmdc/card/rs-card.scss\';
+
+.my-card {
+  .contents > .media {
+    &.-title.-ink-white {
+        @include rs-card-media-content-ink-color(white);
+    }
+  }
+}`,
         { lang: 'scss' }
       )}
     `
@@ -458,7 +465,7 @@ storiesOf('Components|Card/スタイルのカスタマイズ', module)
   .add('リップルの色を変える', () => {
     return `
       <p>画像タイトルの色を指定した色に変える。</p>
-      <rs-card class="my-card -states-orange">
+      <rs-card class="my-card -ripple-orange">
         <card-contents class="contents">
         <card-media class="media"></card-media>
           <card-header class="header">
@@ -474,12 +481,12 @@ storiesOf('Components|Card/スタイルのカスタマイズ', module)
       </rs-card>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
-        '@include rs-card-states-color($color);',
+        `@include rs-card-states-color($color);`,
         { lang: 'scss' }
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
-  `<rs-card class="my-card -states-orange">
+`<rs-card class="my-card -ripple-orange">
       <card-contents class="contents">
       <card-media class="media"></card-media>
       <card-header class="header">
@@ -496,12 +503,13 @@ storiesOf('Components|Card/スタイルのカスタマイズ', module)
         { lang: 'html' }
       )}
       ${copyCodeBlock(
-        '@import \'@rsmdc/card/rs-card.scss\';\n\n' +
-        '.my-card {\n' +
-        '   &.-states-orange {\n' +
-        '      @include rs-card-states-color(orange);\n' +
-        '   }\n' +
-        '}',
+`@import \'@rsmdc/card/rs-card.scss\';
+
+.my-card {
+  &.-ripple-orange {
+    @include rs-card-states-color(orange);
+  }
+}`,
         { lang: 'scss' }
       )}
     `
@@ -523,10 +531,9 @@ storiesOf('Components|Card/スタイルのカスタマイズ', module)
         <rs-button class="icon"></rs-button>
       </card-actions>
     </rs-card>
-
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
-      '@include rs-card-size($width);',
+      `@include rs-card-size($width);`, 
       { lang: 'scss' }
     )}
     <h4>使用方法</h4>
@@ -548,12 +555,13 @@ storiesOf('Components|Card/スタイルのカスタマイズ', module)
       { lang: 'html' }
     )}
     ${copyCodeBlock(
-      '@import \'@rsmdc/card/rs-card.scss\';\n\n' +
-      '.my-card {\n' +
-      '   &.-size {\n' +
-      '      @include rs-card-size(300px);\n' +
-      '   }\n' +
-      '}',
+`@import \'@rsmdc/card/rs-card.scss\';
+
+.my-card {
+  &.-size {
+    @include rs-card-size(300px);
+  }
+}`,
       { lang: 'scss' }
     )}
     <p>オプション</p>
@@ -583,7 +591,7 @@ storiesOf('Components|Card/スタイルのカスタマイズ', module)
       </rs-card>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
-        '@include rs-card-media-image($url);',
+        `@include rs-card-media-image($url);`,
         { lang: 'scss' }
       )}
       <h4>使用方法</h4>
@@ -605,14 +613,15 @@ storiesOf('Components|Card/スタイルのカスタマイズ', module)
         { lang: 'html' }
       )}
       ${copyCodeBlock(
-        '@import \'@rsmdc/card/rs-card.scss\';\n\n' +
-        '.my-card {\n' +
-        '   > .contents > .media {\n' +
-        '       &.-image {\n' +
-        '          @include rs-card-media-image(url(\'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVlzip6xw4cKmSkb0hOs79KPvArM_QBHM77ynJ3VDY8gQ3sVxu\'));\n' +
-        '       }\n' +
-        '   }\n' +
-        '}',
+`@import \'@rsmdc/card/rs-card.scss\';
+
+.my-card {
+  > .contents > .media {
+    &.-image {
+      @include rs-card-media-image(url(\'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVlzip6xw4cKmSkb0hOs79KPvArM_QBHM77ynJ3VDY8gQ3sVxu\'));
+    }
+  }
+}`,
         { lang: 'scss' }
       )}
       <p>オプション</p>
@@ -643,9 +652,9 @@ storiesOf('Components|Card/スタイルのカスタマイズ', module)
       </rs-card>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
-        '@include rs-card-media-type($type);\n' +
-        'or\n' +
-        '@include rs-card-media-aspect-ratio($X, $y);',
+`@include rs-card-media-type($type);
+or
+@include rs-card-media-aspect-ratio($X, $y);`,
         { lang: 'scss' }
       )}
       <h4>使用方法</h4>
@@ -667,14 +676,15 @@ storiesOf('Components|Card/スタイルのカスタマイズ', module)
         { lang: 'html' }
       )}
       ${copyCodeBlock(
-        '@import \'@rsmdc/card/rs-card.scss\';\n\n' +
-        '.my-card {\n' +
-        '   > .contents > .media {\n' +
-        '       &.-square {\n' +
-        '          @include rs-card-media-type(square)\n' +
-        '       }\n' +
-        '   }\n' +
-        '}',
+`@import \'@rsmdc/card/rs-card.scss\';
+
+.my-card {
+  > .contents > .media {
+    &.-square {
+      @include rs-card-media-type(square)
+    }
+  }
+}`,
         { lang: 'scss' }
       )}
       <p>オプション</p>
@@ -706,12 +716,12 @@ storiesOf('Components|Card/スタイルのカスタマイズ', module)
     </rs-card>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
-      '@include rs-card-type($type);',
+      `@include rs-card-type($type);`,
       { lang: 'scss' }
     )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
-`<rs-card class="my-card -outlined">
+ `<rs-card class="my-card -outlined">
     <card-contents class="contents">
     <card-media class="media"></card-media>
     <card-header class="header">
@@ -728,12 +738,13 @@ storiesOf('Components|Card/スタイルのカスタマイズ', module)
       { lang: 'html' }
     )}
     ${copyCodeBlock(
-      '@import \'@rsmdc/card/rs-card.scss\';\n\n' +
-      '.my-card {\n' +
-      '   &.-outlined {\n' +
-      '      @include rs-card-type(outlined);\n' +
-      '   }\n' +
-      '}',
+`@import \'@rsmdc/card/rs-card.scss\';
+
+.my-card {
+  &.-outlined {
+    @include rs-card-type(outlined);
+  }
+}`,
       { lang: 'scss' }
     )}
     <p>オプション</p>
@@ -763,7 +774,7 @@ storiesOf('Components|Card/スタイルのカスタマイズ', module)
       </rs-card>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
-      '@include rs-card-actions-type($type);',
+      `@include rs-card-actions-type($type);`,
       { lang: 'scss' }
     )}
     <h4>使用方法</h4>
@@ -785,12 +796,13 @@ storiesOf('Components|Card/スタイルのカスタマイズ', module)
       { lang: 'html' }
     )}
     ${copyCodeBlock(
-      '@import \'@rsmdc/card/rs-card.scss\';\n\n' +
-      '.my-card {\n' +
-      '   > .-action-area {\n' +
-      '      @include rs-card-type(full-bleed);\n' +
-      '   }\n' +
-      '}',
+`@import \'@rsmdc/card/rs-card.scss\';
+
+.my-card {
+  > .-action-area {
+    @include rs-card-type(full-bleed);
+  }
+}`,
       { lang: 'scss' }
     )}
     <p>オプション</p>
@@ -820,7 +832,7 @@ storiesOf('Components|Card/スタイルのカスタマイズ', module)
       </rs-card>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
-        '@include rs-card-shape-radius($radius);',
+        `@include rs-card-shape-radius($radius);`,
         { lang: 'scss' }
       )}
       <h4>使用方法</h4>
@@ -836,19 +848,20 @@ storiesOf('Components|Card/スタイルのカスタマイズ', module)
     </card-contents>
     <card-actions class="actions">
         <rs-button>ボタン</rs-button>
-        <rs-button class="icon"></rs-button>
+        <rs-button class="icon'></rs-button>
     </card-actions>
 </rs-card>`,
         { lang: 'html' }
       )}
 
       ${copyCodeBlock(
-        '@import \'@rsmdc/card/rs-card.scss\';\n\n' +
-        '.my-card {\n' +
-        '   &.-roundness {\n' +
-        '      @include rs-card-shape-radius(15px);\n' +
-        '   }\n' +
-        '}',
+`@import \'@rsmdc/card/rs-card.scss\';
+
+.my-card {
+  &.-roundness {
+    @include rs-card-shape-radius(15px);
+  }
+}`,
         { lang: 'scss' }
       )}
       <p>オプション</p>

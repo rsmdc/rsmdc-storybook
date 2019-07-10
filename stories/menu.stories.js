@@ -107,7 +107,7 @@ storiesOf('Components|Menu/スタイルのカスタマイズ', module)
       </div>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(  
-        '@include rs-menu-surface-ink-color($color);',
+        `@include rs-menu-surface-ink-color($color);`,
         { lang: 'scss' }
       )}
       <h4>使用方法</h4>
@@ -125,12 +125,13 @@ storiesOf('Components|Menu/スタイルのカスタマイズ', module)
         { lang: 'html' }
       )}
       ${copyCodeBlock(  
-        '@import \'@rsmdc/menu/rs-menu.scss\';\n\n' +
-        '.my-menu {\n' +
-        '   &.-ink-brown {\n' +
-        '      @include rs-menu-surface-ink-color(brown);\n' +
-        '   }\n' +
-        '}',
+`@import \'@rsmdc/menu/rs-menu.scss\';
+
+.my-menu {
+  &.-ink-brown {
+    @include rs-menu-surface-ink-color(brown);
+  }
+}`,
         { lang: 'scss' }
       )}
       <p>オプション</p>
@@ -158,7 +159,7 @@ storiesOf('Components|Menu/スタイルのカスタマイズ', module)
       </div>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(  
-        '@include rs-menu-surface-fill-color($color);',
+        `@include rs-menu-surface-fill-color($color);`,
         { lang: 'scss' }
       )}
       <h4>使用方法</h4>
@@ -176,12 +177,13 @@ storiesOf('Components|Menu/スタイルのカスタマイズ', module)
         { lang: 'html' }
       )}
       ${copyCodeBlock(  
-        '@import \'@rsmdc/menu/rs-menu.scss\';\n\n' +
-        '.my-menu {\n' +
-        '   &.-fill-dark {\n' +
-        '      @include rs-menu-surface-fill-color(gray);\n' +
-        '   }\n' +
-        '}',
+`@import \'@rsmdc/menu/rs-menu.scss\';
+
+.my-menu {
+  &.-fill-dark {
+    @include rs-menu-surface-fill-color(gray);
+  }
+}`,
         { lang: 'scss' }
       )}
       <p>オプション</p>
@@ -207,7 +209,7 @@ storiesOf('Components|Menu/スタイルのカスタマイズ', module)
       </div>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(  
-        '@include rs-menu-width($width);',
+        `@include rs-menu-width($width);`,
         { lang: 'scss' }
       )}
       <h4>使用方法</h4>
@@ -225,12 +227,13 @@ storiesOf('Components|Menu/スタイルのカスタマイズ', module)
         { lang: 'html' }
       )}
       ${copyCodeBlock(  
-        '@import \'@rsmdc/menu/rs-menu.scss\';\n\n' +
-        '.my-menu {\n' +
-        '   &.-width {\n' +
-        '      @include rs-menu-width(200px);\n' +
-        '   }\n' +
-        '}',
+`@import \'@rsmdc/menu/rs-menu.scss\';
+
+.my-menu {
+  &.-width {
+    @include rs-menu-width(200px);
+  }
+}`,
         { lang: 'scss' }
       )}
       <p>オプション</p>
@@ -256,7 +259,7 @@ storiesOf('Components|Menu/スタイルのカスタマイズ', module)
       </div>
       <br>
       ${copyCodeBlock(  
-        '@include rs-menu-surface-shape-radius($radius);',
+        `@include rs-menu-surface-shape-radius($radius);`,
         { lang: 'scss' }
       )}
       <h4>使用方法</h4>
@@ -274,12 +277,13 @@ storiesOf('Components|Menu/スタイルのカスタマイズ', module)
         { lang: 'html' }
       )}
       ${copyCodeBlock(  
-        '@import \'@rsmdc/menu/rs-menu.scss\';\n\n' +
-        '.my-menu {\n' +
-        '   &.-roundness {\n' +
-        '      @include rs-menu-surface-shape-radius(10px);\n' +
-        '   }\n' +
-        '}',
+`@import \'@rsmdc/menu/rs-menu.scss\';
+
+.my-menu {
+  &.-roundness {
+    @include rs-menu-surface-shape-radius(10px);
+  }
+}`,
         { lang: 'scss' }
       )}
       <p>オプション</p>

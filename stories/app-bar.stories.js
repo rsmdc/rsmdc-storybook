@@ -26,6 +26,31 @@ storiesOf('Components|App bar', module)
         https://material.io/design/components/app-bars-top.html
       </a>
     </p>
+    <p>タイプ</p>
+    <ul>
+      <li>normal(default) <br> 
+        <a class="link" href="#" data-sb-kind="Components|app-bar/スタイルのカスタマイズ/アップバーのタイプを変える" data-sb-story="fixed">参照はこちら</a>
+      </li>
+      <li>
+        short <br>
+        スクロールするとApp barの幅が短くなり、アイコンのみの表示になる<br>
+        <a class="link" href="#" data-sb-kind="Components|app-bar/スタイルのカスタマイズ/アップバーのタイプを変える" data-sb-story="short">参照はこちら</a>
+      </li>
+      <li>prominent <br>
+        幅が広いタイプ <br>
+        <a class="link" href="#" data-sb-kind="Components|app-bar/スタイルのカスタマイズ/アップバーのタイプを変える" data-sb-story="prominent">参照はこちら</a>
+      </li>
+      <li>
+        fixed <br>
+        App barが固定される <br>
+        <a class="link" href="#" data-sb-kind="Components|app-bar/スタイルのカスタマイズ/アップバーのタイプを変える" data-sb-story="fixed">参照はこちら</a>
+      </li>
+      <li>
+        collapsed <br>
+        アイコンのみの表示 <br>
+        <a class="link" href="#" data-sb-kind="Components|app-bar/スタイルのカスタマイズ/アップバーのタイプを変える" data-sb-story="collapsed">参照はこちら</a>
+      </li>
+    </ul>
   `)
   .add('使用方法', () => `
     <rs-app-bar class="app-bar">
@@ -66,7 +91,7 @@ storiesOf('Components|App bar', module)
       { lang: 'scss' }
     )}
     <h4>HTML要素</h4>
-    <p>custom elementsを<code>x</code>と<code>app</code>のプレフィックスをつけて定義した前提です。<br>
+    <p>custom elementsを<code>rs</code>と<code>app</code>のプレフィックスをつけて定義した前提です。<br>
       下記HTML要素を使うことで、custom elementsが表示されます。
     </p>
     <table>

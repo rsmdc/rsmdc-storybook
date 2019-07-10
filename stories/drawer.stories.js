@@ -93,11 +93,11 @@ storiesOf('Components|Drawer', module)
         { lang: 'html' }
       )}
       ${copyCodeBlock(
-        '.app-layout {\n' +
-        '   > .drawer {\n' +
-        '      @include rs-drawer-type(dismissible);\n' +
-        '   }\n' +
-        '}',
+`.app-layout {
+  > .drawer {
+    @include rs-drawer-type(dismissible);
+  }
+}`,
         { lang: 'scss' }
       )}
       <h4>HTML要素</h4>
@@ -220,11 +220,13 @@ storiesOf('Components|Drawer/スタイルのカスタマイズ/ドロワーの�
         { lang: 'html' }
       )}
       ${copyCodeBlock(
-        '.app-layout {\n' +
-        '   > .drawer {\n' +
-        '      @include rs-drawer-type(permanent);\n' +
-        '   }\n' +
-        '}',
+`@import \'@rsmdc/drawer/rs-drawer.scss\';
+
+.app-layout {
+  > .drawer {
+    @include rs-drawer-type(permanent);
+  }
+}`,
         { lang: 'scss' }
       )}
     `
@@ -253,7 +255,7 @@ storiesOf('Components|Drawer/スタイルのカスタマイズ/ドロワーの�
       </p>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
-        '@include rs-drawer-type($type);',
+        `@include rs-drawer-type($type);`,
         { lang: 'scss' }
       )}
       <h4>使用方法</h4>
@@ -281,11 +283,13 @@ storiesOf('Components|Drawer/スタイルのカスタマイズ/ドロワーの�
         { lang: 'html' }
       )}
       ${copyCodeBlock(
-        '.app-layout {\n' +
-        '   > .drawer {\n' +
-        '      @include rs-drawer-type(dismissible);\n' +
-        '   }\n' +
-        '}',
+`@import \'@rsmdc/drawer/rs-drawer.scss\';
+
+.app-layout {
+  > .drawer {
+    @include rs-drawer-type(dismissible);
+  }
+}`,
         { lang: 'scss' }
       )}
     `
@@ -314,7 +318,7 @@ storiesOf('Components|Drawer/スタイルのカスタマイズ/ドロワーの�
       </p>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
-        '@include rs-drawer-type(type);',
+        `@include rs-drawer-type(type);`,
         { lang: 'scss' }
       )}
       <h4>使用方法</h4>
@@ -342,11 +346,13 @@ storiesOf('Components|Drawer/スタイルのカスタマイズ/ドロワーの�
         { lang: 'html' }
       )}
       ${copyCodeBlock(
-        '.app-layout {\n' +
-        '   > .drawer {\n' +
-        '      @include rs-drawer-type(modal);\n' +
-        '   }\n' +
-        '}',
+`@import \'@rsmdc/drawer/rs-drawer.scss\';
+
+.app-layout {
+  > .drawer {
+    @include rs-drawer-type(modal);
+  }
+}`,
         { lang: 'scss' }
       )}
     `
@@ -372,7 +378,7 @@ storiesOf('Components|Drawer/スタイルのカスタマイズ', module)
       <p>タイトルの色を指定した色に変える。</p>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
-        '@include rs-drawer-title-ink-color($color);',
+        `@include rs-drawer-title-ink-color($color);`,
         { lang: 'scss' }
       )}
       <h4>使用方法</h4>
@@ -400,13 +406,15 @@ storiesOf('Components|Drawer/スタイルのカスタマイズ', module)
         { lang: 'html' }
       )}
       ${copyCodeBlock(
-        '.app-layout {\n' +
-        '   > .drawer {\n' +
-        '      &.-title.-ink-brown {\n' +
-        '        @include rs-drawer-title-ink-color(brown);\n' +
-        '      }\n' +
-        '   }\n' +
-        '}',
+`@import \'@rsmdc/drawer/rs-drawer.scss\';
+
+.app-layout {
+  > .drawer {
+    &.-title.-ink-brown {
+      @include rs-drawer-title-ink-color(brown);
+    }
+  }
+}`,
         { lang: 'scss' }
       )}
       <p>オプション</p>
@@ -434,7 +442,7 @@ storiesOf('Components|Drawer/スタイルのカスタマイズ', module)
       </rs-app-layout>
       <p>サブタイトルの色を指定した色に変える。</p>
       ${copyCodeBlock(
-        '@include rs-drawer-subtitle-ink-color($color);',
+        `@include rs-drawer-subtitle-ink-color($color);`,
         { lang: 'scss' }
       )}
       <h4>使用方法</h4>
@@ -462,13 +470,15 @@ storiesOf('Components|Drawer/スタイルのカスタマイズ', module)
         { lang: 'html' }
       )}
       ${copyCodeBlock(
-        '.app-layout {\n' +
-        '   > .drawer {\n' +
-        '      &.-subtitle.-ink-brown {\n' +
-        '        @include rs-drawer-subtitle-ink-color(brown);\n' +
-        '      }\n' +
-        '   }\n' +
-        '}',
+`@import \'@rsmdc/drawer/rs-drawer.scss\';
+
+.app-layout {
+  > .drawer {
+    &.-subtitle.-ink-brown {
+      @include rs-drawer-subtitle-ink-color(brown);
+    }
+  }
+}`,
         { lang: 'scss' }
       )}
     `
@@ -492,7 +502,7 @@ storiesOf('Components|Drawer/スタイルのカスタマイズ', module)
     </rs-app-layout>
       <p>背景色を指定した色に変える。</p>
       ${copyCodeBlock(
-        '@include rs-drawer-surface-fill-color($color);',
+        `@include rs-drawer-surface-fill-color($color);`,
         { lang: 'scss' }
       )}
       <h4>使用方法</h4>
@@ -520,13 +530,15 @@ storiesOf('Components|Drawer/スタイルのカスタマイズ', module)
         { lang: 'html' }
       )}
       ${copyCodeBlock(
-        '.app-layout {\n' +
-        '   > .drawer {\n' +
-        '      &.-fill-beige {\n' +
-        '        @include rs-drawer-surface-fill-color(beige);\n' +
-        '      }\n' +
-        '   }\n' +
-        '}',
+`@import \'@rsmdc/drawer/rs-drawer.scss\';
+
+.app-layout {
+  > .drawer {
+    &.-fill-beige {
+      @include rs-drawer-surface-fill-color(beige);
+    }
+  }
+}`,
         { lang: 'scss' }
       )}
     `
@@ -551,7 +563,7 @@ storiesOf('Components|Drawer/スタイルのカスタマイズ', module)
       <p>モーダルの色を指定した色に変える。</p>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
-        '@include rs-drawer-scrim-fill-color($color);',
+        `@include rs-drawer-scrim-fill-color($color);`,
         { lang: 'scss' }
       )}
       <h4>使用方法</h4>
@@ -579,14 +591,16 @@ storiesOf('Components|Drawer/スタイルのカスタマイズ', module)
         { lang: 'html' }
       )}
       ${copyCodeBlock(
-        '.app-layout {\n' +
-        '   > .drawer {\n' +
-        '      &.-modal.-fill-beige {\n' +
-        '        @include rs-drawer-type(modal);\n' +
-        '        @include rs-drawer-scrim-fill-color(beige);\n' +
-        '      }\n' +
-        '   }\n' +
-        '}',
+`@import \'@rsmdc/drawer/rs-drawer.scss\';
+
+.app-layout {
+  > .drawer {
+    &.-modal.-fill-beige {
+      @include rs-drawer-type(modal);
+      @include rs-drawer-scrim-fill-color(beige);
+    }
+  }
+}`,
         { lang: 'scss' }
       )}
     `
@@ -614,7 +628,7 @@ storiesOf('Components|Drawer/スタイルのカスタマイズ', module)
       </p>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
-        '@include rs-drawer-fill-color-accessible($containerColor);',
+        `@include rs-drawer-fill-color-accessible($containerColor);`,
         { lang: 'scss' }
       )}
       <h4>使用方法</h4>
@@ -642,13 +656,15 @@ storiesOf('Components|Drawer/スタイルのカスタマイズ', module)
         { lang: 'html' }
       )}
       ${copyCodeBlock(
-        '.app-layout {\n' +
-        '   > .drawer {\n' +
-        '      &.-container.-orange {\n' +
-        '        @include rs-drawer-fill-color-accessible(orange);\n' +
-        '      }\n' +
-        '   }\n' +
-        '}',
+`@import \'@rsmdc/drawer/rs-drawer.scss\';
+
+.app-layout {
+  > .drawer {
+    &.-container.-orange {
+      @include rs-drawer-fill-color-accessible(orange);
+    }
+  }
+}`,
         { lang: 'scss' }
       )}
       <p>オプション</p>
@@ -677,7 +693,7 @@ storiesOf('Components|Drawer/スタイルのカスタマイズ', module)
       <p>線の色を指定した色に変える。</p>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
-        '@include rs-drawer-border-color($color);',
+        `@include rs-drawer-border-color($color);`,
         { lang: 'scss' }
       )}
       <h4>使用方法</h4>
@@ -705,13 +721,15 @@ storiesOf('Components|Drawer/スタイルのカスタマイズ', module)
         { lang: 'html' }
       )}
       ${copyCodeBlock(
-        '.app-layout {\n' +
-        '   > .drawer {\n' +
-        '      &.-line-brown {\n' +
-        '        @include rs-drawer-border-color(brown);\n' +
-        '      }\n' +
-        '   }\n' +
-        '}',
+`@import \'@rsmdc/drawer/rs-drawer.scss\';
+
+.app-layout {
+  > .drawer {
+    &.-line-brown {
+      @include rs-drawer-border-color(brown);
+    }
+  }
+}`,
         { lang: 'scss' }
       )}
     `
@@ -742,7 +760,7 @@ storiesOf('Components|Drawer/スタイルのカスタマイズ', module)
       <p>ドロワー内の仕切り線の色を指定した色に変える。</p>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
-        '@include rs-drawer-divider-color($color);',
+        `@include rs-drawer-divider-color($color);`,
         { lang: 'scss' }
       )}
       <h4>使用方法</h4>
@@ -770,13 +788,15 @@ storiesOf('Components|Drawer/スタイルのカスタマイズ', module)
         { lang: 'html' }
       )}
       ${copyCodeBlock(
-        '.app-layout {\n' +
-        '   > .drawer {\n' +
-        '      &.-divider-blue {\n' +
-        '        @include rs-drawer-border-color(blue);\n' +
-        '      }\n' +
-        '   }\n' +
-        '}',
+`@import \'@rsmdc/drawer/rs-drawer.scss\';
+
+.app-layout {
+  > .drawer {
+    &.-divider-blue {
+      @include rs-drawer-border-color(blue);
+    }
+  }
+}`,
         { lang: 'scss' }
       )}
     `
@@ -801,7 +821,7 @@ storiesOf('Components|Drawer/スタイルのカスタマイズ', module)
       <p>ドロワーの幅を指定したサイズに変える。</p>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
-        '@include rs-drawer-width($width);',
+        `@include rs-drawer-width($width);`,
         { lang: 'scss' }
       )}
       <h4>使用方法</h4>
@@ -829,13 +849,15 @@ storiesOf('Components|Drawer/スタイルのカスタマイズ', module)
         { lang: 'html' }
       )}
       ${copyCodeBlock(
-        '.app-layout {\n' +
-        '   > .drawer {\n' +
-        '      &.-width {\n' +
-        '        @include rs-drawer-width(300px);\n' +
-        '      }\n' +
-        '   }\n' +
-        '}',
+`@import \'@rsmdc/drawer/rs-drawer.scss\';
+
+.app-layout {
+  > .drawer {
+    &.-width {
+      @include rs-drawer-width(300px);
+    }
+  }
+}`,
         { lang: 'scss' }
       )}
       <p>オプション</p>
@@ -864,7 +886,7 @@ storiesOf('Components|Drawer/スタイルのカスタマイズ', module)
       <p>ドロワーの角の丸みを指定したサイズに変える。</p>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
-        '@include rs-drawer-item-shape-radius($radius);',
+        `@include rs-drawer-item-shape-radius($radius);`,
         { lang: 'scss' }
       )}
       <h4>使用方法</h4>
@@ -892,13 +914,15 @@ storiesOf('Components|Drawer/スタイルのカスタマイズ', module)
       { lang: 'html' }
     )}
       ${copyCodeBlock(
-        '.app-layout {\n' +
-        '   > .drawer {\n' +
-        '      &.-roundness {\n' +
-        '        @include rs-drawer-shape-radius(10px);\n' +
-        '      }\n' +
-        '   }\n' +
-        '}',
+`@import \'@rsmdc/drawer/rs-drawer.scss\';
+
+.app-layout {
+  > .drawer {
+    &.-roundness {
+      @include rs-drawer-shape-radius(10px);
+    }
+  }
+}`,
         { lang: 'scss' }
       )}
       <p>オプション</p>

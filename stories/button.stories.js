@@ -87,17 +87,17 @@ storiesOf('Components|Button', module)
       <span><rs-button class="button -dense">sample</rs-button></span>
       <span><rs-button class="button" disabled>sample</rs-button></span>
       ${copyCodeBlock(
-        '<rs-button class="button">flat</rs-button>\n' +
-        '<rs-button class="button -dense">flat</rs-button>\n' +
-        '<rs-button class="button" disabled>flat</rs-button>\n',
+`<span><rs-button class="button">sample</rs-button></span>
+<span><rs-button class="button -dense">sample</rs-button></span>
+<span><rs-button class="button" disabled>sample</rs-button></span>`,
         { lang: 'html' }
       )}
       ${copyCodeBlock(
-        '.button {\n' +
-        '  &.-dense {\n' +
-        '    @include rs-button-type(dense);\n' +
-        '  }\n' +
-        '}',
+`.button
+  &.-dense
+    @include rs-button-type(dense);
+  }
+}`,
         { lang: 'scss' }
       )}
       <h4>HTML要素</h4>
@@ -153,26 +153,27 @@ storiesOf('Components|Button/スタイルのカスタマイズ/ボタンタイ�
       <rs-button class="button" disabled>disabled</rs-button>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
-        '@include rs-button-type($type);\n' +
-        '※denseにする時のみ',
+`@include rs-button-type($type);
+※denseにする時のみ`,
         { lang: 'scss' }
       )}
       <h4>使用方法</h4>
       <p>Dense(小フォント)ボタンを作りたい時、<code>rs-button-type</code> の mixin に dense を追加します。<br>
       <code>@include rs-button-type(dense);</code> のようになります。</p>
       ${copyCodeBlock(
-        '<rs-button class="button">normal</rs-button>\n' +
-        '<rs-button class="button -dense">dense</rs-button>\n' +
-        '<rs-button class="button" disabled>disabled</rs-button>',
+`<rs-button class="button">normal</rs-button>
+<rs-button class="button -dense">dense</rs-button>
+<rs-button class="button" disabled>disabled</rs-button>`,
         { lang: 'html' }
       )}
       ${copyCodeBlock(
-        '@import \'@rsmdc/css/rs-button.scss\';\n\n' +
-        '.button {\n' +
-        '  &.-dense {\n' +
-        '    @include rs-button-type(dense);\n' +
-        '  }\n' +
-        '}',
+`@import \'@rsmdc/css/rs-button.scss\';
+
+.button {
+  &.-dense {
+    @include rs-button-type(dense)
+  }
+}`,
         { lang: 'scss' }
       )}
     `
@@ -186,7 +187,7 @@ storiesOf('Components|Button/スタイルのカスタマイズ/ボタンタイ�
       <rs-button class="raised" disabled>disabled</rs-button>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
-        '@include rs-button-type($type);',
+        `@include rs-button-type($type);`,
         { lang: 'scss' }
       )}
       <h4>使用方法</h4>
@@ -194,19 +195,19 @@ storiesOf('Components|Button/スタイルのカスタマイズ/ボタンタイ�
       <p>Dense(小フォント)ボタンを作りたい時、<code>rs-button-type</code> の mixin に dense を追加します。<br>
       <code>@include rs-button-type(raised, dense);</code> のようになります。</p>
       ${copyCodeBlock(
-        '<rs-button class="raised">normal</rs-button>\n' +
-        '<rs-button class="raised -dense">dense</rs-button>\n' +
-        '<rs-button class="raised" disabled>disabled</rs-button>',
+`<rs-button class="raised">normal</rs-button>
+<rs-button class="raised -dense">dense</rs-button>
+<rs-button class="raised" disabled>disabled</rs-button>`,
         { lang: 'html' }
       )}
       ${copyCodeBlock(
-        '@import \'@rsmdc/css/rs-button.scss\';\n\n' +
-        '.raised {\n' +
-        '  @include rs-button-type(raised);\n\n' +
-        '  &.-dense {\n' +
-        '    @include rs-button-type(raised, dense);\n' +
-        '  }\n' +
-        '}',
+`@import \'@rsmdc/css/rs-button.scss\';
+.raised {
+  @include rs-button-type(raised);
+  &.-dense
+    @include rs-button-type(raised, dense);
+  }
+}`,
         { lang: 'scss' }
       )}
     `
@@ -220,7 +221,7 @@ storiesOf('Components|Button/スタイルのカスタマイズ/ボタンタイ�
       <rs-button class="unelevated" disabled>disabled</rs-button>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
-        '@include rs-button-type($type);',
+        `@include rs-button-type($type);`,
         { lang: 'scss' }
       )}
       <h4>使用方法</h4>
@@ -228,19 +229,20 @@ storiesOf('Components|Button/スタイルのカスタマイズ/ボタンタイ�
       <p>Dense(小フォント)ボタンを作りたい時、<code>rs-button-type</code> の mixin に dense を追加します。<br>
       <code>@include rs-button-type(unelevated, dense);</code> のようになります。</p>
       ${copyCodeBlock(
-        '<rs-button class="unelevated">normal</rs-button>\n' +
-        '<rs-button class="unelevated -dense">dense</rs-button>\n' +
-        '<rs-button class="unelevated" disabled>disabled</rs-button>',
+`<rs-button class="unelevated">normal</rs-button>
+<rs-button class="unelevated -dense">dense</rs-button>
+<rs-button class="unelevated" disabled>disabled</rs-button>`,
         { lang: 'html' }
       )}
       ${copyCodeBlock(
-        '@import \'@rsmdc/css/rs-button.scss\';\n\n' +
-        '.unelevated {\n' +
-        '  @include rs-button-type(unelevated);\n\n' +
-        '  &.-dense {\n' +
-        '    @include rs-button-type(unelevated, dense);\n' +
-        '  }\n' +
-        '}',
+`@import \'@rsmdc/css/rs-button.scss\';
+
+.unelevated {
+  @include rs-button-type(unelevated);
+  &.-dense
+    @include rs-button-type(unelevated, dense);
+  }
+}`,
         { lang: 'scss' }
       )}
     `
@@ -254,7 +256,7 @@ storiesOf('Components|Button/スタイルのカスタマイズ/ボタンタイ�
       <rs-button class="outlined -dense" disabled>disabled</rs-button>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
-        '@include rs-button-type($type);',
+        `@include rs-button-type($type);`,
         { lang: 'scss' }
       )}
       <h4>使用方法</h4>
@@ -262,19 +264,20 @@ storiesOf('Components|Button/スタイルのカスタマイズ/ボタンタイ�
       <p>Dense(小フォント)ボタンを作りたい時、<code>rs-button-type</code> の mixin に dense を追加します。<br>
       <code>@include rs-button-type(outlined, dense);</code> のようになります。</p>
       ${copyCodeBlock(
-        '<rs-button class="outlined">normal</rs-button>\n' +
-        '<rs-button class="outlined -dense">dense</rs-button>\n' +
-        '<rs-button class="outlined" disabled>disabled</rs-button>',
+`<rs-button class="outlined">normal</rs-button>
+<rs-button class="outlined -dense">dense</rs-button>
+<rs-button class="outlined -dense" disabled>disabled</rs-button>`,
         { lang: 'html' }
       )}
       ${copyCodeBlock(
-        '@import \'@rsmdc/css/rs-button.scss\';\n\n' +
-        '.outlined {\n' +
-        '  @include rs-button-type(outlined);\n\n' +
-        '  &.-dense {\n' +
-        '    @include rs-button-type(outlined, dense);\n' +
-        '  }\n' +
-        '}',
+`@import \'@rsmdc/css/rs-button.scss\';
+
+.outlined {
+  @include rs-button-type(outlined);
+  &.-dense {
+    @include rs-button-type(outlined, dense);
+  }
+}`,
         { lang: 'scss' }
       )}
     `
@@ -290,42 +293,45 @@ storiesOf('Components|Button/スタイルのカスタマイズ/ボタンタイ�
       <rs-button class="fab -normal -fixed"></rs-button>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
-        '@include rs-button-type($type);',
+        `@include rs-button-type($type);`,
         { lang: 'scss' }
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
-        '<rs-button class="fab -normal -fixed"></rs-button>\n' +
-        '<rs-button class="fab -normal"></rs-button>\n' +
-        '<rs-button class="fab -mini"></rs-button>\n' +
-        '<rs-button class="fab -extended">mail</rs-button>\n' +
-        '<rs-button class="fab -extended -icon">mail</rs-button>',
+`<rs-button class="fab -normal"></rs-button>
+<rs-button class="fab -mini"></rs-button>
+<rs-button class="fab -extended -icon">mail</rs-button>
+<rs-button class="fab -extended" exited>exited</rs-button>
+<rs-button class="fab -normal -fixed"></rs-button>`,
         { lang: 'html' }
       )}
       ${copyCodeBlock(
-        '.fab {\n' +
-        '  @include rs-button-type(fab);\n\n' +
-        '  &.-normal {\n' +
-        '      @include rs-button-icon-image(url(\'http://icons.iconarchive.com/icons/iconsmind/outline/512/Mail-icon.png\'));\n\n' +
-        '    &.-fixed {\n' +
-        '      @include rs-button-icon-image(url(\'https://cdn0.iconfinder.com/data/icons/thin-voting-awards/57/thin-231_star_favorite-512.png\'));\n' +
-        '      @include rs-button-fab-fixed-bottom;\n' +
-        '    }\n' +
-        '  }\n\n' +
-        '  &.-mini {\n' +
-        '    @include rs-button-type(fab, mini);\n' +
-        '    @include rs-button-icon-image(url(\'http://icons.iconarchive.com/icons/iconsmind/outline/512/Mail-icon.png\'));\n' +
-        '  }\n' +
-        '\n' +
-        '  &.-extended {\n' +
-        '    @include rs-button-type(fab, extended);\n' +
-        '  }\n' +
-        '\n' +
-        '  &.-extended.-icon {\n' +
-        '    @include rs-button-type(fab, extended);\n' +
-        '    @include rs-button-icon-image(url(\'http://icons.iconarchive.com/icons/iconsmind/outline/512/Mail-icon.png\'));\n' +
-        '  }\n' +
-        '}',
+`@import \'@rsmdc/css/rs-button.scss\';
+
+.fab {
+  @include rs-button-type(fab);
+  &.-normal {
+    @include rs-button-icon-image(url(\'http://icons.iconarchive.com/icons/iconsmind/outline/512/Mail-icon.png\'));
+    &.-fixed {
+      @include rs-button-icon-image(url(\'https://cdn0.iconfinder.com/data/icons/thin-voting-awards/57/thin-231_star_favorite-512.png\'));
+      @include rs-button-fab-fixed-bottom;
+    }
+  }
+  
+  &.-mini {
+    @include rs-button-type(fab, mini);
+    @include rs-button-icon-image(url(\'http://icons.iconarchive.com/icons/iconsmind/outline/512/Mail-icon.png\'));
+  }
+
+  &.-extended {
+    @include rs-button-type(fab, extended);
+  }
+
+  &.-extended.-icon {
+    @include rs-button-type(fab, extended);
+    @include rs-button-icon-image(url(\'http://icons.iconarchive.com/icons/iconsmind/outline/512/Mail-icon.png\'));
+  }
+}`,
         { lang: 'scss' }
       )}
     `
@@ -338,22 +344,23 @@ storiesOf('Components|Button/スタイルのカスタマイズ', module)
       <rs-button class="button -text-brown">button</rs-button>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
-        '@include rs-button-ink-color($color);',
+        `@include rs-button-ink-color($color);`,
         { lang: 'scss' }
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
-        '<rs-button class="button -text-brown">button</rs-button>',
+        `<rs-button class="button -text-brown">button</rs-button>`,
         { lang: 'html' }
       )}
       ${copyCodeBlock(
-        '@import \'@rsmdc/button/rs-button.scss\';\n\n' +
-        '.button {\n' +
-        '  &.-text-brown {\n' +
-        '     @include rs-button-ink-color(brown);\n' +
-        '     @include rs-button-states-color(brown);\n' +
-        '  }\n' +
-        '}',
+`@import \'@rsmdc/button/rs-button.scss\';
+
+.button {
+  &.-text-brown {
+      @include rs-button-ink-color(brown);
+      @include rs-button-states-color(brown);
+  }
+}`,
         { lang: 'scss' }
       )}
       <p>オプション</p>
@@ -368,24 +375,25 @@ storiesOf('Components|Button/スタイルのカスタマイズ', module)
       <rs-button class="button -fill-beige">button</rs-button>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
-        '@include rs-button-container-fill-color($color);',
+        `@include rs-button-container-fill-color($color);`,
         { lang: 'scss' }
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
-        '<rs-button class="button -fill-beige">button</rs-button>',
+        `<rs-button class="button -fill-beige">button</rs-button>`,
         { lang: 'html' }
       )}
       ${copyCodeBlock(
-        '@import \'@rsmdc/button/rs-button.scss\';\n\n' +
-        '.button {\n' +
-        '  &.-fill-beige {\n' +
-        '    @include rs-button-type(unelevated);\n' +
-        '    @include rs-button-ink-color(brown);\n' +
-        '    @include rs-button-container-fill-color(beige);\n' +
-        '    @include rs-states(brown);\n' +
-        '  }\n' +
-        '}',
+`@import \'@rsmdc/button/rs-button.scss\';
+
+.button {
+  &.-fill-beige {
+    @include rs-button-type(unelevated);
+    @include rs-button-ink-color(brown);
+    @include rs-button-container-fill-color(beige);
+    @include rs-states(brown);
+  }
+}`,
         { lang: 'scss' }
       )}
       <p>オプション</p>
@@ -400,21 +408,21 @@ storiesOf('Components|Button/スタイルのカスタマイズ', module)
       <rs-button class="button -states-dark">button</rs-button>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
-        '@include rs-button-states-color($color);',
+        `@include rs-button-states-color($color);`,
         { lang: 'scss' }
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock( 
-        '<rs-button class="button -states-dark">button</rs-button>',
+        `<rs-button class="button -states-dark">button</rs-button>`,
         { lang: 'html' }
       )}
       ${copyCodeBlock( 
-        '@import \'@rsmdc/button/rs-button.scss\';\n\n' +
-        '.button {\n' +
-        '   &.-states-dark {\n' + 
-        '     @include rs-button-states-color(black);\n' +
-        '   }\n' +
-        '}',
+`@import \'@rsmdc/button/rs-button.scss\';
+.button 
+  &.-states-dark {
+    @include rs-button-states-color(black)
+  }
+}`,
         { lang: 'scss' }
       )}
     `
@@ -428,21 +436,22 @@ storiesOf('Components|Button/スタイルのカスタマイズ', module)
       <rs-button class="button -filled -accessible-dark">button</rs-button>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
-        '@include rs-button-filled-accessible($color);',
+        `@include rs-button-filled-accessible($color);`,
         { lang: 'scss' }
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock( 
-        '<rs-button class="button -filled -acceddible-dark">button</rs-button>',
+        `<rs-button class="button -filled -acceddible-dark">button</rs-button>`,
         { lang: 'html' }
       )}
       ${copyCodeBlock(
-        '@import \'@rsmdc/button/rs-button.scss\';\n\n' +
-        '.button {\n' +
-        '   &.-filled.-acceddible-dark {\n' + 
-        '     @include rs-button-filled-accessible(black);\n' +
-        '   }\n' +
-        '}',
+`@import \'@rsmdc/button/rs-button.scss\';
+
+.button {
+  &.-filled.-acceddible-dark {
+    @include rs-button-filled-accessible(black);
+  }
+}`,
         { lang: 'scss' }
       )}
     `
@@ -453,24 +462,25 @@ storiesOf('Components|Button/スタイルのカスタマイズ', module)
       <rs-button class="outlined -line-blue">button</rs-button>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
-        '@include rs-button-outline-color($color);',
+        `@include rs-button-outline-color($color);`,
         { lang: 'scss' }
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
-        '<rs-button class="outlined -line-blue">button</rs-button>',
+        `<rs-button class="outlined -line-blue">button</rs-button>`,
         { lang: 'html' }
       )}
       ${copyCodeBlock(
-        '@import \'@rsmdc/css/rs-button.scss\';\n\n' +
-        '.outlined {\n' +
-        '  @include rs-button-type(outlined);\n\n' +
-        '  &.-line-blue {\n' +
-        '     @include rs-button-outline-color(#0ba6e4);\n\n' +
-        '     @include rs-button-ink-color(#0ba6e4);\n' +
-        '     @include rs-button-states-color(#92cfe7);\n' +
-        '  }\n' +
-        '}',
+`@import \'@rsmdc/css/rs-button.scss\';
+
+.outlined {
+  @include rs-button-type(outlined);
+  &.-line-blue {
+    @include rs-button-outline-color(#0ba6e4);
+    @include rs-button-ink-color(#0ba6e4);
+    @include rs-button-states-color(#92cfe7);
+  }
+}`,
         { lang: 'scss' }
       )}
       <p>オプション</p>
@@ -490,16 +500,17 @@ storiesOf('Components|Button/スタイルのカスタマイズ', module)
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
-        '<rs-button class="button -roundness">button</rs-button>',
+        `<rs-button class="button -roundness">button</rs-button>`,
         { lang: 'html' }
       )}
       ${copyCodeBlock(
-        '@import \'@rsmdc/css/rs-button.scss\';\n\n' +
-        '.button {\n' +
-        '  &.-roundness {\n' +
-        '    @include rs-button-shape-radius(30px);\n' +
-        '  }\n' +
-        '}',
+`@import \'@rsmdc/css/rs-button.scss\';
+
+.button {
+  &.-roundness {
+    @include rs-button-shape-radius(30px);
+  }
+}`,
         { lang: 'scss' }
       )}
       <p>オプション</p>
@@ -515,21 +526,22 @@ storiesOf('Components|Button/スタイルのカスタマイズ', module)
       <rs-button class="button -horizontal-padding">button</rs-button>
       <h4>使用するmixin</h4>
       ${copyCodeBlock(
-        '@include rs-button-horizontal-padding($padding);',
+        `@include rs-button-horizontal-padding($padding);`,
         { lang: 'scss' }
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
-        '<x-button class="button -horizontal-padding">button</x-button>',
+        `<x-button class="button -horizontal-padding">button</x-button>`,
         { lang: 'html' }
       )}
       ${copyCodeBlock(
-        '@import \'@rsmdc/css/rs-button.scss\';\n\n' +
-        '.button {\n' +
-        '  &.-horizontal-padding {\n' +
-        '    @include rs-button-horizontal-padding(30px);\n' +
-        '  }\n' +
-        '}',
+`@import \'@rsmdc/css/rs-button.scss\';
+
+.button {
+  &.-horizontal-padding {
+    @include rs-button-horizontal-padding(30px);
+  }
+}`,
         { lang: 'scss' }
       )}
       <p>オプション</p>
@@ -550,22 +562,23 @@ storiesOf('Components|Button/スタイルのカスタマイズ', module)
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
-        '<rs-button class="outlined -outline-thin">button</rs-button>\n' +
-        '<rs-button class="outlined -outline-thin -horizontal-padding">button</rs-button>',
+`<rs-button class="outlined -line-thin">button</rs-button>
+<rs-button class="outlined -line-thin -horizontal-padding">button</rs-button>`,
         { lang: 'html' }
       )}
       ${copyCodeBlock(
-        '@import \'@rsmdc/css/rs-button.scss\';\n\n' +
-        '.outlined {\n' +
-        '  @include rs-button-type(outlined);\n\n' +
-        '  &.-outline-width {\n' +
-        '    @include rs-button-outline-width(3px);\n' +
-        '  }\n' +
-        '  &.-horizontal-padding.-line-thin {\n' +
-        '    @include rs-button-horizontal-padding(30px);\n' +
-        '    @include rs-button-outline-width(1px, 30px);\n' +
-        '  }\n' +
-        '}',
+`@import \'@rsmdc/css/rs-button.scss\';
+
+.outlined {
+  @include rs-button-type(outlined);
+  &.-outline-width {
+    @include rs-button-outline-width(3px);
+  }
+  &.-horizontal-padding.-line-thin {
+    @include rs-button-horizontal-padding(30px);
+    @include rs-button-outline-width(1px, 30px);
+  }
+}`,
         { lang: 'scss' }
       )}
       <p>オプション</p>
@@ -587,17 +600,18 @@ storiesOf('Components|Button/スタイルのカスタマイズ', module)
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
-        '<rs-button class="button -icon">submit</rs-button>\n' +
-        '<rs-button class="button -icon"></rs-button>\n',
+`<rs-button class="button -icon">submit</rs-button>
+<rs-button class="button -icon"></rs-button>`,
         { lang: 'html' }
       )}
       ${copyCodeBlock(
-        '@import \'@rsmdc/button/rs-button.scss\';\n\n' +
-        '.button {\n' +
-        '   &.-icon {\n' +
-        '     @include rs-button-icon-image(url(\'https://cdn3.iconfinder.com/data/icons/pyconic-icons-1-2/512/heart-outline-512.png\'));\n' +
-        '   }\n' +
-        '}',
+`@import \'@rsmdc/button/rs-button.scss\';
+
+.button {
+  &.-icon {
+    @include rs-button-icon-image(url(\'https://cdn3.iconfinder.com/data/icons/pyconic-icons-1-2/512/heart-outline-512.png\'));
+  }
+}`,
         { lang: 'scss' }
       )}
       <p>オプション</p>
@@ -617,17 +631,18 @@ storiesOf('Components|Button/スタイルのカスタマイズ', module)
       )}
       <h4>使用方法</h4>
       ${copyCodeBlock(
-        '<rs-button class="button -icon -position">submit</rs-button>',
+        `<rs-button class="button -icon -position">submit</rs-button>`,
         { lang: 'html' }
       )}
       ${copyCodeBlock(
-        '@import \'@rsmdc/button/rs-button.scss\';\n\n' +
-        '.button {\n' +
-        '   &.-icon.-position {\n' +
-        '     @include rs-button-icon-image(url("https://cdn3.iconfinder.com/data/icons/pyconic-icons-1-2/512/heart-outline-512.png"));\n' +
-        '     @include rs-button-icon-position(right); \n' +
-        '   }\n' +
-        '}',
+`@import \'@rsmdc/button/rs-button.scss\';
+
+.button {
+  &.-icon.-position {
+    @include rs-button-icon-image(url("https://cdn3.iconfinder.com/data/icons/pyconic-icons-1-2/512/heart-outline-512.png"));
+    @include rs-button-icon-position(right); 
+  }
+}`,
         { lang: 'scss' }
       )}
       <p>オプション</p>
