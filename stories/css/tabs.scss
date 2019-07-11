@@ -1,5 +1,5 @@
-@import '../../node_modules/@rsmdc/tabs/rs-tabs';
-@import '../../node_modules/@rsmdc/shape/rs-functions';
+@import '@rsmdc/tabs/rs-tabs';
+@import '@rsmdc/shape/rs-functions';
 $material-icons-font-path: '~material-icons/iconfont/';
 @import '~material-icons/iconfont/material-icons';
 .tab-bar {
@@ -34,10 +34,6 @@ $material-icons-font-path: '~material-icons/iconfont/';
     @include rs-tab-fixed-width(90px);
     @include rs-tab-bar-position(align-end);
   }
-  // &.-icon.-position {
-  //   @include rs-tab-icon-image(Material Icons, map-get($material-icons-codepoints, stars));
-  //   @include rs-tab-icon-position(right);
-  // }
   &.-position > .tab.-star {
     @include rs-tab-icon-image(Material Icons, map-get($material-icons-codepoints, stars));
     @include rs-tab-icon-position(right);

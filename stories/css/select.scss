@@ -1,4 +1,5 @@
-@import '../../node_modules/@rsmdc/select/rs-select';
+@import '@rsmdc/select/rs-select';
+
 .food-select {
   &.-outlined {
     @include rs-select-type(outlined);

@@ -109,7 +109,7 @@ storiesOf('Components|Textfield', module)
       { lang: 'html' }
     )}
     ${copyCodeBlock(
-`@import "@rsmdc/textfield/rs-text-field.scss";
+`@import '@rsmdc/textfield/rs-text-field.scss';
 
 .text-field {
   > .input.-outlined {
@@ -139,7 +139,7 @@ storiesOf('Components|Textfield', module)
         <td>rs-textfield-trailing</td>
         <td>テキストフィールド内の右側のアイコンを表示します</td>
         <td>-</td>
-        <td>-</td>
+        <td><code>rs-textfield</code>のみ有効です</td>
       </tr>
       <tr>
         <td>rs-textarea</td>
@@ -257,7 +257,7 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ/テキスト�
     </rs-form-field>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
-      `@include rs-text-fieldtype($type);`,
+      `@include rs-text-field-type($type);`,
       { lang: 'scss' }
     )}
     <h4>使用方法</h4>
@@ -270,7 +270,7 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ/テキスト�
       { lang: 'html' }
     )}
     ${copyCodeBlock(
-`@import "@rsmdc/textfield/rs-text-field.scss";
+`@import '@rsmdc/textfield/rs-text-field.scss';
 
 .text-field {
   > .input.-outlined {
@@ -278,6 +278,7 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ/テキスト�
   }`,
       { lang: 'scss' }
     )}
+    <p>オプション</p>
   `)
 
 storiesOf('Components|Textfield/スタイルのカスタマイズ', module)
@@ -316,7 +317,7 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ', module)
       { lang: 'html' }
     )}
   ${copyCodeBlock(
-`@import @rsmdc/text-field/text-field.scss;
+`@import '@rsmdc/text-field/text-field.scss';
 
 .text-field {
   > .input.-ink-orange:not(.-textarea)  {
@@ -346,7 +347,6 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ', module)
     <rs-form-helper>helper text</rs-form-helper>
     <rs-form-error>error text</rs-form-error>
   </rs-form-field>
-  
   <h4>使用するmixin</h4>
   ${copyCodeBlock(
 `@include rs-text-field-caret-color($color);
@@ -369,7 +369,7 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ', module)
       { lang: 'html' }
     )}
   ${copyCodeBlock(
-`@import @rsmdc/text-field/text-field.scss;
+`@import '@rsmdc/text-field/text-field.scss';
 
 .text-field {
   > .input.-caret-orange:not(.-textarea)  {
@@ -382,6 +382,10 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ', module)
 }`,
     { lang: 'scss' }
   )}
+  <p>オプション</p>
+  <ul>
+    <li>$color: キャレットの色を指定 <br> 例）#ee00ce</li>
+  </ul>
 `)
 .add('背景色を変える', () => `
   <h4>背景色を変える</h4>
@@ -418,7 +422,7 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ', module)
     { lang: 'html' }
   )}
   ${copyCodeBlock(
-`@import @rsmdc/text-field/text-field.scss;
+`@import '@rsmdc/text-field/text-field.scss';
 
 .text-field {
   > .input.-fill-lavender:not(.-textarea)  {
@@ -431,6 +435,10 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ', module)
 }`,
     { lang: 'scss' }
   )}
+  <p>オプション</p>
+  <ul>
+    <li>$color: 背景色の指定 <br> 例）#ee00ce</li>
+  </ul>
 `)
 .add('下線の色を変える', () => `
   <h4>下線の色を変える</h4>
@@ -454,7 +462,7 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ', module)
     { lang: 'html' }
   )}
   ${copyCodeBlock(
-`@import @rsmdc/text-field/text-field.scss;
+`@import '@rsmdc/text-field/text-field.scss';
 
 .text-field {
   > .input.-fill-lavender:not(.-textarea)  {
@@ -463,6 +471,10 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ', module)
 }`,
     { lang: 'scss' }
   )}
+  <p>オプション</p>
+  <ul>
+    <li>$color: 下線の色を指定 <br> 例）#ee00ce</li>
+  </ul>
 `)
 .add('ホバー時の下線の色を変える', () => `
   <h4>ホバー時の下線の色を変える</h4>
@@ -487,7 +499,7 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ', module)
     { lang: 'html' }
   )}
   ${copyCodeBlock(
-`@import @rsmdc/text-field/text-field.scss;
+`@import '@rsmdc/text-field/text-field.scss';
 
 .text-field {
   > .input.-hover-line-blue {
@@ -496,6 +508,10 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ', module)
 }`,
     { lang: 'scss' }
   )}
+  <p>オプション</p>
+  <ul>
+    <li>$color: 下線の色を指定（ホバーした際に適用される）<br> 例）#ee00ce</li>
+  </ul>
 `)
 .add('フォーカス時の下線の色を変える', () => `
   <h4>フォーカス時の下線の色を変える</h4>
@@ -519,7 +535,7 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ', module)
     { lang: 'html' }
   )}
   ${copyCodeBlock(
-`@import @rsmdc/text-field/text-field.scss;
+`@import '@rsmdc/text-field/text-field.scss';
 
 .text-field {
   > .input.-focus-line-blue {
@@ -528,6 +544,10 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ', module)
 }`,
     { lang: 'scss' }
   )}
+  <p>オプション</p>
+  <ul>
+    <li>$color: 下線の色を指定（フォーカスした際に適用される）<br> 例）#ee00ce</li>
+  </ul>
 `)
 .add('枠線の色を変える', () => `
   <h4>枠線の色を変える</h4>
@@ -541,7 +561,6 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ', module)
     <rs-form-helper>helper text</rs-form-helper>
     <rs-form-error>error text</rs-form-error>
   </rs-form-field>
-
   <h4>使用するmixin</h4>
   ${copyCodeBlock(
 `@include rs-text-field-stroke-color($color);
@@ -565,7 +584,7 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ', module)
     { lang: 'html' }
   )}
   ${copyCodeBlock(
-`@import @rsmdc/text-field/text-field.scss;
+`@import '@rsmdc/text-field/text-field.scss';
 
 .text-field {
   > .input.-outlined.-line-blue {
@@ -578,6 +597,10 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ', module)
 }`,
     { lang: 'scss' }
   )}
+  <p>オプション</p>
+  <ul>
+    <li>$color: 枠線の色を指定 <br> 例）#ee00ce</li>
+  </ul>
 `)
 .add('ホバー時の枠線の色を変える', () => `
   <h4>ホバー時の枠線の色を変える</h4>
@@ -613,7 +636,7 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ', module)
     { lang: 'html' }
   )}
   ${copyCodeBlock(
-`@import @rsmdc/text-field/text-field.scss;
+`@import '@rsmdc/text-field/text-field.scss';
 
 .text-field {
   > .input.-outlined.-hover-line-blue {
@@ -626,6 +649,10 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ', module)
 }`,
     { lang: 'scss' }
   )}
+  <p>オプション</p>
+  <ul>
+    <li>$color: 枠線の色を指定（ホバーした際に適用される） <br> 例）#ee00ce</li>
+  </ul>
 `)
 .add('フォーカス時の枠線の色を変える', () => `
   <h4>フォーカス時の枠線の色を変える</h4>
@@ -661,7 +688,7 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ', module)
     { lang: 'html' }
   )}
   ${copyCodeBlock(
-`@import @rsmdc/text-field/text-field.scss;
+`@import '@rsmdc/text-field/text-field.scss';
 
 .text-field {
   > .input.-focus-line-blue {
@@ -677,6 +704,10 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ', module)
 }`,
     { lang: 'scss' }
   )}
+  <p>オプション</p>
+  <ul>
+    <li>$color: 枠線の色を指定（フォーカスした際に適用される） <br> 例）#ee00ce</li>
+  </ul>
 `)
 .add('フォーカス時の色を一括で変える', () => `
   <h4>フォーカス時の線の色、ラベル、キャレットの色を変える</h4>
@@ -722,7 +753,7 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ', module)
     { lang: 'html' }
   )}
   ${copyCodeBlock(
-`@import @rsmdc/text-field/text-field.scss;
+`@import '@rsmdc/text-field/text-field.scss';
 
 .text-field {
   > .input.-outlined {
@@ -734,6 +765,10 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ', module)
 }`,
     { lang: 'scss' }
   )}
+  <p>オプション</p>
+  <ul>
+    <li>$color: 線、ラベル、キャレットの色を指定（フォーカスした際に適用される） <br> 例）#ee00ce</li>
+  </ul>
 `)
 .add('文字数カウンターの色を変える', () => `
   <h4>文字数カウンターの色を変える</h4>
@@ -757,7 +792,7 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ', module)
     { lang: 'html' }
   )}
   ${copyCodeBlock(
-`@import @rsmdc/text-field/text-field.scss;
+`@import '@rsmdc/text-field/text-field.scss';
 
 .text-field {
   > .input.-counter-orange {
@@ -766,9 +801,13 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ', module)
 }`,
     { lang: 'scss' }
   )}
+  <p>オプション</p>
+  <ul>
+    <li>$color: 文字数カウンターの色を指定</li>
+  </ul>
 `)
 .add('文字数カウンターの位置を変える', () => `
-  <h4>文字数カウンターの色を変える</h4>
+  <h4>文字数カウンターの位置を変える</h4>
   <rs-form-field class="text-field">
     <rs-textfield class="input -top" label="label" maxlength="7" countable></rs-textfield>
     <rs-form-helper>helper text</rs-form-helper>
@@ -789,7 +828,7 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ', module)
     { lang: 'html' }
   )}
   ${copyCodeBlock(
-`@import @rsmdc/text-field/text-field.scss;
+`@import '@rsmdc/text-field/text-field.scss';
 
 .text-field {
   > .input.-top {
@@ -807,7 +846,7 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ', module)
 .add('テキストエリアの行間を変える', () => `
   <h4>テキストエリアの行間を変える</h4>
   <rs-form-field class="text-field">
-  <rs-textarea class="input -wide" cols="20" rows="5" label="label" placeholder="placeholder"></rs-textarea>
+    <rs-textarea class="input -wide" cols="20" rows="5" label="label" placeholder="placeholder"></rs-textarea>
   </rs-form-field>
   <h4>使用するmixin</h4>
   ${copyCodeBlock(
@@ -817,13 +856,13 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ', module)
   <h4>使用方法</h4>
   ${copyCodeBlock(
 `<rs-form-field class="text-field">
-<rs-textarea class="input -wide" cols="20" rows="5" label="label" placeholder="placeholder" />
+  <rs-textarea class="input -wide" cols="20" rows="5" label="label" placeholder="placeholder" />
 </rs-form-field>
 `,
     { lang: 'html' }
   )}
   ${copyCodeBlock(
-`@import @rsmdc/text-field/text-field.scss;
+`@import '@rsmdc/text-field/text-field.scss';
 
 .text-field {
   > .input.-wide {
@@ -842,7 +881,7 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ', module)
   <rs-form-field class="text-field">
     <rs-textfield class="input -roundness" label="label" maxlength="7" countable></rs-textfield>
     <rs-form-helper>helper text</rs-form-helper>
-  <rs-form-error>error text</rs-form-error>
+    <rs-form-error>error text</rs-form-error>
   </rs-form-field>
   <rs-form-field class="text-field">
     <rs-textarea class="input -textarea -roundness" label="label" placeholder="placeholder"></rs-textarea>
@@ -860,7 +899,7 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ', module)
 `<rs-form-field class="text-field">
   <rs-textfield class="input -roundness" label="label" maxlength="7" countable />
   <rs-form-helper>helper text</rs-form-helper>
-<rs-form-error>error text</rs-form-error>
+  <rs-form-error>error text</rs-form-error>
 </rs-form-field>
 
 <rs-form-field class="text-field">
@@ -870,7 +909,7 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ', module)
     { lang: 'html' }
   )}
   ${copyCodeBlock(
-`@import @rsmdc/text-field/text-field.scss;
+`@import '@rsmdc/text-field/text-field.scss;'
 
 .text-field {
   > .input.-roundness:not(.-textarea) {
@@ -884,7 +923,7 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ', module)
   )}
   <p>オプション</p>
   <ul>
-    <li>$radius：角の丸みを指定</li>
+    <li>$radius：角の丸みのサイズを指定 <br> 例）15px</li>
   </ul>
 `)
 .add('左側のアイコン(leading icon)を設定する', () => `
@@ -921,7 +960,7 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ', module)
     { lang: 'html' }
   )}
   ${copyCodeBlock(
-`@import @rsmdc/text-field/text-field.scss;
+`@import '@rsmdc/text-field/text-field.scss';
 
 .text-field {
   > .input.-leadingicon:not(.-png) {
@@ -982,7 +1021,7 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ', module)
     { lang: 'html' }
   )}
   ${copyCodeBlock(
-`@import @rsmdc/text-field/text-field.scss;
+`@import '@rsmdc/text-field/text-field.scss';
 
 .text-field {
   > .input > .icon:not(.-png) {
