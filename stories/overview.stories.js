@@ -108,3 +108,122 @@ export default {
     <p>下記のように表示されます。</p>
     <rs-button class="outlined">送信</rs-button>
   `)
+  .add('v-model-3利用方法', () => `
+    <h4>v-model-3利用方法</h4>
+    <p>rsmdcをVueやNuxtで利用し、且つ<code>v-model</code>ディレクティブを使用したい場合、<br>
+    <code>v-model</code>の代わりに<code>v-model-3</code>を利用してください。
+    </p>
+    <p><code>v-model-3</code>はrsmdc用の<code>v-model</code>です。<br>
+    現状Vueの<code>v-model</code>はcustom elementsに対応していません。<br>
+    <code>v-model-3</code>を使うことで<code>v-model</code>と同じ機能が実現できます。<br>
+    (Vue3系で<code>v-model</code>がcustom elementsに対応するようです。Vue3以降は本家の<code>v-model</code>を使ってください)
+    </p>
+
+    <h5>1. plugins/custom-directive.client.jsの作成</h5>
+    <p>plugins/custom-directive.client.js</p>
+    ${copyCodeBlock(
+`import Vue from 'vue'
+import { VModel3 } from '@rsmdc/rsmdc/v-model3'
+
+Vue.directive('model3', VModel3)
+`,
+      { lang: 'js' }
+    )}
+    <p><code>Vue.directive</code>に<code>VModel3</code>を追加します。</p>
+
+    <h5>2. nuxt.config.jsの編集</h5>
+    <p>nuxt.config.js</p>
+    ${copyCodeBlock(
+`export default {
+
+  ...
+
+  plugins: [
+    '~/plugins/custom-directive'
+  ],
+
+  ...
+
+}
+`,
+      { lang: 'js' }
+    )}
+    <p><code>plugins</code>に作成したファイルを追加します。</p>
+
+    <h5>3. vueファイルの編集</h5>
+    <p>example.vue</p>
+    ${copyCodeBlock(
+`<template>
+  <div>
+    <!-- radio -->
+    <rs-radio id="male" label="男" name="sex value="1" type="radio" v-model-3="sex" />
+    <rs-radio id="female" label="女" name="sex value="2" type="radio" v-model-3="sex" />
+
+    <!-- checkbox -->
+    <x-checkbox id="java" label="java" value="1" type="checkbox" v-model-3="languages" />
+    <x-checkbox id="ruby" label="ruby" value="2" type="checkbox" v-model-3="languages" />
+    <x-checkbox id="php" label="php" value="3" type="checkbox" v-model-3="languages" />
+  
+    <!-- textfield・textarea -->
+    <rs-textfield label="メールアドレス" :value="mail" type="text" v-model-3="mail"/>
+    <rs-textarea label="メモ" :value="memo" type="text" v-model-3="memo"/>
+
+    <!-- select -->
+    <rs-select label="趣味" type="select" v-model-3="hobby">
+      <option value="1">料理</option>
+      <option value="2">散歩</option>
+      <option value="3">読書</option> 
+    </rs-select>
+  </div>
+</template>
+<script>
+  export default {
+    data() {
+      return {
+        sex: '',
+        languages:[],
+        mail: '',
+        memo: '',
+        hobby: ''
+      }
+    }
+  }
+</script>
+`,
+      { lang: 'html' }
+    )}
+    <p><code>type</code>でフォームタイプを指定し、<code>v-model-3</code>にバインディングさせる値を指定することで<br>
+    双方向バインディングが可能になります。</p>
+    <p>下記にrsmdcで<code>v-model</code>の使用を想定している要素と、使用する場合に指定するタイプをまとめています。</p>
+    <table>
+      <tr>
+        <th>要素名</th>
+        <th>指定するタイプ</th>
+      </tr>
+      <tr>
+        <td><code>rs-radio</code></td>
+        <td>radio</td>
+      </tr>
+      <tr>
+        <td><code>rs-checkbox</code></td>
+        <td>checkbox</td>
+      </tr>
+      <tr>
+        <td><code>rs-textfield</code></td>
+        <td>
+          <ul>
+            <li>text</li>
+            <li>date</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td><code>rs-textarea</code></td>
+        <td>text</td>
+      </tr>
+      <tr>
+        <td><code>rs-select</code></td>
+        <td>select</td>
+      </tr>
+    </table>
+  `)
