@@ -1,6 +1,6 @@
-@import '../../node_modules/@rsmdc/shape/rs-functions';
-@import '../../node_modules/@rsmdc/drawer/rs-drawer';
-@import '../../node_modules/@rsmdc/top-app-bar/rs-top-app-bar';
+@import '@rsmdc/shape/rs-functions';
+@import '@rsmdc/drawer/rs-drawer';
+@import '@rsmdc/top-app-bar/rs-top-app-bar';
 
 .nav {
   @include rs-top-app-bar-nav-icon-image(url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgAQMAAADYVuV7AAAABlBMVEUAAAAzMzPI8eYgAAAAAXRSTlMAQObYZgAAABxJREFUeAFjIBOMAv7/UPCBlhzywWgYjIbBKAAANijXKaI5RRgAAAAASUVORK5CYII='));

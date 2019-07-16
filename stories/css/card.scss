@@ -1,6 +1,6 @@
-@import '../../node_modules/@rsmdc/card/rs-card';
-@import '../../node_modules/@rsmdc/button/rs-button';
-@import '../../node_modules/@rsmdc/shape/rs-functions';
+@import '@rsmdc/card/rs-card';
+@import '@rsmdc/button/rs-button';
+@import '@rsmdc/shape/rs-functions';
 
 .my-card {
   @include rs-card-size(350px);

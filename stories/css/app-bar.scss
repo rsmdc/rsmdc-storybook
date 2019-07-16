@@ -1,6 +1,6 @@
 $material-icons-font-path: '../../node_modules/material-icons/iconfont/';
-@import '../../node_modules/material-icons/iconfont/material-icons.scss';
-@import '../../node_modules/@rsmdc/top-app-bar/rs-top-app-bar';
+@import 'material-icons/iconfont/material-icons.scss';
+@import '@rsmdc/top-app-bar/rs-top-app-bar';
 
 :host {
    -webkit-overflow-scrolling: touch;
