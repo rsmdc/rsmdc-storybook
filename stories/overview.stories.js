@@ -95,9 +95,7 @@ export default {
     
     ${copyCodeBlock(
       `<template>
-  <div>
-    <rs-button class="my-button">送信</rs-button>
-  </div>
+  <rs-button class="my-button">送信</rs-button>
 </template>
 <style lang="scss">
   .my-button {
@@ -108,5 +106,5 @@ export default {
       { lang: 'html' }
     )}
     <p>下記のように表示されます。</p>
-    <x-button class="outlined">送信</x-button>
+    <rs-button class="outlined">送信</rs-button>
   `)
