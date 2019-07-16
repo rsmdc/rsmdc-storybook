@@ -156,8 +156,8 @@ Vue.directive('model3', VModel3)
 `<template>
   <div>
     <!-- radio -->
-    <rs-radio id="male" label="男" name="sex value="1" type="radio" v-model-3="sex" />
-    <rs-radio id="female" label="女" name="sex value="2" type="radio" v-model-3="sex" />
+    <rs-radio id="male" label="男" name="sex" value="1" type="radio" v-model-3="sex" />
+    <rs-radio id="female" label="女" name="sex" value="2" type="radio" v-model-3="sex" />
 
     <!-- checkbox -->
     <x-checkbox id="java" label="java" value="1" type="checkbox" v-model-3="languages" />
