@@ -27,7 +27,7 @@ storiesOf('overview|Getting Started', module)
     <p>nuxtでの利用を例に挙げ説明します。</p>
     <h5>1. パッケージのインストール</h5>
     ${copyCodeBlock(
-      `$ yarn add @rsmdc/rsmdc
+`$ yarn add @rsmdc/rsmdc
 $ yarn add --dev node-sass sass-loader`,
       { lang: 'shell' }
     )}
@@ -37,7 +37,7 @@ $ yarn add --dev node-sass sass-loader`,
     <h5>2. plugins/custom-elements.client.jsの作成</h5>
     <p>plugins/custom-elements.client.js</p>
     ${copyCodeBlock(
-      `// Select以外のコンポーネントの場合
+`// Select以外のコンポーネントの場合
 import { Button } from '@rsmdc/rsmdc'
 window.customElements.define('rs-button', Button)
 
@@ -53,7 +53,7 @@ customElement.defineCustomElements(window)
     <h5>3. nuxt.config.jsの編集</h5>
     <p>nuxt.config.js</p>
     ${copyCodeBlock(
-      `import path from 'path'
+`import path from 'path'
 
 export default {
 
@@ -94,7 +94,7 @@ export default {
     <p>example.vue<p>
     
     ${copyCodeBlock(
-      `<template>
+`<template>
   <rs-button class="my-button">送信</rs-button>
 </template>
 <style lang="scss">
