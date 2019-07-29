@@ -66,6 +66,12 @@ storiesOf('Components|Checkbox', module)
           <td>-</td>
         </tr>
         <tr>
+          <td>label</td>
+          <td>チェックボックスのラベルを表します</td>
+          <td>String</td>
+          <td>-</td>
+        </tr>
+        <tr>
           <td>checked</td>
           <td>チェックボックスを選択された状態にします</td>
           <td>Boolean</td>

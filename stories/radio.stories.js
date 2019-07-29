@@ -66,31 +66,31 @@ storiesOf('Components|Radio', module)
       </tr>
       <tr>
         <td>id</td>
-        <td>ラジオボタンとラベルを紐付ける</td>
+        <td>ラジオボタンとラベルを紐付けます</td>
         <td>String</td>
         <td>-</td>
       </tr>
       <tr>
         <td>label</td>
-        <td>ラジオボタンのラベルを表す</td>
+        <td>ラジオボタンのラベルを表します</td>
         <td>String</td>
         <td>-</td>
       </tr>
       <tr>
         <td>name</td>
-        <td>ラジオボタンをグルーピングする</td>
+        <td>ラジオボタンをグルーピングします</td>
         <td>String</td>
-        <td>同じグループにする際は同じnameをつける</td>
+        <td>同じグループにする際は同じnameをつけてください</td>
       </tr>
       <tr>
         <td>disabled</td>
-        <td>ラジオボタンを無効にする</td>
+        <td>ラジオボタンを無効にします</td>
         <td>Boolean</td>
         <td>-</td>
       </tr>
       <tr>
         <td>cheked</td>
-        <td>ラジオボタンを選択状態にする</td>
+        <td>ラジオボタンを選択状態にします</td>
         <td>Boolean</td>
         <td>-</td>
       </tr>

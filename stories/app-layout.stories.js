@@ -18,17 +18,17 @@ storiesOf('Components|App layout', module)
   .add('使い方', () => `
     <h4>使い方</h4>
     ${copyCodeBlock(
-      '<x-app-layout class="app-layout">\n' +
-      '   <x-drawer class="drawer">\n' +
+      '<rs-app-layout class="app-layout">\n' +
+      '   <rs-drawer class="drawer">\n' +
       '       ...\n' +
-      '   </x-drawer>\n' +
-      '   <app-layout-content class="contents">\n' +
-      '       <x-app-bar class="topbar">\n' +
+      '   </rs-drawer>\n' +
+      '   <rs-app-layout-content class="contents">\n' +
+      '       <rs-app-bar class="topbar">\n' +
       '           ...\n' +
-      '       </x-app-bar>\n' +
+      '       </rs-app-bar>\n' +
       '       ...\n' +
-      '   </app-layout-content>\n' +
-      '</x-app-layout>\n',
+      '   </rs-app-layout-content>\n' +
+      '</rs-app-layout>\n',
       { lang: 'html' }
     )}
     ${copyCodeBlock(
@@ -40,7 +40,7 @@ storiesOf('Components|App layout', module)
       { lang: 'scss' }
     )}
     <h4>HTML要素</h4>
-    <p>custom elementsを<code>x</code>と<code>app</code>のプレフィックスをつけて定義した前提です。<br>
+    <p>custom elementsを<code>rs</code>のプレフィックスをつけて定義した前提です。<br>
       下記HTML要素を使うことで、custom elementsが表示されます。
     </p>
     <table>
@@ -51,27 +51,27 @@ storiesOf('Components|App layout', module)
       <th>備考</th>
     </tr>
     <tr>
-      <td>x-app-layout</td>
+      <td>rs-app-layout</td>
       <td>画面全体のレイアウトを整えます</td>
       <td>
         <ul>
-          <li><code>x-drawer</code></li>
-          <li><code>app-layout-content</code></li>
+          <li><code>rs-drawer</code></li>
+          <li><code>rs-app-layout-content</code></li>
         </ul>
       </td>
       <td>DrawerとApp barを一緒に使う際は必須です<br>
         DrawerとApp barを横並びにします</td>
     </tr>
     <tr>
-      <td>app-layout-content</td>
+      <td>rs-app-layout-content</td>
       <td>アプリのコンテンツ部分を示します</td>
       <td>
         <ul>
-          <li><code>x-app-bar</code></li>
+          <li><code>rs-app-bar</code></li>
           <li>テキストなど全て可</li>
         </ul>
       </td>
-      <td><code>x-app-bar</code>はこの中に入ります</tr>
+      <td><code>rs-app-bar</code>はこの中に入ります</tr>
     </table>
     <h4>HTML属性</h4>
     <p>なし</p>
