@@ -36,20 +36,100 @@ $ yarn add --dev node-sass sass-loader`,
     </p>
     <h5>2. plugins/custom-elements.client.jsの作成</h5>
     <p>plugins/custom-elements.client.js</p>
-    ${copyCodeBlock(
-`// Select以外のコンポーネントの場合
-import { Button } from '@rsmdc/rsmdc'
-window.customElements.define('rs-button', Button)
+${copyCodeBlock(
+`const { 
+  Button,
+  Radio, 
+  Checkbox,
+  TabItem,
+  TabBar,
+  ListTextPrimary, 
+  ListTextSecondary,
+  ListText, 
+  ListGraphic, 
+  ListMeta, 
+  ListItem, 
+  ListDivider, 
+  ListSubheader,
+  ListGroup, 
+  List,
+  CardActions,
+  CardMedia,
+  CardDescription,
+  CardSubtitle,
+  CardTitle,
+  CardHeader,
+  CardContents,
+  Card,
+  TopAppBarActionItem,
+  TopAppBarActions,
+  TopAppBarTitle,
+  TopAppBarNav,
+  TopAppBar,
+  DrawerContent,
+  DrawerTitle,
+  DrawerSubtitle,
+  DrawerHeader,
+  Drawer,
+  Menu,
+  TextFieldAction,
+  TextArea,
+  TextField,
+  FormError,
+  FormHelper,
+  FormField,
+  AppLayoutContent,
+  AppLayout,
+} = require('@rsmdc/rsmdc')
+const select = require('@rsmdc/select/loader')
 
-// Selectコンポーネントの場合
-const customElement = require('@rsmdc/select/loader')
-customElement.defineCustomElements(window)
+select.defineCustomElements(window)
+window.customElements.define('rs-button', Button)
+window.customElements.define('rs-radio', Radio)
+window.customElements.define('rs-checkbox', Checkbox)
+window.customElements.define('rs-tab-item', TabItem)
+window.customElements.define('rs-tab-bar', TabBar)
+window.customElements.define('rs-list-primary', ListTextPrimary)
+window.customElements.define('rs-list-secondary', ListTextSecondary)
+window.customElements.define('rs-list-text', ListText)
+window.customElements.define('rs-list-graphic', ListGraphic)
+window.customElements.define('rs-list-meta', ListMeta)
+window.customElements.define('rs-list-item', ListItem)
+window.customElements.define('rs-list-divider', ListDivider)
+window.customElements.define('rs-list-subheader', ListSubheader)
+window.customElements.define('rs-list-group', ListGroup)
+window.customElements.define('rs-list', List)
+window.customElements.define('rs-card-actions', CardActions)
+window.customElements.define('rs-card-media', CardMedia)
+window.customElements.define('rs-card-description', CardDescription)
+window.customElements.define('rs-card-subtitle', CardSubtitle)
+window.customElements.define('rs-card-title', CardTitle)
+window.customElements.define('rs-card-header', CardHeader)
+window.customElements.define('rs-card-contents', CardContents)
+window.customElements.define('rs-card', Card)
+window.customElements.define('rs-drawer-title', DrawerTitle)
+window.customElements.define('rs-drawer-subtitle', DrawerSubtitle)
+window.customElements.define('rs-drawer-header', DrawerHeader)
+window.customElements.define('rs-drawer-content', DrawerContent)
+window.customElements.define('rs-drawer', Drawer)
+window.customElements.define('rs-menu', Menu)
+window.customElements.define('rs-text-action', TextFieldAction)
+window.customElements.define('rs-textarea', TextArea)
+window.customElements.define('rs-textfield', TextField)
+window.customElements.define('rs-form-error', FormError)
+window.customElements.define('rs-form-helper', FormHelper)
+window.customElements.define('rs-form-field', FormField)
+window.customElements.define('rs-app-layout-content', AppLayoutContent)
+window.customElements.define('rs-app-layout', AppLayout)
+window.customElements.define('rs-app-bar-title', TopAppBarTitle)
+window.customElements.define('rs-app-bar-item', TopAppBarActionItem)
+window.customElements.define('rs-app-bar-actions', TopAppBarActions)
+window.customElements.define('rs-app-bar-nav', TopAppBarNav)
+window.customElements.define('rs-app-bar', TopAppBar)
 `,
       { lang: 'js' }
     )}
-    <p>custom elementsを定義します。(名前が<code>rs-</code>で固定になったため、呼び出し方法を変える可能性あり)<br>
-      clientでのみ呼び出します。
-    </p>
+    <p>custom elementsを定義します。定義はclientでのみ実行します。<br>
     <h5>3. nuxt.config.jsの編集</h5>
     <p>nuxt.config.js</p>
     ${copyCodeBlock(
@@ -75,7 +155,7 @@ export default {
     loaders: {
       scss: {
         includePaths: [path.resolve(__dirname, 'node_modules')],
-        data: \`@import '@rsmdc/button/rs-button.scss'; \`
+        data: \`@import "@rsmdc/rsmdc/rsmdc.scss"; \`
       }
     }
   }
