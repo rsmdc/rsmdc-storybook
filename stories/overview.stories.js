@@ -39,8 +39,6 @@ $ yarn add --dev node-sass sass-loader`,
 ${copyCodeBlock(
 `const { 
   Button,
-  Radio, 
-  Checkbox,
   TabItem,
   TabBar,
   ListTextPrimary, 
@@ -82,8 +80,12 @@ ${copyCodeBlock(
   AppLayout,
 } = require('@rsmdc/rsmdc')
 const select = require('@rsmdc/select/loader')
+const radio = require('@rsmdc/radio/loader')
+const checkbox = require('@rsmdc/checkbox/loader')
 
 select.defineCustomElements(window)
+radio.defineCustomElements(window)
+checkbox.defineCustomElements(window)
 window.customElements.define('rs-button', Button)
 window.customElements.define('rs-radio', Radio)
 window.customElements.define('rs-checkbox', Checkbox)
@@ -307,3 +309,58 @@ Vue.directive('model3', VModel3)
       </tr>
     </table>
   `)
+  .add('テーマ使用方法', () => `
+    <h4>テーマ使用方法</h4>
+    <p>テーマの変数を利用して、各コンポーネントのテーマ色を一括で変えることができます。<br>
+      サイトカラーを設定する際などに便利です。
+    </p>
+
+    <h5>1. 変数ファイルの作成</h5>
+    <p>assets/variables.scss</p>
+        ${copyCodeBlock(
+`$rs-theme-primary: pink;
+$rs-theme-on-primary: aliceblue;
+`,
+      { lang: 'scss' }
+    )}
+    <p>変数用のファイルを作成します。<br>
+      公開しているテーマ変数は以下の通りです。
+    </p>
+    <ul>
+      <li>$rs-theme-primary</li>
+      <li>$rs-theme-on-primary</li>
+      <li>$rs-theme-secondary</li>
+      <li>$rs-theme-on-secondary</li>
+      <li>$rs-theme-surface</li>
+      <li>$rs-theme-on-surface</li>
+      <li>$rs-theme-background</li>
+    </ul>
+    <h5>2. nuxt.config.jsの編集</h5>
+    <p>nuxt.config.js</p>
+    ${copyCodeBlock(
+`import path from 'path'
+
+export default {
+
+  ...
+
+  build: {
+    loaders: {
+      scss: {
+        includePaths: [path.resolve(__dirname, 'node_modules')],
+        data: 
+        \`@import "~assets/variables"; \`
+        \`@import "@rsmdc/rsmdc/rsmdc"; \`
+      }
+    }
+  }
+}`,
+      { lang: 'js' }
+    )}
+    <p><code>build.loaders.scss.data</code>に<code>variables.scss</code>を追加します。<br>
+      <code>variables.scss</code>はimportするファイルの先頭に置いてください。<br>
+      これにより各コンポーネントのテーマ変数が上書きされます。
+    </p>
+    <p>Checkbox、Radioが対応済みです。</p>
+  `)
+    
