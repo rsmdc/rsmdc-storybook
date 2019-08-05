@@ -46,7 +46,7 @@ $material-icons-font-path: '~material-icons/iconfont/';
     @include  rs-textarea-hover-outline-color(rgb(23, 179, 223));
   }
   > .input.-focus-line-blue {
-    @include rs-form-field-focus-label-ink-color(rgb(23, 179, 223));
+    @include rs-text-field-focused-label-ink-color(rgb(23, 179, 223));
     @include rs-text-field-line-ripple-color(rgb(23, 179, 223));
   }
   > .input.-outlined.-focus-line-blue {
