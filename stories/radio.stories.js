@@ -1,15 +1,14 @@
 import { storiesOf } from '@storybook/html'
-import { Radio } from '@rsmdc/rsmdc'
-import { withKnobs, text, boolean, select } from '@storybook/addon-knobs'
 import { withLinks } from '@storybook/addon-links'
 import copyCodeBlock from '@pickra/copy-code-block'
+const radio = require('@rsmdc/radio/loader')
 
 import './css/style.scss'
 import './css/radio.scss'
 import 'highlight.js'
 import 'highlight.js/styles/a11y-light.css'
 
-window.customElements.define('rs-radio', Radio)
+radio.defineCustomElements(window)
 
 storiesOf('Components|Radio', module)
   .addDecorator(withLinks)
@@ -124,34 +123,6 @@ storiesOf('Components|Radio/スタイルのカスタマイズ', module)
     <p>オプション</p>
     <ul>
       <li>$color: チェックマークの色を指定 <br> 例）#ee00ce</li>
-    </ul>
-  `)
-  .add('リップルの色を変える', () => `
-    <h4>リップルの色を指定した色に変える。</h4>
-    <rs-radio id="radio1" class="my-radio -ripple-blue" label="radio1" name="group"></rs-radio>
-    <h4>使用するmixin</h4>
-    ${copyCodeBlock(
-      `@include rs-radio-states-color($color);`,
-      { lang: 'scss' }
-    )}
-    <h4>使用方法</h4>
-    ${copyCodeBlock(
-      `<rs-radio id="radio1" class="my-radio -ripple-blue" label="radio1" name="group" />`,
-      { lang: 'html' }
-    )}
-    ${copyCodeBlock(
-`@import '@rsmdc/radio/rs-radio.scss';
-
-.my-radio {
-  &.-ripple-blue {
-    @include rs-radio-states-color(blue);
-  }
-}`,
-      { lang: 'scss' }
-    )}
-    <p>オプション</p>
-    <ul>
-      <li>$color: リップルの色を指定 <br> 例）#ee00ce</li>
     </ul>
   `)
   .add('選択状態の線の色を変える', () => `

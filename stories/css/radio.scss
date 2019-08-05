@@ -4,9 +4,6 @@
   &.-ink-orange {
     @include rs-radio-ink-color(orange);
   }
-  &.-ripple-blue {
-    @include rs-radio-states-color(blue);
-  }
   &.-checked.-line-brown {
     @include rs-radio-checked-stroke-color(brown)
   }
