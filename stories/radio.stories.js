@@ -37,8 +37,8 @@ storiesOf('Components|Radio', module)
       { lang: 'html' }
     )}
     <h4>HTML要素</h4>
-    <p>custom elementsを<code>rs</code>のプレフィックスをつけて定義した前提。<br>
-      下記HTML要素を使うことで、custom elementsが表示される。
+    <p>custom elementsを<code>rs</code>のプレフィックスをつけて定義した前提です。<br>
+      下記HTML要素を使うことで、custom elementsが表示されます。
     </p>
     <table>
       <tr>
@@ -55,7 +55,7 @@ storiesOf('Components|Radio', module)
       </tr>
     </table>
     <h4>HTML属性</h4>
-    <p>下記HTML属性をつけることで、custom elementsの状態が変化する。</p>
+    <p>下記HTML属性をつけることで、custom elementsの状態が変化します。</p>
     <table>
       <tr>
         <th>属性</th>
@@ -94,6 +94,24 @@ storiesOf('Components|Radio', module)
         <td>-</td>
       </tr>
     </table>
+    <h4>テーマ変数</h4>
+    <p><code>rs-radio</code>で使われるテーマ変数です。<br>
+      下記変数に新しく色を指定することで、テーマカラーが上書きされます。
+    </p>
+    <table>
+    <tr>
+      <th>変数名</th>
+      <th>説明</th>
+    </tr>
+    <tr>
+      <td>$rs-theme-secondary</td>
+      <td>選択状態の線、リップル、チェックマークの色に関わります。</td>
+    </tr>
+    <tr>
+      <td>$rs-theme-on-surface</td>
+      <td>未選択状態の線、リップルの色に関わります。</td>
+    </tr>
+  </table>
   `)
 
 storiesOf('Components|Radio/スタイルのカスタマイズ', module)
