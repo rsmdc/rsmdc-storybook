@@ -19,7 +19,7 @@ storiesOf('Components|Snackbar', module)
     <ul>
       <li>normal（デフォルト）</li>
       <li>leading：スナックバー本体を左端に表示</li>
-      <li>tracked：テキストとアクション部分を改行して表示</li>
+      <li>stacked：テキストとアクション部分を改行して表示</li>
     </ul>
   `)
   .add('使用方法', () => `
@@ -69,6 +69,21 @@ storiesOf('Components|Snackbar', module)
         <td>スナックバーを表示状態にします</td>
         <td>Boolean</td>
         <td>-</td>
+      </tr>
+    </table>
+    <h4>テーマ変数</h4>
+    <p>
+      rs-snackbarで使われるテーマ変数です。 <br>
+      下記変数に新しく色を指定することで、テーマカラーが上書きされます。
+    </p>
+    <table>
+      <tr>
+        <th>変数名</th>
+        <th>説明</th>
+      </tr>
+      <tr>
+        <td>$rs-theme-on-surface</td>
+        <td>背景色に関わります。</td>
       </tr>
     </table>
   `)

@@ -69,6 +69,12 @@ storiesOf('Components|Slider', module)
         <td>-</td>
       </tr>
       <tr>
+        <td>now</td>
+        <td>現在の値を設定します</td>
+        <td>number</td>
+        <td>-</td>
+      </tr>
+      <tr>
         <td>countable</td>
         <td>カウンターを表示します</td>
         <td>Boolean</td>
@@ -79,6 +85,22 @@ storiesOf('Components|Slider', module)
         <td>マーカーを表示します</td>
         <td>Boolean</td>
         <td>-</td>
+      </tr>
+    </table>
+
+    <h4>テーマ変数</h4>
+    <p>
+    　rs-sliderで使われるテーマ変数です。 <br>
+    　下記変数に新しく色を指定することで、テーマカラーが上書きされます。
+    </p>
+    <table>
+      <tr>
+        <th>変数名</th>
+        <th>説明</th>
+      </tr>
+      <tr>
+        <td>$rs-theme-secondary</td>
+        <td>選択状態の線、リップル、ピン、マーカーの色に関わります。</td>
       </tr>
     </table>
   `)
