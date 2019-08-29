@@ -55,6 +55,18 @@ storiesOf('Components|Dialog', module)
         </td>
         <td>-</td>
       </tr>
+      <tr>
+        <td>rs-dialog-title</td>
+        <td>タイトルを表示します</td>
+        <td>-</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>rs-dialog-content</td>
+        <td>コンテンツ部分を表示します</td>
+        <td>rs-list</td>
+        <td>-</td>
+      </tr>
     </table>
     <h4>HTML属性</h4>
     <p>下記HTML属性をつけることで、custom elementsの状態が変化します</p>
