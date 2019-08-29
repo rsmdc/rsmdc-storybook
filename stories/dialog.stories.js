@@ -58,13 +58,18 @@ storiesOf('Components|Dialog', module)
       <tr>
         <td>rs-dialog-title</td>
         <td>タイトルを表示します</td>
-        <td>-</td>
+        <td>テキスト</td>
         <td>-</td>
       </tr>
       <tr>
         <td>rs-dialog-content</td>
         <td>コンテンツ部分を表示します</td>
-        <td>rs-list</td>
+        <td>
+          <ul>  
+            <li>rs-list</li>
+            <li>テキスト</li>
+          </ul>
+        </td>
         <td>-</td>
       </tr>
     </table>
@@ -78,8 +83,14 @@ storiesOf('Components|Dialog', module)
         <th>備考</th>
       </tr>
       <tr>
-        <td>opend</td>
+        <td>opened</td>
         <td>ダイアログを表示状態にします。</td>
+        <td>Boolean</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>scrolling</td>
+        <td>コンテンツが溢れる場合スクロール状態にする。</td>
         <td>Boolean</td>
         <td>-</td>
       </tr>
