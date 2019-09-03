@@ -1,6 +1,4 @@
 import { storiesOf } from '@storybook/html'
-import { TopAppBarActionItem, TopAppBarActions, TopAppBarTitle, TopAppBarNav, TopAppBar } from '@rsmdc/rsmdc'
-import { withKnobs, text, boolean, select } from '@storybook/addon-knobs'
 import { withLinks } from '@storybook/addon-links'
 import copyCodeBlock from '@pickra/copy-code-block'
 

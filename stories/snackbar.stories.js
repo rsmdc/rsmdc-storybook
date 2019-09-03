@@ -1,6 +1,4 @@
 import { storiesOf } from '@storybook/html'
-import { Slider } from '@rsmdc/rsmdc'
-import { withKnobs, text, boolean, select } from '@storybook/addon-knobs'
 import { withLinks } from '@storybook/addon-links'
 import copyCodeBlock from '@pickra/copy-code-block'
 const snackbar = require('@rsmdc/snackbar/loader')
