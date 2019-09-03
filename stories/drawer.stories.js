@@ -834,7 +834,7 @@ storiesOf('Components|Drawer/スタイルのカスタマイズ', module)
     )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
-` <rs-app-layout class="app-layout">
+`<rs-app-layout class="app-layout">
   <rs-drawer class="drawer -roundness" opened>
     <rs-drawer-header class="header">
       <rs-drawer-title class="title">タイトル</rs-drawer-title>

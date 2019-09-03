@@ -5,7 +5,6 @@ import { withLinks } from '@storybook/addon-links'
 import copyCodeBlock from '@pickra/copy-code-block'
 
 import './css/style.scss'
-import './css/slider.scss'
 import 'highlight.js'
 import 'highlight.js/styles/a11y-light.css'
 
