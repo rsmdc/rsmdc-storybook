@@ -88,7 +88,7 @@ storiesOf('Components|Dialog', module)
         <td>-</td>
       </tr>
       <tr>
-        <td>scrolling</td>
+        <td>scrollable</td>
         <td>コンテンツが溢れる場合スクロール状態にする。</td>
         <td>Boolean</td>
         <td>-</td>
