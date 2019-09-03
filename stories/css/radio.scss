@@ -1,4 +1,6 @@
-@import '@rsmdc/radio/rs-radio';
+@import "@rsmdc/ripple/functions";
+@import "@rsmdc/theme/variables";
+@import "@rsmdc/radio/rs-radio";
 
 .my-radio {
   &.-ink-orange {
