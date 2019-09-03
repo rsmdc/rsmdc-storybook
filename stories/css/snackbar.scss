@@ -1,0 +1,5 @@
+@import "@rsmdc/snackbar/rs-snackbar";
+
+.rs-snackbar {
+  @include rs-snackbar-type(stacked);
+}

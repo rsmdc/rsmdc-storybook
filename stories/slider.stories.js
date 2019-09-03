@@ -21,8 +21,12 @@ storiesOf('Components|Slider', module)
   .add('使用方法', () => `
     <h4>使用方法</h4>
     <rs-slider></rs-slider>
+    <rs-slider class="rs-slider" now="0" max="100" countable></rs-slider>
+    <rs-slider class="rs-slider" max="100" countable marked></rs-slider>
     ${copyCodeBlock(
-`<rs-slider class="slider" />`,
+`<rs-slider class="slider" />
+<rs-slider class="rs-slider" now="0" max="100" countable />
+<rs-slider class="rs-slider" max="100" countable marked />`,
       { lang: 'html' }
     )}
     <h4>HTML要素</h4>

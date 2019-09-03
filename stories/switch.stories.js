@@ -3,12 +3,15 @@ import { Switch } from '@rsmdc/rsmdc'
 import { withKnobs, text, boolean, select } from '@storybook/addon-knobs'
 import { withLinks } from '@storybook/addon-links'
 import copyCodeBlock from '@pickra/copy-code-block'
+const switch1 = require('@rsmdc/switch/loader')
 
 import './css/style.scss'
 import './css/switch.scss'
 import 'highlight.js'
 import 'highlight.js/styles/a11y-light.css'
 
+
+switch1.defineCustomElements(window)
 
 storiesOf('Components|Switch', module)
   .addDecorator(withLinks)
@@ -20,6 +23,7 @@ storiesOf('Components|Switch', module)
   `)
   .add('使用方法', () => `
     <h4>使用方法</h4>
+    <rs-switch class="rs-switch" :checked="checked" id="aaa" label="ラベル"></rs-switch>
     ${copyCodeBlock(
 `<rs-switch class="switch" />`,
       { lang: 'html' }

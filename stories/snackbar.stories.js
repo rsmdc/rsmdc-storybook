@@ -3,10 +3,14 @@ import { Slider } from '@rsmdc/rsmdc'
 import { withKnobs, text, boolean, select } from '@storybook/addon-knobs'
 import { withLinks } from '@storybook/addon-links'
 import copyCodeBlock from '@pickra/copy-code-block'
+const snackbar = require('@rsmdc/snackbar/loader')
 
 import './css/style.scss'
+import './css/snackbar.scss'
 import 'highlight.js'
 import 'highlight.js/styles/a11y-light.css'
+
+snackbar.defineCustomElements(window)
 
 storiesOf('Components|Snackbar', module)
   .addDecorator(withLinks)
@@ -23,12 +27,25 @@ storiesOf('Components|Snackbar', module)
   `)
   .add('使用方法', () => `
     <h4>使用方法</h4>
+    <rs-snackbar class="rs-snackbar" opened>
+      <rs-snackbar-text>sample</rs-snackbar-text>
+      <rs-button>button</rs-button>
+    </rs-snackbar>
     ${copyCodeBlock(
-`<rs-snackbar class="snackbar">
+`<rs-snackbar class="snackbar" opened>
   <rs-snackbar-text>sample</rs-snackbar-text>
+  <rs-button>button</rs-button>
 </rs-snackbar>
 `,
       { lang: 'html' }
+    )}
+  
+  ${copyCodeBlock(
+`.rs-snackbar {
+  @include rs-snackbar-type(stacked);
+}
+`,
+      { lang: 'scss' }
     )}
     <h4>HTML要素</h4>
     <p>custom elementsを<code>rs</code>のプレフィックスをつけて定義した前提です。<br>
