@@ -1,13 +1,14 @@
 import { storiesOf } from '@storybook/html'
-import { Slider } from '@rsmdc/rsmdc'
-import { withKnobs, text, boolean, select } from '@storybook/addon-knobs'
 import { withLinks } from '@storybook/addon-links'
 import copyCodeBlock from '@pickra/copy-code-block'
+const slider = require('@rsmdc/slider/loader')
 
 import './css/style.scss'
 import './css/slider.scss'
 import 'highlight.js'
 import 'highlight.js/styles/a11y-light.css'
+
+slider.defineCustomElements(window)
 
 storiesOf('Components|Slider', module)
   .addDecorator(withLinks)
@@ -19,6 +20,7 @@ storiesOf('Components|Slider', module)
   `)
   .add('使用方法', () => `
     <h4>使用方法</h4>
+    <rs-slider></rs-slider>
     ${copyCodeBlock(
 `<rs-slider class="slider" />`,
       { lang: 'html' }
