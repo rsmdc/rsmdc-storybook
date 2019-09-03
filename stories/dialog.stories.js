@@ -1,12 +1,13 @@
 import { storiesOf } from '@storybook/html'
-import { Slider } from '@rsmdc/rsmdc'
-import { withKnobs, text, boolean, select } from '@storybook/addon-knobs'
 import { withLinks } from '@storybook/addon-links'
 import copyCodeBlock from '@pickra/copy-code-block'
+const dialog = require('@rsmdc/dialog/loader')
 
 import './css/style.scss'
 import 'highlight.js'
 import 'highlight.js/styles/a11y-light.css'
+
+dialog.defineCustomElements(window)
 
 storiesOf('Components|Dialog', module)
   .addDecorator(withLinks)
@@ -26,8 +27,10 @@ storiesOf('Components|Dialog', module)
     <h4>使用方法</h4>
     ${copyCodeBlock(
 `<rs-dialog class="dialog">
-  <rs-dialog-title>title</rs-dialog-title>
-  <rs-dialog-content>sample</rs-dialog-content>
+  <rs-dialog-title>タイトル</rs-dialog-title>
+  <rs-dialog-content>ダイアログの内容が入る</rs-dialog-content>
+  <rs-button>ボタン1</rs-button>
+  <rs-button>ボタン2</rs-button>
 </rs-dialog>
 `,
     { lang: 'html' }
