@@ -21,9 +21,13 @@ storiesOf('Components|Switch', module)
   `)
   .add('使用方法', () => `
     <h4>使用方法</h4>
-    <rs-switch class="rs-switch" :checked="checked" id="aaa" label="ラベル"></rs-switch>
+    <div class="switch-demo">
+      <rs-switch class="rs-switch" id="switch" label="ラベル"></rs-switch>
+      <rs-switch class="rs-switch" id="switch" label="ラベル" disabled></rs-switch>
+    </div>
     ${copyCodeBlock(
-`<rs-switch class="switch" />`,
+`<rs-switch class="switch" id="switch" label="ラベル" />
+<rs-switch class="switch" id="switch" label="ラベル" disabled />`,
       { lang: 'html' }
     )}
     <h4>HTML要素</h4>
