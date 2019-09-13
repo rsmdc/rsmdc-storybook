@@ -29,6 +29,13 @@ storiesOf('Components|Data table', module)
       <rs-data-table-cell>content</rs-data-table-cell>
       <rs-data-table-cell>content</rs-data-table-cell>
       <rs-data-table-cell>content</rs-data-table-cell>
+    </rs-data-table-row>
+    <rs-data-table-row>
+      <rs-data-table-cell>content</rs-data-table-cell>
+      <rs-data-table-cell>content</rs-data-table-cell>
+      <rs-data-table-cell>content</rs-data-table-cell>
+    </rs-data-table-row>
+    <rs-data-table-row>
       <rs-data-table-cell>content</rs-data-table-cell>
       <rs-data-table-cell>content</rs-data-table-cell>
       <rs-data-table-cell>content</rs-data-table-cell>
