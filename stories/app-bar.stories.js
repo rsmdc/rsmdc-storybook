@@ -1,18 +1,14 @@
 import { storiesOf } from '@storybook/html'
-import { TopAppBarActionItem, TopAppBarActions, TopAppBarTitle, TopAppBarNav, TopAppBar } from '@rsmdc/rsmdc'
 import { withLinks } from '@storybook/addon-links'
 import copyCodeBlock from '@pickra/copy-code-block'
+const appbar = require('@rsmdc/appbar/loader')
 
 import './css/style.scss'
 import './css/app-bar.scss'
 import 'highlight.js'
 import 'highlight.js/styles/a11y-light.css'
 
-window.customElements.define('rs-app-bar-title', TopAppBarTitle)
-window.customElements.define('rs-app-bar-item', TopAppBarActionItem)
-window.customElements.define('rs-app-bar-actions', TopAppBarActions)
-window.customElements.define('rs-app-bar-nav', TopAppBarNav)
-window.customElements.define('rs-app-bar', TopAppBar)
+appbar.defineCustomElements(window)
 
 storiesOf('Components|App bar', module)
   .addDecorator(withLinks)

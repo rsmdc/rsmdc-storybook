@@ -1,23 +1,14 @@
 import { storiesOf } from '@storybook/html'
-import { ListTextPrimary, ListTextSecondary, ListText, ListGraphic, ListMeta, ListItem, ListDivider, ListSubheader, ListGroup, List } from '@rsmdc/rsmdc'
 import { withLinks } from '@storybook/addon-links'
 import copyCodeBlock from '@pickra/copy-code-block'
+const list = require('@rsmdc/list/loader')
 
 import './css/style.scss'
 import './css/list.scss'
 import 'highlight.js'
 import 'highlight.js/styles/a11y-light.css'
 
-window.customElements.define('rs-list-primary', ListTextPrimary)
-window.customElements.define('rs-list-secondary', ListTextSecondary)
-window.customElements.define('rs-list-text', ListText)
-window.customElements.define('rs-list-graphic', ListGraphic)
-window.customElements.define('rs-list-meta', ListMeta)
-window.customElements.define('rs-list-item', ListItem)
-window.customElements.define('rs-list-divider', ListDivider)
-window.customElements.define('rs-list-subheader', ListSubheader)
-window.customElements.define('rs-list-group', ListGroup)
-window.customElements.define('rs-list', List)
+list.defineCustomElements(window)
 
 storiesOf('Components|List', module)
   .addDecorator(withLinks)

@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/html'
-import { DrawerContent, DrawerTitle, DrawerSubtitle, DrawerHeader, Drawer } from '@rsmdc/rsmdc'
 import { withLinks } from '@storybook/addon-links'
 import copyCodeBlock from '@pickra/copy-code-block'
+const drawer = require('@rsmdc/drawer/loader')
 
 
 import './css/style.scss'
@@ -9,11 +9,7 @@ import './css/drawer.scss'
 import 'highlight.js'
 import 'highlight.js/styles/a11y-light.css'
 
-window.customElements.define('rs-drawer-title', DrawerTitle)
-window.customElements.define('rs-drawer-subtitle', DrawerSubtitle)
-window.customElements.define('rs-drawer-header', DrawerHeader)
-window.customElements.define('rs-drawer-content', DrawerContent)
-window.customElements.define('rs-drawer', Drawer)
+drawer.defineCustomElements(window)
 
 storiesOf('Components|Drawer', module)
   .addDecorator(withLinks)

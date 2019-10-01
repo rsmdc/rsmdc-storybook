@@ -1,15 +1,15 @@
 import { storiesOf } from '@storybook/html'
-import { Button } from '@rsmdc/rsmdc'
 import { withKnobs, text, boolean, select } from '@storybook/addon-knobs'
 import { withLinks } from '@storybook/addon-links'
 import copyCodeBlock from '@pickra/copy-code-block'
+const button = require('@rsmdc/button/loader')
 
 import './css/style.scss'
 import './css/button.scss'
 import 'highlight.js'
 import 'highlight.js/styles/a11y-light.css'
 
-window.customElements.define('rs-button', Button)
+button.defineCustomElements(window)
 
 storiesOf('Components|Button', module)
   .addDecorator(withLinks)

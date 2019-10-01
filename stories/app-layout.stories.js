@@ -1,12 +1,11 @@
 import { storiesOf } from '@storybook/html'
-import { AppLayoutContent, AppLayout } from '@rsmdc/rsmdc'
 import { withLinks } from '@storybook/addon-links'
 import copyCodeBlock from '@pickra/copy-code-block'
+const appLayout = require('@rsmdc/app-layout/loader')
 
 import './css/style.scss'
 
-window.customElements.define('app-layout-content', AppLayoutContent)
-window.customElements.define('x-app-layout', AppLayout)
+appLayout.defineCustomElements(window)
 
 storiesOf('Components|App layout', module)
   .addDecorator(withLinks)
