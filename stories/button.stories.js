@@ -137,6 +137,40 @@ storiesOf('Components|Button', module)
         <td>FABの時のみ使えます</td>
       </tr>
     </table>
+    
+    <h4>テーマ変数</h4>
+    <p>
+    　rs-buttonで使われるテーマ変数です。 <br>
+    　下記変数に新しく色を指定することで、テーマカラーが上書きされます。
+    </p>
+    <table>
+      <tr>
+        <th>変数名</th>
+        <th>説明</th>
+      </tr>
+      <tr>
+        <td>$rs-theme-secondary</td>
+        <td>FABの背景色に関わります。</td>
+      </tr>
+      <tr>
+        <td>$rs-theme-primary</td>
+        <td>
+          <ul>
+            <li>normal、outlinedタイプのテキストと背景色</li>
+            <li>
+              raised、unelevatedタイプの背景色
+            </li>
+          </ul>
+          に関わります。
+        </td>
+      </tr>
+      <tr>
+        <td>$rs-theme-on-primary</td>
+        <td>
+          raised、unelevatedタイプのテキストとアイコンの色に関わります。
+        </td>
+      </tr>
+    </table>
   `)
 
 storiesOf('Components|Button/スタイルのカスタマイズ/ボタンタイプを変える', module)
