@@ -4,6 +4,7 @@ import copyCodeBlock from '@pickra/copy-code-block'
 const dialog = require('@rsmdc/dialog/loader')
 
 import './css/style.scss'
+import './css/dialog.scss'
 import 'highlight.js'
 import 'highlight.js/styles/a11y-light.css'
 
@@ -21,16 +22,21 @@ storiesOf('Components|Dialog', module)
       <li>normal（デフォルト）</li>
       <li>stacked：ボタンが改行された状態で表示</li>
     </ul>
-
   `)
   .add('使用方法', () => `
     <h4>使用方法</h4>
+    <rs-dialog class="dialog" opened>
+      <rs-dialog-title>タイトル</rs-dialog-title>
+      <rs-dialog-content>ダイアログの内容が入る</rs-dialog-content>
+      <rs-button>ボタン1</rs-button>
+      <rs-button>ボタン2</rs-button>
+    </rs-dialog>
     ${copyCodeBlock(
 `<rs-dialog class="dialog">
-  <rs-dialog-title>タイトル</rs-dialog-title>
-  <rs-dialog-content>ダイアログの内容が入る</rs-dialog-content>
-  <rs-button>ボタン1</rs-button>
-  <rs-button>ボタン2</rs-button>
+  <rs-dialog-title class="title">タイトル</rs-dialog-title>
+  <rs-dialog-content class="content">ダイアログの内容が入る</rs-dialog-content>
+  <rs-button class="button">ボタン1</rs-button>
+  <rs-button class="button">ボタン2</rs-button>
 </rs-dialog>
 `,
     { lang: 'html' }

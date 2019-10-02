@@ -102,6 +102,25 @@ storiesOf('Components|Select', module)
         <td>optionに付けます</td>
       </tr>
     </table>
+    <h4>テーマ変数</h4>
+    <p>
+      rs-switchで使われるテーマ変数です。 <br>
+      下記変数に新しく色を指定することで、テーマカラーが上書きされます。
+    </p>
+    <table>
+      <tr>
+        <th>変数名</th>
+        <th>説明</th>
+      </tr>
+      <tr>
+        <td>$rs-theme-primary</td>
+        <td>選択状態のテキスト、背景、リップルの色に関わります。</td>
+      </tr>
+      <tr>
+        <td>$rs-theme-on-surface</td>
+        <td>未選択状態のテキスト、背景、リップルの色に関わります。</td>
+      </tr>
+    </table>
   `)
 
 storiesOf('Components|Select/スタイルのカスタマイズ/セレクトのタイプを変える', module)

@@ -51,18 +51,18 @@ storiesOf('Components|App bar', module)
     <rs-app-bar class="app-bar">
       <rs-app-bar-nav class="nav"></rs-app-bar-nav>
       <rs-app-bar-title class="title">タイトル</rs-app-bar-title>
-      <rs-app-bar-actions class="actions">
+      <rs-app-bar-tool class="tool">
         <rs-app-bar-item class="item -search"></rs-app-bar-item>
-      </rs-app-bar-actions>
+      </rs-app-bar-tool>
     </rs-app-bar>
     <h4>使用方法</h4>
     ${copyCodeBlock(
 `<rs-app-bar class="app-bar">
   <rs-app-bar-nav class="nav" />
   <rs-app-bar-title class="title">タイトル</rs-app-bar-title>
-  <rs-app-bar-actions class="actions">
+  <rs-app-bar-tool class="tool">
     <rs-app-bar-item class="item -search" />
-  </rs-app-bar-actions>
+  </rs-app-bar-tool>
 </rs-app-bar>`,
       { lang: 'html' }
     )}
@@ -71,15 +71,15 @@ storiesOf('Components|App bar', module)
 
 .app-bar {
   > .nav {
-    @include rs-top-app-bar-nav-icon-image(
+    @include rs-app-bar-nav-icon-image(
       Material Icons,
       map-get($material-icons-codepoints, menu)
     );
   }
-  > .actions > .item.-search {
-    @include rs-top-app-bar-action-icon-image(
-      Material Icons,
-      map-get($material-icons-codepoints, search)
+  > .tool > .item.-search {
+    @include rs-app-bar-tool-icon-image(
+       Material Icons,
+       map-get($material-icons-codepoints, search)
     );
   }
 }`,
@@ -103,7 +103,7 @@ storiesOf('Components|App bar', module)
           <ul>
             <li><code>rs-app-bar-nav</code></li>
             <li><code>rs-app-bar-title</code></li>
-            <li><code>rs-app-bar-actions</code></li>
+            <li><code>rs-app-bar-tool</code></li>
           </ul>
         </td>
         <td>-</td>
@@ -121,7 +121,7 @@ storiesOf('Components|App bar', module)
         <td>-</td>
       </tr>
       <tr>
-        <td>rs-app-bar-actions</td>
+        <td>rs-app-bar-tool</td>
         <td>アクションエリアを表示します</td>
         <td><code>rs-app-bar-item</code></td>
         <td>-</td>
@@ -133,8 +133,30 @@ storiesOf('Components|App bar', module)
         <td>-</td>
       </tr>
     </table>
+
     <h4>HTML属性</h4>
     <p>なし</p>
+    <h4>テーマ変数</h4>
+    <p>
+    　rs-app-barで使われるテーマ変数です。 <br>
+    　下記変数に新しく色を指定することで、テーマカラーが上書きされます。
+    </p>
+    <table>
+      <tr>
+        <th>変数名</th>
+        <th>説明</th>
+      </tr>
+      <tr>
+        <td>$rs-theme-primary</td>
+        <td>背景色に関わります。</td>
+      </tr>
+      <tr>
+        <td>$rs-theme-on-primary</td>
+        <td>
+          テキスト、アイコン、リップルの色に関わります。
+        </td>
+      </tr>
+    </table>
   `)
 
 storiesOf('Components|App bar/スタイルのカスタマイズ/アップバーのタイプを変える', module)
@@ -142,9 +164,9 @@ storiesOf('Components|App bar/スタイルのカスタマイズ/アップバー�
     <rs-app-bar class="app-bar -dense">
       <rs-app-bar-nav class="nav"></rs-app-bar-nav>
       <rs-app-bar-title class="title">タイトル</rs-app-bar-title>
-      <rs-app-bar-actions class="actions">
+      <rs-app-bar-tool class="tool">
         <rs-app-bar-item class="item -search"></rs-app-bar-item>
-      </rs-app-bar-actions>
+      </rs-app-bar-tool>
     </rs-app-bar>
     <h4>normal（デフォルト）</h4>
     <p>
@@ -157,16 +179,16 @@ storiesOf('Components|App bar/スタイルのカスタマイズ/アップバー�
 `<rs-app-bar class="app-bar">
   <rs-app-bar-nav class="nav" />
   <rs-app-bar-title class="title">タイトル</rs-app-bar-title>
-  <rs-app-bar-actions class="actions">
+  <rs-app-bar-tool class="tool">
     <rs-app-bar-item class="item -search" />
-  </rs-app-bar-actions>
+  </rs-app-bar-tool>
 </rs-app-bar>`,
       { lang: 'html' }
     )}
     <p>denseを使用する場合</p>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
-      '@include rs-top-app-bar-type($type);',
+      '@include rs-app-bar-type($type);',
       { lang: 'scss' }
     )}
     <h4>使用方法</h4>
@@ -174,27 +196,27 @@ storiesOf('Components|App bar/スタイルのカスタマイズ/アップバー�
 `<rs-app-bar class="app-bar -dense">
   <rs-app-bar-nav class="nav" />
   <rs-app-bar-title class="title">タイトル</rs-app-bar-title>
-  <rs-app-bar-actions class="actions"
+  <rs-app-bar-tool class="tool">
     <rs-app-bar-item class="item -search" />
-  </rs-app-bar-actions>
+  </rs-app-bar-tool>
 </rs-app-bar>`,
       { lang: 'html' }
     )}
     ${copyCodeBlock(
-`@import '@rsmdc/top-app-bar/rs-top-app-bar.scss';
+`@import '@rsmdc/appbar/rs-app-bar.scss';
 
 .app-bar {
   &.-dense {
-    @include rs-top-app-bar-type(dense);
+    @include rs-app-bar-type(dense);
   }
   > .nav {
-    @include rs-top-app-bar-nav-icon-image(
+    @include rs-app-bar-nav-icon-image(
       Material Icons,
       map-get($material-icons-codepoints, menu)
     );
   }
-  > .actions > .item.-search {
-    @include rs-top-app-bar-action-icon-image(
+  > .tool > .item.-search {
+    @include rs-app-bar-action-icon-image(
       Material Icons,
       map-get($material-icons-codepoints, search)
     );
@@ -207,15 +229,15 @@ storiesOf('Components|App bar/スタイルのカスタマイズ/アップバー�
     <rs-app-bar class="app-bar -short">
       <rs-app-bar-nav class="nav"></rs-app-bar-nav>
       <rs-app-bar-title class="title">タイトル</rs-app-bar-title>
-      <rs-app-bar-actions class="actions">
+      <rs-app-bar-tool class="tool">
         <rs-app-bar-item class="item -search"></rs-app-bar-item>
-      </rs-app-bar-actions>
+      </rs-app-bar-tool>
     </rs-app-bar>
     <h4>short</h4>
     <p>app barの横幅を短くする。</p>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
-      '@include rs-top-app-bar-type($type);',
+      '@include rs-app-bar-type($type);',
       { lang: 'scss' }
     )}
     <h4>使用方法</h4>
@@ -223,27 +245,27 @@ storiesOf('Components|App bar/スタイルのカスタマイズ/アップバー�
 `<rs-app-bar class="app-bar -short">
   <rs-app-bar-nav class="nav" />
   <rs-app-bar-title class="title">タイトル</rs-app-bar-title>
-  <rs-app-bar-actions class="actions"
+  <rs-app-bar-tool class="tool">
     <rs-app-bar-item class="item -search" />
-  </rs-app-bar-actions>
+  </rs-app-bar-tool>
 </rs-app-bar>`,
       { lang: 'html' }
     )}
     ${copyCodeBlock(
-`@import '@rsmdc/top-app-bar/rs-top-app-bar.scss';
+`@import '@rsmdc/appbar/rs-app-bar.scss';
 
 .app-bar {
   &.-short {
-    @include rs-top-app-bar-type(short);
+    @include rs-app-bar-type(short);
   }
   > .nav {
-    @include rs-top-app-bar-nav-icon-image(
+    @include rs-app-bar-nav-icon-image(
       Material Icons,
       map-get($material-icons-codepoints, menu)
     );
   }
-  > .actions > .item.-search {
-    @include rs-top-app-bar-action-icon-image(
+  > .tool > .item.-search {
+    @include rs-app-bar-action-icon-image(
       Material Icons,
       map-get($material-icons-codepoints, search)
     );
@@ -254,45 +276,45 @@ storiesOf('Components|App bar/スタイルのカスタマイズ/アップバー�
   `)
   .add('prominent', () => `
     <rs-app-bar class="app-bar -prominent">
-      <rs-app-bar-nav class="nav" />
+      <rs-app-bar-nav class="nav"></rs-app-bar-nav>
       <rs-app-bar-title class="title">タイトル</rs-app-bar-title>
-      <rs-app-bar-actions class="actions">
-        <rs-app-bar-item class="item -search" />
-      </rs-app-bar-actions>
+      <rs-app-bar-tool class="tool">
+        <rs-app-bar-item class="item -search"></rs-app-bar-item>
+      </rs-app-bar-tool>
     </rs-app-bar>
     <h4>prominent</h4>
     <p>denseも同時に指定できる</p>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
-      '@include rs-top-app-bar-type($type);',
+      '@include rs-app-bar-type($type);',
       { lang: 'scss' }
     )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
 `<rs-app-bar class="app-bar -prominent">
-  <rs-app-bar-nav class="nav" />
+  <rs-app-bar-nav class="nav"></rs-app-bar-nav>
   <rs-app-bar-title class="title">タイトル</rs-app-bar-title>
-  <rs-app-bar-actions class="actions"
-    <rs-app-bar-item class="item -search" />
-  </rs-app-bar-actions>
+  <rs-app-bar-tool class="tool">
+    <rs-app-bar-item class="item -search"></rs-app-bar-item>
+  </rs-app-bar-tool>
 </rs-app-bar>`,
       { lang: 'html' }
     )}
     ${copyCodeBlock(
-`@import '@rsmdc/top-app-bar/rs-top-app-bar.scss';
+`@import '@rsmdc/appbar/rs-app-bar.scss';
 
 .app-bar {
   &.-prominent {
-    @include rs-top-app-bar-type(prominent);
+    @include rs-app-bar-type(prominent);
   }
   > .nav {
-    @include rs-top-app-bar-nav-icon-image(
+    @include rs-app-bar-nav-icon-image(
       Material Icons,
       map-get($material-icons-codepoints, menu)
     );
   }
-  > .actions > .item.-search {
-    @include rs-top-app-bar-action-icon-image(
+  > .tool > .item.-search {
+    @include rs-app-bar-action-icon-image(
       Material Icons,
       map-get($material-icons-codepoints, search)
     );
@@ -305,15 +327,15 @@ storiesOf('Components|App bar/スタイルのカスタマイズ/アップバー�
     <rs-app-bar class="app-bar -fixed">
       <rs-app-bar-nav class="nav"></rs-app-bar-nav>
       <rs-app-bar-title class="title">タイトル</rs-app-bar-title>
-      <rs-app-bar-actions class="actions">
+      <rs-app-bar-tool class="tool">
         <rs-app-bar-item class="item -search"></rs-app-bar-item>
-      </rs-app-bar-actions>
+      </rs-app-bar-tool>
     </rs-app-bar>
     <h4>fixed</h4>
     App barを固定する。
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
-      '@include rs-top-app-bar-type($type);',
+      '@include rs-app-bar-type($type);',
       { lang: 'scss' }
     )}
     <h4>使用方法</h4>
@@ -321,27 +343,27 @@ storiesOf('Components|App bar/スタイルのカスタマイズ/アップバー�
 `<rs-app-bar class="app-bar -fixed">
   <rs-app-bar-nav class="nav" />
   <rs-app-bar-title class="title">タイトル</rs-app-bar-title>
-  <rs-app-bar-actions class="actions"
+  <rs-app-bar-tool class="tool">
     <rs-app-bar-item class="item -search" />
-  </rs-app-bar-actions>
+  </rs-app-bar-tool>
 </rs-app-bar>`,
       { lang: 'html' }
     )}
     ${copyCodeBlock(
-`@import '@rsmdc/top-app-bar/rs-top-app-bar.scss';
+`@import '@rsmdc/appbar/rs-app-bar.scss';
 
 .app-bar {
   &.-fixed {
-     @include rs-top-app-bar-type(fixed);
+     @include rs-app-bar-type(fixed);
   }
   > .nav {
-    @include rs-top-app-bar-nav-icon-image(
+    @include rs-app-bar-nav-icon-image(
       Material Icons,
       map-get($material-icons-codepoints, menu)
     );
   }
-  > .actions > .item.-search {
-    @include rs-top-app-bar-action-icon-image(
+  > .tool > .item.-search {
+    @include rs-app-bar-action-icon-image(
       Material Icons,
       map-get($material-icons-codepoints, search)
     );
@@ -354,15 +376,15 @@ storiesOf('Components|App bar/スタイルのカスタマイズ/アップバー�
     <rs-app-bar class="app-bar -collapsed">
       <rs-app-bar-nav class="nav"></rs-app-bar-nav>
       <rs-app-bar-title class="title">タイトル</rs-app-bar-title>
-      <rs-app-bar-actions class="actions">
+      <rs-app-bar-tool class="tool">
         <rs-app-bar-item class="item -search"></rs-app-bar-item>
-      </rs-app-bar-actions>
+      </rs-app-bar-tool>
     </rs-app-bar>
     <h4>collapsed</h4>
     <p>shortも同時に指定できる。</p>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
-      '@include rs-top-app-bar-type($type);',
+      '@include rs-app-bar-type($type);',
       { lang: 'scss' }
     )}
     <h4>使用方法</h4>
@@ -370,27 +392,27 @@ storiesOf('Components|App bar/スタイルのカスタマイズ/アップバー�
 `<rs-app-bar class="app-bar -collapsed">
   <rs-app-bar-nav class="nav" />
   <rs-app-bar-title class="title">タイトル</rs-app-bar-title>
-  <rs-app-bar-actions class="actions"
+  <rs-app-bar-tool class="tool">
     <rs-app-bar-item class="item -search" />
-  </rs-app-bar-actions>
+  </rs-app-bar-tool>
 </rs-app-bar>`,
       { lang: 'html' }
     )}
     ${copyCodeBlock(
-`@import '@rsmdc/top-app-bar/rs-top-app-bar.scss';
+`@import '@rsmdc/appbar/rs-app-bar.scss';
 
 .app-bar {
   &.-collapsed {
-    @include rs-top-app-bar-type(collapsed, short);
+    @include rs-app-bar-type(collapsed, short);
   }
   > .nav {
-    @include rs-top-app-bar-nav-icon-image(
+    @include rs-app-bar-nav-icon-image(
       Material Icons,
       map-get($material-icons-codepoints, menu)
     );
   }
-  > .actions > .item.-search {
-    @include rs-top-app-bar-action-icon-image(
+  > .tool > .item.-search {
+    @include rs-app-bar-action-icon-image(
       Material Icons,
       map-get($material-icons-codepoints, search)
     );
@@ -401,262 +423,262 @@ storiesOf('Components|App bar/スタイルのカスタマイズ/アップバー�
 `)
 
 storiesOf('Components|App bar/スタイルのカスタマイズ', module)
-  .add('タイトルの色を変える', () => `
-    <rs-app-bar class="app-bar">
-      <rs-app-bar-nav class="nav"></rs-app-bar-nav>
-      <rs-app-bar-title class="title -ink-dark">タイトル</rs-app-bar-title>
-    </rs-app-bar>
-    <h4>タイトルの色を指定した色に変える。</h4>
-    <h4>使用するmixin</h4>
-    ${copyCodeBlock(
-      '@include rs-top-rs-app-bar-title-ink-color($color);',
-      { lang: 'scss' }
-    )}
-    <h4>使用方法</h4>
-    ${copyCodeBlock(
-`<rs-app-bar class="app-bar">
-  <rs-app-bar-nav class="nav" />
-  <rs-app-bar-title class="title -ink-dark">タイトル</rs-app-bar-title>
-</rs-app-bar>`,
-      { lang: 'html' }
-    )}
-    ${copyCodeBlock(
-`@import '@rsmdc/top-app-bar/rs-top-app-bar.scss';
+//   .add('タイトルの色を変える', () => `
+//     <rs-app-bar class="app-bar">
+//       <rs-app-bar-nav class="nav"></rs-app-bar-nav>
+//       <rs-app-bar-title class="title -ink-dark">タイトル</rs-app-bar-title>
+//     </rs-app-bar>
+//     <h4>タイトルの色を指定した色に変える。</h4>
+//     <h4>使用するmixin</h4>
+//     ${copyCodeBlock(
+//       '@include rs-rs-app-bar-title-ink-color($color);',
+//       { lang: 'scss' }
+//     )}
+//     <h4>使用方法</h4>
+//     ${copyCodeBlock(
+// `<rs-app-bar class="app-bar">
+//   <rs-app-bar-nav class="nav" />
+//   <rs-app-bar-title class="title -ink-dark">タイトル</rs-app-bar-title>
+// </rs-app-bar>`,
+//       { lang: 'html' }
+//     )}
+//     ${copyCodeBlock(
+// `@import '@rsmdc/appbar/rs-app-bar.scss';
 
-.app-bar {
-    > .nav {
-      @include rs-top-app-bar-nav-icon-image(
-        Material Icons,
-        map-get($material-icons-codepoints, menu)
-      );
-    }
-    > .title.-ink-dark {
-      @include rs-top-app-bar-title-ink-color(#000);
-    }
-}`,
-      { lang: 'scss' }
-    )}
-  <p>オプション</p>
-  <ul>
-    <li>$color: インクの色コード <br> 例）#ee00ce</li>
-  </ul>
-  `)
-  .add('アイコンの色を変える', () => `
-    <rs-app-bar class="app-bar">
-      <rs-app-bar-nav class="nav -icon-orange"></rs-app-bar-nav>
-      <rs-app-bar-title class="title">タイトル</rs-app-bar-title>
-    </rs-app-bar>
-    <h4>アイコンの色を指定した色に変える。</h4>
-    <h4>使用するmixin</h4>
-    ${copyCodeBlock(
-      '@include rs-top-app-bar-icon-ink-color($containerColor);',
-      { lang: 'scss' }
-    )}
-    <h4>使用方法</h4>
-    ${copyCodeBlock(
-`<rs-app-bar class="app-bar">
-  <rs-app-bar-nav class="nav -icon-orange" />
-  <rs-app-bar-title class="title">タイトル</rs-app-bar-title>
-</rs-app-bar>`,
-      { lang: 'html' }
-    )}
-    ${copyCodeBlock(
-`@import '@rsmdc/top-app-bar/rs-top-app-bar.scss';
+// .app-bar {
+//     > .nav {
+//       @include rs-app-bar-nav-icon-image(
+//         Material Icons,
+//         map-get($material-icons-codepoints, menu)
+//       );
+//     }
+//     > .title.-ink-dark {
+//       @include rs-app-bar-title-ink-color(#000);
+//     }
+// }`,
+//       { lang: 'scss' }
+//     )}
+//   <p>オプション</p>
+//   <ul>
+//     <li>$color: インクの色コード <br> 例）#ee00ce</li>
+//   </ul>
+//   `)
+//   .add('アイコンの色を変える', () => `
+//     <rs-app-bar class="app-bar">
+//       <rs-app-bar-nav class="nav -icon-orange"></rs-app-bar-nav>
+//       <rs-app-bar-title class="title">タイトル</rs-app-bar-title>
+//     </rs-app-bar>
+//     <h4>アイコンの色を指定した色に変える。</h4>
+//     <h4>使用するmixin</h4>
+//     ${copyCodeBlock(
+//       '@include rs-app-bar-icon-ink-color($containerColor);',
+//       { lang: 'scss' }
+//     )}
+//     <h4>使用方法</h4>
+//     ${copyCodeBlock(
+// `<rs-app-bar class="app-bar">
+//   <rs-app-bar-nav class="nav -icon-orange" />
+//   <rs-app-bar-title class="title">タイトル</rs-app-bar-title>
+// </rs-app-bar>`,
+//       { lang: 'html' }
+//     )}
+//     ${copyCodeBlock(
+// `@import '@rsmdc/appbar/rs-app-bar.scss';
 
-.app-bar {
-  > .nav {
-    @include rs-top-app-bar-nav-icon-image(
-      Material Icons,
-      map-get($material-icons-codepoints, menu)
-    );
-  }
-  > .nav.-icon-orange {
-    @include rs-top-app-bar-icon-ink-color(orange);
-  }
-}`,
-      { lang: 'scss' }
-    )}
-    <p>オプション</p>
-    <ul>
-      <li>$color: アイコンの色を指定 <br>　例）#ee00ce</li>
-    </ul>
-  `)
-  .add('背景色を変える', () => `
-    <rs-app-bar class="app-bar -bar-orange">
-      <rs-app-bar-nav class="nav"></rs-app-bar-nav>
-      <rs-app-bar-title class="title">タイトル</rs-app-bar-title>
-    </rs-app-bar>
-    <h4>背景色を指定した色に変える。</h4>
-    <h4>使用するmixin</h4>
-    ${copyCodeBlock(
-      '@include rs-top-app-bar-fill-color($color);',
-      { lang: 'scss' }
-    )}
-    ${copyCodeBlock(
-`<rs-app-bar class="app-bar -bar-orange">
-    <rs-app-bar-nav class="nav" />
-    <rs-app-bar-title class="title">タイトル</rs-app-bar-title>
-</rs-app-bar>`,
-      { lang: 'html' }
-    )}
-    ${copyCodeBlock(
-`@import '@rsmdc/top-app-bar/rs-top-app-bar.scss';
+// .app-bar {
+//   > .nav {
+//     @include rs-app-bar-nav-icon-image(
+//       Material Icons,
+//       map-get($material-icons-codepoints, menu)
+//     );
+//   }
+//   > .nav.-icon-orange {
+//     @include rs-app-bar-icon-ink-color(orange);
+//   }
+// }`,
+//       { lang: 'scss' }
+//     )}
+//     <p>オプション</p>
+//     <ul>
+//       <li>$color: アイコンの色を指定 <br>　例）#ee00ce</li>
+//     </ul>
+//   `)
+//   .add('背景色を変える', () => `
+//     <rs-app-bar class="app-bar -bar-orange">
+//       <rs-app-bar-nav class="nav"></rs-app-bar-nav>
+//       <rs-app-bar-title class="title">タイトル</rs-app-bar-title>
+//     </rs-app-bar>
+//     <h4>背景色を指定した色に変える。</h4>
+//     <h4>使用するmixin</h4>
+//     ${copyCodeBlock(
+//       '@include rs-app-bar-fill-color($color);',
+//       { lang: 'scss' }
+//     )}
+//     ${copyCodeBlock(
+// `<rs-app-bar class="app-bar -bar-orange">
+//     <rs-app-bar-nav class="nav" />
+//     <rs-app-bar-title class="title">タイトル</rs-app-bar-title>
+// </rs-app-bar>`,
+//       { lang: 'html' }
+//     )}
+//     ${copyCodeBlock(
+// `@import '@rsmdc/appbar/rs-app-bar.scss';
 
-.app-bar {
-  &.-bar-orange {
-    @include rs-top-app-bar-fill-color(orange);
-  }
-  > .nav {
-    @include rs-top-app-bar-nav-icon-image(
-      Material Icons,
-      map-get($material-icons-codepoints, menu)
-    );
-  }
-}`,
-      { lang: 'scss' }
-    )}
-    <p>オプション</p>
-    <ul>
-      <li>$color: コンテナの色の塗りコード <br> 例）#ee00ce</li>
-    </ul>
-  `)
-  .add('リップルの色を変える', () => `
-    <rs-app-bar class="app-bar">
-      <rs-app-bar-nav class="nav -ripple-dark"></rs-app-bar-nav>
-      <rs-app-bar-title class="title">タイトル</rs-app-bar-title>
-    </rs-app-bar>
-    <h4>リップルの色を指定した色に変える。</h4>
-    <h4>使用するmixin</h4>
-    ${copyCodeBlock(
-      '@include rs-top-app-bar-icon-states-color($containerColor);',
-      { lang: 'scss' }
-    )}
-      <h4>使用方法</h4>
-    ${copyCodeBlock(
-`<rs-app-bar class="app-bar">
-  <rs-app-bar-nav class="nav -ripple-dark" />
-  <rs-app-bar-title class="title">タイトル</rs-app-bar-title>
-</rs-app-bar>`,
-      { lang: 'html' }
-    )}
-    ${copyCodeBlock(
-`@import '@rsmdc/top-app-bar/rs-top-app-bar.scss';
+// .app-bar {
+//   &.-bar-orange {
+//     @include rs-app-bar-fill-color(orange);
+//   }
+//   > .nav {
+//     @include rs-app-bar-nav-icon-image(
+//       Material Icons,
+//       map-get($material-icons-codepoints, menu)
+//     );
+//   }
+// }`,
+//       { lang: 'scss' }
+//     )}
+//     <p>オプション</p>
+//     <ul>
+//       <li>$color: コンテナの色の塗りコード <br> 例）#ee00ce</li>
+//     </ul>
+//   `)
+//   .add('リップルの色を変える', () => `
+//     <rs-app-bar class="app-bar">
+//       <rs-app-bar-nav class="nav -ripple-dark"></rs-app-bar-nav>
+//       <rs-app-bar-title class="title">タイトル</rs-app-bar-title>
+//     </rs-app-bar>
+//     <h4>リップルの色を指定した色に変える。</h4>
+//     <h4>使用するmixin</h4>
+//     ${copyCodeBlock(
+//       '@include rs-app-bar-icon-states-color($containerColor);',
+//       { lang: 'scss' }
+//     )}
+//       <h4>使用方法</h4>
+//     ${copyCodeBlock(
+// `<rs-app-bar class="app-bar">
+//   <rs-app-bar-nav class="nav -ripple-dark" />
+//   <rs-app-bar-title class="title">タイトル</rs-app-bar-title>
+// </rs-app-bar>`,
+//       { lang: 'html' }
+//     )}
+//     ${copyCodeBlock(
+// `@import '@rsmdc/appbar/rs-app-bar.scss';
 
-.app-bar {
-  > .nav {
-    @include rs-top-app-bar-nav-icon-image(
-      Material Icons,
-      map-get($material-icons-codepoints, menu)
-    );
-  }
-  > .nav.-ripple-dark {
-    @include rs-top-app-bar-icon-states-color(#000);
-  }
-}`,
-      { lang: 'scss' }
-    )}
-    <p>オプション</p>
-    <ul>
-      <li>$color: リップルの色を指定 <br>　例）#ee00ce</li>
-    </ul>
-  `)
-  .add('背景色とタイトルの色を変える', () => `
-    <rs-app-bar class="app-bar -bar-pink">
-      <rs-app-bar-nav class="nav"></rs-app-bar-nav>
-      <rs-app-bar-title class="title">タイトル</rs-app-bar-title>
-    </rs-app-bar>
-    <h4>背景色とタイトルの色を変える。</h4>
-    <p>指定した背景色の色を元に、タイトルの色は自動調整される。</p>
-    <h4>使用するmixin</h4>
-    ${copyCodeBlock(
-      '@include rs-top-app-bar-fill-color-accessible($containerColor);',
-      { lang: 'scss' }
-    )}
-      <h4>使用方法</h4>
-    ${copyCodeBlock(
-`<rs-app-bar class="app-bar -bar-pink">
-  <rs-app-bar-nav class="nav" />
-  <rs-app-bar-title class="title">タイトル</rs-app-bar-title>
-</rs-app-bar>`,
-      { lang: 'html' }
-    )}
-    ${copyCodeBlock(
-`@import '@rsmdc/top-app-bar/rs-top-app-bar.scss';
+// .app-bar {
+//   > .nav {
+//     @include rs-app-bar-nav-icon-image(
+//       Material Icons,
+//       map-get($material-icons-codepoints, menu)
+//     );
+//   }
+//   > .nav.-ripple-dark {
+//     @include rs-app-bar-icon-states-color(#000);
+//   }
+// }`,
+//       { lang: 'scss' }
+//     )}
+//     <p>オプション</p>
+//     <ul>
+//       <li>$color: リップルの色を指定 <br>　例）#ee00ce</li>
+//     </ul>
+//   `)
+//   .add('背景色とタイトルの色を変える', () => `
+//     <rs-app-bar class="app-bar -bar-pink">
+//       <rs-app-bar-nav class="nav"></rs-app-bar-nav>
+//       <rs-app-bar-title class="title">タイトル</rs-app-bar-title>
+//     </rs-app-bar>
+//     <h4>背景色とタイトルの色を変える。</h4>
+//     <p>指定した背景色の色を元に、タイトルの色は自動調整される。</p>
+//     <h4>使用するmixin</h4>
+//     ${copyCodeBlock(
+//       '@include rs-app-bar-fill-color-accessible($containerColor);',
+//       { lang: 'scss' }
+//     )}
+//       <h4>使用方法</h4>
+//     ${copyCodeBlock(
+// `<rs-app-bar class="app-bar -bar-pink">
+//   <rs-app-bar-nav class="nav" />
+//   <rs-app-bar-title class="title">タイトル</rs-app-bar-title>
+// </rs-app-bar>`,
+//       { lang: 'html' }
+//     )}
+//     ${copyCodeBlock(
+// `@import '@rsmdc/appbar/rs-app-bar.scss';
 
-.app-bar {
-  &.-bar-pink {
-    @include rs-top-app-bar-fill-color-accessible(pink);
-  }
-  > .nav {
-    @include rs-top-app-bar-nav-icon-image(
-      Material Icons,
-      map-get($material-icons-codepoints, menu)
-    );
-  }
-}`,
-      { lang: 'scss' }
-    )}
-    <p>オプション</p>
-    <ul>
-      <li>$color: コンテナの色の塗りコード <br> 例）#ee00ce</li>
-    </ul>
-  `)
-  .add('アップバーの角の丸みを変える', () => `
-    <rs-app-bar class="app-bar -short -roundness">
-      <rs-app-bar-nav class="nav"></rs-app-bar-nav>
-      <rs-app-bar-title class="title">タイトル</rs-app-bar-title>
-      <rs-app-bar-actions class="actions">
-        <rs-app-bar-item class="item -search"></rs-app-bar-item>
-      </rs-app-bar-actions>
-    </rs-app-bar>
-    <h4>アップバーの角の丸みを指定したサイズに変える。</h4>
-    <p>タイプがshortの時のみ。</p>
-    <h4>使用するmixin</h4>
-    ${copyCodeBlock(
-      '@include rs-top-app-bar-short-shape-radius($radius);',
-      { lang: 'scss' }
-    )}
-    <h4>使用方法</h4>
-    ${copyCodeBlock(
-`<rs-app-bar class="app-bar -short -roundness">
-  <rs-app-bar-nav class="nav" />
-  <rs-app-bar-title class="title">タイトル</rs-app-bar-title>
-  <rs-app-bar-actions class="actions">
-    <rs-app-bar-item class="item -search" />
-  </rs-app-bar-actions>
-</rs-app-bar>`,
-      { lang: 'html' }
-    )}
-    ${copyCodeBlock(
-`@import '@rsmdc/top-app-bar/rs-top-app-bar.scss';
+// .app-bar {
+//   &.-bar-pink {
+//     @include rs-app-bar-fill-color-accessible(pink);
+//   }
+//   > .nav {
+//     @include rs-app-bar-nav-icon-image(
+//       Material Icons,
+//       map-get($material-icons-codepoints, menu)
+//     );
+//   }
+// }`,
+//       { lang: 'scss' }
+//     )}
+//     <p>オプション</p>
+//     <ul>
+//       <li>$color: コンテナの色の塗りコード <br> 例）#ee00ce</li>
+//     </ul>
+//   `)
+//   .add('アップバーの角の丸みを変える', () => `
+//     <rs-app-bar class="app-bar -short -roundness">
+//       <rs-app-bar-nav class="nav"></rs-app-bar-nav>
+//       <rs-app-bar-title class="title">タイトル</rs-app-bar-title>
+//       <rs-app-bar-tool class="tool">
+//         <rs-app-bar-item class="item -search"></rs-app-bar-item>
+//       </rs-app-bar-tool>
+//     </rs-app-bar>
+//     <h4>アップバーの角の丸みを指定したサイズに変える。</h4>
+//     <p>タイプがshortの時のみ。</p>
+//     <h4>使用するmixin</h4>
+//     ${copyCodeBlock(
+//       '@include rs-app-bar-short-shape-radius($radius);',
+//       { lang: 'scss' }
+//     )}
+//     <h4>使用方法</h4>
+//     ${copyCodeBlock(
+// `<rs-app-bar class="app-bar -short -roundness">
+//   <rs-app-bar-nav class="nav" />
+//   <rs-app-bar-title class="title">タイトル</rs-app-bar-title>
+//   <rs-app-bar-tool class="tool">
+//     <rs-app-bar-item class="item -search" />
+//   </rs-app-bar-tool>
+// </rs-app-bar>`,
+//       { lang: 'html' }
+//     )}
+//     ${copyCodeBlock(
+// `@import '@rsmdc/appbar/rs-app-bar.scss';
 
-.app-bar {
-  &.-short {
-    @include rs-top-app-bar-type(short);
-  }
-  &.-short.-roundness {
-    @include rs-top-app-bar-short-shape-radius(20px);
-  }
-  > .nav {
-    @include rs-top-app-bar-nav-icon-image(
-      Material Icons,
-      map-get($material-icons-codepoints, menu)
-    );
-  }
-  > .actions > .item.-search {
-    @include rs-top-app-bar-action-icon-image(
-      Material Icons,
-      map-get($material-icons-codepoints, search)
-    );
-  }
-}`,
-      { lang: 'scss' }
-    )}
-    <p>オプション</p>
-    <ul>
-      <li>$radius: 角の丸みのサイズを指定</li>
-    </ul>
-  `)
+// .app-bar {
+//   &.-short {
+//     @include rs-app-bar-type(short);
+//   }
+//   &.-short.-roundness {
+//     @include rs-app-bar-short-shape-radius(20px);
+//   }
+//   > .nav {
+//     @include rs-app-bar-nav-icon-image(
+//       Material Icons,
+//       map-get($material-icons-codepoints, menu)
+//     );
+//   }
+//   > .tool > .item.-search {
+//     @include rs-app-bar-action-icon-image(
+//       Material Icons,
+//       map-get($material-icons-codepoints, search)
+//     );
+//   }
+// }`,
+//       { lang: 'scss' }
+//     )}
+//     <p>オプション</p>
+//     <ul>
+//       <li>$radius: 角の丸みのサイズを指定</li>
+//     </ul>
+//   `)
   .add('ナビゲーションのアイコンを設定する', () => `
     <rs-app-bar class="app-bar">
       <rs-app-bar-nav class="nav"></rs-app-bar-nav>
@@ -665,7 +687,7 @@ storiesOf('Components|App bar/スタイルのカスタマイズ', module)
     <h4>ナビゲーションにアイコンを設定する</h4>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
-      '@include rs-top-rs-app-bar-nav-icon-image($icon, $codepoint: \'\');',
+      '@include rs-app-bar-nav-icon-image($icon, $codepoint: \'\');',
       { lang: 'scss' }
     )}
     <h4>使用方法</h4>
@@ -677,11 +699,11 @@ storiesOf('Components|App bar/スタイルのカスタマイズ', module)
       { lang: 'html' }
     )}
       ${copyCodeBlock(
-`@import '@rsmdc/top-app-bar/rs-top-app-bar.scss';
+`@import '@rsmdc/appbar/rs-app-bar.scss';
 
 .app-bar {
   > .nav {
-    @include rs-top-app-bar-nav-icon-image(
+    @include rs-app-bar-nav-icon-image(
       Material Icons,
       map-get($material-icons-codepoints, menu)
     );
@@ -706,14 +728,14 @@ storiesOf('Components|App bar/スタイルのカスタマイズ', module)
     <rs-app-bar class="app-bar">
       <rs-app-bar-nav class="nav"></rs-app-bar-nav>
       <rs-app-bar-title class="title">タイトル</rs-app-bar-title>
-      <rs-app-bar-actions class="actions">
+      <rs-app-bar-tool class="tool">
         <rs-app-bar-item class="item -search"></rs-app-bar-item>
-      </rs-app-bar-actions>
+      </rs-app-bar-tool>
     </rs-app-bar>
     <h4>アクションにアイコンを設定する</h4>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
-      '@include rs-top-rs-app-bar-action-icon-image($icon, $codepoint: \'\');',
+      '@include rs-app-bar-action-icon-image($icon, $codepoint: \'\');',
       { lang: 'scss' }
     )}
     <h4>使用方法</h4>
@@ -721,18 +743,18 @@ storiesOf('Components|App bar/スタイルのカスタマイズ', module)
 `<rs-app-bar class="app-bar">
   <rs-app-bar-nav class="nav" />
   <rs-app-bar-title class="title">タイトル</rs-app-bar-title>
-  <rs-app-bar-actions class="actions">
+  <rs-app-bar-tool class="tool">
     <rs-app-bar-item class="item -search" />
-  </rs-app-bar-actions>
+  </rs-app-bar-tool>
 </rs-app-bar>`,
         { lang: 'html' }
       )}
       ${copyCodeBlock(
-`@import '@rsmdc/top-app-bar/rs-top-app-bar.scss';
+`@import '@rsmdc/appbar/rs-app-bar.scss';
 
 .app-bar {
-  > .actions > .item.-search {
-    @include rs-top-app-bar-action-icon-image(
+  > .tool > .item.-search {
+    @include rs-app-bar-action-icon-image(
       Material Icons,
       map-get($material-icons-codepoints, menu)
     );

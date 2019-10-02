@@ -1,94 +1,54 @@
 @import '@rsmdc/list/rs-list';
-@import '@rsmdc/shape/rs-functions';
 $material-icons-font-path: '~material-icons/iconfont/';
 @import '~material-icons/iconfont/material-icons';
 
 .my-list {
-  &.-dense {
-    @include rs-list-type(dense);
-  }
-  &.-twoline {
+  @include rs-list-type(avatar-list);
+  &.-two-line {
     @include rs-list-type(two-line);
+  }
+  &.-two-line.-dense {
+    @include rs-list-type(two-line, dense);
+  }
+  &.-two-line.-avatar-list > .item > .graphic {
+    @include rs-list-type(avatar-list);
+    @include rs-list-graphic-image(
+      Material Icons, map-get($material-icons-codepoints, face)
+    );
+  }
+  &.-avatar-list {
+    @include rs-list-graphic-image(
+      Material Icons, map-get($material-icons-codepoints, face)
+    );
+  }
+  &.-avatar-list.-dense {
+    @include rs-list-type(avatar-list, dense);
   }
   > .divider.-inset {
     @include rs-list-divider-type(inset);
   }
-  > .divider.-inset.-padded {
-    @include rs-list-divider-type(inset, padded);
-  }
   > .divider.-padded {
     @include rs-list-divider-type(padded);
   }
-  &.-avatarlist:not(.-graphic) {
-    @include rs-list-type(avatar-list, two-line);
+  > .divider.-inset.-padded {
+    @include rs-list-divider-type(inset, padded);
   }
-  &.-avatarlist.-graphic {
-    @include rs-list-type(avatar-list);
-  }
-  > .item > .text.-brown, 
-  > .item > .text > .primary.-brown {
-   @include rs-list-item-primary-text-ink-color(brown);
-  }
-  > .item > .text > .secondary.-brown {
-    @include rs-list-item-secondary-text-ink-color(brown);
-  }
-  > .item > .meta.-brown {
-    @include rs-list-item-meta-ink-color(brown);
-  } 
-  > .item > .graphic.-blue {
-    @include rs-list-graphic-image(Material Icons, map-get($material-icons-codepoints, face));
-    @include rs-list-item-graphic-ink-color(rgb(106, 118, 223));
-   }
-  > .item > .icon.-container-blue {
-    @include rs-list-graphic-image(Material Icons, map-get($material-icons-codepoints, face));
-    @include rs-list-item-graphic-fill-color(rgb(106, 196, 223));
-   }
-  > .divider.-blue {
-    @include rs-list-divider-color(rgb(106, 118, 223));
-  }
-  > .item{
-    @include rs-list-item-states-color(rgb(106, 118, 223));
-  }
-  > .item.-green {
-    @include rs-list-fill-color-accessible(green);
-  }
-  > .item > .graphic.-image {
-    @include rs-list-graphic-image(url('https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AAr4y0F.img?h=1080&w=1920&m=6&q=60&o=f&l=f'));
-  }
-  > .item > .graphic.-size {
-    @include rs-list-graphic-size(40px);
-   }
-  > .item.-roundness {
-    @include rs-list-item-shape-radius(10px);
-  }
-}
-
-.group-list {
-  > .list > .subheader.-brown {
-    @include rs-list-group-subheader-ink-color(brown);
-   }
-}
-
-.graphic:not(.-blue) {
-  @include rs-list-graphic-image(url('http://icons.iconarchive.com/icons/iconsmind/outline/512/Mail-icon.png'));
-  &.-circle {
+  &.-graphic-type > .item > .graphic {
     @include rs-list-graphic-type(circle);
-    @include rs-list-graphic-image(url('https://cweb.canon.jp/showroom/personal/workshop/instaevent-2018/img/picture19.jpg'));
+    @include rs-list-graphic-image(
+      url('https://cweb.canon.jp/showroom/personal/workshop/instaevent-2018/img/picture19.jpg')
+    );
   }
-  &.-size {
-    @include rs-list-graphic-size(50px);
-  }
-  &.-rectangle {
+  &.-graphic-type > .item > .graphic.-rectangle {
     @include rs-list-graphic-type(rectangle);
-    @include rs-list-graphic-image(url('https://cweb.canon.jp/showroom/personal/workshop/instaevent-2018/img/picture19.jpg'));
+    @include rs-list-graphic-image(
+      url('https://cweb.canon.jp/showroom/personal/workshop/instaevent-2018/img/picture19.jpg')
+    );
   }
-  &.-square {
+  &.-graphic-type > .item > .graphic.-square {
     @include rs-list-graphic-type(square);
-    @include rs-list-graphic-image(url('https://cweb.canon.jp/showroom/personal/workshop/instaevent-2018/img/picture19.jpg'));
+    @include rs-list-graphic-image(
+      url('https://cweb.canon.jp/showroom/personal/workshop/instaevent-2018/img/picture19.jpg')
+    );
   }
-}
-
-
-.result {
-  padding-bottom: 120px;
 }

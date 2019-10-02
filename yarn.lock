@@ -857,10 +857,10 @@
   resolved "https://registry.yarnpkg.com/@rsmdc/app-layout/-/app-layout-1.1.19.tgz#6a364582145b51070545d6af7d09d89f7a8875bb"
   integrity sha512-RkZRcv+9/jZldHjqXO+gPmdK9M+R6xttAF2Xacteqv06mnfOpOnl/uVPkoWW9DZnhWss99TfXvIeB5AmE6r5vQ==
 
-"@rsmdc/appbar@^1.1.20":
-  version "1.1.20"
-  resolved "https://registry.yarnpkg.com/@rsmdc/appbar/-/appbar-1.1.20.tgz#42e11288b2cc64560380171e0a3352276791e399"
-  integrity sha512-A/MlJpGiHr/eTq0Ut+uiQtloHVixLuUM7TjkmNyCuK/8JPpBmWCZkvnh751GcbJ08revt1XfGhcrTBRmPxyNdA==
+"@rsmdc/appbar@^1.1.22":
+  version "1.1.22"
+  resolved "https://registry.yarnpkg.com/@rsmdc/appbar/-/appbar-1.1.22.tgz#b880466c767616ae41a1a7b6b0e0a4551db45886"
+  integrity sha512-sW5s0Cf7CxR/pj9ajf6RqFaPCexdzOwk9vWrQpwKDu6tQSj1LhpxuEK5TJLS5mKm4eb+YGR9ak7lVb7JAv3N0Q==
   dependencies:
     "@rsmdc/animation" "^1.1.0"
     "@rsmdc/base" "^1.1.0"
@@ -908,6 +908,16 @@
     "@rsmdc/theme" "^1.1.0"
     "@rsmdc/typography" "^1.0.5"
     tslib "^1.9.3"
+
+"@rsmdc/chips@^1.1.20":
+  version "1.1.20"
+  resolved "https://registry.yarnpkg.com/@rsmdc/chips/-/chips-1.1.20.tgz#a4af8c1af1df503039c7249febfa42d296eeac61"
+  integrity sha512-TEHpWeFG5vDUDDgPAQZnefDRcgb0CtIvYvHNKLcO7lUEVTizNJM6oOVKMoztKadiLH1aoIIx48ZznKoJ3hOzig==
+
+"@rsmdc/data-table@^1.1.20":
+  version "1.1.20"
+  resolved "https://registry.yarnpkg.com/@rsmdc/data-table/-/data-table-1.1.20.tgz#73ea118928ab75cb6fcb369d3fde48533dc0f2fb"
+  integrity sha512-HG+qleN/6JduiZkdJtOEPU6pWACS6y7aFbQsUNkgFO0DJNcJr+WvDErWQ5rQwTVyqZ2dOjmGks58mUSAF5Mlqw==
 
 "@rsmdc/dialog@^1.1.20":
   version "1.1.20"
@@ -1033,17 +1043,19 @@
     tslib "^1.9.3"
 
 "@rsmdc/rsmdc@^1.1.20":
-  version "1.1.20"
-  resolved "https://registry.yarnpkg.com/@rsmdc/rsmdc/-/rsmdc-1.1.20.tgz#d3be335d394e6f8003a67730f7db36fa15533a8a"
-  integrity sha512-anG7qJwow2Uq2V2jXMnWSiud/9SjeLtQ2G5ryYXUlhl3nn7Lz5MUzpDH1caDhhY3cU+3d2yuCC+GMNoEKz0N0A==
+  version "1.1.22"
+  resolved "https://registry.yarnpkg.com/@rsmdc/rsmdc/-/rsmdc-1.1.22.tgz#73dc1d2a691ebcd365a285be26bb468421e0f3a5"
+  integrity sha512-EcCj2TTEItyksMdQppcqyIyx0kZ+70r3jENWOq4YguQO7rKeZmckJ+7katlQrxuXR0ZKvHzO7KSOOzETaJRSsg==
   dependencies:
     "@rsmdc/animation" "^1.1.0"
     "@rsmdc/app-layout" "^1.1.19"
-    "@rsmdc/appbar" "^1.1.20"
+    "@rsmdc/appbar" "^1.1.22"
     "@rsmdc/base" "^1.1.0"
     "@rsmdc/button" "^1.1.20"
     "@rsmdc/card" "^1.1.20"
     "@rsmdc/checkbox" "^1.1.20"
+    "@rsmdc/chips" "^1.1.20"
+    "@rsmdc/data-table" "^1.1.20"
     "@rsmdc/dialog" "^1.1.20"
     "@rsmdc/dom" "^1.1.0"
     "@rsmdc/drawer" "^1.1.20"

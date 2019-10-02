@@ -65,7 +65,7 @@ storiesOf('Components|Snackbar', module)
       <tr>
         <td>rs-snackbar-text</td>
         <td>テキスト部分を表示します</td>
-        <td>-</td>
+        <td>テキスト</td>
         <td>-</td>
       </tr>
     </table>

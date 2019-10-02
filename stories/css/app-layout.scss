@@ -1,18 +1,5 @@
-@import '@rsmdc/drawer/rs-drawer';
+@import '@rsmdc/app-layout/rs-app-layout';
 @import '@rsmdc/appbar/rs-app-bar';
-@import '@rsmdc/list/rs-list';
-
-.app-layout {
-
-  > .drawer {
-    &.-permanent {
-      @include rs-drawer-type(permanent);
-    }
-    &.-modal {
-      @include rs-drawer-type(modal);
-    }
-  }
-}
 
 .app-bar > .nav {
   @include rs-app-bar-nav-icon-image(url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgAQMAAADYVuV7AAAABlBMVEUAAAAzMzPI8eYgAAAAAXRSTlMAQObYZgAAABxJREFUeAFjIBOMAv7/UPCBlhzywWgYjIbBKAAANijXKaI5RRgAAAAASUVORK5CYII='));

@@ -4,38 +4,30 @@ import copyCodeBlock from '@pickra/copy-code-block'
 const appLayout = require('@rsmdc/app-layout/loader')
 
 import './css/style.scss'
+import './css/app-layout.scss'
+import 'highlight.js'
+import 'highlight.js/styles/a11y-light.css'
 
 appLayout.defineCustomElements(window)
 
 storiesOf('Components|App layout', module)
   .addDecorator(withLinks)
   .add('概要', () => `
-
-
+    <h4>App layout</h4>
+    <p>画面全体のレイアウトを整える。</p>
   `)
   .add('使い方', () => `
+    <rs-app-bar class="app-bar">
+      <rs-app-bar-nav class="nav"></rs-app-bar-nav>
+      <rs-app-bar-title class="title">タイトル</rs-app-bar-title>
+    </rs-app-bar>
     <h4>使い方</h4>
     ${copyCodeBlock(
-      '<rs-app-layout class="app-layout">\n' +
-      '   <rs-drawer class="drawer">\n' +
-      '       ...\n' +
-      '   </rs-drawer>\n' +
-      '   <rs-app-layout-content class="contents">\n' +
-      '       <rs-app-bar class="topbar">\n' +
-      '           ...\n' +
-      '       </rs-app-bar>\n' +
-      '       ...\n' +
-      '   </rs-app-layout-content>\n' +
-      '</rs-app-layout>\n',
+`<rs-app-bar class="app-bar">
+  <rs-app-bar-nav class="nav"></rs-app-bar-nav>
+  <rs-app-bar-title class="title">タイトル</rs-app-bar-title>
+</rs-app-bar>`,
       { lang: 'html' }
-    )}
-    ${copyCodeBlock(
-      '.app-layout {\n' +
-      '   > .drawer {\n' +
-      '      @include rs-drawer-type(dismissible);\n' +
-      '   }\n' +
-      '}',
-      { lang: 'scss' }
     )}
     <h4>HTML要素</h4>
     <p>custom elementsを<code>rs</code>のプレフィックスをつけて定義した前提です。<br>

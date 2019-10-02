@@ -1,10 +1,14 @@
 import { storiesOf } from '@storybook/html'
 import { withLinks } from '@storybook/addon-links'
 import copyCodeBlock from '@pickra/copy-code-block'
+const dataTable = require('@rsmdc/data-table/loader')
 
 import './css/style.scss'
+import './css/data-table.scss'
 import 'highlight.js'
 import 'highlight.js/styles/a11y-light.css'
+
+dataTable.defineCustomElements(window)
 
 storiesOf('Components|Data table', module)
   .addDecorator(withLinks)
@@ -15,30 +19,77 @@ storiesOf('Components|Data table', module)
   `)
   .add('使用方法', () => `
     <h4>使用方法</h4>
+    <rs-data-table class="data-table">
+      <rs-data-table-header>
+        <rs-data-table-row>
+          <rs-data-table-cell>sample</rs-data-table-cell>
+          <rs-data-table-cell>sample</rs-data-table-cell>
+          <rs-data-table-cell>sample</rs-data-table-cell>
+          <rs-data-table-cell>sample</rs-data-table-cell>
+        </rs-data-table-row>
+      </rs-data-table-header>
+      <rs-data-table-body>
+        <rs-data-table-row>
+          <rs-data-table-cell>content</rs-data-table-cell>
+          <rs-data-table-cell>content</rs-data-table-cell>
+          <rs-data-table-cell>content</rs-data-table-cell>
+          <rs-data-table-cell>content</rs-data-table-cell>
+        </rs-data-table-row>
+        <rs-data-table-row>
+          <rs-data-table-cell>content</rs-data-table-cell>
+          <rs-data-table-cell>content</rs-data-table-cell>
+          <rs-data-table-cell>content</rs-data-table-cell>
+          <rs-data-table-cell>content</rs-data-table-cell>
+        </rs-data-table-row>
+        <rs-data-table-row>
+          <rs-data-table-cell>content</rs-data-table-cell>
+          <rs-data-table-cell>content</rs-data-table-cell>
+          <rs-data-table-cell>content</rs-data-table-cell>
+          <rs-data-table-cell>content</rs-data-table-cell>
+        </rs-data-table-row>
+        <rs-data-table-row>
+          <rs-data-table-cell>content</rs-data-table-cell>
+          <rs-data-table-cell>content</rs-data-table-cell>
+          <rs-data-table-cell>content</rs-data-table-cell>
+          <rs-data-table-cell>content</rs-data-table-cell>
+        </rs-data-table-row>
+      </rs-data-table-body>
+    </rs-data-table>
+    
     ${copyCodeBlock(
 `<rs-data-table class="data-table">
-  <rs-data-table-header>
-    <rs-data-table-row>
-      <rs-data-table-cell>sample</rs-data-table-cell>
-      <rs-data-table-cell>sample</rs-data-table-cell>
-      <rs-data-table-cell>sample</rs-data-table-cell>
+  <rs-data-table-header class="header">
+    <rs-data-table-row class="row">
+      <rs-data-table-cell class="cell">sample</rs-data-table-cell>
+      <rs-data-table-cell class="cell">sample</rs-data-table-cell>
+      <rs-data-table-cell class="cell">sample</rs-data-table-cell>
+      <rs-data-table-cell class="cell">sample</rs-data-table-cell>
     </rs-data-table-row>
   </rs-data-table-header>
-  <rs-data-table-body>
-    <rs-data-table-row>
-      <rs-data-table-cell>content</rs-data-table-cell>
-      <rs-data-table-cell>content</rs-data-table-cell>
-      <rs-data-table-cell>content</rs-data-table-cell>
+  <rs-data-table-body class="body">
+    <rs-data-table-row class="row">
+      <rs-data-table-cell class="cell">content</rs-data-table-cell>
+      <rs-data-table-cell class="cell">content</rs-data-table-cell>
+      <rs-data-table-cell class="cell">content</rs-data-table-cell>
+      <rs-data-table-cell class="cell">content</rs-data-table-cell>
     </rs-data-table-row>
-    <rs-data-table-row>
-      <rs-data-table-cell>content</rs-data-table-cell>
-      <rs-data-table-cell>content</rs-data-table-cell>
-      <rs-data-table-cell>content</rs-data-table-cell>
+    <rs-data-table-row class="row">
+      <rs-data-table-cell class="cell">content</rs-data-table-cell>
+      <rs-data-table-cell class="cell">content</rs-data-table-cell>
+      <rs-data-table-cell class="cell">content</rs-data-table-cell>
+      <rs-data-table-cell class="cell">content</rs-data-table-cell>
     </rs-data-table-row>
-    <rs-data-table-row>
-      <rs-data-table-cell>content</rs-data-table-cell>
-      <rs-data-table-cell>content</rs-data-table-cell>
-      <rs-data-table-cell>content</rs-data-table-cell>
+    <rs-data-table-row class="row">
+      <rs-data-table-cell class="cell">content</rs-data-table-cell>
+      <rs-data-table-cell class="cell">content</rs-data-table-cell>
+      <rs-data-table-cell class="cell">content</rs-data-table-cell>
+      <rs-data-table-cell class="cell">content</rs-data-table-cell>
+    </rs-data-table-row>
+    <rs-data-table-row class="row">
+      <rs-data-table-cell class="cell">content</rs-data-table-cell>
+      <rs-data-table-cell class="cell">content</rs-data-table-cell>
+      <rs-data-table-cell class="cell">content</rs-data-table-cell>
+      <rs-data-table-cell class="cell">content</rs-data-table-cell>
     </rs-data-table-row>
   </rs-data-table-body>
 </rs-data-table>

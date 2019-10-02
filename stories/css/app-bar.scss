@@ -1,59 +1,47 @@
 $material-icons-font-path: '../../node_modules/material-icons/iconfont/';
 @import 'material-icons/iconfont/material-icons.scss';
-@import '@rsmdc/top-app-bar/rs-top-app-bar';
+@import '@rsmdc/appbar/rs-app-bar';
 
 :host {
    -webkit-overflow-scrolling: touch;
  }
+ 
 .app-bar {
    &.-dense {
-      @include rs-top-app-bar-type(dense);
+      @include rs-app-bar-type(dense);
    }
+
    &.-short {
-      @include rs-top-app-bar-type(short);
+      @include rs-app-bar-type(short);
    }
-   &.-short.-roundness {
-      @include rs-top-app-bar-short-shape-radius(30px);
-   }
+   
    &.-prominent {
-      @include rs-top-app-bar-type(prominent);
-      --rs-top-app-bar-row--overflow-scrolling:touch;
-      --rs-top-app-bar-row--overflow-y:auto;
-      --rs-top-app-bar-row--overflow-x:hidden;
+      @include rs-app-bar-type(prominent);
+      --rs-app-bar-row--overflow-scrolling:touch;
+      --rs-app-bar-row--overflow-y:auto;
+      --rs-app-bar-row--overflow-x:hidden;
    }
    
    &.-fixed {
-      @include rs-top-app-bar-type(fixed);
+      @include rs-app-bar-type(fixed);
    }
+
    &.-collapsed {
-      @include rs-top-app-bar-type(collapsed, short);
+      @include rs-app-bar-type(collapsed, short);
    }
-   &.-bar-orange {
-      @include rs-top-app-bar-fill-color(orange);
-   }
-   &.-bar-pink{
-      @include rs-top-app-bar-fill-color-accessible(pink);
-   } 
+
    > .nav {
-      @include rs-top-app-bar-nav-icon-image(
+      @include rs-app-bar-nav-icon-image(
          Material Icons,
          map-get($material-icons-codepoints, menu)
        );
    }
-   > .nav.-icon-orange {
-      @include rs-top-app-bar-icon-ink-color(orange);
-   }
-   > .nav.-ripple-dark {
-      @include rs-top-app-bar-icon-states-color(#000);
-   }
-   > .title.-ink-dark {
-      @include rs-top-app-bar-title-ink-color(#000);
-   }
-   > .actions > .item.-search {
-      @include rs-top-app-bar-action-icon-image(
+
+   > .tool > .item.-search {
+      @include rs-app-bar-tool-icon-image(
          Material Icons,
          map-get($material-icons-codepoints, search)
-       );
+      );
    }
 }
 

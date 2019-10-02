@@ -1,10 +1,14 @@
 import { storiesOf } from '@storybook/html'
 import { withLinks } from '@storybook/addon-links'
 import copyCodeBlock from '@pickra/copy-code-block'
+const chips = require('@rsmdc/chips/loader')
 
 import './css/style.scss'
+import './css/chips.scss'
 import 'highlight.js'
 import 'highlight.js/styles/a11y-light.css'
+
+chips.defineCustomElements(window)
 
 storiesOf('Components|Chip', module)
   .addDecorator(withLinks)
@@ -21,6 +25,10 @@ storiesOf('Components|Chip', module)
   `)
   .add('使用方法', () => `
     <h4>使用方法</h4>
+    <div class="chip-demo">
+      <rs-chip class="chip">sample</rs-chip>
+    </div>
+
     ${copyCodeBlock(
 `<rs-chip class="chip">sample</rs-chip>
 `,

@@ -77,9 +77,9 @@ storiesOf('Components|List', module)
       </rs-list-item>
     </rs-list>
     <rs-list-group class="group-list">
-      <rs-list class="my-list -twoline">
+      <rs-list class="my-list -two-line -avatar-list">
         <rs-list-subheader class="subheader">リストタイトル</rs-list-subheader>
-        <rs-list-divider></rs-list-divider>
+        <rs-list-divider class="divider"></rs-list-divider>
         <rs-list-item class="item">
           <rs-list-graphic class="graphic"></rs-list-graphic>
           <rs-list-text class="text">
@@ -93,25 +93,7 @@ storiesOf('Components|List', module)
             <rs-list-primary class="primary">1行目</rs-list-primary>
             <rs-list-secondary class="secondary">2行目</rs-list-secondary>
           </rs-list-text>
-        </rs-list-item>
-      </rs-list>
-      <rs-list class="my-list -twoline">
-        <rs-list-subheader class="subheader">リストタイトル</rs-list-subheader>
-        <rs-list-divider></rs-list-divider>
-        <rs-list-item class="item">
-          <rs-list-graphic class="graphic"></rs-list-graphic>
-          <rs-list-text class="text">
-            <rs-list-primary class="primary">1行目</rs-list-primary>
-            <rs-list-secondary class="secondary">2行目</rs-list-secondary>
-          </rs-list-text>
-        </rs-list-item>
-        <rs-list-item class="item">
-          <rs-list-graphic class="graphic"></rs-list-graphic>
-            <rs-list-text class="text">
-              <rs-list-primary class="primary">1行目</rs-list-primary>
-              <rs-list-secondary class="secondary">2行目</rs-list-secondary>
-            </rs-list-text>
-            <rs-list-meta class="meta">メタ情報</rs-list-meta>
+          <rs-list-meta class="meta">メタ情報</rs-list-meta>
         </rs-list-item>
       </rs-list>
     </rs-list-group>
@@ -127,36 +109,18 @@ storiesOf('Components|List', module)
   </rs-list-item>
 </rs-list>
 <rs-list-group class="group-list">
-  <rs-list class="my-list -twoline">
+  <rs-list class="my-list -two-line -avatar-list">
     <rs-list-subheader class="subheader">リストタイトル</rs-list-subheader>
-    <rs-list-divider />
+    <rs-list-divider class="divider"></rs-list-divider>
     <rs-list-item class="item">
-      <rs-list-graphic class="graphic" />
+      <rs-list-graphic class="graphic"></rs-list-graphic>
       <rs-list-text class="text">
         <rs-list-primary class="primary">1行目</rs-list-primary>
         <rs-list-secondary class="secondary">2行目</rs-list-secondary>
       </rs-list-text>
     </rs-list-item>
     <rs-list-item class="item">
-      <rs-list-graphic class="graphic" />
-      <rs-list-text class="text">
-        <rs-list-primary class="primary">1行目</rs-list-primary>
-      <rs-list-secondary class="secondary">2行目</rs-list-secondary>
-      </rs-list-text>
-    </rs-list-item>
-  </rs-list>
-  <rs-list class="my-list -twoline">
-    <rs-list-subheader class="subheader">リストタイトル</rs-list-subheader>
-    <rs-list-divider></list-divider>
-    <rs-list-item class="item">
-      <rs-list-graphic class="graphic" />
-      <rs-list-text class="text">
-        <rs-list-primary class="primary">1行目</rs-list-primary>
-        <rs-list-secondary class="secondary">2行目</rs-list-secondary>
-      </rs-list-text>
-    </rs-list-item>
-    <rs-list-item class="item">
-      <rs-list-graphic class="graphic" />
+      <rs-list-graphic class="graphic"></rs-list-graphic>
       <rs-list-text class="text">
         <rs-list-primary class="primary">1行目</rs-list-primary>
         <rs-list-secondary class="secondary">2行目</rs-list-secondary>
@@ -396,37 +360,42 @@ storiesOf('Components|List/スタイルのカスタマイズ/リストのタイ�
   .add('twoline', () => `
     <h4>twoline</h4>
     <p>denseとavatar-listも一緒に使用できる。</p>
-    <rs-list class="my-list">
+    <rs-list class="my-list -two-line">
       <rs-list-item class="item">
-        <rs-list-text class="text">テキスト</rs-list-text>
+        <rs-list-text class="text">
+          <rs-list-primary>1行目</rs-list-primary>
+          <rs-list-secondary>2行目</rs-list-secondary>
+        </rs-list-text>
         <rs-list-meta class="meta">メタ情報</rs-list-meta>
       </rs-list-item>
       <rs-list-item class="item">
-        <rs-list-text class="text">テキスト</rs-list-text>
+        <rs-list-text class="text">
+          <rs-list-primary>1行目</rs-list-primary>
+          <rs-list-secondary>2行目</rs-list-secondary>
+        </rs-list-text>
         <rs-list-meta class="meta">メタ情報</rs-list-meta>
       </rs-list-item>
     </rs-list>
+
     <rs-list-group class="group-list">
-      <rs-list class="my-list -twoline">
-        <rs-list-subheader class="subheader">リストタイトル</rs-list-subheader>
+      <rs-list class="my-list -two-line -dense">
+        <rs-list-subheader class="subheader">リストスタイル / dense</rs-list-subheader>
         <rs-list-divider></rs-list-divider>
         <rs-list-item class="item">
-          <rs-list-graphic class="graphic"></rs-list-graphic>
           <rs-list-text class="text">
             <rs-list-primary class="primary">1行目</rs-list-primary>
             <rs-list-secondary class="secondary">2行目</rs-list-secondary>
           </rs-list-text>
         </rs-list-item>
         <rs-list-item class="item">
-          <rs-list-graphic class="graphic"></rs-list-graphic>
           <rs-list-text class="text">
             <rs-list-primary class="primary">1行目</rs-list-primary>
             <rs-list-secondary class="secondary">2行目</rs-list-secondary>
           </rs-list-text>
         </rs-list-item>
       </rs-list>
-      <rs-list class="my-list -twoline">
-        <rs-list-subheader class="subheader">リストタイトル</rs-list-subheader>
+      <rs-list class="my-list -two-line -avatar-list">
+        <rs-list-subheader class="subheader">リストタイトル / avatar-list</rs-list-subheader>
         <rs-list-divider></rs-list-divider>
         <rs-list-item class="item">
           <rs-list-graphic class="graphic"></rs-list-graphic>
@@ -437,11 +406,11 @@ storiesOf('Components|List/スタイルのカスタマイズ/リストのタイ�
         </rs-list-item>
         <rs-list-item class="item">
           <rs-list-graphic class="graphic"></rs-list-graphic>
-            <rs-list-text class="text">
-              <rs-list-primary class="primary">1行目</rs-list-primary>
-              <rs-list-secondary class="secondary">2行目</rs-list-secondary>
-            </rs-list-text>
-            <rs-list-meta class="meta">メタ情報</rs-list-meta>
+          <rs-list-text class="text">
+            <rs-list-primary class="primary">1行目</rs-list-primary>
+            <rs-list-secondary class="secondary">2行目</rs-list-secondary>
+          </rs-list-text>
+          <rs-list-meta class="meta">メタ情報</rs-list-meta>
         </rs-list-item>
       </rs-list>
     </rs-list-group>
@@ -452,50 +421,55 @@ storiesOf('Components|List/スタイルのカスタマイズ/リストのタイ�
     )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
-`<rs-list class="my-list">
+`<rs-list class="my-list -two-line">
   <rs-list-item class="item">
-    <rs-list-text class="text">テキスト</rs-list-text>
+    <rs-list-text class="text">
+      <rs-list-primary>1行目</rs-list-primary>
+      <rs-list-secondary>2行目</rs-list-secondary>
+    </rs-list-text>
     <rs-list-meta class="meta">メタ情報</rs-list-meta>
   </rs-list-item>
   <rs-list-item class="item">
-    <rs-list-text class="text">テキスト</rs-list-text>
+    <rs-list-text class="text">
+      <rs-list-primary>1行目</rs-list-primary>
+      <rs-list-secondary>2行目</rs-list-secondary>
+    </rs-list-text>
     <rs-list-meta class="meta">メタ情報</rs-list-meta>
   </rs-list-item>
 </rs-list>
+
 <rs-list-group class="group-list">
-  <rs-list class="my-list -twoline">
-    <rs-list-subheader class="subheader">リストタイトル</rs-list-subheader>
-    <rs-list-divider />
+  <rs-list class="my-list -two-line -dense">
+    <rs-list-subheader class="subheader">リストスタイル / dense</rs-list-subheader>
+    <rs-list-divider class="divider" />
     <rs-list-item class="item">
-      <rs-list-graphic class="graphic" />
       <rs-list-text class="text">
         <rs-list-primary class="primary">1行目</rs-list-primary>
         <rs-list-secondary class="secondary">2行目</rs-list-secondary>
       </rs-list-text>
     </rs-list-item>
     <rs-list-item class="item">
-      <rs-list-graphic class="graphic" />
       <rs-list-text class="text">
         <rs-list-primary class="primary">1行目</rs-list-primary>
         <rs-list-secondary class="secondary">2行目</rs-list-secondary>
       </rs-list-text>
     </rs-list-item>
   </rs-list>
-  <rs-list class="my-list -twoline">
-    <rs-list-subheader class="subheader">リストタイトル</rs-list-subheader>
-    <rs-list-divider />
+  <rs-list class="my-list -two-line -avatar-list">
+    <rs-list-subheader class="subheader">リストタイトル / avatar-list</rs-list-subheader>
+    <rs-list-divider class="divider" />
     <rs-list-item class="item">
-      <rs-list-graphic class="graphic" />
+      <rs-list-graphic class="graphic"></rs-list-graphic>
       <rs-list-text class="text">
         <rs-list-primary class="primary">1行目</rs-list-primary>
         <rs-list-secondary class="secondary">2行目</rs-list-secondary>
       </rs-list-text>
     </rs-list-item>
     <rs-list-item class="item">
-      <rs-list-graphic class="graphic" />
+      <rs-list-graphic class="graphic"></rs-list-graphic>
       <rs-list-text class="text">
-          <rs-list-primary class="primary">1行目</rs-list-primary>
-          <rs-list-secondary class="secondary">2行目</rs-list-secondary>
+        <rs-list-primary class="primary">1行目</rs-list-primary>
+        <rs-list-secondary class="secondary">2行目</rs-list-secondary>
       </rs-list-text>
       <rs-list-meta class="meta">メタ情報</rs-list-meta>
     </rs-list-item>
@@ -507,11 +481,14 @@ storiesOf('Components|List/スタイルのカスタマイズ/リストのタイ�
 `@import '@rsmdc/list/rs-list.scss';
 
 .my-list {
-  &.-twoline {
-    @include rs-list-type(two-line);
-  }
-  &.-twoline.-dense {
+  &.-two-line.-dense {
     @include rs-list-type(two-line, dense);
+  }
+  &.-two-line.-avatar-list > .item > .graphic {
+    @include rs-list-type(avatar-list);
+    @include rs-list-graphic-image(
+      Material Icons, map-get($material-icons-codepoints, face)
+    );
   }
 }`,
       { lang: 'scss' }
@@ -523,20 +500,23 @@ storiesOf('Components|List/スタイルのカスタマイズ/リストのタイ�
       リストにアバターを表示させる。 <br>
       denseとtwo-lineも一緒に使用できる。
     </p>
-    <rs-list class="list">
+    <rs-list class="my-list -avatar-list">
       <rs-list-item class="item">
+        <rs-list-graphic class="graphic"></rs-list-graphic>
         <rs-list-text class="text">テキスト</rs-list-text>
         <rs-list-meta class="meta">メタ情報</rs-list-meta>
       </rs-list-item>
       <rs-list-item class="item">
+        <rs-list-graphic class="graphic"></rs-list-graphic>
         <rs-list-text class="text">テキスト</rs-list-text>
         <rs-list-meta class="meta">メタ情報</rs-list-meta>
       </rs-list-item>
     </rs-list>
+
     <rs-list-group class="group-list">
-      <rs-list class="my-list -avatarlist">
-        <rs-list-subheader class="subheader">リストタイトル</rs-list-subheader>
-        <rs-list-divider></rs-list-divider>
+      <rs-list class="my-list -avatar-list -dense">
+        <rs-list-subheader class="subheader">リストタイトル / dense</rs-list-subheader>
+        <rs-list-divider class="divider"></rs-list-divider>
         <rs-list-item class="item">
           <rs-list-graphic class="graphic"></rs-list-graphic>
           <rs-list-text class="text">
@@ -552,9 +532,9 @@ storiesOf('Components|List/スタイルのカスタマイズ/リストのタイ�
           </rs-list-text>
         </rs-list-item>
       </rs-list>
-      <rs-list class="my-list -avatarlist">
-        <rs-list-subheader class="subheader">リストタイトル</rs-list-subheader>
-        <rs-list-divider></rs-list-divider>
+      <rs-list class="my-list -avatar-list -two-line">
+        <rs-list-subheader class="subheader">リストタイトル / two-line</rs-list-subheader>
+        <rs-list-divider class="divider" /></rs-list-divider>
         <rs-list-item class="item">
           <rs-list-graphic class="graphic"></rs-list-graphic>
           <rs-list-text class="text">
@@ -579,22 +559,25 @@ storiesOf('Components|List/スタイルのカスタマイズ/リストのタイ�
     )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
-`<rs-list class="list">
+`<rs-list class="my-list -avatar-list">
   <rs-list-item class="item">
+    <rs-list-graphic class="graphic" />
     <rs-list-text class="text">テキスト</rs-list-text>
     <rs-list-meta class="meta">メタ情報</rs-list-meta>
   </rs-list-item>
   <rs-list-item class="item">
+    <rs-list-graphic class="graphic" />
     <rs-list-text class="text">テキスト</rs-list-text>
     <rs-list-meta class="meta">メタ情報</rs-list-meta>
   </rs-list-item>
 </rs-list>
+
 <rs-list-group class="group-list">
-  <rs-list class="my-list -avatarlist">
-    <rs-list-subheader class="subheader">リストタイトル</rs-list-subheader>
-    <rs-list-divider />
+  <rs-list class="my-list -avatar-list -dense">
+    <rs-list-subheader class="subheader">リストタイトル / dense</rs-list-subheader>
+    <rs-list-divider class="divider" />
     <rs-list-item class="item">
-      <rs-list-graphic class="graphic" />
+      <rs-list-graphic class="graphic"></rs-list-graphic>
       <rs-list-text class="text">
         <rs-list-primary class="primary">1行目</rs-list-primary>
         <rs-list-secondary class="secondary">2行目</rs-list-secondary>
@@ -608,11 +591,11 @@ storiesOf('Components|List/スタイルのカスタマイズ/リストのタイ�
       </rs-list-text>
     </rs-list-item>
   </rs-list>
-  <rs-list class="my-list -avatarlist">
-    <rs-list-subheader class="subheader">リストタイトル</rs-list-subheader>
-    <rs-list-divider />
+  <rs-list class="my-list -avatar-list -two-line">
+    <rs-list-subheader class="subheader">リストタイトル / two-line</rs-list-subheader>
+    <rs-list-divider class="divider" />
     <rs-list-item class="item">
-      <rs-list-graphic class="graphic" />
+      <rs-list-graphic class="graphic"></rs-list-graphic>
       <rs-list-text class="text">
         <rs-list-primary class="primary">1行目</rs-list-primary>
         <rs-list-secondary class="secondary">2行目</rs-list-secondary>
@@ -620,12 +603,12 @@ storiesOf('Components|List/スタイルのカスタマイズ/リストのタイ�
     </rs-list-item>
     <rs-list-item class="item">
       <rs-list-graphic class="graphic" />
-        <rs-list-text class="text">
-          <rs-list-primary class="primary">1行目</rs-list-primary>
-          <rs-list-secondary class="secondary">2行目</rs-list-secondary>
-        </rs-list-text>
-        <rs-list-meta class="meta">メタ情報</rs-list-meta>
-      </rs-list-item>
+      <rs-list-text class="text">
+        <rs-list-primary class="primary">1行目</rs-list-primary>
+        <rs-list-secondary class="secondary">2行目</rs-list-secondary>
+      </rs-list-text>
+      <rs-list-meta class="meta">メタ情報</rs-list-meta>
+    </rs-list-item>
   </rs-list>
 </rs-list-group>`,
     { lang:'html' }
@@ -634,14 +617,16 @@ storiesOf('Components|List/スタイルのカスタマイズ/リストのタイ�
 `@import '@rsmdc/list/rs-list.scss';
 
 .my-list {
-  &.-avatarlist {
-    @include rs-list-type(avatar-list);
+  &.-avatar-list {
+    @include rs-list-graphic-image(
+      Material Icons, map-get($material-icons-codepoints, face)
+    );
   }
-  &.-avatarlist.-dense {
+  &.-avatar-list.-dense {
     @include rs-list-type(avatar-list, dense);
   }
-  &.-avatarlist.-twoline {
-    @include rs-list-type(avatar-list, twoline);
+  &.-avatar-list.-two-line {
+    @include rs-list-type(avatar-list, two-line);
   }
 }`,
       { lang: 'scss' }
@@ -741,22 +726,22 @@ storiesOf('Components|List/スタイルのカスタマイズ/仕切り線のタ�
     <h4>padded</h4>
     insetも一緒に使える
     <rs-list class="my-list">
-      <list-item class="item">
-        <list-text class="text">text</list-text>
-      </list-item>
-      <list-divider class="divider -padded"></list-divider>
-      <list-item class="item">
-        <list-text class="text">text</list-text>
-      </list-item>
+      <rs-list-item class="item">
+        <rs-list-text class="text">text</rs-list-text>
+      </rs-list-item>
+      <rs-list-divider class="divider -padded"></rs-list-divider>
+      <rs-list-item class="item">
+        <rs-list-text class="text">text</rs-list-text>
+      </rs-list-item>
     </rs-list>
     <rs-list class="my-list">
-      <list-item class="item">
-        <list-text class="text">text</list-text>
-      </list-item>
-      <list-divider class="divider -inset -padded"></list-divider>
-      <list-item class="item">
-        <list-text class="text">text</list-text>
-      </list-item>
+      <rs-list-item class="item">
+        <rs-list-text class="text">text</rs-list-text>
+      </rs-list-item>
+      <rs-list-divider class="divider -inset"></rs-list-divider>
+      <rs-list-item class="item">
+        <rs-list-text class="text">text</rs-list-text>
+      </rs-list-item>
     </rs-list>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(`@include rs-list-divider-type($types...);`, {
@@ -802,7 +787,7 @@ storiesOf('Components|List/スタイルのカスタマイズ/画像の形を変�
   .add('normal (default)', () => `
     <h4>normal（デフォルト）</h4>
     <p>mixinは不要。</p>
-    <rs-list class="my-list -avatarlist -graphic">
+    <rs-list class="my-list -graphic-type">
       <rs-list-item class="item">
         <rs-list-graphic class="graphic"></rs-list-graphic>
         <rs-list-text class="text">テキスト</rs-list-text>
@@ -814,7 +799,7 @@ storiesOf('Components|List/スタイルのカスタマイズ/画像の形を変�
     </rs-list>
     <h4>使用方法</h4>
     ${copyCodeBlock(
-`<rs-list class="my-list -avatarlist">
+`<rs-list class="my-list -avatar-list">
   <rs-list-item class="item">
     <rs-list-graphic class="graphic" />
     <rs-list-text class="text">テキスト</rs-list-text>
@@ -829,7 +814,7 @@ storiesOf('Components|List/スタイルのカスタマイズ/画像の形を変�
   `)  
   .add('circle', () => `
     <h4>circle</h4>
-    <rs-list class="my-list -avatarlist -graphic">
+    <rs-list class="my-list -graphic-type">
       <rs-list-item class="item">
         <rs-list-graphic class="graphic -circle"></rs-list-graphic>
         <rs-list-text class="text">テキスト</rs-list-text>
@@ -845,7 +830,7 @@ storiesOf('Components|List/スタイルのカスタマイズ/画像の形を変�
     })}
     <h4>使用方法</h4>
     ${copyCodeBlock(
-`<rs-list class="my-list -avatarlist">
+`<rs-list class="my-list -avatar-list">
   <rs-list-item class="item">
     <rs-list-graphic class="graphic -circle" />
     <rs-list-text class="text">テキスト</rs-list-text>
@@ -871,7 +856,7 @@ storiesOf('Components|List/スタイルのカスタマイズ/画像の形を変�
   `)
   .add('rectangle', () => `
     <h4>rectangle</h4>
-    <rs-list class="my-list -avatarlist -graphic">
+    <rs-list class="my-list -graphic-type">
       <rs-list-item class="item">
         <rs-list-graphic class="graphic -rectangle"></rs-list-graphic>
         <rs-list-text class="text">テキスト</rs-list-text>
@@ -887,7 +872,7 @@ storiesOf('Components|List/スタイルのカスタマイズ/画像の形を変�
     })}
     <h4>使用方法</h4>
     ${copyCodeBlock(
-`<rs-list class="my-list -avatarlist">
+`<rs-list class="my-list -avatar-list">
   <rs-list-item class="item">
     <rs-list-graphic class="graphic -rectangle" />
     <rs-list-text class="text">テキスト</rs-list-text>
@@ -913,7 +898,7 @@ storiesOf('Components|List/スタイルのカスタマイズ/画像の形を変�
   `)
   .add('square', () => `
     <h4>square</h4>
-    <rs-list class="my-list -avatarlist -graphic">
+    <rs-list class="my-list -graphic-type">
       <rs-list-item class="item">
         <rs-list-graphic class="graphic -square"></rs-list-graphic>
         <rs-list-text class="text">テキスト</rs-list-text>
@@ -1146,7 +1131,7 @@ storiesOf('Components|List/スタイルのカスタマイズ', module)
   `)
   .add('アイコンの色を変える', () => `
     <h4>アイコンの色を指定した色に変える。</h4>
-    <rs-list class="my-list -avatarlist -graphic">
+    <rs-list class="my-list -avatar-list">
       <rs-list-item class="item">
         <rs-list-graphic class="graphic -blue"></rs-list-graphic>
         <rs-list-text class="text">テキスト</rs-list-text>
@@ -1163,7 +1148,7 @@ storiesOf('Components|List/スタイルのカスタマイズ', module)
     )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
-`<rs-list class="my-list -avatarlist">
+`<rs-list class="my-list -avatar-list">
   <rs-list-item class="item">
     <rs-list-graphic class="graphic -blue" />
     <rs-list-text class="text">テキスト</rs-list-text>
@@ -1195,7 +1180,7 @@ $material-icons-font-path: '~material-icons/iconfont/';
   `)
   .add('画像の背景色を変える', () => `
     <h4>画像の背景色を指定した色に変える。</h4>
-    <rs-list class="my-list -avatarlist -graphic">
+    <rs-list class="my-list -avatar-list">
       <rs-list-item class="item">
         <rs-list-graphic class="icon -container-blue"></rs-list-graphic>
         <rs-list-text class="text">テキスト</rs-list-text>
@@ -1438,7 +1423,7 @@ $material-icons-font-path: '~material-icons/iconfont/';
   `)
   .add('画像・アイコンを設定する', () => `
     <h4>指定した画像・アイコンを表示する。</h4>
-    <rs-list class="my-list -avatarlist -graphic">
+    <rs-list class="my-list -avatar-list">
       <rs-list-item class="item">
         <rs-list-graphic class="graphic -image"></rs-list-graphic>
         <rs-list-text class="text">テキスト</rs-list-text>
@@ -1484,7 +1469,7 @@ $material-icons-font-path: '~material-icons/iconfont/';
   `)
   .add('画像のサイズを変える', () => `
     <h4>画像のサイズを指定した大きさに変える。</h4>
-    <rs-list class="my-list -avatarlist -graphic">
+    <rs-list class="my-list -graphic-type">
       <rs-list-item class="item">
         <rs-list-graphic class="graphic -size"></rs-list-graphic>
         <rs-list-text class="text">テキスト</rs-list-text>
