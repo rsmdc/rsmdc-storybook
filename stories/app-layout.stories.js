@@ -16,17 +16,25 @@ storiesOf('Components|App layout', module)
     <h4>App layout</h4>
     <p>画面全体のレイアウトを整える。</p>
   `)
-  .add('使い方', () => `
+  .add('使用方法', () => `
+  <rs-app-layout class="app-layout">
+    <rs-app-layout-content>
+      <rs-app-bar class="app-bar">
+        <rs-app-bar-nav class="nav"></rs-app-bar-nav>
+        <rs-app-bar-title class="title">タイトル</rs-app-bar-title>
+      </rs-app-bar>
+    </rs-app-layout-content>
+  </rs-app-layout>
+    <h4>使い方</h4>
+    ${copyCodeBlock(
+`<rs-app-layout class="app-layout">
+  <rs-app-layout-content>
     <rs-app-bar class="app-bar">
       <rs-app-bar-nav class="nav"></rs-app-bar-nav>
       <rs-app-bar-title class="title">タイトル</rs-app-bar-title>
     </rs-app-bar>
-    <h4>使い方</h4>
-    ${copyCodeBlock(
-`<rs-app-bar class="app-bar">
-  <rs-app-bar-nav class="nav"></rs-app-bar-nav>
-  <rs-app-bar-title class="title">タイトル</rs-app-bar-title>
-</rs-app-bar>`,
+  </rs-app-layout-content>
+</rs-app-layout>`,
       { lang: 'html' }
     )}
     <h4>HTML要素</h4>

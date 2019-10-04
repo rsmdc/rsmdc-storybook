@@ -3,6 +3,9 @@ $material-icons-font-path: '~material-icons/iconfont/';
 @import '~material-icons/iconfont/material-icons';
 
 .my-button {
+  &.-dense {
+    @include rs-button-type(dense);
+  }
   &.-raised {
     @include rs-button-type(raised);
   }
@@ -41,4 +44,8 @@ $material-icons-font-path: '~material-icons/iconfont/';
     );
     @include rs-button-icon-position(right);
   }
+}
+
+.button-demo {
+  padding-bottom: 10px;
 }

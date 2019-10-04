@@ -20,38 +20,90 @@ storiesOf('Components|Data table', module)
   .add('使用方法', () => `
     <h4>使用方法</h4>
     <rs-data-table class="data-table">
-      <rs-data-table-header>
-        <rs-data-table-row>
-          <rs-data-table-cell>sample</rs-data-table-cell>
-          <rs-data-table-cell>sample</rs-data-table-cell>
-          <rs-data-table-cell>sample</rs-data-table-cell>
-          <rs-data-table-cell>sample</rs-data-table-cell>
+      <rs-data-table-header class="header">
+        <rs-data-table-row class="row">
+          <rs-data-table-cell class="cell">食べ物</rs-data-table-cell>
+          <rs-data-table-cell class="cell">花</rs-data-table-cell>
+          <rs-data-table-cell class="cell">スポーツ</rs-data-table-cell>
+          <rs-data-table-cell class="cell">国</rs-data-table-cell>
         </rs-data-table-row>
       </rs-data-table-header>
-      <rs-data-table-body>
-        <rs-data-table-row>
-          <rs-data-table-cell>content</rs-data-table-cell>
-          <rs-data-table-cell>content</rs-data-table-cell>
-          <rs-data-table-cell>content</rs-data-table-cell>
-          <rs-data-table-cell>content</rs-data-table-cell>
+      <rs-data-table-body class="body">
+        <rs-data-table-row class="row">
+          <rs-data-table-cell class="cell">ラーメン</rs-data-table-cell>
+          <rs-data-table-cell class="cell">ひまわり</rs-data-table-cell>
+          <rs-data-table-cell class="cell">野球</rs-data-table-cell>
+          <rs-data-table-cell class="cell">日本</rs-data-table-cell>
         </rs-data-table-row>
-        <rs-data-table-row>
-          <rs-data-table-cell>content</rs-data-table-cell>
-          <rs-data-table-cell>content</rs-data-table-cell>
-          <rs-data-table-cell>content</rs-data-table-cell>
-          <rs-data-table-cell>content</rs-data-table-cell>
+        <rs-data-table-row class="row">
+          <rs-data-table-cell class="cell">寿司</rs-data-table-cell>
+          <rs-data-table-cell class="cell">コスモス</rs-data-table-cell>
+          <rs-data-table-cell class="cell">バスケットボール</rs-data-table-cell>
+          <rs-data-table-cell class="cell">韓国</rs-data-table-cell>
         </rs-data-table-row>
-        <rs-data-table-row>
-          <rs-data-table-cell>content</rs-data-table-cell>
-          <rs-data-table-cell>content</rs-data-table-cell>
-          <rs-data-table-cell>content</rs-data-table-cell>
-          <rs-data-table-cell>content</rs-data-table-cell>
+        <rs-data-table-row class="row">
+          <rs-data-table-cell class="cell">ハンバーグ</rs-data-table-cell>
+          <rs-data-table-cell class="cell">紫陽花</rs-data-table-cell>
+          <rs-data-table-cell class="cell">バドミントン</rs-data-table-cell>
+          <rs-data-table-cell class="cell">アメリカ合衆国</rs-data-table-cell>
         </rs-data-table-row>
-        <rs-data-table-row>
-          <rs-data-table-cell>content</rs-data-table-cell>
-          <rs-data-table-cell>content</rs-data-table-cell>
-          <rs-data-table-cell>content</rs-data-table-cell>
-          <rs-data-table-cell>content</rs-data-table-cell>
+        <rs-data-table-row class="row">
+          <rs-data-table-cell class="cell">オムライス</rs-data-table-cell>
+          <rs-data-table-cell class="cell">チューリップ</rs-data-table-cell>
+          <rs-data-table-cell class="cell">サッカー</rs-data-table-cell>
+          <rs-data-table-cell class="cell">フランス</rs-data-table-cell>
+        </rs-data-table-row>
+      </rs-data-table-body>
+    </rs-data-table>
+
+    <rs-data-table class="data-table">
+      <rs-data-table-header class="header">
+        <rs-data-table-row class="row">
+          <rs-data-table-cell class="cell">
+            <rs-checkbox></rs-checkbox>
+          </rs-data-table-cell>
+          <rs-data-table-cell class="cell">食べ物</rs-data-table-cell>
+          <rs-data-table-cell class="cell">花</rs-data-table-cell>
+          <rs-data-table-cell class="cell">スポーツ</rs-data-table-cell>
+          <rs-data-table-cell class="cell">国</rs-data-table-cell>
+        </rs-data-table-row>
+      </rs-data-table-header>
+      <rs-data-table-body class="body">
+        <rs-data-table-row class="row">
+          <rs-data-table-cell class="cell">
+            <rs-checkbox></rs-checkbox>
+          </rs-data-table-cell>
+          <rs-data-table-cell class="cell">ラーメン</rs-data-table-cell>
+          <rs-data-table-cell class="cell">ひまわり</rs-data-table-cell>
+          <rs-data-table-cell class="cell">野球</rs-data-table-cell>
+          <rs-data-table-cell class="cell">日本</rs-data-table-cell>
+        </rs-data-table-row>
+        <rs-data-table-row class="row">
+          <rs-data-table-cell class="cell">
+            <rs-checkbox></rs-checkbox>
+          </rs-data-table-cell>
+          <rs-data-table-cell class="cell">寿司</rs-data-table-cell>
+          <rs-data-table-cell class="cell">コスモス</rs-data-table-cell>
+          <rs-data-table-cell class="cell">バスケットボール</rs-data-table-cell>
+          <rs-data-table-cell class="cell">韓国</rs-data-table-cell>
+        </rs-data-table-row>
+        <rs-data-table-row class="row">
+          <rs-data-table-cell class="cell">
+            <rs-checkbox></rs-checkbox>
+          </rs-data-table-cell>
+          <rs-data-table-cell class="cell">ハンバーグ</rs-data-table-cell>
+          <rs-data-table-cell class="cell">紫陽花</rs-data-table-cell>
+          <rs-data-table-cell class="cell">バドミントン</rs-data-table-cell>
+          <rs-data-table-cell class="cell">アメリカ合衆国</rs-data-table-cell>
+        </rs-data-table-row>
+        <rs-data-table-row class="row">
+          <rs-data-table-cell class="cell">
+            <rs-checkbox></rs-checkbox>
+          </rs-data-table-cell>
+          <rs-data-table-cell class="cell">オムライス</rs-data-table-cell>
+          <rs-data-table-cell class="cell">チューリップ</rs-data-table-cell>
+          <rs-data-table-cell class="cell">サッカー</rs-data-table-cell>
+          <rs-data-table-cell class="cell">フランス</rs-data-table-cell>
         </rs-data-table-row>
       </rs-data-table-body>
     </rs-data-table>
@@ -60,36 +112,88 @@ storiesOf('Components|Data table', module)
 `<rs-data-table class="data-table">
   <rs-data-table-header class="header">
     <rs-data-table-row class="row">
-      <rs-data-table-cell class="cell">sample</rs-data-table-cell>
-      <rs-data-table-cell class="cell">sample</rs-data-table-cell>
-      <rs-data-table-cell class="cell">sample</rs-data-table-cell>
-      <rs-data-table-cell class="cell">sample</rs-data-table-cell>
+      <rs-data-table-cell class="cell">食べ物</rs-data-table-cell>
+      <rs-data-table-cell class="cell">花</rs-data-table-cell>
+      <rs-data-table-cell class="cell">スポーツ</rs-data-table-cell>
+      <rs-data-table-cell class="cell">国</rs-data-table-cell>
     </rs-data-table-row>
   </rs-data-table-header>
   <rs-data-table-body class="body">
     <rs-data-table-row class="row">
-      <rs-data-table-cell class="cell">content</rs-data-table-cell>
-      <rs-data-table-cell class="cell">content</rs-data-table-cell>
-      <rs-data-table-cell class="cell">content</rs-data-table-cell>
-      <rs-data-table-cell class="cell">content</rs-data-table-cell>
+      <rs-data-table-cell class="cell">ラーメン</rs-data-table-cell>
+      <rs-data-table-cell class="cell">ひまわり</rs-data-table-cell>
+      <rs-data-table-cell class="cell">野球</rs-data-table-cell>
+      <rs-data-table-cell class="cell">日本</rs-data-table-cell>
     </rs-data-table-row>
     <rs-data-table-row class="row">
-      <rs-data-table-cell class="cell">content</rs-data-table-cell>
-      <rs-data-table-cell class="cell">content</rs-data-table-cell>
-      <rs-data-table-cell class="cell">content</rs-data-table-cell>
-      <rs-data-table-cell class="cell">content</rs-data-table-cell>
+      <rs-data-table-cell class="cell">寿司</rs-data-table-cell>
+      <rs-data-table-cell class="cell">コスモス</rs-data-table-cell>
+      <rs-data-table-cell class="cell">バスケットボール</rs-data-table-cell>
+      <rs-data-table-cell class="cell">韓国</rs-data-table-cell>
     </rs-data-table-row>
     <rs-data-table-row class="row">
-      <rs-data-table-cell class="cell">content</rs-data-table-cell>
-      <rs-data-table-cell class="cell">content</rs-data-table-cell>
-      <rs-data-table-cell class="cell">content</rs-data-table-cell>
-      <rs-data-table-cell class="cell">content</rs-data-table-cell>
+      <rs-data-table-cell class="cell">ハンバーグ</rs-data-table-cell>
+      <rs-data-table-cell class="cell">紫陽花</rs-data-table-cell>
+      <rs-data-table-cell class="cell">バドミントン</rs-data-table-cell>
+      <rs-data-table-cell class="cell">アメリカ合衆国</rs-data-table-cell>
     </rs-data-table-row>
     <rs-data-table-row class="row">
-      <rs-data-table-cell class="cell">content</rs-data-table-cell>
-      <rs-data-table-cell class="cell">content</rs-data-table-cell>
-      <rs-data-table-cell class="cell">content</rs-data-table-cell>
-      <rs-data-table-cell class="cell">content</rs-data-table-cell>
+      <rs-data-table-cell class="cell">オムライス</rs-data-table-cell>
+      <rs-data-table-cell class="cell">チューリップ</rs-data-table-cell>
+      <rs-data-table-cell class="cell">サッカー</rs-data-table-cell>
+      <rs-data-table-cell class="cell">フランス</rs-data-table-cell>
+    </rs-data-table-row>
+  </rs-data-table-body>
+</rs-data-table>
+
+<rs-data-table class="data-table">
+  <rs-data-table-header class="header">
+    <rs-data-table-row class="row">
+      <rs-data-table-cell class="cell">
+        <rs-checkbox></rs-checkbox>
+      </rs-data-table-cell>
+      <rs-data-table-cell class="cell">食べ物</rs-data-table-cell>
+      <rs-data-table-cell class="cell">花</rs-data-table-cell>
+      <rs-data-table-cell class="cell">スポーツ</rs-data-table-cell>
+      <rs-data-table-cell class="cell">国</rs-data-table-cell>
+    </rs-data-table-row>
+  </rs-data-table-header>
+  <rs-data-table-body class="body">
+    <rs-data-table-row class="row">
+      <rs-data-table-cell class="cell">
+        <rs-checkbox></rs-checkbox>
+      </rs-data-table-cell>
+      <rs-data-table-cell class="cell">ラーメン</rs-data-table-cell>
+      <rs-data-table-cell class="cell">ひまわり</rs-data-table-cell>
+      <rs-data-table-cell class="cell">野球</rs-data-table-cell>
+      <rs-data-table-cell class="cell">日本</rs-data-table-cell>
+    </rs-data-table-row>
+    <rs-data-table-row class="row">
+      <rs-data-table-cell class="cell">
+        <rs-checkbox></rs-checkbox>
+      </rs-data-table-cell>
+      <rs-data-table-cell class="cell">寿司</rs-data-table-cell>
+      <rs-data-table-cell class="cell">コスモス</rs-data-table-cell>
+      <rs-data-table-cell class="cell">バスケットボール</rs-data-table-cell>
+      <rs-data-table-cell class="cell">韓国</rs-data-table-cell>
+    </rs-data-table-row>
+    <rs-data-table-row class="row">
+      <rs-data-table-cell class="cell">
+        <rs-checkbox></rs-checkbox>
+      </rs-data-table-cell>
+      <rs-data-table-cell class="cell">ハンバーグ</rs-data-table-cell>
+      <rs-data-table-cell class="cell">紫陽花</rs-data-table-cell>
+      <rs-data-table-cell class="cell">バドミントン</rs-data-table-cell>
+      <rs-data-table-cell class="cell">アメリカ合衆国</rs-data-table-cell>
+    </rs-data-table-row>
+    <rs-data-table-row class="row">
+      <rs-data-table-cell class="cell">
+        <rs-checkbox></rs-checkbox>
+      </rs-data-table-cell>
+      <rs-data-table-cell class="cell">オムライス</rs-data-table-cell>
+      <rs-data-table-cell class="cell">チューリップ</rs-data-table-cell>
+      <rs-data-table-cell class="cell">サッカー</rs-data-table-cell>
+      <rs-data-table-cell class="cell">フランス</rs-data-table-cell>
     </rs-data-table-row>
   </rs-data-table-body>
 </rs-data-table>

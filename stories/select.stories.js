@@ -39,11 +39,11 @@ storiesOf('Components|Select', module)
     </rs-select>
     <h4>使用方法</h4>
     ${copyCodeBlock(
-` <rs-select class="food-select" label="Pick a Food Group">
-    <option value="grains">Bread, Cereal, Rice, and Pasta</option>
-    <option value="vegetables" disabled>Vegetables</option>
-    <option value="fruit">Fruits</option> 
-  </rs-select>`,
+`<rs-select class="food-select" label="Pick a Food Group">
+  <option value="grains">Bread, Cereal, Rice, and Pasta</option>
+  <option value="vegetables" disabled>Vegetables</option>
+  <option value="fruit">Fruits</option> 
+</rs-select>`,
       { lang: 'html' }
     )}
     <h4>HTML要素</h4>
@@ -93,7 +93,7 @@ storiesOf('Components|Select', module)
         <td>disabled</td>
         <td>オプションを無効にします</td>
         <td>Boolean</td>
-        <td>optionに付けます</td>
+        <td>rs-select・optionどちらにも使えます</td>
       </tr>
       <tr>
         <td>selected</td>
@@ -101,10 +101,28 @@ storiesOf('Components|Select', module)
         <td>Boolean</td>
         <td>optionに付けます</td>
       </tr>
+      <tr>
+        <td>invalid</td>
+        <td>セレクト本体をエラー状態にします</td>
+        <td>Boolean</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>required</td>
+        <td>セレクト本体を必須状態にします</td>
+        <td>Boolean</td>
+        <td>-</td>
+      </tr>
+      <tr>
+      <td>multiple</td>
+        <td>複数選択できるようにします</td>
+        <td>Boolean</td>
+        <td>-</td>
+      </tr>
     </table>
     <h4>テーマ変数</h4>
     <p>
-      rs-switchで使われるテーマ変数です。 <br>
+      rs-selectで使われるテーマ変数です。 <br>
       下記変数に新しく色を指定することで、テーマカラーが上書きされます。
     </p>
     <table>

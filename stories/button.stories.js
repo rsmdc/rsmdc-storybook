@@ -80,9 +80,11 @@ storiesOf('Components|Button', module)
   `)
   .add('使用方法', () => `
     <h4>使用方法</h4>
-    <rs-button class="my-button">sample</rs-button>
-    <rs-button class="my-button -dense">sample</rs-button>
-    <rs-button class="my-button" disabled>sample</rs-button>
+    <div class="button-demo">
+      <rs-button class="my-button">sample</rs-button>
+      <rs-button class="my-button -dense">sample</rs-button>
+      <rs-button class="my-button" disabled>sample</rs-button>
+    </div>
     ${copyCodeBlock(
 `<rs-button class="my-button">sample</rs-button>
 <rs-button class="my-button -dense">sample</rs-button>
@@ -196,7 +198,7 @@ storiesOf('Components|Button/スタイルのカスタマイズ/ボタンタイ�
       { lang: 'html' }
     )}
     ${copyCodeBlock(
-`@import '@rsmdc/css/rs-button.scss';
+`@import '@rsmdc/button/rs-button.scss';
 
 .my-button {
   &.-dense {
@@ -228,7 +230,7 @@ storiesOf('Components|Button/スタイルのカスタマイズ/ボタンタイ�
       { lang: 'html' }
     )}
     ${copyCodeBlock(
-`@import '@rsmdc/css/rs-button.scss';
+`@import '@rsmdc/button/rs-button.scss';
 
 .my-button {
   &.-raised {
@@ -263,7 +265,7 @@ storiesOf('Components|Button/スタイルのカスタマイズ/ボタンタイ�
       { lang: 'html' }
     )}
     ${copyCodeBlock(
-`@import '@rsmdc/css/rs-button.scss';
+`@import '@rsmdc/button/rs-button.scss';
 
 .my-button {
   &.-unelevated {
@@ -298,7 +300,7 @@ storiesOf('Components|Button/スタイルのカスタマイズ/ボタンタイ�
       { lang: 'html' }
     )}
     ${copyCodeBlock(
-`@import '@rsmdc/css/rs-button.scss';
+`@import '@rsmdc/button/rs-button.scss';
 
 .my-button {
   &.-outlined {
@@ -328,7 +330,7 @@ storiesOf('Components|Button/スタイルのカスタマイズ/ボタンタイ�
       { lang: 'html' }
     )}
     ${copyCodeBlock(
-`@import '@rsmdc/css/rs-button.scss';
+`@import '@rsmdc/button/rs-button.scss';
 
 .my-button {
   &.-fab {

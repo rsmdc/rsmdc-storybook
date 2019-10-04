@@ -25,12 +25,13 @@ storiesOf('Components|Dialog', module)
   `)
   .add('使用方法', () => `
     <h4>使用方法</h4>
-    <rs-dialog class="dialog" opened>
+
+    <rs-dialog class="dialog -demo" opened>
       <rs-dialog-title>タイトル</rs-dialog-title>
       <rs-dialog-content>ダイアログの内容が入る</rs-dialog-content>
-      <rs-button>ボタン1</rs-button>
-      <rs-button>ボタン2</rs-button>
+      <rs-button onclick="window.document.querySelector('.dialog.-demo').removeAttribute('opened')">OK</rs-button>
     </rs-dialog>
+
     ${copyCodeBlock(
 `<rs-dialog class="dialog">
   <rs-dialog-title class="title">タイトル</rs-dialog-title>
@@ -39,8 +40,8 @@ storiesOf('Components|Dialog', module)
   <rs-button class="button">ボタン2</rs-button>
 </rs-dialog>
 `,
-    { lang: 'html' }
-  )}
+      { lang: 'html' }
+    )}
     <h4>HTML要素</h4>
     <p>custom elementsを<code>rs</code>のプレフィックスをつけて定義した前提です。<br>
       下記HTML要素を使うことで、custom elementsが表示されます。

@@ -158,6 +158,26 @@ storiesOf('Components|Drawer', module)
         <td>-</td>
       </tr>
     </table>
+
+    <h4>テーマ変数</h4>
+    <p>
+      rs-snackbarで使われるテーマ変数です。 <br>
+      下記変数に新しく色を指定することで、テーマカラーが上書きされます。
+    </p>
+    <table>
+      <tr>
+        <th>変数名</th>
+        <th>説明</th>
+      </tr>
+      <tr>
+        <td>$rs-theme-surface</td>
+        <td>背景色に関わります。</td>
+      </tr>
+      <tr>
+      <td>$rs-theme-on-surface</td>
+      <td>テキストの色に関わります。</td>
+    </tr>
+    </table>
   `)
 
 storiesOf('Components|Drawer/スタイルのカスタマイズ/ドロワーのタイプを変える', module)

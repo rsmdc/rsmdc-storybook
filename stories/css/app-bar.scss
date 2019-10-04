@@ -10,20 +10,12 @@ $material-icons-font-path: '../../node_modules/material-icons/iconfont/';
    &.-dense {
       @include rs-app-bar-type(dense);
    }
-
-   &.-short {
-      @include rs-app-bar-type(short);
-   }
    
    &.-prominent {
       @include rs-app-bar-type(prominent);
       --rs-app-bar-row--overflow-scrolling:touch;
       --rs-app-bar-row--overflow-y:auto;
       --rs-app-bar-row--overflow-x:hidden;
-   }
-   
-   &.-fixed {
-      @include rs-app-bar-type(fixed);
    }
 
    &.-collapsed {

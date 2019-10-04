@@ -40,11 +40,6 @@ storiesOf('Components|App bar', module)
         App barが固定される <br>
         <a class="link" href="#" data-sb-kind="Components|app-bar/スタイルのカスタマイズ/アップバーのタイプを変える" data-sb-story="fixed">参照はこちら</a>
       </li>
-      <li>
-        collapsed <br>
-        アイコンのみの表示 <br>
-        <a class="link" href="#" data-sb-kind="Components|app-bar/スタイルのカスタマイズ/アップバーのタイプを変える" data-sb-story="collapsed">参照はこちら</a>
-      </li>
     </ul>
   `)
   .add('使用方法', () => `
@@ -67,7 +62,7 @@ storiesOf('Components|App bar', module)
       { lang: 'html' }
     )}
     ${copyCodeBlock(
-`@import '@rsmdc/top-app-bar/rs-top-app-bar.scss';
+`@import '@rsmdc/appbar/rs-app-bar.scss';
 
 .app-bar {
   > .nav {
@@ -86,7 +81,7 @@ storiesOf('Components|App bar', module)
       { lang: 'scss' }
     )}
     <h4>HTML要素</h4>
-    <p>custom elementsを<code>rs</code>と<code>app</code>のプレフィックスをつけて定義した前提です。<br>
+    <p>custom elementsを<code>rs</code>のプレフィックスをつけて定義した前提です。<br>
       下記HTML要素を使うことで、custom elementsが表示されます。
     </p>
     <table>
@@ -135,7 +130,28 @@ storiesOf('Components|App bar', module)
     </table>
 
     <h4>HTML属性</h4>
-    <p>なし</p>
+    <p>下記HTML属性をつけることで、custom elementsの状態が変化します。</p>
+    <table>
+      <tr>
+        <th>属性</th>
+        <th>説明</th>
+        <th>タイプ</th>
+        <th>備考</th>
+      </tr>
+      <tr>
+        <td>fixed</td>
+        <td>app-barを上部に固定します</td>
+        <td>Boolean</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>short</td>
+        <td>スクロール時のapp-barの長さを短くし、上部に固定します</td>
+        <td>Boolean</td>
+        <td>-</td>
+      </tr>
+    </table>
+
     <h4>テーマ変数</h4>
     <p>
     　rs-app-barで使われるテーマ変数です。 <br>
@@ -226,7 +242,7 @@ storiesOf('Components|App bar/スタイルのカスタマイズ/アップバー�
     )}
   `)
   .add('short', () => `
-    <rs-app-bar class="app-bar -short">
+    <rs-app-bar class="app-bar -short" compactable>
       <rs-app-bar-nav class="nav"></rs-app-bar-nav>
       <rs-app-bar-title class="title">タイトル</rs-app-bar-title>
       <rs-app-bar-tool class="tool">
@@ -235,14 +251,9 @@ storiesOf('Components|App bar/スタイルのカスタマイズ/アップバー�
     </rs-app-bar>
     <h4>short</h4>
     <p>app barの横幅を短くする。</p>
-    <h4>使用するmixin</h4>
-    ${copyCodeBlock(
-      '@include rs-app-bar-type($type);',
-      { lang: 'scss' }
-    )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
-`<rs-app-bar class="app-bar -short">
+`<rs-app-bar class="app-bar -short" compactable>
   <rs-app-bar-nav class="nav" />
   <rs-app-bar-title class="title">タイトル</rs-app-bar-title>
   <rs-app-bar-tool class="tool">
@@ -255,9 +266,6 @@ storiesOf('Components|App bar/スタイルのカスタマイズ/アップバー�
 `@import '@rsmdc/appbar/rs-app-bar.scss';
 
 .app-bar {
-  &.-short {
-    @include rs-app-bar-type(short);
-  }
   > .nav {
     @include rs-app-bar-nav-icon-image(
       Material Icons,
@@ -324,7 +332,7 @@ storiesOf('Components|App bar/スタイルのカスタマイズ/アップバー�
     )}
   `)
   .add('fixed', () => `
-    <rs-app-bar class="app-bar -fixed">
+    <rs-app-bar class="app-bar -fixed" fixed>
       <rs-app-bar-nav class="nav"></rs-app-bar-nav>
       <rs-app-bar-title class="title">タイトル</rs-app-bar-title>
       <rs-app-bar-tool class="tool">
@@ -333,14 +341,9 @@ storiesOf('Components|App bar/スタイルのカスタマイズ/アップバー�
     </rs-app-bar>
     <h4>fixed</h4>
     App barを固定する。
-    <h4>使用するmixin</h4>
-    ${copyCodeBlock(
-      '@include rs-app-bar-type($type);',
-      { lang: 'scss' }
-    )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
-`<rs-app-bar class="app-bar -fixed">
+`<rs-app-bar class="app-bar -fixed" fixed>
   <rs-app-bar-nav class="nav" />
   <rs-app-bar-title class="title">タイトル</rs-app-bar-title>
   <rs-app-bar-tool class="tool">
@@ -353,9 +356,6 @@ storiesOf('Components|App bar/スタイルのカスタマイズ/アップバー�
 `@import '@rsmdc/appbar/rs-app-bar.scss';
 
 .app-bar {
-  &.-fixed {
-     @include rs-app-bar-type(fixed);
-  }
   > .nav {
     @include rs-app-bar-nav-icon-image(
       Material Icons,
