@@ -27,10 +27,12 @@ storiesOf('Components|Chip', module)
     <h4>使用方法</h4>
     <div class="chip-demo">
       <rs-chip class="chip">sample</rs-chip>
+      <rs-chip class="chip" selected>sample</rs-chip>
     </div>
 
     ${copyCodeBlock(
 `<rs-chip class="chip">sample</rs-chip>
+<rs-chip class="chip" selected>sample</rs-chip>
 `,
     { lang: 'html' }
   )}

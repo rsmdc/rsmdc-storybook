@@ -145,7 +145,7 @@ storiesOf('Components|App bar', module)
         <td>-</td>
       </tr>
       <tr>
-        <td>short</td>
+        <td>compactable</td>
         <td>スクロール時のapp-barの長さを短くし、上部に固定します</td>
         <td>Boolean</td>
         <td>-</td>
@@ -372,55 +372,6 @@ storiesOf('Components|App bar/スタイルのカスタマイズ/アップバー�
       { lang: 'scss' }
     )}
   `)
-  .add('collapsed', () => `
-    <rs-app-bar class="app-bar -collapsed">
-      <rs-app-bar-nav class="nav"></rs-app-bar-nav>
-      <rs-app-bar-title class="title">タイトル</rs-app-bar-title>
-      <rs-app-bar-tool class="tool">
-        <rs-app-bar-item class="item -search"></rs-app-bar-item>
-      </rs-app-bar-tool>
-    </rs-app-bar>
-    <h4>collapsed</h4>
-    <p>shortも同時に指定できる。</p>
-    <h4>使用するmixin</h4>
-    ${copyCodeBlock(
-      '@include rs-app-bar-type($type);',
-      { lang: 'scss' }
-    )}
-    <h4>使用方法</h4>
-    ${copyCodeBlock(
-`<rs-app-bar class="app-bar -collapsed">
-  <rs-app-bar-nav class="nav" />
-  <rs-app-bar-title class="title">タイトル</rs-app-bar-title>
-  <rs-app-bar-tool class="tool">
-    <rs-app-bar-item class="item -search" />
-  </rs-app-bar-tool>
-</rs-app-bar>`,
-      { lang: 'html' }
-    )}
-    ${copyCodeBlock(
-`@import '@rsmdc/appbar/rs-app-bar.scss';
-
-.app-bar {
-  &.-collapsed {
-    @include rs-app-bar-type(collapsed, short);
-  }
-  > .nav {
-    @include rs-app-bar-nav-icon-image(
-      Material Icons,
-      map-get($material-icons-codepoints, menu)
-    );
-  }
-  > .tool > .item.-search {
-    @include rs-app-bar-action-icon-image(
-      Material Icons,
-      map-get($material-icons-codepoints, search)
-    );
-  }
-}`,
-      { lang: 'scss' }
-    )} 
-`)
 
 storiesOf('Components|App bar/スタイルのカスタマイズ', module)
 //   .add('タイトルの色を変える', () => `

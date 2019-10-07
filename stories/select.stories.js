@@ -85,7 +85,7 @@ storiesOf('Components|Select', module)
       </tr>
       <tr>
         <td>value</td>
-        <td>初期値を設定します</td>
+        <td>値を設定します</td>
         <td>String</td>
         <td>-</td>
       </tr>
@@ -97,7 +97,7 @@ storiesOf('Components|Select', module)
       </tr>
       <tr>
         <td>selected</td>
-        <td>オブションを選択状態にします</td>
+        <td>オプションを選択状態にします</td>
         <td>Boolean</td>
         <td>optionに付けます</td>
       </tr>

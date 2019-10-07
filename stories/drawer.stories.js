@@ -212,65 +212,6 @@ storiesOf('Components|Drawer/スタイルのカスタマイズ/ドロワーの�
 </rs-app-layout>`,
       { lang: 'html' }
     )}
-    ${copyCodeBlock(
-`@import '@rsmdc/drawer/rs-drawer.scss';
-
-.app-layout {
-  > .drawer {
-    @include rs-drawer-type(permanent);
-  }
-}`,
-      { lang: 'scss' }
-    )}
-  `)
-  .add('dismissible', () => `
-    <rs-app-layout class="app-layout">
-      <rs-app-layout-content class="contents">
-        <rs-app-bar class="appbar">
-          <rs-app-bar-nav class="nav"></rs-app-bar-nav>
-          <rs-app-bar-title>title</rs-app-bar-title>
-        </rs-app-bar>
-        <h4>dismissible</h4>
-      </rs-app-layout-content>
-    </rs-app-layout>
-    <p>
-      ドロワーが左側に表示される。 <br>
-      opened属性の有無によって表示・非表示が切り替わる。
-    </p>
-    <h4>使用するmixin</h4>
-    ${copyCodeBlock(
-      `@include rs-drawer-type($type);`,
-      { lang: 'scss' }
-    )}
-    <h4>使用方法</h4>
-    ${copyCodeBlock(
-`<rs-app-layout class="app-layout">
-  <rs-drawer class="drawer" opened>
-    <rs-drawer-header class="header">
-      <rs-drawer-title class="title">タイトル</rs-drawer-title>
-      <rs-drawer-subtitle class="subtitle">サブタイトル</rs-drawer-subtitle>
-    </rs-drawer-header>
-    <rs-drawer-content class="contents" />
-  </rs-drawer>
-  <rs-app-layout-content class="contents">
-    <rs-app-bar class="appbar">
-      <rs-app-bar-nav class="nav" />
-      <rs-app-bar-title>title</rs-app-bar-title>
-    </rs-app-bar>
-  </rs-app-layout-content>
-</rs-app-layout>`,
-      { lang: 'html' }
-    )}
-    ${copyCodeBlock(
-`@import '@rsmdc/drawer/rs-drawer.scss';
-
-.app-layout {
-  > .drawer {
-    @include rs-drawer-type(dismissible);
-  }
-}`,
-      { lang: 'scss' }
-    )}
   `)
   .add('modal', () => `
     <rs-app-layout class="app-layout">
