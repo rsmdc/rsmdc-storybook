@@ -38,19 +38,8 @@ $ yarn add --dev node-sass sass-loader`,
     <p>plugins/custom-elements.client.js</p>
 ${copyCodeBlock(
 `const { 
-  Button,
   TabItem,
   TabBar,
-  ListTextPrimary, 
-  ListTextSecondary,
-  ListText, 
-  ListGraphic, 
-  ListMeta, 
-  ListItem, 
-  ListDivider, 
-  ListSubheader,
-  ListGroup, 
-  List,
   CardActions,
   CardMedia,
   CardDescription,
@@ -59,48 +48,45 @@ ${copyCodeBlock(
   CardHeader,
   CardContents,
   Card,
-  TopAppBarActionItem,
-  TopAppBarActions,
-  TopAppBarTitle,
-  TopAppBarNav,
-  TopAppBar,
-  DrawerContent,
-  DrawerTitle,
-  DrawerSubtitle,
-  DrawerHeader,
-  Drawer,
   Menu,
   TextFieldAction,
   TextArea,
   TextField,
   FormError,
   FormHelper,
-  FormField,
-  AppLayoutContent,
-  AppLayout,
+  FormField
 } = require('@rsmdc/rsmdc')
-const select = require('@rsmdc/select/loader')
-const radio = require('@rsmdc/radio/loader')
+const appbar = require('@rsmdc/appbar/loader')
+const appLayout = require('@rsmdc/app-layout/loader')
+const button = require('@rsmdc/button/loader')
 const checkbox = require('@rsmdc/checkbox/loader')
+const chips = require('@rsmdc/chips/loader')
+const dataTable = require('@rsmdc/data-table/loader')
+const dialog = require('@rsmdc/dialog/loader')
+const drawer = require('@rsmdc/drawer/loader')
+const list = require('@rsmdc/list/loader')
+const radio = require('@rsmdc/radio/loader')
+const select = require('@rsmdc/select/loader')
+const slider = require('@rsmdc/slider/loader')
+const snackbar = require('@rsmdc/snackbar/loader')
+const rsSwitch = require('@rsmdc/switch/loader')
 
-select.defineCustomElements(window)
-radio.defineCustomElements(window)
+appbar.defineCustomElements(window)
+appLayout.defineCustomElements(window)
+button.defineCustomElements(window)
 checkbox.defineCustomElements(window)
-window.customElements.define('rs-button', Button)
-window.customElements.define('rs-radio', Radio)
-window.customElements.define('rs-checkbox', Checkbox)
+chips.defineCustomElements(window)
+dataTable.defineCustomElements(window)
+dialog.defineCustomElements(window)
+drawer.defineCustomElements(window)
+list.defineCustomElements(window)
+radio.defineCustomElements(window)
+select.defineCustomElements(window)
+slider.defineCustomElements(window)
+snackbar.defineCustomElements(window)
+rsSwitch.defineCustomElements(window)
 window.customElements.define('rs-tab-item', TabItem)
 window.customElements.define('rs-tab-bar', TabBar)
-window.customElements.define('rs-list-primary', ListTextPrimary)
-window.customElements.define('rs-list-secondary', ListTextSecondary)
-window.customElements.define('rs-list-text', ListText)
-window.customElements.define('rs-list-graphic', ListGraphic)
-window.customElements.define('rs-list-meta', ListMeta)
-window.customElements.define('rs-list-item', ListItem)
-window.customElements.define('rs-list-divider', ListDivider)
-window.customElements.define('rs-list-subheader', ListSubheader)
-window.customElements.define('rs-list-group', ListGroup)
-window.customElements.define('rs-list', List)
 window.customElements.define('rs-card-actions', CardActions)
 window.customElements.define('rs-card-media', CardMedia)
 window.customElements.define('rs-card-description', CardDescription)
@@ -109,11 +95,6 @@ window.customElements.define('rs-card-title', CardTitle)
 window.customElements.define('rs-card-header', CardHeader)
 window.customElements.define('rs-card-contents', CardContents)
 window.customElements.define('rs-card', Card)
-window.customElements.define('rs-drawer-title', DrawerTitle)
-window.customElements.define('rs-drawer-subtitle', DrawerSubtitle)
-window.customElements.define('rs-drawer-header', DrawerHeader)
-window.customElements.define('rs-drawer-content', DrawerContent)
-window.customElements.define('rs-drawer', Drawer)
 window.customElements.define('rs-menu', Menu)
 window.customElements.define('rs-text-action', TextFieldAction)
 window.customElements.define('rs-textarea', TextArea)
@@ -121,13 +102,6 @@ window.customElements.define('rs-textfield', TextField)
 window.customElements.define('rs-form-error', FormError)
 window.customElements.define('rs-form-helper', FormHelper)
 window.customElements.define('rs-form-field', FormField)
-window.customElements.define('rs-app-layout-content', AppLayoutContent)
-window.customElements.define('rs-app-layout', AppLayout)
-window.customElements.define('rs-app-bar-title', TopAppBarTitle)
-window.customElements.define('rs-app-bar-item', TopAppBarActionItem)
-window.customElements.define('rs-app-bar-actions', TopAppBarActions)
-window.customElements.define('rs-app-bar-nav', TopAppBarNav)
-window.customElements.define('rs-app-bar', TopAppBar)
 `,
       { lang: 'js' }
     )}
@@ -238,13 +212,16 @@ Vue.directive('model3', VModel3)
 `<template>
   <div>
     <!-- radio -->
-    <rs-radio id="male" label="男" name="sex" value="1" type="radio" v-model-3="sex" />
-    <rs-radio id="female" label="女" name="sex" value="2" type="radio" v-model-3="sex" />
+    <rs-radio id="cat" label="cat" name="animals" value="1" type="radio" v-model-3="animals" />
+    <rs-radio id="dog" label="dog" name="animals" value="2" type="radio" v-model-3="animals" />
 
     <!-- checkbox -->
-    <x-checkbox id="java" label="java" value="1" type="checkbox" v-model-3="languages" />
-    <x-checkbox id="ruby" label="ruby" value="2" type="checkbox" v-model-3="languages" />
-    <x-checkbox id="php" label="php" value="3" type="checkbox" v-model-3="languages" />
+    <rs-checkbox id="confirmation" label="confirmation" type="checkbox" v-model-3="selectCheckbox" />
+
+    <!-- multiple checkbox -->
+    <rs-checkbox id="java" label="java" value="1" type="checkbox" v-model-3="languages" />
+    <rs-checkbox id="ruby" label="ruby" value="2" type="checkbox" v-model-3="languages" />
+    <rs-checkbox id="php" label="php" value="3" type="checkbox" v-model-3="languages" />
   
     <!-- textfield・textarea -->
     <rs-textfield label="メールアドレス" :value="mail" type="text" v-model-3="mail"/>
@@ -256,17 +233,31 @@ Vue.directive('model3', VModel3)
       <option value="2">散歩</option>
       <option value="3">読書</option> 
     </rs-select>
+
+    <!-- multiple select -->
+    <rs-select label="趣味" type="select" v-model-3="hobbies" multiple>
+      <option value="1">料理</option>
+      <option value="2">散歩</option>
+      <option value="3">読書</option> 
+    </rs-select>
+
+    <!-- switch -->
+    <rs-switch id="login" label="login" type="checkbox" v-model-3="login" />
+
   </div>
 </template>
 <script>
   export default {
     data() {
       return {
-        sex: '',
+        animals: '',
         languages:[],
         mail: '',
         memo: '',
-        hobby: ''
+        hobby: '',
+        hobbies: []
+        selectCheckbox: '',
+        login: ''
       }
     }
   }
@@ -306,6 +297,10 @@ Vue.directive('model3', VModel3)
       <tr>
         <td><code>rs-select</code></td>
         <td>select</td>
+      </tr>
+      <tr>
+        <td><code>rs-switch</code></td>
+        <td>checkbox</td>
       </tr>
     </table>
   `)
@@ -361,6 +356,53 @@ export default {
       <code>variables.scss</code>はimportするファイルの先頭に置いてください。<br>
       これにより各コンポーネントのテーマ変数が上書きされます。
     </p>
-    <p>Checkbox、Radioが対応済みです。</p>
+    <p>[注意]　下記のコンポーネントはまだテーマ変数に対応していません</p>
+    <ul>
+      <li>card</li>
+      <li>tabs</li>
+      <li>textfield</li>
+    </ul>
   `)
+  .add('icon-font使用方法', () => `
+    <h4>icon-font使用方法</h4>
+    <p>アイコンが表示できるコンポーネントは、icon-fontにも対応しています。</p>
+
+    <h5>1. パッケージのインストール</h5>
+        ${copyCodeBlock(
+  `$ yarn add material-icons`,
+      { lang: 'shell' }
+    )}
+    <h5>2. 変数ファイルの作成</h5>
+    <p>assets/variables.scss</p>
+        ${copyCodeBlock(
+  `$material-icons-font-path: '~material-icons/iconfont/';
+@import '~material-icons/iconfont/material-icons';`,
+      { lang: 'scss' }
+    )}
+    <p>適当なファイルでicon-fontのパスを書き換えます。</p>
+    <h5>3. nuxt.config.jsの編集</h5>
+    <p>nuxt.config.js</p>
+    ${copyCodeBlock(
+  `import path from 'path'
+
+  export default {
+
+  ...
+
+  build: {
+    loaders: {
+      scss: {
+        includePaths: [path.resolve(__dirname, 'node_modules')],
+        data: 
+        \`@import "~assets/variables"; \`
+        \`@import "@rsmdc/rsmdc/rsmdc"; \`
+      }
+    }
+  }
+  }`,
+      { lang: 'js' }
+    )}
+    <p><code>build.loaders.scss.data</code>に作成したファイルを追加します。</p>
+  `)
+
     
