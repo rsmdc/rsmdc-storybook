@@ -77,14 +77,6 @@ storiesOf('Components|Drawer', module)
 </rs-app-layout>`,
       { lang: 'html' }
     )}
-    ${copyCodeBlock(
-`.app-layout {
-  > .drawer {
-    @include rs-drawer-type(dismissible);
-  }
-}`,
-      { lang: 'scss' }
-    )}
     <h4>HTML要素</h4>
     <p>custom elementsを<code>rs</code>と<code>drawer</code>のプレフィックスをつけて定義した前提です。<br>
       下記HTML要素を使うことで、custom elementsが表示されます。
