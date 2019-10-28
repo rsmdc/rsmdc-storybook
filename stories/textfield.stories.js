@@ -277,7 +277,6 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ/テキスト�
   }`,
       { lang: 'scss' }
     )}
-    <p>オプション</p>
   `)
 
 storiesOf('Components|Textfield/スタイルのカスタマイズ', module)

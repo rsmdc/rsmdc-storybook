@@ -1,5 +1,10 @@
 @import "@rsmdc/snackbar/rs-snackbar";
 
-.rs-snackbar {
-  @include rs-snackbar-type(stacked);
+.snack-bar {
+  &.-stacked {
+    @include rs-snackbar-type(stacked);
+  }
+  &.-leading {
+    @include rs-snackbar-type(leading);
+  }
 }

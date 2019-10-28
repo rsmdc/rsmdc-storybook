@@ -1,1 +1,7 @@
 @import "@rsmdc/dialog/rs-dialog";
+
+.info-dialog {
+  &.-stacked {
+    @include rs-dialog-type(stacked);
+  }
+}

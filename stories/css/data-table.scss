@@ -2,4 +2,8 @@
 
 .data-table {
   padding-bottom: 20px;
+  
+  &.-body-height {
+    @include rs-data-table-height(160px);
+  }
 }
