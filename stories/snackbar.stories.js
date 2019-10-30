@@ -37,14 +37,6 @@ storiesOf('Components|Snackbar', module)
 `,
       { lang: 'html' }
     )}
-  
-  ${copyCodeBlock(
-`.rs-snackbar {
-  @include rs-snackbar-type(stacked);
-}
-`,
-      { lang: 'scss' }
-    )}
     <h4>HTML要素</h4>
     <p>custom elementsを<code>rs</code>のプレフィックスをつけて定義した前提です。<br>
       下記HTML要素を使うことで、custom elementsが表示されます。

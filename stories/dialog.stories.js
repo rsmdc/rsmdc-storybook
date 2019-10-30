@@ -29,7 +29,7 @@ storiesOf('Components|Dialog', module)
     <rs-dialog class="info-dialog" opened>
       <rs-dialog-title>タイトル</rs-dialog-title>
       <rs-dialog-content>ダイアログの内容が入る</rs-dialog-content>
-      <rs-button onclick="window.document.querySelector('.dialog.-demo').removeAttribute('opened')">OK</rs-button>
+      <rs-button onclick="window.document.querySelector('.info-dialog').removeAttribute('opened')">OK</rs-button>
     </rs-dialog>
 
     ${copyCodeBlock(
@@ -126,7 +126,7 @@ storiesOf('Components|Dialog', module)
     </table>
   `)
 
-  storiesOf('Components|Dialog/スタイルのカスタマイズ/スナックバーのタイプを変える', module)
+  storiesOf('Components|Dialog/スタイルのカスタマイズ/ダイアログのタイプを変える', module)
 
   .add('normal（デフォルト）', () => `
     <h4>normal</h4>
