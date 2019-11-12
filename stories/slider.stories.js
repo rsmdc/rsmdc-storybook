@@ -130,7 +130,7 @@ storiesOf('Components|Slider/スタイルのカスタマイズ', module)
 
 .my-slider {
   &.-slide-orange {
-    @include rs-slider-highlight-color(blue);
+    @include rs-slider-highlight-color(orange);
   }
 }
 `,
