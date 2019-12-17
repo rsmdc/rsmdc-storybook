@@ -149,7 +149,6 @@ storiesOf('Components|Tabs/スタイルのカスタマイズ', module)
 .tab-bar {
   &.-activated-aqua {
     @include rs-tab-activated-ink-color(aqua);
-    @include rs-tab-indicator-color(aqua);
   }
 }`,
       { lang: 'scss' }
@@ -222,7 +221,6 @@ storiesOf('Components|Tabs/スタイルのカスタマイズ', module)
 .tab-bar {
   &.-indicator.-orange {
     @include rs-tab-indicator-color(orange);
-    @include rs-tab-activated-ink-color(orange);
   }
 }`,
       { lang: 'scss' }
@@ -268,42 +266,42 @@ storiesOf('Components|Tabs/スタイルのカスタマイズ', module)
       <li>$height: 線の太さを指定 <br> デフォルトは2px</li>
     </ul>
   `)
-  .add('タブの下線幅をテキスト幅に合わせる', () => `
-    <h4>タブの下線幅をテキストの幅に合わせる。</h4>
-    <rs-tab-bar class="tab-bar -indicator -fixed-width">
-      <rs-tab-item class="tab" activated>tab1</rs-tab-item>
-      <rs-tab-item class="tab">tab2</rs-tab-item>
-      <rs-tab-item class="tab">tab3</rs-tab-item>
-    </rs-tab-bar>
-    <h4>使用するmixin</h4>
-    ${copyCodeBlock(
-      `@include rs-tab-indicator-width-fixed-contents;`,
-      { lang: 'scss' }
-    )}
-    <h4>使用方法</h4>
-    ${copyCodeBlock(
-`<rs-tab-bar class="tab-bar -indicator -fixed-width">
-  <rs-tab-item class="tab" activated>tab1</rs-tab-item>
-  <rs-tab-item class="tab">tab2</rs-tab-item>
-  <rs-tab-item class="tab">tab3</rs-tab-item>
-</rs-tab-bar>`,
-      { lang: 'html' }
-    )}
-    ${copyCodeBlock(
-`@import '@rsmdc/tabs/rs-tabs.scss';
+//   .add('タブの下線幅をテキスト幅に合わせる', () => `
+//     <h4>タブの下線幅をテキストの幅に合わせる。</h4>
+//     <rs-tab-bar class="tab-bar -indicator -fixed-width">
+//       <rs-tab-item class="tab" activated>tab1</rs-tab-item>
+//       <rs-tab-item class="tab">tab2</rs-tab-item>
+//       <rs-tab-item class="tab">tab3</rs-tab-item>
+//     </rs-tab-bar>
+//     <h4>使用するmixin</h4>
+//     ${copyCodeBlock(
+//       `@include rs-tab-indicator-width-fixed-contents;`,
+//       { lang: 'scss' }
+//     )}
+//     <h4>使用方法</h4>
+//     ${copyCodeBlock(
+// `<rs-tab-bar class="tab-bar -indicator -fixed-width">
+//   <rs-tab-item class="tab" activated>tab1</rs-tab-item>
+//   <rs-tab-item class="tab">tab2</rs-tab-item>
+//   <rs-tab-item class="tab">tab3</rs-tab-item>
+// </rs-tab-bar>`,
+//       { lang: 'html' }
+//     )}
+//     ${copyCodeBlock(
+// `@import '@rsmdc/tabs/rs-tabs.scss';
 
-.tab-bar {
-  &.-indicator.-fixed-width {
-    @include rs-tab-indicator-width-fixed-contents;
-  }
-}`,
-      { lang: 'scss' }
-    )}
-    <p>オプション</p>
-    <ul>
-      <li>なし（mixinを記述すれば自動でテキストの幅に合わせてくれる）</li>
-    </ul>
-  `)
+// .tab-bar {
+//   &.-indicator.-fixed-width {
+//     @include rs-tab-indicator-width-fixed-contents;
+//   }
+// }`,
+//       { lang: 'scss' }
+//     )}
+//     <p>オプション</p>
+//     <ul>
+//       <li>なし（mixinを記述すれば自動でテキストの幅に合わせてくれる）</li>
+//     </ul>
+//   `)
   .add('タブバーの幅を変える', () =>  `
     <h4>タブバーの幅を指定した幅に変える。</h4>
     <rs-tab-bar class="tab-bar -bar -width">
@@ -378,48 +376,48 @@ storiesOf('Components|Tabs/スタイルのカスタマイズ', module)
       <li>$width: タブの横幅を指定 <br> 例）150px</li>
     </ul>
   `)
-  .add('タブ全体の位置を変える', () => `
-    <h4>タブ全体の位置を指定した位置に変える。</h4>
-    <span>タブ幅を変更した時有効</span>
-    <rs-tab-bar class="tab-bar -bar -position">
-      <rs-tab-item class="tab" activated>tab1</rs-tab-item>
-      <rs-tab-item class="tab">tab2</rs-tab-item>
-      <rs-tab-item class="tab">tab3</rs-tab-item>
-    </rs-tab-bar>
-    <h4>使用するmixin</h4>
-    ${copyCodeBlock(
-      `@include rs-tab-bar-position($position);`,
-      { lang: 'scss' }
-    )}
-    <h4>使用方法</h4>
-    ${copyCodeBlock(
-`<rs-tab-bar class="tab-bar -bar -position">
-  <rs-tab-item class="tab" activated>tab1</rs-tab-item>
-  <rs-tab-item class="tab">tab2</rs-tab-item>
-  <rs-tab-item class="tab">tab3</rs-tab-item>
-</rs-tab-bar>`,
-      { lang: 'html' }
-    )}
-    ${copyCodeBlock(
-`@import '@rsmdc/tabs/rs-tabs.scss';
+//   .add('タブ全体の位置を変える', () => `
+//     <h4>タブ全体の位置を指定した位置に変える。</h4>
+//     <span>タブ幅を変更した時有効</span>
+//     <rs-tab-bar class="tab-bar -bar -position">
+//       <rs-tab-item class="tab" activated>tab1</rs-tab-item>
+//       <rs-tab-item class="tab">tab2</rs-tab-item>
+//       <rs-tab-item class="tab">tab3</rs-tab-item>
+//     </rs-tab-bar>
+//     <h4>使用するmixin</h4>
+//     ${copyCodeBlock(
+//       `@include rs-tab-bar-position($position);`,
+//       { lang: 'scss' }
+//     )}
+//     <h4>使用方法</h4>
+//     ${copyCodeBlock(
+// `<rs-tab-bar class="tab-bar -bar -position">
+//   <rs-tab-item class="tab" activated>tab1</rs-tab-item>
+//   <rs-tab-item class="tab">tab2</rs-tab-item>
+//   <rs-tab-item class="tab">tab3</rs-tab-item>
+// </rs-tab-bar>`,
+//       { lang: 'html' }
+//     )}
+//     ${copyCodeBlock(
+// `@import '@rsmdc/tabs/rs-tabs.scss';
 
-.tab-bar {
-  &.-bar.-position {
-    @include rs-tab-fixed-width(90px);
-    @include rs-tab-bar-position(align-center);
-  }
-}`,
-      { lang: 'scss' }
-    )}
-    <p>オプション</p>
-    <ul>
-      <li>
-        $position: 位置の指定 <br>
-        align-startとalign-endとalign-centerがある（ デフォルトはalign-start ）<br>
-        タブの幅を指定した際に有効
-      </li>
-    </ul>
-  `)
+// .tab-bar {
+//   &.-bar.-position {
+//     @include rs-tab-fixed-width(90px);
+//     @include rs-tab-bar-position(align-center);
+//   }
+// }`,
+//       { lang: 'scss' }
+//     )}
+//     <p>オプション</p>
+//     <ul>
+//       <li>
+//         $position: 位置の指定 <br>
+//         align-startとalign-endとalign-centerがある（ デフォルトはalign-start ）<br>
+//         タブの幅を指定した際に有効
+//       </li>
+//     </ul>
+//   `)
   .add('アイコンをつける', () => `
     <h4>タブの横に指定したアイコンを表示させる。</h4>
     <rs-tab-bar class="tab-bar">
