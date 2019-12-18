@@ -85,7 +85,8 @@ storiesOf('Components|Tabs', module)
     </table>
 
     <h4>テーマ変数</h4>
-    <p>rs-tabsで使われるテーマ変数です。<br>
+    <p>
+      rs-tabsで使われるテーマ変数です。<br>
       下記変数に新しく色を指定することで、テーマカラーが上書きされます。
     </p>
     <table>
