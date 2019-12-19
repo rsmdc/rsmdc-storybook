@@ -239,11 +239,22 @@ storiesOf('Components|Textfield', module)
       </tr>
       <tr>
         <td>$rs-theme-primary</td>
-        <td>選択状態のラベル、枠線、キャレットの色に関わります。</td>
+        <td>選択状態のラベル、下線、枠線、キャレットの色に関わります。</td>
       </tr>
       <tr>
         <td>$rs-theme-surface</td>
         <td>背景色に関わります。</td>
+      </tr>
+      <tr>
+        <td>$rs-theme-on-surface</td>
+        <td>
+          <ul>
+            <li>未選択状態の下線、枠線</li>
+            <li>disabledの時のラベル</li>
+            <li>カウンター、プレースホルダー</li>
+          </ul>
+          の色に関わります。
+        </td>
       </tr>
     </table>
   `)
