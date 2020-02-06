@@ -607,7 +607,7 @@ storiesOf('Components|Chip', module)
 `@import '@rsmdc/chips/rs-chips.scss';
 
 .my-chip {
-  &.-leading-icon.-margin {
+  &.-icon.-margin {
     @include rs-chip-icon-margin(10px);
   }
 }
