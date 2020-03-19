@@ -1,19 +1,14 @@
 import { storiesOf } from '@storybook/html'
-import { TextField, TextFieldAction, TextArea, FormError, FormHelper, FormField } from '@rsmdc/rsmdc'
 import { withLinks } from '@storybook/addon-links'
 import copyCodeBlock from '@pickra/copy-code-block'
+const textfield = require('@rsmdc/textfield/loader')
 
 import './css/style.scss'
 import './css/textfield.scss'
 import 'highlight.js'
 import 'highlight.js/styles/a11y-light.css'
 
-window.customElements.define('rs-textfield-trailing', TextFieldAction)
-window.customElements.define('rs-textarea', TextArea)
-window.customElements.define('rs-textfield', TextField)
-window.customElements.define('rs-form-error', FormError)
-window.customElements.define('rs-form-helper', FormHelper)
-window.customElements.define('rs-form-field', FormField)
+textfield.defineCustomElements(window)
 
 storiesOf('Components|Textfield', module)
   .addDecorator(withLinks)
@@ -37,69 +32,69 @@ storiesOf('Components|Textfield', module)
 
   .add('使用方法', () => `
     <h4>Textfield</h4>
-    <rs-form-field class="text-field">
+    <rs-form-field class="textfield">
       <rs-textfield class="input" label="label" maxlength="7" countable></rs-textfield>
       <rs-form-helper>helper text</rs-form-helper>
       <rs-form-error>error text</rs-form-error>
     </rs-form-field>
-    <rs-form-field class="text-field">
+    <rs-form-field class="textfield">
       <rs-textfield class="input -outlined" label="label"></rs-textfield>
       <rs-form-helper>helper text</rs-form-helper>
       <rs-form-error>error text</rs-form-error>
     </rs-form-field>
-    <rs-form-field class="text-field">
+    <rs-form-field class="textfield">
       <rs-textfield class="input" type="date" label="label"></rs-textfield>
       <rs-form-helper>helper text</rs-form-helper>
       <rs-form-error>error text</rs-form-error>
     </rs-form-field>
-    <rs-form-field class="text-field" error>
+    <rs-form-field class="textfield" error>
       <rs-textfield class="input" label="label"></rs-textfield>
       <rs-form-helper>helper text</rs-form-helper>
       <rs-form-error>error text</rs-form-error>
     </rs-form-field>
-    <rs-form-field class="text-field" disabled>
+    <rs-form-field class="textfield" disabled>
       <rs-textfield class="input" label="label"></rs-textfield>
       <rs-form-helper>helper text</rs-form-helper>
       <rs-form-error>error text</rs-form-error>
     </rs-form-field>
-    <rs-form-field class="text-field">
+    <rs-form-field class="textfield">
       <rs-textarea class="input" label="label"></rs-textarea>
       <rs-form-helper>helper text</rs-form-helper>
       <rs-form-error>error text</rs-form-error>
     </rs-form-field>
 
     ${copyCodeBlock(
-`<rs-form-field class="text-field">
+`<rs-form-field class="textfield">
   <rs-textfield class="input" label="label" maxlength="7" countable />
   <rs-form-helper>helper text</rs-form-helper>
   <rs-form-error>error text</rs-form-error>
 </rs-form-field>
 
-<rs-form-field class="text-field">
+<rs-form-field class="textfield">
   <rs-textfield class="input -outlined" label="label" />
   <rs-form-helper>helper text</rs-form-helper>
   <rs-form-error>error text</rs-form-error>
 </rs-form-field>
 
-<rs-form-field class="text-field">
+<rs-form-field class="textfield">
   <rs-textfield class="input" type="date" label="label" />
   <rs-form-helper>helper text</rs-form-helper>
   <rs-form-error>error text</rs-form-error>
 </rs-form-field>
 
-<rs-form-field class="text-field" error>
+<rs-form-field class="textfield" error>
   <rs-textfield class="input" label="label" />
   <rs-form-helper>helper text</rs-form-helper>
   <rs-form-error>error text</rs-form-error>
 </rs-form-field>
 
-<rs-form-field class="text-field" disabled>
+<rs-form-field class="textfield" disabled>
   <rs-textfield class="input" label="label" />
   <rs-form-helper>helper text</rs-form-helper>
   <rs-form-error>error text</rs-form-error>
 </rs-form-field>
 
-<rs-form-field class="text-field">
+<rs-form-field class="textfield">
   <rs-textarea class="input" label="label" />
   <rs-form-helper>helper text</rs-form-helper>
   <rs-form-error>error text</rs-form-error>
@@ -110,7 +105,7 @@ storiesOf('Components|Textfield', module)
     ${copyCodeBlock(
 `@import '@rsmdc/textfield/rs-textfield.scss';
 
-.text-field {
+.textfield {
   > .input.-outlined {
     @include rs-textfield-type(outlined);
   }
@@ -262,13 +257,13 @@ storiesOf('Components|Textfield', module)
 storiesOf('Components|Textfield/スタイルのカスタマイズ/テキストフィールドのタイプを変える', module)
   .add('default', () => `
     <h4>default</h4>
-    <rs-form-field class="text-field">
+    <rs-form-field class="textfield">
       <rs-textfield label="label" maxlength="7" countable></rs-textfield>
       <rs-form-helper>helper text</rs-form-helper>
       <rs-form-error>error text</rs-form-error>
     </rs-form-field>
 
-    <rs-form-field class="text-field -dense">
+    <rs-form-field class="textfield -dense">
       <rs-textfield label="label" maxlength="7" countable></rs-textfield>
       <rs-form-helper>helper text</rs-form-helper>
       <rs-form-error>error text</rs-form-error>
@@ -285,13 +280,13 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ/テキスト�
       <code>@include rs-textfield-type(dense);</code>のようになります。
     </p>
     ${copyCodeBlock(
-`<rs-form-field class="text-field">
+`<rs-form-field class="textfield">
   <rs-textfield class="input" label="label" maxlength="7" countable />
   <rs-form-helper class="helper">helper text</rs-form-helper>
   <rs-form-error class="error">error text</rs-form-error>
 </rs-form-field>
 
-<rs-form-field class="text-field">
+<rs-form-field class="textfield">
   <rs-textfield class="input -dense" label="label" maxlength="7" countable />
   <rs-form-helper class="helper">helper text</rs-form-helper>
   <rs-form-error class="error">error text</rs-form-error>
@@ -302,7 +297,7 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ/テキスト�
     ${copyCodeBlock(
 `@import '@rsmdc/textfield/rs-textfield.scss';
       
-.text-field {
+.textfield {
   &.input.-dense {
     @include rs-textfield-type(dense);
   }
@@ -312,7 +307,7 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ/テキスト�
   `)
   .add('outlined', () => `
     <h4>outlined</h4>
-    <rs-form-field class="text-field">
+    <rs-form-field class="textfield">
       <rs-textfield class="input -outlined" label="label" maxlength="7" countable></rs-textfield>
       <rs-form-helper>helper text</rs-form-helper>
       <rs-form-error>error text</rs-form-error>
@@ -324,7 +319,7 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ/テキスト�
     )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
-`<rs-form-field class="text-field">
+`<rs-form-field class="textfield">
   <rs-textfield class="input -outlined" label="label" maxlength="7" countable />
   <rs-form-helper>helper text</rs-form-helper>
   <rs-form-error>error text</rs-form-error>
@@ -334,7 +329,7 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ/テキスト�
     ${copyCodeBlock(
 `@import '@rsmdc/textfield/rs-textfield.scss';
 
-.text-field {
+.textfield {
   > .input.-outlined {
     @include rs-textfield-type(outlined);
   }
@@ -346,12 +341,12 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ/テキスト�
 storiesOf('Components|Textfield/スタイルのカスタマイズ', module)
 .add('入力文字の色を変える', () => `
   <h4>入力文字の色を変える</h4>
-  <rs-form-field class="text-field">
+  <rs-form-field class="textfield">
     <rs-textfield class="input -ink-orange" label="label" maxlength="7" countable></rs-textfield>
     <rs-form-helper>helper text</rs-form-helper>
     <rs-form-error>error text</rs-form-error>
   </rs-form-field>
-  <rs-form-field class="text-field">
+  <rs-form-field class="textfield">
     <rs-textarea class="input -textarea -ink-orange" label="label" maxlength="7" countable></rs-textarea>
     <rs-form-helper>helper text</rs-form-helper>
     <rs-form-error>error text</rs-form-error>
@@ -365,13 +360,13 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ', module)
   )}
   <h4>使用方法</h4>
   ${copyCodeBlock(
-`<rs-form-field class="text-field">
+`<rs-form-field class="textfield">
   <rs-textfield class="input -ink-orange" label="label" maxlength="7" countable />
   <rs-form-helper>helper text</rs-form-helper>
   <rs-form-error>error text</rs-form-error>
 </rs-form-field>
 
-<rs-form-field class="text-field">
+<rs-form-field class="textfield">
   <rs-textarea class="input -textarea -ink-orange" label="label" maxlength="7" countable />
   <rs-form-helper>helper text</rs-form-helper>
   <rs-form-error>error text</rs-form-error>
@@ -381,7 +376,7 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ', module)
   ${copyCodeBlock(
 `@import '@rsmdc/textfield/textfield.scss';
 
-.text-field {
+.textfield {
   > .input.-ink-orange:not(.-textarea)  {
     @include rs-textfield-ink-color(orange);
   }
@@ -399,12 +394,12 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ', module)
 `)
 .add('キャレットの色を変える', () => `
   <h4>キャレットの色を変える</h4>
-  <rs-form-field class="text-field">
+  <rs-form-field class="textfield">
     <rs-textfield class="input -caret-orange" label="label" maxlength="7" countable></rs-textfield>
     <rs-form-helper>helper text</rs-form-helper>
     <rs-form-error>error text</rs-form-error>
   </rs-form-field>
-  <rs-form-field class="text-field">
+  <rs-form-field class="textfield">
     <rs-textarea class="input -caret-orange -textarea" label="label" maxlength="7" countable></rs-textarea>
     <rs-form-helper>helper text</rs-form-helper>
     <rs-form-error>error text</rs-form-error>
@@ -417,13 +412,13 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ', module)
   )}
   <h4>使用方法</h4>
   ${copyCodeBlock(
-`<rs-form-field class="text-field">
+`<rs-form-field class="textfield">
   <rs-textfield class="input -caret-orange" label="label" maxlength="7" countable />
   <rs-form-helper>helper text</rs-form-helper>
   <rs-form-error>error text</rs-form-error>
 </rs-form-field>
 
-<rs-form-field class="text-field">
+<rs-form-field class="textfield">
   <rs-textarea class="input -caret-orange -textarea" label="label" maxlength="7" countable />
   <rs-form-helper>helper text</rs-form-helper>
   <rs-form-error>error text</rs-form-error>
@@ -433,7 +428,7 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ', module)
   ${copyCodeBlock(
 `@import '@rsmdc/textfield/textfield.scss';
 
-.text-field {
+.textfield {
   > .input.-caret-orange:not(.-textarea)  {
     @include rs-textfield-caret-color(orange);
   }
@@ -451,12 +446,12 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ', module)
 `)
 .add('背景色を変える', () => `
   <h4>背景色を変える</h4>
-  <rs-form-field class="text-field">
+  <rs-form-field class="textfield">
     <rs-textfield class="input -fill-lavender" label="label" maxlength="7" countable />
     <rs-form-helper>helper text</rs-form-helper>
     <rs-form-error>error text</rs-form-error>
   </rs-form-field>
-  <rs-form-field class="text-field">
+  <rs-form-field class="textfield">
     <rs-textarea class="input -fill-lavender -textarea" label="label" maxlength="7" countable />
     <rs-form-helper>helper text</rs-form-helper>
     <rs-form-error>error text</rs-form-error>
@@ -470,13 +465,13 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ', module)
   )}
   <h4>使用方法</h4>
   ${copyCodeBlock(
-`<rs-form-field class="text-field">
+`<rs-form-field class="textfield">
   <rs-textfield class="input -fill-lavender" label="label" maxlength="7" countable />
   <rs-form-helper>helper text</rs-form-helper>
   <rs-form-error>error text</rs-form-error>
 </rs-form-field>
 
-<rs-form-field class="text-field">
+<rs-form-field class="textfield">
   <rs-textarea class="input -fill-lavender -textarea" label="label" maxlength="7" countable />
   <rs-form-helper>helper text</rs-form-helper>
   <rs-form-error>error text</rs-form-error>
@@ -486,7 +481,7 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ', module)
   ${copyCodeBlock(
 `@import '@rsmdc/textfield/textfield.scss';
 
-.text-field {
+.textfield {
   > .input.-fill-lavender:not(.-textarea)  {
     @include rs-textfield-fill-color(lavender);
   }
@@ -504,7 +499,7 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ', module)
 `)
 .add('下線の色を変える', () => `
   <h4>下線の色を変える</h4>
-  <rs-form-field class="text-field">
+  <rs-form-field class="textfield">
     <rs-textfield class="input -line-blue" label="label" maxlength="7" countable></rs-textfield>
     <rs-form-helper>helper text</rs-form-helper>
     <rs-form-error>error text</rs-form-error>
@@ -516,7 +511,7 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ', module)
   )}
   <h4>使用方法</h4>
   ${copyCodeBlock(
-`<rs-form-field class="text-field">
+`<rs-form-field class="textfield">
   <rs-textfield class="input -line-blue" label="label" maxlength="7" countable />
   <rs-form-helper>helper text</rs-form-helper>
   <rs-form-error>error text</rs-form-error>
@@ -526,7 +521,7 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ', module)
   ${copyCodeBlock(
 `@import '@rsmdc/textfield/textfield.scss';
 
-.text-field {
+.textfield {
   > .input.-fill-lavender:not(.-textarea)  {
     @include rs-textfield-bottom-line-color(rgb(23, 179, 223));
   }
@@ -540,7 +535,7 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ', module)
 `)
 .add('ホバー時の下線の色を変える', () => `
   <h4>ホバー時の下線の色を変える</h4>
-  <rs-form-field class="text-field">
+  <rs-form-field class="textfield">
     <rs-textfield class="input -hover-line-blue" label="label" maxlength="7" countable></rs-textfield>
     <rs-form-helper>helper text</rs-form-helper>
     <rs-form-error>error text</rs-form-error>
@@ -552,7 +547,7 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ', module)
   )}
   <h4>使用方法</h4>
   ${copyCodeBlock(
-`<rs-form-field class="text-field">
+`<rs-form-field class="textfield">
   <rs-textfield class="input -hover-line-blue" label="label" maxlength="7" countable />
   <rs-form-helper>helper text</rs-form-helper>
   <rs-form-error>error text</rs-form-error>
@@ -563,7 +558,7 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ', module)
   ${copyCodeBlock(
 `@import '@rsmdc/textfield/textfield.scss';
 
-.text-field {
+.textfield {
   > .input.-hover-line-blue {
     @include rs-textfield-bottom-line-color(rgb(23, 179, 223));
   }
@@ -577,7 +572,7 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ', module)
 `)
 .add('フォーカス時の下線の色を変える', () => `
   <h4>フォーカス時の下線の色を変える</h4>
-  <rs-form-field class="text-field">
+  <rs-form-field class="textfield">
     <rs-textfield class="input -focus-line-blue" label="label" maxlength="7" countable></rs-textfield>
     <rs-form-helper>helper text</rs-form-helper>
     <rs-form-error>error text</rs-form-error>
@@ -589,7 +584,7 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ', module)
   )}
   <h4>使用方法</h4>
   ${copyCodeBlock(
-`<rs-form-field class="text-field">
+`<rs-form-field class="textfield">
   <rs-textfield class="input -focus-line-blue" label="label" maxlength="7" countable />
   <rs-form-helper>helper text</rs-form-helper>
   <rs-form-error>error text</rs-form-error>
@@ -599,7 +594,7 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ', module)
   ${copyCodeBlock(
 `@import '@rsmdc/textfield/textfield.scss';
 
-.text-field {
+.textfield {
   > .input.-focus-line-blue {
     @include rs-textfield-line-ripple-color(rgb(23, 179, 223));
   }
@@ -613,12 +608,12 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ', module)
 `)
 .add('枠線の色を変える', () => `
   <h4>枠線の色を変える</h4>
-  <rs-form-field class="text-field">
+  <rs-form-field class="textfield">
     <rs-textfield class="input -outlined -line-blue" label="label" maxlength="7" countable></rs-textfield>
     <rs-form-helper>helper text</rs-form-helper>
     <rs-form-error>error text</rs-form-error>
   </rs-form-field>
-  <rs-form-field class="text-field">
+  <rs-form-field class="textfield">
     <rs-textarea class="input -textarea -line-blue" label="label" maxlength="7" countable></rs-textarea>
     <rs-form-helper>helper text</rs-form-helper>
     <rs-form-error>error text</rs-form-error>
@@ -632,13 +627,13 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ', module)
   )}
   <h4>使用方法</h4>
   ${copyCodeBlock(
-`<rs-form-field class="text-field">
+`<rs-form-field class="textfield">
   <rs-textfield class="input -outlined -line-blue" label="label" maxlength="7" countable />
   <rs-form-helper>helper text</rs-form-helper>
   <rs-form-error>error text</rs-form-error>
 </rs-form-field>
 
-<rs-form-field class="text-field">
+<rs-form-field class="textfield">
   <rs-textarea class="input -textarea -line-blue" label="label" maxlength="7" countable />
   <rs-form-helper>helper text</rs-form-helper>
   <rs-form-error>error text</rs-form-error>
@@ -648,7 +643,7 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ', module)
   ${copyCodeBlock(
 `@import '@rsmdc/textfield/textfield.scss';
 
-.text-field {
+.textfield {
   > .input.-outlined.-line-blue {
     @include rs-textfield-type(outlined);
     @include rs-textfield-stroke-color(rgb(23, 179, 223));
@@ -666,12 +661,12 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ', module)
 `)
 .add('ホバー時の枠線の色を変える', () => `
   <h4>ホバー時の枠線の色を変える</h4>
-  <rs-form-field class="text-field">
-    <rs-textfield class="input -outlined -hover-line-blue" label="label" maxlength="7" countable></rs-text-field>
+  <rs-form-field class="textfield">
+    <rs-textfield class="input -outlined -hover-line-blue" label="label" maxlength="7" countable></rs-textfield>
     <rs-form-helper>helper text</rs-form-helper>
     <rs-form-error>error text</rs-form-error>
   </rs-form-field>
-  <rs-form-field class="text-field">
+  <rs-form-field class="textfield">
     <rs-textarea class="input -textarea -hover-line-blue" label="label" maxlength="7" countable></re-textarea>
     <rs-form-helper>helper text</rs-form-helper>
     <rs-form-error>error text</rs-form-error>
@@ -684,13 +679,13 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ', module)
   )}
   <h4>使用方法</h4>
   ${copyCodeBlock(
-`<rs-form-field class="text-field">
+`<rs-form-field class="textfield">
   <rs-textfield class="input -outlined -hover-line-blue" label="label" maxlength="7" countable />
   <rs-form-helper>helper text</rs-form-helper>
   <rs-form-error>error text</rs-form-error>
 </rs-form-field>
 
-<rs-form-field class="text-field">
+<rs-form-field class="textfield">
   <rs-textarea class="input -textarea -hover-line-blue" label="label" maxlength="7" countable />
   <rs-form-helper>helper text</rs-form-helper>
   <rs-form-error>error text</rs-form-error>
@@ -700,7 +695,7 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ', module)
   ${copyCodeBlock(
 `@import '@rsmdc/textfield/textfield.scss';
 
-.text-field {
+.textfield {
   > .input.-outlined.-hover-line-blue {
     @include rs-textfield-type(outlined);
     @include rs-textfield-hover-outline-color(rgb(23, 179, 223));
@@ -718,12 +713,12 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ', module)
 `)
 .add('フォーカス時の枠線の色を変える', () => `
   <h4>フォーカス時の枠線の色を変える</h4>
-  <rs-form-field class="text-field">
-    <rs-textfield class="input -outlined -focus-line-blue" label="label" maxlength="7" countable></rs-text-field>
+  <rs-form-field class="textfield">
+    <rs-textfield class="input -outlined -focus-line-blue" label="label" maxlength="7" countable></rs-textfield>
     <rs-form-helper>helper text</rs-form-helper>
     <rs-form-error>error text</rs-form-error>
   </rs-form-field>
-  <rs-form-field class="text-field">
+  <rs-form-field class="textfield">
     <rs-textarea class="input -textarea -focus-line-blue" label="label" maxlength="7" countable></re-textarea>
     <rs-form-helper>helper text</rs-form-helper>
     <rs-form-error>error text</rs-form-error>
@@ -736,13 +731,13 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ', module)
   )}
   <h4>使用方法</h4>
   ${copyCodeBlock(
-`<rs-form-field class="text-field">
+`<rs-form-field class="textfield">
   <rs-textfield class="input -outlined -focus-line-blue" label="label" maxlength="7" countable />
   <rs-form-helper>helper text</rs-form-helper>
   <rs-form-error>error text</rs-form-error>
 </rs-form-field>
 
-<rs-form-field class="text-field">
+<rs-form-field class="textfield">
   <rs-textarea class="input -textarea -focus-line-blue" label="label" maxlength="7" countable />
   <rs-form-helper>helper text</rs-form-helper>
   <rs-form-error>error text</rs-form-error>
@@ -752,7 +747,7 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ', module)
   ${copyCodeBlock(
 `@import '@rsmdc/textfield/textfield.scss';
 
-.text-field {
+.textfield {
   > .input.-focus-line-blue {
     @include rs-form-field-focus-label-ink-color(rgb(23, 179, 223));
   }
@@ -773,17 +768,17 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ', module)
 `)
 .add('フォーカス時の色を一括で変える', () => `
   <h4>フォーカス時の線の色、ラベル、キャレットの色を変える</h4>
-  <rs-form-field class="text-field">
-    <rs-textfield class="input -focus-blue" label="label" maxlength="7" countable></rs-text-field>
+  <rs-form-field class="textfield">
+    <rs-textfield class="input -focus-blue" label="label" maxlength="7" countable></rs-textfield>
     <rs-form-helper>helper text</rs-form-helper>
     <rs-form-error>error text</rs-form-error>
   </rs-form-field>
-  <rs-form-field class="text-field">
-    <rs-textfield class="input -outlined -focus-blue" label="label" maxlength="7" countable></rs-text-field>
+  <rs-form-field class="textfield">
+    <rs-textfield class="input -outlined -focus-blue" label="label" maxlength="7" countable></rs-textfield>
     <rs-form-helper>helper text</rs-form-helper>
     <rs-form-error>error text</rs-form-error>
   </rs-form-field>
-  <rs-form-field class="text-field">
+  <rs-form-field class="textfield">
     <rs-textarea class="input -textarea -focus-blue" label="label" maxlength="7" countable></re-textarea>
     <rs-form-helper>helper text</rs-form-helper>
     <rs-form-error>error text</rs-form-error>
@@ -795,19 +790,19 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ', module)
   )}
   <h4>使用方法</h4>
   ${copyCodeBlock(
-`<rs-form-field class="text-field">
+`<rs-form-field class="textfield">
   <rs-textfield class="input -focus-blue" label="label" maxlength="7" countable />
   <rs-form-helper>helper text</rs-form-helper>
   <rs-form-error>error text</rs-form-error>
 </rs-form-field>
 
-<rs-form-field class="text-field">
+<rs-form-field class="textfield">
   <rs-textfield class="input -outlined -focus-blue" label="label" maxlength="7" countable />
   <rs-form-helper>helper text</rs-form-helper>
   <rs-form-error>error text</rs-form-error>
 </rs-form-field>
 
-<rs-form-field class="text-field">
+<rs-form-field class="textfield">
   <rs-textarea class="input -textarea -focus-blue" label="label" maxlength="7" countable />
   <rs-form-helper>helper text</rs-form-helper>
   <rs-form-error>error text</rs-form-error>
@@ -817,7 +812,7 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ', module)
   ${copyCodeBlock(
 `@import '@rsmdc/textfield/textfield.scss';
 
-.text-field {
+.textfield {
   > .input.-outlined {
     @include rs-textfield-type(outlined);
   }
@@ -834,7 +829,7 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ', module)
 `)
 .add('文字数カウンターの色を変える', () => `
   <h4>文字数カウンターの色を変える</h4>
-  <rs-form-field class="text-field">
+  <rs-form-field class="textfield">
     <rs-textfield class="input -counter-orange" label="label" maxlength="7" countable></rs-textfield>
     <rs-form-helper>helper text</rs-form-helper>
     <rs-form-error>error text</rs-form-error>
@@ -846,7 +841,7 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ', module)
   )}
   <h4>使用方法</h4>
   ${copyCodeBlock(
-`<rs-form-field class="text-field">
+`<rs-form-field class="textfield">
   <rs-textfield class="input -counter-orange" label="label" maxlength="7" countable />
   <rs-form-helper>helper text</rs-form-helper>
   <rs-form-error>error text</rs-form-error>
@@ -856,7 +851,7 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ', module)
   ${copyCodeBlock(
 `@import '@rsmdc/textfield/textfield.scss';
 
-.text-field {
+.textfield {
   > .input.-counter-orange {
     @include rs-textfield-character-counter-ink-color(orange);
   }
@@ -870,7 +865,7 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ', module)
 `)
 .add('文字数カウンターの位置を変える', () => `
   <h4>文字数カウンターの位置を変える</h4>
-  <rs-form-field class="text-field">
+  <rs-form-field class="textfield">
     <rs-textfield class="input -top" label="label" maxlength="7" countable></rs-textfield>
     <rs-form-helper>helper text</rs-form-helper>
     <rs-form-error>error text</rs-form-error>
@@ -882,7 +877,7 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ', module)
   )}
   <h4>使用方法</h4>
   ${copyCodeBlock(
-`<rs-form-field class="text-field">
+`<rs-form-field class="textfield">
   <rs-textfield class="input -top" label="label" maxlength="7" countable />
   <rs-form-helper>helper text</rs-form-helper>
   <rs-form-error>error text</rs-form-error>
@@ -892,7 +887,7 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ', module)
   ${copyCodeBlock(
 `@import '@rsmdc/textfield/textfield.scss';
 
-.text-field {
+.textfield {
   > .input.-top {
     @include rs-textfield-character-counter-position(0, 60px);
   }
@@ -907,7 +902,7 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ', module)
 `)
 .add('テキストエリアの行間を変える', () => `
   <h4>テキストエリアの行間を変える</h4>
-  <rs-form-field class="text-field">
+  <rs-form-field class="textfield">
     <rs-textarea class="input -wide" cols="20" rows="5" label="label" placeholder="placeholder"></rs-textarea>
   </rs-form-field>
   <h4>使用するmixin</h4>
@@ -917,7 +912,7 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ', module)
   )}
   <h4>使用方法</h4>
   ${copyCodeBlock(
-`<rs-form-field class="text-field">
+`<rs-form-field class="textfield">
   <rs-textarea class="input -wide" cols="20" rows="5" label="label" placeholder="placeholder" />
 </rs-form-field>
 `,
@@ -926,7 +921,7 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ', module)
   ${copyCodeBlock(
 `@import '@rsmdc/textfield/textfield.scss';
 
-.text-field {
+.textfield {
   > .input.-wide {
     @include rs-textarea-line-height(10px);
   }
@@ -940,12 +935,12 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ', module)
 `)
 .add('テキストフィールド・テキストエリアの角の丸みを変える', () => `
   <h4>テキストフィールド・テキストエリアの角の丸みを変える</h4>
-  <rs-form-field class="text-field">
+  <rs-form-field class="textfield">
     <rs-textfield class="input -roundness" label="label" maxlength="7" countable></rs-textfield>
     <rs-form-helper>helper text</rs-form-helper>
     <rs-form-error>error text</rs-form-error>
   </rs-form-field>
-  <rs-form-field class="text-field">
+  <rs-form-field class="textfield">
     <rs-textarea class="input -textarea -roundness" label="label" placeholder="placeholder"></rs-textarea>
     <rs-form-helper>helper text</rs-form-helper>
   </rs-form-field>
@@ -958,13 +953,13 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ', module)
   )}
   <h4>使用方法</h4>
   ${copyCodeBlock(
-`<rs-form-field class="text-field">
+`<rs-form-field class="textfield">
   <rs-textfield class="input -roundness" label="label" maxlength="7" countable />
   <rs-form-helper>helper text</rs-form-helper>
   <rs-form-error>error text</rs-form-error>
 </rs-form-field>
 
-<rs-form-field class="text-field">
+<rs-form-field class="textfield">
   <rs-textarea class="input -textarea -roundness" label="label" placeholder="placeholder" />
   <rs-form-helper>helper text</rs-form-helper>
 </rs-form-field>`,
@@ -973,7 +968,7 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ', module)
   ${copyCodeBlock(
 `@import '@rsmdc/textfield/textfield.scss;'
 
-.text-field {
+.textfield {
   > .input.-roundness:not(.-textarea) {
     @include rs-textfield-shape-radius(20px);
   }
@@ -990,30 +985,30 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ', module)
 `)
 .add('左側のアイコン(leading icon)を設定する', () => `
   <h4>左側のアイコン(leading icon)を設定する</h4>
-  <rs-form-field class="text-field">
+  <rs-form-field class="textfield">
     <rs-textfield class="input -leadingicon" label="label" maxlength="7" countable></rs-textfield>
     <rs-form-helper>helper text</rs-form-helper>
     <rs-form-error>error text</rs-form-error>
   </rs-form-field>
-  <rs-form-field class="text-field">
+  <rs-form-field class="textfield">
     <rs-textfield class="input -leadingicon -png" label="label" maxlength="7" countable></rs-textfield>
     <rs-form-helper>helper text</rs-form-helper>
     <rs-form-error>error text</rs-form-error>
   </rs-form-field>
   <h4>使用するmixin</h4>
   ${copyCodeBlock(
-`@include rs-textfield-icon-image($icon, $codepoint: '');`,
+`@include rs-textfield-leading-icon-image($icon, $codepoint: '');`,
     { lang: 'scss' }
   )}
   <h4>使用方法</h4>
   ${copyCodeBlock(
-`<rs-form-field class="text-field">
+`<rs-form-field class="textfield">
   <rs-textfield class="input -leadingicon" label="label" maxlength="7" countable />
   <rs-form-helper>helper text</rs-form-helper>
   <rs-form-error>error text</rs-form-error>
 </rs-form-field>
 
-<rs-form-field class="text-field">
+<rs-form-field class="textfield">
   <rs-textfield class="input -leadingicon -png" label="label" maxlength="7" countable />
   <rs-form-helper>helper text</rs-form-helper>
   <rs-form-error>error text</rs-form-error>
@@ -1024,15 +1019,15 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ', module)
   ${copyCodeBlock(
 `@import '@rsmdc/textfield/textfield.scss';
 
-.text-field {
+.textfield {
   > .input.-leadingicon:not(.-png) {
-    @include rs-textfield-icon-image(
+    @include rs-textfield-leading-icon-image(
       Material Icons, 
       map-get($material-icons-codepoints, mail_outline)
     );
   }
   > .input.-leadingicon.-png {
-    @include rs-textfield-icon-image(url('http://icons.iconarchive.com/icons/iconsmind/outline/512/Mail-icon.png'));
+    @include rs-textfield-leading-icon-image(url('http://icons.iconarchive.com/icons/iconsmind/outline/512/Mail-icon.png'));
   }
 }`,
     { lang: 'scss' }
@@ -1052,30 +1047,30 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ', module)
 `)
 .add('右側のアイコン(trairing icon)を設定する', () => `
   <h4>右側のアイコン(trairing icon)を設定する</h4>
-  <rs-form-field class="text-field">
+  <rs-form-field class="textfield">
     <rs-textfield class="input" label="label" maxlength="7" countable>
       <rs-textfield-trailing class="icon"></rs-textfield-trailing>
     </rs-textfield>
   </rs-form-field>
-  <rs-form-field class="text-field">
+  <rs-form-field class="textfield">
     <rs-textfield class="input" label="label" maxlength="7" countable>
       <rs-textfield-trailing class="icon -png"></rs-textfield-trailing>
     </rs-textfield>
   </rs-form-field>
   <h4>使用するmixin</h4>
   ${copyCodeBlock(
-`@include rs-textfield-action-icon-image($icon, $codepoint: '');`,
+`@include rs-textfield-trailing-icon-image($icon, $codepoint: '');`,
     { lang: 'scss' }
   )}
   <h4>使用方法</h4>
   ${copyCodeBlock(
-`<rs-form-field class="text-field">
+`<rs-form-field class="textfield">
   <rs-textfield class="input" label="label" maxlength="7" countable>
     <rs-textfield-trailing class="icon" />
   </rs-textfield>
 </rs-form-field>
 
-<rs-form-field class="text-field">
+<rs-form-field class="textfield">
   <rs-textfield class="input" label="label" maxlength="7" countable>
     <rs-textfield-trailing class="icon -png" />
   </rs-textfield>
@@ -1085,15 +1080,15 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ', module)
   ${copyCodeBlock(
 `@import '@rsmdc/textfield/textfield.scss';
 
-.text-field {
+.textfield {
   > .input > .icon:not(.-png) {
-    @include rs-textfield-action-icon-image(
+    @include rs-textfield-trailing-icon-image(
       Material Icons, 
       map-get($material-icons-codepoints, mail_outline)
     );
   }
   > .input > .icon.-png {
-    @include rs-textfield-action-icon-image(url('http://icons.iconarchive.com/icons/iconsmind/outline/512/Mail-icon.png'));
+    @include rs-textfield-trailing-icon-image(url('http://icons.iconarchive.com/icons/iconsmind/outline/512/Mail-icon.png'));
   }
 }`,
     { lang: 'scss' }
@@ -1114,10 +1109,10 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ', module)
 
 .add('横幅を変える', () => `
   <h4>横幅を指定したサイズに変える</h4>
-  <rs-form-field class="text-field">
+  <rs-form-field class="textfield">
     <rs-textfield class="input -width" label="label" maxlength="7" countable />
   </rs-form-field>
-  <rs-form-field class="text-field">
+  <rs-form-field class="textfield">
     <rs-textarea class="input -textarea -width" cols="20" rows="3" label="label" placeholder="placeholder" />
   </rs-form-field>
   <h4>使用するmixin</h4>
@@ -1128,7 +1123,7 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ', module)
   )}
   <h4>使用方法</h4>
   ${copyCodeBlock(
-`<rs-form-field class="text-field">
+`<rs-form-field class="textfield">
   <rs-textfield class="input -width" label="label" maxlength="7" countable />
 </rs-form-field>
   
@@ -1140,7 +1135,7 @@ storiesOf('Components|Textfield/スタイルのカスタマイズ', module)
   ${copyCodeBlock(
 `@import '@rsmdc/textfield/textfield.scss';
 
-.text-field {
+.textfield {
   > .input.-width {
     @include rs-textfield-width(300px);
   }

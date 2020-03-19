@@ -1,15 +1,14 @@
 import { storiesOf } from '@storybook/html'
-import { TabItem, TabBar } from '@rsmdc/rsmdc'
 import { withLinks } from '@storybook/addon-links'
 import copyCodeBlock from '@pickra/copy-code-block'
+const tabs = require('@rsmdc/tabs/loader')
 
 import './css/style.scss'
 import './css/tabs.scss'
 import 'highlight.js'
 import 'highlight.js/styles/a11y-light.css'
 
-window.customElements.define('rs-tab-item', TabItem)
-window.customElements.define('rs-tab-bar', TabBar)
+tabs.defineCustomElements(window)
 
 storiesOf('Components|Tabs', module)
   .addDecorator(withLinks)
@@ -168,7 +167,7 @@ storiesOf('Components|Tabs/スタイルのカスタマイズ', module)
 
 .tab-bar {
   &.-activated-aqua {
-    @include rs-tab-activated-ink-color(aqua);
+    @include rs-tab-activated-color(aqua);
   }
 }`,
       { lang: 'scss' }

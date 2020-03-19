@@ -8,7 +8,6 @@ import './css/switch.scss'
 import 'highlight.js'
 import 'highlight.js/styles/a11y-light.css'
 
-
 switch1.defineCustomElements(window)
 
 storiesOf('Components|Switch', module)

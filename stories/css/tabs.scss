@@ -7,7 +7,7 @@ $material-icons-font-path: '~material-icons/iconfont/';
     @include rs-tab-ink-color(aqua);
   }
   &.-activated-aqua {
-    @include rs-tab-activated-ink-color(aqua);
+    @include rs-tab-activated-color(aqua);
   }
   &.-ripple-dark {
     @include rs-tab-states-color(gray);
@@ -19,10 +19,10 @@ $material-icons-font-path: '~material-icons/iconfont/';
     @include rs-tab-indicator-height(4px);
   }
   &.-indicator.-fixed-width {
-    @include rs-tab-indicator-width-fixed-contents;
+    // @include rs-tab-indicator-width-fixed-contents;
   }
   &.-bar.-width {
-    @include rs-tab-bar-width(600px);
+    //  @include rs-tab-bar-width(600px);
   }
   &.-tab.-width {
     @include rs-tab-fixed-width(100px);

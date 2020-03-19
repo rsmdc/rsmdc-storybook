@@ -1,14 +1,14 @@
 import { storiesOf } from '@storybook/html'
-import { Menu } from '@rsmdc/rsmdc'
 import { withLinks } from '@storybook/addon-links'
 import copyCodeBlock from '@pickra/copy-code-block'
+const menu = require('@rsmdc/menu/loader')
 
 import './css/style.scss'
 import './css/menu.scss'
 import 'highlight.js'
 import 'highlight.js/styles/a11y-light.css'
 
-window.customElements.define('rs-menu', Menu)
+menu.defineCustomElements(window)
 
 storiesOf('Components|Menu', module)
   .addDecorator(withLinks)

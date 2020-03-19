@@ -1,94 +1,93 @@
 @import '@rsmdc/form-field/rs-form-field.scss';
-@import '@rsmdc/textfield/rs-text-field.scss';
+@import '@rsmdc/textfield/rs-textfield.scss';
 $material-icons-font-path: '~material-icons/iconfont/';
 @import '~material-icons/iconfont/material-icons';
 
-.text-field {
+.textfield {
   padding-bottom: 10px;
 
   > .input.-outlined {
-    @include rs-text-field-type(outlined);
+    @include rs-textfield-type(outlined);
   }
   > .input.-ink-orange:not(.-textarea)  {
-    @include rs-text-field-ink-color(orange);
+    @include rs-textfield-ink-color(orange);
   }
   > .input.-ink-orange.-textarea {
     @include rs-textarea-ink-color(orange);
   }
   > .input.-caret-orange:not(.-textarea)  {
-    @include rs-text-field-caret-color(orange);
+    @include rs-textfield-caret-color(orange);
   }
   > .input.-caret-orange.-textarea {
     @include rs-textarea-caret-color(orange);
   }
   > .input.-fill-lavender:not(.-textarea)  {
-    @include rs-text-field-fill-color(lavender);
+    @include rs-textfield-fill-color(lavender);
   }
   > .input.-fill-lavender.-textarea {
     @include rs-textarea-fill-color(lavender);
   }
   > .input.-line-blue {
-    @include rs-text-field-bottom-line-color(rgb(23, 179, 223));
+    @include rs-textfield-bottom-line-color(rgb(23, 179, 223));
   }
   > .input.-outlined.-line-blue {
-    @include rs-text-field-stroke-color(rgb(23, 179, 223));
+    @include rs-textfield-stroke-color(rgb(23, 179, 223));
   }  
   > .input.-textarea.-line-blue {
     @include rs-textarea-stroke-color(rgb(23, 179, 223));
   }
   > .input.-hover-line-blue {
-    @include rs-text-field-hover-bottom-line-color(rgb(23, 179, 223));
+    @include rs-textfield-hover-bottom-line-color(rgb(23, 179, 223));
   }
   > .input.-outlined.-hover-line-blue {
-    @include rs-text-field-hover-outline-color(rgb(23, 179, 223));
+    @include rs-textfield-hover-outline-color(rgb(23, 179, 223));
   }
   > .input.-textarea.-hover-line-blue {
     @include  rs-textarea-hover-outline-color(rgb(23, 179, 223));
   }
   > .input.-focus-line-blue {
-    @include rs-text-field-focused-label-ink-color(rgb(23, 179, 223));
-    @include rs-text-field-line-ripple-color(rgb(23, 179, 223));
+    @include rs-textfield-line-ripple-color(rgb(23, 179, 223));
   }
   > .input.-outlined.-focus-line-blue {
-    @include rs-text-field-focused-outline-color(rgb(23, 179, 223));
+    @include rs-textfield-focused-outline-color(rgb(23, 179, 223));
   }
   > .input.-textarea.-focus-line-blue {
     @include rs-textarea-focused-outline-color(rgb(23, 179, 223));
   }
   > .input.-focus-blue {
-    @include rs-text-field-focused-color-accessible(rgb(23, 179, 223));
+    @include rs-textfield-focused-color-accessible(rgb(23, 179, 223));
   }
   > .input.-counter-orange {
-    @include rs-text-field-character-counter-ink-color(orange);
+    @include rs-textfield-character-counter-ink-color(orange);
   }
   > .input.-top {
-    @include rs-text-field-character-counter-position(0, 60px);
+    @include rs-textfield-character-counter-position(0, 60px);
   }
   > .input.-wide {
     @include rs-textarea-line-height(10px);
   }
   > .input.-roundness:not(.-textarea) {
-    @include rs-text-field-shape-radius(20px);
+    @include rs-textfield-shape-radius(20px);
   }
   > .input.-roundness.-textarea {
     @include rs-textarea-shape-radius(20px);
   }
   > .input.-leadingicon:not(.-png) {
-    @include rs-text-field-icon-image(
+    @include rs-textfield-leading-icon-image(
       Material Icons, 
       map-get($material-icons-codepoints, mail_outline)
     );
   }
   > .input.-leadingicon.-png {
-    @include rs-text-field-icon-image(url('http://icons.iconarchive.com/icons/iconsmind/outline/512/Mail-icon.png'));
+    @include rs-textfield-leading-icon-image(url('http://icons.iconarchive.com/icons/iconsmind/outline/512/Mail-icon.png'));
   }
   > .input > .icon:not(.-png) {
-    @include rs-text-field-action-icon-image(
+    @include rs-textfield-trailing-icon-image(
       Material Icons, 
       map-get($material-icons-codepoints, mail_outline)
     );
   }
   > .input > .icon.-png {
-    @include rs-text-field-action-icon-image(url('http://icons.iconarchive.com/icons/iconsmind/outline/512/Mail-icon.png'));
+    @include rs-textfield-trailing-icon-image(url('http://icons.iconarchive.com/icons/iconsmind/outline/512/Mail-icon.png'));
   }
 }

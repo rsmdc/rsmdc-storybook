@@ -1,13 +1,13 @@
 import { storiesOf } from '@storybook/html'
 import { withLinks } from '@storybook/addon-links'
 import copyCodeBlock from '@pickra/copy-code-block'
-const dialog = require('@rsmdc/dialog/loader')
+const imageList = require('@rsmdc/image-list/loader')
 
 import './css/style.scss'
 import 'highlight.js'
 import 'highlight.js/styles/a11y-light.css'
 
-dialog.defineCustomElements(window)
+imageList.defineCustomElements(window)
 
 storiesOf('Components|Image list', module)
   .addDecorator(withLinks)
