@@ -7,7 +7,7 @@ $material-icons-font-path: '~material-icons/iconfont/';
     @include rs-tab-ink-color(aqua);
   }
   &.-activated-aqua {
-    @include rs-tab-activated-color(aqua);
+    @include rs-tab-activated-ink-color(aqua);
   }
   &.-ripple-dark {
     @include rs-tab-states-color(gray);

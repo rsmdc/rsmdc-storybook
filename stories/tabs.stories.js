@@ -150,7 +150,7 @@ storiesOf('Components|Tabs/スタイルのカスタマイズ', module)
     </rs-tab-bar>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
-      `@include rs-tab-activated-color($color);`,
+      `@include rs-tab-activated-ink-color($color);`,
       { lang: 'scss' }
     )}
     <h4>使用方法</h4>

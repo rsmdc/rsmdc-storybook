@@ -727,7 +727,7 @@ storiesOf('Components|Button/スタイルのカスタマイズ', module)
     <rs-button class="my-button -fab -position" fixed>fab</rs-button>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
-`@include rs-button-fab-position(center);`,
+`@include rs-button-fab-fixed-position(center);`,
       { lang: 'scss' }
     )}
     <h4>使用方法</h4>
@@ -740,7 +740,7 @@ storiesOf('Components|Button/スタイルのカスタマイズ', module)
 
 .my-button {
   &.-fab.-position {
-    @include rs-button-fab-position(center);
+    @include rs-button-fab-fixed-position(center);
   }
 }`,
       { lang: 'scss' }
