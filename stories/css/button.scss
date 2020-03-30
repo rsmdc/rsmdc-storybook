@@ -68,7 +68,7 @@ $material-icons-font-path: '~material-icons/iconfont/';
   }
   &.-width {
     @include rs-button-type(raised);
-    // @include rs-button-width(200px);
+    @include rs-button-width(200px);
   }
 
   &.-icon {
