@@ -19,17 +19,14 @@ storiesOf('Components|Chip', module)
     <p>スナックバーのタイプ</p>
     <ul>
       <li>normal（デフォルト）</li>
-      <li>shaped：四角い状態</li>
       <li>outlined：枠線がつく</li>
+      <li>shaped：形状が四角いスタイル</li>
     </ul>
   `)
   .add('使用方法', () => `
     <h4>使用方法</h4>
-    <div class="chip-demo">
-      <rs-chip class="my-chip">sample</rs-chip>
-      <rs-chip class="my-chip" selected>sample</rs-chip>
-    </div>
-
+    <rs-chip class="my-chip">sample</rs-chip>
+    <rs-chip class="my-chip" selected>sample</rs-chip>
     ${copyCodeBlock(
 `<rs-chip class="my-chip">sample</rs-chip>
 <rs-chip class="my-chip" selected>sample</rs-chip>
@@ -86,7 +83,7 @@ storiesOf('Components|Chip', module)
       </tr>
       <tr>
         <td>$rs-theme-on-surface</td>
-        <td>未選択状態のテキスト、背景、リップルの色に関わります。</td>
+        <td>未選択状態のテキスト、背景、枠線、リップルの色に関わります。</td>
       </tr>
     </table>
   `)
@@ -132,7 +129,7 @@ storiesOf('Components|Chip', module)
 
   .add('shaped', () => `
   <h4>shaped</h4>
-  <p></p>
+  <p>チップスの形状が四角いスタイル。</p>
   <rs-chip class="my-chip -shaped">テキスト</rs-chip>
   <h4>使用するmixin</h4>
   ${copyCodeBlock(
@@ -191,7 +188,7 @@ storiesOf('Components|Chip', module)
 
   .add('選択状態のテキストの色を変える', () => `
     <h4>選択状態のテキストの色を指定した色に変える。</h4>
-    <rs-chip class="my-chip -select -text-orange" selected>テキスト</rs-chip>
+    <rs-chip class="my-chip -select-orange" selected>テキスト</rs-chip>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
       `@include rs-chip-selected-ink-color($color);`,
@@ -199,14 +196,14 @@ storiesOf('Components|Chip', module)
     )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
-`<rs-chip class="my-chip -select -text-orange" selected>テキスト</rs-chip>`,
+`<rs-chip class="my-chip -select-orange" selected>テキスト</rs-chip>`,
       { lang: 'html' }
     )}
     ${copyCodeBlock(
 `@import '@rsmdc/chips/rs-chips.scss';
 
 .my-chip {
-  &.-select.-text-orange {
+  &.-select-orange {
     @include rs-chip-selected-ink-color(orange);
   }
 }
@@ -289,7 +286,8 @@ storiesOf('Components|Chip', module)
 
   .add('枠線の色を変える', () => `
     <h4>枠線の色を指定した色に変える</h4>
-    <rs-chip class="my-chip -outliend -orange">テキスト</rs-chip>
+    <p>タイプがoutlinedの時に使用</p>
+    <rs-chip class="my-chip -outlined -line-orange">テキスト</rs-chip>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
       `@include rs-chip-outline-color($color);`,
@@ -297,14 +295,14 @@ storiesOf('Components|Chip', module)
     )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
-`<rs-chip class="my-chip -outliend -orange">テキスト</rs-chip>`,
+`<rs-chip class="my-chip -outliend -line-orange">テキスト</rs-chip>`,
       { lang: 'html' }
     )}
     ${copyCodeBlock(
 `@import '@rsmdc/chips/rs-chips.scss';
 
 .my-chip {
-  &.-outliend.-orange {
+  &.-outlined.-line-orange {
     @include rs-chip-outline-color(orange);
   }
 }
@@ -321,7 +319,8 @@ storiesOf('Components|Chip', module)
 
   .add('枠線の太さを変える', () => `
     <h4>枠線の太さを指定したサイズに変える。</h4>
-    <rs-chip class="my-chip -outliend -border-width">テキスト</rs-chip>
+    <p>タイプがoutlinedの時に使用。</p>
+    <rs-chip class="my-chip -outlined -line-width">テキスト</rs-chip>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
       `@include rs-chip-outline-width($width);`,
@@ -329,14 +328,14 @@ storiesOf('Components|Chip', module)
     )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
-`<rs-chip class="my-chip -outliend -border-width">テキスト</rs-chip>`,
+`<rs-chip class="my-chip -outliend -line-width">テキスト</rs-chip>`,
       { lang: 'html' }
     )}
     ${copyCodeBlock(
 `@import '@rsmdc/chips/rs-chips.scss';
 
 .my-chip {
-  &.-outliend.-border-width {
+  &.-outlined.-line-width {
     @include rs-chip-outline-width(3px);
   }
 }
@@ -353,23 +352,25 @@ storiesOf('Components|Chip', module)
 
   .add('枠線のスタイルを変える', () => `
     <h4>枠線のスタイルを指定したスタイルに変える。</h4>
-    <rs-chip class="my-chip -outliend -border-style">テキスト</rs-chip>
+    <p>タイプがoutlinedの時に使用。</p>
+    <rs-chip class="my-chip -outlined -line-style">テキスト</rs-chip>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
-      `@include rs-chip-outline-style($style);`,
+      `@include rs-chip-outline-border-style($style);`,
       { lang: 'scss' }
     )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
-`<rs-chip class="my-chip -outliend -border-style">テキスト</rs-chip>`,
+`<rs-chip class="my-chip -outlined -line-style">テキスト</rs-chip>`,
       { lang: 'html' }
     )}
     ${copyCodeBlock(
 `@import '@rsmdc/chips/rs-chips.scss';
 
 .my-chip {
-  &.-outliend.-border-style {
-    @include rs-chip-outline-style(3px);
+  &.-outlined.-line-style {
+    @include rs-chip-outline-border-style(double);
+    @include rs-chip-outline-width(4px);
   }
 }
 `,
@@ -378,30 +379,31 @@ storiesOf('Components|Chip', module)
     <p>オプション</p>
     <ul>
       <li>
-        $style: 線のスタイルを指定 <br> 例）solid
+        $style: 線のスタイルを指定 <br> 例）double
       </li>
     </ul>
   `)
 
   .add('枠線のスタイルを一括で変える', () => `
     <h4>枠線のスタイル、線の太さ、線の色を一括で変える。</h4>
-    <rs-chip class="my-chip -outliend -border">テキスト</rs-chip>
+    <p>タイプがoutlinedの時に使用。</p>
+    <rs-chip class="my-chip -outlined -style">テキスト</rs-chip>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
-      `@include rs-chip-outline-style($width, $style, $color);`,
+      `@include rs-chip-outline-border-style($width, $style, $color);`,
       { lang: 'scss' }
     )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
-`<rs-chip class="my-chip -outliend -border">テキスト</rs-chip>`,
+`<rs-chip class="my-chip -outlined -line">テキスト</rs-chip>`,
       { lang: 'html' }
     )}
     ${copyCodeBlock(
 `@import '@rsmdc/chips/rs-chips.scss';
 
 .my-chip {
-  &.-outliend.-border {
-    @include rs-chip-outline(4px, double, orange);
+  &.-outlined.-style {
+    @include rs-chip-outline-style(4px, double, orange);
   }
 }
 `,
@@ -423,7 +425,7 @@ storiesOf('Components|Chip', module)
 
   .add('チップスの高さを変える', () => `
     <h4>チップスの高さを指定したサイズに変える。</h4>
-    <rs-chip class="my-chip -height">テキスト</rs-chip>
+    <rs-chip class="my-chip -height">01</rs-chip>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
       `@include rs-chip-height($height);`,
@@ -431,7 +433,7 @@ storiesOf('Components|Chip', module)
     )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
-`<rs-chip class="my-chip -height">テキスト</rs-chip>`,
+`<rs-chip class="my-chip -height">01</rs-chip>`,
       { lang: 'html' }
     )}
     ${copyCodeBlock(
@@ -439,7 +441,7 @@ storiesOf('Components|Chip', module)
 
 .my-chip {
   &.-height {
-    @include rs-chip-height(35px);
+    @include rs-chip-height(40px);
   }
 }
 `,
@@ -448,14 +450,14 @@ storiesOf('Components|Chip', module)
     <p>オプション</p>
     <ul>
       <li>
-        $height: 高さを指定 <br> 例）35px
+        $height: 高さを指定 <br> 例）40px
       </li>
     </ul>
   `)
 
   .add('チップス内の横幅の余白を変える', () => `
   <h4>チップス内の横幅の余白（パディング）を指定したサイズに変える。</h4>
-  <rs-chip class="my-chip -padding">テキスト</rs-chip>
+  <rs-chip class="my-chip -horizontal-padding">テキスト</rs-chip>
   <h4>使用するmixin</h4>
   ${copyCodeBlock(
 `@include rs-chip-horizontal-padding($padding);`,
@@ -463,15 +465,15 @@ storiesOf('Components|Chip', module)
   )}
   <h4>使用方法</h4>
   ${copyCodeBlock(
-`<rs-chip class="my-chip -padding">テキスト</rs-chip>`,
+`<rs-chip class="my-chip -horizontal-padding">テキスト</rs-chip>`,
     { lang: 'html' }
   )}
   ${copyCodeBlock(
 `@import '@rsmdc/chips/rs-chips.scss';
 
 .my-chip {
-  &.-padding {
-    @include rs-chip-horizontal-padding(10px);
+  &.-horizontal-padding {
+    @include rs-chip-horizontal-padding(30px);
   }
 }
 `,
@@ -479,10 +481,9 @@ storiesOf('Components|Chip', module)
   )}
   <p>オプション</p>
   <ul>
-    <li>$padding: 横幅の余白を指定 <br> 例）10px</li>
+    <li>$padding: 横幅の余白を指定 <br> 例）30px</li>
   </ul>
 `)
-
 
   .add('アイコンを設定する', () => `
     <h4>アイコンを設定する</h4>
@@ -527,6 +528,40 @@ storiesOf('Components|Chip', module)
       </li>
     </ul>
   `)
+    
+  .add('アイコンの位置を変える', () => `
+  <h4>表示したアイコンの位置を変える</h4>
+  <rs-chip class="my-chip -icon -position">テキスト</rs-chip>
+  <h4>使用するmixin</h4>
+  ${copyCodeBlock(
+`@include rs-chip-icon-position($position);`,
+    { lang: 'scss' }
+  )}
+  <h4>使用方法</h4>
+  ${copyCodeBlock(
+`<rs-chip class="my-chip -icon -position">テキスト</rs-chip>`,
+    { lang: 'html' }
+  )}
+  ${copyCodeBlock(
+`@import '@rsmdc/chips/rs-chips.scss';
+
+.my-chip {
+  &.-icon.-position {
+    @include rs-chip-icon-image(
+      Material Icons,
+      map-get($material-icons-codepoints, star)
+    );
+    @include rs-chip-icon-position(right);
+  }
+}
+`,
+    { lang: 'scss' }
+  )}
+  <p>オプション</p>
+  <ul>
+    <li>$position: アイコンの位置を指定<br>leftかrightで指定する（ デフォルトはleft ）</li>
+  </ul>
+`)
 
   .add('アイコンの色を変える', () => `
     <h4>アイコンの色を指定した色に変える。</h4>
@@ -565,7 +600,7 @@ storiesOf('Components|Chip', module)
   <rs-chip class="my-chip -icon -size">テキスト</rs-chip>
   <h4>使用するmixin</h4>
   ${copyCodeBlock(
-`@include rs-chip-icon-size($font-size)`,
+`@include rs-chip-icon-size($size)`,
     { lang: 'scss' }
   )}
   <h4>使用方法</h4>
@@ -586,7 +621,7 @@ storiesOf('Components|Chip', module)
   )}
   <p>オプション</p>
   <ul>
-    <li>$font-size: アイコンのサイズを指定 <br> 例）14px</li>
+    <li>$size: アイコンのサイズを指定 <br> 例）14px</li>
   </ul>
 `)
 
@@ -595,7 +630,7 @@ storiesOf('Components|Chip', module)
   <rs-chip class="my-chip -icon -margin">テキスト</rs-chip>
   <h4>使用するmixin</h4>
   ${copyCodeBlock(
-`@include rs-chip-icon-margin($margin);`,
+`@include rs-chip-icon-margin($left-margin, $right-margin);`,
     { lang: 'scss' }
   )}
   <h4>使用方法</h4>
@@ -608,7 +643,7 @@ storiesOf('Components|Chip', module)
 
 .my-chip {
   &.-icon.-margin {
-    @include rs-chip-icon-margin(10px);
+    @include rs-chip-icon-margin(10px, 5px);
   }
 }
 `,
@@ -616,6 +651,7 @@ storiesOf('Components|Chip', module)
   )}
   <p>オプション</p>
   <ul>
-    <li>$margin: アイコン周り余白を指定 <br> 例）10px</li>
+    <li>$left-margin: アイコンの左側の余白を指定<br>例）10px</li>
+    <li>$right-margin: アイコンの右側の余白を指定<br>例）5px</li>
   </ul>
 `)

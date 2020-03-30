@@ -1,5 +1,61 @@
 @import "@rsmdc/chips/rs-chips";
+$material-icons-font-path: '~material-icons/iconfont/';
+@import '~material-icons/iconfont/material-icons';
 
-.chip-demo {
-  padding-bottom: 10px;
+.my-chip {
+  &.-outlined {
+    @include rs-chip-type(outlined);
+    &.-line-orange {
+      @include rs-chip-outline-color(orange);
+    }
+    &.-line-width {
+      @include rs-chip-outline-width(3px);
+    }
+    &.-line-style {
+      @include rs-chip-outline-border-style(double);
+      @include rs-chip-outline-width(4px);
+    }
+    &.-style {
+      @include rs-chip-outline-style(3px, double, orange);
+    }
+  }
+  &.-shaped {
+    @include rs-chip-type(shaped);
+  }
+  &.-text-orange {
+    @include rs-chip-ink-color(orange);
+  }
+  &.-select-orange {
+    @include rs-chip-selected-ink-color(orange);
+  }
+  &.-fill-orange {
+    @include rs-chip-fill-color(orange);
+  }
+  &.-radius {
+    @include rs-chip-shape-radius(10px);
+  }
+  &.-height {
+    @include rs-chip-height(40px);
+  }
+  &.-horizontal-padding {
+    @include rs-chip-horizontal-padding(30px);
+  }
+  &.-icon {
+    @include rs-chip-icon-image(
+      Material Icons,
+      map-get($material-icons-codepoints, star)
+    );
+    &.-orange {
+      @include rs-chip-icon-color(orange);
+    }
+    &.-size {
+      @include rs-chip-icon-size(14px);
+    }
+    &.-margin {
+      @include rs-chip-icon-margin(10px, 5px);
+    }
+    &.-position {
+      @include rs-chip-icon-position(right);
+    }
+  }
 }
