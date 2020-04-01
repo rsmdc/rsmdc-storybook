@@ -33,22 +33,22 @@ storiesOf('Components|Button', module)
       </tr>
       <tr>
         <td>Flat</td>
-        <td>画面の表面と同一平面上にあるテキストボタン</td>
+        <td>画面の表面と同一平面上にあるテキストボタン。</td>
         <td>低</td>
       </tr>
       <tr>
         <td>Outlined</td>
-        <td>枠付きのボタン</td>
+        <td>枠付きのボタン。</td>
         <td>中</td>
       </tr>
       <tr>
         <td>Unelevated</td>
-        <td>画面の表面と同一平面上にあるボタン</td>
+        <td>画面の表面と同一平面上にあるボタン。</td>
         <td>中</td>
       </tr>
       <tr>
         <td>Raised</td>
-        <td>浮きあったボタン</td>
+        <td>浮きあったボタン。</td>
         <td>高</td>
       </tr>
       <tr>
@@ -112,7 +112,7 @@ storiesOf('Components|Button', module)
       </tr>
       <tr>
         <td>rs-button</td>
-        <td>ボタンを表示します</td>
+        <td>ボタンを表示します。</td>
         <td>テキスト</td>
         <td>-</td>
       </tr>
@@ -128,21 +128,21 @@ storiesOf('Components|Button', module)
       </tr>
       <tr>
         <td>disabled</td>
-        <td>ボタンを無効にします</td>
+        <td>ボタンを無効にします。</td>
         <td>Boolean</td>
         <td>-</td>
       </tr>
       <tr>
         <td>exited</td>
-        <td>ボタンを非表示にします</td>
+        <td>ボタンを非表示にします。</td>
         <td>Boolean</td>
-        <td>FABの時のみ使えます</td>
+        <td>FABの時のみ使えます。</td>
       </tr>
       <tr>
         <td>fixed</td>
-        <td>ボタンの位置を固定します</td>
+        <td>ボタンの位置を固定します。</td>
         <td>Boolean</td>
-        <td>FABの時のみ使えます</td>
+        <td>FABの時のみ使えます。</td>
       </tr>
     </table>
     
@@ -377,7 +377,7 @@ storiesOf('Components|Button/スタイルのカスタマイズ', module)
     )}
     <p>オプション</p>
     <ul>
-      <li>$color: インクの色コード <br> 例）#ee00ce</li>
+      <li>$color: インクの色コード。 <br> 例）#ee00ce</li>
     </ul> 
   `)
   .add('背景色を変える', () => `
@@ -406,7 +406,7 @@ storiesOf('Components|Button/スタイルのカスタマイズ', module)
     )}
     <p>オプション</p>
     <ul>
-      <li>$color: コンテナの色の塗りコード <br> 例）#ee00ce</li>
+      <li>$color: コンテナの色の塗りコード。 <br> 例）#ee00ce</li>
     </ul> 
   `)
   .add('リップルの色を変える', () => `
@@ -434,7 +434,7 @@ storiesOf('Components|Button/スタイルのカスタマイズ', module)
   )}
     <p>オプション</p>
     <ul>
-      <li>$color: リップルの色を指定 <br> 例）#ee00ce</li>
+      <li>$color: リップルの色を指定。 <br> 例）#ee00ce</li>
     </ul> 
   `)
   .add('背景色からテキストとリップルの色を変える', () =>  `
@@ -468,12 +468,12 @@ storiesOf('Components|Button/スタイルのカスタマイズ', module)
   )}
     <p>オプション</p>
     <ul>
-      <li>$color: リップルの色を指定 <br> 例）#ee00ce</li>
+      <li>$color: リップルの色を指定。 <br> 例）#ee00ce</li>
     </ul> 
   `)
   .add('線の色を変える', () => `
     <h4>境界線の色を指定した色に変える。</h4>
-    <p>タイプがoutlinedの時に使用。</p>
+    <p>outlinedタイプの時に適用される。</p>
     <rs-button class="my-button -outlined -line-orange">button</rs-button>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
@@ -498,12 +498,14 @@ storiesOf('Components|Button/スタイルのカスタマイズ', module)
     )}
     <p>オプション</p>
     <ul>
-      <li>$color: 線の色を指定 <br> 例）#ee00ce</li>
+      <li>$color: 線の色を指定。 <br> 例）#ee00ce</li>
     </ul>
   `)
+
   .add('線の太さを変える', () => `
     <h4>境界線の太さを指定したサイズに変える。</h4>
-    <p>タイプがoutlinedの時に使用。</p>
+    <p>outlinedタイプの時に適用される。</p>
+
     <rs-button class="my-button -outlined -line-width">button</rs-button>
     <rs-button class="my-button -outlined -line-width -horizontal-padding">button</rs-button>
     <h4>使用するmixin</h4>
@@ -534,8 +536,8 @@ storiesOf('Components|Button/スタイルのカスタマイズ', module)
     )}
     <p>オプション</p>
     <ul>
-      <li>$width: 境界線の太さ（デフォルトは 2px）</li>
-      <li>$padding は mdc-button-horizontal-padding に固有の値が設定されている場合に限り必須</li>
+      <li>$width: 線の太さを指定。（デフォルトは 2px）</li>
+      <li>$padding は rs-button-horizontal-padding に固有の値が設定されている場合に限り必須。</li>
     </ul>
   `)
   .add('ボタンの角の丸みを変える', () => `
@@ -564,7 +566,7 @@ storiesOf('Components|Button/スタイルのカスタマイズ', module)
     )}
     <p>オプション</p>
     <ul>
-      <li>$radius: 角の丸みのサイズを指定 <br> 例）15px</li>
+      <li>$radius: 角の丸みのサイズを指定。 <br> 例）15px</li>
     </ul>
   `)
   .add('ボタンの横幅を変える', () => `
@@ -591,11 +593,12 @@ storiesOf('Components|Button/スタイルのカスタマイズ', module)
     )}
     <p>オプション</p>
     <ul>
-      <li>$width: ボタンの横幅を指定</li>
+      <li>$width: ボタンの横幅を指定。</li>
     </ul>
   `)
-  .add('ボタン内の横幅の余白を変える', () => `
-    <h4>指定した大きさに水平方向のパディングを設定する。</h4>
+
+  .add('ボタン内の左右の余白を変える', () => `
+    <h4>ボタン内の左右の余白を指定したサイズに変える。</h4>
     <rs-button class="my-button -horizontal-padding">button</rs-button>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
@@ -620,10 +623,10 @@ storiesOf('Components|Button/スタイルのカスタマイズ', module)
     )}
     <p>オプション</p>
     <ul>
-      <li>$padding: 水平方向の大きさ</li>
+      <li>$padding: 左右の余白を指定。</li>
     </ul>
   `)
-  .add('アイコンをつける', () =>`
+  .add('アイコンを設定する', () =>`
     <h4>テキストの横に指定したアイコンを表示させる。</h4>
     <rs-button class="my-button -icon">submit</rs-button>
     <rs-button class="my-button -icon"></rs-button>
@@ -653,7 +656,7 @@ storiesOf('Components|Button/スタイルのカスタマイズ', module)
     )}
     <p>オプション</p>
     <ul>
-      <li>$url: アイコン URL <br> 例）url('https://cdn3.iconfinder.com/data/icons/pyconic-icons-1-2/512/heart-outline-512.png')</li>
+      <li>$url: 画像パスを指定。 <br> 例）url('https://cdn3.iconfinder.com/data/icons/pyconic-icons-1-2/512/heart-outline-512.png')</li>
     </ul>
   `)
   .add('アイコンの色を変える', () => `
@@ -687,7 +690,7 @@ storiesOf('Components|Button/スタイルのカスタマイズ', module)
   )}
   <p>オプション</p>
   <ul>
-    <li>$color: インクの色コード <br> 例）#ee00ce</li>
+    <li>$color: インクの色コード。 <br> 例）#ee00ce</li>
   </ul>
 `)
   .add('アイコンの位置を変える', () => `
@@ -719,7 +722,7 @@ storiesOf('Components|Button/スタイルのカスタマイズ', module)
     )}
     <p>オプション</p>
     <ul>
-      <li>$position: アイコンの位置を指定 <br> leftかrightで指定する（ デフォルトはleft ）</li>
+      <li>$position: アイコンの位置を指定。 <br> leftかrightで指定する。（ デフォルトはleft ）</li>
     </ul>
   `)
   .add('FABボタンの位置を変える', () => `
@@ -747,7 +750,7 @@ storiesOf('Components|Button/スタイルのカスタマイズ', module)
     )}
     <p>オプション</p>
     <ul>
-      <li>$position: FABボタンの表示位置を指定 <br> leftかcenterで指定する（ デフォルトはright ）</li>
+      <li>$position: FABボタンの表示位置を指定。 <br> leftかcenterで指定する。（ デフォルトはright ）</li>
     </ul>
   `)
 
