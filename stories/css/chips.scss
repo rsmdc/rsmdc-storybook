@@ -3,33 +3,26 @@ $material-icons-font-path: '~material-icons/iconfont/';
 @import '~material-icons/iconfont/material-icons';
 
 .my-chip {
-  &.-outlined {
-    @include rs-chip-type(outlined);
-    &.-line-orange {
-      @include rs-chip-outline-color(orange);
-    }
-    &.-line-width {
-      @include rs-chip-outline-width(3px);
-    }
-    &.-line-style {
-      @include rs-chip-outline-border-style(double);
-      @include rs-chip-outline-width(4px);
-    }
-    &.-style {
-      @include rs-chip-outline-style(3px, double, orange);
-    }
-  }
   &.-shaped {
     @include rs-chip-type(shaped);
   }
   &.-text-orange {
     @include rs-chip-ink-color(orange);
   }
-  &.-select-orange {
-    @include rs-chip-selected-ink-color(orange);
+  &.-selected-text-blue {
+    @include rs-chip-selected-ink-color(#61b8f1);
   }
   &.-fill-orange {
     @include rs-chip-fill-color(orange);
+  }
+  &.-selected-fill-blue {
+    @include rs-chip-selected-fill-color(#61b8f1);
+  }
+  &.-accessible-dark {
+    @include rs-chip-fill-color-accessible(black);
+  }
+  &.-accessible-light {
+    @include rs-chip-fill-color-accessible(orange);
   }
   &.-radius {
     @include rs-chip-shape-radius(10px);
@@ -48,6 +41,9 @@ $material-icons-font-path: '~material-icons/iconfont/';
     &.-orange {
       @include rs-chip-icon-color(orange);
     }
+    &.-selected-blue {
+      @include rs-chip-selected-icon-color(#61b8f1);
+    }
     &.-size {
       @include rs-chip-icon-size(14px);
     }
@@ -58,4 +54,24 @@ $material-icons-font-path: '~material-icons/iconfont/';
       @include rs-chip-icon-position(right);
     }
   }
+  &.-outlined {
+    @include rs-chip-type(outlined);
+    &.-line-orange {
+      @include rs-chip-outline-color(orange);
+    }
+    &.-line-width {
+      @include rs-chip-outline-width(3px);
+    }
+    &.-line-style {
+      @include rs-chip-outline-border-style(double);
+      @include rs-chip-outline-width(4px);
+    }
+    &.-style {
+      @include rs-chip-outline-style(3px, double, orange);
+    }
+    &.-selected-line-blue {
+      @include rs-chip-selected-outline-color(#61b8f1);
+    }
+  }
+
 }
