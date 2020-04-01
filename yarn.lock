@@ -1120,10 +1120,10 @@
     "@rsmdc/typography" "^1.1.24"
     tslib "^1.9.3"
 
-"@rsmdc/chips@^1.1.28":
-  version "1.1.28"
-  resolved "https://registry.yarnpkg.com/@rsmdc/chips/-/chips-1.1.28.tgz#239409df1750ceb715dba443594e6345fdcd3146"
-  integrity sha512-RkFUHbnNrtZpQOi6iNYUohkAM39KYaEmDOW40NiuwJ2z5ZTHhYfN/4O0ZmC/tEHP4GJpj2NWhzXCQ7oH1mz+PQ==
+"@rsmdc/chips@^1.1.36":
+  version "1.1.36"
+  resolved "https://registry.yarnpkg.com/@rsmdc/chips/-/chips-1.1.36.tgz#8745c3ed2eae9ef7ec91b8ad27172265cfda6086"
+  integrity sha512-IY4hD5tMyhmksvxpQzI4t54xsjiMyJd8f5QcZHBWCRTHoomTe6HXHSIYC19ESICRswlkJyG/cFE3hvRLRJTYMQ==
 
 "@rsmdc/data-table@^1.1.24":
   version "1.1.24"
@@ -1244,9 +1244,9 @@
     tslib "^1.9.3"
 
 "@rsmdc/rsmdc@^1.1.20":
-  version "1.1.35"
-  resolved "https://registry.yarnpkg.com/@rsmdc/rsmdc/-/rsmdc-1.1.35.tgz#06a0d1a4c3a506700a599230b9c7bce0d3664b74"
-  integrity sha512-+DjXrZaZ1IeiicvThz75/7SGUy+umff341vbGFE58HCumnKcEZrIuyjAt1W2cbrjJ1zR10V0Hey2ekkGIejbBw==
+  version "1.1.36"
+  resolved "https://registry.yarnpkg.com/@rsmdc/rsmdc/-/rsmdc-1.1.36.tgz#7545428d11f43c4edf532d777cb37944c909887d"
+  integrity sha512-TemUPkQYAEIH7hpHKZacHNmB8D0DKryzgzVnVS3KjUSwSvvqxMv5H2Nc/+/2+FLRnu5cL4Yyo/4OvubvEGkYoQ==
   dependencies:
     "@rsmdc/animation" "^1.1.24"
     "@rsmdc/app-layout" "^1.1.24"
@@ -1255,7 +1255,7 @@
     "@rsmdc/button" "^1.1.35"
     "@rsmdc/card" "^1.1.24"
     "@rsmdc/checkbox" "^1.1.27"
-    "@rsmdc/chips" "^1.1.28"
+    "@rsmdc/chips" "^1.1.36"
     "@rsmdc/data-table" "^1.1.24"
     "@rsmdc/dialog" "^1.1.24"
     "@rsmdc/dom" "^1.1.24"
