@@ -16,7 +16,7 @@ $material-icons-font-path: '~material-icons/iconfont/';
     @include rs-chip-fill-color(orange);
   }
   &.-selected-fill-blue {
-    @include rs-chip-selected-fill-color(#61b8f1);
+    @include rs-chip-selected-fill-color(#b7e0fc);
   }
   &.-accessible-dark {
     @include rs-chip-fill-color-accessible(black);

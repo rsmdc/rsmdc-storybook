@@ -10,18 +10,31 @@ import 'highlight.js/styles/a11y-light.css'
 
 chips.defineCustomElements(window)
 
-storiesOf('Components|Chip', module)
+storiesOf('Components|Chips', module)
   .addDecorator(withLinks)
   .add('概要', () => `
-    <h4>Chip</h4>
-    <p>チップは、入力、属性、またアクションを表すコンパクトな要素。</p>
+    <h4>Chips</h4>
+    <p>チップスは、入力、属性、またアクションを表すコンパクトな要素。</p>
     参考: <a href="https://material.io/components/chips/">https://material.io/components/chips/</a>
-    <p>スナックバーのタイプ</p>
-    <ul>
-      <li>normal（デフォルト）</li>
-      <li>outlined：枠線がつく</li>
-      <li>shaped：形状が四角いスタイル</li>
-    </ul>
+    <p>Chipsタイプ</p>
+    <table>
+      <tr>
+        <th>タイプ</th>
+        <th>概要</th>
+      </tr>
+      <tr>
+        <td>normal</td>
+        <td>形状が楕円のチップス。</td>
+      </tr>
+      <tr>
+        <td>outlined</td>
+        <td>枠付きのチップス。</td>
+      </tr>
+      <tr>
+        <td>shaped</td>
+        <td>形状が四角いチップス。</td>
+      </tr>
+    </table>
   `)
   .add('使用方法', () => `
     <h4>使用方法</h4>
@@ -45,7 +58,7 @@ storiesOf('Components|Chip', module)
       </tr>
       <tr>
         <td>rs-chip</td>
-        <td>チップ本体を表示します</td>
+        <td>チップス本体を表示します。</td>
         <td>テキスト</td>
         <td>-</td>
       </tr>
@@ -61,7 +74,7 @@ storiesOf('Components|Chip', module)
       </tr>
       <tr>
         <td>selected</td>
-        <td>チップを選択状態にします。</td>
+        <td>チップスを選択状態にします。</td>
         <td>Boolean</td>
         <td>-</td>
       </tr>
@@ -88,7 +101,7 @@ storiesOf('Components|Chip', module)
   `)
 
 
-  storiesOf('Components|Chip/スタイルのカスタマイズ/チップスのタイプを変える', module)
+  storiesOf('Components|Chips/スタイルのカスタマイズ/チップスのタイプを変える', module)
   .add('normal（デフォルト）', () => `
     <h4>normal</h4>
     <p>normalの場合mixinは不要。</p>
@@ -152,7 +165,7 @@ storiesOf('Components|Chip', module)
   )}
 `)
 
-  storiesOf('Components|Chip/スタイルのカスタマイズ', module)
+  storiesOf('Components|Chips/スタイルのカスタマイズ', module)
   .add('テキストの色を変える', () => `
     <h4>テキストの色を指定した色に変える。</h4>
     <rs-chip class="my-chip -text-orange">テキスト</rs-chip>
@@ -180,13 +193,14 @@ storiesOf('Components|Chip', module)
     <p>オプション</p>
     <ul>
       <li>
-        $color: インクの色コード <br> 例）#ee00ce
+        $color: インクの色コード。 <br> 例）#ee00ce
       </li>
     </ul>
   `)
 
   .add('選択状態のテキストの色を変える', () => `
     <h4>選択状態のテキストの色を指定した色に変える。</h4>
+    <p>チップスが選択状態の時に適用される。</p>
     <rs-chip class="my-chip -selected-text-blue" selected>テキスト</rs-chip>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
@@ -212,7 +226,7 @@ storiesOf('Components|Chip', module)
     <p>オプション</p>
     <ul>
       <li>
-        $color: インクの色コード <br> 例）#ee00ce
+        $color: インクの色コード。 <br> 例）#ee00ce
       </li>
     </ul>
   `)
@@ -244,7 +258,7 @@ storiesOf('Components|Chip', module)
     <p>オプション</p>
     <ul>
       <li>
-        $color: インクの色コード <br> 例）#ee00ce
+        $color: インクの色コード。 <br> 例）#ee00ce
       </li>
     </ul>
   `)
@@ -252,6 +266,7 @@ storiesOf('Components|Chip', module)
         
   .add('選択状態の背景色を変える', () => `
   <h4>選択状態の背景色の色を指定した色に変える。</h4>
+  <p>チップスが選択状態の時に適用される。</p>
   <rs-chip class="my-chip -selected-fill-blue" selected>テキスト</rs-chip>
   <h4>使用するmixin</h4>
   ${copyCodeBlock(
@@ -268,7 +283,7 @@ storiesOf('Components|Chip', module)
 
 .my-chip {
   &.-selected-fill-blue {
-    @include rs-chip-selected-fill-color(#61b8f1);
+    @include rs-chip-selected-fill-color(#b7e0fc);
   }
 }
 `,
@@ -277,7 +292,7 @@ storiesOf('Components|Chip', module)
   <p>オプション</p>
   <ul>
     <li>
-      $color: インクの色コード <br> 例）#ee00ce
+      $color: インクの色コード。<br> 例）#ee00ce
     </li>
   </ul>
 `)
@@ -314,7 +329,7 @@ storiesOf('Components|Chip', module)
   <p>オプション</p>
   <ul>
     <li>
-      $color: インクの色コード <br> 例）#ee00ce
+      $color: インクの色コード。 <br> 例）#ee00ce
     </li>
   </ul>
   `)
@@ -346,14 +361,14 @@ storiesOf('Components|Chip', module)
     <p>オプション</p>
     <ul>
       <li>
-        $radius: 角の丸みのサイズを指定 <br> 例）10px
+        $radius: 角の丸みのサイズを指定。 <br> 例）10px
       </li>
     </ul>
   `)
 
   .add('枠線の色を変える', () => `
-    <h4>枠線の色を指定した色に変える</h4>
-    <p>タイプがoutlinedの時に使用</p>
+    <h4>枠線の色を指定した色に変える。</h4>
+    <p>outlinedタイプの時に適用される。</p>
     <rs-chip class="my-chip -outlined -line-orange">テキスト</rs-chip>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
@@ -380,14 +395,14 @@ storiesOf('Components|Chip', module)
     <p>オプション</p>
     <ul>
       <li>
-        $color: インクの色コード <br> 例）#ee00ce
+        $color: インクの色コード。 <br> 例）#ee00ce
       </li>
     </ul>
   `)
 
   .add('選択状態の枠線の色を変える', () => `
     <h4>選択状態の枠線の色を指定した色に変える。</h4>
-    <p>タイプがoutlinedの時に使用</p>
+    <p>outlinedタイプで選択状態の時に適用される。</p>
     <rs-chip class="my-chip -outlined -selected-line-blue" selected>テキスト</rs-chip>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
@@ -414,14 +429,14 @@ storiesOf('Components|Chip', module)
     <p>オプション</p>
     <ul>
       <li>
-        $color: インクの色コード <br> 例）#ee00ce
+        $color: インクの色コード。 <br> 例）#ee00ce
       </li>
     </ul>
   `)
 
   .add('枠線の太さを変える', () => `
     <h4>枠線の太さを指定したサイズに変える。</h4>
-    <p>タイプがoutlinedの時に使用。</p>
+    <p>outlinedタイプの時に適用される。</p>
     <rs-chip class="my-chip -outlined -line-width">テキスト</rs-chip>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
@@ -448,14 +463,14 @@ storiesOf('Components|Chip', module)
     <p>オプション</p>
     <ul>
       <li>
-        $width: 線の太さを指定 <br> 例）3px
+        $width: 線の太さを指定。 <br> 例）3px
       </li>
     </ul>
   `)
 
   .add('枠線のスタイルを変える', () => `
     <h4>枠線のスタイルを指定したスタイルに変える。</h4>
-    <p>タイプがoutlinedの時に使用。</p>
+    <p>outlinedタイプの時に適用される。</p>
     <rs-chip class="my-chip -outlined -line-style">テキスト</rs-chip>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
@@ -483,14 +498,14 @@ storiesOf('Components|Chip', module)
     <p>オプション</p>
     <ul>
       <li>
-        $style: 線のスタイルを指定 <br> 例）double
+        $style: 線のスタイルを指定。 <br> 例）double
       </li>
     </ul>
   `)
 
   .add('枠線のスタイルを一括で変える', () => `
     <h4>枠線のスタイル、線の太さ、線の色を一括で変える。</h4>
-    <p>タイプがoutlinedの時に使用。</p>
+    <p>outlinedタイプの時に適用される。</p>
     <rs-chip class="my-chip -outlined -style">テキスト</rs-chip>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
@@ -517,13 +532,13 @@ storiesOf('Components|Chip', module)
     <p>オプション</p>
     <ul>
       <li>
-        $width: 線の太さを指定 <br> 例）4px
+        $width: 線の太さを指定。 <br> 例）4px
       </li>
       <li>
-        $style: 線のスタイルを指定 <br> 例）double
+        $style: 線のスタイルを指定。 <br> 例）double
       </li>
       <li>
-        $color: 線の色を指定 <br> 例）#ee00ce
+        $color: 線の色を指定。 <br> 例）#ee00ce
       </li>
     </ul>
   `)
@@ -555,13 +570,13 @@ storiesOf('Components|Chip', module)
     <p>オプション</p>
     <ul>
       <li>
-        $height: 高さを指定 <br> 例）40px
+        $height: 高さを指定。 <br> 例）40px
       </li>
     </ul>
   `)
 
-  .add('チップス内の横幅の余白を変える', () => `
-    <h4>チップス内の横幅の余白（パディング）を指定したサイズに変える。</h4>
+  .add('チップス内の左右の余白を変える', () => `
+    <h4>チップス内の左右の余白を指定したサイズに変える。</h4>
     <rs-chip class="my-chip -horizontal-padding">テキスト</rs-chip>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
@@ -586,12 +601,12 @@ storiesOf('Components|Chip', module)
     )}
     <p>オプション</p>
     <ul>
-      <li>$padding: 横幅の余白を指定 <br> 例）30px</li>
+      <li>$padding: 左右の余白を指定。 <br> 例）30px</li>
     </ul>
   `)
 
   .add('アイコンを設定する', () => `
-    <h4>アイコンを設定する</h4>
+    <h4>アイコンを設定する。</h4>
     <rs-chip class="my-chip -icon">テキスト</rs-chip>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
@@ -626,16 +641,16 @@ storiesOf('Components|Chip', module)
             icon-font: font-family <br> 例）Material Icons
           </li>
           <li>
-            image: 画像パス <br> url('example.png')
+            image: 画像パスを指定。 <br> url('example.png')
           </li>
         </ul>
-        <li>$codepoint: コードポイント（icon-fontの時のみ）<br> 例）e063</li>
+        <li>$codepoint: コードポイントを指定。（icon-fontの時のみ）<br> 例）e063</li>
       </li>
     </ul>
   `)
     
   .add('アイコンの位置を変える', () => `
-    <h4>表示したアイコンの位置を変える</h4>
+    <h4>表示したアイコンの位置を変える。</h4>
     <rs-chip class="my-chip -icon -position">テキスト</rs-chip>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
@@ -664,7 +679,7 @@ storiesOf('Components|Chip', module)
     )}
     <p>オプション</p>
     <ul>
-      <li>$position: アイコンの位置を指定<br>leftかrightで指定する（ デフォルトはleft ）</li>
+      <li>$position: アイコンの位置を指定。<br>leftかrightで指定する。（ デフォルトはleft ）</li>
     </ul>
   `)
 
@@ -695,13 +710,14 @@ storiesOf('Components|Chip', module)
     <p>オプション</p>
     <ul>
       <li>
-        $color:　アイコンの色を指定 <br> 例）#ee00ce
+        $color: アイコンの色を指定。 <br> 例）#ee00ce
       </li>
     </ul>
   `)
 
   .add('選択状態のアイコンの色を変える', () => `
     <h4>選択状態のアイコンの色を指定した色に変える。</h4>
+    <p>チップスが選択状態の時に適用される。</p>
     <rs-chip class="my-chip -icon -selected-blue" selected>テキスト</rs-chip>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
@@ -731,7 +747,7 @@ storiesOf('Components|Chip', module)
     <p>オプション</p>
     <ul>
       <li>
-        $color:　アイコンの色を指定 <br> 例）#ee00ce
+        $color: アイコンの色を指定。 <br> 例）#ee00ce
       </li>
     </ul>
   `)
@@ -762,7 +778,7 @@ storiesOf('Components|Chip', module)
     )}
     <p>オプション</p>
     <ul>
-      <li>$size: アイコンのサイズを指定 <br> 例）14px</li>
+      <li>$size: アイコンのサイズを指定。 <br> 例）14px</li>
     </ul>
   `)
 
@@ -792,7 +808,7 @@ storiesOf('Components|Chip', module)
     )}
     <p>オプション</p>
     <ul>
-      <li>$left-margin: アイコンの左側の余白を指定<br>例）10px</li>
-      <li>$right-margin: アイコンの右側の余白を指定<br>例）5px</li>
+      <li>$left-margin: アイコンの左側の余白を指定。<br>例）10px</li>
+      <li>$right-margin: アイコンの右側の余白を指定。<br>例）5px</li>
     </ul>
   `)
