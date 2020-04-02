@@ -1191,6 +1191,11 @@
     "@rsmdc/typography" "^1.1.24"
     tslib "^1.9.3"
 
+"@rsmdc/image-list@^1.1.37":
+  version "1.1.37"
+  resolved "https://registry.yarnpkg.com/@rsmdc/image-list/-/image-list-1.1.37.tgz#43db617026b4985d02008421dc23a2a0aedbb30b"
+  integrity sha512-KUtwYYGJD3oI0ceN9Cbqa5hZ5F0rRgFzAqAo9fRONDHBYzrGJPcfvVNmpMsSU1i5Z/2fPyu1Ehha/W+cW+6ZOg==
+
 "@rsmdc/line-ripple@^1.1.24":
   version "1.1.24"
   resolved "https://registry.yarnpkg.com/@rsmdc/line-ripple/-/line-ripple-1.1.24.tgz#1b7385fd2f54522c5d5dcacad875b04b2fe3271d"
@@ -1244,9 +1249,9 @@
     tslib "^1.9.3"
 
 "@rsmdc/rsmdc@^1.1.20":
-  version "1.1.36"
-  resolved "https://registry.yarnpkg.com/@rsmdc/rsmdc/-/rsmdc-1.1.36.tgz#7545428d11f43c4edf532d777cb37944c909887d"
-  integrity sha512-TemUPkQYAEIH7hpHKZacHNmB8D0DKryzgzVnVS3KjUSwSvvqxMv5H2Nc/+/2+FLRnu5cL4Yyo/4OvubvEGkYoQ==
+  version "1.1.37"
+  resolved "https://registry.yarnpkg.com/@rsmdc/rsmdc/-/rsmdc-1.1.37.tgz#ce07b5fb4643432cf937b84f8d359ce7a509a0be"
+  integrity sha512-5mxr3F+WNK/MtjQUhjlZiAjpG2Ru/7Ef6ihmmfsfbsDFa+a/C5R/KpQP87+bFBV067jSKfuDYQedXD5hIFFF6Q==
   dependencies:
     "@rsmdc/animation" "^1.1.24"
     "@rsmdc/app-layout" "^1.1.24"
@@ -1263,6 +1268,7 @@
     "@rsmdc/elevation" "^1.1.24"
     "@rsmdc/floating-label" "^1.1.24"
     "@rsmdc/form-field" "^1.1.24"
+    "@rsmdc/image-list" "^1.1.37"
     "@rsmdc/line-ripple" "^1.1.24"
     "@rsmdc/list" "^1.1.28"
     "@rsmdc/menu" "^1.1.28"
