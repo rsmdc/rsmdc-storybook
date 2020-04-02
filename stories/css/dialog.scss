@@ -4,4 +4,32 @@
   &.-stacked {
     @include rs-dialog-type(stacked);
   }
+  &.-title-orange {
+    @include rs-dialog-title-ink-color(orange);
+  }
+  &.-text-orange {
+    @include rs-dialog-content-ink-color(orange);
+  }
+  &.-fill-beige {
+    @include rs-dialog-container-fill-color(#f3f3ae);
+  }
+  &.-divider-orange {
+    @include rs-dialog-scroll-divider-color(orange);
+  }
+  &.-radius {
+    @include rs-dialog-shape-radius(20px);
+  }
+  &.-min-width {
+    @include rs-dialog-min-width(500px);
+  }
+  &.-max-width {
+    @include rs-dialog-max-width(200px);
+  }
+  &.-height {
+    @include rs-dialog-max-height(250px);
+  }
+}
+
+.-scrollable {
+  display: none;
 }

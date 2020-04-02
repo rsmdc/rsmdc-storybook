@@ -17,11 +17,21 @@ storiesOf('Components|Dialog', module)
     <p>ダイアログは、ユーザーによる意思決定や追加情報の入力用などに表示される。</p>
     参考: <a href="https://material.io/components/dialogs/#">https://material.io/components/dialogs/#</a>
 
-    <p>ダイアログのタイプ</p>
-    <ul>
-      <li>normal（デフォルト）</li>
-      <li>stacked：ボタンが改行された状態で表示</li>
-    </ul>
+    <p>Dialogタイプ</p>
+    <table>
+      <tr>
+        <th>タイプ</th>
+        <th>概要</th>
+      </tr>
+      <tr>
+        <td>normal</td>
+        <td>アクション部分が横並びに表示されるダイアログ。</td>
+      </tr>
+      <tr>
+        <td>stacked</td>
+        <td>アクション部分が縦並びに表示されるダイアログ。</td>
+      </tr>
+    </table>
   `)
   .add('使用方法', () => `
     <h4>使用方法</h4>
@@ -55,7 +65,7 @@ storiesOf('Components|Dialog', module)
       </tr>
       <tr>
         <td>rs-dialog</td>
-        <td>ダイアログ本体を表示します</td>
+        <td>ダイアログ本体を表示します。</td>
         <td>
           <ul>
             <li>rs-dialog-title</li>
@@ -66,13 +76,13 @@ storiesOf('Components|Dialog', module)
       </tr>
       <tr>
         <td>rs-dialog-title</td>
-        <td>タイトルを表示します</td>
+        <td>タイトルを表示します。</td>
         <td>テキスト</td>
         <td>-</td>
       </tr>
       <tr>
         <td>rs-dialog-content</td>
-        <td>コンテンツ部分を表示します</td>
+        <td>コンテンツ部分を表示します。</td>
         <td>
           <ul>  
             <li>rs-list</li>
@@ -83,7 +93,7 @@ storiesOf('Components|Dialog', module)
       </tr>
     </table>
     <h4>HTML属性</h4>
-    <p>下記HTML属性をつけることで、custom elementsの状態が変化します</p>
+    <p>下記HTML属性をつけることで、custom elementsの状態が変化します。</p>
     <table>
       <tr>
         <th>属性</th>
@@ -99,7 +109,7 @@ storiesOf('Components|Dialog', module)
       </tr>
       <tr>
         <td>scrollable</td>
-        <td>コンテンツが溢れる場合スクロール状態にする。</td>
+        <td>コンテンツが溢れる場合スクロール状態にします。</td>
         <td>Boolean</td>
         <td>-</td>
       </tr>
@@ -187,63 +197,24 @@ storiesOf('Components|Dialog', module)
   `)
 
   storiesOf('Components|Dialog/スタイルのカスタマイズ', module)
-  .add('背景色を変える', () => `
-    <h4>背景色を指定した色に変える。</h4>
-    <rs-dialog class="info-dialog -fill-beige" opened>
-      <rs-dialog-title class="title">タイトル</rs-dialog-title>
-      <rs-dialog-content class="content">コンテンツ</rs-dialog-content>
-      <rs-button class="button" onclick="window.document.querySelector('.info-dialog').removeAttribute('opened')">ok</rs-button>
-    </rs-dialog>
-    <h4>使用するmixin</h4>
-    ${copyCodeBlock(
-      `@include rs-dialog-container-fill-color($color);`,
-      { lang: 'scss' }
-    )}
-    <h4>使用方法</h4>
-    ${copyCodeBlock(
-`<rs-dialog class="info-dialog -fill-beige" opened>
-  <rs-dialog-title class="title">タイトル</rs-dialog-title>
-  <rs-dialog-content class="content">コンテンツ</rs-dialog-content>
-  <rs-button class="button">ok</rs-button>
-</rs-dialog>`,
-      { lang: 'html' }
-    )}
-    ${copyCodeBlock(
-`@import '@rsmdc/dialog/rs-dialog.scss';
-
-.info-dialog {
-  &.-fill-beige {
-    @include rs-dialog-container-fill-color(beige);
-  }
-}
-`,
-      { lang: 'scss' }
-    )}
-    <p>オプション</p>
-    <ul>
-      <li>
-        $color: インクの色コード <br> 例）#ee00ce
-      </li>
-    </ul>
-  `)
     
   .add('タイトルの色を変える', () => `
     <h4>タイトルの色を指定した色に変える。</h4>
     <rs-dialog class="info-dialog -title-orange" opened>
       <rs-dialog-title class="title">タイトル</rs-dialog-title>
-      <rs-dialog-content class="content">コンテンツ</rs-dialog-content>
+      <rs-dialog-content class="content">ダイアログの内容が入る</rs-dialog-content>
       <rs-button class="button" onclick="window.document.querySelector('.info-dialog').removeAttribute('opened')">ok</rs-button>
     </rs-dialog>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
-      `@include rs-dialog-title-ink-color($color);`,
+`@include rs-dialog-title-ink-color($color);`,
       { lang: 'scss' }
     )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
 `<rs-dialog class="info-dialog -title-orange" opened>
   <rs-dialog-title class="title">タイトル</rs-dialog-title>
-  <rs-dialog-content class="content">コンテンツ</rs-dialog-content>
+  <rs-dialog-content class="content">ダイアログの内容が入る</rs-dialog-content>
   <rs-button class="button">ok</rs-button>
 </rs-dialog>`,
       { lang: 'html' }
@@ -262,7 +233,7 @@ storiesOf('Components|Dialog', module)
     <p>オプション</p>
     <ul>
       <li>
-        $color: インクの色コード <br> 例）#ee00ce
+        $color: インクの色コード。 <br> 例）#ee00ce
       </li>
     </ul>
   `)
@@ -271,19 +242,19 @@ storiesOf('Components|Dialog', module)
     <h4>コンテンツのテキストの色を指定した色に変える。</h4>
     <rs-dialog class="info-dialog -text-orange" opened>
       <rs-dialog-title class="title">タイトル</rs-dialog-title>
-      <rs-dialog-content class="content">コンテンツ</rs-dialog-content>
+      <rs-dialog-content class="content">ダイアログの内容が入る</rs-dialog-content>
       <rs-button class="button" onclick="window.document.querySelector('.info-dialog').removeAttribute('opened')">ok</rs-button>
     </rs-dialog>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
-      `@include rs-dialog-content-ink-color($color);`,
+`@include rs-dialog-content-ink-color($color);`,
       { lang: 'scss' }
     )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
 `<rs-dialog class="info-dialog -text-orange" opened>
   <rs-dialog-title class="title">タイトル</rs-dialog-title>
-  <rs-dialog-content class="content">コンテンツ</rs-dialog-content>
+  <rs-dialog-content class="content">ダイアログの内容が入る</rs-dialog-content>
   <rs-button class="button">ok</rs-button>
 </rs-dialog>`,
       { lang: 'html' }
@@ -302,30 +273,71 @@ storiesOf('Components|Dialog', module)
     <p>オプション</p>
     <ul>
       <li>
-        $color: インクの色コード <br> 例）#ee00ce
+        $color: インクの色コード。 <br> 例）#ee00ce
       </li>
     </ul>
   `)
 
+  .add('背景色を変える', () => `
+    <h4>背景色を指定した色に変える。</h4>
+    <rs-dialog class="info-dialog -fill-beige" opened>
+      <rs-dialog-title class="title">タイトル</rs-dialog-title>
+      <rs-dialog-content class="content">ダイアログの内容が入る</rs-dialog-content>
+      <rs-button class="button" onclick="window.document.querySelector('.info-dialog').removeAttribute('opened')">ok</rs-button>
+    </rs-dialog>
+    <h4>使用するmixin</h4>
+    ${copyCodeBlock(
+`@include rs-dialog-container-fill-color($color);`,
+      { lang: 'scss' }
+    )}
+    <h4>使用方法</h4>
+    ${copyCodeBlock(
+`<rs-dialog class="info-dialog -fill-beige" opened>
+<rs-dialog-title class="title">タイトル</rs-dialog-title>
+<rs-dialog-content class="content">ダイアログの内容が入る</rs-dialog-content>
+<rs-button class="button">ok</rs-button>
+</rs-dialog>`,
+      { lang: 'html' }
+    )}
+    ${copyCodeBlock(
+`@import '@rsmdc/dialog/rs-dialog.scss';
+
+.info-dialog {
+  &.-fill-beige {
+    @include rs-dialog-container-fill-color(#f3f3ae);
+  }
+}
+`,
+      { lang: 'scss' }
+    )}
+    <p>オプション</p>
+    <ul>
+      <li>
+        $color: インクの色コード。 <br> 例）#ee00ce
+      </li>
+    </ul>
+  `)
+    
   .add('仕切り線の色を変える', () => `
-  <h4>仕切り線の色を指定した色に変える。</h4>
-  <rs-dialog class="info-dialog -divider-orange" scrollable opened>
-    <rs-dialog-title class="title">タイトル</rs-dialog-title>
-      <rs-dialog-content class="content">
-        Dorothy lived in the midst of the great Kansas prairies, with Uncle Henry, who was a farmer, and Aunt Em, who was the farmer's wife. Their house was small, for the lumber to build it had to be carried by wagon many miles. There were four walls, a floor and a roof, which made one room; and this room contained a rusty looking cookstove, a cupboard for the dishes, a table, three or four chairs, and the beds. Uncle Henry and Aunt Em had a big bed in one corner, and Dorothy a little bed in another corner. There was no garret at all, and no cellar--except a small hole dug in the ground, called a cyclone cellar, where the family could go in case one of those great whirlwinds arose, mighty enough to crush any building in its path. It was reached by a trap door in the middle of the floor, from which a ladder led down into the small, dark hole.
-        When Dorothy stood in the doorway and looked around, she could see nothing but the great gray prairie on every side. Not a tree nor a house broke the broad sweep of flat country that reached to the edge of the sky in all directions. The sun had baked the plowed land into a gray mass, with little cracks running through it. Even the grass was not green, for the sun had burned the tops of the long blades until they were the same gray color to be seen everywhere. Once the house had been painted, but the sun blistered the paint and the rains washed it away, and now the house was as dull and gray as everything else.
-        When Aunt Em came there to live she was a young, pretty wife. The sun and wind had changed her, too. They had taken the sparkle from her eyes and left them a sober gray; they had taken the red from her cheeks and lips, and they were gray also. She was thin and gaunt, and never smiled now. When Dorothy, who was an orphan, first came to her, Aunt Em had been so startled by the child's laughter that she would scream and press her hand upon her heart whenever Dorothy's merry voice reached her ears; and she still looked at the little girl with wonder that she could find anything to laugh at.
-        Uncle Henry never laughed. He worked hard from morning till night and did not know what joy was. He was gray also, from his long beard to his rough boots, and he looked stern and solemn, and rarely spoke.
-      </rs-dialog-content>
-    <rs-button class="button" onclick="window.document.querySelector('.info-dialog').removeAttribute('opened')">ok</rs-button>
-  </rs-dialog>
-  <h4>使用するmixin</h4>
-  ${copyCodeBlock(
-    `@include rs-dialog-scroll-divider-color($color);`,
-    { lang: 'scss' }
-  )}
-  <h4>使用方法</h4>
-  ${copyCodeBlock(
+    <h4>仕切り線の色を指定した色に変える。</h4>
+    <p>scrollable属性をつけた時に適用される。</p>
+    <rs-dialog class="info-dialog -divider-orange" scrollable opened>
+      <rs-dialog-title class="title">タイトル</rs-dialog-title>
+        <rs-dialog-content class="content">
+          Dorothy lived in the midst of the great Kansas prairies, with Uncle Henry, who was a farmer, and Aunt Em, who was the farmer's wife. Their house was small, for the lumber to build it had to be carried by wagon many miles. There were four walls, a floor and a roof, which made one room; and this room contained a rusty looking cookstove, a cupboard for the dishes, a table, three or four chairs, and the beds. Uncle Henry and Aunt Em had a big bed in one corner, and Dorothy a little bed in another corner. There was no garret at all, and no cellar--except a small hole dug in the ground, called a cyclone cellar, where the family could go in case one of those great whirlwinds arose, mighty enough to crush any building in its path. It was reached by a trap door in the middle of the floor, from which a ladder led down into the small, dark hole.
+          When Dorothy stood in the doorway and looked around, she could see nothing but the great gray prairie on every side. Not a tree nor a house broke the broad sweep of flat country that reached to the edge of the sky in all directions. The sun had baked the plowed land into a gray mass, with little cracks running through it. Even the grass was not green, for the sun had burned the tops of the long blades until they were the same gray color to be seen everywhere. Once the house had been painted, but the sun blistered the paint and the rains washed it away, and now the house was as dull and gray as everything else.
+          When Aunt Em came there to live she was a young, pretty wife. The sun and wind had changed her, too. They had taken the sparkle from her eyes and left them a sober gray; they had taken the red from her cheeks and lips, and they were gray also. She was thin and gaunt, and never smiled now. When Dorothy, who was an orphan, first came to her, Aunt Em had been so startled by the child's laughter that she would scream and press her hand upon her heart whenever Dorothy's merry voice reached her ears; and she still looked at the little girl with wonder that she could find anything to laugh at.
+          Uncle Henry never laughed. He worked hard from morning till night and did not know what joy was. He was gray also, from his long beard to his rough boots, and he looked stern and solemn, and rarely spoke.
+        </rs-dialog-content>
+      <rs-button class="button" onclick="window.document.querySelector('.info-dialog').removeAttribute('opened')">ok</rs-button>
+    </rs-dialog>
+    <h4>使用するmixin</h4>
+    ${copyCodeBlock(
+`@include rs-dialog-scroll-divider-color($color);`,
+      { lang: 'scss' }
+    )}
+    <h4>使用方法</h4>
+    ${copyCodeBlock(
 `<rs-dialog class="info-dialog -divider-orange" scrollable opened>
   <rs-dialog-title class="title">タイトル</rs-dialog-title>
   <rs-dialog-content class="content">
@@ -336,9 +348,9 @@ storiesOf('Components|Dialog', module)
   </rs-dialog-content>
   <rs-button class="button">ok</rs-button>
 </rs-dialog>`,
-    { lang: 'html' }
-  )}
-  ${copyCodeBlock(
+      { lang: 'html' }
+    )}
+    ${copyCodeBlock(
 `@import '@rsmdc/dialog/rs-dialog.scss';
 
 .info-dialog {
@@ -347,78 +359,78 @@ storiesOf('Components|Dialog', module)
   }
 }
 `,
-    { lang: 'scss' }
-  )}
-  <p>オプション</p>
-  <ul>
-    <li>
-      $color: インクの色コード <br> 例）#ee00ce
-    </li>
-  </ul>
-`)
+      { lang: 'scss' }
+    )}
+    <p>オプション</p>
+    <ul>
+      <li>
+        $color: インクの色コード。 <br> 例）#ee00ce
+      </li>
+    </ul>
+  `)
     
-.add('ダイアログの角の丸みを変える', () => `
-  <h4>ダイアログの角の丸みを指定したサイズに変える。</h4>
-  <rs-dialog class="info-dialog -radius" opened>
-    <rs-dialog-title class="title">タイトル</rs-dialog-title>
-      <rs-dialog-content class="content">コンテンツ</rs-dialog-content>
-    <rs-button class="button" onclick="window.document.querySelector('.info-dialog').removeAttribute('opened')">ok</rs-button>
-  </rs-dialog>
-  <h4>使用するmixin</h4>
-  ${copyCodeBlock(
-    `@include dialog-shape-radius($radius);`,
-    { lang: 'scss' }
-  )}
-  <h4>使用方法</h4>
-  ${copyCodeBlock(
+  .add('ダイアログの角の丸みを変える', () => `
+    <h4>ダイアログの角の丸みを指定したサイズに変える。</h4>
+    <rs-dialog class="info-dialog -radius" opened>
+      <rs-dialog-title class="title">タイトル</rs-dialog-title>
+        <rs-dialog-content class="content">コンテンツの内容が入る</rs-dialog-content>
+      <rs-button class="button" onclick="window.document.querySelector('.info-dialog').removeAttribute('opened')">ok</rs-button>
+    </rs-dialog>
+    <h4>使用するmixin</h4>
+    ${copyCodeBlock(
+`@include dialog-shape-radius($radius);`,
+      { lang: 'scss' }
+    )}
+    <h4>使用方法</h4>
+    ${copyCodeBlock(
 `<rs-dialog class="info-dialog -radius" opened>
   <rs-dialog-title class="title">タイトル</rs-dialog-title>
-  <rs-dialog-content class="content">コンテンツ</rs-dialog-content>
+  <rs-dialog-content class="content">コンテンツの内容が入る</rs-dialog-content>
   <rs-button class="button">ok</rs-button>
 </rs-dialog>`,
-    { lang: 'html' }
-  )}
-  ${copyCodeBlock(
+      { lang: 'html' }
+    )}
+    ${copyCodeBlock(
 `@import '@rsmdc/dialog/rs-dialog.scss';
 
 .info-dialog {
   &.-radius {
-    @include dialog-shape-radius(20px);
+    @include rs-dialog-shape-radius(20px);
   }
 }
 `,
-    { lang: 'scss' }
-  )}
-  <p>オプション</p>
-  <ul>
-    <li>
-      $radius: 角の丸みを指定 <br> 例）20px
-    </li>
-  </ul>
-`)
+      { lang: 'scss' }
+    )}
+    <p>オプション</p>
+    <ul>
+      <li>
+        $radius: 角の丸みを指定。 <br> 例）20px
+      </li>
+    </ul>
+  `)
 
-.add('ダイアログのサイズ（最小値）を変える', () => `
-  <h4>ダイアログの横幅の最小値を指定したサイズに変える。</h4>
-  <rs-dialog class="info-dialog -min-width" opened>
-    <rs-dialog-title class="title">タイトル</rs-dialog-title>
-      <rs-dialog-content class="content">コンテンツ</rs-dialog-content>
-    <rs-button class="button" onclick="window.document.querySelector('.info-dialog').removeAttribute('opened')">ok</rs-button>
-  </rs-dialog>
-  <h4>使用するmixin</h4>
-  ${copyCodeBlock(
-    `@include rs-dialog-min-width($width);`,
-    { lang: 'scss' }
-  )}
-  <h4>使用方法</h4>
-  ${copyCodeBlock(
+  .add('ダイアログのサイズ（最小値）を変える', () => `
+    <h4>ダイアログの横幅の最小値を指定したサイズに変える。</h4>
+    <rs-dialog class="info-dialog -min-width" opened>
+      <rs-dialog-title class="title">タイトル</rs-dialog-title>
+        <rs-dialog-content class="content">コンテンツの内容が入る</rs-dialog-content>
+      <rs-button class="button" onclick="window.document.querySelector('.info-dialog').removeAttribute('opened')">ok</rs-button>
+    </rs-dialog>
+    <h4>使用するmixin</h4>
+    ${copyCodeBlock(
+`@include rs-dialog-min-width($min-width);`,
+      { lang: 'scss' }
+    )}
+    <h4>使用方法</h4>
+    ${copyCodeBlock(
 `<rs-dialog class="info-dialog -min-width" opened>
   <rs-dialog-title class="title">タイトル</rs-dialog-title>
-  <rs-dialog-content class="content">コンテンツ</rs-dialog-content>
+  <rs-dialog-content class="content">コンテンツの内容が入る</rs-dialog-content>
   <rs-button class="button">ok</rs-button>
 </rs-dialog>`,
-    { lang: 'html' }
-  )}
-  ${copyCodeBlock(
+      { lang: 'html' }
+    )}
+    ${copyCodeBlock(
 `@import '@rsmdc/dialog/rs-dialog.scss';
 
 .info-dialog {
@@ -427,38 +439,38 @@ storiesOf('Components|Dialog', module)
   }
 }
 `,
-    { lang: 'scss' }
-  )}
-  <p>オプション</p>
-  <ul>
-    <li>
-      $width: 横幅の最小値を指定  <br> 例）500px
-    </li>
-  </ul>
-`)
+      { lang: 'scss' }
+    )}
+    <p>オプション</p>
+    <ul>
+      <li>
+        $min-width: 横幅の最小値を指定。 <br> 例）500px
+      </li>
+    </ul>
+  `)
 
-.add('ダイアログのサイズ（最大値）を変える', () => `
-  <h4>ダイアログの横幅の最大値を指定したサイズに変える。</h4>
-  <rs-dialog class="info-dialog -max-width" opened>
-    <rs-dialog-title class="title">タイトル</rs-dialog-title>
-      <rs-dialog-content class="content">コンテンツ</rs-dialog-content>
-    <rs-button class="button" onclick="window.document.querySelector('.info-dialog').removeAttribute('opened')">ok</rs-button>
-  </rs-dialog>
-  <h4>使用するmixin</h4>
-  ${copyCodeBlock(
-    `@include rs-dialog-max-width($width);`,
-    { lang: 'scss' }
-  )}
-  <h4>使用方法</h4>
-  ${copyCodeBlock(
+  .add('ダイアログのサイズ（最大値）を変える', () => `
+    <h4>ダイアログの横幅の最大値を指定したサイズに変える。</h4>
+    <rs-dialog class="info-dialog -max-width" opened>
+      <rs-dialog-title class="title">タイトル</rs-dialog-title>
+        <rs-dialog-content class="content">コンテンツの内容が入る</rs-dialog-content>
+      <rs-button class="button" onclick="window.document.querySelector('.info-dialog').removeAttribute('opened')">ok</rs-button>
+    </rs-dialog>
+    <h4>使用するmixin</h4>
+    ${copyCodeBlock(
+`@include rs-dialog-max-width($max-width);`,
+      { lang: 'scss' }
+    )}
+    <h4>使用方法</h4>
+    ${copyCodeBlock(
 `<rs-dialog class="info-dialog -max-width" opened>
   <rs-dialog-title class="title">タイトル</rs-dialog-title>
-  <rs-dialog-content class="content">コンテンツ</rs-dialog-content>
+  <rs-dialog-content class="content">コンテンツの内容が入る</rs-dialog-content>
   <rs-button class="button">ok</rs-button>
 </rs-dialog>`,
-    { lang: 'html' }
-  )}
-  ${copyCodeBlock(
+      { lang: 'html' }
+    )}
+    ${copyCodeBlock(
 `@import '@rsmdc/dialog/rs-dialog.scss';
 
 .info-dialog {
@@ -467,38 +479,48 @@ storiesOf('Components|Dialog', module)
   }
 }
 `,
-    { lang: 'scss' }
-  )}
-  <p>オプション</p>
-  <ul>
-    <li>
-      $width: 横幅の最大値を指定  <br> 例）200px
-    </li>
-  </ul>
-`)
+      { lang: 'scss' }
+    )}
+    <p>オプション</p>
+    <ul>
+      <li>
+        $max-width: 横幅の最大値を指定。 <br> 例）200px
+      </li>
+    </ul>
+  `)
 
-.add('ダイアログの高さを変える', () => `
-  <h4>ダイアログの高さを指定したサイズに変える。</h4>
-  <rs-dialog class="info-dialog -height" opened>
-    <rs-dialog-title class="title">タイトル</rs-dialog-title>
-      <rs-dialog-content class="content">コンテンツ</rs-dialog-content>
-    <rs-button class="button" onclick="window.document.querySelector('.info-dialog').removeAttribute('opened')">ok</rs-button>
-  </rs-dialog>
-  <h4>使用するmixin</h4>
-  ${copyCodeBlock(
-    `@include rs-dialog-max-height($height);`,
-    { lang: 'scss' }
-  )}
-  <h4>使用方法</h4>
-  ${copyCodeBlock(
+  .add('ダイアログの高さを変える', () => `
+    <h4>ダイアログの高さを指定したサイズに変える。</h4>
+    <rs-dialog class="info-dialog -height" opened>
+      <rs-dialog-title class="title">タイトル</rs-dialog-title>
+        <rs-dialog-content class="content">
+          Dorothy lived in the midst of the great Kansas prairies, with Uncle Henry, who was a farmer, and Aunt Em, who was the farmer's wife. Their house was small, for the lumber to build it had to be carried by wagon many miles. There were four walls, a floor and a roof, which made one room; and this room contained a rusty looking cookstove, a cupboard for the dishes, a table, three or four chairs, and the beds. Uncle Henry and Aunt Em had a big bed in one corner, and Dorothy a little bed in another corner. There was no garret at all, and no cellar--except a small hole dug in the ground, called a cyclone cellar, where the family could go in case one of those great whirlwinds arose, mighty enough to crush any building in its path. It was reached by a trap door in the middle of the floor, from which a ladder led down into the small, dark hole.
+          When Dorothy stood in the doorway and looked around, she could see nothing but the great gray prairie on every side. Not a tree nor a house broke the broad sweep of flat country that reached to the edge of the sky in all directions. The sun had baked the plowed land into a gray mass, with little cracks running through it. Even the grass was not green, for the sun had burned the tops of the long blades until they were the same gray color to be seen everywhere. Once the house had been painted, but the sun blistered the paint and the rains washed it away, and now the house was as dull and gray as everything else.
+          When Aunt Em came there to live she was a young, pretty wife. The sun and wind had changed her, too. They had taken the sparkle from her eyes and left them a sober gray; they had taken the red from her cheeks and lips, and they were gray also. She was thin and gaunt, and never smiled now. When Dorothy, who was an orphan, first came to her, Aunt Em had been so startled by the child's laughter that she would scream and press her hand upon her heart whenever Dorothy's merry voice reached her ears; and she still looked at the little girl with wonder that she could find anything to laugh at.
+          Uncle Henry never laughed. He worked hard from morning till night and did not know what joy was. He was gray also, from his long beard to his rough boots, and he looked stern and solemn, and rarely spoke.
+        </rs-dialog-content>
+      <rs-button class="button" onclick="window.document.querySelector('.info-dialog').removeAttribute('opened')">ok</rs-button>
+    </rs-dialog>
+    <h4>使用するmixin</h4>
+    ${copyCodeBlock(
+`@include rs-dialog-max-height($max-height);`,
+      { lang: 'scss' }
+    )}
+    <h4>使用方法</h4>
+    ${copyCodeBlock(
 `<rs-dialog class="info-dialog -height" opened>
   <rs-dialog-title class="title">タイトル</rs-dialog-title>
-  <rs-dialog-content class="content">コンテンツ</rs-dialog-content>
+  <rs-dialog-content class="content">
+    Dorothy lived in the midst of the great Kansas prairies, with Uncle Henry, who was a farmer, and Aunt Em, who was the farmer's wife. Their house was small, for the lumber to build it had to be carried by wagon many miles. There were four walls, a floor and a roof, which made one room; and this room contained a rusty looking cookstove, a cupboard for the dishes, a table, three or four chairs, and the beds. Uncle Henry and Aunt Em had a big bed in one corner, and Dorothy a little bed in another corner. There was no garret at all, and no cellar--except a small hole dug in the ground, called a cyclone cellar, where the family could go in case one of those great whirlwinds arose, mighty enough to crush any building in its path. It was reached by a trap door in the middle of the floor, from which a ladder led down into the small, dark hole.
+    When Dorothy stood in the doorway and looked around, she could see nothing but the great gray prairie on every side. Not a tree nor a house broke the broad sweep of flat country that reached to the edge of the sky in all directions. The sun had baked the plowed land into a gray mass, with little cracks running through it. Even the grass was not green, for the sun had burned the tops of the long blades until they were the same gray color to be seen everywhere. Once the house had been painted, but the sun blistered the paint and the rains washed it away, and now the house was as dull and gray as everything else.
+    When Aunt Em came there to live she was a young, pretty wife. The sun and wind had changed her, too. They had taken the sparkle from her eyes and left them a sober gray; they had taken the red from her cheeks and lips, and they were gray also. She was thin and gaunt, and never smiled now. When Dorothy, who was an orphan, first came to her, Aunt Em had been so startled by the child's laughter that she would scream and press her hand upon her heart whenever Dorothy's merry voice reached her ears; and she still looked at the little girl with wonder that she could find anything to laugh at.
+    Uncle Henry never laughed. He worked hard from morning till night and did not know what joy was. He was gray also, from his long beard to his rough boots, and he looked stern and solemn, and rarely spoke.
+  </rs-dialog-content>
   <rs-button class="button">ok</rs-button>
 </rs-dialog>`,
-    { lang: 'html' }
-  )}
-  ${copyCodeBlock(
+      { lang: 'html' }
+    )}
+    ${copyCodeBlock(
 `@import '@rsmdc/dialog/rs-dialog.scss';
 
 .info-dialog {
@@ -507,12 +529,12 @@ storiesOf('Components|Dialog', module)
   }
 }
 `,
-    { lang: 'scss' }
-  )}
-  <p>オプション</p>
-  <ul>
-    <li>
-      $height: 高さを指定  <br> 250px
-    </li>
-  </ul>
-`)
+      { lang: 'scss' }
+    )}
+    <p>オプション</p>
+    <ul>
+      <li>
+        $max-height: 高さを指定。 <br> 250px
+      </li>
+    </ul>
+  `)
