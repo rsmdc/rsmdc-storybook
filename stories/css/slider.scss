@@ -1,1 +1,31 @@
 @import "@rsmdc/slider/rs-slider";
+
+.my-slider {
+  &.-slider-orange {
+    @include rs-slider-highlight-color(orange);
+  }
+  &.-rail-orange {
+    @include rs-slider-rail-color(orange);
+  }
+  &.-mark-orange {
+    @include rs-slider-rail-tick-mark-color(orange);
+  }
+  &.-thumb-orange {
+    @include rs-slider-thumb-color(orange);
+  }
+  &.-stroke-orange {
+    @include rs-slider-thumb-stroke-cutout(orange);
+  }
+  &.-focus-orange {
+    @include rs-slider-focus-halo-color(orange);
+  }
+  &.-pin-fill-orange {
+    @include rs-slider-value-pin-fill-color(orange);
+  }
+  &.-pin-orange {
+    @include rs-slider-value-pin-ink-color(orange);
+  }
+  &.-orange {
+    @include rs-slider-color-accessible(orange);
+  }
+}

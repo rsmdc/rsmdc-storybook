@@ -42,13 +42,13 @@ storiesOf('Components|Slider', module)
       </tr>
       <tr>
         <td>rs-slider</td>
-        <td>スライダー本体を表示します</td>
+        <td>スライダー本体を表示します。</td>
         <td>-</td>
         <td>-</td>
       </tr>
     </table>
     <h4>HTML属性</h4>
-    <p>下記HTML属性をつけることで、custom elementsの状態が変化します</p>
+    <p>下記HTML属性をつけることで、custom elementsの状態が変化します。</p>
     <table>
       <tr>
         <th>属性</th>
@@ -58,37 +58,37 @@ storiesOf('Components|Slider', module)
       </tr>
       <tr>
         <td>disabled</td>
-        <td>スライダーを無効にします</td>
+        <td>スライダーを無効にします。</td>
         <td>Boolean</td>
         <td>-</td>
       </tr>
       <tr>
         <td>min</td>
-        <td>最小値を設定します</td>
+        <td>最小値を設定します。</td>
         <td>number</td>
         <td>-</td>
       </tr>
       <tr>
         <td>max</td>
-        <td>最大値を設定します</td>
+        <td>最大値を設定します。</td>
         <td>number</td>
         <td>-</td>
       </tr>
       <tr>
         <td>now</td>
-        <td>現在の値を設定します</td>
+        <td>現在の値を設定します。</td>
         <td>number</td>
         <td>-</td>
       </tr>
       <tr>
         <td>countable</td>
-        <td>カウンターを表示します</td>
+        <td>カウンターを表示します。</td>
         <td>Boolean</td>
         <td>-</td>
       </tr>
       <tr>
         <td>marked</td>
-        <td>マーカーを表示します</td>
+        <td>マーカーを表示します。</td>
         <td>Boolean</td>
         <td>-</td>
       </tr>
@@ -111,39 +111,7 @@ storiesOf('Components|Slider', module)
     </table>
   `)
 
-storiesOf('Components|Slider/スタイルのカスタマイズ', module)
-  .add('スライドされた時の色を変える', () => `
-    <h4>スライドされた（オン）状態の色を指定した色に変える。</h4>
-    <rs-slider class="my-slider -slide-orange"></rs-slider>
-    <h4>使用するmixin</h4>
-    ${copyCodeBlock(
-`@include rs-slider-highlight-color($color);`,
-    { lang: 'scss' }
-  )}
-    <h4>使用方法</h4>
-    ${copyCodeBlock(
-`<rs-slider class="my-slider -slide-orange" />`,
-    { lang: 'html' }
-  )}
-    ${copyCodeBlock(
-`@import '@rsmdc/slider/rs-slider.scss';
-
-.my-slider {
-  &.-slide-orange {
-    @include rs-slider-highlight-color(orange);
-  }
-}
-`,
-    { lang: 'scss' }
-  )}
-    <p>オプション</p>
-    <ul>
-      <li>
-        $color: インクの色コード <br> 例）#ee00ce
-      </li>
-    </ul>
-  `)
-  
+storiesOf('Components|Slider/スタイルのカスタマイズ', module)  
   .add('レールの色を変える', () => `
     <h4>レールの色を指定した色に変える。</h4>
     <rs-slider class="my-slider -rail-orange"></rs-slider>
@@ -171,11 +139,42 @@ storiesOf('Components|Slider/スタイルのカスタマイズ', module)
     <p>オプション</p>
     <ul>
       <li>
-        $color: インクの色コード <br> 例）#ee00ce
+        $color: インクの色コード。 <br> 例）#ee00ce
       </li>
     </ul>
   `)
 
+  .add('スライド後のレールの色を変える', () => `
+    <h4>スライド後のレールの色を指定した色に変える。</h4>
+    <rs-slider class="my-slider -slider-orange"></rs-slider>
+    <h4>使用するmixin</h4>
+    ${copyCodeBlock(
+`@include rs-slider-highlight-color($color);`,
+    { lang: 'scss' }
+  )}
+    <h4>使用方法</h4>
+    ${copyCodeBlock(
+`<rs-slider class="my-slider -slider-orange" />`,
+    { lang: 'html' }
+  )}
+    ${copyCodeBlock(
+`@import '@rsmdc/slider/rs-slider.scss';
+
+.my-slider {
+  &.-slider-orange {
+    @include rs-slider-highlight-color(orange);
+  }
+}
+`,
+    { lang: 'scss' }
+  )}
+    <p>オプション</p>
+    <ul>
+      <li>
+        $color: インクの色コード。 <br> 例）#ee00ce
+      </li>
+    </ul>
+  `)
 
   .add('マーカーの色を変える', () => `
     <h4>マーカー（目盛り）の色を指定した色に変える。</h4>
@@ -205,7 +204,7 @@ storiesOf('Components|Slider/スタイルのカスタマイズ', module)
     <p>オプション</p>
     <ul>
       <li>
-        $color: インクの色コード <br> 例）#ee00ce
+        $color: インクの色コード。 <br> 例）#ee00ce
       </li>
     </ul>
   `)
@@ -237,7 +236,7 @@ storiesOf('Components|Slider/スタイルのカスタマイズ', module)
     <p>オプション</p>
     <ul>
       <li>
-        $color: インクの色コード <br> 例）#ee00ce
+        $color: インクの色コード。 <br> 例）#ee00ce
       </li>
     </ul>
   `)
@@ -269,7 +268,7 @@ storiesOf('Components|Slider/スタイルのカスタマイズ', module)
     <p>オプション</p>
     <ul>
       <li>
-        $color: インクの色コード <br> 例）#ee00ce
+        $color: インクの色コード。 <br> 例）#ee00ce
       </li>
     </ul>
   `)
@@ -301,7 +300,7 @@ storiesOf('Components|Slider/スタイルのカスタマイズ', module)
     <p>オプション</p>
     <ul>
       <li>
-        $color: インクの色コード <br> 例）#ee00ce
+        $color: インクの色コード。 <br> 例）#ee00ce
       </li>
     </ul>
   `)
@@ -334,7 +333,7 @@ storiesOf('Components|Slider/スタイルのカスタマイズ', module)
     <p>オプション</p>
     <ul>
       <li>
-        $color: インクの色コード <br> 例）#ee00ce
+        $color: インクの色コード。 <br> 例）#ee00ce
       </li>
     </ul>
   `)
@@ -366,7 +365,7 @@ storiesOf('Components|Slider/スタイルのカスタマイズ', module)
     <p>オプション</p>
     <ul>
       <li>
-        $color: インクの色コード <br> 例）#ee00ce
+        $color: インクの色コード。 <br> 例）#ee00ce
       </li>
     </ul>
   `)
@@ -398,7 +397,7 @@ storiesOf('Components|Slider/スタイルのカスタマイズ', module)
     <p>オプション</p>
     <ul>
       <li>
-        $color: インクの色コード <br> 例）#ee00ce
+        $color: インクの色コード。 <br> 例）#ee00ce
       </li>
     </ul>
   `)
