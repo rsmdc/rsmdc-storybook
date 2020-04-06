@@ -1,5 +1,28 @@
 @import "@rsmdc/switch/rs-switch";
 
-.switch-demo{
-  padding-bottom: 15px;
+.my-switch {
+  &.-checked-track-orange {
+    @include rs-switch-toggled-on-track-color(orange);
+  }
+  &.-track-blue {
+    @include rs-switch-toggled-off-track-color(#61b8f1);
+  }
+  &.-checked-thumb-orange {
+    @include rs-switch-toggled-on-thumb-color(orange);
+  }
+  &.-thumb-blue {
+    @include rs-switch-toggled-off-thumb-color(#61b8f1);
+  }
+  &.-checked-states-orange {
+    @include rs-switch-toggled-on-ripple-color(orange);
+  }
+  &.-states-blue {
+    @include rs-switch-toggled-off-ripple-color(#61b8f1);
+  }
+  &.-checked-accessible-orange {
+    @include rs-switch-toggled-on-color(orange);
+  }
+  &.-accessible-blue {
+    @include rs-switch-toggled-off-color(#61b8f1);
+  }
 }

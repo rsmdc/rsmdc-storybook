@@ -48,7 +48,7 @@ storiesOf('Components|Switch', module)
       </tr>
     </table>
     <h4>HTML属性</h4>
-    <p>下記HTML属性をつけることで、custom elementsの状態が変化します</p>
+    <p>下記HTML属性をつけることで、custom elementsの状態が変化します。</p>
     <table>
       <tr>
         <th>属性</th>
@@ -58,25 +58,25 @@ storiesOf('Components|Switch', module)
       </tr>
       <tr>
         <td>id</td>
-        <td>スイッチとラベルを紐付けます</td>
+        <td>スイッチとラベルを紐付けます。</td>
         <td>String</td>
         <td>-</td>
       </tr>
       <tr>
         <td>label</td>
-        <td>ラベルを表示します</td>
+        <td>ラベルを表示します。</td>
         <td>String</td>
         <td>-</td>
       </tr>
       <tr>
         <td>checked</td>
-        <td>スイッチを選択された状態にします</td>
+        <td>スイッチを選択された状態にします。</td>
         <td>Boolean</td>
         <td>-</td>
       </tr>
       <tr>
         <td>disabled</td>
-        <td>スイッチを無効にします</td>
+        <td>スイッチを無効にします。</td>
         <td>Boolean</td>
         <td>-</td>
       </tr>
@@ -107,10 +107,42 @@ storiesOf('Components|Switch', module)
   `)
 
 
-  storiesOf('Components|Switch/スタイルのカスタマイズ', module)
+storiesOf('Components|Switch/スタイルのカスタマイズ', module)
+  .add('未選択状態のトラックの背景色を変える', () => `
+    <h4>未選択状態のトラックの背景色を選択した色に変える。</h4>
+    <rs-switch class="my-switch -track-blue" id="switch" label="ラベル"></rs-switch>
+    <h4>使用するmixin</h4>
+    ${copyCodeBlock(
+`@include rs-switch-toggled-off-track-color($color);`,
+    { lang: 'scss' }
+    )}
+    <h4>使用方法</h4>
+    ${copyCodeBlock(
+`<rs-switch class="my-switch -track-blue" id="switch" label="ラベル" />`,
+    { lang: 'html' }
+    )}
+    ${copyCodeBlock(
+`@import '@rsmdc/slider/rs-slider.scss';
+
+.my-switch {
+  &.-track-blue {
+    @include rs-switch-toggled-off-track-color(#61b8f1);
+  }
+}
+`,
+    { lang: 'scss' }
+    )}
+    <p>オプション</p>
+    <ul>
+      <li>
+        $color: インクの色コード。 <br> 例）#ee00ce
+      </li>
+    </ul>
+  `)
+
   .add('選択状態のトラックの背景色を変える', () => `
     <h4>選択状態のトラックの背景色を選択した色に変える。</h4>
-    <rs-switch class="my-switch -track-orange" id="switch" label="ラベル" checked></rs-switch>
+    <rs-switch class="my-switch -checked-track-orange" id="switch" label="ラベル" checked></rs-switch>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
 `@include rs-switch-toggled-on-track-color($color);`,
@@ -118,14 +150,14 @@ storiesOf('Components|Switch', module)
   )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
-`<rs-switch class="my-switch -track-orange" id="switch" label="ラベル" checked />`,
+`<rs-switch class="my-switch -checked-track-orange" id="switch" label="ラベル" checked />`,
     { lang: 'html' }
   )}
     ${copyCodeBlock(
 `@import '@rsmdc/slider/rs-slider.scss';
 
 .my-switch {
-  &.-track-orange {
+  &.-checked-track-orange {
     @include rs-switch-toggled-on-track-color(orange);
   }
 }
@@ -135,30 +167,30 @@ storiesOf('Components|Switch', module)
     <p>オプション</p>
     <ul>
       <li>
-        $color: インクの色コード <br> 例）#ee00ce
+        $color: インクの色コード。 <br> 例）#ee00ce
       </li>
     </ul>
   `)
 
-  .add('未選択状態のトラックの背景色を変える', () => `
-    <h4>未選択状態のトラックの背景色を選択した色に変える。</h4>
-    <rs-switch class="my-switch -track-blue" id="switch" label="ラベル"></rs-switch>
+  .add('未選択状態のつまみの色を変える', () => `
+    <h4>未選択状態のつまみの色を指定した色に変える。</h4>
+    <rs-switch class="my-switch -thumb-blue" id="switch" label="ラベル"></rs-switch>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
-`@include rs-switch-toggled-off-track-color($color);`,
+`@include rs-switch-toggled-off-thumb-color($color);`,
     { lang: 'scss' }
   )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
-`<rs-switch class="my-switch -track-blue" id="switch" label="ラベル" />`,
+`<rs-switch class="my-switch -thumb-blue" id="switch" label="ラベル" />`,
     { lang: 'html' }
   )}
     ${copyCodeBlock(
 `@import '@rsmdc/slider/rs-slider.scss';
 
 .my-switch {
-  &.-track-blue {
-    @include rs-switch-toggled-off-track-color(blue);
+  &.-thumb-blue {
+    @include rs-switch-toggled-off-thumb-color(#61b8f1);
   }
 }
 `,
@@ -167,29 +199,29 @@ storiesOf('Components|Switch', module)
     <p>オプション</p>
     <ul>
       <li>
-        $color: インクの色コード <br> 例）#ee00ce
+        $color: インクの色コード。 <br> 例）#ee00ce
       </li>
     </ul>
   `)
-  
+
   .add('選択状態のつまみの色を変える', () => `
     <h4>選択状態のつまみの色を指定した色に変える。</h4>
-    <rs-switch class="my-switch -thumb-orange" id="switch" label="ラベル" checked></rs-switch>
+    <rs-switch class="my-switch -checked-thumb-orange" id="switch" label="ラベル" checked></rs-switch>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
 `@include rs-switch-toggled-on-thumb-color($color);`,
-    { lang: 'scss' }
-  )}
+  { lang: 'scss' }
+)}
     <h4>使用方法</h4>
     ${copyCodeBlock(
-`<rs-switch class="my-switch -thumb-orange" id="switch" label="ラベル" checked />`,
-    { lang: 'html' }
-  )}
+`<rs-switch class="my-switch -checked-thumb-orange" id="switch" label="ラベル" checked />`,
+  { lang: 'html' }
+)}
     ${copyCodeBlock(
 `@import '@rsmdc/slider/rs-slider.scss';
 
 .my-switch {
-  &.-thumb-orange {
+  &.-checked-thumb-orange {
     @include rs-switch-toggled-on-thumb-color(orange);
   }
 }
@@ -199,30 +231,30 @@ storiesOf('Components|Switch', module)
     <p>オプション</p>
     <ul>
       <li>
-        $color: インクの色コード <br> 例）#ee00ce
+        $color: インクの色コード。 <br> 例）#ee00ce
       </li>
     </ul>
   `)
 
-  .add('未選択状態のつまみの色を変える', () => `
-    <h4>未選択状態のつまみの色を指定した色に変える。</h4>
-    <rs-switch class="my-switch -thumb-darkgray" id="switch" label="ラベル"></rs-switch>
+  .add('未選択状態のリップルの色を変える', () => `
+    <h4>未選択状態のリップルの色を選択した色に変える。</h4>
+    <rs-switch class="my-switch -states-blue" id="switch" label="ラベル"></rs-switch>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
-`@include rs-switch-toggled-off-thumb-color($color);`,
+`@include rs-switch-toggled-off-ripple-color($color);`,
     { lang: 'scss' }
   )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
-`<rs-switch class="my-switch -thumb-darkgray" id="switch" label="ラベル" />`,
+`<rs-switch class="my-switch -states-blue" id="switch" label="ラベル" />`,
     { lang: 'html' }
   )}
     ${copyCodeBlock(
 `@import '@rsmdc/slider/rs-slider.scss';
 
 .my-switch {
-  &.-thumb-darkgray {
-    @include rs-switch-toggled-off-thumb-color(darkgray);
+  &.-states-blue {
+    @include rs-switch-toggled-off-ripple-color(#61b8f1);
   }
 }
 `,
@@ -231,14 +263,14 @@ storiesOf('Components|Switch', module)
     <p>オプション</p>
     <ul>
       <li>
-        $color: インクの色コード <br> 例）#ee00ce
+        $color: インクの色コード。 <br> 例）#ee00ce
       </li>
     </ul>
   `)
 
   .add('選択状態のリップルの色を変える', () => `
     <h4>選択状態のリップルの色を選択した色に変える。</h4>
-    <rs-switch class="my-switch -ripple-orange" id="switch" label="ラベル" checked></rs-switch>
+    <rs-switch class="my-switch -checked-states-orange" id="switch" label="ラベル" checked></rs-switch>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
 `@include rs-switch-toggled-on-ripple-color($color);`,
@@ -246,14 +278,14 @@ storiesOf('Components|Switch', module)
   )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
-`<rs-switch class="my-switch -ripple-orange" id="switch" label="ラベル" checked />`,
+`<rs-switch class="my-switch -checked-states-orange" id="switch" label="ラベル" checked />`,
     { lang: 'html' }
   )}
     ${copyCodeBlock(
 `@import '@rsmdc/slider/rs-slider.scss';
 
 .my-switch {
-  &.-ripple-orange {
+  &.-checked-states-orange {
     @include rs-switch-toggled-on-ripple-color(orange);
   }
 }
@@ -263,30 +295,30 @@ storiesOf('Components|Switch', module)
     <p>オプション</p>
     <ul>
       <li>
-        $color: インクの色コード <br> 例）#ee00ce
+        $color: インクの色コード。 <br> 例）#ee00ce
       </li>
     </ul>
   `)
 
-  .add('未選択状態のリップルの色を変える', () => `
-    <h4>未選択状態のリップルの色を選択した色に変える。</h4>
-    <rs-switch class="my-switch -ripple-blue" id="switch" label="ラベル"></rs-switch>
+  .add('未選択状態のスイッチの色を一括で変える', () => `
+    <h4>未選択状態のスイッチのトラック、つまみ、リップルの色を一括で指定した色に変える。</h4>
+    <rs-switch class="my-switch -accessible-blue" id="switch" label="ラベル"></rs-switch>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
-`@include rs-switch-toggled-off-ripple-color($color);`,
+`@include rs-switch-toggled-off-color($color);`,
     { lang: 'scss' }
   )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
-`<rs-switch class="my-switch -ripple-blue" id="switch" label="ラベル" />`,
+`<rs-switch class="my-switch -accessible-blue" id="switch" label="ラベル" />`,
     { lang: 'html' }
   )}
     ${copyCodeBlock(
 `@import '@rsmdc/slider/rs-slider.scss';
 
 .my-switch {
-  &.-ripple-blue {
-    @include rs-switch-toggled-off-ripple-color(blue);
+  &.-accessible-blue {
+    @include rs-switch-toggled-off-color(#61b8f1);
   }
 }
 `,
@@ -295,14 +327,14 @@ storiesOf('Components|Switch', module)
     <p>オプション</p>
     <ul>
       <li>
-        $color: インクの色コード <br> 例）#ee00ce
+        $color: インクの色コード。 <br> 例）#ee00ce
       </li>
     </ul>
   `)
 
   .add('選択状態のスイッチの色を一括で変える', () => `
     <h4>選択状態のスイッチのトラック、つまみ、リップルの色を一括で指定した色に変える。</h4>
-    <rs-switch class="my-switch -orange" id="switch" label="ラベル" checked></rs-switch>
+    <rs-switch class="my-switch -checked-accessible-orange" id="switch" label="ラベル" checked></rs-switch>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
 `@include rs-switch-toggled-on-color($color);`,
@@ -310,14 +342,14 @@ storiesOf('Components|Switch', module)
   )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
-`<rs-switch class="my-switch -orange" id="switch" label="ラベル" checked />`,
+`<rs-switch class="my-switch -checked-accessible-orange" id="switch" label="ラベル" checked />`,
     { lang: 'html' }
   )}
     ${copyCodeBlock(
 `@import '@rsmdc/slider/rs-slider.scss';
 
 .my-switch {
-  &.-orange {
+  &.-checked-accessible-orange {
     @include rs-switch-toggled-on-color(orange);
   }
 }
@@ -327,39 +359,7 @@ storiesOf('Components|Switch', module)
     <p>オプション</p>
     <ul>
       <li>
-        $color: インクの色コード <br> 例）#ee00ce
-      </li>
-    </ul>
-  `)
-
-  .add('未選択状態のスイッチの色を一括で変える', () => `
-    <h4>未選択状態のスイッチのトラック、つまみ、リップルの色を一括で指定した色に変える。</h4>
-    <rs-switch class="my-switch -darkgray" id="switch" label="ラベル"></rs-switch>
-    <h4>使用するmixin</h4>
-    ${copyCodeBlock(
-`@include rs-switch-toggled-off-color($color);`,
-    { lang: 'scss' }
-  )}
-    <h4>使用方法</h4>
-    ${copyCodeBlock(
-`<rs-switch class="my-switch -darkgray" id="switch" label="ラベル" />`,
-    { lang: 'html' }
-  )}
-    ${copyCodeBlock(
-`@import '@rsmdc/slider/rs-slider.scss';
-
-.my-switch {
-  &.-darkgray {
-    @include rs-switch-toggled-off-color(darkgray);
-  }
-}
-`,
-    { lang: 'scss' }
-  )}
-    <p>オプション</p>
-    <ul>
-      <li>
-        $color: インクの色コード <br> 例）#ee00ce
+        $color: インクの色コード。 <br> 例）#ee00ce
       </li>
     </ul>
   `)
