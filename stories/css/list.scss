@@ -3,52 +3,96 @@ $material-icons-font-path: '~material-icons/iconfont/';
 @import '~material-icons/iconfont/material-icons';
 
 .my-list {
-  @include rs-list-type(avatar-list);
+  > .item > .graphic {
+    @include rs-list-graphic-image(
+      url('https://cweb.canon.jp/showroom/personal/workshop/instaevent-2018/img/picture19.jpg')
+    );
+    &.-circle {
+      @include rs-list-graphic-type(circle);
+    }
+    &.-rectangle {
+      @include rs-list-graphic-type(rectangle);
+    }
+    &.-square {
+      @include rs-list-graphic-type(square);
+    }
+    &.-size {
+      @include rs-list-graphic-size(50px);
+    }
+  }
+
+  > .item > .icon {
+    @include rs-list-graphic-image(
+      Material Icons, map-get($material-icons-codepoints, face)
+    );
+    &.-container-orange {
+      @include rs-list-graphic-fill-color(orange);
+    }
+    &.-blue {
+      @include rs-list-graphic-ink-color(rgb(106, 118, 223));
+    }
+  }
+
+  &.-dense {
+    @include rs-list-type(dense);
+  }
+  &.-twoline-avatar {
+    @include rs-list-type(two-line, avatar-list);
+  }
   &.-two-line {
     @include rs-list-type(two-line);
   }
-  &.-two-line.-dense {
+  &.-twoline-dense {
     @include rs-list-type(two-line, dense);
   }
-  &.-two-line.-avatar-list > .item > .graphic {
-    @include rs-list-type(avatar-list);
-    @include rs-list-graphic-image(
-      Material Icons, map-get($material-icons-codepoints, face)
-    );
+  &.-twoline-avatar {
+    @include rs-list-type(avatar-list, two-line);
   }
   &.-avatar-list {
-    @include rs-list-graphic-image(
-      Material Icons, map-get($material-icons-codepoints, face)
-    );
+    @include rs-list-type(avatar-list);
   }
-  &.-avatar-list.-dense {
+  &.-avatar-dense {
     @include rs-list-type(avatar-list, dense);
   }
-  > .divider.-inset {
+  &.-avatar-twoline {
+    @include rs-list-type(avatar-list, two-line);
+  }
+
+  &.-inset {
     @include rs-list-divider-type(inset);
   }
-  > .divider.-padded {
-    @include rs-list-divider-type(padded);
-  }
-  > .divider.-inset.-padded {
+  &.-inset-padded {
     @include rs-list-divider-type(inset, padded);
   }
-  &.-graphic-type > .item > .graphic {
-    @include rs-list-graphic-type(circle);
-    @include rs-list-graphic-image(
-      url('https://cweb.canon.jp/showroom/personal/workshop/instaevent-2018/img/picture19.jpg')
-    );
+  &.-padded {
+    @include rs-list-divider-type(padded);
   }
-  &.-graphic-type > .item > .graphic.-rectangle {
-    @include rs-list-graphic-type(rectangle);
-    @include rs-list-graphic-image(
-      url('https://cweb.canon.jp/showroom/personal/workshop/instaevent-2018/img/picture19.jpg')
-    );
+  &.-padded-inset {
+    @include rs-list-divider-type(padded, inset);
   }
-  &.-graphic-type > .item > .graphic.-square {
-    @include rs-list-graphic-type(square);
-    @include rs-list-graphic-image(
-      url('https://cweb.canon.jp/showroom/personal/workshop/instaevent-2018/img/picture19.jpg')
-    );
+
+  > .item > .text.-primary-brown {
+    @include rs-list-item-primary-text-ink-color(brown);
+  }
+  > .item > .text.-secondary-brown {
+    @include rs-list-item-secondary-text-ink-color(brown);
+  }
+  > .item > .meta.-brown {
+    @include rs-list-item-meta-ink-color(brown);
+  }
+  > .subheader.-brown {
+    @include rs-list-group-subheader-ink-color(brown);
+  }
+  > .divider.-blue {
+    @include rs-list-divider-color(rgb(106, 118, 223));
+  }
+  &.-states-orange {
+    @include rs-list-item-states-color(orange);
+  }
+  &.-accessible-orange {
+    @include rs-list-fill-color-accessible(orange);
+  }
+  &.-shape {
+    @include rs-list-item-shape-radius(10px);
   }
 }

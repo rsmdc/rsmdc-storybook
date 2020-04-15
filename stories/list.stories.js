@@ -24,45 +24,69 @@ storiesOf('Components|List', module)
         https://material.io/design/components/lists.html#
       </a>
     </p>
-    <p>リストのタイプ</p>
-    <ul>
-      <li>normal(デフォルト） <br>
-        1行表示 <br>
-        <a class="link" href="#" data-sb-kind="Components|List/スタイルのカスタマイズ/リストのタイプを変える" data-sb-story="normal(default)">参照はこちら</a></li>
-      <li>
-        twoline <br> 
-        2行表示 <br>
-        <a class="link" href="#" data-sb-kind="Components|List/スタイルのカスタマイズ/リストのタイプを変える" data-sb-story="twoline">参照はこちら</a>
-      </li>
-      <li>
-        avatar-list <br>
-        アバターを表示<br>
-        <a class="link" href="#" data-sb-kind="Components|List/スタイルのカスタマイズ/リストのタイプを変える" data-sb-story="avatar-list">参照はこちら</a>
-      </li>
-    </ul>
+    <p>Listタイプ</p>
+    <table>
+      <tr>
+        <th>タイプ</th>
+        <th>概要</th>
+      </tr>
+      <tr>
+        <td>normal</td>
+        <td>1行表示のリスト</td>
+      </tr>
+      <tr>
+        <td>two-line</td>
+        <td>2行表示のリスト。</td>
+      </tr>
+      <tr>
+        <td>avatar-list</td>
+        <td>画像やアイコンを表示するリスト。</td>
+      </tr>
+    </table>
+    
     <p>仕切り線のタイプ</p>
-    <ul>
-      <li>normal(デフォルト） <br> <a class="link" href="#" data-sb-kind="Components|List/スタイルのカスタマイズ/仕切り線のタイプを変える" data-sb-story="normal(default)">参照はこちら</a></li>
-      <li>inset <br> <a class="link" href="#" data-sb-kind="Components|List/スタイルのカスタマイズ/仕切り線のタイプを変える" data-sb-story="inset">参照はこちら</a></li>
-      <li>padded <br> <a class="link" href="#" data-sb-kind="Components|List/スタイルのカスタマイズ/仕切り線のタイプを変える" data-sb-story="padded">参照はこちら</a></li>
-    </ul>
+    <table>
+      <tr>
+        <th>タイプ</th>
+        <th>概要</th>
+      </tr>
+      <tr>
+        <td>normal</td>
+        <td>線の幅をリスト全体に合わせる。</td>
+      </tr>
+      <tr>
+        <td>inset</td>
+        <td>線の幅を画像以外のテキスト部分の領域に合わせる。</td>
+      </tr>
+      <tr>
+        <td>padded</td>
+        <td>線の幅を画像やテキスト部分の領域に合わせる。</td>
+      </tr>
+    </table>
+
     <p>画像タイプ</p>
-    <ul>
-      <li>normal（デフォルト） <br> <a class="link" href="#" data-sb-kind="Components|List/スタイルのカスタマイズ/画像の形を変える(修正予定)" data-sb-story="normal(default)">参照はこちら</a></li>
-      <li>
-        circle <br>
-        丸く表示 <br>
-        <a class="link" href="#" data-sb-kind="Components|List/スタイルのカスタマイズ/画像の形を変える(修正予定)" data-sb-story="circle">参照はこちら</a>
-      </li>
-      <li>requtangle <br>
-        長方形に表示 <br>
-        <a class="link" href="#" data-sb-kind="Components|List/スタイルのカスタマイズ/画像の形を変える(修正予定)" data-sb-story="requtangle">参照はこちら</a>
-      </li>
-      <li>square <br>
-        四角に表示 <br>
-        <a class="link" href="#" data-sb-kind="Components|List/スタイルのカスタマイズ/画像の形を変える(修正予定)" data-sb-story="square">参照はこちら</a>
-      </li>
-    </ul>
+    <table>
+      <tr>
+        <th>タイプ</th>
+        <th>概要</th>
+      </tr>
+      <tr>
+        <td>normal</td>
+        <td>画像がアイコンサイズで表示される。</td>
+      </tr>
+      <tr>
+        <td>circle</td>
+        <td>画像が円形で表示される。</td>
+      </tr>
+      <tr>
+        <td>requtangle</td>
+        <td>画像が長方形で表示される。</td>
+      </tr>
+      <tr>
+        <td>square</td>
+        <td>画像が正方形で表示される。</td>
+      </tr>
+    </table>
   `)
   .add('使用方法', () => `
     <h4>使用方法</h4>
@@ -77,18 +101,19 @@ storiesOf('Components|List', module)
       </rs-list-item>
     </rs-list>
     <rs-list-group class="group-list">
-      <rs-list class="my-list -two-line -avatar-list">
+      <rs-list class="my-list -twoline-avatar">
         <rs-list-subheader class="subheader">リストタイトル</rs-list-subheader>
         <rs-list-divider class="divider"></rs-list-divider>
         <rs-list-item class="item">
-          <rs-list-graphic class="graphic"></rs-list-graphic>
+          <rs-list-graphic class="icon"></rs-list-graphic>
           <rs-list-text class="text">
             <rs-list-primary class="primary">1行目</rs-list-primary>
             <rs-list-secondary class="secondary">2行目</rs-list-secondary>
           </rs-list-text>
+          <rs-list-meta class="meta">メタ情報</rs-list-meta>
         </rs-list-item>
         <rs-list-item class="item">
-          <rs-list-graphic class="graphic"></rs-list-graphic>
+          <rs-list-graphic class="icon"></rs-list-graphic>
           <rs-list-text class="text">
             <rs-list-primary class="primary">1行目</rs-list-primary>
             <rs-list-secondary class="secondary">2行目</rs-list-secondary>
@@ -109,18 +134,19 @@ storiesOf('Components|List', module)
   </rs-list-item>
 </rs-list>
 <rs-list-group class="group-list">
-  <rs-list class="my-list -two-line -avatar-list">
+  <rs-list class="my-list -twoline-avatar">
     <rs-list-subheader class="subheader">リストタイトル</rs-list-subheader>
-    <rs-list-divider class="divider"></rs-list-divider>
+    <rs-list-divider class="divider" />
     <rs-list-item class="item">
-      <rs-list-graphic class="graphic"></rs-list-graphic>
+      <rs-list-graphic class="icon" />
       <rs-list-text class="text">
         <rs-list-primary class="primary">1行目</rs-list-primary>
         <rs-list-secondary class="secondary">2行目</rs-list-secondary>
       </rs-list-text>
+      <rs-list-meta class="meta">メタ情報</rs-list-meta>
     </rs-list-item>
     <rs-list-item class="item">
-      <rs-list-graphic class="graphic"></rs-list-graphic>
+      <rs-list-graphic class="icon" />
       <rs-list-text class="text">
         <rs-list-primary class="primary">1行目</rs-list-primary>
         <rs-list-secondary class="secondary">2行目</rs-list-secondary>
@@ -132,9 +158,14 @@ storiesOf('Components|List', module)
       { lang:'html' }
     )}
     ${copyCodeBlock(
-`.group-list {
-  > .list {
-    @include rs-list-type(twoline, avatar-list);
+`.my-list {
+  &.-twoline-avatar {
+    @include rs-list-type(two-line, avatar-list);
+  }
+  > .item > .icon {
+    @include rs-list-graphic-image(
+      Material Icons, map-get($material-icons-codepoints, face)
+    );
   }
 }`,
       { lang: 'scss' }
@@ -152,13 +183,13 @@ storiesOf('Components|List', module)
       </tr>
       <tr>
         <td>rs-list-group</td>
-        <td>複数のリストをグルーピングします</td>
+        <td>複数のリストをグルーピングします。</td>
         <td><code>rs-list</code></td>
         <td>-</td>
       </tr>
       <tr>
         <td>rs-list</td>
-        <td>リスト本体を表示します</td>
+        <td>リスト本体を表示します。</td>
         <td>
           <ul>
             <li><code>rs-list-subehader</code></li>
@@ -170,19 +201,19 @@ storiesOf('Components|List', module)
       </tr>
       <tr>
         <td>rs-list-subheader</td>
-        <td>リストのサブヘッダー部分を示します</td>
+        <td>リストのサブヘッダー部分を示します。</td>
         <td>テキスト</td>
         <td>-</td>
       </tr>
       <tr>
         <td>rs-list-divider</td>
-        <td>リストの仕切り線を表示します</td>
+        <td>リストの仕切り線を表示します。</td>
         <td>-</td>
         <td>-</td>
       </tr>
       <tr>
         <td>rs-list-item</td>
-        <td>リストのアイテム部分を表示します</td>
+        <td>リストのアイテム部分を表示します。</td>
         <td>
           <ul>
             <li><code>rs-list-graphic</code></li>
@@ -194,13 +225,13 @@ storiesOf('Components|List', module)
       </tr>
       <tr>
         <td>rs-list-graphic</td>
-        <td>アイテムの画像部分を表示します</td>
+        <td>アイテムの画像部分を表示します。</td>
         <td>-</td>
         <td>-</td>
       </tr>
       <tr>
         <td>rs-list-text</td>
-        <td>アイテムの主要テキスト部分を表示します</td>
+        <td>アイテムの主要テキスト部分を表示します。</td>
         <td>
           <ul>
             <li><code>rs-list-primary</code></li>
@@ -211,19 +242,19 @@ storiesOf('Components|List', module)
       </tr>
       <tr>
         <td>rs-list-primary</td>
-        <td>テキストの1行目を表示します</td>
+        <td>テキストの1行目を表示します。</td>
         <td>テキスト</td>
-        <td>リストタイプがtwo-lineの場合のみ有効です</td>
+        <td>リストタイプがtwo-lineの場合のみ有効です。</td>
       </tr>
       <tr>
         <td>rs-list-secondary</td>
-        <td>テキストの2行目を表示します</td>
+        <td>テキストの2行目を表示します。</td>
         <td>テキスト</td>
-        <td>リストタイプがtwo-lineの場合のみ有効です</td>
+        <td>リストタイプがtwo-lineの場合のみ有効です。</td>
       </tr>
       <tr>
         <td>rs-list-meta</td>
-        <td>アイテムのメタ情報部分を表示します</td>
+        <td>アイテムのメタ情報部分を表示します。</td>
         <td>テキスト</td>
         <td>-</td>
       </tr>
@@ -239,19 +270,19 @@ storiesOf('Components|List', module)
       </tr>
       <tr>
         <td>disabled</td>
-        <td>アイテムを無効にします</td>
+        <td>アイテムを無効にします。</td>
         <td>Boolean</td>
         <td>-</td>
       </tr>
       <tr>
         <td>selected</td>
-        <td>アイテムを選択状態にします</td>
+        <td>アイテムを選択状態にします。</td>
         <td>Boolean</td>
         <td>-</td>
       </tr>
       <tr>
         <td>activated</td>
-        <td>アイテムを活性化状態にします</td>
+        <td>アイテムを活性化状態にします。</td>
         <td>Boolean</td>
         <td>-</td>
       </tr>
@@ -311,8 +342,9 @@ storiesOf('Components|List/スタイルのカスタマイズ/リストのタイ�
       <rs-list-meta class="meta">メタ情報</rs-list-meta>
     </rs-list-item>
   </rs-list>
-</rs-list-group>`,
-      { lang: "html" }
+</rs-list-group>
+`,
+      { lang: 'html' }
     )}
     <h4>dense</h4>
     <rs-list-group class="group-list">
@@ -329,8 +361,8 @@ storiesOf('Components|List/スタイルのカスタマイズ/リストのタイ�
     </rs-list-group>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
-      `@include rs-list-type($type);`,
-      { lang: "scss" }
+`@include rs-list-type($type);`,
+      { lang: 'scss' }
     )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
@@ -346,20 +378,22 @@ storiesOf('Components|List/スタイルのカスタマイズ/リストのタイ�
     </rs-list-item>
   </rs-list>
 </rs-list-group>`,
-      { lang: "html" }
+      { lang: 'html'}
     )}
     ${copyCodeBlock(
 `@import '@rsmdc/list/rs-list.scss';
 
 .my-list {
-  @include rs-list-type(dense);
+  &.-dense {
+    @include rs-list-type(dense);
+  }
 }`,
-      { lang: "scss" }
+      { lang: 'scss' }
     )}
   `)
-  .add('twoline', () => `
-    <h4>twoline</h4>
-    <p>denseとavatar-listも一緒に使用できる。</p>
+  .add('two-line', () => `
+    <h4>two-line</h4>
+    <p>2行で表示する時に使用。<br>denseとavatar-listも一緒に使用できる。</p>
     <rs-list class="my-list -two-line">
       <rs-list-item class="item">
         <rs-list-text class="text">
@@ -378,34 +412,37 @@ storiesOf('Components|List/スタイルのカスタマイズ/リストのタイ�
     </rs-list>
 
     <rs-list-group class="group-list">
-      <rs-list class="my-list -two-line -dense">
-        <rs-list-subheader class="subheader">リストスタイル / dense</rs-list-subheader>
+      <rs-list class="my-list -twoline-dense">
+        <rs-list-subheader class="subheader">two-lineとdense</rs-list-subheader>
         <rs-list-divider></rs-list-divider>
         <rs-list-item class="item">
           <rs-list-text class="text">
             <rs-list-primary class="primary">1行目</rs-list-primary>
             <rs-list-secondary class="secondary">2行目</rs-list-secondary>
           </rs-list-text>
+          <rs-list-meta class="meta">メタ情報</rs-list-meta>
         </rs-list-item>
         <rs-list-item class="item">
           <rs-list-text class="text">
             <rs-list-primary class="primary">1行目</rs-list-primary>
             <rs-list-secondary class="secondary">2行目</rs-list-secondary>
           </rs-list-text>
+          <rs-list-meta class="meta">メタ情報</rs-list-meta>
         </rs-list-item>
       </rs-list>
-      <rs-list class="my-list -two-line -avatar-list">
-        <rs-list-subheader class="subheader">リストタイトル / avatar-list</rs-list-subheader>
+      <rs-list class="my-list -twoline-avatar">
+        <rs-list-subheader class="subheader">two-lineとavatar-list</rs-list-subheader>
         <rs-list-divider></rs-list-divider>
         <rs-list-item class="item">
-          <rs-list-graphic class="graphic"></rs-list-graphic>
+          <rs-list-graphic class="icon"></rs-list-graphic>
           <rs-list-text class="text">
             <rs-list-primary class="primary">1行目</rs-list-primary>
             <rs-list-secondary class="secondary">2行目</rs-list-secondary>
           </rs-list-text>
+          <rs-list-meta class="meta">メタ情報</rs-list-meta>
         </rs-list-item>
         <rs-list-item class="item">
-          <rs-list-graphic class="graphic"></rs-list-graphic>
+          <rs-list-graphic class="icon"></rs-list-graphic>
           <rs-list-text class="text">
             <rs-list-primary class="primary">1行目</rs-list-primary>
             <rs-list-secondary class="secondary">2行目</rs-list-secondary>
@@ -416,7 +453,7 @@ storiesOf('Components|List/スタイルのカスタマイズ/リストのタイ�
     </rs-list-group>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
-      `@include rs-list-type($types...);`,
+`@include rs-list-type($types...);`,
       { lang: 'scss' }
     )}
     <h4>使用方法</h4>
@@ -439,34 +476,37 @@ storiesOf('Components|List/スタイルのカスタマイズ/リストのタイ�
 </rs-list>
 
 <rs-list-group class="group-list">
-  <rs-list class="my-list -two-line -dense">
-    <rs-list-subheader class="subheader">リストスタイル / dense</rs-list-subheader>
+  <rs-list class="my-list -twoline-dense">
+    <rs-list-subheader class="subheader">two-lineとdense</rs-list-subheader>
     <rs-list-divider class="divider" />
     <rs-list-item class="item">
       <rs-list-text class="text">
         <rs-list-primary class="primary">1行目</rs-list-primary>
         <rs-list-secondary class="secondary">2行目</rs-list-secondary>
       </rs-list-text>
+      <rs-list-meta class="meta">メタ情報</rs-list-meta>
     </rs-list-item>
     <rs-list-item class="item">
       <rs-list-text class="text">
         <rs-list-primary class="primary">1行目</rs-list-primary>
         <rs-list-secondary class="secondary">2行目</rs-list-secondary>
       </rs-list-text>
+      <rs-list-meta class="meta">メタ情報</rs-list-meta>
     </rs-list-item>
   </rs-list>
-  <rs-list class="my-list -two-line -avatar-list">
-    <rs-list-subheader class="subheader">リストタイトル / avatar-list</rs-list-subheader>
+  <rs-list class="my-list -twoline-avatar">
+    <rs-list-subheader class="subheader">two-lineとavatar-list</rs-list-subheader>
     <rs-list-divider class="divider" />
     <rs-list-item class="item">
-      <rs-list-graphic class="graphic"></rs-list-graphic>
+      <rs-list-graphic class="icon" />
       <rs-list-text class="text">
         <rs-list-primary class="primary">1行目</rs-list-primary>
         <rs-list-secondary class="secondary">2行目</rs-list-secondary>
       </rs-list-text>
+      <rs-list-meta class="meta">メタ情報</rs-list-meta>
     </rs-list-item>
     <rs-list-item class="item">
-      <rs-list-graphic class="graphic"></rs-list-graphic>
+      <rs-list-graphic class="icon" />
       <rs-list-text class="text">
         <rs-list-primary class="primary">1行目</rs-list-primary>
         <rs-list-secondary class="secondary">2行目</rs-list-secondary>
@@ -479,71 +519,82 @@ storiesOf('Components|List/スタイルのカスタマイズ/リストのタイ�
   )}
     ${copyCodeBlock(
 `@import '@rsmdc/list/rs-list.scss';
+$material-icons-font-path: '~material-icons/iconfont/';
+@import '~material-icons/iconfont/material-icons';
 
 .my-list {
-  &.-two-line.-dense {
+  &.-two-line {
+    @include rs-list-type(two-line);
+  }
+  &.-twoline-dense {
     @include rs-list-type(two-line, dense);
   }
-  &.-two-line.-avatar-list > .item > .graphic {
-    @include rs-list-type(avatar-list);
+  &.-twoline-avatar {
+    @include rs-list-type(two-line, avatar-list);
+  }
+  > .item > .icon {
     @include rs-list-graphic-image(
       Material Icons, map-get($material-icons-codepoints, face)
     );
   }
-}`,
+}
+`,
       { lang: 'scss' }
     )}
   `)
   .add('avatar-list', () => `
     <h4>avatar-list</h4>
     <p>
-      リストにアバターを表示させる。 <br>
+      リストにアイコンや画像を表示する時に使用。 <br>
       denseとtwo-lineも一緒に使用できる。
     </p>
     <rs-list class="my-list -avatar-list">
       <rs-list-item class="item">
-        <rs-list-graphic class="graphic"></rs-list-graphic>
+        <rs-list-graphic class="icon"></rs-list-graphic>
         <rs-list-text class="text">テキスト</rs-list-text>
         <rs-list-meta class="meta">メタ情報</rs-list-meta>
       </rs-list-item>
       <rs-list-item class="item">
-        <rs-list-graphic class="graphic"></rs-list-graphic>
+        <rs-list-graphic class="icon"></rs-list-graphic>
         <rs-list-text class="text">テキスト</rs-list-text>
         <rs-list-meta class="meta">メタ情報</rs-list-meta>
       </rs-list-item>
     </rs-list>
 
     <rs-list-group class="group-list">
-      <rs-list class="my-list -avatar-list -dense">
-        <rs-list-subheader class="subheader">リストタイトル / dense</rs-list-subheader>
-        <rs-list-divider class="divider"></rs-list-divider>
+      <rs-list class="my-list -avatar-dense">
+        <rs-list-subheader class="subheader">avatar-listとdense</rs-list-subheader>
+        <rs-list-divider class="icon"></rs-list-divider>
         <rs-list-item class="item">
-          <rs-list-graphic class="graphic"></rs-list-graphic>
+          <rs-list-graphic class="icon"></rs-list-graphic>
           <rs-list-text class="text">
             <rs-list-primary class="primary">1行目</rs-list-primary>
             <rs-list-secondary class="secondary">2行目</rs-list-secondary>
           </rs-list-text>
+          <rs-list-meta class="meta">メタ情報</rs-list-meta>
         </rs-list-item>
         <rs-list-item class="item">
-          <rs-list-graphic class="graphic"></rs-list-graphic>
+          <rs-list-graphic class="icon"></rs-list-graphic>
           <rs-list-text class="text">
             <rs-list-primary class="primary">1行目</rs-list-primary>
             <rs-list-secondary class="secondary">2行目</rs-list-secondary>
           </rs-list-text>
+          <rs-list-meta class="meta">メタ情報</rs-list-meta>
         </rs-list-item>
       </rs-list>
-      <rs-list class="my-list -avatar-list -two-line">
-        <rs-list-subheader class="subheader">リストタイトル / two-line</rs-list-subheader>
+      <rs-list class="my-list -avatar-twoline">
+        <rs-list-subheader class="subheader">avatar-listとtwo-line</rs-list-subheader>
         <rs-list-divider class="divider" /></rs-list-divider>
         <rs-list-item class="item">
-          <rs-list-graphic class="graphic"></rs-list-graphic>
+          <rs-list-graphic class="icon"></rs-list-graphic>
           <rs-list-text class="text">
             <rs-list-primary class="primary">1行目</rs-list-primary>
             <rs-list-secondary class="secondary">2行目</rs-list-secondary>
           </rs-list-text>
+          <rs-list-meta class="meta">メタ情報</rs-list-meta>
         </rs-list-item>
         <rs-list-item class="item">
-          <rs-list-graphic class="graphic"></rs-list-graphic>
+          <rs-list-graphic class="icon"></rs-list-graphic>
             <rs-list-text class="text">
               <rs-list-primary class="primary">1行目</rs-list-primary>
               <rs-list-secondary class="secondary">2行目</rs-list-secondary>
@@ -554,19 +605,19 @@ storiesOf('Components|List/スタイルのカスタマイズ/リストのタイ�
     </rs-list-group>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
-      `@include rs-list-type($types...);`,
+`@include rs-list-type($types...);`,
       { lang: 'scss' }
     )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
 `<rs-list class="my-list -avatar-list">
   <rs-list-item class="item">
-    <rs-list-graphic class="graphic" />
+    <rs-list-graphic class="icon" />
     <rs-list-text class="text">テキスト</rs-list-text>
     <rs-list-meta class="meta">メタ情報</rs-list-meta>
   </rs-list-item>
   <rs-list-item class="item">
-    <rs-list-graphic class="graphic" />
+    <rs-list-graphic class="icon" />
     <rs-list-text class="text">テキスト</rs-list-text>
     <rs-list-meta class="meta">メタ情報</rs-list-meta>
   </rs-list-item>
@@ -577,14 +628,14 @@ storiesOf('Components|List/スタイルのカスタマイズ/リストのタイ�
     <rs-list-subheader class="subheader">リストタイトル / dense</rs-list-subheader>
     <rs-list-divider class="divider" />
     <rs-list-item class="item">
-      <rs-list-graphic class="graphic"></rs-list-graphic>
+      <rs-list-graphic class="icon" />
       <rs-list-text class="text">
         <rs-list-primary class="primary">1行目</rs-list-primary>
         <rs-list-secondary class="secondary">2行目</rs-list-secondary>
       </rs-list-text>
     </rs-list-item>
     <rs-list-item class="item">
-      <rs-list-graphic class="graphic" />
+      <rs-list-graphic class="icon" />
       <rs-list-text class="text">
         <rs-list-primary class="primary">1行目</rs-list-primary>
         <rs-list-secondary class="secondary">2行目</rs-list-secondary>
@@ -595,14 +646,14 @@ storiesOf('Components|List/スタイルのカスタマイズ/リストのタイ�
     <rs-list-subheader class="subheader">リストタイトル / two-line</rs-list-subheader>
     <rs-list-divider class="divider" />
     <rs-list-item class="item">
-      <rs-list-graphic class="graphic"></rs-list-graphic>
+      <rs-list-graphic class="icon" />
       <rs-list-text class="text">
         <rs-list-primary class="primary">1行目</rs-list-primary>
         <rs-list-secondary class="secondary">2行目</rs-list-secondary>
       </rs-list-text>
     </rs-list-item>
     <rs-list-item class="item">
-      <rs-list-graphic class="graphic" />
+      <rs-list-graphic class="icon" />
       <rs-list-text class="text">
         <rs-list-primary class="primary">1行目</rs-list-primary>
         <rs-list-secondary class="secondary">2行目</rs-list-secondary>
@@ -615,18 +666,23 @@ storiesOf('Components|List/スタイルのカスタマイズ/リストのタイ�
   )}
     ${copyCodeBlock(
 `@import '@rsmdc/list/rs-list.scss';
+$material-icons-font-path: '~material-icons/iconfont/';
+@import '~material-icons/iconfont/material-icons';
 
 .my-list {
   &.-avatar-list {
+    @include rs-list-type(avatar-list);
+  }
+  &.-avatar-dense {
+    @include rs-list-type(avatar-list, dense);
+  }
+  &.-avatar-twoline {
+    @include rs-list-type(avatar-list, two-line);
+  }
+  > .item > .icon {
     @include rs-list-graphic-image(
       Material Icons, map-get($material-icons-codepoints, face)
     );
-  }
-  &.-avatar-list.-dense {
-    @include rs-list-type(avatar-list, dense);
-  }
-  &.-avatar-list.-two-line {
-    @include rs-list-type(avatar-list, two-line);
   }
 }`,
       { lang: 'scss' }
@@ -640,10 +696,12 @@ storiesOf('Components|List/スタイルのカスタマイズ/仕切り線のタ�
     <rs-list class="my-list">
       <rs-list-item class="item">
         <rs-list-text class="text">text</rs-list-text>
+        <rs-list-meta class="meta">メタ情報</rs-list-meta>
       </rs-list-item>
       <rs-list-divider class="divider"></rs-list-divider>
       <rs-list-item class="item">
         <rs-list-text class="text">text</rs-list-text>
+        <rs-list-meta class="meta">メタ情報</rs-list-meta>
       </rs-list-item>
     </rs-list>
     <h4>使用方法</h4>
@@ -651,10 +709,12 @@ storiesOf('Components|List/スタイルのカスタマイズ/仕切り線のタ�
 `<rs-list class="my-list">
   <rs-list-item class="item">
     <rs-list-text class="text">テキスト</rs-list-text>
+    <rs-list-meta class="meta">メタ情報</rs-list-meta>
   </rs-list-item>
   <rs-list-divider class="divider" />
   <rs-list-item class="item">
     <rs-list-text class="text">テキスト</rs-list-text>
+    <rs-list-meta class="meta">メタ情報</rs-list-meta>
   </rs-list-item>
 </rs-list>`,
       { lang: 'html' }
@@ -662,61 +722,94 @@ storiesOf('Components|List/スタイルのカスタマイズ/仕切り線のタ�
   `)
   .add('inset', () => `
     <h4>inset</h4>
-    <p>paddedも一緒に使用できる。</p>
-    <rs-list class="my-list">
+    <p>
+      画像やアイコン使用時に、線の幅を画像以外のテキスト部分の領域に合わせる。<br>
+      paddedと一緒に使用できる。
+    </p>
+    <rs-list class="my-list -inset -avatar-twoline">
       <rs-list-item class="item">
+        <rs-list-graphic class="icon"></rs-list-graphic>
         <rs-list-text class="text">text</rs-list-text>
+        <rs-list-meta class="meta">メタ情報</rs-list-meta>
       </rs-list-item>
-      <rs-list-divider class="divider -inset"></rs-list-divider>
+      <rs-list-divider class="divider"></rs-list-divider>
       <rs-list-item class="item">
+        <rs-list-graphic class="icon"></rs-list-graphic>
         <rs-list-text class="text">text</rs-list-text>
+        <rs-list-meta class="meta">メタ情報</rs-list-meta>
       </rs-list-item>
     </rs-list>
-    <rs-list class="my-list">
+
+    <rs-list class="my-list -inset-padded -avatar-twoline">
+    <rs-list-subheader class="subheader">insetとpadded</rs-list-subheader>
       <rs-list-item class="item">
+        <rs-list-graphic class="icon"></rs-list-graphic>
         <rs-list-text class="text">text</rs-list-text>
+        <rs-list-meta class="meta">メタ情報</rs-list-meta>
       </rs-list-item>
-      <rs-list-divider class="divider -inset -padded"></rs-list-divider>
+      <rs-list-divider class="divider"></rs-list-divider>
       <rs-list-item class="item">
+        <rs-list-graphic class="icon"></rs-list-graphic>
         <rs-list-text class="text">text</rs-list-text>
+        <rs-list-meta class="meta">メタ情報</rs-list-meta>
       </rs-list-item>
     </rs-list>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
-      `@include rs-list-divider-type($types...);`,
+`@include rs-list-divider-type($types...);`,
       { lang: 'scss' }
     )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
-`<rs-list class="my-list">
+`<rs-list class="my-list -inset -avatar-twoline">
   <rs-list-item class="item">
+    <rs-list-graphic class="icon" />
     <rs-list-text class="text">text</rs-list-text>
+    <rs-list-meta class="meta">メタ情報</rs-list-meta>
   </rs-list-item>
-  <rs-list-divider class="divider -inset" />
+  <rs-list-divider class="divider" />
   <rs-list-item class="item">
+    <rs-list-graphic class="icon" />
     <rs-list-text class="text">text</rs-list-text>
+    <rs-list-meta class="meta">メタ情報</rs-list-meta>
   </rs-list-item>
-  </rs-list>
-  <rs-list class="my-list">
+</rs-list>
+
+<rs-list class="my-list -inset-padded -avatar-twoline">
+  <rs-list-subheader class="subheader">insetとpadded</rs-list-subheader>
   <rs-list-item class="item">
+    <rs-list-graphic class="icon" />
     <rs-list-text class="text">text</rs-list-text>
+    <rs-list-meta class="meta">メタ情報</rs-list-meta>
   </rs-list-item>
-  <rs-list-divider class="divider -inset -padded" />
+  <rs-list-divider class="divider" />
   <rs-list-item class="item">
+    <rs-list-graphic class="icon" />
     <rs-list-text class="text">text</rs-list-text>
+    <rs-list-meta class="meta">メタ情報</rs-list-meta>
   </rs-list-item>
 </rs-list>`,
       { lang: 'html' }
     )}
     ${copyCodeBlock(
 `@import '@rsmdc/list/rs-list.scss';
+$material-icons-font-path: '~material-icons/iconfont/';
+@import '~material-icons/iconfont/material-icons';
 
 .my-list {
-  > .divider.-inset {
+  &.-inset {
     @include rs-list-divider-type(inset);
   }
-  > .divider.-inset.-padded {
+  &.-inset-padded {
     @include rs-list-divider-type(inset, padded);
+  }
+  &.-avatar-twoline {
+    @include rs-list-type(avatar-list, two-line);
+  }
+  > .item > .icon {
+    @include rs-list-graphic-image(
+      Material Icons, map-get($material-icons-codepoints, face)
+    );
   }
 }`,
       { lang: 'scss' }
@@ -724,273 +817,170 @@ storiesOf('Components|List/スタイルのカスタマイズ/仕切り線のタ�
   `)
   .add('padded', () => `
     <h4>padded</h4>
-    insetも一緒に使える
-    <rs-list class="my-list">
+    <p>線の幅を画像やテキスト部分の領域に合わせる。<br>insetと一緒に使用できる。</p>
+    <rs-list class="my-list -padded -avatar-twoline">
       <rs-list-item class="item">
+        <rs-list-graphic class="icon"></rs-list-graphic>
         <rs-list-text class="text">text</rs-list-text>
+        <rs-list-meta class="meta">メタ情報</rs-list-meta>
       </rs-list-item>
-      <rs-list-divider class="divider -padded"></rs-list-divider>
+      <rs-list-divider class="divider"></rs-list-divider>
       <rs-list-item class="item">
+        <rs-list-graphic class="icon"></rs-list-graphic>
         <rs-list-text class="text">text</rs-list-text>
+        <rs-list-meta class="meta">メタ情報</rs-list-meta>
       </rs-list-item>
     </rs-list>
-    <rs-list class="my-list">
+    <rs-list class="my-list -padded-inset -avatar-twoline">
       <rs-list-item class="item">
+        <rs-list-graphic class="icon"></rs-list-graphic>
         <rs-list-text class="text">text</rs-list-text>
+        <rs-list-meta class="meta">メタ情報</rs-list-meta>
       </rs-list-item>
-      <rs-list-divider class="divider -inset"></rs-list-divider>
+      <rs-list-divider class="divider"></rs-list-divider>
       <rs-list-item class="item">
+        <rs-list-graphic class="icon"></rs-list-graphic>
         <rs-list-text class="text">text</rs-list-text>
+        <rs-list-meta class="meta">メタ情報</rs-list-meta>
       </rs-list-item>
     </rs-list>
     <h4>使用するmixin</h4>
-    ${copyCodeBlock(`@include rs-list-divider-type($types...);`, {
-      lang: "scss"
-    })}
+    ${copyCodeBlock(
+`@include rs-list-divider-type($types...);`,
+      { lang: "scss"}
+    )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
-`<rs-list class="my-list">
+`<rs-list class="my-list -padded -avatar-twoline">
   <rs-list-item class="item">
+    <rs-list-graphic class="icon" />
     <rs-list-text class="text">text</rs-list-text>
   </rs-list-item>
-  <rs-list-divider class="divider -padded" />
+  <rs-list-divider class="dividr" />
   <rs-list-item class="item">
+  <rs-list-graphic class="icon" />
     <rs-list-text class="text">text</rs-list-text>
   </rs-list-item>
   </rs-list>
-  <rs-list class="my-list">
+  <rs-list class="my-list -padded-inset -avatar-twoline">
   <rs-list-item class="item">
+  <rs-list-graphic class="icon" />
     <rs-list-text class="text">text</rs-list-text>
   </rs-list-item>
-  <rs-list-divider class="divider -inset -padded" />
+  <rs-list-divider class="divider" />
   <rs-list-item class="item">
+  <rs-list-graphic class="icon" />
     <rs-list-text class="text">text</rs-list-text>
-  </rs-list-item>
-</rs-list>`,
-      { lang: "html" }
-    )}
-    ${copyCodeBlock(
-`@import '@rsmdc/list/rs-list.scss';
-
-.my-list {
-  > .divider.-padded {
-    @include rs-list-divider-type(padded);
-  }
-  > .divider.-inset.-padded {
-    @include rs-list-divider-type(inset, padded);
-  }
-}`,
-      { lang: "scss" }
-    )}
-  `)
-storiesOf('Components|List/スタイルのカスタマイズ/画像の形を変える (修正予定)', module)
-  .add('normal (default)', () => `
-    <h4>normal（デフォルト）</h4>
-    <p>mixinは不要。</p>
-    <rs-list class="my-list -graphic-type">
-      <rs-list-item class="item">
-        <rs-list-graphic class="graphic"></rs-list-graphic>
-        <rs-list-text class="text">テキスト</rs-list-text>
-      </rs-list-item>
-      <rs-list-item class="item">
-        <rs-list-graphic class="graphic"></rs-list-graphic>
-        <rs-list-text class="text">テキスト</rs-list-text>
-      </rs-list-item>
-    </rs-list>
-    <h4>使用方法</h4>
-    ${copyCodeBlock(
-`<rs-list class="my-list -avatar-list">
-  <rs-list-item class="item">
-    <rs-list-graphic class="graphic" />
-    <rs-list-text class="text">テキスト</rs-list-text>
-  </rs-list-item>
-  <rs-list-item class="item">
-    <rs-list-graphic class="graphic" />
-    <rs-list-text class="text">テキスト</rs-list-text>
   </rs-list-item>
 </rs-list>`,
       { lang: 'html' }
     )}
+    ${copyCodeBlock(
+`@import '@rsmdc/list/rs-list.scss';
+$material-icons-font-path: '~material-icons/iconfont/';
+@import '~material-icons/iconfont/material-icons';
+
+.my-list {
+  &.-padded {
+    @include rs-list-divider-type(padded);
+  }
+  &.-padded-inset {
+    @include rs-list-divider-type(padded, inset);
+  }
+  &.-avatar-twoline {
+    @include rs-list-type(avatar-list, two-line);
+  }
+  > .item > .icon {
+    @include rs-list-graphic-image(
+      Material Icons, map-get($material-icons-codepoints, face)
+    );
+  }
+}`,
+      { lang: 'scss' }
+    )}
+  `)
+
+storiesOf('Components|List/スタイルのカスタマイズ/画像の形を変える (修正予定)', module)
+  .add('normal (default)', () => `
+    <h4>normal（デフォルト）</h4>
+    <p>画像の大きさがアイコンサイズで表示される。</p>
+    <rs-list class="my-list -avatar-twoline">
+      <rs-list-item class="item">
+        <rs-list-graphic class="graphic"></rs-list-graphic>
+        <rs-list-text class="text">テキスト</rs-list-text>
+        <rs-list-meta class="meta">メタ情報</rs-list-meta>
+      </rs-list-item>
+      <rs-list-item class="item">
+        <rs-list-graphic class="graphic"></rs-list-graphic>
+        <rs-list-text class="text">テキスト</rs-list-text>
+        <rs-list-meta class="meta">メタ情報</rs-list-meta>
+      </rs-list-item>
+    </rs-list>
+    <h4>使用方法</h4>
+    ${copyCodeBlock(
+`<rs-list class="my-list -avatar-twoline">
+  <rs-list-item class="item">
+    <rs-list-graphic class="graphic" />
+    <rs-list-text class="text">テキスト</rs-list-text>
+    <rs-list-meta class="meta">メタ情報</rs-list-meta>
+  </rs-list-item>
+  <rs-list-item class="item">
+    <rs-list-graphic class="graphic" />
+    <rs-list-text class="text">テキスト</rs-list-text>
+    <rs-list-meta class="meta">メタ情報</rs-list-meta>
+  </rs-list-item>
+</rs-list>`,
+      { lang: 'html' }
+  )}
+    ${copyCodeBlock(
+`@import '@rsmdc/list/rs-list.scss';
+
+.my-list {
+  &.-avatar-twoline {
+    @include rs-list-type(avatar-list, two-line);
+  }
+  > .item > .graphic {
+    @include rs-list-graphic-image(
+      url('https://cweb.canon.jp/showroom/personal/workshop/instaevent-2018/img/picture19.jpg')
+    );
+  }
+}`,
+      { lang: 'scss' }
+    )}
   `)  
+
   .add('circle', () => `
     <h4>circle</h4>
-    <rs-list class="my-list -graphic-type">
+    <p>画像が円形で表示される。</p>
+    <rs-list class="my-list -avatar-twoline">
       <rs-list-item class="item">
         <rs-list-graphic class="graphic -circle"></rs-list-graphic>
         <rs-list-text class="text">テキスト</rs-list-text>
+        <rs-list-meta class="meta">メタ情報<rs-list-meta>
       </rs-list-item>
       <rs-list-item class="item">
         <rs-list-graphic class="graphic -circle"></rs-list-graphic>
         <rs-list-text class="text">テキスト</rs-list-text>
-      </rs-list-item>
-    </rs-list>
-    <h4>使用するmixin</h4>
-    ${copyCodeBlock(`@include rs-list-graphic-type($type);`, {
-      lang: "scss"
-    })}
-    <h4>使用方法</h4>
-    ${copyCodeBlock(
-`<rs-list class="my-list -avatar-list">
-  <rs-list-item class="item">
-    <rs-list-graphic class="graphic -circle" />
-    <rs-list-text class="text">テキスト</rs-list-text>
-  </rs-list-item>
-  <rs-list-item class="item">
-    <rs-list-graphic class="graphic -circle" />
-    <rs-list-text class="text">テキスト</rs-list-text>
-  </rs-list-item>
-</rs-list>`,
-      { lang: "html" }
-    )}
-    ${copyCodeBlock(
-`@import '@rsmdc/list/rs-list.scss';
-
-.my-list {
-  > .graphic.-circle {
-    @include rs-list-graphic-type(circle);
-    @include rs-list-graphic-image(url(\'https://cweb.canon.jp/showroom/personal/workshop/instaevent-2018/img/picture19.jpg\'));
-  }
-}`,
-      { lang: "scss" }
-    )}
-  `)
-  .add('rectangle', () => `
-    <h4>rectangle</h4>
-    <rs-list class="my-list -graphic-type">
-      <rs-list-item class="item">
-        <rs-list-graphic class="graphic -rectangle"></rs-list-graphic>
-        <rs-list-text class="text">テキスト</rs-list-text>
-      </rs-list-item>
-      <rs-list-item class="item">
-        <rs-list-graphic class="graphic -rectangle"></rs-list-graphic>
-        <rs-list-text class="text">テキスト</rs-list-text>
-      </rs-list-item>
-    </rs-list>
-    <h4>使用するmixin</h4>
-    ${copyCodeBlock(`@include rs-list-graphic-type($type);`, {
-      lang: "scss"
-    })}
-    <h4>使用方法</h4>
-    ${copyCodeBlock(
-`<rs-list class="my-list -avatar-list">
-  <rs-list-item class="item">
-    <rs-list-graphic class="graphic -rectangle" />
-    <rs-list-text class="text">テキスト</rs-list-text>
-  </rs-list-item>
-  <rs-list-item class="item">
-    <rs-list-graphic class="graphic -rectangle" />
-    <rs-list-text class="text">テキスト</rs-list-text>
-  </rs-list-item>
-</rs-list>`,
-      { lang: "html" }
-    )}
-    ${copyCodeBlock(
-`@import '@rsmdc/list/rs-list.scss';
-
-.my-list {
-  > .graphic.-rectangle {'
-    @include rs-list-graphic-type(rectangle);
-    @include rs-list-graphic-image(url(\'https://cweb.canon.jp/showroom/personal/workshop/instaevent-2018/img/picture19.jpg\'));
-  }'
-}`,
-      { lang: "scss" }
-    )}
-  `)
-  .add('square', () => `
-    <h4>square</h4>
-    <rs-list class="my-list -graphic-type">
-      <rs-list-item class="item">
-        <rs-list-graphic class="graphic -square"></rs-list-graphic>
-        <rs-list-text class="text">テキスト</rs-list-text>
-      </rs-list-item>
-      <rs-list-item class="item">
-        <rs-list-graphic class="graphic -square"></rs-list-graphic>
-        <rs-list-text class="text">テキスト</rs-list-text>
-      </rs-list-item>
-    </rs-list>
-    <h4>使用するmixin</h4>
-  ${copyCodeBlock(`@include rs-list-graphic-type($type);`,
-    { lang: 'scss' }
-  )}
-  <h4>使用方法</h4>
-  ${copyCodeBlock(
-`<rs-list class="my-list -avatarlist">
-  <rs-list-item class="item">
-    <rs-list-graphic class="graphic -square" />
-    <rs-list-text class="text">テキスト</rs-list-text>
-  </rs-list-item>
-  <rs-list-item class="item">
-    <rs-list-graphic class="graphic -square" />
-    <rs-list-text class="text">テキスト</rs-list-text>
-  </rs-list-item>
-</rs-list>`,
-    { lang: "html" }
-  )}
-  ${copyCodeBlock(
-`@import '@rsmdc/list/rs-list.scss';
-
-.my-list {
-  > .graphic.-square {
-    @include rs-list-graphic-type(square);
-    @include rs-list-graphic-image(url(\'https://cweb.canon.jp/showroom/personal/workshop/instaevent-2018/img/picture19.jpg\'));
-  }
-}`,
-    { lang: "scss" }
-  )}
-`)
-
-storiesOf('Components|List/スタイルのカスタマイズ', module)
-  .add('テキスト(1行目)の色を変える', () => `
-    <h4>テキスト（1行目）の色を指定した色に変える。</h4>
-    <rs-list class="my-list">
-      <rs-list-item class="item">
-        <rs-list-text class="text">テキスト</rs-list-text>
-      </rs-list-item>
-      <rs-list-item class="item">
-        <rs-list-text class="text -brown">テキスト</rs-list-text>
-      </rs-list-item>
-    </rs-list>
-    <rs-list class="my-list -twoline">
-      <rs-list-item class="item">
-        <rs-list-text class="text">
-          <rs-list-primary class="primary -brown">1行目</rs-list-primary>
-          <rs-list-secondary class="secondary">2行目</rs-list-secondary>
-        </rs-list-text>
-      </rs-list-item>
-      <rs-list-item class="item">
-        <rs-list-text class="text -brown">
-          <rs-list-primary class="primary">1行目</rs-list-primary>
-          <rs-list-secondary class="secondary">2行目</rs-list-secondary>
-        </rs-list-text>
+        <rs-list-meta class="meta">メタ情報<rs-list-meta>
       </rs-list-item>
     </rs-list>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
-      `@include rs-list-item-primary-text-ink-color($color);`,
+`@include rs-list-graphic-type($type);`, 
       { lang: 'scss' }
     )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
-`<rs-list class="my-list">
+`<rs-list class="my-list -avatar-twoline">
   <rs-list-item class="item">
+    <rs-list-graphic class="graphic -circle" />
     <rs-list-text class="text">テキスト</rs-list-text>
+    <rs-list-meta class="meta">メタ情報<rs-list-meta>
   </rs-list-item>
   <rs-list-item class="item">
-    <rs-list-text class="text -brown">テキスト</rs-list-text>
-  </rs-list-item>
-</rs-list>
-<rs-list class="my-list -twoline">
-  <rs-list-item class="item">
-    <rs-list-text class="text">
-      <rs-list-primary class="primary -brown">1行目</rs-list-primary>
-      <rs-list-secondary class="secondary">2行目</rs-list-secondary>
-    </rs-list-text>
-  </rs-list-item>
-  <rs-list-item class="item">
-    <rs-list-text class="text -brown">
-      <rs-list-primary class="primary">1行目</rs-list-primary>
-      <rs-list-secondary class="secondary">2行目</rs-list-secondary>
-    </rs-list-text>
+    <rs-list-graphic class="graphic -circle" />
+    <rs-list-text class="text">テキスト</rs-list-text>
+    <rs-list-meta class="meta">メタ情報<rs-list-meta>
   </rs-list-item>
 </rs-list>`,
       { lang: 'html' }
@@ -999,9 +989,181 @@ storiesOf('Components|List/スタイルのカスタマイズ', module)
 `@import '@rsmdc/list/rs-list.scss';
 
 .my-list {
-  > .item > .text.-brown, 
-  > .item > .text > .primary.-brown {
+  > .item > .graphic.-circle {
+    @include rs-list-graphic-type(circle);
+    @include rs-list-graphic-image(
+      url('https://cweb.canon.jp/showroom/personal/workshop/instaevent-2018/img/picture19.jpg')
+    );
+  }
+  &.-avatar-twoline {
+    @include rs-list-type(avatar-list, two-line);
+  }
+}`,
+      { lang: 'scss' }
+    )}
+  `)
+
+  .add('rectangle', () => `
+    <h4>rectangle</h4>
+    <p>画像が長方形で表示される。</p>
+    <rs-list class="my-list -avatar-twoline">
+      <rs-list-item class="item">
+        <rs-list-graphic class="graphic -rectangle"></rs-list-graphic>
+        <rs-list-text class="text">テキスト</rs-list-text>
+        <rs-list-meta class="meta">メタ情報<rs-list-meta>
+      </rs-list-item>
+      <rs-list-item class="item">
+        <rs-list-graphic class="graphic -rectangle"></rs-list-graphic>
+        <rs-list-text class="text">テキスト</rs-list-text>
+        <rs-list-meta class="meta">メタ情報<rs-list-meta>
+      </rs-list-item>
+    </rs-list>
+    <h4>使用するmixin</h4>
+    ${copyCodeBlock(
+`@include rs-list-graphic-type($type);`,
+      { lang: 'scss' }
+    )}
+    <h4>使用方法</h4>
+    ${copyCodeBlock(
+`<rs-list class="my-list -avatar-twoline">
+  <rs-list-item class="item">
+    <rs-list-graphic class="graphic -rectangle" />
+    <rs-list-text class="text">テキスト</rs-list-text>
+    <rs-list-meta class="meta">メタ情報<rs-list-meta>
+  </rs-list-item>
+  <rs-list-item class="item">
+    <rs-list-graphic class="graphic -rectangle" />
+    <rs-list-text class="text">テキスト</rs-list-text>
+    <rs-list-meta class="meta">メタ情報<rs-list-meta>
+  </rs-list-item>
+</rs-list>`,
+      { lang: 'html' }
+    )}
+    ${copyCodeBlock(
+`@import '@rsmdc/list/rs-list.scss';
+
+.my-list {
+  > .item > .graphic.-rectangle {
+    @include rs-list-graphic-type(rectangle);
+    @include rs-list-graphic-image(
+      url('https://cweb.canon.jp/showroom/personal/workshop/instaevent-2018/img/picture19.jpg')
+    );
+  }
+  &.-avatar-twoline {
+    @include rs-list-type(avatar-list, two-line);
+  }
+}`,
+      { lang: 'scss' }
+    )}
+  `)
+
+  .add('square', () => `
+    <h4>square</h4>
+    <p>画像が正方形で表示される。</p>
+    <rs-list class="my-list -avatar-twoline">
+      <rs-list-item class="item">
+        <rs-list-graphic class="graphic -square"></rs-list-graphic>
+        <rs-list-text class="text">テキスト</rs-list-text>
+        <rs-list-meta class="meta">メタ情報</rs-list-meta>
+      </rs-list-item>
+      <rs-list-item class="item">
+        <rs-list-graphic class="graphic -square"></rs-list-graphic>
+        <rs-list-text class="text">テキスト</rs-list-text>
+        <rs-list-meta class="meta">メタ情報</rs-list-meta>
+      </rs-list-item>
+    </rs-list>
+    <h4>使用するmixin</h4>
+    ${copyCodeBlock(
+`@include rs-list-graphic-type($type);`,
+      { lang: 'scss' }
+    )}
+    <h4>使用方法</h4>
+    ${copyCodeBlock(
+`<rs-list class="my-list -avatar-twoline">
+  <rs-list-item class="item">
+    <rs-list-graphic class="graphic -square" />
+    <rs-list-text class="text">テキスト</rs-list-text>
+    <rs-list-meta class="meta">メタ情報</rs-list-meta>
+  </rs-list-item>
+  <rs-list-item class="item">
+    <rs-list-graphic class="graphic -square" />
+    <rs-list-text class="text">テキスト</rs-list-text>
+    <rs-list-meta class="meta">メタ情報</rs-list-meta>
+  </rs-list-item>
+</rs-list>`,
+      { lang: 'html' }
+    )}
+    ${copyCodeBlock(
+`@import '@rsmdc/list/rs-list.scss';
+
+.my-list {
+  > .item > .graphic.-square {
+    @include rs-list-graphic-type(square);
+    @include rs-list-graphic-image(
+      url('https://cweb.canon.jp/showroom/personal/workshop/instaevent-2018/img/picture19.jpg')
+    );
+  }
+  &.-avatar-twoline {
+    @include rs-list-type(avatar-list, two-line);
+  }
+}`,
+    { lang: 'scss' }
+    )}
+  `)
+
+storiesOf('Components|List/スタイルのカスタマイズ', module)
+  .add('1行目のテキストの色を変える', () => `
+    <h4>1行目のテキストの色を選択した色に変える。</h4>
+    <rs-list class="my-list -two-line">
+      <rs-list-item class="item">
+        <rs-list-text class="text -primary-brown">
+          <rs-list-primary class="primary">1行目</rs-list-primary>
+          <rs-list-secondary class="secondary">2行目</rs-list-secondary>
+        </rs-list-text>
+        <rs-list-meta class="meta">メタ情報</rs-list-meta>
+      </rs-list-item>
+      <rs-list-item class="item">
+        <rs-list-text class="text -primary-brown">
+          <rs-list-primary class="primary">1行目</rs-list-primary>
+          <rs-list-secondary class="secondary">2行目</rs-list-secondary>
+        </rs-list-text>
+        <rs-list-meta class="meta">メタ情報</rs-list-meta>
+      </rs-list-item>
+    </rs-list>
+    <h4>使用するmixin</h4>
+    ${copyCodeBlock(
+`@include rs-list-item-primary-text-ink-color($color);`,
+      { lang: 'scss' }
+    )}
+    <h4>使用方法</h4>
+    ${copyCodeBlock(
+`<rs-list class="my-list -two-line">
+  <rs-list-item class="item">
+    <rs-list-text class="text -primary-brown">
+      <rs-list-primary class="primary">1行目</rs-list-primary>
+      <rs-list-secondary class="secondary">2行目</rs-list-secondary>
+    </rs-list-text>
+    <rs-list-meta class="meta">メタ情報</rs-list-meta>
+  </rs-list-item>
+  <rs-list-item class="item">
+    <rs-list-text class="text -primary-brown">
+      <rs-list-primary class="primary">1行目</rs-list-primary>
+      <rs-list-secondary class="secondary">2行目</rs-list-secondary>
+    </rs-list-text>
+    <rs-list-meta class="meta">メタ情報</rs-list-meta>
+  </rs-list-item>
+</rs-list>`,
+      { lang: 'html' }
+    )}
+    ${copyCodeBlock(
+`@import '@rsmdc/list/rs-list.scss';
+
+.my-list {
+  > .item > .text.-primary-brown {
     @include rs-list-item-primary-text-ink-color(brown);
+  }
+  &.-two-line {
+    @include rs-list-type(two-line);
   }
 }`,
       { lang: 'scss' }
@@ -1009,61 +1171,50 @@ storiesOf('Components|List/スタイルのカスタマイズ', module)
     <p>オプション</p>
     <ul>
       <li>
-        $color: インクの色コード <br> 例）#ee00ce
+        $color: インクの色コード。 <br> 例）#ee00ce
       </li>
     </ul>
   `)  
-  .add('テキスト(2行目)の色を変える', () => `
-    <h4>テキスト（2行目）の色を指定した色に変える。</h4>
-    <rs-list class="my-list">
+
+  .add('2行目のテキストの色を変える', () => `
+    <h4>2行目のテキストの色を選択した色に変える。</h4>
+    <rs-list class="my-list -two-line">
       <rs-list-item class="item">
-        <rs-list-text class="text">テキスト</rs-list-text>
-      </rs-list-item>
-      <rs-list-item class="item">
-        <rs-list-text class="text -brown">テキスト</rs-list-text>
-      </rs-list-item>
-    </rs-list>
-    <rs-list class="my-list -twoline">
-      <rs-list-item class="item">
-        <rs-list-text class="text">
+        <rs-list-text class="text -secondary-brown">
           <rs-list-primary class="primary">1行目</rs-list-primary>
-          <rs-list-secondary class="secondary -brown">2行目</rs-list-secondary>
+          <rs-list-secondary class="secondary">2行目</rs-list-secondary>
         </rs-list-text>
+        <rs-list-meta class="meta">メタ情報</rs-list-meta>
       </rs-list-item>
       <rs-list-item class="item">
-        <rs-list-text class="text">
+        <rs-list-text class="text -secondary-brown">
           <rs-list-primary class="primary">1行目</rs-list-primary>
-          <rs-list-secondary class="secondary -brown">2行目</rs-list-secondary>
+          <rs-list-secondary class="secondary">2行目</rs-list-secondary>
         </rs-list-text>
+        <rs-list-meta class="meta">メタ情報</rs-list-meta>
       </rs-list-item>
     </rs-list>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
-      `@include rs-list-item-secondary-text-ink-color($color);`,
+`@include rs-list-item-secondary-text-ink-color($color);`,
       { lang: 'scss' }
     )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
-`<rs-list class="my-list">
+`<rs-list class="my-list -two-line">
   <rs-list-item class="item">
-    <rs-list-text class="text">テキスト</rs-list-text>
-  </rs-list-item>
-  <rs-list-item class="item">
-    <rs-list-text class="text -brown">テキスト</rs-list-text>
-  </rs-list-item>
-</rs-list>
-<rs-list class="my-list -twoline">
-  <rs-list-item class="item">
-    <rs-list-text class="text">
+    <rs-list-text class="text -secondary-brown">
       <rs-list-primary class="primary">1行目</rs-list-primary>
-      <rs-list-secondary class="secondary -brown">2行目</rs-list-secondary>
+      <rs-list-secondary class="secondary">2行目</rs-list-secondary>
     </rs-list-text>
+    <rs-list-meta class="meta">メタ情報</rs-list-meta>
   </rs-list-item>
   <rs-list-item class="item">
-    <rs-list-text class="text">
+    <rs-list-text class="text -secondary-brown">
       <rs-list-primary class="primary">1行目</rs-list-primary>
-      <rs-list-secondary class="secondary -brown">2行目</rs-list-secondary>
+      <rs-list-secondary class="secondary">2行目</rs-list-secondary>
     </rs-list-text>
+    <rs-list-meta class="meta">メタ情報</rs-list-meta>
   </rs-list-item>
 </rs-list>`,
       { lang: 'html' }
@@ -1072,17 +1223,21 @@ storiesOf('Components|List/スタイルのカスタマイズ', module)
 `@import '@rsmdc/list/rs-list.scss';
 
 .my-list {
-  > .item > .text > .secondary.-brown {
+  > .item > .text.-secondary-brown {
     @include rs-list-item-secondary-text-ink-color(brown);
+  }
+  &.-two-line {
+    @include rs-list-type(two-line);
   }
 }`,
       { lang: 'scss' }
     )}
     <p>オプション</p>
     <ul>
-      <li>$color: インクの色コード <br> 例）#ee00ce</li>
+      <li>$color: インクの色コード。 <br> 例）#ee00ce</li>
     </ul>
   `)
+
   .add('メタ情報のテキストの色を変える', () => `
     <h4>メタ情報のテキストの色を指定した色に変える。</h4>
     <rs-list class="my-list">
@@ -1097,7 +1252,7 @@ storiesOf('Components|List/スタイルのカスタマイズ', module)
     </rs-list>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
-      `@include rs-list-item-meta-ink-color($color);`,
+`@include rs-list-item-meta-ink-color($color);`,
       { lang: 'scss' }
     )}
     <h4>使用方法</h4>
@@ -1126,121 +1281,77 @@ storiesOf('Components|List/スタイルのカスタマイズ', module)
     )}
     <p>オプション</p>
     <ul>
-      <li>$color: インクの色コード <br> 例）#ee00ce</li>
+      <li>$color: インクの色コード。 <br> 例）#ee00ce</li>
     </ul>
   `)
-  .add('アイコンの色を変える', () => `
-    <h4>アイコンの色を指定した色に変える。</h4>
-    <rs-list class="my-list -avatar-list">
+
+  .add('サブヘッダーの色を変える', () => `
+    <h4>サブヘッダーの色を指定した色に変える。</h4>
+    <rs-list class="my-list">
+      <rs-list-subheader class="subheader -brown">リストタイトル</rs-list-subheader>
+      <rs-list-divider class="divider"></rs-list-divider>
       <rs-list-item class="item">
-        <rs-list-graphic class="graphic -blue"></rs-list-graphic>
         <rs-list-text class="text">テキスト</rs-list-text>
+        <rs-list-meta class="meta">メタ情報</rs-list-meta>
       </rs-list-item>
       <rs-list-item class="item">
-        <rs-list-graphic class="graphic -blue"></rs-list-graphic>
         <rs-list-text class="text">テキスト</rs-list-text>
+        <rs-list-meta class="meta">メタ情報</rs-list-meta>
       </rs-list-item>
     </rs-list>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
-      `@include rs-list-item-graphic-ink-color($color);`,
+`@include rs-list-group-subheader-ink-color($color);`,
       { lang: 'scss' }
     )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
-`<rs-list class="my-list -avatar-list">
+`<rs-list class="my-list">
+  <rs-list-subheader class="subheader -brown">リストタイトル</rs-list-subheader>
+  <rs-list-divider class="divider" />
   <rs-list-item class="item">
-    <rs-list-graphic class="graphic -blue" />
     <rs-list-text class="text">テキスト</rs-list-text>
+    <rs-list-meta class="meta">メタ情報</rs-list-meta>
   </rs-list-item>
   <rs-list-item class="item">
-    <rs-list-graphic class="graphic -blue" />
     <rs-list-text class="text">テキスト</rs-list-text>
+    <rs-list-meta class="meta">メタ情報</rs-list-meta>
   </rs-list-item>
 </rs-list>`,
       { lang: 'html' }
     )}
     ${copyCodeBlock(
 `@import '@rsmdc/list/rs-list.scss';
-$material-icons-font-path: '~material-icons/iconfont/';
-@import '~material-icons/iconfont/material-icons';
 
 .my-list {
-  > .item > .graphic.-blue {
-    @include rs-list-graphic-image(Material Icons, map-get($material-icons-codepoints, face));
-    @include rs-list-graphic-ink-color(rgb(106, 118, 223));
+  > .subheader.-brown {
+    @include rs-list-group-subheader-ink-color(brown);
   }
 }`,
       { lang: 'scss' }
     )}
     <p>オプション</p>
     <ul>
-      <li>$color: アイコンの色を指定 <br> 例）#ee00ce</li>
+      <li>$color: インクの色コード。 <br> 例）#ee00ce</li>
     </ul>
   `)
-  .add('画像の背景色を変える', () => `
-    <h4>画像の背景色を指定した色に変える。</h4>
-    <rs-list class="my-list -avatar-list">
-      <rs-list-item class="item">
-        <rs-list-graphic class="icon -container-blue"></rs-list-graphic>
-        <rs-list-text class="text">テキスト</rs-list-text>
-      </rs-list-item>
-      <rs-list-item class="item">
-        <rs-list-graphic class="icon -container-blue"></rs-list-graphic>
-        <rs-list-text class="text">テキスト</rs-list-text>
-      </rs-list-item>
-    </rs-list>
-    <h4>使用するmixin</h4>
-    ${copyCodeBlock(
-      `@include rs-list-item-graphic-fill-color($color);`,
-      { lang: 'scss' }
-    )}
-    <h4>使用方法</h4>
-    ${copyCodeBlock(
-`<rs-list class="my-list -avatarlist">
-  <rs-list-item class="item">
-    <rs-list-graphic class="graphic -container-blue" />
-    <rs-list-text class="text">テキスト</rs-list-text>
-  </rs-list-item>
-  <rs-list-item class="item">
-    <rs-list-graphic class="graphic -container-blue" />
-    <rs-list-text class="text">テキスト</rs-list-text>
-  </rs-list-item>
-</rs-list>`,
-      { lang: 'html' }
-    )}
-    ${copyCodeBlock(
-`@import '@rsmdc/list/rs-list.scss';
-$material-icons-font-path: '~material-icons/iconfont/';
-@import '~material-icons/iconfont/material-icons';
-
-.my-list {
-  > .item > .graphic.-container-blue {
-    @include rs-list-graphic-image(Material Icons, map-get($material-icons-codepoints, face));
-    @include rs-list-graphic-fill-color(rgb(106, 196, 223));
-  }
-}`,
-      { lang: 'scss' }
-    )}
-    <p>オプション</p>
-    <ul>
-      <li>$color: コンテナの色の塗りコード <br> 例）#ee00ce</li>
-    </ul>
-  `)
+  
   .add('仕切り線の色を変える', () => `
     <h4>仕切り線の色を指定した色に変える。</h4>
     <rs-list class="my-list">
       <rs-list-item class="item">
         <rs-list-text class="text">テキスト</rs-list-text>
+        <rs-list-meta class="meta">メタ情報</rs-list-meta>
       </rs-list-item>
       <rs-list-divider class="divider -blue"></rs-list-divider>
       <rs-list-item class="item">
         <rs-list-text class="text">テキスト</rs-list-text>
+        <rs-list-meta class="meta">メタ情報</rs-list-meta>
       </rs-list-item>
     </rs-list>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
-      `@include rs-list-divider-color($color);`,
+`@include rs-list-divider-color($color);`,
       { lang: 'scss' }
     )}
     <h4>使用方法</h4>
@@ -1248,10 +1359,12 @@ $material-icons-font-path: '~material-icons/iconfont/';
 `<rs-list class="my-list">
   <rs-list-item class="item">
     <rs-list-text class="text">テキスト</rs-list-text>
+    <rs-list-meta class="meta">メタ情報</rs-list-meta>
   </rs-list-item>
   <rs-list-divider class="divider -blue" />
   <rs-list-item class="item">
     <rs-list-text class="text">テキスト</rs-list-text>
+    <rs-list-meta class="meta">メタ情報</rs-list-meta>
   </rs-list-item>
 </rs-list>`,
       { lang: 'html' }
@@ -1268,98 +1381,37 @@ $material-icons-font-path: '~material-icons/iconfont/';
     )}
     <p>オプション</p>
     <ul>
-      <li>$color: 線の色を指定 <br> 例）#ee00ce</li>
+      <li>$color: 線の色を指定。 <br> 例）#ee00ce</li>
     </ul>
   `)
-  .add('サブヘッダーの色を変える', () => `
-    <h4>サブヘッダーの色を指定した色に変える。</h4>
-    <rs-list-group class="group-list">
-      <rs-list class="list">
-        <rs-list-subheader class="subheader -brown">リストタイトル</rs-list-subheader>
-        <rs-list-item class="item">
-          <rs-list-text class="text">テキスト</rs-list-text>
-        </rs-list-item>
-        <rs-list-item class="item">
-          <rs-list-text class="text">テキスト</rs-list-text>
-        </rs-list-item>
-      </rs-list>
-      <rs-list class="list">
-        <rs-list-subheader class="subheader -brown">リストタイトル</rs-list-subheader>
-        <rs-list-item class="item">
-          <rs-list-text class="text">テキスト</rs-list-text>
-        </rs-list-item>
-        <rs-list-item class="item">
-          <rs-list-text class="text">テキスト</rs-list-text>
-        </rs-list-item>
-      </rs-list>
-    </rs-list-group>
-    <h4>使用するmixin</h4>
-    ${copyCodeBlock(
-      `@include rs-list-group-subheader-ink-color($color);`,
-      { lang: 'scss' }
-    )}
-    <h4>使用方法</h4>
-    ${copyCodeBlock(
-`<rs-list-group class="group-list">
-  <rs-list class="list">
-    <rs-list-subheader class="subheader -brown">リストタイトル</rs-list-subheader>
-    <rs-list-item class="item">
-      <rs-list-text class="text">テキスト</rs-list-text>
-    </rs-list-item>
-    <rs-list-item class="item">
-      <rs-list-text class="text">テキスト</rs-list-text>
-    </rs-list-item>
-  </rs-list>
-  <rs-list class="list">
-    <rs-list-subheader class="subheader -brown">リストタイトル</rs-list-subheader>
-    <rs-list-item class="item">
-      <rs-list-text class="text">テキスト</rs-list-text>
-    </rs-list-item>
-    <rs-list-item class="item">
-      <rs-list-text class="text">テキスト</rs-list-text>
-    </rs-list-item>
-  </rs-list>
-</rs-list-group>`,
-      { lang: 'html' }
-    )}
-    ${copyCodeBlock(
-`@import '@rsmdc/list/rs-list.scss';
-
-.group-list {
-  > .list > .subheader.-brown {
-    @include rs-list-group-subheader-ink-color(brown);
-  }
-}`,
-      { lang: 'scss' }
-    )}
-    <p>オプション</p>
-    <ul>
-      <li>$color: インクの色コード <br> 例）#ee00ce</li>
-    </ul>
-  `)
+  
   .add('リップルの色を変える', () => `
     <h4>リップルの色を指定した色に変える。</h4>
-    <rs-list class="my-list">
+    <rs-list class="my-list -states-orange">
       <rs-list-item class="item">
         <rs-list-text class="text">テキスト</rs-list-text>
+        <rs-list-meta class="meta">メタ情報</rs-list-meta>
       </rs-list-item>
       <rs-list-item class="item">
         <rs-list-text class="text">テキスト</rs-list-text>
+        <rs-list-meta class="meta">メタ情報</rs-list-meta>
       </rs-list-item>
     </rs-list>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
-      `@include rs-list-item-states-color($color);`,
+`@include rs-list-item-states-color($color);`,
       { lang: 'scss' }
     )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
-`<rs-list class="my-list">
+`<rs-list class="my-list -states-orange">
   <rs-list-item class="item">
     <rs-list-text class="text">テキスト</rs-list-text>
+    <rs-list-meta class="meta">メタ情報</rs-list-meta>
   </rs-list-item>
   <rs-list-item class="item">
     <rs-list-text class="text">テキスト</rs-list-text>
+    <rs-list-meta class="meta">メタ情報</rs-list-meta>
   </rs-list-item>
 </rs-list>`,
       { lang: 'html' }
@@ -1368,40 +1420,49 @@ $material-icons-font-path: '~material-icons/iconfont/';
 `@import '@rsmdc/list/rs-list.scss';
 
 .my-list {
-  > .item {
-    @include rs-list-item-states-color(rgb(106, 118, 223));
+  &.-states-orange {
+    @include rs-list-item-states-color(orange);
   }
 }`,
       { lang: 'scss' }
     )}
     <p>オプション</p>
     <ul>
-      <li>$color: リップルの色を指定 <br> 例）#ee00ce</li>
+      <li>$color: リップルの色を指定。 <br> 例）#ee00ce</li>
     </ul>
   `)
-  .add('テキスト、背景色、リップルの色を一括で変える', () => `
-    <h4>テキスト、背景色、リップルの色を指定した色に変える。</h4>
-    <rs-list class="my-list">
-      <rs-list-item class="item -green">
+
+  .add('テキストとアイコンとリップルの色を一括で変える', () => `
+    <h4>テキストとアイコンとリップルの色を指定した色に変える。</h4>
+    <rs-list class="my-list -accessible-orange -avatar-twoline">
+      <rs-list-item class="item">
+        <rs-list-graphic class="icon"></rs-list-graphic>
         <rs-list-text class="text">テキスト</rs-list-text>
+        <rs-list-meta class="meta">メタ情報</rs-list-meta>
       </rs-list-item>
-      <rs-list-item class="item -green">
+      <rs-list-item class="item">
+        <rs-list-graphic class="icon"></rs-list-graphic>
         <rs-list-text class="text">テキスト</rs-list-text>
+        <rs-list-meta class="meta">メタ情報</rs-list-meta>
       </rs-list-item>
     </rs-list>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
-      `@include rs-list-fill-color-accessible($color);`,
+`@include rs-list-fill-color-accessible($color);`,
       { lang: 'scss' }
     )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
-`<rs-list class="my-list">
+`<rs-list class="my-list -accessible-orange -avatar-twoline">
   <rs-list-item class="item">
+    <rs-list-graphic class="icon" />
     <rs-list-text class="text">テキスト</rs-list-text>
+    <rs-list-meta class="meta">メタ情報</rs-list-meta>
   </rs-list-item>
   <rs-list-item class="item">
+    <rs-list-graphic class="icon" />
     <rs-list-text class="text">テキスト</rs-list-text>
+    <rs-list-meta class="meta">メタ情報</rs-list-meta>
   </rs-list-item>
 </rs-list>`,
       { lang: 'html' }
@@ -1410,90 +1471,236 @@ $material-icons-font-path: '~material-icons/iconfont/';
 `@import '@rsmdc/list/rs-list.scss';
 
 .my-list {
-  > .item {
-    @include rs-list-fill-color-accessible(green);
+  > .item.-accessible-orange {
+    @include rs-list-fill-color-accessible(orange);
+  }
+  > .item > .icon {
+    @include rs-list-graphic-image(
+      Material Icons, map-get($material-icons-codepoints, face)
+    );
+  }
+  &.-avatar-twoline {
+    @include rs-list-type(avatar-list, two-line);
   }
 }`,
       { lang: 'scss' }
     )}
     <p>オプション</p>
     <ul>
-      <li>$color: テキスト、背景色、リップルの色を指定 <br> 例）#ee00ce</li>
+      <li>$color: テキスト、アイコン、リップルの色を指定。 <br> 例）#ee00ce</li>
     </ul>
   `)
+
   .add('画像・アイコンを設定する', () => `
     <h4>指定した画像・アイコンを表示する。</h4>
-    <rs-list class="my-list -avatar-list">
+    <rs-list class="my-list -avatar-twoline">
       <rs-list-item class="item">
-        <rs-list-graphic class="graphic -image"></rs-list-graphic>
+        <rs-list-graphic class="icon"></rs-list-graphic>
         <rs-list-text class="text">テキスト</rs-list-text>
+        <rs-list-meta class="meta">メタ情報</rs-list-meta>
       </rs-list-item>
       <rs-list-item class="item">
-        <rs-list-graphic class="graphic -image"></rs-list-graphic>
+        <rs-list-graphic class="icon"></rs-list-graphic>
         <rs-list-text class="text">テキスト</rs-list-text>
+        <rs-list-meta class="meta">メタ情報</rs-list-meta>
       </rs-list-item>
     </rs-list>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
-      `@include rs-list-graphic-image($icon, $icon-name: \'\');`,
+`@include rs-list-graphic-image($icon, $icon-name: \'\');`,
       { lang: 'scss' }
     )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
-`<rs-list class="my-list -avatarlist">
+`<rs-list class="my-list -avatar-twoline">
   <rs-list-item class="item">
-    <rs-list-graphic class="graphic -image" />
+    <rs-list-graphic class="icon" />
     <rs-list-text class="text">テキスト</rs-list-text>
+    <rs-list-meta class="meta">メタ情報</rs-list-meta>
   </rs-list-item>
   <rs-list-item class="item">
-    <rs-list-graphic class="graphic -image" />
+    <rs-list-graphic class="icon" />
     <rs-list-text class="text">テキスト</rs-list-text>
+    <rs-list-meta class="meta">メタ情報</rs-list-meta>
   </rs-list-item>
 </rs-list>`,
       { lang: 'html' }
     )}
     ${copyCodeBlock(
 `@import '@rsmdc/list/rs-list.scss';
+$material-icons-font-path: '~material-icons/iconfont/';
+@import '~material-icons/iconfont/material-icons';
 
-.graphic {
-  > .-graphic.-image {
-    @include rs-list-graphic-image(url(\'https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AAr4y0F.img?h=1080&w=1920&m=6&q=60&o=f&l=f\'));
+.my-list {
+  > .item > .icon {
+    @include rs-list-graphic-image(
+      Material Icons, map-get($material-icons-codepoints, face)
+    );
+  }
+  &.-avatar-twoline {
+    @include rs-list-type(avatar-list, two-line);
   }
 }`,
       { lang: 'scss' }
     )}
     <p>オプション</p>
     <ul>
-      <li>$url: 画像パス <br> 例）https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AAr4y0F.img?h=1080&w=1920&m=6&q=60&o=f&l=f</li>
+      <li>$icon</li>
+      <ul>
+        <li>icon-font: font-family<br>例）Material Icons</li>
+        <li>image: 画像パスを指定。<br>url('example.png')</li>
+      </ul>
+      <li>$codepoint: コードポイントを指定（icon-fontの時のみ）。<br>例）e063</li>
     </ul>
   `)
-  .add('画像のサイズを変える', () => `
-    <h4>画像のサイズを指定した大きさに変える。</h4>
-    <rs-list class="my-list -graphic-type">
+
+  .add('画像の背景色を変える', () => `
+    <h4>画像の背景色を指定した色に変える。</h4>
+    <rs-list class="my-list -avatar-twoline">
       <rs-list-item class="item">
-        <rs-list-graphic class="graphic -size"></rs-list-graphic>
+        <rs-list-graphic class="icon -container-orange"></rs-list-graphic>
         <rs-list-text class="text">テキスト</rs-list-text>
+        <rs-list-meta class="meta">メタ情報</rs-list-meta>
       </rs-list-item>
       <rs-list-item class="item">
-        <rs-list-graphic class="graphic -size"></rs-list-graphic>
+        <rs-list-graphic class="icon -container-orange"></rs-list-graphic>
         <rs-list-text class="text">テキスト</rs-list-text>
+        <rs-list-meta class="meta">メタ情報</rs-list-meta>
       </rs-list-item>
     </rs-list>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
-      `@include rs-list-graphic-size($size);`,
+`@include rs-list-item-graphic-fill-color($color);`,
       { lang: 'scss' }
     )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
-`<rs-list class="my-list -avatarlist">
+`<rs-list class="my-list -avatar-twoline">
+  <rs-list-item class="item">
+    <rs-list-graphic class="graphic -container-orange" />
+    <rs-list-text class="text">テキスト</rs-list-text>
+    <rs-list-meta class="meta">メタ情報</rs-list-meta>
+  </rs-list-item>
+  <rs-list-item class="item">
+    <rs-list-graphic class="graphic -container-orange" />
+    <rs-list-text class="text">テキスト</rs-list-text>
+    <rs-list-meta class="meta">メタ情報</rs-list-meta>
+  </rs-list-item>
+</rs-list>`,
+      { lang: 'html' }
+    )}
+    ${copyCodeBlock(
+`@import '@rsmdc/list/rs-list.scss';
+$material-icons-font-path: '~material-icons/iconfont/';
+@import '~material-icons/iconfont/material-icons';
+
+.my-list {
+  > .item > .icon.-container-orange {
+    @include rs-list-graphic-image(
+      Material Icons, map-get($material-icons-codepoints, face)
+    );
+    @include rs-list-graphic-fill-color(orange);
+    @include rs-list-graphic-type(circle);
+  }
+  &.-avatar-twoline {
+    @include rs-list-type(avatar-list, two-line);
+  }
+}`,
+      { lang: 'scss' }
+    )}
+    <p>オプション</p>
+    <ul>
+      <li>$color: 背景色を指定。 <br> 例）#ee00ce</li>
+    </ul>
+  `)
+
+  .add('アイコンの色を変える', () => `
+    <h4>アイコンの色を指定した色に変える。</h4>
+    <rs-list class="my-list -avatar-twoline">
+      <rs-list-item class="item">
+        <rs-list-graphic class="icon -blue"></rs-list-graphic>
+        <rs-list-text class="text">テキスト</rs-list-text>
+        <rs-list-meta class="meta">メタ情報</rs-list-meta>
+      </rs-list-item>
+      <rs-list-item class="item">
+        <rs-list-graphic class="icon -blue"></rs-list-graphic>
+        <rs-list-text class="text">テキスト</rs-list-text>
+        <rs-list-meta class="meta">メタ情報</rs-list-meta>
+      </rs-list-item>
+    </rs-list>
+    <h4>使用するmixin</h4>
+    ${copyCodeBlock(
+`@include rs-list-item-graphic-ink-color($color);`,
+      { lang: 'scss' }
+    )}
+    <h4>使用方法</h4>
+    ${copyCodeBlock(
+`<rs-list class="my-list -avatar-twoline">
+  <rs-list-item class="item">
+    <rs-list-graphic class="icon -blue" />
+    <rs-list-text class="text">テキスト</rs-list-text>
+    <rs-list-meta class="meta">メタ情報</rs-list-meta>
+  </rs-list-item>
+  <rs-list-item class="item">
+    <rs-list-graphic class="icon -blue" />
+    <rs-list-text class="text">テキスト</rs-list-text>
+    <rs-list-meta class="meta">メタ情報</rs-list-meta>
+  </rs-list-item>
+</rs-list>`,
+      { lang: 'html' }
+    )}
+    ${copyCodeBlock(
+`@import '@rsmdc/list/rs-list.scss';
+$material-icons-font-path: '~material-icons/iconfont/';
+@import '~material-icons/iconfont/material-icons';
+
+.my-list {
+  > .item > .icon.-blue {
+    @include rs-list-graphic-image(
+      Material Icons, map-get($material-icons-codepoints, face)
+    );
+    @include rs-list-graphic-ink-color(rgb(106, 118, 223));
+  }
+}`,
+      { lang: 'scss' }
+    )}
+    <p>オプション</p>
+    <ul>
+      <li>$color: アイコンの色を指定。 <br> 例）#ee00ce</li>
+    </ul>
+  `)
+
+  .add('画像のサイズを変える', () => `
+    <h4>画像のサイズを指定した大きさに変える。</h4>
+    <rs-list class="my-list -avatar-twoline">
+      <rs-list-item class="item">
+        <rs-list-graphic class="graphic -size"></rs-list-graphic>
+        <rs-list-text class="text">テキスト</rs-list-text>
+        <rs-list-meta class="meta">メタ情報</rs-list-meta>
+      </rs-list-item>
+      <rs-list-item class="item">
+        <rs-list-graphic class="graphic -size"></rs-list-graphic>
+        <rs-list-text class="text">テキスト</rs-list-text>
+        <rs-list-meta class="meta">メタ情報</rs-list-meta>
+      </rs-list-item>
+    </rs-list>
+    <h4>使用するmixin</h4>
+    ${copyCodeBlock(
+`@include rs-list-graphic-size($size);`,
+      { lang: 'scss' }
+    )}
+    <h4>使用方法</h4>
+    ${copyCodeBlock(
+`<rs-list class="my-list -avatar-twoline">
   <rs-list-item class="item">
     <rs-list-graphic class="graphic -size" />
     <rs-list-text class="text">テキスト</rs-list-text>
+    <rs-list-meta class="meta">メタ情報</rs-list-meta>
   </rs-list-item>
   <rs-list-item class="item">
     <rs-list-graphic class="graphic -size" />
     <rs-list-text class="text">テキスト</rs-list-text>
+    <rs-list-meta class="meta">メタ情報</rs-list-meta>
   </rs-list-item>
 </rs-list>`,
       { lang: 'html' }
@@ -1503,55 +1710,65 @@ $material-icons-font-path: '~material-icons/iconfont/';
 
 .my-list {
   > .item > .graphic.-size {
-    @include rs-list-graphic-size(40px);
+    @include rs-list-graphic-size(50px);
+    @include rs-list-graphic-image(
+      url('https://cweb.canon.jp/showroom/personal/workshop/instaevent-2018/img/picture19.jpg')
+    );
+  }
+  &.-avatar-twoline {
+    @include rs-list-type(avatar-list, two-line);
   }
 }`,
       { lang: 'scss' }
     )}
     <p>オプション</p>
     <ul>
-      <li>$size: 画像の大きさを指定</li>
+      <li>$size: 画像の大きさを指定。</li>
     </ul>
   `)
   .add('アイテム角の丸みを変える', () => `
     <h4>アイテムの角の丸みを指定したサイズに変える。</h4>
-    <rs-list class="my-list">
-      <rs-list-item class="item -roundness">
+    <rs-list class="my-list -shape">
+      <rs-list-item class="item">
         <rs-list-text class="text">テキスト</rs-list-text>
+        <rs-list-meta class="meta">メタ情報</rs-list-meta>
       </rs-list-item>
-      <rs-list-item class="item -shape">
+      <rs-list-item class="item">
         <rs-list-text class="text">テキスト</rs-list-text>
+        <rs-list-meta class="meta">メタ情報</rs-list-meta>
       </rs-list-item>
     </rs-list>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
-      `@include rs-list-item-shape-radius($radius);`,
-      { lang: "scss" }
+`@include rs-list-item-shape-radius($radius);`,
+      { lang: 'scss' }
     )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
-`<rs-list class="my-list">
-  <rs-list-item class="item -roundness">
+`<rs-list class="my-list -shape">
+  <rs-list-item class="item">
     <rs-list-text class="text">テキスト</rs-list-text>
+    <rs-list-meta class="meta">メタ情報</rs-list-meta>
   </rs-list-item>
-  <rs-list-item class="item -roundness">
+  <rs-list-item class="item">
     <rs-list-text class="text">テキスト</rs-list-text>
+    <rs-list-meta class="meta">メタ情報</rs-list-meta>
   </rs-list-item>
 </rs-list>`,
-      { lang: "html" }
+      { lang: 'html' }
     )}
     ${copyCodeBlock(
 `@import '@rsmdc/list/rs-list.scss';
 
 .my-list {
-  > .item.-roundness {
+  &.-shape {
     @include rs-list-item-shape-radius(10px);
   }
 }`,
-      { lang: "scss" }
+      { lang: 'scss' }
     )}
     <ul>
-      <li>$radius: 角の丸みを指定</li>
+      <li>$radius: 角の丸みを指定。</li>
     </ul>
   `)
   
