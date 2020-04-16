@@ -14,25 +14,39 @@ storiesOf('Components|Snackbar', module)
   .addDecorator(withLinks)
   .add('概要', () => `
     <h4>Snackbar</h4>
-    <p>アプリプロセスに関する簡単なメッセージを表示する</p>
+    <p>アプリプロセスに関する簡単なメッセージを表示する。</p>
     参考: <a href="https://material.io/design/components/snackbars.html">https://material.io/design/components/snackbars.html</a>
     <p>スナックバーのタイプ</p>
-    <ul>
-      <li>normal（デフォルト）</li>
-      <li>stacked：テキストとアクション部分を改行して表示</li>
-      <li>leading：スナックバー本体を左端に表示</li>
-    </ul>
+    <table>
+      <tr>
+        <th>タイプ</th>
+        <th>概要</th>
+      </tr>
+      <tr>
+        <td>normal</td>
+        <td>テキストとアクション部分を横並びに表示するスナックバー。</td>
+      </tr>
+      <tr>
+        <td>stacked</td>
+        <td>テキストとアクション部分を縦並びに表示するスナックバー。</td>
+      </tr>
+      <tr>
+        <td>leading</td>
+        <td>スナックバー本体を左端に表示する。</td>
+      </tr>
+    </table>
   `)
+
   .add('使用方法', () => `
     <h4>使用方法</h4>
     <rs-snackbar class="snack-bar" opened>
-      <rs-snackbar-text>sample</rs-snackbar-text>
-      <rs-button onclick="window.document.querySelector('.snack-bar').removeAttribute('opened')">button</rs-button>
+      <rs-snackbar-text class="text">スナックバーの内容が入る</rs-snackbar-text>
+      <rs-button class="button" onclick="window.document.querySelector('.snack-bar').removeAttribute('opened')">button</rs-button>
     </rs-snackbar>
     ${copyCodeBlock(
 `<rs-snackbar class="snack-bar" opened>
-  <rs-snackbar-text>sample</rs-snackbar-text>
-  <rs-button>button</rs-button>
+  <rs-snackbar-text class="text">スナックバーの内容が入る</rs-snackbar-text>
+  <rs-button class="button">button</rs-button>
 </rs-snackbar>
 `,
       { lang: 'html' }
@@ -50,13 +64,13 @@ storiesOf('Components|Snackbar', module)
       </tr>
       <tr>
         <td>rs-snackbar</td>
-        <td>スナックバー本体を表示します</td>
+        <td>スナックバー本体を表示します。</td>
         <td>rs-snackbar-text</td>
         <td>-</td>
       </tr>
       <tr>
         <td>rs-snackbar-text</td>
-        <td>テキスト部分を表示します</td>
+        <td>テキスト部分を表示します。</td>
         <td>テキスト</td>
         <td>-</td>
       </tr>
@@ -95,17 +109,17 @@ storiesOf('Components|Snackbar', module)
   `)
 
   storiesOf('Components|Snackbar/スタイルのカスタマイズ/スナックバーのタイプを変える', module)
-  .add('normal（デフォルト）', () => `
-  <h4>normal</h4>
-  <p>normalの場合mixinは不要。</p>
-  <rs-snackbar class="snack-bar" opened>
-    <rs-snackbar-text class="label">テキスト</rs-snackbar-text>
-    <rs-button class="button" onclick="window.document.querySelector('.info-dialog').removeAttribute('opened')">button</rs-button>
-  </rs-snackbar>
-  <h4>使用方法</h4>
-  ${copyCodeBlock(
+    .add('normal（デフォルト）', () => `
+      <h4>normal</h4>
+      <p>normalの場合mixinは不要。</p>
+      <rs-snackbar class="snack-bar" opened>
+        <rs-snackbar-text class="text">スナックバーの内容が入る</rs-snackbar-text>
+        <rs-button class="button" onclick="window.document.querySelector('.info-dialog').removeAttribute('opened')">button</rs-button>
+      </rs-snackbar>
+      <h4>使用方法</h4>
+      ${copyCodeBlock(
 `<rs-snackbar class="snack-bar" opened>
-  <rs-snackbar-text class="label">テキスト</rs-snackbar-text>
+  <rs-snackbar-text class="text">スナックバーの内容が入る</rs-snackbar-text>
   <rs-button class="button">button</rs-button>
 </rs-snackbar>`,
       { lang: 'html' }
@@ -116,10 +130,10 @@ storiesOf('Components|Snackbar', module)
     <h4>stacked</h4>
     <p>
       テキスト部分とアクション部分を縦並びに表示。<br>
-      leadingとの併用可能。
+      leadingと一緒に使用できる。
     </p>
     <rs-snackbar class="snack-bar -stacked" opened>
-      <rs-snackbar-text class="label">テキスト</rs-snackbar-text>
+      <rs-snackbar-text class="text">スナックバーの内容が入る</rs-snackbar-text>
       <rs-button class="button" onclick="window.document.querySelector('.snack-bar').removeAttribute('opened')">button</rs-button>
     </rs-snackbar>
     <h4>使用するmixin</h4>
@@ -130,7 +144,7 @@ storiesOf('Components|Snackbar', module)
     <h4>使用方法</h4>
     ${copyCodeBlock(
 `<rs-snackbar class="snack-bar -stacked" opened>
-  <rs-snackbar-text class="label">テキスト</rs-snackbar-text>
+  <rs-snackbar-text class="text">スナックバーの内容が入る</rs-snackbar-text>
   <rs-button class="button">button</rs-button>
 </rs-snackbar>`,
       { lang: 'html' }
@@ -152,10 +166,10 @@ storiesOf('Components|Snackbar', module)
     <h4>leading</h4>
     <p>
       スナックバーを左端に表示。 <br>
-      stackedとの併用可能。
+      stackedと一緒に使用できる。
     </p>
     <rs-snackbar class="snack-bar -leading" opened>
-      <rs-snackbar-text class="label">テキスト</rs-snackbar-text>
+      <rs-snackbar-text class="text">スナックバーの内容が入る</rs-snackbar-text>
       <rs-button class="button" onclick="window.document.querySelector('.snack-bar').removeAttribute('opened')">button</rs-button>
     </rs-snackbar>
     <h4>使用するmixin</h4>
@@ -166,7 +180,7 @@ storiesOf('Components|Snackbar', module)
     <h4>使用方法</h4>
     ${copyCodeBlock(
 `<rs-snackbar class="snack-bar -leading" opened>
-  <rs-snackbar-text class="label">テキスト</rs-snackbar-text>
+  <rs-snackbar-text class="text">スナックバーの内容が入る</rs-snackbar-text>
   <rs-button class="button">button</rs-button>
 </rs-snackbar>`,
       { lang: 'html' }
@@ -188,18 +202,18 @@ storiesOf('Components|Snackbar', module)
   .add('テキストの色を変える', () => `
     <h4>テキストの色を指定した色に変える。</h4>
     <rs-snackbar class="snack-bar -text-orange" opened>
-      <rs-snackbar-text class="label">テキスト</rs-snackbar-text>
+      <rs-snackbar-text class="text">スナックバーの内容が入る</rs-snackbar-text>
       <rs-button class="button" onclick="window.document.querySelector('.snack-bar').removeAttribute('opened')">button</rs-button>
     </rs-snackbar>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
-      `@include rs-snackbar-label-ink-color($color);`,
+`@include rs-snackbar-label-ink-color($color);`,
       { lang: 'scss' }
     )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
-`<rs-snackbar class="snack-bar" opened>
-  <rs-snackbar-text class="label">テキスト</rs-snackbar-text>
+`<rs-snackbar class="snack-bar -text-orange" opened>
+  <rs-snackbar-text class="text">スナックバーの内容が入る</rs-snackbar-text>
   <rs-button class="button">button</rs-button>
 </rs-snackbar>`,
       { lang: 'html' }
@@ -218,26 +232,26 @@ storiesOf('Components|Snackbar', module)
     <p>オプション</p>
     <ul>
       <li>
-        $color: インクの色コード <br> 例）#ee00ce
+        $color: インクの色コード。 <br> 例）#ee00ce
       </li>
     </ul>
   `)
     
   .add('背景色を変える', () => `
     <h4>背景色を指定した色に変える。</h4>
-    <rs-snackbar class="snack-bar" opened>
-      <rs-snackbar-text class="label">テキスト</rs-snackbar-text>
+    <rs-snackbar class="snack-bar -fill-orange" opened>
+      <rs-snackbar-text class="text">スナックバーの内容が入る</rs-snackbar-text>
       <rs-button class="button" onclick="window.document.querySelector('.snack-bar').removeAttribute('opened')">button</rs-button>
     </rs-snackbar>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
-      `@include rs-snackbar-fill-color($color);`,
+`@include rs-snackbar-fill-color($color);`,
       { lang: 'scss' }
     )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
-`<rs-snackbar class="snack-bar -fill-beige" opened>
-  <rs-snackbar-text class="label">テキスト</rs-snackbar-text>
+`<rs-snackbar class="snack-bar -fill-orange" opened>
+  <rs-snackbar-text class="text">スナックバーの内容が入る</rs-snackbar-text>
   <rs-button class="button">button</rs-button>
 </rs-snackbar>`,
       { lang: 'html' }
@@ -246,8 +260,8 @@ storiesOf('Components|Snackbar', module)
 `@import '@rsmdc/snackbar/rs-snackbar.scss';
 
 .snack-bar {
-  &.-fill-beige {
-    @include rs-snackbar-fill-color(beige);
+  &.-fill-orange {
+    @include rs-snackbar-fill-color(orange);
   }
 }
 `,
@@ -256,7 +270,7 @@ storiesOf('Components|Snackbar', module)
     <p>オプション</p>
     <ul>
       <li>
-        $color: インクの色コード <br> 例）#ee00ce
+        $color: 背景色を指定。 <br> 例）#ee00ce
       </li>
     </ul>
   `)
@@ -264,18 +278,18 @@ storiesOf('Components|Snackbar', module)
   .add('スナックバーの角の丸みを変える', () => `
     <h4>スナックバーの角の丸みを指定したサイズに変える。</h4>
     <rs-snackbar class="snack-bar -radius" opened>
-      <rs-snackbar-text class="label">テキスト</rs-snackbar-text>
+      <rs-snackbar-text class="text">スナックバーの内容が入る</rs-snackbar-text>
       <rs-button class="button" onclick="window.document.querySelector('.snack-bar').removeAttribute('opened')">button</rs-button>
     </rs-snackbar>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
-      `@include rs-snackbar-shape-radius($radius);`,
+`@include rs-snackbar-shape-radius($radius);`,
       { lang: 'scss' }
     )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
 `<rs-snackbar class="snack-bar -radius" opened>
-  <rs-snackbar-text class="label">テキスト</rs-snackbar-text>
+  <rs-snackbar-text class="text">スナックバーの内容が入る</rs-snackbar-text>
   <rs-button class="button">button</rs-button>
 </rs-snackbar>`,
       { lang: 'html' }
@@ -294,26 +308,26 @@ storiesOf('Components|Snackbar', module)
     <p>オプション</p>
     <ul>
       <li>
-        $radius: 角の丸みを指定 <br> 例）20px
+        $radius: 角の丸みを指定。 <br> 例）20px
       </li>
     </ul>
   `)
 
-  .add('サイズを変える（最小値）', () => `
+  .add('横幅の最小値を変える', () => `
     <h4>横幅の最小値を指定したサイズに変える。</h4>
     <rs-snackbar class="snack-bar -min-width" opened>
-      <rs-snackbar-text class="label">テキスト</rs-snackbar-text>
+      <rs-snackbar-text class="text">スナックバーの内容が入る</rs-snackbar-text>
       <rs-button class="button" onclick="window.document.querySelector('.snack-bar').removeAttribute('opened')">button</rs-button>
     </rs-snackbar>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
-      `@include rs-snackbar-min-width($width)`,
+`@include rs-snackbar-min-width($min-width)`,
       { lang: 'scss' }
     )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
 `<rs-snackbar class="snack-bar -min-width" opened>
-  <rs-snackbar-text class="label">テキスト</rs-snackbar-text>
+  <rs-snackbar-text class="text">スナックバーの内容が入る</rs-snackbar-text>
   <rs-button class="button">button</rs-button>
 </rs-snackbar>`,
       { lang: 'html' }
@@ -323,7 +337,7 @@ storiesOf('Components|Snackbar', module)
 
 .snack-bar {
   &.-min-width {
-    @include rs-snackbar-min-width(500px);
+    @include rs-snackbar-min-width(300px);
   }
 }
 `,
@@ -332,26 +346,26 @@ storiesOf('Components|Snackbar', module)
     <p>オプション</p>
     <ul>
       <li>
-        $width: 横幅の最小値を指定 <br> 例）180px;
+        $min-width: 横幅の最小値を指定。 <br> 例）300px;
       </li>
     </ul>
   `)
 
-  .add('サイズを変える（最大値）', () => `
+  .add('横幅の最大値を変える', () => `
     <h4>横幅の最大値を指定したサイズに変える。</h4>
     <rs-snackbar class="snack-bar -max-width" opened>
-      <rs-snackbar-text class="label">テキスト</rs-snackbar-text>
+      <rs-snackbar-text class="text">スナックバーの内容が入る</rs-snackbar-text>
       <rs-button class="button" onclick="window.document.querySelector('.snack-bar').removeAttribute('opened')">button</rs-button>
     </rs-snackbar>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
-      `@include rs-snackbar-max-width($width)`,
+`@include rs-snackbar-max-width($max-width)`,
       { lang: 'scss' }
     )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
 `<rs-snackbar class="snack-bar -max-width" opened>
-  <rs-snackbar-text class="label">テキスト</rs-snackbar-text>
+  <rs-snackbar-text class="text">スナックバーの内容が入る</rs-snackbar-text>
   <rs-button class="button">button</rs-button>
 </rs-snackbar>`,
       { lang: 'html' }
@@ -361,7 +375,7 @@ storiesOf('Components|Snackbar', module)
 
 .snack-bar {
   &.-max-width {
-    @include rs-snackbar-max-width(500px);
+    @include rs-snackbar-max-width(200px);
   }
 }
 `,
@@ -370,26 +384,26 @@ storiesOf('Components|Snackbar', module)
     <p>オプション</p>
     <ul>
       <li>
-        $width: 横幅の最大値を指定 <br> 例）180px;
+        $max-width: 横幅の最大値を指定。 <br> 例）200px;
       </li>
     </ul>
   `)
 
-  .add('スナックバーの高さを変える', () => `
-    <h4>高さを指定した高さ（重なり順）に変える。</h4>
+  .add('スナックバーの重なり順を変える', () => `
+    <h4>スナックバーの重なり順を指定した順番に変える。</h4>
     <rs-snackbar class="snack-bar -elevation" opened>
-      <rs-snackbar-text class="label">テキスト</rs-snackbar-text>
+      <rs-snackbar-text class="text">スナックバーの内容が入る</rs-snackbar-text>
       <rs-button class="button" onclick="window.document.querySelector('.snack-bar').removeAttribute('opened')">button</rs-button>
     </rs-snackbar>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
-      `@include rs-snackbar-elevation($z-index);`,
+`@include rs-snackbar-elevation($z-index);`,
       { lang: 'scss' }
     )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
 `<rs-snackbar class="snack-bar -elevation" opened>
-  <rs-snackbar-text class="label">テキスト</rs-snackbar-text>
+  <rs-snackbar-text class="text">スナックバーの内容が入る</rs-snackbar-text>
   <rs-button class="button">button</rs-button>
 </rs-snackbar>`,
       { lang: 'html' }
@@ -414,20 +428,20 @@ storiesOf('Components|Snackbar', module)
   `)
 
   .add('スナックバーの位置を変える', () => `
-    <h4>スナックバーとビューポートの間の距離を指定した距離に変える。</h4>
+    <h4>スナックバーとビューポートの間の距離を指定した位置に変える。</h4>
     <rs-snackbar class="snack-bar -margin" opened>
-      <rs-snackbar-text class="label">テキスト</rs-snackbar-text>
+      <rs-snackbar-text class="text">スナックバーの内容が入る</rs-snackbar-text>
       <rs-button class="button" onclick="window.document.querySelector('.snack-bar').removeAttribute('opened')">button</rs-button>
     </rs-snackbar>
     <h4>使用するmixin</h4>
     ${copyCodeBlock(
-      `@include rs-snackbar-viewport-margin($margin);`,
+`@include rs-snackbar-viewport-margin($margin);`,
       { lang: 'scss' }
     )}
     <h4>使用方法</h4>
     ${copyCodeBlock(
 `<rs-snackbar class="snack-bar -margin" opened>
-  <rs-snackbar-text class="label">テキスト</rs-snackbar-text>
+  <rs-snackbar-text class="text">スナックバーの内容が入る</rs-snackbar-text>
   <rs-button class="button">button</rs-button>
 </rs-snackbar>`,
       { lang: 'html' }
@@ -446,7 +460,7 @@ storiesOf('Components|Snackbar', module)
     <p>オプション</p>
     <ul>
       <li>
-        $margin: ビューポートからの距離を指定<br> 例）90px;
+        $margin: ビューポートからの距離を指定。 <br> 例）90px;
       </li>
     </ul>
   `)

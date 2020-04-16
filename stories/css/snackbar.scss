@@ -7,4 +7,25 @@
   &.-leading {
     @include rs-snackbar-type(leading);
   }
+  &.-text-orange {
+    @include rs-snackbar-label-ink-color(orange);
+  }
+  &.-fill-orange {
+    @include rs-snackbar-fill-color(orange);
+  }
+  &.-radius {
+    @include rs-snackbar-shape-radius(20px);
+  }
+  &.-min-width {
+    @include rs-snackbar-min-width(300px);
+  }
+  &.-max-width {
+    @include rs-snackbar-max-width(200px);
+  }
+  &.-elevation {
+    @include rs-snackbar-elevation(5);
+  }
+  &.-margin {
+    @include rs-snackbar-viewport-margin(90px);
+  }
 }
