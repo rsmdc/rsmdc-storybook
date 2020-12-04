@@ -30,7 +30,7 @@
     "@storybook/addon-notes": "^5.0.11",
     "add": "^2.0.6",
     "cross-env": "^5.2.0",
-    "highlight.js": "^9.15.6",
+    "highlight.js": "^10.4.1",
     "material-icons": "^0.3.1",
     "storybook": "^1.0.0",
     "yarn": "^1.16.0"
